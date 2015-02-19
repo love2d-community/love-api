@@ -5190,6 +5190,56 @@ return {
             }
         },
         {
+            name = 'CanvasFormat',
+            description = '',
+            constants = {
+                {
+                    name = 'normal',
+                    description = 'The default Canvas format - an alias for the rgba8 format, normally.'
+                },
+                {
+                    name = 'rgba8',
+                    description = '8 bits per channel (32 bpp) RGBA. Color channel values range from 0-255 (0-1 in shaders.)'
+                },
+                {
+                    name = 'rgba4',
+                    description = '4 bits per channel (16 bpp) RGBA.'
+                },
+                {
+                    name = 'rgb5a1',
+                    description = 'RGB with 5 bits each, and a 1-bit alpha channel (16 bpp.)'
+                },
+                {
+                    name = 'rgb565',
+                    description = 'RGB with 5, 6, and 5 bits each, respectively (16 bpp). There is no alpha channel in this format.'
+                },
+                {
+                    name = 'rgb10a2',
+                    description = 'RGB with 10 bits per channel, and a 2-bit alpha channel (32 bpp.)'
+                },
+                {
+                    name = 'hdr',
+                    description = 'A format suitable for high dynamic range content - an alias for the rgba16f format, normally.'
+                },
+                {
+                    name = 'rgba16f',
+                    description = 'Floating point RGBA with 16 bits per channel (64 bpp.) Color values can range from [-infinity, +infinity].'
+                },
+                {
+                    name = 'rgba32f',
+                    description = 'Floating point RGBA with 32 bits per channel (128 bpp.) Color values can range from [-infinity, +infinity].'
+                },
+                {
+                    name = 'rg11b10f',
+                    description = 'Floating point RGB with 11 bits in the red and green channels, and 10 bits in the blue channel (32 bpp.) There is no alpha channel. Color values can range from [0, +infinity].'
+                },
+                {
+                    name = 'srgb',
+                    description = 'The same as rgba8, but the Canvas is interpreted as being in the sRGB color space. Everything drawn to the Canvas will be converted from linear RGB to sRGB. When the Canvas is drawn (or used in a shader), it will be decoded from sRGB to linear RGB.'
+                },
+            }
+        },
+        {
             name = 'DrawMode',
             description = 'Controls whether shapes are drawn as an outline, or filled.',
             constants = {
