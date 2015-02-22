@@ -1984,6 +1984,26 @@ return {
                     }
                 },
                 {
+                    name = 'setQuads',
+                    description = 'Sets a series of Quads to use for the particle sprites. Particles will choose a Quad from the list based on the particle\'s current lifetime, allowing for the use of animated sprite sheets with ParticleSystems.',
+                    functions = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'Quad',
+                                    name = 'quad1',
+                                    description = 'The first Quad to use.'
+                                },
+                                {
+                                    type = 'Quad',
+                                    name = 'quad2',
+                                    description = 'The second Quad to use.'
+                                },
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'setRadialAcceleration',
                     description = 'Set the radial acceleration (away from the emitter).',
                     functions = {
