@@ -3348,6 +3348,21 @@ return {
             }
         },
         {
+            name = 'getCompressedImageFormats',
+            description = 'Gets the available compressed image formats, and whether each is supported.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'formats',
+                            description = 'A table containing CompressedFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getDefaultFilter',
             description = 'Returns the default scaling filters used with Images, Canvases, and Fonts.',
             functions = {
