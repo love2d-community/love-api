@@ -1375,6 +1375,26 @@ return {
                     }
                 },
                 {
+                    name = 'getLinearDamping',
+                    description = 'Gets the amount of linear damping (constant deceleration) for particles.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'min',
+                                    description = 'The minimum amount of linear damping applied to particles.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'max',
+                                    description = 'The maximum amount of linear damping applied to particles.'
+                                },
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getEmitterLifetime',
                     description = 'Gets how long the particle system should emit particles (if -1 then it emits particles forever).',
                     functions = {
