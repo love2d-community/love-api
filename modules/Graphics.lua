@@ -2693,6 +2693,13 @@ return {
                     }
                 },
                 {
+                    name = 'flush',
+                    description = 'Immediately sends all new and modified sprite data in the batch to the graphics card.',
+                    functions = {
+                        {}
+                    }
+                },
+                {
                     name = 'getBufferSize',
                     description = 'Gets the maximum number of sprites the SpriteBatch can hold.',
                     functions = {
