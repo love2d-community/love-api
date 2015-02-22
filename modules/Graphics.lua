@@ -1923,6 +1923,26 @@ return {
                     }
                 },
                 {
+                    name = 'setLinearDamping',
+                    description = 'Sets the amount of linear damping (constant deceleration) for particles.',
+                    functions = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'min',
+                                    description = 'The minimum amount of linear damping applied to particles.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'max',
+                                    description = 'The maximum amount of linear damping applied to particles.'
+                                },
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'setOffset',
                     description = 'Set the offset position which the particle sprite is rotated around. If this function is not used, the particles rotate around their center.',
                     functions = {
