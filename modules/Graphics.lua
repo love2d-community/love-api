@@ -1860,6 +1860,21 @@ return {
                     }
                 },
                 {
+                    name = 'setEmitterLifetime',
+                    description = 'Sets how long the particle system should emit particles (if -1 then it emits particles forever).',
+                    functions = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'life',
+                                    description = 'The lifetime of the emitter (in seconds).'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'setInsertMode',
                     description = 'Sets the mode to use when the ParticleSystem adds new particles.',
                     functions = {
@@ -1902,21 +1917,6 @@ return {
                                     name = 'ymax',
                                     default = 'ymax',
                                     description = 'The maximum acceleration along the y axis.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    name = 'setEmitterLifetime',
-                    description = 'Sets how long the particle system should emit particles (if -1 then it emits particles forever).',
-                    functions = {
-                        {
-                            arguments = {
-                                {
-                                    type = 'number',
-                                    name = 'life',
-                                    description = 'The lifetime of the emitter (in seconds).'
                                 }
                             }
                         }
