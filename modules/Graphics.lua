@@ -3273,6 +3273,21 @@ return {
             }
         },
         {
+            name = 'getCanvasFormats',
+            description = 'Gets the available Canvas formats, and whether each is supported.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'formats',
+                            description = 'A table containing CanvasFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getColor',
             description = 'Gets the current color.',
             functions = {
