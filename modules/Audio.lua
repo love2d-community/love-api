@@ -110,6 +110,21 @@ return {
                     }
                 },
                 {
+                    name = 'getDopplerScale',
+                    description = 'Gets the current global scale factor for velocity-based doppler effects.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'scale',
+                                    description = 'The current doppler scale factor.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getPitch',
                     description = 'Gets the current pitch of the Source.',
                     functions = {
