@@ -3595,6 +3595,46 @@ return {
             }
         },
         {
+            name = 'getStats',
+            description = 'Gets performance-related rendering statistics.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'drawcalls',
+                            description = 'The number of draw calls made so far during the current frame. This includes all internal draw calls – for example, drawing smooth lines takes two draw calls.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'canvasswitches',
+                            description = 'The number of times the active Canvas has been switched so far during the current frame. This includes all internal canvas switches – for example, calling Canvas:clear if the Canvas isn\'t active will trigger two canvas switches.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'texturememory',
+                            description = 'The estimated total size in bytes of video memory used by all loaded Images, Canvases, and Fonts.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'images',
+                            description = 'The number of Image objects currently loaded.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'canvases',
+                            description = 'The number of Canvas objects currently loaded.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'fonts',
+                            description = 'The number of Font objects currently loaded.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'getSystemLimit',
             description = 'Gets the system-dependent maximum value for a love.graphics feature.',
             functions = {
