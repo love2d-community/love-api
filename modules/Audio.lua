@@ -382,6 +382,21 @@ return {
                     }
                 },
                 {
+                    name = 'setDopplerScale',
+                    description = 'Sets a global scale factor for velocity-based doppler effects. The default scale value is 1.',
+                    functions = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'scale',
+                                    description = 'The new doppler scale factor. The scale must be greater than 0.'
+                                },
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'setAttenuationDistances',
                     description = 'Sets the reference and maximum distance of the source.',
                     functions = {
