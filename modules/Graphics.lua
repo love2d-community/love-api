@@ -5605,7 +5605,11 @@ return {
                 {
                     name = 'repeat',
                     description = 'Repeat the image. Fills the whole available extent.'
-                }
+                },
+                {
+                    name = 'mirroredrepeat',
+                    description = 'Repeat the image, flipping it each time it repeats. May produce better visual results than the repeat mode when the image doesn\'t seamlessly tile.'
+                },
             }
         }
     }
