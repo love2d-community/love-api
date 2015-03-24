@@ -346,6 +346,21 @@ return {
                             }
                         }
                     }
+                },
+                {
+                    name = 'isVibrationSupported',
+                    description = 'Gets whether the Joystick supports vibration.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'supported',
+                                    description = 'True if rumble / force feedback vibration is supported on this Joystick, false if not.'
+                                }
+                            }
+                        }
+                    }
                 }
             },
             supertypes = {
