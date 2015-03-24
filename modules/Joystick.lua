@@ -395,6 +395,32 @@ return {
                                     description = 'True if the vibration was successfully disabled, false if not.'
                                 }
                             }
+                        },
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'left',
+                                    description = 'Strength of the left vibration motor on the Joystick. Must be in the range of [0, 1].'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'right',
+                                    description = 'Strength of the right vibration motor on the Joystick. Must be in the range of [0, 1].'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'duration',
+                                    description = 'The duration of the vibration in seconds. A negative value means infinite duration.'
+                                }
+                            },
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'success',
+                                    description = 'True if the vibration was successfully applied, false if not.'
+                                }
+                            }
                         }
                     }
                 }
