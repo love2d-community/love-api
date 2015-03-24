@@ -436,6 +436,79 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'showMessageBox',
+            description = 'Displays a message box dialog above the love window. The message box contains a title, optional text, and buttons.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'title',
+                            description = 'The title of the message box.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'message',
+                            description = 'The text inside the message box.'
+                        },
+                        {
+                            type = 'MessageBoxType',
+                            name = 'type ("info")',
+                            description = 'The type of the message box.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'attachtowindow (true)',
+                            description = 'Whether the message box should be attached to the love window or free-floating.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'Whether the message box was successfully displayed.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'title',
+                            description = 'The title of the message box.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'message',
+                            description = 'The text inside the message box.'
+                        },
+                        {
+                            type = 'table',
+                            name = 'buttonlist',
+                            description = 'A table containing a list of button names to show. The table can also contain the fields enterbutton and escapebutton, which should be the index of the default button to use when the user presses \'enter\' or \'escape\', respectively.'
+                        },
+                        {
+                            type = 'MessageBoxType',
+                            name = 'type ("info")',
+                            description = 'The type of the message box.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'attachtowindow (true)',
+                            description = 'Whether the message box should be attached to the love window or free-floating.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'pressedbutton',
+                            description = 'The index of the button pressed by the user. May be 0 if the message box dialog was closed without pressing a button.'
+                        }
+                    }
+                }
+            }
         }
     },
     enums = {
