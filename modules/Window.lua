@@ -221,6 +221,13 @@ return {
             }
         },
         {
+            name = 'minimize',
+            description = 'Minimizes the window to the system\'s task bar / dock.',
+            functions = {
+                {}
+            }
+        },
+        {
             name = 'setFullscreen',
             description = 'Enters or exits fullscreen. The display to use when entering fullscreen is chosen based on which display the window is currently in, if multiple monitors are connected.\n\nIf fullscreen mode is entered and the window size doesn\'t match one of the monitor\'s display modes (in normal fullscreen mode) or the window size doesn\'t match the desktop size (in \'desktop\' fullscreen mode), the window will be resized appropriately. The window will revert back to its original size again when fullscreen mode is exited using this function.',
             functions = {
