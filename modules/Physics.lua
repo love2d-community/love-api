@@ -2465,6 +2465,21 @@ return {
                     }
                 },
                 {
+                    name = 'getUserData',
+                    description = 'Returns the Lua value associated with this Joint.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'mixed',
+                                    name = 'value',
+                                    description = 'The Lua value associated with the Joint.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'setCollideConnected',
                     description = 'Sets whether the connected Bodies should collide with eachother.',
                     functions = {
@@ -2474,6 +2489,21 @@ return {
                                     type = 'boolean',
                                     name = 'collide',
                                     description = 'True for the Bodies to collide, false otherwise.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    name = 'setUserData',
+                    description = 'Associates a Lua value with the Joint.\n\nTo delete the reference, explicitly pass nil.',
+                    functions = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'mixed',
+                                    name = 'value',
+                                    description = 'The Lua value to associate with the Joint.'
                                 }
                             }
                         }
