@@ -23,6 +23,28 @@ return {
             }
         },
         {
+            name = 'getDisplayName',
+            description = 'Gets the name of a display.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'displayindex',
+                            description = 'The index of the display to get the name of.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the specified display.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getFullscreen',
             description = 'Gets whether the window is fullscreen.',
             functions = {
