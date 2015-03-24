@@ -503,6 +503,21 @@ return {
                     }
                 },
                 {
+                    name = 'getWorld',
+                    description = 'Gets the World the body lives in.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'World',
+                                    name = 'world',
+                                    description = 'The world the body lives in.'
+                                },
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getWorldCenter',
                     description = 'Get the center of mass position in world coordinates.\n\nUse Body:getLocalCenter to get the center of mass in local coordinates.',
                     functions = {
