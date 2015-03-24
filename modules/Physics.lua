@@ -2373,6 +2373,26 @@ return {
                     }
                 },
                 {
+                    name = 'getBodies',
+                    description = 'Gets the bodies that the Joint is attached to.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'Body',
+                                    name = 'bodyA',
+                                    description = 'The first Body.'
+                                },
+                                {
+                                    type = 'Body',
+                                    name = 'bodyB',
+                                    description = 'The second Body.'
+                                },
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getCollideConnected',
                     description = 'Gets whether the connected Bodies collide.',
                     functions = {
