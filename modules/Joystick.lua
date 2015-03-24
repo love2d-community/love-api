@@ -254,6 +254,26 @@ return {
                     }
                 },
                 {
+                    name = 'getVibration',
+                    description = 'Gets the current vibration motor strengths on a Joystick with rumble support.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'left',
+                                    description = 'Current strength of the left vibration motor on the Joystick.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'right',
+                                    description = 'Current strength of the right vibration motor on the Joystick.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'isConnected',
                     description = 'Gets whether the Joystick is connected.',
                     functions = {
