@@ -225,6 +225,21 @@ return {
                     }
                 },
                 {
+                    name = 'getJointList',
+                    description = 'Returns a table containing the Joints attached to this Body.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'table',
+                                    name = 'joints',
+                                    description = 'A sequence with the Joints attached to the Body.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getLinearDamping',
                     description = 'Gets the linear damping of the Body.\n\nThe linear damping is the rate of decrease of the linear velocity over time. A moving body with no damping and no external forces will continue moving indefinitely, as is the case in space. A moving body with damping will gradually stop moving.\n\nDamping is not the same as friction - they can be modelled together. However, only damping is provided by Box2D (and LÖVE).',
                     functions = {
