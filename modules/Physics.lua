@@ -2297,6 +2297,26 @@ return {
             },
             functions = {
                 {
+                    name = 'getJoints',
+                    description = 'Get the Joints connected by this GearJoint.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'Joint',
+                                    name = 'joint1',
+                                    description = 'The first connected Joint.'
+                                },
+                                {
+                                    type = 'Joint',
+                                    name = 'joint2',
+                                    description = 'The second connected Joint.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getRatio',
                     description = 'Get the ratio of a gear joint.',
                     functions = {
