@@ -432,6 +432,36 @@ return {
     },
     functions = {
         {
+            name = 'getJoystickCount',
+            description = 'Gets the number of connected joysticks.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'joystickcount',
+                            description = 'The number of connected joysticks.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getJoysticks',
+            description = 'Gets a list of connected Joysticks.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'joysticks',
+                            description = 'The list of currently connected Joysticks.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setGamepadMapping',
             description = 'Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a certain type. For example, if this function is used with a GUID returned by a Dualshock 3 controller in OS X, the binding will affect Joystick:getGamepadAxis and Joystick:isGamepadDown for all Dualshock 3 controllers used with the game when run in OS X.\n\nLÖVE includes built-in gamepad bindings for many common controllers. This function lets you change the bindings or add new ones for types of Joysticks which aren\'t recognized as gamepads by default.\n\nThe virtual gamepad buttons and axes are designed around the Xbox 360 controller layout.',
             functions = {
@@ -504,36 +534,6 @@ return {
                             type = 'boolean',
                             name = 'success',
                             description = 'Whether the virtual gamepad button was successfully bound.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getJoystickCount',
-            description = 'Gets the number of connected joysticks.',
-            functions = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'joystickcount',
-                            description = 'The number of connected joysticks.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getJoysticks',
-            description = 'Gets a list of connected Joysticks.',
-            functions = {
-                {
-                    returns = {
-                        {
-                            type = 'table',
-                            name = 'joysticks',
-                            description = 'The list of currently connected Joysticks.'
                         }
                     }
                 }
