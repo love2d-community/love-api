@@ -438,6 +438,36 @@ return {
             }
         },
         {
+            name = 'mousemoved',
+            description = 'Callback function triggered when the mouse is moved.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The mouse position on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The mouse position on the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'dx',
+                            description = 'The amount moved along the x-axis since the last time love.mousemoved was called.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'dy',
+                            description = 'The amount moved along the y-axis since the last time love.mousemoved was called.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'mousepressed',
             description = 'Callback function triggered when a mouse button is pressed.',
             functions = {
