@@ -45,25 +45,25 @@ return {
                         {
                             type = 'mixed',
                             name = 'a',
-                            default = nil,
+                            default = 'nil',
                             description = 'First event argument.'
                         },
                         {
                             type = 'mixed',
                             name = 'b',
-                            default = nil,
+                            default = 'nil',
                             description = 'Second event argument.'
                         },
                         {
                             type = 'mixed',
                             name = 'c',
-                            default = nil,
+                            default = 'nil',
                             description = 'Third event argument.'
                         },
                         {
                             type = 'mixed',
                             name = 'd',
-                            default = nil,
+                            default = 'nil',
                             description = 'Fourth event argument.'
                         }
                     }
