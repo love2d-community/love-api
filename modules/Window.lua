@@ -308,6 +308,21 @@ return {
             }
         },
         {
+            name = 'getTitle',
+            description = 'Gets the window title.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'title',
+                            description = 'The current window title.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getWidth',
             description = 'Gets the width of the window.',
             functions = {
