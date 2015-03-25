@@ -481,7 +481,19 @@ return {
                                     name = 'srgb',
                                     default = 'false',
                                     description = 'True if sRGB gamma correction should be applied when drawing to the screen.'
-                                }
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'x',
+                                    default = 'nil',
+                                    description = 'The x-coordinate of the window\'s position in the specified display.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'y',
+                                    default = 'nil',
+                                    description = 'The y-coordinate of the window\'s position in the specified display.'
+                                },
                             }
                         }
                     },
