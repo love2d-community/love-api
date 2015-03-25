@@ -754,6 +754,21 @@ return {
                     }
                 },
                 {
+                    name = 'isDestroyed',
+                    description = 'Gets whether the Body is destroyed. Destroyed bodies cannot be used.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'destroyed',
+                                    description = 'Whether the Body is destroyed.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'isDynamic',
                     description = 'Get the dynamic status of the body.\n\nA static body has no mass and a constant position. It will not react to collisions. Often used for walls.\n\nA dynamic body has mass and can move. It will react to collisions when the world is updated.',
                     functions = {
@@ -1978,6 +1993,21 @@ return {
                     }
                 },
                 {
+                    name = 'isDestroyed',
+                    description = 'Gets whether the Fixture is destroyed. Destroyed fixtures cannot be used.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'destroyed',
+                                    description = 'Whether the Fixture is destroyed.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'isSensor',
                     description = 'Returns whether the fixture is a sensor.',
                     functions = {
@@ -2524,6 +2554,21 @@ return {
                                     type = 'mixed',
                                     name = 'value',
                                     description = 'The Lua value associated with the Joint.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    name = 'isDestroyed',
+                    description = 'Gets whether the Joint is destroyed. Destroyed joints cannot be used.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'destroyed',
+                                    description = 'Whether the Joint is destroyed.'
                                 }
                             }
                         }
@@ -4086,6 +4131,21 @@ return {
                     description = 'Destroys the world, taking all bodies, joints, fixtures and their shapes with it.\n\nAn error will occur if you attempt to use any of the destroyed objects after calling this function.',
                     functions = {
                         {}
+                    }
+                },
+                {
+                    name = 'isDestroyed',
+                    description = 'Gets whether the World is destroyed. Destroyed worlds cannot be used.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'destroyed',
+                                    description = 'Whether the World is destroyed.'
+                                }
+                            }
+                        }
                     }
                 },
                 {
