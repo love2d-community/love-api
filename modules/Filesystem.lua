@@ -501,6 +501,28 @@ return {
             }
         },
         {
+            name = 'getRealDirectory',
+            description = 'Gets the platform-specific absolute path of the directory containing a filepath.\n\nThis can be used to determine whether a file is inside the save directory or the game\'s source .love.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filepath',
+                            description = 'The filepath to get the directory of.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'realdir',
+                            description = 'The platform-specific full path of the directory containing the filepath.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getSaveDirectory',
             description = 'Gets the full path to the designated save directory. This can be useful if you want to use the standard io library (or something else) to read or write in the save directory.',
             functions = {
