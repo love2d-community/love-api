@@ -1427,6 +1427,26 @@ return {
             description = 'Contacts are objects created to manage collisions in worlds.',
             functions = {
                 {
+                    name = 'getFixtures',
+                    description = 'Gets the two Fixtures that hold the shapes that are in contact.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'Fixture',
+                                    name = 'fixtureA',
+                                    description = 'The first Fixture.'
+                                },
+                                {
+                                    type = 'Fixture',
+                                    name = 'fixtureB',
+                                    description = 'The second Fixture.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getFriction',
                     description = 'Get the friction between two shapes that are in contact.',
                     functions = {
