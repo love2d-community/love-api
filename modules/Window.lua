@@ -3,6 +3,54 @@ return {
     description = 'The primary responsibility for the love.graphics module is the drawing of lines, shapes, text, Images and other Drawable objects onto the screen. Its secondary responsibilities include loading external files (including Images and Fonts) into memory, creating specialized objects (such as ParticleSystems or Framebuffers) and managing screen geometry.\n\nLÖVE\'s coordinate system is rooted in the upper-left corner of the screen, which is at location (0, 0). The x-axis is horizontal: larger values are further to the right. The y-axis is vertical: larger values are further towards the bottom.\n\nIn many cases, you draw images or shapes in terms of their upper-left corner (See the picture above).\n\nMany of the functions are used to manipulate the graphics coordinate system, which is essentially the way coordinates are mapped to the display. You can change the position, scale, and even rotation in this way.',
     functions = {
         {
+            name = 'fromPixels',
+            description = 'Converts a number from pixels to density-independent units.\n\nIf the highdpi window flag is enabled in Mac OS X and the window is in a retina screen, density-independent units will be twice the size of pixels. Otherwise they will usually be the same. This function can be used to convert coordinates from pixels to the the size users are expecting them to display at onscreen. love.window.toPixels does the opposite.\n\nMost LÖVE functions return values and expect arguments in terms of pixels rather than density-independent units.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'pixelvalue',
+                            description = 'A number in pixels to convert to density-independent units.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'value',
+                            description = 'The converted number, in density-independent units.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'px',
+                            description = 'The x-axis value of a coordinate in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'py',
+                            description = 'The y-axis value of a coordinate in pixels.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The converted x-axis value of the coordinate, in density-independent units.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The converted y-axis value of the coordinate, in density-independent units.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getDimensions',
             description = 'Gets the width and height of the window.',
             functions = {
@@ -505,6 +553,54 @@ return {
                             type = 'number',
                             name = 'pressedbutton',
                             description = 'The index of the button pressed by the user. May be 0 if the message box dialog was closed without pressing a button.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'toPixels',
+            description = 'Converts a number from density-independent units to pixels.\n\nIf the highdpi window flag is enabled in Mac OS X and the window is in a retina screen, density-independent units will be twice the size of pixels. Otherwise they will usually be the same. This function can be used to convert coordinates from the size users are expecting them to display at onscreen to pixels. love.window.fromPixels does the opposite.\n\nMost LÖVE functions return values and expect arguments in terms of pixels rather than density-independent units.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'value',
+                            description = 'A number in density-independent units to convert to pixels.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'pixelvalue',
+                            description = 'The converted number, in pixels.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis value of a coordinate in density-independent units to convert to pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis value of a coordinate in density-independent units to convert to pixels.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'px',
+                            description = 'The converted x-axis value of the coordinate, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'py',
+                            description = 'The converted y-axis value of the coordinate, in pixels.'
                         }
                     }
                 }
