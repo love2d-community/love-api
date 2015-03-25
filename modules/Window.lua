@@ -216,6 +216,31 @@ return {
             }
         },
         {
+            name = 'getPosition',
+            description = 'Gets the position of the window on the screen.\n\nThe window position is in the coordinate space of the display it is currently in.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-coordinate of the window\'s position.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-coordinate of the window\'s position.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'display',
+                            description = 'The index of the display that the window is in.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getWidth',
             description = 'Gets the width of the window.',
             functions = {
@@ -465,6 +490,31 @@ return {
                             type = 'boolean',
                             name = 'success',
                             description = 'True if successful, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setPosition',
+            description = 'Sets the position of the window on the screen.\n\nThe window position is in the coordinate space of the specified display.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-coordinate of the window\'s position.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-coordinate of the window\'s position.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'display',
+                            description = 'The index of the display that the new window position is relative to.'
                         }
                     }
                 }
