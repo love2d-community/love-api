@@ -357,6 +357,21 @@ return {
             }
         },
         {
+            name = 'areSymlinksEnabled',
+            description = 'Gets whether love.filesystem follows symbolic links.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'Whether love.filesystem follows symbolic links.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'createDirectory',
             description = 'Creates a directory.',
             functions = {
@@ -654,6 +669,28 @@ return {
             }
         },
         {
+            name = 'isSymlink',
+            description = 'Gets whether a filepath is actually a symbolic link.\n\nIf symbolic links are not enabled (via love.filesystem.setSymlinksEnabled), this function will always return false.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'The file or directory path to check.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'symlink',
+                            description = 'True if the path is a symbolic link, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'lines',
             description = 'Iterate over the lines in a file.',
             functions = {
@@ -835,6 +872,21 @@ return {
                             default = '"first"',
                             description = 'Whether love.filesystem will look for files in the write directory before or after looking in the main game source.'
                         }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setSymlinksEnabled',
+            description = 'Sets whether love.filesystem follows symbolic links. It is disabled by default.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'Whether love.filesystem should follow symbolic links.'
+                        },
                     }
                 }
             }
