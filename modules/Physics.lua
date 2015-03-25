@@ -180,6 +180,21 @@ return {
                     }
                 },
                 {
+                    name = 'getContactList',
+                    description = 'Gets a list of all Contacts attached to the Body.',
+                    functions = {
+                        {
+                            returns = {
+                                {
+                                    type = 'table',
+                                    name = 'contacts',
+                                    description = 'A list with all contacts associated with the Body.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getFixtureList',
                     description = 'Returns a table with all fixtures.',
                     functions = {
