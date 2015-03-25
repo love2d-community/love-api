@@ -174,27 +174,94 @@ return {
                         {
                             type = 'number',
                             name = 'width',
-                            description = 'Display width.'
+                            description = 'Window width.'
                         },
                         {
                             type = 'number',
                             name = 'height',
-                            description = 'Display height.'
+                            description = 'Window height.'
                         },
                         {
-                            type = 'boolean',
-                            name = 'fullscreen',
-                            description = 'Fullscreen (true) or windowed (false).'
-                        },
-                        {
-                            type = 'boolean',
-                            name = 'vsync',
-                            description = 'True if vertical sync is enabled or false if disabled.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'fsaa',
-                            description = 'The number of FSAA samples.'
+                            type = 'table',
+                            name = 'flags',
+                            description = 'Table containing the window properties.',
+                            table = {
+                                {
+                                    type = 'boolean',
+                                    name = 'fullscreen',
+                                    description = 'Fullscreen (true), or windowed (false).'
+                                },
+                                {
+                                    type = 'FullscreenType',
+                                    name = 'fullscreentype',
+                                    description = 'The type of fullscreen mode used.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'vsync',
+                                    description = 'True if the graphics framerate is synchronized with the monitor\'s refresh rate, false otherwise.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'fsaa',
+                                    description = 'The number of antialiasing samples used (0 if FSAA is disabled.)'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'resizable',
+                                    description = 'True if the window is resizable in windowed mode, false otherwise.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'borderless',
+                                    description = 'True if the window is borderless in windowed mode, false otherwise.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'centered',
+                                    description = 'True if the window is centered in windowed mode, false otherwise.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'display',
+                                    description = 'The index of the display the window is currently in, if multiple monitors are available.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'minwidth',
+                                    description = 'The minimum width of the window, if it\'s resizable.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'minheight',
+                                    description = 'The minimum height of the window, if it\'s resizable.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'highdpi',
+                                    description = 'True if high-dpi mode is allowed on Retina displays in OS X. Does nothing on non-Retina displays.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'srgb',
+                                    description = 'True if sRGB gamma correction is applied when drawing to the screen.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'refreshrate',
+                                    description = 'The refresh rate of the screen\'s current display mode, in Hz. May be 0 if the value can\'t be determined.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'x',
+                                    description = 'The x-coordinate of the window\'s position in its current display.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'y',
+                                    description = 'The y-coordinate of the window\'s position in its current display.'
+                                },
+                            }
                         }
                     }
                 }
