@@ -68,6 +68,21 @@ return {
             }
         },
         {
+            name = 'getRelativeMode',
+            description = 'Gets whether relative mode is enabled for the mouse.\n\nIf relative mode is enabled, the cursor is hidden and doesn\'t move when the mouse does, but relative mouse motion events are still generated via love.mousemoved. This lets the mouse move in any direction indefinitely without the cursor getting stuck at the edges of the screen.\n\nThe reported position of the mouse is not updated while relative mode is enabled, even when relative mouse motion events are generated.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            description = 'True if relative mode is enabled, false if it\'s disabled.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getSystemCursor',
             description = 'Gets a Cursor object representing a system-native hardware cursor.\n\n Hardware cursors are framerate-independent and work the same way as normal operating system cursors. Unlike drawing an image at the mouse\'s current coordinates, hardware cursors never have visible lag between when the mouse is moved and when the cursor position updates, even at low framerates.',
             functions = {
@@ -323,6 +338,21 @@ return {
                             type = 'number',
                             name = 'y',
                             description = 'The new position of the mouse along the y-axis.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setRelativeMode',
+            description = 'Sets whether relative mode is enabled for the mouse.\n\nWhen relative mode is enabled, the cursor is hidden and doesn\'t move when the mouse does, but relative mouse motion events are still generated via love.mousemoved. This lets the mouse move in any direction indefinitely without the cursor getting stuck at the edges of the screen.\n\nThe reported position of the mouse is not updated while relative mode is enabled, even when relative mouse motion events are generated.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'True to enable relative mode, false to disable it.'
                         }
                     }
                 }
