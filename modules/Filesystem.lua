@@ -580,6 +580,21 @@ return {
             }
         },
         {
+            name = 'getSourceBaseDirectory',
+            description = 'Returns the full path to the directory containing the .love file. If the game is fused to the LÖVE executable, then the directory containing the executable is returned.\n\nIf love.filesystem.isFused is true, the path returned by this function can be passed to love.filesystem.mount, which will make the directory containing the main game (e.g. C:\Program Files\coolgame\) readable by love.filesystem.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'The full platform-dependent path of the directory containing the .love file.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'getUserDirectory',
             description = 'Returns the path of the user\'s directory.',
             functions = {
@@ -735,6 +750,60 @@ return {
             }
         },
         {
+            name = 'mount',
+            description = 'Mounts a zip file or folder in the game\'s save directory for reading.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'archive',
+                            description = 'The folder or zip file in the game\'s save directory to mount.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'mountpoint',
+                            description = 'The new path the archive will be mounted to.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'True if the archive was successfully mounted, false otherwise.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'archive',
+                            description = 'The folder or zip file in the game\'s save directory to mount.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'mountpoint',
+                            description = 'The new path the archive will be mounted to.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'appendToPath',
+                            default = 'false',
+                            description = 'Whether the archive will be searched when reading a filepath before or after already-mounted archives. This includes the game\'s source and save directories.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'True if the archive was successfully mounted, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'newFile',
             description = 'Creates a new File object. It needs to be opened before it can be accessed.',
             functions = {
@@ -877,6 +946,21 @@ return {
             }
         },
         {
+            name = 'setSource',
+            description = 'Sets the source of the game, where the code is present. This function can only be called once, and is normally automatically done by LÖVE.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'Absolute path to the game\'s source folder.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'setSymlinksEnabled',
             description = 'Sets whether love.filesystem follows symbolic links. It is disabled by default.',
             functions = {
@@ -887,6 +971,28 @@ return {
                             name = 'enable',
                             description = 'Whether love.filesystem should follow symbolic links.'
                         },
+                    }
+                }
+            }
+        },
+        {
+            name = 'unmount',
+            description = 'Unmounts a zip file or folder previously mounted for reading with love.filesystem.mount.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'archive',
+                            description = 'The folder or zip file in the game\'s save directory which is currently mounted.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'True if the archive was successfully unmounted, false otherwise.'
+                        }
                     }
                 }
             }
