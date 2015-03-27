@@ -580,6 +580,21 @@ return {
             }
         },
         {
+            name = 'getSourceBaseDirectory',
+            description = 'Returns the full path to the directory containing the .love file. If the game is fused to the LÖVE executable, then the directory containing the executable is returned.\n\nIf love.filesystem.isFused is true, the path returned by this function can be passed to love.filesystem.mount, which will make the directory containing the main game (e.g. C:\Program Files\coolgame\) readable by love.filesystem.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'The full platform-dependent path of the directory containing the .love file.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'getUserDirectory',
             description = 'Returns the path of the user\'s directory.',
             functions = {
