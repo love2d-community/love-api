@@ -946,6 +946,28 @@ return {
             }
         },
         {
+            name = 'unmount',
+            description = 'Unmounts a zip file or folder previously mounted for reading with love.filesystem.mount.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'archive',
+                            description = 'The folder or zip file in the game\'s save directory which is currently mounted.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'True if the archive was successfully unmounted, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'write',
             description = 'Write data to a file.\n\nIf you are getting the error message "Could not set write directory", try setting the save directory. This is done either with love.filesystem.setIdentity or by setting the identity field in love.conf.',
             functions = {
