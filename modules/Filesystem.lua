@@ -931,6 +931,21 @@ return {
             }
         },
         {
+            name = 'setSource',
+            description = 'Sets the source of the game, where the code is present. This function can only be called once, and is normally automatically done by LÖVE.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'Absolute path to the game\'s source folder.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'setSymlinksEnabled',
             description = 'Sets whether love.filesystem follows symbolic links. It is disabled by default.',
             functions = {
