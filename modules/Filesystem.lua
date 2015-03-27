@@ -735,6 +735,60 @@ return {
             }
         },
         {
+            name = 'mount',
+            description = 'Mounts a zip file or folder in the game\'s save directory for reading.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'archive',
+                            description = 'The folder or zip file in the game\'s save directory to mount.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'mountpoint',
+                            description = 'The new path the archive will be mounted to.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'True if the archive was successfully mounted, false otherwise.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'archive',
+                            description = 'The folder or zip file in the game\'s save directory to mount.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'mountpoint',
+                            description = 'The new path the archive will be mounted to.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'appendToPath',
+                            default = 'false',
+                            description = 'Whether the archive will be searched when reading a filepath before or after already-mounted archives. This includes the game\'s source and save directories.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'True if the archive was successfully mounted, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'newFile',
             description = 'Creates a new File object. It needs to be opened before it can be accessed.',
             functions = {
