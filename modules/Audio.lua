@@ -110,21 +110,6 @@ return {
                     }
                 },
                 {
-                    name = 'getDopplerScale',
-                    description = 'Gets the current global scale factor for velocity-based doppler effects.',
-                    functions = {
-                        {
-                            returns = {
-                                {
-                                    type = 'number',
-                                    name = 'scale',
-                                    description = 'The current doppler scale factor.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'getPitch',
                     description = 'Gets the current pitch of the Source.',
                     functions = {
@@ -397,21 +382,6 @@ return {
                     }
                 },
                 {
-                    name = 'setDopplerScale',
-                    description = 'Sets a global scale factor for velocity-based doppler effects. The default scale value is 1.',
-                    functions = {
-                        {
-                            arguments = {
-                                {
-                                    type = 'number',
-                                    name = 'scale',
-                                    description = 'The new doppler scale factor. The scale must be greater than 0.'
-                                },
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'setAttenuationDistances',
                     description = 'Sets the reference and maximum distance of the source.',
                     functions = {
@@ -634,6 +604,21 @@ return {
                             type = 'DistanceModel',
                             name = 'model',
                             description = 'The current distance model.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getDopplerScale',
+            description = 'Gets the current global scale factor for velocity-based doppler effects.',
+            functions = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'scale',
+                            description = 'The current doppler scale factor.'
                         }
                     }
                 }
@@ -915,6 +900,21 @@ return {
                             name = 'model',
                             description = 'The new distance model.'
                         }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setDopplerScale',
+            description = 'Sets a global scale factor for velocity-based doppler effects. The default scale value is 1.',
+            functions = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'scale',
+                            description = 'The new doppler scale factor. The scale must be greater than 0.'
+                        },
                     }
                 }
             }
