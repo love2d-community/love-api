@@ -5365,7 +5365,7 @@ return {
         },
         {
             name = 'CanvasFormat',
-            description = '',
+            description = 'Canvas formats.',
             constants = {
                 {
                     name = 'normal',
