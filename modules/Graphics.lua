@@ -5414,7 +5414,7 @@ return {
                 },
                 {
                     name = 'strip',
-                    description = 'The vertices create a series of connected triangles using vertices v1, v2, v3, then v3, v2, v4 (note the order), then v3, v4, v5 and so on.'
+                    description = 'The vertices create a series of connected triangles using vertices 1, 2, 3, then 3, 2, 4 (note the order), then 3, 4, 5 and so on.'
                 },
                 {
                     name = 'triangles',
