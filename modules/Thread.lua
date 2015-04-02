@@ -37,6 +37,19 @@ return {
                     functions = {
                         {}
                     }
+                },
+                {
+                    name = 'isRunning',
+                    description = 'Returns whether the thread is currently running.\n\nThreads which are not running can be (re)started with Thread:start.',
+                    functions = {
+                        {
+                            returns = {
+                                type = 'boolean',
+                                name = 'running',
+                                description = 'True if the thread is running, false otherwise.'
+                            }
+                        }
+                    }
                 }
             },
             supertypes = {
@@ -123,7 +136,7 @@ return {
                     description = 'Send a message to the thread Channel.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua\'s files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.',
                     functions = {
                         {
-                            returns = {
+                            arguments = {
                                 {
                                     type = 'value',
                                     name = 'value',
@@ -138,7 +151,7 @@ return {
                     description = 'Send a message to the thread Channel and wait for a thread to accept it.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua\'s files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.',
                     functions = {
                         {
-                            returns = {
+                            arguments = {
                                 {
                                     type = 'value',
                                     name = 'value',
@@ -200,13 +213,24 @@ return {
                     arguments = {
                         {
                             type = 'string',
-                            name = 'name',
-                            description = 'The name of the thread.'
-                        },
-                        {
-                            type = 'string',
                             name = 'filename',
-                            description = 'The name of the File to use as source.'
+                            description = 'The name of the Lua File to use as source.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Thread',
+                            name = 'thread',
+                            description = 'A new Thread that has yet to be started.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'FileData',
+                            name = 'fileData',
+                            description = 'The FileData containing the Lua code to use as the source.'
                         }
                     },
                     returns = {
@@ -221,34 +245,8 @@ return {
                     arguments = {
                         {
                             type = 'string',
-                            name = 'name',
-                            description = 'The name of the thread.'
-                        },
-                        {
-                            type = 'File',
-                            name = 'file',
-                            description = 'The file to use as source.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Thread',
-                            name = 'thread',
-                            description = 'A new Thread that has yet to be started.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'name',
-                            description = 'The name of the thread.'
-                        },
-                        {
-                            type = 'Data',
-                            name = 'data',
-                            description = 'The data to use as source.'
+                            name = 'codestring',
+                            description = 'A string containing the Lua code to use as the source.'
                         }
                     },
                     returns = {
