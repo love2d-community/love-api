@@ -28,7 +28,26 @@ return {
                     name = 'start',
                     description = 'Starts the thread.\n\nThreads can be restarted after they have completed their execution.',
                     functions = {
-                        {}
+                        {},
+                        {
+                            arguments = {
+                                {
+                                    type = 'value',
+                                    name = 'arg1',
+                                    description = 'A string, number, boolean, LÖVE object, or simple table.'
+                                },
+                                {
+                                    type = 'value',
+                                    name = 'arg2',
+                                    description = 'A string, number, boolean, LÖVE object, or simple table.'
+                                },
+                                {
+                                    type = 'value',
+                                    name = '...',
+                                    description = 'You can continue passing values to the thread.'
+                                }
+                            }
+                        }
                     }
                 },
                 {
