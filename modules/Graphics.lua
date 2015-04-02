@@ -4051,6 +4051,34 @@ return {
                             description = 'The new Mesh.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'vertexcount',
+                            description = 'The total number of vertices the Mesh will use. Each vertex is initialized to {0,0, 0,0, 255,255,255,255}.'
+                        },
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            default = 'nil',
+                            description = 'The Image or Canvas to use when drawing the Mesh. May be nil to use no texture.'
+                        },
+                        {
+                            type = 'MeshDrawMode',
+                            name = 'mode',
+                            default = '"fan"',
+                            description = 'How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The new Mesh.'
+                        }
+                    }
                 }
             }
         },
@@ -4671,7 +4699,16 @@ return {
             name = 'push',
             description = 'Copies and pushes the current coordinate transformation to the transformation stack.\n\nThis function is always used to prepare for a corresponding pop operation later. It stores the current coordinate transformation state into the transformation stack and keeps it active. Later changes to the transformation can be undone by using the pop operation, which returns the coordinate transform to the state it was in before calling push.',
             functions = {
-                {}
+                {},
+                {
+                    arguments = {
+                        {
+                            type = 'StackType',
+                            name = 'stack',
+                            description = 'The type of stack to push (e.g. just transformation state, or all love.graphics state).'
+                        },
+                    }
+                }
             }
         },
         {
@@ -5328,7 +5365,7 @@ return {
         },
         {
             name = 'CanvasFormat',
-            description = '',
+            description = 'Canvas formats.',
             constants = {
                 {
                     name = 'normal',
@@ -5414,7 +5451,7 @@ return {
                 },
                 {
                     name = 'strip',
-                    description = 'The vertices create a series of connected triangles using vertices v1, v2, v3, then v3, v2, v4 (note the order), then v3, v4, v5 and so on.'
+                    description = 'The vertices create a series of connected triangles using vertices 1, 2, 3, then 3, 2, 4 (note the order), then 3, 4, 5 and so on.'
                 },
                 {
                     name = 'triangles',
@@ -5573,6 +5610,20 @@ return {
                 {
                     name = 'stream',
                     description = 'The SpriteBatch data will always change between draws.'
+                }
+            }
+        },
+        {
+            name = 'StackType',
+            description = 'Graphics state stack types used with love.graphics.push.',
+            constants = {
+                {
+                    name = 'transform',
+                    description = 'The transformation stack (love.graphics.translate, love.graphics.rotate, etc.)'
+                },
+                {
+                    name = 'all',
+                    description = 'All love.graphics state, including transform state.'
                 }
             }
         },
