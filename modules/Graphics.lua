@@ -5614,6 +5614,20 @@ return {
             }
         },
         {
+            name = 'StackType',
+            description = 'Graphics state stack types used with love.graphics.push.',
+            constants = {
+                {
+                    name = 'transform',
+                    description = 'The transformation stack (love.graphics.translate, love.graphics.rotate, etc.)'
+                },
+                {
+                    name = 'all',
+                    description = 'All love.graphics state, including transform state.'
+                }
+            }
+        },
+        {
             name = 'TextureFormat',
             description = 'Canvas and Image texture formats.\n\nThe HDR format is most useful when combined with pixel shaders. Effects such as tonemapped HDR with bloom can be accomplished, or the canvas can be used to store arbitrary non-color data such as positions which are then interpreted and used in a shader, as long as you draw the right things to the canvas.\n\nThe sRGB format should only be used when doing gamma-correct rendering, which is an advanced topic and it\'s easy to get color-spaces mixed up. If you\'re not sure whether you need this, you might want to avoid it.\n\nNot all systems support the HDR and sRGB formats. Use love.graphics.isSupported to check before creating the Canvas or Image.',
             constants = {
