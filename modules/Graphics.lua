@@ -4051,6 +4051,34 @@ return {
                             description = 'The new Mesh.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'vertexcount',
+                            description = 'The total number of vertices the Mesh will use. Each vertex is initialized to {0,0, 0,0, 255,255,255,255}.'
+                        },
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            default = 'nil',
+                            description = 'The Image or Canvas to use when drawing the Mesh. May be nil to use no texture.'
+                        },
+                        {
+                            type = 'MeshDrawMode',
+                            name = 'mode',
+                            default = '"fan"',
+                            description = 'How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The new Mesh.'
+                        }
+                    }
                 }
             }
         },
