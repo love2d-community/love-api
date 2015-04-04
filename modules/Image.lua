@@ -12,7 +12,7 @@ return {
                 {
                     name = 'getDimensions',
                     description = 'Gets the width and height of the CompressedData.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -53,7 +53,7 @@ return {
                 {
                     name = 'getHeight',
                     description = 'Gets the height of the CompressedData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -84,7 +84,7 @@ return {
                 {
                     name = 'getMipmapCount',
                     description = 'Gets the number of mipmap levels in the CompressedData. The base mipmap level (original image) is included in the count.\n\nMipmap filtering cannot be activated for an Image created from a CompressedData which does not have enough mipmap levels to go down to 1x1. For example, a 256x256 image created from a CompressedData should have 8 mipmap levels or Image:setMipmapFilter will error. Most tools which can create compressed textures are able to automatically generate mipmaps for them in the same file.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -99,7 +99,7 @@ return {
                 {
                     name = 'getWidth',
                     description = 'Gets the width of the CompressedData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -143,7 +143,7 @@ return {
                 {
                     name = 'encode',
                     description = 'Encodes the ImageData and writes it to the save directory.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -172,7 +172,7 @@ return {
                 {
                     name = 'getDimensions',
                     description = 'Gets the width and height of the ImageData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -192,7 +192,7 @@ return {
                 {
                     name = 'getHeight',
                     description = 'Gets the height of the ImageData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -207,7 +207,7 @@ return {
                 {
                     name = 'getPixel',
                     description = 'Gets the pixel at the specified position.\n\nValid x and y values start at 0 and go up to image width and height minus 1.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -249,7 +249,7 @@ return {
                 {
                     name = 'getWidth',
                     description = 'Gets the width of the ImageData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -264,7 +264,7 @@ return {
                 {
                     name = 'mapPixel',
                     description = 'Transform an image by applying a function to every pixel.\n\nThis function is a higher order function. It takes another function as a parameter, and calls it once for each pixel in the ImageData.\n\nThe function parameter is called with six parameters for each pixel in turn. The parameters are numbers that represent the x and y coordinates of the pixel and its red, green, blue and alpha values. The function parameter can return up to four number values, which become the new r, g, b and a values of the pixel. If the function returns fewer values, the remaining components are set to 0.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -279,7 +279,7 @@ return {
                 {
                     name = 'paste',
                     description = 'Paste into ImageData from another source ImageData.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -324,7 +324,7 @@ return {
                 {
                     name = 'setPixel',
                     description = 'Sets the color of a pixel.\n\nValid x and y values start at 0 and go up to image width and height minus 1.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -372,7 +372,7 @@ return {
         {
             name = 'isCompressed',
             description = 'Determines whether a file can be loaded as CompressedData.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -410,7 +410,7 @@ return {
         {
             name = 'newCompressedData',
             description = 'Create a new CompressedData object from a compressed image file. LÖVE currently supports DDS files compressed with the DXT1, DXT5, and BC5 / 3Dc formats.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -448,7 +448,7 @@ return {
         {
             name = 'newImageData',
             description = 'Create a new ImageData object.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

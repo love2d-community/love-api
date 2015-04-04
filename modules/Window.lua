@@ -5,7 +5,7 @@ return {
         {
             name = 'fromPixels',
             description = 'Converts a number from pixels to density-independent units.\n\nIf the highdpi window flag is enabled in Mac OS X and the window is in a retina screen, density-independent units will be twice the size of pixels. Otherwise they will usually be the same. This function can be used to convert coordinates from pixels to the the size users are expecting them to display at onscreen. love.window.toPixels does the opposite.\n\nMost LÖVE functions return values and expect arguments in terms of pixels rather than density-independent units.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -53,7 +53,7 @@ return {
         {
             name = 'getDimensions',
             description = 'Gets the width and height of the window.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -73,7 +73,7 @@ return {
         {
             name = 'getDisplayName',
             description = 'Gets the name of a display.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -95,7 +95,7 @@ return {
         {
             name = 'getFullscreen',
             description = 'Gets whether the window is fullscreen.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -115,7 +115,7 @@ return {
         {
             name = 'getFullscreenModes',
             description = 'Gets a list of supported fullscreen modes.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -138,7 +138,7 @@ return {
         {
             name = 'getHeight',
             description = 'Gets the height of the window.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -153,7 +153,7 @@ return {
         {
             name = 'getIcon',
             description = 'Gets the window icon.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -168,7 +168,7 @@ return {
         {
             name = 'getMode',
             description = 'Returns the current display mode.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -270,7 +270,7 @@ return {
         {
             name = 'getPixelScale',
             description = 'Gets the scale factor associated with the window. In Mac OS X with the window in a retina screen and the highdpi window flag enabled this will be 2.0, otherwise it will be 1.0.\n\nThe scale factor is used to display graphics at a size the user is expecting, rather than the size of the pixels. On retina displays with the highdpi window flag enabled, the pixels in the window are 2x smaller than the scale of the normal content on the screen, so love.window.getPixelScale will return 2.\n\nThe units of love.graphics.getWidth, love.graphics.getHeight, love.mouse.getPosition, and mouse events are always in terms of pixels.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -285,7 +285,7 @@ return {
         {
             name = 'getPosition',
             description = 'Gets the position of the window on the screen.\n\nThe window position is in the coordinate space of the display it is currently in.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -310,7 +310,7 @@ return {
         {
             name = 'getTitle',
             description = 'Gets the window title.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -325,7 +325,7 @@ return {
         {
             name = 'getWidth',
             description = 'Gets the width of the window.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -340,7 +340,7 @@ return {
         {
             name = 'hasFocus',
             description = 'Checks if the game window has keyboard focus.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -355,7 +355,7 @@ return {
         {
             name = 'hasMouseFocus',
             description = 'Checks if the game window has mouse focus.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -370,7 +370,7 @@ return {
         {
             name = 'isCreated',
             description = 'Checks if the window has been created.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -385,7 +385,7 @@ return {
         {
             name = 'isVisible',
             description = 'Checks if the game window is visible.\n\nThe window is considered visible if it\'s not minimized and the program isn\'t hidden.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -400,14 +400,14 @@ return {
         {
             name = 'minimize',
             description = 'Minimizes the window to the system\'s task bar / dock.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'setFullscreen',
             description = 'Enters or exits fullscreen. The display to use when entering fullscreen is chosen based on which display the window is currently in, if multiple monitors are connected.\n\nIf fullscreen mode is entered and the window size doesn\'t match one of the monitor\'s display modes (in normal fullscreen mode) or the window size doesn\'t match the desktop size (in \'desktop\' fullscreen mode), the window will be resized appropriately. The window will revert back to its original size again when fullscreen mode is exited using this function.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -450,7 +450,7 @@ return {
         {
             name = 'setIcon',
             description = 'Sets the window icon until the game is quit. Not all operating systems support very large icon images.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -472,7 +472,7 @@ return {
         {
             name = 'setMode',
             description = 'Changes the display mode.\n\nIf width or height is 0, the width or height of the desktop will be used.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -592,7 +592,7 @@ return {
         {
             name = 'setPosition',
             description = 'Sets the position of the window on the screen.\n\nThe window position is in the coordinate space of the specified display.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -617,7 +617,7 @@ return {
         {
             name = 'setTitle',
             description = 'Sets the window title.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -632,7 +632,7 @@ return {
         {
             name = 'showMessageBox',
             description = 'Displays a message box dialog above the love window. The message box contains a title, optional text, and buttons.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -707,7 +707,7 @@ return {
         {
             name = 'toPixels',
             description = 'Converts a number from density-independent units to pixels.\n\nIf the highdpi window flag is enabled in Mac OS X and the window is in a retina screen, density-independent units will be twice the size of pixels. Otherwise they will usually be the same. This function can be used to convert coordinates from the size users are expecting them to display at onscreen to pixels. love.window.fromPixels does the opposite.\n\nMost LÖVE functions return values and expect arguments in terms of pixels rather than density-independent units.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

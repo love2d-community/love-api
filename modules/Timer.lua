@@ -5,7 +5,7 @@ return {
         {
             name = 'getAverageDelta',
             description = 'Returns the average delta time (seconds per frame) over the last second.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -20,7 +20,7 @@ return {
         {
             name = 'getDelta',
             description = 'Returns the time between the last two frames.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -35,7 +35,7 @@ return {
         {
             name = 'getFPS',
             description = 'Returns the current frames per second.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -50,7 +50,7 @@ return {
         {
             name = 'getTime',
             description = 'Returns the value of a timer with an unspecified starting time. This function should only be used to calculate differences between points in time, as the starting time of the timer is unknown.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -65,7 +65,7 @@ return {
         {
             name = 'sleep',
             description = 'Sleeps the program for the specified amount of time.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -80,7 +80,7 @@ return {
         {
             name = 'step',
             description = 'Measures the time between two frames. Calling this changes the return value of love.timer.getDelta.',
-            functions = {
+            variants = {
                 {}
             }
         }
