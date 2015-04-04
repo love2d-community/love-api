@@ -13,7 +13,7 @@ return {
                 {
                     name = 'getType',
                     description = 'Gets the type of the Cursor.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -35,7 +35,7 @@ return {
         {
             name = 'getCursor',
             description = 'Gets the current Cursor.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -50,7 +50,7 @@ return {
         {
             name = 'getPosition',
             description = 'Returns the current position of the mouse.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -70,7 +70,7 @@ return {
         {
             name = 'getRelativeMode',
             description = 'Gets whether relative mode is enabled for the mouse.\n\nIf relative mode is enabled, the cursor is hidden and doesn\'t move when the mouse does, but relative mouse motion events are still generated via love.mousemoved. This lets the mouse move in any direction indefinitely without the cursor getting stuck at the edges of the screen.\n\nThe reported position of the mouse is not updated while relative mode is enabled, even when relative mouse motion events are generated.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -85,7 +85,7 @@ return {
         {
             name = 'getSystemCursor',
             description = 'Gets a Cursor object representing a system-native hardware cursor.\n\n Hardware cursors are framerate-independent and work the same way as normal operating system cursors. Unlike drawing an image at the mouse\'s current coordinates, hardware cursors never have visible lag between when the mouse is moved and when the cursor position updates, even at low framerates.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -107,7 +107,7 @@ return {
         {
             name = 'getX',
             description = 'Returns the current x position of the mouse.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -122,7 +122,7 @@ return {
         {
             name = 'getY',
             description = 'Returns the current y position of the mouse.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -137,7 +137,7 @@ return {
         {
             name = 'isDown',
             description = 'Checks whether a certain mouse button is down. This function does not detect mousewheel scrolling; you must use the love.mousepressed callback for that.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -175,7 +175,7 @@ return {
         {
             name = 'isGrabbed',
             description = 'Checks if the mouse is grabbed.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -190,7 +190,7 @@ return {
         {
             name = 'isVisible',
             description = 'Checks if the cursor is visible.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -205,7 +205,7 @@ return {
         {
             name = 'newCursor',
             description = 'Creates a new hardware Cursor object from an image file or ImageData.\n\nHardware cursors are framerate-independent and work the same way as normal operating system cursors. Unlike drawing an image at the mouse\'s current coordinates, hardware cursors never have visible lag between when the mouse is moved and when the cursor position updates, even at low frameratesn\n\nThe hot spot is the point the operating system uses to determine what was clicked and at what position the mouse cursor is. For example, the normal arrow pointer normally has its hot spot at the top left of the image, but a crosshair cursor might have it in the middle.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -295,7 +295,7 @@ return {
         {
             name = 'setCursor',
             description = 'Sets the current mouse cursor.\n\nResets the current mouse cursor to the default when called without arguments.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -311,7 +311,7 @@ return {
         {
             name = 'setGrabbed',
             description = 'Grabs the mouse and confines it to the window.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -326,7 +326,7 @@ return {
         {
             name = 'setPosition',
             description = 'Sets the position of the mouse.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -346,7 +346,7 @@ return {
         {
             name = 'setRelativeMode',
             description = 'Sets whether relative mode is enabled for the mouse.\n\nWhen relative mode is enabled, the cursor is hidden and doesn\'t move when the mouse does, but relative mouse motion events are still generated via love.mousemoved. This lets the mouse move in any direction indefinitely without the cursor getting stuck at the edges of the screen.\n\nThe reported position of the mouse is not updated while relative mode is enabled, even when relative mouse motion events are generated.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -361,7 +361,7 @@ return {
         {
             name = 'setVisible',
             description = 'Sets the visibility of the cursor.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -376,7 +376,7 @@ return {
         {
             name = 'setX',
             description = 'Sets the current X position of the mouse.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -391,7 +391,7 @@ return {
         {
             name = 'setY',
             description = 'Sets the current Y position of the mouse.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

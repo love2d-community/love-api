@@ -12,7 +12,7 @@ return {
                 {
                     name = 'getBitDepth',
                     description = 'Returns the number of bits per sample.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -27,7 +27,7 @@ return {
                 {
                     name = 'getChannels',
                     description = 'Returns the number of channels in the stream.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -42,7 +42,7 @@ return {
                 {
                     name = 'getDuration',
                     description = 'Returns the number of channels in the stream.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -57,7 +57,7 @@ return {
                 {
                     name = 'getSample',
                     description = 'Gets the sample at the specified position.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -79,7 +79,7 @@ return {
                 {
                     name = 'getSampleCount',
                     description = 'Returns the sample count of the SoundData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -94,7 +94,7 @@ return {
                 {
                     name = 'getSampleRate',
                     description = 'Returns the sample rate of the SoundData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -109,7 +109,7 @@ return {
                 {
                     name = 'setSample',
                     description = 'Sets the sample at the specified position.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -137,7 +137,7 @@ return {
         {
             name = 'newSoundData',
             description = 'Creates new SoundData from a file. It\'s also possible to create SoundData with a custom sample rate, channel and bit depth.\n\nThe sound data will be decoded to the memory in a raw format. It is recommended to create only short sounds like effects, as a 3 minute song uses 30 MB of memory this way.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

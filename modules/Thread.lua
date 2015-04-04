@@ -12,7 +12,7 @@ return {
                 {
                     name = 'getError',
                     description = 'Retrieves the error string from the thread if it produced a error.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -27,7 +27,7 @@ return {
                 {
                     name = 'start',
                     description = 'Starts the thread.\n\nThreads can be restarted after they have completed their execution.',
-                    functions = {
+                    variants = {
                         {},
                         {
                             arguments = {
@@ -53,14 +53,14 @@ return {
                 {
                     name = 'wait',
                     description = 'Wait for a thread to finish. This call will block until the thread finishes.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'isRunning',
                     description = 'Returns whether the thread is currently running.\n\nThreads which are not running can be (re)started with Thread:start.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 type = 'boolean',
@@ -86,14 +86,14 @@ return {
                 {
                     name = 'clear',
                     description = 'Clears all the messages in the Channel queue.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'demand',
                     description = 'Retrieves the value of a Channel message and removes it from the message queue.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It waits until a message is in the queue then returns the message value.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -108,7 +108,7 @@ return {
                 {
                     name = 'getCount',
                     description = 'Retrieves the number of messages in the thread Channel queue.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -123,7 +123,7 @@ return {
                 {
                     name = 'peek',
                     description = 'Retrieves the value of a Channel message, but leaves it in the queue.\n\nThe value of the message can be a boolean, string, number or a LÖVE userdata. It returns nil if there\'s no message in the queue.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -138,7 +138,7 @@ return {
                 {
                     name = 'pop',
                     description = 'Retrieves the value of a Channel message and removes it from the message queue.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It returns nil if there are no messages in the queue.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -153,7 +153,7 @@ return {
                 {
                     name = 'push',
                     description = 'Send a message to the thread Channel.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua\'s files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -168,7 +168,7 @@ return {
                 {
                     name = 'supply',
                     description = 'Send a message to the thread Channel and wait for a thread to accept it.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua\'s files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -190,7 +190,7 @@ return {
         {
             name = 'getChannel',
             description = 'Creates or retrieves a named thread channel.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -212,7 +212,7 @@ return {
         {
             name = 'newChannel',
             description = 'Create a new unnamed thread channel.\n\nOne use for them is to pass new unnamed channels to other threads via Channel:push',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -227,7 +227,7 @@ return {
         {
             name = 'newThread',
             description = 'Creates a new Thread from a File or Data object.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

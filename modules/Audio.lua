@@ -12,7 +12,7 @@ return {
                 {
                     name = 'clone',
                     description = 'Creates an identical copy of the Source in the stopped state.\n\nStatic Sources will use significantly less memory and take much less time to be created if Source:clone is used to create them instead of love.audio.newSource, so this method should be preferred when making multiple Sources which play the same sound.\n\nCloned Sources inherit all the set-able state of the original Source, but they are initialized stopped.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -27,7 +27,7 @@ return {
                 {
                     name = 'getAttenuationDistances',
                     description = 'Returns the reference and maximum distance of the source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -47,7 +47,7 @@ return {
                 {
                     name = 'getChannels',
                     description = 'Gets the number of channels in the Source. Only 1-channel (mono) Sources can use directional and positional effects.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -62,7 +62,7 @@ return {
                 {
                     name = 'getCone',
                     description = 'Gets the Source\'s directional volume cones. Together with Source:setDirection, the cone angles allow for the Source\'s volume to vary depending on its direction.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -87,7 +87,7 @@ return {
                 {
                     name = 'getDirection',
                     description = 'Gets the direction of the Source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -112,7 +112,7 @@ return {
                 {
                     name = 'getPitch',
                     description = 'Gets the current pitch of the Source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -127,7 +127,7 @@ return {
                 {
                     name = 'getPosition',
                     description = 'Gets the position of the Source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -152,7 +152,7 @@ return {
                 {
                     name = 'getRolloff',
                     description = 'Returns the rolloff factor of the source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -167,7 +167,7 @@ return {
                 {
                     name = 'getVelocity',
                     description = 'Gets the velocity of the Source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -192,7 +192,7 @@ return {
                 {
                     name = 'getVolume',
                     description = 'Gets the current volume of the Source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -207,7 +207,7 @@ return {
                 {
                     name = 'getVolumeLimits',
                     description = 'Returns the volume limits of the source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -227,7 +227,7 @@ return {
                 {
                     name = 'isLooping',
                     description = 'Returns whether the Source will loop.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -242,7 +242,7 @@ return {
                 {
                     name = 'isPaused',
                     description = 'Returns whether the Source is paused.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -257,7 +257,7 @@ return {
                 {
                     name = 'isPlaying',
                     description = 'Returns whether the Source is playing.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -272,7 +272,7 @@ return {
                 {
                     name = 'isStatic',
                     description = 'Returns whether the Source is static.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -287,7 +287,7 @@ return {
                 {
                     name = 'isStopped',
                     description = 'Returns whether the Source is stopped.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -302,14 +302,14 @@ return {
                 {
                     name = 'pause',
                     description = 'Pauses the Source.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'play',
                     description = 'Starts playing the Source.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -324,21 +324,21 @@ return {
                 {
                     name = 'resume',
                     description = 'Resumes a paused Source.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'rewind',
                     description = 'Rewinds a Source.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'seek',
                     description = 'Sets the playing position of the Source.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -359,7 +359,7 @@ return {
                 {
                     name = 'setDirection',
                     description = 'Sets the direction vector of the Source. A zero vector makes the source non-directional.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -384,7 +384,7 @@ return {
                 {
                     name = 'setAttenuationDistances',
                     description = 'Sets the reference and maximum distance of the source.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -404,7 +404,7 @@ return {
                 {
                     name = 'setCone',
                     description = 'Sets the Source\'s directional volume cones. Together with Source:setDirection, the cone angles allow for the Source\'s volume to vary depending on its direction.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -430,7 +430,7 @@ return {
                 {
                     name = 'setLooping',
                     description = 'Sets whether the Source should loop.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -445,7 +445,7 @@ return {
                 {
                     name = 'setPitch',
                     description = 'Sets the pitch of the Source.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -460,7 +460,7 @@ return {
                 {
                     name = 'setPosition',
                     description = 'Sets the position of the Source.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -485,7 +485,7 @@ return {
                 {
                     name = 'setRolloff',
                     description = 'Sets the rolloff factor.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -500,7 +500,7 @@ return {
                 {
                     name = 'setVelocity',
                     description = 'Sets the velocity of the Source.\n\nThis does not change the position of the Source, but is used to calculate the doppler effect.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -525,7 +525,7 @@ return {
                 {
                     name = 'setVolume',
                     description = 'Sets the volume of the Source.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -540,7 +540,7 @@ return {
                 {
                     name = 'setVolumeLimits',
                     description = 'Sets the volume limits of the source. The limits have to be numbers from 0 to 1.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -560,14 +560,14 @@ return {
                 {
                     name = 'stop',
                     description = 'Stops a Source.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'tell',
                     description = 'Gets the currently playing position of the Source.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -597,7 +597,7 @@ return {
         {
             name = 'getDistanceModel',
             description = 'Returns the distance attenuation model.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -612,7 +612,7 @@ return {
         {
             name = 'getDopplerScale',
             description = 'Gets the current global scale factor for velocity-based doppler effects.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -627,7 +627,7 @@ return {
         {
             name = 'getSourceCount',
             description = 'Returns the number of sources which are currently playing or paused.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -642,7 +642,7 @@ return {
         {
             name = 'getOrientation',
             description = 'Returns the orientation of the listener.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -682,7 +682,7 @@ return {
         {
             name = 'getPosition',
             description = 'Returns the position of the listener.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -707,7 +707,7 @@ return {
         {
             name = 'getVelocity',
             description = 'Returns the velocity of the listener.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -732,7 +732,7 @@ return {
         {
             name = 'getVolume',
             description = 'Returns the master volume.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -747,7 +747,7 @@ return {
         {
             name = 'newSource',
             description = 'Creates a new Source from a file or SoundData. Sources created from SoundData are always static.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -829,7 +829,7 @@ return {
         {
             name = 'pause',
             description = 'Pauses all audio',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -845,7 +845,7 @@ return {
         {
             name = 'play',
             description = 'Plays the specified Source.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -860,7 +860,7 @@ return {
         {
             name = 'resume',
             description = 'Resumes all audio',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -876,7 +876,7 @@ return {
         {
             name = 'rewind',
             description = 'Rewinds all playing audio.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -892,7 +892,7 @@ return {
         {
             name = 'setDistanceModel',
             description = 'Sets the distance attenuation model.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -907,7 +907,7 @@ return {
         {
             name = 'setDopplerScale',
             description = 'Sets a global scale factor for velocity-based doppler effects. The default scale value is 1.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -922,7 +922,7 @@ return {
         {
             name = 'setOrientation',
             description = 'Sets the orientation of the listener.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -962,7 +962,7 @@ return {
         {
             name = 'setPosition',
             description = 'Sets the position of the listener, which determines how sounds play.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -987,7 +987,7 @@ return {
         {
             name = 'setVelocity',
             description = 'Sets the velocity of the listener.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -1012,7 +1012,7 @@ return {
         {
             name = 'setVolume',
             description = 'Sets the master volume.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -1027,7 +1027,7 @@ return {
         {
             name = 'stop',
             description = 'Stops all playing audio.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {

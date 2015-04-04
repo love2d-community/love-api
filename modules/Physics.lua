@@ -12,7 +12,7 @@ return {
                 {
                     name = 'applyAngularImpulse',
                     description = 'Applies an angular impulse to a body. This makes a single, instantaneous addition to the body momentum.\n\nA body with with a larger mass will react less. The reaction does not depend on the timestep, and is equivalent to applying a force continuously for 1 second. Impulses are best used to give a single push to a body. For a continuous push to a body it is better to use Body:applyForce.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -27,7 +27,7 @@ return {
                 {
                     name = 'applyForce',
                     description = 'Apply force to a Body.\n\nA force pushes a body in a direction. A body with with a larger mass will react less. The reaction also depends on how long a force is applied: since the force acts continuously over the entire timestep, a short timestep will only push the body for a short time. Thus forces are best used for many timesteps to give a continuous push to a body (like gravity). For a single push that is independent of timestep, it is better to use Body:applyImpulse.\n\nIf the position to apply the force is not given, it will act on the center of mass of the body. The part of the force not directed towards the center of mass will cause the body to spin (and depends on the rotational inertia).\n\nNote that the force components and position must be given in world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -71,7 +71,7 @@ return {
                 {
                     name = 'applyLinearImpulse',
                     description = 'Applies an impulse to a body. This makes a single, instantaneous addition to the body momentum.\n\nAn impulse pushes a body in a direction. A body with with a larger mass will react less. The reaction does not depend on the timestep, and is equivalent to applying a force continuously for 1 second. Impulses are best used to give a single push to a body. For a continuous push to a body it is better to use Body:applyForce.\n\nIf the position to apply the impulse is not given, it will act on the center of mass of the body. The part of the impulse not directed towards the center of mass will cause the body to spin (and depends on the rotational inertia).\n\nNote that the impulse components and position must be given in world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -115,7 +115,7 @@ return {
                 {
                     name = 'applyTorque',
                     description = 'Apply torque to a body.\n\nTorque is like a force that will change the angular velocity (spin) of a body. The effect will depend on the rotational inertia a body has.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -130,14 +130,14 @@ return {
                 {
                     name = 'destroy',
                     description = 'Explicitly destroys the Body. When you don\'t have time to wait for garbage collection, this function may be used to free the object immediately, but note that an error will occur if you attempt to use the object after calling this function.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'getAngle',
                     description = 'Get the angle of the body.\n\nThe angle is measured in radians. If you need to transform it to degrees, use math.deg.\n\nA value of 0 radians will mean "looking to the right". Although radians increase counter-clockwise, the y-axis points down so it becomes clockwise from our point of view.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -152,7 +152,7 @@ return {
                 {
                     name = 'getAngularDamping',
                     description = 'Gets the Angular damping of the Body\n\nThe angular damping is the rate of decrease of the angular velocity over time: A spinning body with no damping and no external forces will continue spinning indefinitely. A spinning body with damping will gradually stop spinning.\n\nDamping is not the same as friction - they can be modelled together. However, only damping is provided by Box2D (and LÖVE).\n\nDamping parameters should be between 0 and infinity, with 0 meaning no damping, and infinity meaning full damping. Normally you will use a damping value between 0 and 0.1.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -167,7 +167,7 @@ return {
                 {
                     name = 'getAngularVelocity',
                     description = 'Get the angular velocity of the Body.\n\nThe angular velocity is the rate of change of angle over time.\n\nIt is changed in World:update by applying torques, off centre forces/impulses, and angular damping. It can be set directly with Body:setAngularVelocity.\n\nIf you need the rate of change of position over time, use Body:getLinearVelocity.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -182,7 +182,7 @@ return {
                 {
                     name = 'getContactList',
                     description = 'Gets a list of all Contacts attached to the Body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -197,7 +197,7 @@ return {
                 {
                     name = 'getFixtureList',
                     description = 'Returns a table with all fixtures.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -212,7 +212,7 @@ return {
                 {
                     name = 'getGravityScale',
                     description = 'Returns the gravity scale factor.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -227,7 +227,7 @@ return {
                 {
                     name = 'getInertia',
                     description = 'Gets the rotational inertia of the body.\n\nThe rotational inertia is how hard is it to make the body spin. It is set with the 4th argument to Body:setMass, or automatically with Body:setMassFromShapes.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -242,7 +242,7 @@ return {
                 {
                     name = 'getJointList',
                     description = 'Returns a table containing the Joints attached to this Body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -257,7 +257,7 @@ return {
                 {
                     name = 'getLinearDamping',
                     description = 'Gets the linear damping of the Body.\n\nThe linear damping is the rate of decrease of the linear velocity over time. A moving body with no damping and no external forces will continue moving indefinitely, as is the case in space. A moving body with damping will gradually stop moving.\n\nDamping is not the same as friction - they can be modelled together. However, only damping is provided by Box2D (and LÖVE).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -272,7 +272,7 @@ return {
                 {
                     name = 'getLinearVelocity',
                     description = 'Gets the linear velocity of the Body from its center of mass.\n\nThe linear velocity is the rate of change of position over time.\n\nIf you need the rate of change of angle over time, use Body:getAngularVelocity. If you need to get the linear velocity of a point different from the center of mass:\n\nBody:getLinearVelocityFromLocalPoint allows you to specify the point in local coordinates.\nBody:getLinearVelocityFromWorldPoint allows you to specify the point in world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -292,7 +292,7 @@ return {
                 {
                     name = 'getLinearVelocityFromLocalPoint',
                     description = 'Get the linear velocity of a point on the body.\n\nThe linear velocity for a point on the body is the velocity of the body center of mass plus the velocity at that point from the body spinning.\n\nThe point on the body must given in local coordinates. Use Body:getLinearVelocityFromWorldPoint to specify this with world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -324,7 +324,7 @@ return {
                 {
                     name = 'getLinearVelocityFromWorldPoint',
                     description = 'Get the linear velocity of a point on the body.\n\nThe linear velocity for a point on the body is the velocity of the body center of mass plus the velocity at that point from the body spinning.\n\nThe point on the body must given in world coordinates. Use Body:getLinearVelocityFromLocalPoint to specify this with local coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -356,7 +356,7 @@ return {
                 {
                     name = 'getLocalCenter',
                     description = 'Get the center of mass position in local coordinates.\n\nUse Body:getWorldCenter to get the center of mass in world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -376,7 +376,7 @@ return {
                 {
                     name = 'getLocalPoint',
                     description = 'Transform a point from world coordinates to local coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -408,7 +408,7 @@ return {
                 {
                     name = 'getLocalVector',
                     description = 'Transform a vector from world coordinates to local coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -440,7 +440,7 @@ return {
                 {
                     name = 'getMass',
                     description = 'Get the mass of the body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -455,7 +455,7 @@ return {
                 {
                     name = 'getMassData',
                     description = 'Returns the mass, its center, and the rotational inertia.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -485,7 +485,7 @@ return {
                 {
                     name = 'getPosition',
                     description = 'Get the position of the body.\n\nNote that this may not be the center of mass of the body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -505,7 +505,7 @@ return {
                 {
                     name = 'getType',
                     description = 'Returns the type of the body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -520,7 +520,7 @@ return {
                 {
                     name = 'getUserData',
                     description = 'Returns the Lua value associated with this Body.\n\nUse this function in one thread only.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -535,7 +535,7 @@ return {
                 {
                     name = 'getWorld',
                     description = 'Gets the World the body lives in.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -550,7 +550,7 @@ return {
                 {
                     name = 'getWorldCenter',
                     description = 'Get the center of mass position in world coordinates.\n\nUse Body:getLocalCenter to get the center of mass in local coordinates.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -570,7 +570,7 @@ return {
                 {
                     name = 'getWorldPoint',
                     description = 'Transform a point from local coordinates to world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -602,7 +602,7 @@ return {
                 {
                     name = 'getWorldPoints',
                     description = 'Transforms multiple points from local coordinates to world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -664,7 +664,7 @@ return {
                 {
                     name = 'getWorldVector',
                     description = 'Transform a vector from local coordinates to world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -696,7 +696,7 @@ return {
                 {
                     name = 'getX',
                     description = 'Get the x position of the body in world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -711,7 +711,7 @@ return {
                 {
                     name = 'getY',
                     description = 'Get the y position of the body in world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -726,7 +726,7 @@ return {
                 {
                     name = 'isActive',
                     description = 'Returns whether the body is actively used in the simulation.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -741,7 +741,7 @@ return {
                 {
                     name = 'isAwake',
                     description = 'Returns the sleep status of the body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -756,7 +756,7 @@ return {
                 {
                     name = 'isBullet',
                     description = 'Get the bullet status of a body.\n\nThere are two methods to check for body collisions:\n\nat their location when the world is updated (default)\nusing continuous collision detection (CCD)\n\nThe default method is efficient, but a body moving very quickly may sometimes jump over another body without producing a collision. A body that is set as a bullet will use CCD. This is less efficient, but is guaranteed not to jump when moving quickly.\n\nNote that static bodies (with zero mass) always use CCD, so your walls will not let a fast moving body pass through even if it is not a bullet.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -771,7 +771,7 @@ return {
                 {
                     name = 'isDestroyed',
                     description = 'Gets whether the Body is destroyed. Destroyed bodies cannot be used.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -786,7 +786,7 @@ return {
                 {
                     name = 'isDynamic',
                     description = 'Get the dynamic status of the body.\n\nA static body has no mass and a constant position. It will not react to collisions. Often used for walls.\n\nA dynamic body has mass and can move. It will react to collisions when the world is updated.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -801,7 +801,7 @@ return {
                 {
                     name = 'isFixedRotation',
                     description = 'Returns whether the body rotation is locked.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -816,7 +816,7 @@ return {
                 {
                     name = 'isFrozen',
                     description = 'Get the frozen status of the body.\n\nA body becomes frozen when it goes outside the world boundary. A frozen body is no longer changed by World:update.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -831,7 +831,7 @@ return {
                 {
                     name = 'isSleepingAllowed',
                     description = 'Returns the sleeping behaviour of the body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -846,7 +846,7 @@ return {
                 {
                     name = 'isStatic',
                     description = 'Get the static status of the body.\n\nA static body has no mass and a constant position. It will not react to collisions. Often used for walls.\n\nA dynamic body has mass and can move. It will react to collisions when the world is updated.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -861,14 +861,14 @@ return {
                 {
                     name = 'resetMassData',
                     description = 'Resets the mass of the body by recalculating it from the mass properties of the fixtures.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'setActive',
                     description = 'Sets whether the body is active in the world.\n\nAn inactive body does not take part in the simulation. It will not move or cause any collisions.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -883,7 +883,7 @@ return {
                 {
                     name = 'setAngle',
                     description = 'Set the angle of the body.\n\nThe angle is measured in radians. If you need to transform it from degrees, use math.rad.\n\nA value of 0 radians will mean "looking to the right". .Although radians increase counter-clockwise, the y-axis points down so it becomes clockwise from our point of view.\n\nIt is possible to cause a collision with another body by changing its angle.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -898,7 +898,7 @@ return {
                 {
                     name = 'setAngularDamping',
                     description = 'Sets the angular damping of a Body.\n\nSee Body:getAngularDamping for a definition of angular damping.\n\nAngular damping can take any value from 0 to infinity. It is recommended to stay between 0 and 0.1, though. Other values will look unrealistic.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -913,7 +913,7 @@ return {
                 {
                     name = 'setAngularVelocity',
                     description = 'Sets the angular velocity of a Body.\n\nThe angular velocity is the rate of change of angle over time.\n\nThis function will not accumulate anything; any impulses previously applied since the last call to World:update will be lost.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -928,7 +928,7 @@ return {
                 {
                     name = 'setAwake',
                     description = 'Wakes the body up or puts it to sleep.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -943,7 +943,7 @@ return {
                 {
                     name = 'setBullet',
                     description = 'Set the bullet status of a body.\n\nThere are two methods to check for body collisions:\n\nat their location when the world is updated (default)\nusing continuous collision detection (CCD)\n\nThe default method is efficient, but a body moving very quickly may sometimes jump over another body without producing a collision. A body that is set as a bullet will use CCD. This is less efficient, but is guaranteed not to jump when moving quickly.\n\nNote that static bodies (with zero mass) always use CCD, so your walls will not let a fast moving body pass through even if it is not a bullet.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -958,7 +958,7 @@ return {
                 {
                     name = 'setFixedRotation',
                     description = 'Set whether a body has fixed rotation.\n\nBodies with fixed rotation don\'t vary the speed at which they rotate.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -973,7 +973,7 @@ return {
                 {
                     name = 'setGravityScale',
                     description = 'Sets a new gravity scale factor for the body.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -988,7 +988,7 @@ return {
                 {
                     name = 'setInertia',
                     description = 'Set the inertia of a body.\n\nThis value can also be set by the fourth argument of Body:setMass.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1003,7 +1003,7 @@ return {
                 {
                     name = 'setLinearDamping',
                     description = 'Sets the linear damping of a Body\n\nSee Body:getLinearDamping for a definition of linear damping.\n\nLinear damping can take any value from 0 to infinity. It is recommended to stay between 0 and 0.1, though. Other values will make the objects look "floaty".',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1018,7 +1018,7 @@ return {
                 {
                     name = 'setLinearVelocity',
                     description = 'Sets a new linear velocity for the Body.\n\nThis function will not accumulate anything; any impulses previously applied since the last call to World:update will be lost.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1038,7 +1038,7 @@ return {
                 {
                     name = 'setMass',
                     description = 'Sets the mass in kilograms.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1053,7 +1053,7 @@ return {
                 {
                     name = 'setMassData',
                     description = 'Overrides the calculated mass data.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1083,14 +1083,14 @@ return {
                 {
                     name = 'setMassFromShapes',
                     description = 'Sets mass properties from attatched shapes.\n\nIf you feel that finding the correct mass properties is tricky, then this function may be able to help you. After creating the needed shapes on the Body, a call to this function will set the mass properties based on those shapes. Remember to call this function after adding the shapes.\n\nSetting the mass properties this way always results in a realistic (or at least good-looking) simulation, so using it is highly recommended.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'setPosition',
                     description = 'Set the position of the body.\n\nNote that this may not be the center of mass of the body.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1110,7 +1110,7 @@ return {
                 {
                     name = 'setSleepingAllowed',
                     description = 'Sets the sleeping behaviour of the body.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1125,7 +1125,7 @@ return {
                 {
                     name = 'setType',
                     description = 'Sets a new body type.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1140,7 +1140,7 @@ return {
                 {
                     name = 'setUserData',
                     description = 'Associates a Lua value with the Body.\n\nTo delete the reference, explicitly pass nil.\n\nUse this function in one thread only.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1155,7 +1155,7 @@ return {
                 {
                     name = 'setX',
                     description = 'Set the x position of the body.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1170,7 +1170,7 @@ return {
                 {
                     name = 'setY',
                     description = 'Set the y position of the body.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1197,7 +1197,7 @@ return {
                 {
                     name = 'getChildEdge',
                     description = 'Returns a child of the shape as an EdgeShape.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1219,7 +1219,7 @@ return {
                 {
                     name = 'getPoint',
                     description = 'Returns a point of the shape.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1246,7 +1246,7 @@ return {
                 {
                     name = 'getPoints',
                     description = 'Returns all points of the shape.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1281,7 +1281,7 @@ return {
                 {
                     name = 'getVertexCount',
                     description = 'Returns the number of vertices the shape has.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1296,7 +1296,7 @@ return {
                 {
                     name = 'setNextVertex',
                     description = 'Sets a vertex that establishes a connection to the next shape.\n\nThis can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1316,7 +1316,7 @@ return {
                 {
                     name = 'setPreviousVertex',
                     description = 'Sets a vertex that establishes a connection to the previous shape.\n\nThis can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1349,7 +1349,7 @@ return {
                 {
                     name = 'getPoint',
                     description = 'Gets the center point of the circle shape.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1369,7 +1369,7 @@ return {
                 {
                     name = 'getRadius',
                     description = 'Gets the radius of the circle shape.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1384,7 +1384,7 @@ return {
                 {
                     name = 'setPoint',
                     description = 'Sets the location of the center of the circle shape.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1404,7 +1404,7 @@ return {
                 {
                     name = 'setRadius',
                     description = 'Sets the radius of the circle.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1429,7 +1429,7 @@ return {
                 {
                     name = 'getFixtures',
                     description = 'Gets the two Fixtures that hold the shapes that are in contact.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1449,7 +1449,7 @@ return {
                 {
                     name = 'getFriction',
                     description = 'Get the friction between two shapes that are in contact.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1464,7 +1464,7 @@ return {
                 {
                     name = 'getNormal',
                     description = 'Get the normal vector between two shapes that are in contact.\n\nThis function returns the coordinates of a unit vector that points from the first shape to the second.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1484,7 +1484,7 @@ return {
                 {
                     name = 'getPositions',
                     description = 'Returns the contact points of the two colliding fixtures. There can be one or two points.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1514,7 +1514,7 @@ return {
                 {
                     name = 'getRestitution',
                     description = 'Get the restitution between two shapes that are in contact.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1529,7 +1529,7 @@ return {
                 {
                     name = 'isEnabled',
                     description = 'Returns whether the contact is enabled. The collision will be ignored if a contact gets disabled in the post solve callback.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1544,7 +1544,7 @@ return {
                 {
                     name = 'isTouching',
                     description = 'Returns whether the two colliding fixtures are touching each other.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1559,21 +1559,21 @@ return {
                 {
                     name = 'resetFriction',
                     description = 'Resets the contact friction to the mixture value of both fixtures.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'resetRestitution',
                     description = 'Resets the contact restitution to the mixture value of both fixtures.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'setEnabled',
                     description = 'Enables or disables the contact.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1588,7 +1588,7 @@ return {
                 {
                     name = 'setFriction',
                     description = 'Sets the contact friction.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1603,7 +1603,7 @@ return {
                 {
                     name = 'setRestitution',
                     description = 'Sets the contact restitution.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1630,7 +1630,7 @@ return {
                 {
                     name = 'getPoints',
                     description = 'Returns the local coordinates of the edge points.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1673,7 +1673,7 @@ return {
                 {
                     name = 'getDampingRatio',
                     description = 'Gets the damping ratio.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1688,7 +1688,7 @@ return {
                 {
                     name = 'getFrequency',
                     description = 'Gets the response speed.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1703,7 +1703,7 @@ return {
                 {
                     name = 'getLength',
                     description = 'Gets the equilibrium distance between the two Bodies.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1718,7 +1718,7 @@ return {
                 {
                     name = 'setDampingRatio',
                     description = 'Sets the damping ratio.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1733,7 +1733,7 @@ return {
                 {
                     name = 'setFrequency',
                     description = 'Sets the response speed.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1748,7 +1748,7 @@ return {
                 {
                     name = 'setLength',
                     description = 'Sets the equilibrium distance between the two Bodies.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1775,14 +1775,14 @@ return {
                 {
                     name = 'destroy',
                     description = 'Destroys the fixture',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'getBody',
                     description = 'Returns the body to which the fixture is attached.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1797,7 +1797,7 @@ return {
                 {
                     name = 'getBoundingBox',
                     description = 'Returns the points of the fixture bounding box. In case the fixture has multiple childern a 1-based index can be specified.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1835,7 +1835,7 @@ return {
                 {
                     name = 'getCategory',
                     description = 'Returns the categories the fixture belongs to.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1860,7 +1860,7 @@ return {
                 {
                     name = 'getDensity',
                     description = 'Returns the density of the fixture.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1875,7 +1875,7 @@ return {
                 {
                     name = 'getFilterData',
                     description = 'Returns the filter data of the fixture. Categories and masks are encoded as the bits of a 16-bit integer.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1900,7 +1900,7 @@ return {
                 {
                     name = 'getFriction',
                     description = 'Returns the friction of the fixture.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1915,7 +1915,7 @@ return {
                 {
                     name = 'getGroupIndex',
                     description = 'Returns the group the fixture belongs to. Fixtures with the same group will always collide if the group is positive or never collide if it\'s negative. The group zero means no group.\n\nThe groups range from -32768 to 32767.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1930,7 +1930,7 @@ return {
                 {
                     name = 'getMask',
                     description = 'Returns the category mask of the fixture.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1955,7 +1955,7 @@ return {
                 {
                     name = 'getMassData',
                     description = 'Returns the mass, its center and the rotational inertia.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1985,7 +1985,7 @@ return {
                 {
                     name = 'getRestitution',
                     description = 'Returns the restitution of the fixture.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2000,7 +2000,7 @@ return {
                 {
                     name = 'getShape',
                     description = 'Returns the shape of the fixture. This shape is a reference to the actual data used in the simulation. It\'s possible to change its values between timesteps.\n\nDo not call any functions on this shape after the parent fixture has been destroyed. This shape will point to an invalid memory address and likely cause crashes if you interact further with it.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2015,7 +2015,7 @@ return {
                 {
                     name = 'getUserData',
                     description = 'Returns the Lua value associated with this fixture.\n\nUse this function in one thread only.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2030,7 +2030,7 @@ return {
                 {
                     name = 'isDestroyed',
                     description = 'Gets whether the Fixture is destroyed. Destroyed fixtures cannot be used.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2045,7 +2045,7 @@ return {
                 {
                     name = 'isSensor',
                     description = 'Returns whether the fixture is a sensor.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2060,7 +2060,7 @@ return {
                 {
                     name = 'rayCast',
                     description = 'Casts a ray against the shape of the fixture and returns the surface normal vector and the line position where the ray hit. If the ray missed the shape, nil will be returned.\n\nThe ray starts on the first point of the input line and goes towards the second point of the line. The fourth argument is the maximum distance the ray is going to travel as a scale factor of the input line length.\n\nThe childIndex parameter is used to specify which child of a parent shape, such as a ChainShape, will be ray casted. For ChainShapes, the index of 1 is the first edge on the chain. Ray casting a parent shape will only test the child specified so if you want to test every shape of the parent, you must loop through all of its children.\n\nThe world position of the impact can be calculated by multiplying the line vector with the third return value and adding it to the line starting point.\n\nhitx, hity = x1 + (x2 - x1) * fraction, y1 + (y2 - y1) * fraction',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2118,7 +2118,7 @@ return {
                 {
                     name = 'setCategory',
                     description = 'Sets the categories the fixture belongs to. There can be up to 16 categories represented as a number from 1 to 16.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2143,7 +2143,7 @@ return {
                 {
                     name = 'setDensity',
                     description = 'Sets the density of the fixture. Call Body:resetMassData if this needs to take effect immediately.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2158,7 +2158,7 @@ return {
                 {
                     name = 'setFilterData',
                     description = 'Sets the filter data of the fixture.\n\nGroups, categories, and mask can be used to define the collision behaviour of the fixture.\n\nIf two fixtures are in the same group they either always collide if the group is positive, or never collide if it\'s negative. Is the group zero or they do not match, then the contact filter checks if the fixtures select a category of the other fixture with their masks. The fixtures do not collide if that\'s not the case. If they do have each others categories selected, the return value of the custom contact filter will be used. They always collide if none was set.\n\nThere can be up to 16 categories. Categories and masks are encoded as the bits of a 16-bit integer.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2183,7 +2183,7 @@ return {
                 {
                     name = 'setFriction',
                     description = 'Sets the friction of the fixture.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2198,7 +2198,7 @@ return {
                 {
                     name = 'setGroupIndex',
                     description = 'Sets the group the fixture belongs to. Fixtures with the same group will always collide if the group is positive or never collide if it\'s negative. The group zero means no group.\n\nThe groups range from -32768 to 32767.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2213,7 +2213,7 @@ return {
                 {
                     name = 'setMask',
                     description = 'Sets the category mask of the fixture. There can be up to 16 categories represented as a number from 1 to 16.\n\nThis fixture will collide with the fixtures that are in the selected categories if the other fixture also has a category of this fixture selected.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2238,7 +2238,7 @@ return {
                 {
                     name = 'setRestitution',
                     description = 'Sets the restitution of the fixture.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2253,7 +2253,7 @@ return {
                 {
                     name = 'setSensor',
                     description = 'Sets whether the fixture should act as a sensor.\n\nSensor do not produce collisions responses, but the begin and end callbacks will still be called for this fixture.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2268,7 +2268,7 @@ return {
                 {
                     name = 'setUserData',
                     description = 'Associates a Lua value with the fixture.\n\nUse this function in one thread only.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2283,7 +2283,7 @@ return {
                 {
                     name = 'testPoint',
                     description = 'Checks if a point is inside the shape of the fixture.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2322,7 +2322,7 @@ return {
                 {
                     name = 'getMaxForce',
                     description = 'Gets the maximum friction force in Newtons.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2337,7 +2337,7 @@ return {
                 {
                     name = 'getMaxTorque',
                     description = 'Gets the maximum friction torque in Newton-meters.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2352,7 +2352,7 @@ return {
                 {
                     name = 'setMaxForce',
                     description = 'Sets the maximum friction force in Newtons.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2367,7 +2367,7 @@ return {
                 {
                     name = 'setMaxTorque',
                     description = 'Sets the maximum friction torque in Newton-meters.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2394,7 +2394,7 @@ return {
                 {
                     name = 'getJoints',
                     description = 'Get the Joints connected by this GearJoint.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2414,7 +2414,7 @@ return {
                 {
                     name = 'getRatio',
                     description = 'Get the ratio of a gear joint.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2429,7 +2429,7 @@ return {
                 {
                     name = 'setRatio',
                     description = 'Set the ratio of a gear joint.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2453,14 +2453,14 @@ return {
                 {
                     name = 'destroy',
                     description = 'Explicitly destroys the Joint. When you don\'t have time to wait for garbage collection, this function may be used to free the object immediately, but note that an error will occur if you attempt to use the object after calling this function.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'getAnchors',
                     description = 'Get the anchor points of the joint.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2490,7 +2490,7 @@ return {
                 {
                     name = 'getBodies',
                     description = 'Gets the bodies that the Joint is attached to.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2510,7 +2510,7 @@ return {
                 {
                     name = 'getCollideConnected',
                     description = 'Gets whether the connected Bodies collide.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2525,7 +2525,7 @@ return {
                 {
                     name = 'getReactionForce',
                     description = 'Gets the reaction force on Body 2 at the joint anchor.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2545,7 +2545,7 @@ return {
                 {
                     name = 'getReactionTorque',
                     description = 'Returns the reaction torque on the second body.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2567,7 +2567,7 @@ return {
                 {
                     name = 'getType',
                     description = 'Gets an string representing the type.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2582,7 +2582,7 @@ return {
                 {
                     name = 'getUserData',
                     description = 'Returns the Lua value associated with this Joint.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2597,7 +2597,7 @@ return {
                 {
                     name = 'isDestroyed',
                     description = 'Gets whether the Joint is destroyed. Destroyed joints cannot be used.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2612,7 +2612,7 @@ return {
                 {
                     name = 'setCollideConnected',
                     description = 'Sets whether the connected Bodies should collide with eachother.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2627,7 +2627,7 @@ return {
                 {
                     name = 'setUserData',
                     description = 'Associates a Lua value with the Joint.\n\nTo delete the reference, explicitly pass nil.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2654,7 +2654,7 @@ return {
                 {
                     name = 'getDampingRatio',
                     description = 'Returns the damping ratio.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2669,7 +2669,7 @@ return {
                 {
                     name = 'getFrequency',
                     description = 'Returns the frequency.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2684,7 +2684,7 @@ return {
                 {
                     name = 'getMaxForce',
                     description = 'Gets the highest allowed force.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2699,7 +2699,7 @@ return {
                 {
                     name = 'getTarget',
                     description = 'Gets the target point.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2719,7 +2719,7 @@ return {
                 {
                     name = 'setDampingRatio',
                     description = 'Sets a new damping ratio.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2734,7 +2734,7 @@ return {
                 {
                     name = 'setFrequency',
                     description = 'Sets a new frequency.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2749,7 +2749,7 @@ return {
                 {
                     name = 'setMaxForce',
                     description = 'Sets the highest allowed force.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2764,7 +2764,7 @@ return {
                 {
                     name = 'setTarget',
                     description = 'Sets the target point.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2797,7 +2797,7 @@ return {
                 {
                     name = 'getPoints',
                     description = 'Get the local coordinates of the polygon\'s vertices.\n\nThis function has a variable number of return values. It can be used in a nested fashion with love.graphics.polygon.\n\nThis function may have up to 16 return values, since it returns two values for each vertex in the polygon. In other words, it can return the coordinates of up to 8 points.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2845,7 +2845,7 @@ return {
                 {
                     name = 'setLimitsEnabled',
                     description = 'Enables or disables the limits of the joint.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2860,7 +2860,7 @@ return {
                 {
                     name = 'setMotorEnabled',
                     description = 'Starts or stops the joint motor.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2875,7 +2875,7 @@ return {
                 {
                     name = 'getJointSpeed',
                     description = 'Get the current joint angle speed.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2890,7 +2890,7 @@ return {
                 {
                     name = 'getJointTranslation',
                     description = 'Get the current joint translation.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2905,7 +2905,7 @@ return {
                 {
                     name = 'getLimits',
                     description = 'Gets the joint limits.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2925,7 +2925,7 @@ return {
                 {
                     name = 'getLowerLimit',
                     description = 'Gets the lower limit.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2940,7 +2940,7 @@ return {
                 {
                     name = 'getMaxMotorForce',
                     description = 'Gets the maximum motor force.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2955,7 +2955,7 @@ return {
                 {
                     name = 'getMotorForce',
                     description = 'Get the current motor force.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2970,7 +2970,7 @@ return {
                 {
                     name = 'getMotorSpeed',
                     description = 'Gets the motor speed.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2985,7 +2985,7 @@ return {
                 {
                     name = 'getUpperLimit',
                     description = 'Gets the upper limit.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3000,7 +3000,7 @@ return {
                 {
                     name = 'hasLimitsEnabled',
                     description = 'Checks whether the limits are enabled.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3015,7 +3015,7 @@ return {
                 {
                     name = 'isMotorEnabled',
                     description = 'Checks whether the motor is enabled.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3030,7 +3030,7 @@ return {
                 {
                     name = 'setLimits',
                     description = 'Sets the limits.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3050,7 +3050,7 @@ return {
                 {
                     name = 'setLowerLimit',
                     description = 'Sets the lower limit.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3065,7 +3065,7 @@ return {
                 {
                     name = 'setMaxMotorForce',
                     description = 'Set the maximum motor force.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3080,7 +3080,7 @@ return {
                 {
                     name = 'setMotorSpeed',
                     description = 'Sets the motor speed.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3095,7 +3095,7 @@ return {
                 {
                     name = 'setUpperLimit',
                     description = 'Sets the upper limit.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3122,7 +3122,7 @@ return {
                 {
                     name = 'getConstant',
                     description = 'Get the total length of the rope.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3137,7 +3137,7 @@ return {
                 {
                     name = 'getGroundAnchors',
                     description = 'Get the ground anchor positions in world coordinates.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3167,7 +3167,7 @@ return {
                 {
                     name = 'getLengthA',
                     description = 'Get the current length of the rope segment attached to the first body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3182,7 +3182,7 @@ return {
                 {
                     name = 'getLengthB',
                     description = 'Get the current length of the rope segment attached to the second body.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3197,7 +3197,7 @@ return {
                 {
                     name = 'getMaxLengths',
                     description = 'Get the maximum lengths of the rope segments.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3217,7 +3217,7 @@ return {
                 {
                     name = 'getRatio',
                     description = 'Get the pulley ratio.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3232,7 +3232,7 @@ return {
                 {
                     name = 'setConstant',
                     description = 'Set the total length of the rope.\n\nSetting a new length for the rope updates the maximum length values of the joint.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3247,7 +3247,7 @@ return {
                 {
                     name = 'setMaxLengths',
                     description = 'Set the maximum lengths of the rope segments.\n\nThe physics module also imposes maximum values for the rope segments. If the parameters exceed these values, the maximum values are set instead of the requested values.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3267,7 +3267,7 @@ return {
                 {
                     name = 'setRatio',
                     description = 'Set the pulley ratio.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3294,7 +3294,7 @@ return {
                 {
                     name = 'setLimitsEnabled',
                     description = 'Enables or disables the joint limits.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3309,7 +3309,7 @@ return {
                 {
                     name = 'setMotorEnabled',
                     description = 'Starts or stops the joint motor.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3324,7 +3324,7 @@ return {
                 {
                     name = 'getJointAngle',
                     description = 'Get the current joint angle.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3339,7 +3339,7 @@ return {
                 {
                     name = 'getJointSpeed',
                     description = 'Get the current joint angle speed.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3354,7 +3354,7 @@ return {
                 {
                     name = 'getLimits',
                     description = 'Gets the joint limits.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3374,7 +3374,7 @@ return {
                 {
                     name = 'getLowerLimit',
                     description = 'Gets the lower limit.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3389,7 +3389,7 @@ return {
                 {
                     name = 'getMaxMotorTorque',
                     description = 'Gets the maximum motor force.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3404,7 +3404,7 @@ return {
                 {
                     name = 'getMotorSpeed',
                     description = 'Gets the motor speed.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3419,7 +3419,7 @@ return {
                 {
                     name = 'getMotorTorque',
                     description = 'Get the current motor force.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3434,7 +3434,7 @@ return {
                 {
                     name = 'getUpperLimit',
                     description = 'Gets the upper limit.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3449,7 +3449,7 @@ return {
                 {
                     name = 'hasLimitsEnabled',
                     description = 'Checks whether limits are enabled.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3464,7 +3464,7 @@ return {
                 {
                     name = 'isMotorEnabled',
                     description = 'Checks whether the motor is enabled.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3479,7 +3479,7 @@ return {
                 {
                     name = 'setLimits',
                     description = 'Sets the limits.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3499,7 +3499,7 @@ return {
                 {
                     name = 'setLowerLimit',
                     description = 'Sets the lower limit.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3514,7 +3514,7 @@ return {
                 {
                     name = 'setMaxMotorTorque',
                     description = 'Set the maximum motor force.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3529,7 +3529,7 @@ return {
                 {
                     name = 'setMotorSpeed',
                     description = 'Sets the motor speed.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3544,7 +3544,7 @@ return {
                 {
                     name = 'setUpperLimit',
                     description = 'Sets the upper limit.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3571,7 +3571,7 @@ return {
                 {
                     name = 'getMaxLength',
                     description = 'Gets the maximum length of a RopeJoint.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3601,7 +3601,7 @@ return {
                 {
                     name = 'computeAABB',
                     description = 'Returns the points of the bounding box for the transformed shape.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3654,7 +3654,7 @@ return {
                 {
                     name = 'computeMass',
                     description = 'Computes the mass properties for the shape with the specified density.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3691,14 +3691,14 @@ return {
                 {
                     name = 'destroy',
                     description = 'Explicitly destroys the Shape. When you don\'t have time to wait for garbage collection, this function may be used to free the object immediately, but note that an error will occur if you attempt to use the object after calling this function.\nNote that Box2D doesn\'t allow destroying or creating shapes during collision callbacks.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'getBody',
                     description = 'Get the Body the shape is attached to.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3713,7 +3713,7 @@ return {
                 {
                     name = 'getBoundingBox',
                     description = 'Gets the bounding box of the shape. This function can be used in a nested fashion with love.graphics.polygon.\n\nA bounding box is the smallest rectangle that encapsulates the entire polygon.\n\nVertexes are returned starting from the bottom-left in a clockwise fashion (bottom-left, top-left, top-right, bottom-right).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3763,7 +3763,7 @@ return {
                 {
                     name = 'getChildCount',
                     description = 'Returns the number of children the shape has.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3778,7 +3778,7 @@ return {
                 {
                     name = 'getData',
                     description = 'Get the data set with setData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3793,7 +3793,7 @@ return {
                 {
                     name = 'getDensity',
                     description = 'Gets the density of the Shape.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3808,7 +3808,7 @@ return {
                 {
                     name = 'getFilterData',
                     description = 'Gets the filter data of the Shape.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3833,7 +3833,7 @@ return {
                 {
                     name = 'getFriction',
                     description = 'Gets the friction of this shape.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3848,7 +3848,7 @@ return {
                 {
                     name = 'getType',
                     description = 'Gets a string representing the Shape. This function can be useful for conditional debug drawing.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -3863,7 +3863,7 @@ return {
                 {
                     name = 'rayCast',
                     description = 'Casts a ray against the shape and returns the surface normal vector and the line position where the ray hit. If the ray missed the shape, nil will be returned. The Shape can be transformed to get it into the desired position.\n\nThe ray starts on the first point of the input line and goes towards the second point of the line. The fourth argument is the maximum distance the ray is going to travel as a scale factor of the input line length.\n\nThe childIndex parameter is used to specify which child of a parent shape, such as a ChainShape, will be ray casted. For ChainShapes, the index of 1 is the first edge on the chain. Ray casting a parent shape will only test the child specified so if you want to test every shape of the parent, you must loop through all of its children.\n\nThe world position of the impact can be calculated by multiplying the line vector with the third return value and adding it to the line starting point.\n\nhitx, hity = x1 + (x2 - x1) * fraction, y1 + (y2 - y1) * fraction',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3936,7 +3936,7 @@ return {
                 {
                     name = 'setData',
                     description = 'Set data to be passed to the collision callback.\n\nWhen a shape collides, the value set here will be passed to the collision callback as one of the parameters. Typically, you would want to store a table reference here, but any value can be used.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3951,7 +3951,7 @@ return {
                 {
                     name = 'setDensity',
                     description = 'Sets the density of a Shape. Do this before calling Body:setMassFromShapes.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3966,7 +3966,7 @@ return {
                 {
                     name = 'setFilterData',
                     description = 'Sets the filter data for a Shape.\n\nCollision filtering is a system for preventing collision between shapes. For example, say you make a character that rides a bicycle. You want the bicycle to collide with the terrain and the character to collide with the terrain, but you don\'t want the character to collide with the bicycle (because they must overlap). Box2D supports such collision filtering using categories and groups.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -3991,7 +3991,7 @@ return {
                 {
                     name = 'setFriction',
                     description = 'Sets the friction of the shape. Friction determines how shapes react when they "slide" along other shapes. Low friction indicates a slippery surface, like ice, while high friction indicates a rough surface, like concrete. Range: 0.0 - 1.0.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4006,7 +4006,7 @@ return {
                 {
                     name = 'testPoint',
                     description = 'Checks whether a point lies inside the shape. This is particularly useful for mouse interaction with the shapes. By looping through all shapes and testing the mouse position with this function, we can find which shapes the mouse touches.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4033,7 +4033,7 @@ return {
                 {
                     name = 'testSegment',
                     description = 'Checks whether a line segment intersects a shape. This function will either return the "time" of impact and the surface normal at the point of collision, or nil if the line does not intersect the shape. The "time" is a value between 0.0 and 1.0 and can be used to calculate where the collision occured.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4092,7 +4092,7 @@ return {
                 {
                     name = 'getDampingRatio',
                     description = 'Returns the damping ratio of the joint.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4107,7 +4107,7 @@ return {
                 {
                     name = 'getFrequency',
                     description = 'Returns the frequency.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4122,7 +4122,7 @@ return {
                 {
                     name = 'setDampingRatio',
                     description = 'The new damping ratio.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4137,7 +4137,7 @@ return {
                 {
                     name = 'setFrequency',
                     description = 'Sets a new frequency.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4164,14 +4164,14 @@ return {
                 {
                     name = 'destroy',
                     description = 'Destroys the world, taking all bodies, joints, fixtures and their shapes with it.\n\nAn error will occur if you attempt to use any of the destroyed objects after calling this function.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'isDestroyed',
                     description = 'Gets whether the World is destroyed. Destroyed worlds cannot be used.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4186,7 +4186,7 @@ return {
                 {
                     name = 'isSleepingAllowed',
                     description = 'Returns the sleep behaviour of the world.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4201,7 +4201,7 @@ return {
                 {
                     name = 'getBodyCount',
                     description = 'Get the number of bodies in the world.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4216,7 +4216,7 @@ return {
                 {
                     name = 'getBodyList',
                     description = 'Returns a table with all bodies.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4231,7 +4231,7 @@ return {
                 {
                     name = 'getCallbacks',
                     description = 'Returns functions for the callbacks during the world update.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4261,7 +4261,7 @@ return {
                 {
                     name = 'getContactCount',
                     description = 'Returns the number of contacts in the world.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4276,7 +4276,7 @@ return {
                 {
                     name = 'getContactFilter',
                     description = 'Returns the function for collision filtering.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4291,7 +4291,7 @@ return {
                 {
                     name = 'getContactList',
                     description = 'Returns a table with all contacts.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4306,7 +4306,7 @@ return {
                 {
                     name = 'getGravity',
                     description = 'Get the gravity of the world.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4326,7 +4326,7 @@ return {
                 {
                     name = 'getJointCount',
                     description = 'Get the number of joints in the world.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4341,7 +4341,7 @@ return {
                 {
                     name = 'getJointList',
                     description = 'Returns a table with all joints.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4356,7 +4356,7 @@ return {
                 {
                     name = 'isLocked',
                     description = 'Returns if the world is updating its state.\n\nThis will return true inside the callbacks from World:setCallbacks.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -4371,7 +4371,7 @@ return {
                 {
                     name = 'queryBoundingBox',
                     description = 'Calls a function for each fixture inside the specified area.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4406,7 +4406,7 @@ return {
                 {
                     name = 'rayCast',
                     description = 'Casts a ray and calls a function with the fixtures that intersect it. You cannot make any assumptions about the order of the callbacks.\n\nEach time the function gets called, 6 arguments get passed to it. The first is the fixture intersecting the ray. The second and third are the coordinates of the intersection point. The fourth and fifth is the surface normal vector of the shape edge. The sixth argument is the position of the intersection on the ray as a number from 0 to 1 (or even higher if the ray length was changed with the return value).\n\nThe ray can be controlled with the return value. A positive value sets a new ray length where 1 is the default value. A value of 0 terminates the ray. If the callback function returns -1, the intersection gets ignored as if it didn\'t happen.\n\nThere is a bug in 0.8.0 where the normal vector passed to the callback function gets scaled by love.physics.getMeter.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4441,7 +4441,7 @@ return {
                 {
                     name = 'setSleepingAllowed',
                     description = 'Set the sleep behaviour of the world.\n\nA sleeping body is much more efficient to simulate than when awake.\n\nIf sleeping is allowed, any body that has come to rest will sleep.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4456,7 +4456,7 @@ return {
                 {
                     name = 'setCallbacks',
                     description = 'Sets functions for the collision callbacks during the world update.\n\nFour Lua functions can be given as arguments. The value nil removes a function.\n\nWhen called, each function will be passed three arguments. The first two arguments are the colliding fixtures and the third argument is the Contact between them. The PostSolve callback additionally gets the normal and tangent impulse for each contact point.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4486,7 +4486,7 @@ return {
                 {
                     name = 'setGravity',
                     description = 'Set the gravity of the world.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4506,7 +4506,7 @@ return {
                 {
                     name = 'update',
                     description = 'Update the state of the world.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -4528,7 +4528,7 @@ return {
         {
             name = 'getDistance',
             description = 'Returns the two closest points between two fixtures and their distance.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4575,7 +4575,7 @@ return {
         {
             name = 'getMeter',
             description = 'Get the scale of the world.\n\nThe world scale is the number of pixels per meter. Try to keep your shape sizes less than 10 times this scale.\n\nThis is important because the physics in Box2D is tuned to work well for objects of size 0.1m up to 10m. All physics coordinates are divided by this number for the physics calculations.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -4590,7 +4590,7 @@ return {
         {
             name = 'newBody',
             description = 'Creates a new body.\n\nThere are three types of bodies. Static bodies do not move, have a infinite mass, and can be used for level boundaries. Dynamic bodies are the main actors in the simulation, they collide with everything. Kinematic bodies do not react to forces and only collide with dynamic bodies.\n\nThe mass of the body gets calculated when a Fixture is attached or removed, but can be changed at any time with Body:setMass or Body:resetMassData.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4630,7 +4630,7 @@ return {
         {
             name = 'newChainShape',
             description = 'Creates a chain shape.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4672,7 +4672,7 @@ return {
         {
             name = 'newCircleShape',
             description = 'Create a new CircleShape at (x,y) in local coordinates.\n\nAnchors from the center of the shape by default.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4709,7 +4709,7 @@ return {
         {
             name = 'newDistanceJoint',
             description = 'Create a distance joint between two bodies.\n\nThis joint constrains the distance between two points on two bodies to be constant. These two points are specified in world coordinates and the two bodies are assumed to be in place when this joint is created. The first anchor point is connected to the first body and the second to the second body, and the points define the length of the distance joint.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4762,7 +4762,7 @@ return {
         {
             name = 'newEdgeShape',
             description = 'Creates a edge shape.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4799,7 +4799,7 @@ return {
         {
             name = 'newFixture',
             description = 'Creates and attaches a Fixture to a body.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4832,7 +4832,7 @@ return {
         {
             name = 'newFrictionJoint',
             description = 'Create a friction joint between two bodies. A FrictionJoint applies friction to a body.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4875,7 +4875,7 @@ return {
         {
             name = 'newGearJoint',
             description = 'Create a gear joint connecting two joints.\n\nThe gear joint connects two joints that must be either prismatic or revolute joints. Using this joint requires that the joints it uses connect their respective bodies to the ground and have the ground as the first body. When destroying the bodies and joints you must make sure you destroy the gear joint before the other joints.\n\nThe gear joint has a ratio the determines how the angular or distance values of the connected joints relate to each other. The formula coordinate1 + ratio * coordinate2 always has a constant value that is set when the gear joint is created.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4914,7 +4914,7 @@ return {
         {
             name = 'newMouseJoint',
             description = 'Create a joint between a body and the mouse.\n\nThis joint actually connects the body to a fixed point in the world. To make it follow the mouse, the fixed point must be updated every timestep (example below).\n\nThe advantage of using a MouseJoint instead of just changing a body position directly is that collisions and reactions to other joints are handled by the physics engine.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4946,7 +4946,7 @@ return {
         {
             name = 'newPolygonShape',
             description = 'Creates a new PolygonShape.\nThis shape can have 8 vertices at most, and must form a convex shape.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4973,7 +4973,7 @@ return {
         {
             name = 'newPrismaticJoint',
             description = 'Create a prismatic joints between two bodies.\n\nA prismatic joint constrains two bodies to move relatively to each other on a specified axis. It does not allow for relative rotation. Its definition and operation are similar to a revolute joint, but with translation and force substituted for angle and torque.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5026,7 +5026,7 @@ return {
         {
             name = 'newPulleyJoint',
             description = 'Create a pulley joint to join two bodies to each other and the ground.\n\nThe pulley joint simulates a pulley with an optional block and tackle. If the ratio parameter has a value different from one, then the simulated rope extends faster on one side than the other. In a pulley joint the total length of the simulated rope is the constant length1 + ratio * length2, which is set when the pulley joint is created.\n\nPulley joints can behave unpredictably if one side is fully extended. It is recommended that the method setMaxLengths  be used to constrain the maximum lengths each side can attain.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5105,7 +5105,7 @@ return {
         {
             name = 'newRectangleShape',
             description = 'Shorthand for creating rectangluar PolygonShapes.\n\nThe rectangle will be created at (x,y) in local coordinates.\n\nAnchors from the center of the shape by default.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5153,7 +5153,7 @@ return {
         {
             name = 'newRevoluteJoint',
             description = 'Creates a pivot joint between two bodies.\n\nThis joint connects two bodies to a point around which they can pivot.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5195,7 +5195,7 @@ return {
         {
             name = 'newRopeJoint',
             description = 'Create a joint between two bodies. Its only function is enforcing a max distance between these bodies.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5253,7 +5253,7 @@ return {
         {
             name = 'newWeldJoint',
             description = 'Create a friction joint between two bodies. A WeldJoint essentially glues two bodies together.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5296,7 +5296,7 @@ return {
         {
             name = 'newWheelJoint',
             description = 'Creates a wheel joint.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5349,7 +5349,7 @@ return {
         {
             name = 'newWorld',
             description = 'Creates a new World.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5384,7 +5384,7 @@ return {
         {
             name = 'setMeter',
             description = 'Sets the pixels to meter scale factor.\n\nAll coordinates in the physics module are divided by this number and converted to meters, and it creates a convenient way to draw the objects directly to the screen without the need for graphics transformations.\n\nIt is recommended to create shapes no larger than 10 times the scale. This is important because Box2D is tuned to work well with shape sizes from 0.1 to 10 meters.\n\nlove.physics.setMeter does not apply retroactively to created objects. Created objects retain their meter coordinates but the scale factor will affect their pixel coordinates.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
