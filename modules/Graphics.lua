@@ -3954,6 +3954,7 @@ return {
                     }
                 },
                 {
+                    description = 'This variant uses the default font (Vera Sans) with a custom size.',
                     arguments = {
                         {
                             type = 'number',
