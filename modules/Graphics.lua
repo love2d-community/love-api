@@ -4699,8 +4699,11 @@ return {
             name = 'push',
             description = 'Copies and pushes the current coordinate transformation to the transformation stack.\n\nThis function is always used to prepare for a corresponding pop operation later. It stores the current coordinate transformation state into the transformation stack and keeps it active. Later changes to the transformation can be undone by using the pop operation, which returns the coordinate transform to the state it was in before calling push.',
             variants = {
-                {},
                 {
+                    description = 'Pushes the current transformation to the transformation stack.'
+                },
+                {
+                    description = 'Pushes a specific type of state to the stack.',
                     arguments = {
                         {
                             type = 'StackType',
