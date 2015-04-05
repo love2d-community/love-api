@@ -603,7 +603,7 @@ return {
                         {
                             type = 'DistanceModel',
                             name = 'model',
-                            description = 'The current distance model.'
+                            description = 'The current distance model. The default is \'inverse clamped\'.'
                         }
                     }
                 }
