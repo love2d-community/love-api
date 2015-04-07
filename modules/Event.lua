@@ -5,14 +5,14 @@ return {
         {
             name = 'clear',
             description = 'Clears the event queue.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'poll',
             description = 'Returns an iterator for messages in the event queue.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -27,14 +27,14 @@ return {
         {
             name = 'pump',
             description = 'Pump events into the event queue. This is a low-level function, and is usually not called by the user, but by love.run. Note that this does need to be called for any OS to think you\'re still running, and if you want to handle OS-generated events at all (think callbacks). love.event.pump can only be called from the main thread, but afterwards, the rest of love.event can be used from any other thread.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'push',
             description = 'Adds an event to the event queue.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -73,14 +73,14 @@ return {
         {
             name = 'quit',
             description = 'Adds the quit event to the queue.\n\nThe quit event is a signal for the event handler to close LÖVE. It\'s possible to abort the exit process with the love.quit callback.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'wait',
             description = 'Like love.event.poll but blocks until there is an event in the queue.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -122,6 +122,14 @@ return {
                     description = 'Window focus gained or lost'
                 },
                 {
+                    name = 'joystickaxis',
+                    description = 'Joystick axis motion'
+                },
+                {
+                    name = 'joystickhat',
+                    description = 'Joystick hat pressed'
+                },
+                {
                     name = 'joystickpressed',
                     description = 'Joystick pressed'
                 },
@@ -138,6 +146,10 @@ return {
                     description = 'Key released'
                 },
                 {
+                    name = 'mousefocus',
+                    description = 'Window mouse focus gained or lost'
+                },
+                {
                     name = 'mousepressed',
                     description = 'Mouse pressed'
                 },
@@ -146,8 +158,20 @@ return {
                     description = 'Mouse released'
                 },
                 {
+                    name = 'resize',
+                    description = 'Window size changed by the user'
+                },
+                {
+                    name = 'threaderror',
+                    description = 'A Lua error has occurred in a thread.'
+                },
+                {
                     name = 'quit',
                     description = 'Quit'
+                },
+                {
+                    name = 'visible',
+                    description = 'Window is minimized or un-minimized by the user'
                 },
             }
         }

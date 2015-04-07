@@ -12,7 +12,7 @@ return {
                 {
                     name = 'getAxes',
                     description = 'Gets the direction of each axis.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -37,7 +37,7 @@ return {
                 {
                     name = 'getAxis',
                     description = 'Gets the direction of an axis.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -59,7 +59,7 @@ return {
                 {
                     name = 'getAxisCount',
                     description = 'Gets the number of axes on the joystick.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -74,7 +74,7 @@ return {
                 {
                     name = 'getButtonCount',
                     description = 'Gets the number of buttons on the joystick.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -89,7 +89,7 @@ return {
                 {
                     name = 'getGUID',
                     description = 'Gets a stable GUID unique to the type of the physical joystick which does not change over time. For example, all Sony Dualshock 3 controllers in OS X have the same GUID. The value is platform-dependent.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -104,7 +104,7 @@ return {
                 {
                     name = 'getGamepadAxis',
                     description = 'Gets the direction of a virtual gamepad axis. If the Joystick isn\'t recognized as a gamepad or isn\'t connected, this function will always return 0.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -126,7 +126,7 @@ return {
                 {
                     name = 'getGamepadMapping',
                     description = 'Gets the button, axis or hat that a virtual gamepad input is bound to.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -184,7 +184,7 @@ return {
                 {
                     name = 'getHat',
                     description = 'Gets the direction of a hat.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -206,7 +206,7 @@ return {
                 {
                     name = 'getHatCount',
                     description = 'Gets the number of hats on the joystick.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -221,7 +221,7 @@ return {
                 {
                     name = 'getID',
                     description = 'Gets the joystick\'s unique identifier. The identifier will remain the same for the life of the game, even when the Joystick is disconnected and reconnected, but it will change when the game is re-launched.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -241,7 +241,7 @@ return {
                 {
                     name = 'getName',
                     description = 'Gets the name of the joystick.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -256,7 +256,7 @@ return {
                 {
                     name = 'getVibration',
                     description = 'Gets the current vibration motor strengths on a Joystick with rumble support.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -276,7 +276,7 @@ return {
                 {
                     name = 'isConnected',
                     description = 'Gets whether the Joystick is connected.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -291,7 +291,7 @@ return {
                 {
                     name = 'isDown',
                     description = 'Checks if a button on the Joystick is pressed.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -313,7 +313,7 @@ return {
                 {
                     name = 'isGamepad',
                     description = 'Gets whether the Joystick is recognized as a gamepad. If this is the case, the Joystick\'s buttons and axes can be used in a standardized manner across different operating systems and joystick models via Joystick:getGamepadAxis and related functions.\n\nLÖVE automatically recognizes most popular controllers with a similar layout to the Xbox 360 controller as gamepads, but you can add more with love.joystick.setGamepadMapping.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -328,7 +328,7 @@ return {
                 {
                     name = 'isGamepadDown',
                     description = 'Checks if a virtual gamepad button on the Joystick is pressed. If the Joystick is not recognized as a Gamepad or isn\'t connected, then this function will always return false.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -350,7 +350,7 @@ return {
                 {
                     name = 'isVibrationSupported',
                     description = 'Gets whether the Joystick supports vibration.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -365,7 +365,7 @@ return {
                 {
                     name = 'setVibration',
                     description = 'Sets the vibration motor speeds on a Joystick with rumble support.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -434,7 +434,7 @@ return {
         {
             name = 'getJoystickCount',
             description = 'Gets the number of connected joysticks.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -449,7 +449,7 @@ return {
         {
             name = 'getJoysticks',
             description = 'Gets a list of connected Joysticks.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -464,7 +464,7 @@ return {
         {
             name = 'loadGamepadMappings',
             description = 'Loads a gamepad mappings string or file created with love.joystick.saveGamepadMappings.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -488,7 +488,7 @@ return {
         {
             name = 'saveGamepadMappings',
             description = 'Saves the virtual gamepad mappings of all Joysticks that are recognized as gamepads and have either been recently used or their gamepad bindings have been modified.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -519,7 +519,7 @@ return {
         {
             name = 'setGamepadMapping',
             description = 'Binds a virtual gamepad input to a button, axis or hat for all Joysticks of a certain type. For example, if this function is used with a GUID returned by a Dualshock 3 controller in OS X, the binding will affect Joystick:getGamepadAxis and Joystick:isGamepadDown for all Dualshock 3 controllers used with the game when run in OS X.\n\nLÖVE includes built-in gamepad bindings for many common controllers. This function lets you change the bindings or add new ones for types of Joysticks which aren\'t recognized as gamepads by default.\n\nThe virtual gamepad buttons and axes are designed around the Xbox 360 controller layout.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

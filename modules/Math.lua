@@ -12,7 +12,7 @@ return {
                 {
                     name = 'getSeed',
                     description = 'Gets the state of the random number generator.\n\nThe state is split into two numbers due to Lua\'s use of doubles for all number values - doubles can\'t accurately represent integer values above 2^53.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -32,7 +32,7 @@ return {
                 {
                     name = 'getState',
                     description = 'Gets the current state of the random number generator. This returns an opaque implementation-dependent string which is only useful for later use with RandomGenerator:setState.\n\nThis is different from RandomGenerator:getSeed in that getState gets the RandomGenerator\'s current state, whereas getSeed gets the previously set seed number.\n\nThe value of the state string does not depend on the current operating system.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -47,7 +47,7 @@ return {
                 {
                     name = 'random',
                     description = 'Generates a pseudo random number in a platform independent way.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -99,7 +99,7 @@ return {
                 {
                     name = 'randomNormal',
                     description = 'Get a normally distributed pseudo random number.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -128,7 +128,7 @@ return {
                 {
                     name = 'setSeed',
                     description = 'Sets the seed of the random number generator using the specified integer number.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -158,7 +158,7 @@ return {
                 {
                     name = 'setState',
                     description = 'Sets the current state of the random number generator. The value used as an argument for this function is an opaque implementation-dependent string and should only originate from a previous call to RandomGenerator:getState.\n\nThis is different from RandomGenerator:setSeed in that setState directly sets the RandomGenerator\'s current implementation-dependent state, whereas setSeed gives it a new seed value.\n\nThe effect of the state string does not depend on the current operating system.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -185,7 +185,7 @@ return {
                 {
                     name = 'evalulate',
                     description = 'Evaluate Bézier curve at parameter t. The parameter must be between 0 and 1 (inclusive).\n\nThis function can be used to move objects along paths or tween parameters. However it should not be used to render the curve, see BezierCurve:render for that purpose.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -212,7 +212,7 @@ return {
                 {
                     name = 'getControlPoint',
                     description = 'Get coordinates of the i-th control point. Indices start with 1.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -239,7 +239,7 @@ return {
                 {
                     name = 'getControlPointCount',
                     description = 'Get the number of control points in the Bézier curve.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -254,7 +254,7 @@ return {
                 {
                     name = 'getDegree',
                     description = 'Get degree of the Bézier curve. The degree is equal to number-of-control-points - 1.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -269,7 +269,7 @@ return {
                 {
                     name = 'getDerivative',
                     description = 'Get the derivative of the Bézier curve.\n\nThis function can be used to rotate sprites moving along a curve in the direction of the movement and compute the direction perpendicular to the curve at some parameter t.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -284,7 +284,7 @@ return {
                 {
                     name = 'insertControlPoint',
                     description = 'Insert control point after the i-th control point. Indices start with 1. Negative indices wrap around: -1 is the last control point, -2 the one before the last, etc.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -310,7 +310,7 @@ return {
                 {
                     name = 'render',
                     description = 'Get a list of coordinates to be used with love.graphics.line.\n\nThis function samples the Bézier curve using recursive subdivision. You can control the recursion depth using the depth parameter.\n\nIf you are just interested to know the position on the curve given a parameter, use BezierCurve:evalulate.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -333,7 +333,7 @@ return {
                 {
                     name = 'rotate',
                     description = 'Rotate the Bézier curve by an angle.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -360,7 +360,7 @@ return {
                 {
                     name = 'scale',
                     description = 'Scale the Bézier curve by a factor.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -387,7 +387,7 @@ return {
                 {
                     name = 'setControlPoint',
                     description = 'Set coordinates of the i-th control point. Indices start with 1.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -412,7 +412,7 @@ return {
                 {
                     name = 'translate',
                     description = 'Move the Bézier curve by an offset.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -439,7 +439,7 @@ return {
         {
             name = 'gammaToLinear',
             description = 'Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful when doing gamma-correct rendering using colors created based on what they look like on-screen.\n\nGamma-space sRGB has more precision in the lower end than linear RGB. Using this function to convert from sRGB to RGB can result in non-integer color values, which get truncated to integers and lose precision when used with other functions such as love.graphics.setColor.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -523,7 +523,7 @@ return {
         {
             name = 'getRandomSeed',
             description = 'Gets the seed of the random number generator.\n\nThe state is split into two numbers due to Lua\'s use of doubles for all number values - doubles can\'t accurately represent integer values above 2^53.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -543,7 +543,7 @@ return {
         {
             name = 'getRandomState',
             description = 'Gets the current state of the random number generator. This returns an opaque implementation-dependent string which is only useful for later use with RandomGenerator:setState.\n\nThis is different from RandomGenerator:getSeed in that getState gets the RandomGenerator\'s current state, whereas getSeed gets the previously set seed number.\n\nThe value of the state string does not depend on the current operating system.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -558,7 +558,7 @@ return {
         {
             name = 'isConvex',
             description = 'Checks whether a polygon is convex.\n\nPolygonShapes in love.physics, some forms of Mesh, and polygons drawn with love.graphics.polygon must be simple convex polygons.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -626,7 +626,7 @@ return {
         {
             name = 'linearToGamma',
             description = 'Converts a color from linear-space (RGB) to gamma-space (sRGB). This is useful when storing linear RGB color values in an image, because the linear RGB color space has less precision than sRGB for dark colors, which can result in noticeable color banding when drawing.\n\nIn general, colors chosen based on what they look like on-screen are already in gamma-space and should not be double-converted. Colors calculated using math are often in the linear RGB space.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -710,7 +710,7 @@ return {
         {
             name = 'newBezierCurve',
             description = 'Creates a new BezierCurve object.\n\nThe number of vertices in the control polygon determines the degree of the curve, e.g. three vertices define a quadratic (degree 2) Bézier curve, four vertices define a cubic (degree 3) Bézier curve, etc.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -778,7 +778,7 @@ return {
         {
             name = 'newRandomGenerator',
             description = 'Creates a new RandomGenerator object which is completely independent of other RandomGenerator objects and random functions.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -831,7 +831,7 @@ return {
         {
             name = 'noise',
             description = 'Generates a Simplex noise value in 1-4 dimensions.\n\nSimplex noise is closely related to Perlin noise. It is widely used for procedural content generation.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -931,7 +931,7 @@ return {
         {
             name = 'random',
             description = 'Generates a pseudo random number in a platform independent way.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -983,7 +983,7 @@ return {
         {
             name = 'randomNormal',
             description = 'Get a normally distributed pseudo random number.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -1012,7 +1012,7 @@ return {
         {
             name = 'setRandomSeed',
             description = 'Sets the seed of the random number generator using the specified integer number.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -1042,7 +1042,7 @@ return {
         {
             name = 'setRandomState',
             description = 'Gets the current state of the random number generator. This returns an opaque implementation-dependent string which is only useful for later use with RandomGenerator:setState.\n\nThis is different from RandomGenerator:getSeed in that getState gets the RandomGenerator\'s current state, whereas getSeed gets the previously set seed number.\n\nThe value of the state string does not depend on the current operating system.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -1057,7 +1057,7 @@ return {
         {
             name = 'triangulate',
             description = 'Triangulate a simple polygon.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

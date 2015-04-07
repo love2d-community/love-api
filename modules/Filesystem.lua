@@ -12,7 +12,7 @@ return {
                 {
                     name = 'close',
                     description = 'Closes a file.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -27,7 +27,7 @@ return {
                 {
                     name = 'eof',
                     description = 'If the end-of-file has been reached',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -42,7 +42,7 @@ return {
                 {
                     name = 'flush',
                     description = 'Flushes any buffered written data in the file to the disk.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -62,7 +62,7 @@ return {
                 {
                     name = 'getBuffer',
                     description = 'Gets the buffer mode of a file.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -82,7 +82,7 @@ return {
                 {
                     name = 'getMode',
                     description = 'Gets the FileMode the file has been opened with.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -97,7 +97,7 @@ return {
                 {
                     name = 'getSize',
                     description = 'Returns the file size.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -112,7 +112,7 @@ return {
                 {
                     name = 'isOpen',
                     description = 'Gets whether the file is open.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -127,7 +127,7 @@ return {
                 {
                     name = 'lines',
                     description = 'Iterate over all the lines in a file',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -142,7 +142,7 @@ return {
                 {
                     name = 'open',
                     description = 'Open the file for write, read or append.\n\nIf you are getting the error message "Could not set write directory", try setting the save directory. This is done either with love.filesystem.setIdentity or by setting the identity field in love.conf.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -164,7 +164,7 @@ return {
                 {
                     name = 'read',
                     description = 'Read a number of bytes from a file.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -192,7 +192,7 @@ return {
                 {
                     name = 'seek',
                     description = 'Seek to a position in a file.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -214,7 +214,7 @@ return {
                 {
                     name = 'setBuffer',
                     description = 'Sets the buffer mode for a file opened for writing or appending. Files with buffering enabled will not write data to the disk until the buffer size limit is reached, depending on the buffer mode.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -246,7 +246,7 @@ return {
                 {
                     name = 'write',
                     description = 'Write data to a file.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -283,7 +283,7 @@ return {
                 {
                     name = 'getExtension',
                     description = 'Gets the extension of the FileData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -298,7 +298,7 @@ return {
                 {
                     name = 'getFilename',
                     description = 'Gets the filename of the FileData.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -321,7 +321,7 @@ return {
         {
             name = 'append',
             description = 'Append data to an existing file.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -359,7 +359,7 @@ return {
         {
             name = 'areSymlinksEnabled',
             description = 'Gets whether love.filesystem follows symbolic links.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -374,7 +374,7 @@ return {
         {
             name = 'createDirectory',
             description = 'Creates a directory.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -396,7 +396,7 @@ return {
         {
             name = 'exists',
             description = 'Check whether a file or directory exists.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -418,7 +418,7 @@ return {
         {
             name = 'getAppdataDirectory',
             description = 'Returns the application data directory (could be the same as getUserDirectory)',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -433,7 +433,7 @@ return {
         {
             name = 'getDirectoryItems',
             description = 'Returns a table with the names of files and subdirectories in the specified path. The table is not sorted in any way; the order is undefined.\n\nIf the path passed to the function exists in the game and the save directory, it will list the files and directories from both places.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -476,7 +476,7 @@ return {
         {
             name = 'getIdentity',
             description = 'Gets the write directory name for your game. Note that this only returns the name of the folder to store your files in, not the full location.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -491,7 +491,7 @@ return {
         {
             name = 'getLastModified',
             description = 'Gets the last modification time of a file.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -518,7 +518,7 @@ return {
         {
             name = 'getRealDirectory',
             description = 'Gets the platform-specific absolute path of the directory containing a filepath.\n\nThis can be used to determine whether a file is inside the save directory or the game\'s source .love.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -540,7 +540,7 @@ return {
         {
             name = 'getSaveDirectory',
             description = 'Gets the full path to the designated save directory. This can be useful if you want to use the standard io library (or something else) to read or write in the save directory.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -555,7 +555,7 @@ return {
         {
             name = 'getSize',
             description = 'Gets the size in bytes of a file.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -582,7 +582,7 @@ return {
         {
             name = 'getSourceBaseDirectory',
             description = 'Returns the full path to the directory containing the .love file. If the game is fused to the LÖVE executable, then the directory containing the executable is returned.\n\nIf love.filesystem.isFused is true, the path returned by this function can be passed to love.filesystem.mount, which will make the directory containing the main game (e.g. C:\\Program Files\\coolgame\\) readable by love.filesystem.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -597,7 +597,7 @@ return {
         {
             name = 'getUserDirectory',
             description = 'Returns the path of the user\'s directory.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -612,7 +612,7 @@ return {
         {
             name = 'getWorkingDirectory',
             description = 'Gets the current working directory.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -627,7 +627,7 @@ return {
         {
             name = 'isDirectory',
             description = 'Check whether something is a directory.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -649,7 +649,7 @@ return {
         {
             name = 'isFile',
             description = 'Check whether something is a file.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -671,7 +671,7 @@ return {
         {
             name = 'isFused',
             description = 'Gets whether the game is in fused mode or not.\n\nIf a game is in fused mode, its save directory will be directly in the Appdata directory instead of Appdata/LOVE/. The game will also be able to load C Lua dynamic libraries which are located in the save directory.\n\nA game is in fused mode if the source .love has been fused to the executable (see Game Distribution), or if "--fused" has been given as a command-line argument when starting the game.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -686,7 +686,7 @@ return {
         {
             name = 'isSymlink',
             description = 'Gets whether a filepath is actually a symbolic link.\n\nIf symbolic links are not enabled (via love.filesystem.setSymlinksEnabled), this function will always return false.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -708,7 +708,7 @@ return {
         {
             name = 'lines',
             description = 'Iterate over the lines in a file.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -730,7 +730,7 @@ return {
         {
             name = 'load',
             description = 'Load a file (but not run it).',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -752,7 +752,7 @@ return {
         {
             name = 'mount',
             description = 'Mounts a zip file or folder in the game\'s save directory for reading.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -806,7 +806,7 @@ return {
         {
             name = 'newFile',
             description = 'Creates a new File object. It needs to be opened before it can be accessed.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -839,7 +839,7 @@ return {
         {
             name = 'newFileData',
             description = 'Creates a new FileData object.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -872,7 +872,7 @@ return {
         {
             name = 'read',
             description = 'Read the contents of a file.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -905,7 +905,7 @@ return {
         {
             name = 'remove',
             description = 'Removes a file or directory.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -927,7 +927,7 @@ return {
         {
             name = 'setIdentity',
             description = 'Sets the write directory for your game. Note that you can only set the name of the folder to store your files in, not the location.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -948,7 +948,7 @@ return {
         {
             name = 'setSource',
             description = 'Sets the source of the game, where the code is present. This function can only be called once, and is normally automatically done by LÖVE.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -963,7 +963,7 @@ return {
         {
             name = 'setSymlinksEnabled',
             description = 'Sets whether love.filesystem follows symbolic links. It is disabled by default.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -978,7 +978,7 @@ return {
         {
             name = 'unmount',
             description = 'Unmounts a zip file or folder previously mounted for reading with love.filesystem.mount.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -1000,7 +1000,7 @@ return {
         {
             name = 'write',
             description = 'Write data to a file.\n\nIf you are getting the error message "Could not set write directory", try setting the save directory. This is done either with love.filesystem.setIdentity or by setting the identity field in love.conf.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

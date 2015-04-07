@@ -12,7 +12,7 @@ return {
                 {
                     name = 'clear',
                     description = 'Clears content of a Canvas.\n\nWhen called without arguments, the Canvas will be cleared with color rgba = {0,0,0,0}, i.e. it will be fully transparent. If called with color parameters (be it numbers or a color table), the alpha component may be omitted in which case it defaults to 255 (fully opaque).',
-                    functions = {
+                    variants = {
                         {
                             {},
                             arguments = {
@@ -53,7 +53,7 @@ return {
                 {
                     name = 'getDimensions',
                     description = 'Gets the width and height of the Canvas.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -73,7 +73,7 @@ return {
                 {
                     name = 'getFSAA',
                     description = 'Gets the number of antialiasing samples used when drawing to the Canvas.\n\nThis may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn\'t support that number.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -88,7 +88,7 @@ return {
                 {
                     name = 'getFilter',
                     description = 'Gets the filter mode of the Canvas.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -113,7 +113,7 @@ return {
                 {
                     name = 'getHeight',
                     description = 'Gets the height of the Canvas.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -128,7 +128,7 @@ return {
                 {
                     name = 'getImageData',
                     description = 'Returns the image data stored in the Canvas. Think of it as taking a screenshot of the hidden screen that is the Canvas.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -143,7 +143,7 @@ return {
                 {
                     name = 'getPixel',
                     description = 'Gets the pixel at the specified position from a Canvas.\n\nValid x and y values start at 0 and go up to canvas width and height minus 1.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -185,7 +185,7 @@ return {
                 {
                     name = 'getWidth',
                     description = 'Gets the width of the Canvas.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -200,7 +200,7 @@ return {
                 {
                     name = 'getWrap',
                     description = 'Gets the wrapping properties of a Canvas.\n\nThis function returns the currently set horizontal and vertical wrapping modes for the Canvas.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -220,7 +220,7 @@ return {
                 {
                     name = 'renderTo',
                     description = 'Render to the Canvas using a function.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -235,7 +235,7 @@ return {
                 {
                     name = 'setFilter',
                     description = 'Sets the filter of the Canvas.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -262,7 +262,7 @@ return {
                 {
                     name = 'setWrap',
                     description = 'Sets the wrapping properties of a Canvas.\n\nThis function sets the way the edges of a Canvas are treated if it is scaled or rotated. If the WrapMode is set to "clamp", the edge will not be interpolated. If set to "repeat", the edge will be interpolated with the pixels on the opposing side of the framebuffer.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -297,7 +297,7 @@ return {
                 {
                     name = 'getAscent',
                     description = 'Gets the ascent of the Font. The ascent spans the distance between the baseline and the top of the glyph that reaches farthest from the baseline.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -312,7 +312,7 @@ return {
                 {
                     name = 'getBaseline',
                     description = 'Gets the baseline of the Font. Most scripts share the notion of a baseline: an imaginary horizontal line on which characters rest. In some scripts, parts of glyphs lie below the baseline.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -327,7 +327,7 @@ return {
                 {
                     name = 'getDescent',
                     description = 'Gets the descent of the Font. The descent spans the distance between the baseline and the lowest descending glyph in a typeface.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -342,7 +342,7 @@ return {
                 {
                     name = 'getFilter',
                     description = 'Gets the filter mode for a font.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -367,7 +367,7 @@ return {
                 {
                     name = 'getHeight',
                     description = 'Gets the height of the Font. The height of the font is the size including any spacing; the height which it will need.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -382,7 +382,7 @@ return {
                 {
                     name = 'getLineHeight',
                     description = 'Gets the line height. This will be the value previously set by Font:setLineHeight, or 1.0 by default.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -397,7 +397,7 @@ return {
                 {
                     name = 'getWidth',
                     description = 'Determines the horizontal size a line of text needs. Does not support line-breaks.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -419,7 +419,7 @@ return {
                 {
                     name = 'getWrap',
                     description = 'Returns how many lines text would be wrapped to. This function accounts for newlines correctly (i.e. \'\\n\')',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -451,7 +451,7 @@ return {
                 {
                     name = 'hasGlyph',
                     description = 'Gets whether the font can render a particular character.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -489,7 +489,7 @@ return {
                 {
                     name = 'setFilter',
                     description = 'Sets the filter mode for a font.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -516,7 +516,7 @@ return {
                 {
                     name = 'setLineHeight',
                     description = 'Sets the line height. When rendering the font in lines the actual height will be determined by the line height multiplied by the height of the font. The default is 1.0.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -543,7 +543,7 @@ return {
                 {
                     name = 'getDrawMode',
                     description = 'Gets the mode used when drawing the Mesh.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -558,7 +558,7 @@ return {
                 {
                     name = 'getDrawRange',
                     description = 'Gets the range of vertices used when drawing the Mesh.\n\nIf the Mesh\'s draw range has not been set previously with Mesh:setDrawRange, this function will return nil.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -578,7 +578,7 @@ return {
                 {
                     name = 'getTexture',
                     description = 'Gets the texture (Image or Canvas) used when drawing the Mesh.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -593,7 +593,7 @@ return {
                 {
                     name = 'getVertex',
                     description = 'Returns vertex information from the Mesh.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -650,7 +650,7 @@ return {
                 {
                     name = 'getVertexCount',
                     description = 'Returns the total number of vertices in the Mesh.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -665,7 +665,7 @@ return {
                 {
                     name = 'getVertexMap',
                     description = 'Gets the Mesh\'s vertex map.\n\n If no vertex map has been set previously (either in love.graphics.newMesh or with Mesh:setVertexMap), then this function will return the default vertex map: {1, 2, 3, ..., Mesh:getVertexCount()}.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -680,7 +680,7 @@ return {
                 {
                     name = 'getVertices',
                     description = 'Gets all the vertices in the Mesh.\n\nThis method can be slow if the Mesh has a large number of vertices. Keep the original table used to create the Mesh around and update it when necessary instead of using this method frequently, if possible.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -695,7 +695,7 @@ return {
                 {
                     name = 'setDrawMode',
                     description = 'Sets the mode used when drawing the Mesh.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -710,7 +710,7 @@ return {
                 {
                     name = 'setDrawRange',
                     description = 'Restricts the drawn vertices of the Mesh to a subset of the total.\n\nIf a vertex map is used with the Mesh, this method will set a subset of the values in the vertex map array to use, instead of a subset of the total vertices in the Mesh.\n\nFor example, if Mesh:setVertexMap(1, 2, 3, 1, 3, 4) and Mesh:setDrawRange(4, 6) are called, vertices 1, 3, and 4 will be drawn.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -730,7 +730,7 @@ return {
                 {
                     name = 'setTexture',
                     description = 'Sets the texture (Image or Canvas) used when drawing the Mesh.\n\nWhen called without an argument disables the texture. Untextured meshes have a white color by default.',
-                    functions = {
+                    variants = {
                         {},
                         {
                             arguments = {
@@ -746,7 +746,7 @@ return {
                 {
                     name = 'setVertexColors',
                     description = 'Sets if the per-vertex colors are used when rendering instead of the constant color (constant color being love.graphics.setColor or SpriteBatch:setColor)\n\nThe per-vertex colors are automatically enabled by default when making a new Mesh or when doing Mesh:setVertex, but only if at least one vertex color is not the default (255,255,255,255).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -761,7 +761,7 @@ return {
                 {
                     name = 'setVertex',
                     description = 'Sets the vertex information for a Mesh.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -820,7 +820,7 @@ return {
                 {
                     name = 'setVertexColors',
                     description = 'Sets if the per-vertex colors are used when rendering instead of the constant color (constant color being love.graphics.setColor or SpriteBatch:setColor)\n\nThe per-vertex colors are automatically enabled by default when making a new Mesh or when doing Mesh:setVertex, but only if at least one vertex color is not the default (255,255,255,255).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -835,7 +835,7 @@ return {
                 {
                     name = 'setVertexMap',
                     description = 'Sets the vertex map for a Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn.\n\nThe vertex map allows you to re-order or reuse vertices when drawing without changing the actual vertex parameters or duplicating vertices. It is especially useful when combined with different Mesh draw modes.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -869,7 +869,7 @@ return {
                 {
                     name = 'setVertices',
                     description = 'Replaces all vertices in the Mesh with new ones.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -944,7 +944,7 @@ return {
                 {
                     name = 'getData',
                     description = 'Gets the original ImageData or CompressedData used to create the Image.\n\nAll Images keep a reference to the Data that was used to create the Image. The Data is used to refresh the Image when love.window.setMode or Image:refresh is called.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -968,7 +968,7 @@ return {
                 {
                     name = 'getDimensions',
                     description = 'Gets the width and height of the Image.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -988,7 +988,7 @@ return {
                 {
                     name = 'getFilter',
                     description = 'Gets the filter mode for an image.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1008,7 +1008,7 @@ return {
                 {
                     name = 'getHeight',
                     description = 'Gets the height of the Image.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1023,7 +1023,7 @@ return {
                 {
                     name = 'getMipmapFilter',
                     description = 'Gets the mipmap filter mode for an Image.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1043,7 +1043,7 @@ return {
                 {
                     name = 'getWidth',
                     description = 'Gets the width of the Image.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1058,7 +1058,7 @@ return {
                 {
                     name = 'getWrap',
                     description = 'Gets the wrapping properties of an Image.\n\nThis function returns the currently set horizontal and vertical wrapping modes for the image.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1078,14 +1078,14 @@ return {
                 {
                     name = 'refresh',
                     description = 'Reloads the Image\'s contents from the ImageData or CompressedData used to create the image.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'setFilter',
                     description = 'Sets the filter mode for an image.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1106,7 +1106,7 @@ return {
                 {
                     name = 'setMipmapFilter',
                     description = 'Sets the mipmap filter mode for an Image.\n\nMipmapping is useful when drawing an image at a reduced scale. It can improve performance and reduce aliasing issues.\n\nAutomatically creates mipmaps for the Image if none exist yet. If the image is compressed and its CompressedData has mipmap data included, it will use that.\n\nDisables mipmap filtering when called without arguments.',
-                    functions = {
+                    variants = {
                         {},
                         {
                             arguments = {
@@ -1128,7 +1128,7 @@ return {
                 {
                     name = 'setWrap',
                     description = 'Sets the wrapping properties of an Image.\n\nThis function sets the way an Image is repeated when it is drawn with a Quad that is larger than the image\'s extent. An image may be clamped or set to repeat in both horizontal and vertical directions. Clamped images appear only once, but repeated ones repeat as many times as there is room in the Quad.\n\nIf you use a Quad that is larger than the image extent and do not use repeated tiling, there may be an unwanted visual effect of the image stretching all the way to fill the Quad. If this is the case, setting Image:getWrap("repeat", "repeat") for all the images to be repeated, and using Quad of appropriate size will result in the best visual appearance.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1162,7 +1162,7 @@ return {
                 {
                     name = 'clone',
                     description = 'Creates an identical copy of the ParticleSystem in the stopped state.\n\nCloned ParticleSystem inherit all the set-able state of the original ParticleSystem, but they are initialized stopped.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1177,7 +1177,7 @@ return {
                 {
                     name = 'emit',
                     description = 'Emits a burst of particles from the particle emitter.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1192,7 +1192,7 @@ return {
                 {
                     name = 'getCount',
                     description = 'Gets the amount of particles that are currently in the system.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1207,7 +1207,7 @@ return {
                 {
                     name = 'getAreaSpread',
                     description = 'Gets the area-based spawn parameters for the particles.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1232,7 +1232,7 @@ return {
                 {
                     name = 'getBufferSize',
                     description = 'Gets the size of the buffer (the max allowed amount of particles in the system).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1247,7 +1247,7 @@ return {
                 {
                     name = 'getColors',
                     description = 'Gets a series of colors to apply to the particle sprite. The particle system will interpolate between each color evenly over the particle\'s lifetime. Color modulation needs to be activated for this function to have any effect.\n\nArguments are passed in groups of four, representing the components of the desired RGBA value. At least one color must be specified. A maximum of eight may be used.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1302,7 +1302,7 @@ return {
                 {
                     name = 'getDirection',
                     description = 'Gets the direction the particles will be emitted in.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1317,7 +1317,7 @@ return {
                 {
                     name = 'getEmissionRate',
                     description = 'Gets the amount of particles emitted per second.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1332,7 +1332,7 @@ return {
                 {
                     name = 'getInsertMode',
                     description = 'Gets the mode to use when the ParticleSystem adds new particles.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1347,7 +1347,7 @@ return {
                 {
                     name = 'getLinearAcceleration',
                     description = 'Gets the linear acceleration (acceleration along the x and y axes) for particles.\n\nEvery particle created will accelerate along the x and y axes between xmin,ymin and xmax,ymax.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1377,7 +1377,7 @@ return {
                 {
                     name = 'getLinearDamping',
                     description = 'Gets the amount of linear damping (constant deceleration) for particles.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1397,7 +1397,7 @@ return {
                 {
                     name = 'getEmitterLifetime',
                     description = 'Gets how long the particle system should emit particles (if -1 then it emits particles forever).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1412,7 +1412,7 @@ return {
                 {
                     name = 'getOffset',
                     description = 'Get the offget position which the particle sprite is rotated around. If this function is not used, the particles rotate around their center.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1432,7 +1432,7 @@ return {
                 {
                     name = 'getParticleLifetime',
                     description = 'Gets the life of the particles.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1453,7 +1453,7 @@ return {
                 {
                     name = 'getPosition',
                     description = 'Gets the position of the emitter.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1473,7 +1473,7 @@ return {
                 {
                     name = 'getRadialAcceleration',
                     description = 'Get the radial acceleration (away from the emitter).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1494,7 +1494,7 @@ return {
                 {
                     name = 'getRotation',
                     description = 'Gets the rotation of the image upon particle creation (in radians).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1515,7 +1515,7 @@ return {
                 {
                     name = 'getSizes',
                     description = 'Gets a series of sizes by which to scale a particle sprite. 1.0 is normal size. The particle system will interpolate between each size evenly over the particle\'s lifetime.\n\nAt least one size must be specified. A maximum of eight may be used.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1540,7 +1540,7 @@ return {
                 {
                     name = 'getSizeVariation',
                     description = 'Gets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1555,7 +1555,7 @@ return {
                 {
                     name = 'getSpeed',
                     description = 'Gets the speed of the particles.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1576,7 +1576,7 @@ return {
                 {
                     name = 'getSpin',
                     description = 'Gets the spin of the sprite.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1597,7 +1597,7 @@ return {
                 {
                     name = 'getSpinVariation',
                     description = 'Gets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1612,7 +1612,7 @@ return {
                 {
                     name = 'getSpread',
                     description = 'Gets the amount of spread for the system.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1627,7 +1627,7 @@ return {
                 {
                     name = 'getTexture',
                     description = 'Gets the Image or Canvas which is to be emitted.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1642,7 +1642,7 @@ return {
                 {
                     name = 'getTangentialAcceleration',
                     description = 'Gets the tangential acceleration (acceleration perpendicular to the particle\'s direction).',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1663,7 +1663,7 @@ return {
                 {
                     name = 'hasRelativeRotation',
                     description = 'Gets whether particle angles and rotations are relative to their velocities. If enabled, particles are aligned to the angle of their velocities and rotate relative to that angle.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1678,7 +1678,7 @@ return {
                 {
                     name = 'isActive',
                     description = 'Checks whether the particle system is actively emitting particles.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1693,7 +1693,7 @@ return {
                 {
                     name = 'isPaused',
                     description = 'Checks whether the particle system is paused.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1708,7 +1708,7 @@ return {
                 {
                     name = 'isStopped',
                     description = 'Checks whether the particle system is stopped.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -1723,7 +1723,7 @@ return {
                 {
                     name = 'moveTo',
                     description = 'Moves the position of the emitter. This results in smoother particle spawning behaviour than if ParticleSystem:setPosition is used every frame.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1743,21 +1743,21 @@ return {
                 {
                     name = 'pause',
                     description = 'Pauses the particle emitter.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'reset',
                     description = 'Resets the particle emitter, removing any existing particles and resetting the lifetime counter.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'setAreaSpread',
                     description = 'Sets area-based spawn parameters for the particles. Newly created particles will spawn in an area around the emitter based on the parameters to this function.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1782,7 +1782,7 @@ return {
                 {
                     name = 'setBufferSize',
                     description = 'Sets the size of the buffer (the max allowed amount of particles in the system).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1797,7 +1797,7 @@ return {
                 {
                     name = 'setColors',
                     description = 'Sets a series of colors to apply to the particle sprite. The particle system will interpolate between each color evenly over the particle\'s lifetime. Color modulation needs to be activated for this function to have any effect.\n\nArguments are passed in groups of four, representing the components of the desired RGBA value. At least one color must be specified. A maximum of eight may be used.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1852,7 +1852,7 @@ return {
                 {
                     name = 'setDirection',
                     description = 'Sets the direction the particles will be emitted in.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1867,7 +1867,7 @@ return {
                 {
                     name = 'setEmissionRate',
                     description = 'Sets the amount of particles emitted per second.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1882,7 +1882,7 @@ return {
                 {
                     name = 'setEmitterLifetime',
                     description = 'Sets how long the particle system should emit particles (if -1 then it emits particles forever).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1897,7 +1897,7 @@ return {
                 {
                     name = 'setInsertMode',
                     description = 'Sets the mode to use when the ParticleSystem adds new particles.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1912,7 +1912,7 @@ return {
                 {
                     name = 'setLinearAcceleration',
                     description = 'Sets the linear acceleration (acceleration along the x and y axes) for particles.\n\nEvery particle created will accelerate along the x and y axes between xmin,ymin and xmax,ymax.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1945,7 +1945,7 @@ return {
                 {
                     name = 'setLinearDamping',
                     description = 'Sets the amount of linear damping (constant deceleration) for particles.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1965,7 +1965,7 @@ return {
                 {
                     name = 'setOffset',
                     description = 'Set the offset position which the particle sprite is rotated around. If this function is not used, the particles rotate around their center.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -1985,7 +1985,7 @@ return {
                 {
                     name = 'setParticleLifetime',
                     description = 'Sets the life of the particles.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2006,7 +2006,7 @@ return {
                 {
                     name = 'setPosition',
                     description = 'Sets the position of the emitter.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2026,7 +2026,7 @@ return {
                 {
                     name = 'setQuads',
                     description = 'Sets a series of Quads to use for the particle sprites. Particles will choose a Quad from the list based on the particle\'s current lifetime, allowing for the use of animated sprite sheets with ParticleSystems.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2046,7 +2046,7 @@ return {
                 {
                     name = 'setRadialAcceleration',
                     description = 'Set the radial acceleration (away from the emitter).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2067,7 +2067,7 @@ return {
                 {
                     name = 'setRelativeRotation',
                     description = 'Sets whether particle angles and rotations are relative to their velocities. If enabled, particles are aligned to the angle of their velocities and rotate relative to that angle.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2082,7 +2082,7 @@ return {
                 {
                     name = 'setRotation',
                     description = 'Sets the rotation of the image upon particle creation (in radians).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2103,7 +2103,7 @@ return {
                 {
                     name = 'setSizes',
                     description = 'Sets a series of sizes by which to scale a particle sprite. 1.0 is normal size. The particle system will interpolate between each size evenly over the particle\'s lifetime.\n\nAt least one size must be specified. A maximum of eight may be used.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2128,7 +2128,7 @@ return {
                 {
                     name = 'setSizeVariation',
                     description = 'Sets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2143,7 +2143,7 @@ return {
                 {
                     name = 'setSpeed',
                     description = 'Sets the speed of the particles.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2164,7 +2164,7 @@ return {
                 {
                     name = 'setSpin',
                     description = 'Sets the spin of the sprite.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2185,7 +2185,7 @@ return {
                 {
                     name = 'setSpinVariation',
                     description = 'Sets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2200,7 +2200,7 @@ return {
                 {
                     name = 'setSpread',
                     description = 'Sets the amount of spread for the system.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2215,7 +2215,7 @@ return {
                 {
                     name = 'setTexture',
                     description = 'Sets the Image or Canvas which is to be emitted.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2230,7 +2230,7 @@ return {
                 {
                     name = 'setTangentialAcceleration',
                     description = 'Sets the tangential acceleration (acceleration perpendicular to the particle\'s direction).',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2251,21 +2251,21 @@ return {
                 {
                     name = 'start',
                     description = 'Starts the particle emitter.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'stop',
                     description = 'Stops the particle emitter, resetting the lifetime counter.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'update',
                     description = 'Updates the particle system; moving, creating and killing particles.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2293,7 +2293,7 @@ return {
                 {
                     name = 'getViewport',
                     description = 'Gets the current viewport of this Quad.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2323,7 +2323,7 @@ return {
                 {
                     name = 'setViewport',
                     description = 'Sets the texture coordinates according to a viewport.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2365,7 +2365,7 @@ return {
                 {
                     name = 'getExternVariable',
                     description = 'Gets information about an \'extern\' (\'uniform\') variable in the shader.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2397,7 +2397,7 @@ return {
                 {
                     name = 'getWarnings',
                     description = 'Returns any warning and error messages from compiling the shader code. This can be used for debugging your shaders if there\'s anything the graphics hardware doesn\'t like.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2412,7 +2412,7 @@ return {
                 {
                     name = 'send',
                     description = 'Sends one or more values to a special (extern) variable inside the shader.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2544,7 +2544,7 @@ return {
                 {
                     name = 'add',
                     description = 'Add a sprite to the batch.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2681,28 +2681,28 @@ return {
                 {
                     name = 'bind',
                     description = 'Binds the SpriteBatch to the memory.\n\nBinding a SpriteBatch before updating its content can improve the performance as it doesn\'t push each update to the graphics card separately. Don\'t forget to unbind the SpriteBatch or the updates won\'t show up.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'clear',
                     description = 'Removes all sprites from the buffer.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'flush',
                     description = 'Immediately sends all new and modified sprite data in the batch to the graphics card.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 },
                 {
                     name = 'getBufferSize',
                     description = 'Gets the maximum number of sprites the SpriteBatch can hold.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2717,7 +2717,7 @@ return {
                 {
                     name = 'getColor',
                     description = 'Gets the color that will be used for the next add and set operations.\n\nIf no color has been set with SpriteBatch:setColor or the current SpriteBatch color has been cleared, this method will return nil.',
-                    functions = {
+                    variants = {
                         {},
                         {
                             arguments = {
@@ -2748,7 +2748,7 @@ return {
                 {
                     name = 'getCount',
                     description = 'Gets the amount of sprites currently in the SpriteBatch.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2763,7 +2763,7 @@ return {
                 {
                     name = 'getTexture',
                     description = 'Returns the Image or Canvas used by the SpriteBatch.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -2778,7 +2778,7 @@ return {
                 {
                     name = 'set',
                     description = 'Changes a sprite in the batch. This requires the identifier returned by add and addq.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2911,7 +2911,7 @@ return {
                 {
                     name = 'setBufferSize',
                     description = 'Sets the maximum number of sprites the SpriteBatch can hold. Existing sprites in the batch (up to the new maximum) will not be cleared when this function is called.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2926,7 +2926,7 @@ return {
                 {
                     name = 'setColor',
                     description = 'Sets the color that will be used for the next add and set operations. Calling the function without arguments will clear the color.\n\nThe global color set with love.graphics.setColor will not work on the SpriteBatch if any of the sprites has its own color.',
-                    functions = {
+                    variants = {
                         {},
                         {
                             arguments = {
@@ -2958,7 +2958,7 @@ return {
                 {
                     name = 'setTexture',
                     description = 'Replaces the Image or Canvas used for the sprites.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -2973,7 +2973,7 @@ return {
                 {
                     name = 'unbind',
                     description = 'Unbinds the SpriteBatch.',
-                    functions = {
+                    variants = {
                         {}
                     }
                 }
@@ -2988,7 +2988,7 @@ return {
         {
             name = 'arc',
             description = 'Draws an arc.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -3034,7 +3034,7 @@ return {
         {
             name = 'circle',
             description = 'Draws a circle.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -3070,14 +3070,14 @@ return {
         {
             name = 'clear',
             description = 'Clears the screen to background color and restores the default coordinate system.\n\nThis function is called automatically before love.draw in the default love.run function. See the example in love.run for a typical use of this function.\n\nNote that the scissor area bounds the cleared region.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'draw',
             description = 'Draws objects on screen. Drawable objects are loaded images, but may be other kinds of Drawable objects, such as a ParticleSystem.\n\nIn addition to simple drawing, this function can rotate and scale the object at the same time, as well as offset the image (for example, to center the image at the chosen coordinates).\n\nlove.graphics.draw anchors from the top left corner by default.\n\nYou can specify a negative value for sx or sy to flip the drawable horizontally or vertically.\n\nThe pivotal point is (x, y) on the screen and (ox, oy) in the internal coordinate system of the drawable object, before rotation and scaling. The object is scaled by (sx, sy), then rotated by r around the pivotal point.\n\nThe origin offset values are most often used to shift the images up and left by half of its height and width, so that (effectively) the specified x and y coordinates are where the center of the image will end up.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -3282,7 +3282,7 @@ return {
         {
             name = 'getBackgroundColor',
             description = 'Gets the current background color.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3312,7 +3312,7 @@ return {
         {
             name = 'getBlendMode',
             description = 'Gets the blending mode.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3327,7 +3327,7 @@ return {
         {
             name = 'getCanvas',
             description = 'Gets the current target Canvas.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3342,7 +3342,7 @@ return {
         {
             name = 'getCanvasFormats',
             description = 'Gets the available Canvas formats, and whether each is supported.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3357,7 +3357,7 @@ return {
         {
             name = 'getColor',
             description = 'Gets the current color.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3387,7 +3387,7 @@ return {
         {
             name = 'getColorMask',
             description = 'Gets the active color components used when drawing. Normally all 4 components are active unless love.graphics.setColorMask has been used.\n\nThe color mask determines whether individual components of the colors of drawn objects will affect the color of the screen. They affect love.graphics.clear and Canvas:clear as well.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3417,7 +3417,7 @@ return {
         {
             name = 'getCompressedImageFormats',
             description = 'Gets the available compressed image formats, and whether each is supported.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3432,7 +3432,7 @@ return {
         {
             name = 'getDefaultFilter',
             description = 'Returns the default scaling filters used with Images, Canvases, and Fonts.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3457,7 +3457,7 @@ return {
         {
             name = 'getDimensions',
             description = 'Gets the width and height of the window.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3477,7 +3477,7 @@ return {
         {
             name = 'getFSAA',
             description = 'Gets the number of antialiasing samples used when drawing to the Canvas.\n\nThis may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn\'t support that number.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3492,7 +3492,7 @@ return {
         {
             name = 'getFont',
             description = 'Gets the current Font object.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3507,7 +3507,7 @@ return {
         {
             name = 'getHeight',
             description = 'Gets the height of the window.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3522,7 +3522,7 @@ return {
         {
             name = 'getLineJoin',
             description = 'Gets the line join style.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3537,7 +3537,7 @@ return {
         {
             name = 'getLineStyle',
             description = 'Gets the line style.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3552,7 +3552,7 @@ return {
         {
             name = 'getLineWidth',
             description = 'Gets the current line width.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3567,7 +3567,7 @@ return {
         {
             name = 'getFullscreenModes',
             description = 'Gets a list of supported fullscreen modes.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3582,7 +3582,7 @@ return {
         {
             name = 'getShader',
             description = 'Returns the current Shader. Returns nil if none is set.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3597,7 +3597,7 @@ return {
         {
             name = 'getStats',
             description = 'Gets performance-related rendering statistics.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3637,7 +3637,7 @@ return {
         {
             name = 'getSystemLimit',
             description = 'Gets the system-dependent maximum value for a love.graphics feature.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -3659,7 +3659,7 @@ return {
         {
             name = 'getPointSize',
             description = 'Gets the point size.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3674,7 +3674,7 @@ return {
         {
             name = 'getPointStyle',
             description = 'Gets the current point style.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3689,7 +3689,7 @@ return {
         {
             name = 'getRendererInfo',
             description = 'Gets information about the system\'s video card and drivers.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3719,7 +3719,7 @@ return {
         {
             name = 'getScissor',
             description = 'Gets the current scissor box.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3749,7 +3749,7 @@ return {
         {
             name = 'getWidth',
             description = 'Gets the width of the window.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3764,7 +3764,7 @@ return {
         {
             name = 'isSupported',
             description = 'Checks if certain graphics functions can be used.\n\nOlder and low-end systems do not always support all graphics extensions.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -3786,7 +3786,7 @@ return {
         {
             name = 'isWireframe',
             description = 'Gets whether wireframe mode is used when drawing.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -3801,7 +3801,7 @@ return {
         {
             name = 'line',
             description = 'Draws lines between points.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -3845,7 +3845,7 @@ return {
         {
             name = 'newCanvas',
             description = 'Creates a new Canvas object for offscreen rendering.\n\nAntialiased Canvases have slightly higher system requirements than normal Canvases. Additionally, the supported maximum number of FSAA samples varies depending on the system. Use love.graphics.getSystemLimit to check.\n\nIf the number of FSAA samples specified is greater than the maximum supported by the system, the Canvas will still be created but only using the maximum supported amount (this includes 0.)',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -3886,7 +3886,7 @@ return {
         {
             name = 'newFont',
             description = 'Creates a new Font.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -3954,6 +3954,7 @@ return {
                     }
                 },
                 {
+                    description = 'This variant uses the default font (Vera Sans) with a custom size.',
                     arguments = {
                         {
                             type = 'number',
@@ -3975,7 +3976,7 @@ return {
         {
             name = 'newMesh',
             description = 'Creates a new Mesh.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4085,7 +4086,7 @@ return {
         {
             name = 'newImage',
             description = 'Creates a new Image.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4201,7 +4202,7 @@ return {
         {
             name = 'newImageFont',
             description = 'Creates a new font by loading a specifically formatted image. There can be up to 256 glyphs.\n\nExpects ISO 8859-1 encoding for the glyphs string.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4312,7 +4313,7 @@ return {
         {
             name = 'newParticleSystem',
             description = 'Creates a new ParticleSystem.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4339,7 +4340,7 @@ return {
         {
             name = 'newShader',
             description = 'Creates a new Shader object for hardware-accelerated vertex and pixel effects. A Shader contains either vertex shader code, pixel shader code, or both.\n\nVertex shader code must contain at least one function, named position, which is the function that will produce transformed vertex positions of drawn objects in screen-space.\n\nPixel shader code must contain at least one function, named effect, which is the function that will produce the color which is blended onto the screen for each pixel a drawn object touches.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4382,7 +4383,7 @@ return {
         {
             name = 'newQuad',
             description = 'Creates a new Quad.\n\nThe purpose of a Quad is to describe the result of the following transformation on any drawable object. The object is first scaled to dimensions sw * sh. The Quad then describes the rectangular area of dimensions width * height whose upper left corner is at position (x, y) inside the scaled object.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4429,7 +4430,7 @@ return {
         {
             name = 'newScreenshot',
             description = 'Creates a screenshot and returns the image data.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -4444,7 +4445,7 @@ return {
         {
             name = 'newSpriteBatch',
             description = 'Creates a new SpriteBatch object.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4478,14 +4479,14 @@ return {
         {
             name = 'origin',
             description = 'Resets the current coordinate transformation.\n\nThis function is always used to reverse any previous calls to love.graphics.rotate, love.graphics.scale, love.graphics.shear or love.graphics.translate. It returns the current transformation state to its defaults.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'point',
             description = 'Draws a point.\n\nThe pixel grid is actually offset to the center of each pixel. So to get clean pixels drawn use 0.5 + integer increments.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4505,7 +4506,7 @@ return {
         {
             name = 'polygon',
             description = 'Draw a polygon.\n\nFollowing the mode argument, this function can accept multiple numeric arguments or a single table of numeric arguments. In either case the arguments are interpreted as alternating x and y coordinates of the polygon\'s vertices.\n\nWhen in fill mode, the polygon must be convex and simple or rendering artifacts may occur.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4539,21 +4540,21 @@ return {
         {
             name = 'pop',
             description = 'Pops the current coordinate transformation from the transformation stack.\n\nThis function is always used to reverse a previous push operation. It returns the current transformation state to what it was before the last preceding push. For an example, see the description of love.graphics.push.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'present',
             description = 'Displays the results of drawing operations on the screen.\n\nThis function is used when writing your own love.run function. It presents all the results of your drawing operations on the screen. See the example in love.run for a typical use of this function.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'print',
             description = 'Draws text on screen. If no Font is set, one will be created and set (once) if needed.\n\nWhen using translation and scaling functions while drawing text, this function assumes the scale occurs first. If you don\'t script with this in mind, the text won\'t be in the right position, or possibly even on screen.\n\nlove.graphics.print stops at the first \'\0\' (null) character. This can bite you if you are appending keystrokes to form your string, as some of those are multi-byte unicode characters which will likely contain null bytes.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4620,7 +4621,7 @@ return {
         {
             name = 'printf',
             description = 'Draws formatted text, with word wrap and alignment.\n\nSee additional notes in love.graphics.print.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4698,9 +4699,12 @@ return {
         {
             name = 'push',
             description = 'Copies and pushes the current coordinate transformation to the transformation stack.\n\nThis function is always used to prepare for a corresponding pop operation later. It stores the current coordinate transformation state into the transformation stack and keeps it active. Later changes to the transformation can be undone by using the pop operation, which returns the coordinate transform to the state it was in before calling push.',
-            functions = {
-                {},
+            variants = {
                 {
+                    description = 'Pushes the current transformation to the transformation stack.'
+                },
+                {
+                    description = 'Pushes a specific type of state to the stack.',
                     arguments = {
                         {
                             type = 'StackType',
@@ -4714,7 +4718,7 @@ return {
         {
             name = 'rectangle',
             description = 'Draws a rectangle.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4749,14 +4753,14 @@ return {
         {
             name = 'reset',
             description = 'Resets the current graphics settings.\n\nCalling reset makes the current drawing color white, the current background color black, resets any active Canvas or Shader, and removes any scissor settings. It sets the BlendMode to alpha. It also sets both the point and line drawing modes to smooth and their sizes to 1.0.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'rotate',
             description = 'Rotates the coordinate system in two dimensions.\n\nCalling this function affects all future drawing operations by rotating the coordinate system around the origin by the given amount of radians. This change lasts until love.draw exits.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4771,7 +4775,7 @@ return {
         {
             name = 'scale',
             description = 'Scales the coordinate system in two dimensions.\n\nBy default the coordinate system in LÖVE corresponds to the display pixels in horizontal and vertical directions one-to-one, and the x-axis increases towards the right while the y-axis increases downwards. Scaling the coordinate system changes this relation.\n\nAfter scaling by sx and sy, all coordinates are treated as if they were multiplied by sx and sy. Every result of a drawing operation is also correspondingly scaled, so scaling by (2, 2) for example would mean making everything twice as large in both x- and y-directions. Scaling by a negative value flips the coordinate system in the corresponding direction, which also means everything will be drawn flipped or upside down, or both. Scaling by zero is not a useful operation.\n\nScale and translate are not commutative operations, therefore, calling them in different orders will change the outcome.\n\nScaling lasts until love.draw exits.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4792,7 +4796,7 @@ return {
         {
             name = 'setBackgroundColor',
             description = 'Sets the background color.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4832,7 +4836,7 @@ return {
         {
             name = 'setBlendMode',
             description = 'Sets the blending mode.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4847,7 +4851,7 @@ return {
         {
             name = 'setCanvas',
             description = 'Sets the render target to one or more Canvases. All drawing operations until the next love.graphics.setCanvas call will be redirected to the specified canvases and not shown on the screen.\n\nAll canvas arguments must have the same widths and heights and the same texture type. Normally the same thing will be drawn on each canvas, but that can be changed if a pixel shader is used with the "effects" function instead of the regular effect.\n\nNot all computers support Canvases, and not all computers which support Canvases will support multiple render targets. Use love.graphics.isSupported to check.\n\nnWhen called without arguments, the render target is reset to the screen.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -4868,7 +4872,7 @@ return {
         {
             name = 'setColor',
             description = 'Sets the color used for drawing.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4907,7 +4911,7 @@ return {
         {
             name = 'setColorMask',
             description = 'Sets the color mask. Enables or disables specific color components when rendering and clearing the screen. For example, if red is set to false, no further changes will be made to the red component of any pixels.\n\nEnables all color components when called without arguments.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -4938,7 +4942,7 @@ return {
         {
             name = 'setDefaultFilter',
             description = 'Sets the default scaling filters used with Images, Canvases, and Fonts.\n\nThis function does not apply retroactively to loaded images.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4965,7 +4969,7 @@ return {
         {
             name = 'setFont',
             description = 'Set an already-loaded Font as the current font or create and load a new one from the file and size.\n\nIt\'s recommended that Font objects are created with love.graphics.newFont in the loading stage and then passed to this function in the drawing stage.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -4980,7 +4984,7 @@ return {
         {
             name = 'setInvertedStencil',
             description = 'Defines an inverted stencil for the drawing operations or releases the active one.\n\nIt\'s the same as love.graphics.setStencil with the mask inverted.\n\nCalling the function without arguments releases the active stencil.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -4996,7 +5000,7 @@ return {
         {
             name = 'setLineJoin',
             description = 'Sets the line join style.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5011,7 +5015,7 @@ return {
         {
             name = 'setLineStyle',
             description = 'Sets the line style.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5026,7 +5030,7 @@ return {
         {
             name = 'setLineWidth',
             description = 'Sets the line width.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5041,7 +5045,7 @@ return {
         {
             name = 'setNewFont',
             description = 'Creates and sets a new font.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5146,7 +5150,7 @@ return {
         {
             name = 'setShader',
             description = 'Sets or resets a Shader as the current pixel effect or vertex shaders. All drawing operations until the next love.graphics.setShader will be drawn using the Shader object specified.\n\nDisables the shaders when called without arguments.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -5162,7 +5166,7 @@ return {
         {
             name = 'setPointSize',
             description = 'Sets the point size.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5177,7 +5181,7 @@ return {
         {
             name = 'setPointStyle',
             description = 'Sets the point style.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5192,7 +5196,7 @@ return {
         {
             name = 'setScissor',
             description = 'Sets or disables scissor.\n\nThe scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -5223,7 +5227,7 @@ return {
         {
             name = 'setWireframe',
             description = 'Sets whether wireframe lines will be used when drawing.\n\nWireframe mode should only be used for debugging. The lines drawn with it enabled do not behave like regular love.graphics lines: their widths don\'t scale with the coordinate transformations or with love.graphics.setLineWidth, and they don\'t use the smooth LineStyle.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5238,7 +5242,7 @@ return {
         {
             name = 'setStencil',
             description = 'Defines or releases a stencil for the drawing operations.\n\nThe passed function draws to the stencil instead of the screen, creating an image with transparent and opaque pixels. While active, it is used to test where pixels will be drawn or discarded.\n\nCalling the function without arguments releases the active stencil.\n\nWhen called without arguments, the active stencil is released.',
-            functions = {
+            variants = {
                 {},
                 {
                     arguments = {
@@ -5254,7 +5258,7 @@ return {
         {
             name = 'shear',
             description = 'Shears the coordinate system.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -5274,7 +5278,7 @@ return {
         {
             name = 'translate',
             description = 'Translates the coordinate system in two dimensions.\n\nWhen this function is called with two numbers, dx, and dy, all the following drawing operations take effect as if their x and y coordinates were x+dx and y+dy.\n\nScale and translate are not commutative operations, therefore, calling them in different orders will change the outcome.\n\nThis change lasts until love.graphics.clear is called (which is called automatically before love.draw in the default love.run function), or a love.graphics.pop reverts to a previous coordinate system state.\n\nTranslating using whole numbers will prevent tearing/blurring of images and fonts draw after translating.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

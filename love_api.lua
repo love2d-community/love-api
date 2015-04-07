@@ -3,7 +3,7 @@ return {
         {
             name = 'getVersion',
             description = 'Gets the current running version of LÖVE.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -56,7 +56,7 @@ return {
                 {
                     name = 'getPointer',
                     description = 'Gets a pointer to the Data.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -71,7 +71,7 @@ return {
                 {
                     name = 'getSize',
                     description = 'Gets the size of the Data.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -86,7 +86,7 @@ return {
                 {
                     name = 'getString',
                     description = 'Gets the full Data as a string.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -117,7 +117,7 @@ return {
                 {
                     name = 'type',
                     description = 'Gets the type of the object as a string.',
-                    functions = {
+                    variants = {
                         {
                             returns = {
                                 {
@@ -132,7 +132,7 @@ return {
                 {
                     name = 'typeOf',
                     description = 'Checks whether an object is of a certain type. If the object has the type with the specified name in its hierarchy, this function will return true.',
-                    functions = {
+                    variants = {
                         {
                             arguments = {
                                 {
@@ -158,14 +158,14 @@ return {
         {
             name = 'draw',
             description = 'Callback function used to draw on the screen every frame.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'errhand',
             description = 'The error handler, used to display error messages.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -180,7 +180,7 @@ return {
         {
             name = 'focus',
             description = 'Callback function triggered when window receives or loses focus.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -195,7 +195,7 @@ return {
         {
             name = 'gamepadaxis',
             description = 'Called when a Joystick\'s virtual gamepad axis is moved.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -215,7 +215,7 @@ return {
         {
             name = 'gamepadpressed',
             description = 'Called when a Joystick\'s virtual gamepad button is pressed.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -235,7 +235,7 @@ return {
         {
             name = 'gamepadreleased',
             description = 'Called when a Joystick\'s virtual gamepad button is released.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -255,7 +255,7 @@ return {
         {
             name = 'joystickadded',
             description = 'Called when a Joystick is connected.\n\nThis callback is also triggered after love.load for every Joystick which was already connected when the game started up.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -270,7 +270,7 @@ return {
         {
             name = 'joystickaxis',
             description = 'Called when a joystick axis moves.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -295,7 +295,7 @@ return {
         {
             name = 'joystickhat',
             description = 'Called when a joystick hat direction changes.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -320,7 +320,7 @@ return {
         {
             name = 'joystickpressed',
             description = 'Called when a joystick button is pressed.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -340,7 +340,7 @@ return {
         {
             name = 'joystickreleased',
             description = 'Called when a joystick button is released.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -360,7 +360,7 @@ return {
         {
             name = 'joystickremoved',
             description = 'Called when a Joystick is disconnected.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -375,7 +375,7 @@ return {
         {
             name = 'keypressed',
             description = 'Callback function triggered when a key is pressed.\n\nKey repeat needs to be enabled with love.keyboard.setKeyRepeat for repeat keypress events to be received.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -395,7 +395,7 @@ return {
         {
             name = 'keyreleased',
             description = 'Callback function triggered when a key is released.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -410,7 +410,7 @@ return {
         {
             name = 'load',
             description = 'This function is called exactly once at the beginning of the game.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -425,7 +425,7 @@ return {
         {
             name = 'mousefocus',
             description = 'Callback function triggered when window receives or loses mouse focus.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -440,7 +440,7 @@ return {
         {
             name = 'mousemoved',
             description = 'Callback function triggered when the mouse is moved.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -470,7 +470,7 @@ return {
         {
             name = 'mousepressed',
             description = 'Callback function triggered when a mouse button is pressed.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -495,7 +495,7 @@ return {
         {
             name = 'mousereleased',
             description = 'Callback function triggered when a mouse button is released.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -520,7 +520,7 @@ return {
         {
             name = 'quit',
             description = 'Callback function triggered when the game is closed.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -535,7 +535,7 @@ return {
         {
             name = 'resize',
             description = 'Called when the window is resized, for example if the user resizes the window, or if love.window.setMode is called with an unsupported width or height in fullscreen and the window chooses the closest appropriate size.\n\nCalls to love.window.setMode will only trigger this event if the width or height of the window after the call doesn\'t match the requested width and height. This can happen if a fullscreen mode is requested which doesn\'t match any supported mode, or if the fullscreen type is \'desktop\' and the requested width or height don\'t match the desktop resolution.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -555,14 +555,14 @@ return {
         {
             name = 'run',
             description = 'The main function, containing the main loop. A sensible default is used when left out.',
-            functions = {
+            variants = {
                 {}
             }
         },
         {
             name = 'textinput',
             description = 'Called when text has been entered by the user. For example if shift-2 is pressed on an American keyboard layout, the text "@" will be generated.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -577,7 +577,7 @@ return {
         {
             name = 'threaderror',
             description = 'Callback function triggered when a Thread encounters an error.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -597,7 +597,7 @@ return {
         {
             name = 'update',
             description = 'Callback function triggered when a key is pressed.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -612,7 +612,7 @@ return {
         {
             name = 'visible',
             description = 'Callback function triggered when window is minimized/hidden or unminimized by the user.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {

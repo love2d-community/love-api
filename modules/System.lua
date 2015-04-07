@@ -5,7 +5,7 @@ return {
         {
             name = 'getClipboardText',
             description = 'Gets text from the clipboard.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -20,7 +20,7 @@ return {
         {
             name = 'getOS',
             description = 'Gets the current operating system. In general, LÖVE abstracts away the need to know the current operating system, but there are a few cases where it can be useful (especially in combination with os.execute.)',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -35,7 +35,7 @@ return {
         {
             name = 'getPowerInfo',
             description = 'Gets information about the system\'s power supply.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -60,7 +60,7 @@ return {
         {
             name = 'getProcessorCount',
             description = 'Gets the number of CPU cores in the system.\n\nThe number includes the threads reported if technologies such as Intel\'s Hyper-threading are enabled. For example, on a 4-core CPU with Hyper-threading, this function will return 8.',
-            functions = {
+            variants = {
                 {
                     returns = {
                         {
@@ -75,7 +75,7 @@ return {
         {
             name = 'openURL',
             description = 'Opens a URL with the user\'s web or file browser.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
@@ -97,7 +97,7 @@ return {
         {
             name = 'setClipboardText',
             description = 'Puts text in the clipboard.',
-            functions = {
+            variants = {
                 {
                     arguments = {
                         {
