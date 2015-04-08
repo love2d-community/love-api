@@ -724,6 +724,9 @@ return {
                                     description = 'The index of the last vertex to use when drawing, or the index of the last value in the vertex map to use if one is set for this Mesh.'
                                 }
                             }
+                        },
+                        {
+                            description = 'Allows all vertices in the Mesh to be drawn.'
                         }
                     }
                 },
