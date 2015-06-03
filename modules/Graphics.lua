@@ -3750,28 +3750,6 @@ return {
             }
         },
         {
-            name = 'isSupported',
-            description = 'Checks if certain graphics functions can be used.\n\nOlder and low-end systems do not always support all graphics extensions.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'GraphicsFeature',
-                            name = 'supportN',
-                            description = 'The graphics feature to check for.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'isSupported',
-                            description = 'True if everything is supported, false otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'isWireframe',
             description = 'Gets whether wireframe mode is used when drawing.',
             variants = {
