@@ -270,21 +270,6 @@ return {
                     }
                 },
                 {
-                    name = 'isStatic',
-                    description = 'Returns whether the Source is static.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'boolean',
-                                    name = 'static',
-                                    description = 'True if the Source is static, false otherwise.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'isStopped',
                     description = 'Returns whether the Source is stopped.',
                     variants = {
