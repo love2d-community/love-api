@@ -427,27 +427,6 @@ return {
                             description = 'A sequence with the names of all files and subdirectories as strings.'
                         }
                     }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'dir',
-                            description = 'The directory.'
-                        },
-                        {
-                            type = 'function',
-                            name = 'callback',
-                            description = 'A function which is called for each file and folder in the directory. The filename is passed to the function as an argument.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'table',
-                            name = 'items',
-                            description = 'A sequence with the names of all files and subdirectories as strings.'
-                        }
-                    }
                 }
             }
         },
