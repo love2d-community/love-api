@@ -3638,28 +3638,6 @@ return {
             }
         },
         {
-            name = 'getSystemLimit',
-            description = 'Gets the system-dependent maximum value for a love.graphics feature.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'GraphicsLimit',
-                            name = 'limittype',
-                            description = 'The graphics feature to get the maximum value of.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'limit',
-                            description = 'The system-dependent max value for the feature.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getPointSize',
             description = 'Gets the point size.',
             variants = {
