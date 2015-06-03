@@ -3675,21 +3675,6 @@ return {
             }
         },
         {
-            name = 'getPointStyle',
-            description = 'Gets the current point style.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'PointStyle',
-                            name = 'style',
-                            description = 'The current point style.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getRendererInfo',
             description = 'Gets information about the system\'s video card and drivers.',
             variants = {
