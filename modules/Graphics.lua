@@ -724,6 +724,9 @@ return {
                                     description = 'The index of the last vertex to use when drawing, or the index of the last value in the vertex map to use if one is set for this Mesh.'
                                 }
                             }
+                        },
+                        {
+                            description = 'Allows all vertices in the Mesh to be drawn.'
                         }
                     }
                 },
@@ -5197,8 +5200,11 @@ return {
             name = 'setScissor',
             description = 'Sets or disables scissor.\n\nThe scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.',
             variants = {
-                {},
                 {
+                    description = 'Disables scissor.',
+                },
+                {
+                    description = 'Limits the drawing area to a specified rectangle.',
                     arguments = {
                         {
                             type = 'number',
