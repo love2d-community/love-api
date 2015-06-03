@@ -5182,21 +5182,6 @@ return {
             }
         },
         {
-            name = 'setPointStyle',
-            description = 'Sets the point style.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'PointStyle',
-                            name = 'style',
-                            description = 'The new point style.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'setScissor',
             description = 'Sets or disables scissor.\n\nThe scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.',
             variants = {
