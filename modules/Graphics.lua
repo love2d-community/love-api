@@ -5172,22 +5172,6 @@ return {
             }
         },
         {
-            name = 'setStencil',
-            description = 'Defines or releases a stencil for the drawing operations.\n\nThe passed function draws to the stencil instead of the screen, creating an image with transparent and opaque pixels. While active, it is used to test where pixels will be drawn or discarded.\n\nCalling the function without arguments releases the active stencil.\n\nWhen called without arguments, the active stencil is released.',
-            variants = {
-                {},
-                {
-                    arguments = {
-                        {
-                            type = 'function',
-                            name = 'stencilFunction',
-                            description = 'Function that draws the stencil.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'shear',
             description = 'Shears the coordinate system.',
             variants = {
