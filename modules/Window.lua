@@ -512,7 +512,7 @@ return {
                                 },
                                 {
                                     type = 'number',
-                                    name = 'fsaa',
+                                    name = 'msaa',
                                     default = '0',
                                     description = 'The number of antialiasing samples.'
                                 },
