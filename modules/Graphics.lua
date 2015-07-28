@@ -649,21 +649,6 @@ return {
                     }
                 },
                 {
-                    name = 'setVertexColors',
-                    description = 'Sets if the per-vertex colors are used when rendering instead of the constant color (constant color being love.graphics.setColor or SpriteBatch:setColor)\n\nThe per-vertex colors are automatically enabled by default when making a new Mesh or when doing Mesh:setVertex, but only if at least one vertex color is not the default (255,255,255,255).',
-                    variants = {
-                        {
-                            arguments = {
-                                {
-                                    type = 'boolean',
-                                    name = 'on',
-                                    description = 'True to use per-vertex coloring.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'setVertex',
                     description = 'Sets the vertex information for a Mesh.',
                     variants = {
