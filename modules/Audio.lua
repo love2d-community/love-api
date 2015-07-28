@@ -1040,7 +1040,7 @@ return {
                     description = 'Inverse distance attenuation.'
                 },
                 {
-                    name = 'inverse clamped',
+                    name = 'inverseclamped',
                     description = 'Inverse distance attenuation. Gain is clamped.'
                 },
                 {
@@ -1048,7 +1048,7 @@ return {
                     description = 'Linear attenuation.'
                 },
                 {
-                    name = 'linear clamped',
+                    name = 'linearclamped',
                     description = 'Linear attenuation. Gain is clamped.'
                 },
                 {
@@ -1056,7 +1056,7 @@ return {
                     description = 'Exponential attenuation.'
                 },
                 {
-                    name = 'exponent clamped',
+                    name = 'exponentclamped',
                     description = 'Exponential attenuation. Gain is clamped.'
                 }
             }
