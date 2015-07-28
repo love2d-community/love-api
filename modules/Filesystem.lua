@@ -25,21 +25,6 @@ return {
                     }
                 },
                 {
-                    name = 'eof',
-                    description = 'If the end-of-file has been reached',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'boolean',
-                                    name = 'eof',
-                                    description = 'Whether EOF has been reached.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'flush',
                     description = 'Flushes any buffered written data in the file to the disk.',
                     variants = {
@@ -104,6 +89,21 @@ return {
                                     type = 'number',
                                     name = 'size',
                                     description = 'The file size'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    name = 'isEOF',
+                    description = 'Gets whether end-of-file has been reached.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'eof',
+                                    description = 'Whether EOF has been reached.'
                                 }
                             }
                         }
