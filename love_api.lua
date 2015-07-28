@@ -624,5 +624,25 @@ return {
                 }
             }
         }
+        {
+            name = 'wheelmoved',
+            description = 'Callback function triggered when the mouse wheel is moved.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'Amount of horizontal mouse wheel movement. Positive values indicate movement to the right.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'Amount of vertical mouse wheel movement. Positive values indicate upward movement.'
+                        }
+                    }
+                }
+            }
+        }
     }
 }
