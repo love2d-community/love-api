@@ -10,47 +10,6 @@ return {
             },
             functions = {
                 {
-                    name = 'clear',
-                    description = 'Clears content of a Canvas.\n\nWhen called without arguments, the Canvas will be cleared with color rgba = {0,0,0,0}, i.e. it will be fully transparent. If called with color parameters (be it numbers or a color table), the alpha component may be omitted in which case it defaults to 255 (fully opaque).',
-                    variants = {
-                        {
-                            {},
-                            arguments = {
-                                {
-                                    type = 'number',
-                                    name = 'red',
-                                    description = 'Red component of the clear color (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'green',
-                                    description = 'Green component of the clear color (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'blue',
-                                    description = 'Blue component of the clear color (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'alpha',
-                                    default = '255',
-                                    description = 'Alpha component of the clear color (0-255).'
-                                }
-                            },
-                            {
-                                arguments = {
-                                    {
-                                        type = 'table',
-                                        name = 'rgba',
-                                        description = 'A sequence with the red, green, blue and alpha values as numbers (alpha may be ommitted).'
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'getDimensions',
                     description = 'Gets the width and height of the Canvas.',
                     variants = {
