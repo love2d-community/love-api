@@ -5163,10 +5163,6 @@ return {
                 {
                     name = 'multiplicative',
                     description = 'Multiply blend mode.'
-                },
-                {
-                    name = 'premultiplied',
-                    description = 'Premultiplied blend mode.'
                 }
             }
         },
