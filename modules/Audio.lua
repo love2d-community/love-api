@@ -165,6 +165,21 @@ return {
                     }
                 },
                 {
+                    name = 'getType',
+                    description = 'Gets the type (static or stream) of the Source.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'SourceType',
+                                    name = 'sourcetype',
+                                    description = 'The type of the source.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getVelocity',
                     description = 'Gets the velocity of the Source.',
                     variants = {
