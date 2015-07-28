@@ -5265,14 +5265,6 @@ return {
                     description = 'Support for simultaneous rendering to at least 4 canvases at once, with love.graphics.setCanvas.'
                 },
                 {
-                    name = 'dxt',
-                    description = 'Support for DXT compressed images (see CompressedFormat.)'
-                },
-                {
-                    name = 'bc5',
-                    description = 'Support for BC4 and BC5 compressed images.'
-                },
-                {
                     name = 'srgb',
                     description = 'Support for gamma-correct rendering with the srgb window flag in love.window.setMode, and the "srgb" TextureFormat for Canvases and Images.'
                 }
