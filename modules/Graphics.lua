@@ -595,21 +595,6 @@ return {
                     }
                 },
                 {
-                    name = 'getVertices',
-                    description = 'Gets all the vertices in the Mesh.\n\nThis method can be slow if the Mesh has a large number of vertices. Keep the original table used to create the Mesh around and update it when necessary instead of using this method frequently, if possible.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'table',
-                                    name = 'vertices',
-                                    description = 'The table filled with vertex information tables.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'setDrawMode',
                     description = 'Sets the mode used when drawing the Mesh.',
                     variants = {
