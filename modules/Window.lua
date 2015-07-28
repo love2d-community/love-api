@@ -136,21 +136,6 @@ return {
             }
         },
         {
-            name = 'getHeight',
-            description = 'Gets the height of the window.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'height',
-                            description = 'The height of the window.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getIcon',
             description = 'Gets the window icon.',
             variants = {
@@ -317,21 +302,6 @@ return {
                             type = 'string',
                             name = 'title',
                             description = 'The current window title.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getWidth',
-            description = 'Gets the width of the window.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'width',
-                            description = 'The width of the window.'
                         }
                     }
                 }
