@@ -141,48 +141,6 @@ return {
                     }
                 },
                 {
-                    name = 'getPixel',
-                    description = 'Gets the pixel at the specified position from a Canvas.\n\nValid x and y values start at 0 and go up to canvas width and height minus 1.',
-                    variants = {
-                        {
-                            arguments = {
-                                {
-                                    type = 'number',
-                                    name = 'x',
-                                    description = 'The position of the pixel on the x-axis.'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'y',
-                                    description = 'The position of the pixel on the y-axis.'
-                                }
-                            },
-                            returns = {
-                                {
-                                    type = 'number',
-                                    name = 'r',
-                                    description = 'The red component (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'g',
-                                    description = 'The green component (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'b',
-                                    description = 'The blue component (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'a',
-                                    description = 'The alpha component (0-255).'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'getWidth',
                     description = 'Gets the width of the Canvas.',
                     variants = {
