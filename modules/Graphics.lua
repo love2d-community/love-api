@@ -2569,13 +2569,6 @@ return {
                     }
                 },
                 {
-                    name = 'bind',
-                    description = 'Binds the SpriteBatch to the memory.\n\nBinding a SpriteBatch before updating its content can improve the performance as it doesn\'t push each update to the graphics card separately. Don\'t forget to unbind the SpriteBatch or the updates won\'t show up.',
-                    variants = {
-                        {}
-                    }
-                },
-                {
                     name = 'clear',
                     description = 'Removes all sprites from the buffer.',
                     variants = {
@@ -2858,13 +2851,6 @@ return {
                                 }
                             }
                         }
-                    }
-                },
-                {
-                    name = 'unbind',
-                    description = 'Unbinds the SpriteBatch.',
-                    variants = {
-                        {}
                     }
                 }
             },
