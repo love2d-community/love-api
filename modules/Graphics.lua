@@ -85,6 +85,21 @@ return {
                     }
                 },
                 {
+                    name = 'getMSAA',
+                    description = 'Gets the number of multisample antialiasing (MSAA) samples used when drawing to the Canvas.\n\nThis may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn\'t support that number.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'samples',
+                                    description = 'The number of multisample antialiasing samples used by the canvas when drawing to it.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getWidth',
                     description = 'Gets the width of the Canvas.',
                     variants = {
