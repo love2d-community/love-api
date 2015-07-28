@@ -70,21 +70,6 @@ return {
                     }
                 },
                 {
-                    name = 'getImageData',
-                    description = 'Returns the image data stored in the Canvas. Think of it as taking a screenshot of the hidden screen that is the Canvas.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'ImageData',
-                                    name = 'data',
-                                    description = 'The image data stored in the Canvas.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'getMSAA',
                     description = 'Gets the number of multisample antialiasing (MSAA) samples used when drawing to the Canvas.\n\nThis may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn\'t support that number.',
                     variants = {
@@ -132,6 +117,52 @@ return {
                                 }
                             }
                         }
+                    }
+                },
+                {
+                    name = 'newImageData',
+                    description = 'Generates ImageData from the contents of the Canvas.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'ImageData',
+                                    name = 'data',
+                                    description = 'The image data stored in the Canvas.'
+                                }
+                            }
+                        },
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'x',
+                                    description = 'The x-axis of the top-left corner of the area within the Canvas to capture.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'y',
+                                    description = 'The y-axis of the top-left corner of the area within the Canvas to capture.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'width',
+                                    description = 'The width of the area within the Canvas to capture.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'height',
+                                    description = 'The height of the area within the Canvas to capture.'
+                                },
+                            },
+                            returns = {
+                                {
+                                    type = 'ImageData',
+                                    name = 'data',
+                                    description = 'The new ImageData made from the Canvas\' contents.'
+                                }
+                            }
+                        },
                     }
                 },
                 {
