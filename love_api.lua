@@ -623,7 +623,7 @@ return {
                     }
                 }
             }
-        }
+        },
         {
             name = 'wheelmoved',
             description = 'Callback function triggered when the mouse wheel is moved.',
