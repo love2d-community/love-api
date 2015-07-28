@@ -5127,7 +5127,7 @@ return {
             description = 'Different ways you do alpha blending.',
             constants = {
                 {
-                    name = 'additive',
+                    name = 'add',
                     description = 'Additive blend mode.'
                 },
                 {
@@ -5143,11 +5143,11 @@ return {
                     description = 'Screen blend mode.'
                 },
                 {
-                    name = 'subtractive',
+                    name = 'subtract',
                     description = 'Subtractive blend mode.'
                 },
                 {
-                    name = 'multiplicative',
+                    name = 'multiply',
                     description = 'Multiply blend mode.'
                 }
             }
