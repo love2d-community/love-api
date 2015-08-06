@@ -4298,6 +4298,34 @@ return {
             }
         },
         {
+            name = 'newText',
+            description = 'Creates a new Font.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Font',
+                            name = 'font',
+                            description = 'The font to use for the text.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'textstring',
+                            default = 'nil',
+                            description = 'The initial string of text that the new Text object will contain. May be nil.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Text',
+                            name = 'text',
+                            description = 'The new drawable Text object.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'newQuad',
             description = 'Creates a new Quad.\n\nThe purpose of a Quad is to describe the result of the following transformation on any drawable object. The object is first scaled to dimensions sw * sh. The Quad then describes the rectangular area of dimensions width * height whose upper left corner is at position (x, y) inside the scaled object.',
             variants = {
