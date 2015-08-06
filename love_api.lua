@@ -595,6 +595,36 @@ return {
             }
         },
         {
+            name = 'touchpressed',
+            description = 'Callback function triggered when the touch screen is touched.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'userdata',
+                            name = 'id',
+                            description = 'The identifier for the touch press.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'pressure',
+                            description = 'The amount of pressure being applied. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'update',
             description = 'Callback function triggered when a key is pressed.',
             variants = {
