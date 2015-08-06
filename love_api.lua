@@ -46,6 +46,7 @@ return {
         require('modules.System'),
         require('modules.Thread'),
         require('modules.Timer'),
+        require('modules.Touch'),
         require('modules.Window'),
     },
     types = {
