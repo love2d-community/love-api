@@ -2889,6 +2889,18 @@ return {
                 'Drawable',
                 'Object'
             }
+        },
+        {
+            name = 'Text',
+            description = 'Drawable text.',
+            constructors = {
+                'newText'
+            },
+            functions = {},
+            supertypes = {
+                'Drawable',
+                'Object'
+            }
         }
     },
     functions = {
