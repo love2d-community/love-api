@@ -454,6 +454,13 @@ return {
             }
         },
         {
+            name = 'lowmemory',
+            description = 'Callback function triggered when the system is running out of memory on mobile devices.\n\n Mobile operating systems may forcefully kill the game if it uses too much memory, so any non-critical resource should be removed if possible (by setting all variables referencing the resources to nil, and calling collectgarbage()), when this event is triggered. Sounds and images in particular tend to use the most memory.',
+            functions = {
+                {}
+            }
+        },
+        {
             name = 'mousefocus',
             description = 'Callback function triggered when window receives or loses mouse focus.',
             variants = {
