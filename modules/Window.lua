@@ -368,6 +368,13 @@ return {
             }
         },
         {
+            name = 'maximize',
+            description = 'Makes the window as large as possible.\n\nThis function has no effect if the window isn\'t resizable, since it essentially programmatically presses the window\'s "maximize" button.',
+            variants = {
+                {}
+            }
+        },
+        {
             name = 'minimize',
             description = 'Minimizes the window to the system\'s task bar / dock.',
             variants = {
