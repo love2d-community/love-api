@@ -157,6 +157,21 @@ return {
     },
     callbacks = {
         {
+            name = 'directorydropped',
+            description = 'Callback function triggered when a directory is dragged and dropped onto the window.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'draw',
             description = 'Callback function used to draw on the screen every frame.',
             variants = {
@@ -173,6 +188,21 @@ return {
                             type = 'string',
                             name = 'msg',
                             description = 'The error message.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'filedropped',
+            description = 'Callback function triggered when a file is dragged and dropped onto the window.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'File',
+                            name = 'file',
+                            description = 'The unopened File object representing the file that was dropped.'
                         }
                     }
                 }
