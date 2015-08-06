@@ -3187,6 +3187,75 @@ return {
             }
         },
         {
+            name = 'ellipse',
+            description = 'Draws an ellipse.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'DrawMode',
+                            name = 'mode',
+                            description = 'How to draw the ellipse.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the center along x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the center along y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radiusx',
+                            description = 'The radius of the ellipse along the x-axis (half the ellipse\'s width.)'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radiusy',
+                            description = 'The radius of the ellipse along the y-axis (half the ellipse\'s height.)'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'DrawMode',
+                            name = 'mode',
+                            description = 'How to draw the ellipse.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the center along x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the center along y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radiusx',
+                            description = 'The radius of the ellipse along the x-axis (half the ellipse\'s width.)'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radiusy',
+                            description = 'The radius of the ellipse along the y-axis (half the ellipse\'s height.)'
+                        },
+                        {
+                            type = 'number',
+                            name = 'segments',
+                            description = 'The number of segments used for drawing the ellipse.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getBackgroundColor',
             description = 'Gets the current background color.',
             variants = {
