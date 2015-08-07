@@ -3627,13 +3627,6 @@ return {
             description = 'Gets the system-dependent maximum values for love.graphics features.',
             variants = {
                 {
-                    arguments = {
-                        {
-                            type = 'GraphicsLimit',
-                            name = 'limittype',
-                            description = 'The graphics feature to get the maximum value of.'
-                        }
-                    },
                     returns = {
                         {
                             type = 'table',
