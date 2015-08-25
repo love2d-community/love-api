@@ -1796,7 +1796,7 @@ return {
                 },
                 {
                     name = 'getBoundingBox',
-                    description = 'Returns the points of the fixture bounding box. In case the fixture has multiple childern a 1-based index can be specified.',
+                    description = 'Returns the points of the fixture bounding box. In case the fixture has multiple children a 1-based index can be specified. For example, a fixture will have multiple children with a chain shape.',
                     variants = {
                         {
                             arguments = {
@@ -1804,7 +1804,7 @@ return {
                                     type = 'number',
                                     name = 'index',
                                     default = '1',
-                                    description = 'The fixture child to get the bounding box of.'
+                                    description = 'A bounding box of the fixture.'
                                 }
                             },
                             returns = {
