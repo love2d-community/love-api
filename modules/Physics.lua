@@ -5661,6 +5661,18 @@ return {
                     name = 'revolute',
                     description = 'A RevoluteJoint.'
                 },
+                {
+                    name = 'friction',
+                    description = 'A FrictionJoint.'
+                },
+                {
+                    name = 'weld',
+                    description = 'A WeldJoint.'
+                },
+                {
+                    name = 'rope',
+                    description = 'A RopeJoint.'
+                }
             }
         },
         {
