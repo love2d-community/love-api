@@ -624,12 +624,14 @@ return {
                         },
                         {
                             type = 'MessageBoxType',
-                            name = 'type ("info")',
+                            name = 'type',
+                            default = '"info"',
                             description = 'The type of the message box.'
                         },
                         {
                             type = 'boolean',
-                            name = 'attachtowindow (true)',
+                            name = 'attachtowindow',
+                            default = 'true',
                             description = 'Whether the message box should be attached to the love window or free-floating.'
                         }
                     },
