@@ -5169,14 +5169,45 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'Body',
-                            name = 'body',
-                            description = 'The body to attach the shape to.'
+                            type = 'number',
+                            name = 'x1',
+                            description = 'The position of first point on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y1',
+                            description = 'The position of first point on the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x2',
+                            description = 'The position of second point on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y2',
+                            description = 'The position of second point on the y-axis.'
                         },
                         {
                             type = 'number',
                             name = '...',
-                            description = 'Vertices of the polygon.'
+                            description = 'You can continue passing more point positions to create the PolygonShape.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'PolygonShape',
+                            name = 'shape',
+                            description = 'A new PolygonShape.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'vertices',
+                            description = 'A list of vertices to construct the polygon, in the form of {x1, y1, x2, y2, x3, y3, ...}.'
                         }
                     },
                     returns = {
