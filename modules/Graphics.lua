@@ -3063,77 +3063,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An image to texture the quad with.'
-                        },
-                        {
-                            type = 'Quad',
-                            name = 'quad',
-                            description = 'The Quad to draw on screen.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'x',
-                            default = '0',
-                            description = 'The position to draw the object (x-axis).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y',
-                            default = '0',
-                            description = 'The position to draw the object (y-axis).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'r',
-                            default = '0',
-                            description = 'Orientation (radians).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'sx',
-                            default = '1',
-                            description = 'Scale factor (x-axis). Can be negative.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'sy',
-                            default = 'sx',
-                            description = 'Scale factor (y-axis). Can be negative.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'ox',
-                            default = '0',
-                            description = 'Origin offset (x-axis).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'oy',
-                            default = '0',
-                            description = 'Origin offset (y-axis)'
-                        },
-                        {
-                            type = 'number',
-                            name = 'kx',
-                            default = '0',
-                            description = 'Shearing factor (x-axis).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'ky',
-                            default = '0',
-                            description = 'Shearing factor (y-axis).'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Canvas',
-                            name = 'canvas',
-                            description = 'A canvas to texture the quad with.'
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'A Texture (Image or Canvas) to texture the Quad with.'
                         },
                         {
                             type = 'Quad',
