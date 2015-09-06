@@ -135,6 +135,21 @@ return {
             }
         },
         {
+            name = 'hasCursor',
+            description = 'Gets whether cursor functionality is supported.\n\nIf it isn\'t supported, calling love.mouse.newCursor and love.mouse.getSystemCursor will cause an error. Mobile devices do not support cursors.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'hascursor',
+                            description = 'Whether the system has cursor functionality.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isDown',
             description = 'Checks whether a certain mouse button is down. This function does not detect mousewheel scrolling; you must use the love.mousepressed callback for that.',
             variants = {

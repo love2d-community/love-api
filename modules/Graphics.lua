@@ -10,47 +10,6 @@ return {
             },
             functions = {
                 {
-                    name = 'clear',
-                    description = 'Clears content of a Canvas.\n\nWhen called without arguments, the Canvas will be cleared with color rgba = {0,0,0,0}, i.e. it will be fully transparent. If called with color parameters (be it numbers or a color table), the alpha component may be omitted in which case it defaults to 255 (fully opaque).',
-                    variants = {
-                        {
-                            {},
-                            arguments = {
-                                {
-                                    type = 'number',
-                                    name = 'red',
-                                    description = 'Red component of the clear color (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'green',
-                                    description = 'Green component of the clear color (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'blue',
-                                    description = 'Blue component of the clear color (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'alpha',
-                                    default = '255',
-                                    description = 'Alpha component of the clear color (0-255).'
-                                }
-                            },
-                            {
-                                arguments = {
-                                    {
-                                        type = 'table',
-                                        name = 'rgba',
-                                        description = 'A sequence with the red, green, blue and alpha values as numbers (alpha may be ommitted).'
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'getDimensions',
                     description = 'Gets the width and height of the Canvas.',
                     variants = {
@@ -65,21 +24,6 @@ return {
                                     type = 'number',
                                     name = 'height',
                                     description = 'The height of the Canvas, in pixels.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    name = 'getFSAA',
-                    description = 'Gets the number of antialiasing samples used when drawing to the Canvas.\n\nThis may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn\'t support that number.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'number',
-                                    name = 'samples',
-                                    description = 'The number of antialiasing samples used by the canvas when drawing to it.'
                                 }
                             }
                         }
@@ -126,57 +70,15 @@ return {
                     }
                 },
                 {
-                    name = 'getImageData',
-                    description = 'Returns the image data stored in the Canvas. Think of it as taking a screenshot of the hidden screen that is the Canvas.',
+                    name = 'getMSAA',
+                    description = 'Gets the number of multisample antialiasing (MSAA) samples used when drawing to the Canvas.\n\nThis may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn\'t support that number.',
                     variants = {
                         {
                             returns = {
                                 {
-                                    type = 'ImageData',
-                                    name = 'data',
-                                    description = 'The image data stored in the Canvas.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    name = 'getPixel',
-                    description = 'Gets the pixel at the specified position from a Canvas.\n\nValid x and y values start at 0 and go up to canvas width and height minus 1.',
-                    variants = {
-                        {
-                            arguments = {
-                                {
                                     type = 'number',
-                                    name = 'x',
-                                    description = 'The position of the pixel on the x-axis.'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'y',
-                                    description = 'The position of the pixel on the y-axis.'
-                                }
-                            },
-                            returns = {
-                                {
-                                    type = 'number',
-                                    name = 'r',
-                                    description = 'The red component (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'g',
-                                    description = 'The green component (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'b',
-                                    description = 'The blue component (0-255).'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'a',
-                                    description = 'The alpha component (0-255).'
+                                    name = 'samples',
+                                    description = 'The number of multisample antialiasing samples used by the canvas when drawing to it.'
                                 }
                             }
                         }
@@ -215,6 +117,52 @@ return {
                                 }
                             }
                         }
+                    }
+                },
+                {
+                    name = 'newImageData',
+                    description = 'Generates ImageData from the contents of the Canvas.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'ImageData',
+                                    name = 'data',
+                                    description = 'The image data stored in the Canvas.'
+                                }
+                            }
+                        },
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'x',
+                                    description = 'The x-axis of the top-left corner of the area within the Canvas to capture.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'y',
+                                    description = 'The y-axis of the top-left corner of the area within the Canvas to capture.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'width',
+                                    description = 'The width of the area within the Canvas to capture.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'height',
+                                    description = 'The height of the area within the Canvas to capture.'
+                                },
+                            },
+                            returns = {
+                                {
+                                    type = 'ImageData',
+                                    name = 'data',
+                                    description = 'The new ImageData made from the Canvas\' contents.'
+                                }
+                            }
+                        },
                     }
                 },
                 {
@@ -678,21 +626,6 @@ return {
                     }
                 },
                 {
-                    name = 'getVertices',
-                    description = 'Gets all the vertices in the Mesh.\n\nThis method can be slow if the Mesh has a large number of vertices. Keep the original table used to create the Mesh around and update it when necessary instead of using this method frequently, if possible.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'table',
-                                    name = 'vertices',
-                                    description = 'The table filled with vertex information tables.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'setDrawMode',
                     description = 'Sets the mode used when drawing the Mesh.',
                     variants = {
@@ -741,21 +674,6 @@ return {
                                     type = 'Texture',
                                     name = 'texture',
                                     description = 'The Image or Canvas to texture the Mesh with when drawing.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    name = 'setVertexColors',
-                    description = 'Sets if the per-vertex colors are used when rendering instead of the constant color (constant color being love.graphics.setColor or SpriteBatch:setColor)\n\nThe per-vertex colors are automatically enabled by default when making a new Mesh or when doing Mesh:setVertex, but only if at least one vertex color is not the default (255,255,255,255).',
-                    variants = {
-                        {
-                            arguments = {
-                                {
-                                    type = 'boolean',
-                                    name = 'on',
-                                    description = 'True to use per-vertex coloring.'
                                 }
                             }
                         }
@@ -2682,13 +2600,6 @@ return {
                     }
                 },
                 {
-                    name = 'bind',
-                    description = 'Binds the SpriteBatch to the memory.\n\nBinding a SpriteBatch before updating its content can improve the performance as it doesn\'t push each update to the graphics card separately. Don\'t forget to unbind the SpriteBatch or the updates won\'t show up.',
-                    variants = {
-                        {}
-                    }
-                },
-                {
                     name = 'clear',
                     description = 'Removes all sprites from the buffer.',
                     variants = {
@@ -2972,15 +2883,20 @@ return {
                             }
                         }
                     }
-                },
-                {
-                    name = 'unbind',
-                    description = 'Unbinds the SpriteBatch.',
-                    variants = {
-                        {}
-                    }
                 }
             },
+            supertypes = {
+                'Drawable',
+                'Object'
+            }
+        },
+        {
+            name = 'Text',
+            description = 'Drawable text.',
+            constructors = {
+                'newText'
+            },
+            functions = {},
             supertypes = {
                 'Drawable',
                 'Object'
@@ -3277,6 +3193,75 @@ return {
                             name = 'ky',
                             default = '0',
                             description = 'Shearing factor (y-axis).'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'ellipse',
+            description = 'Draws an ellipse.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'DrawMode',
+                            name = 'mode',
+                            description = 'How to draw the ellipse.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the center along x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the center along y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radiusx',
+                            description = 'The radius of the ellipse along the x-axis (half the ellipse\'s width.)'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radiusy',
+                            description = 'The radius of the ellipse along the y-axis (half the ellipse\'s height.)'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'DrawMode',
+                            name = 'mode',
+                            description = 'How to draw the ellipse.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the center along x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the center along y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radiusx',
+                            description = 'The radius of the ellipse along the x-axis (half the ellipse\'s width.)'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radiusy',
+                            description = 'The radius of the ellipse along the y-axis (half the ellipse\'s height.)'
+                        },
+                        {
+                            type = 'number',
+                            name = 'segments',
+                            description = 'The number of segments used for drawing the ellipse.'
                         }
                     }
                 }
@@ -3638,22 +3623,15 @@ return {
             }
         },
         {
-            name = 'getSystemLimit',
-            description = 'Gets the system-dependent maximum value for a love.graphics feature.',
+            name = 'getSystemLimits',
+            description = 'Gets the system-dependent maximum values for love.graphics features.',
             variants = {
                 {
-                    arguments = {
-                        {
-                            type = 'GraphicsLimit',
-                            name = 'limittype',
-                            description = 'The graphics feature to get the maximum value of.'
-                        }
-                    },
                     returns = {
                         {
-                            type = 'number',
-                            name = 'limit',
-                            description = 'The system-dependent max value for the feature.'
+                            type = 'table',
+                            name = 'limits',
+                            description = 'A table containing GraphicsLimit keys, and number values.'
                         }
                     }
                 }
@@ -3669,21 +3647,6 @@ return {
                             type = 'number',
                             name = 'size',
                             description = 'The current point size.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getPointStyle',
-            description = 'Gets the current point style.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'PointStyle',
-                            name = 'style',
-                            description = 'The current point style.'
                         }
                     }
                 }
@@ -3759,28 +3722,6 @@ return {
                             type = 'number',
                             name = 'width',
                             description = 'The width of the window.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'isSupported',
-            description = 'Checks if certain graphics functions can be used.\n\nOlder and low-end systems do not always support all graphics extensions.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'GraphicsFeature',
-                            name = 'supportN',
-                            description = 'The graphics feature to check for.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'isSupported',
-                            description = 'True if everything is supported, false otherwise.'
                         }
                     }
                 }
@@ -4378,6 +4319,34 @@ return {
                             type = 'Shader',
                             name = 'shader',
                             description = 'A Shader object for use in drawing operations.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'newText',
+            description = 'Creates a new Font.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Font',
+                            name = 'font',
+                            description = 'The font to use for the text.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'textstring',
+                            default = 'nil',
+                            description = 'The initial string of text that the new Text object will contain. May be nil.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Text',
+                            name = 'text',
+                            description = 'The new drawable Text object.'
                         }
                     }
                 }
@@ -5182,21 +5151,6 @@ return {
             }
         },
         {
-            name = 'setPointStyle',
-            description = 'Sets the point style.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'PointStyle',
-                            name = 'style',
-                            description = 'The new point style.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'setScissor',
             description = 'Sets or disables scissor.\n\nThe scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.',
             variants = {
@@ -5240,22 +5194,6 @@ return {
                             type = 'boolean',
                             name = 'enable',
                             description = 'True to enable wireframe mode when drawing, false to disable it.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'setStencil',
-            description = 'Defines or releases a stencil for the drawing operations.\n\nThe passed function draws to the stencil instead of the screen, creating an image with transparent and opaque pixels. While active, it is used to test where pixels will be drawn or discarded.\n\nCalling the function without arguments releases the active stencil.\n\nWhen called without arguments, the active stencil is released.',
-            variants = {
-                {},
-                {
-                    arguments = {
-                        {
-                            type = 'function',
-                            name = 'stencilFunction',
-                            description = 'Function that draws the stencil.'
                         }
                     }
                 }
@@ -5344,7 +5282,7 @@ return {
             description = 'Different ways you do alpha blending.',
             constants = {
                 {
-                    name = 'additive',
+                    name = 'add',
                     description = 'Additive blend mode.'
                 },
                 {
@@ -5360,16 +5298,12 @@ return {
                     description = 'Screen blend mode.'
                 },
                 {
-                    name = 'subtractive',
+                    name = 'subtract',
                     description = 'Subtractive blend mode.'
                 },
                 {
-                    name = 'multiplicative',
+                    name = 'multiply',
                     description = 'Multiply blend mode.'
-                },
-                {
-                    name = 'premultiplied',
-                    description = 'Premultiplied blend mode.'
                 }
             }
         },
@@ -5478,40 +5412,8 @@ return {
             description = 'Graphics features that can be checked for with love.graphics.isSupported.\n\nsubtractive, mipmap, and dxt are supported on nearly every system.\n\ncanvas, multicanvas, npot, and shader have roughly the same minimum requirements for support: a DirectX 9.0c+ capable graphics card with drivers that support ~OpenGL 2.1+.\n\nhdrcanvas, bc5, and srgb all share mostly the same minimum requirements for support as well: a DirectX 10+ capable graphics card with drivers that support ~OpenGL 3+.\n\nDirectX 9.0c+ capable graphics cards include the nvidia GeForce 5000-series (2003) and newer, the ATI Radeon 9000-series and newer, and the Intel GMA x3100 GPU and newer.\n\nDirectX 10+ capable graphics cards include the nvidia GeForce 8000-series (2006) and newer, the ATI/AMD HD 2000-series and newer, and the Intel HD 2000/3000 GPUs and newer.',
             constants = {
                 {
-                    name = 'canvas',
-                    description = 'Support for Canvas.'
-                },
-                {
-                    name = 'npot',
-                    description = 'Support for textures with non-power-of-two textures.'
-                },
-                {
-                    name = 'subtractive',
-                    description = 'Support for the subtractive blend mode.'
-                },
-                {
-                    name = 'shader',
-                    description = 'Support for Shader.'
-                },
-                {
-                    name = 'hdrcanvas',
-                    description = 'Support for HDR Canvas.'
-                },
-                {
                     name = 'multicanvas',
                     description = 'Support for simultaneous rendering to at least 4 canvases at once, with love.graphics.setCanvas.'
-                },
-                {
-                    name = 'mipmap',
-                    description = 'Support for Mipmaps.'
-                },
-                {
-                    name = 'dxt',
-                    description = 'Support for DXT compressed images (see CompressedFormat.)'
-                },
-                {
-                    name = 'bc5',
-                    description = 'Support for BC4 and BC5 compressed images.'
                 },
                 {
                     name = 'srgb',

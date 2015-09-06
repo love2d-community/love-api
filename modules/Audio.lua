@@ -165,6 +165,21 @@ return {
                     }
                 },
                 {
+                    name = 'getType',
+                    description = 'Gets the type (static or stream) of the Source.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'SourceType',
+                                    name = 'sourcetype',
+                                    description = 'The type of the source.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getVelocity',
                     description = 'Gets the velocity of the Source.',
                     variants = {
@@ -264,21 +279,6 @@ return {
                                     type = 'boolean',
                                     name = 'playing',
                                     description = 'True if the Source is playing, false otherwise.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    name = 'isStatic',
-                    description = 'Returns whether the Source is static.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'boolean',
-                                    name = 'static',
-                                    description = 'True if the Source is static, false otherwise.'
                                 }
                             }
                         }
@@ -1055,7 +1055,7 @@ return {
                     description = 'Inverse distance attenuation.'
                 },
                 {
-                    name = 'inverse clamped',
+                    name = 'inverseclamped',
                     description = 'Inverse distance attenuation. Gain is clamped.'
                 },
                 {
@@ -1063,7 +1063,7 @@ return {
                     description = 'Linear attenuation.'
                 },
                 {
-                    name = 'linear clamped',
+                    name = 'linearclamped',
                     description = 'Linear attenuation. Gain is clamped.'
                 },
                 {
@@ -1071,14 +1071,14 @@ return {
                     description = 'Exponential attenuation.'
                 },
                 {
-                    name = 'exponent clamped',
+                    name = 'exponentclamped',
                     description = 'Exponential attenuation. Gain is clamped.'
                 }
             }
         },
         {
             name = 'SourceType',
-            description = 'Types of audio sources.',
+            description = 'Types of audio sources.\n\nA good rule of thumb is to use stream for music files and static for all short sound effects. Basically, you want to avoid loading large files into memory at once.',
             constants = {
                 {
                     name = 'static',

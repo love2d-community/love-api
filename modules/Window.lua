@@ -136,21 +136,6 @@ return {
             }
         },
         {
-            name = 'getHeight',
-            description = 'Gets the height of the window.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'height',
-                            description = 'The height of the window.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getIcon',
             description = 'Gets the window icon.',
             variants = {
@@ -323,21 +308,6 @@ return {
             }
         },
         {
-            name = 'getWidth',
-            description = 'Gets the width of the window.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'width',
-                            description = 'The width of the window.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'hasFocus',
             description = 'Checks if the game window has keyboard focus.',
             variants = {
@@ -395,6 +365,13 @@ return {
                         }
                     }
                 }
+            }
+        },
+        {
+            name = 'maximize',
+            description = 'Makes the window as large as possible.\n\nThis function has no effect if the window isn\'t resizable, since it essentially programmatically presses the window\'s "maximize" button.',
+            variants = {
+                {}
             }
         },
         {
@@ -512,7 +489,7 @@ return {
                                 },
                                 {
                                     type = 'number',
-                                    name = 'fsaa',
+                                    name = 'msaa',
                                     default = '0',
                                     description = 'The number of antialiasing samples.'
                                 },
@@ -647,12 +624,14 @@ return {
                         },
                         {
                             type = 'MessageBoxType',
-                            name = 'type ("info")',
+                            name = 'type',
+                            default = '"info"',
                             description = 'The type of the message box.'
                         },
                         {
                             type = 'boolean',
-                            name = 'attachtowindow (true)',
+                            name = 'attachtowindow',
+                            default = 'true',
                             description = 'Whether the message box should be attached to the love window or free-floating.'
                         }
                     },

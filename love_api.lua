@@ -46,6 +46,7 @@ return {
         require('modules.System'),
         require('modules.Thread'),
         require('modules.Timer'),
+        require('modules.Touch'),
         require('modules.Window'),
     },
     types = {
@@ -156,6 +157,21 @@ return {
     },
     callbacks = {
         {
+            name = 'directorydropped',
+            description = 'Callback function triggered when a directory is dragged and dropped onto the window.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'draw',
             description = 'Callback function used to draw on the screen every frame.',
             variants = {
@@ -172,6 +188,21 @@ return {
                             type = 'string',
                             name = 'msg',
                             description = 'The error message.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'filedropped',
+            description = 'Callback function triggered when a file is dragged and dropped onto the window.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'File',
+                            name = 'file',
+                            description = 'The unopened File object representing the file that was dropped.'
                         }
                     }
                 }
@@ -423,6 +454,13 @@ return {
             }
         },
         {
+            name = 'lowmemory',
+            description = 'Callback function triggered when the system is running out of memory on mobile devices.\n\n Mobile operating systems may forcefully kill the game if it uses too much memory, so any non-critical resource should be removed if possible (by setting all variables referencing the resources to nil, and calling collectgarbage()), when this event is triggered. Sounds and images in particular tend to use the most memory.',
+            functions = {
+                {}
+            }
+        },
+        {
             name = 'mousefocus',
             description = 'Callback function triggered when window receives or loses mouse focus.',
             variants = {
@@ -595,6 +633,96 @@ return {
             }
         },
         {
+            name = 'touchmoved',
+            description = 'Callback function triggered when a touch press moves inside the touch screen.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'userdata',
+                            name = 'id',
+                            description = 'The identifier for the touch press.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'pressure',
+                            description = 'The amount of pressure being applied. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'touchpressed',
+            description = 'Callback function triggered when the touch screen is touched.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'userdata',
+                            name = 'id',
+                            description = 'The identifier for the touch press.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'pressure',
+                            description = 'The amount of pressure being applied. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'touchreleased',
+            description = 'Callback function triggered when the touch screen stops being touched.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'userdata',
+                            name = 'id',
+                            description = 'The identifier for the touch press.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'pressure',
+                            description = 'The amount of pressure being applied. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'update',
             description = 'Callback function triggered when a key is pressed.',
             variants = {
@@ -619,6 +747,26 @@ return {
                             type = 'boolean',
                             name = 'v',
                             description = 'Window visibility.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'wheelmoved',
+            description = 'Callback function triggered when the mouse wheel is moved.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'Amount of horizontal mouse wheel movement. Positive values indicate movement to the right.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'Amount of vertical mouse wheel movement. Positive values indicate upward movement.'
                         }
                     }
                 }

@@ -25,21 +25,6 @@ return {
                     }
                 },
                 {
-                    name = 'eof',
-                    description = 'If the end-of-file has been reached',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'boolean',
-                                    name = 'eof',
-                                    description = 'Whether EOF has been reached.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
                     name = 'flush',
                     description = 'Flushes any buffered written data in the file to the disk.',
                     variants = {
@@ -104,6 +89,21 @@ return {
                                     type = 'number',
                                     name = 'size',
                                     description = 'The file size'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    name = 'isEOF',
+                    description = 'Gets whether end-of-file has been reached.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'eof',
+                                    description = 'Whether EOF has been reached.'
                                 }
                             }
                         }
@@ -394,28 +394,6 @@ return {
             }
         },
         {
-            name = 'exists',
-            description = 'Check whether a file or directory exists.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The path to a potential file or directory.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'e',
-                            description = 'True if there is a file or directory with the specified name. False otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getAppdataDirectory',
             description = 'Returns the application data directory (could be the same as getUserDirectory)',
             variants = {
@@ -440,27 +418,6 @@ return {
                             type = 'string',
                             name = 'dir',
                             description = 'The directory.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'table',
-                            name = 'items',
-                            description = 'A sequence with the names of all files and subdirectories as strings.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'dir',
-                            description = 'The directory.'
-                        },
-                        {
-                            type = 'function',
-                            name = 'callback',
-                            description = 'A function which is called for each file and folder in the directory. The filename is passed to the function as an argument.'
                         }
                     },
                     returns = {
