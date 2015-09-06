@@ -4848,7 +4848,7 @@ return {
         },
         {
             name = 'newChainShape',
-            description = 'Creates a chain shape.',
+            description = 'Creates a new ChainShape.',
             variants = {
                 {
                     arguments = {
@@ -4876,6 +4876,32 @@ return {
                             type = 'number',
                             name = 'y2',
                             description = 'The y position of the second point.'
+                        },
+                        {
+                            type = 'number',
+                            name = '...',
+                            description = 'Additional point positions.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'ChainShape',
+                            name = 'shape',
+                            description = 'The new shape.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'loop',
+                            description = 'If the chain should loop back to the first point.'
+                        },
+                        {
+                            type = 'table',
+                            name = 'points',
+                            description = 'A list of points to construct the ChainShape, in the form of {x1, y1, x2, y2, ...}.'
                         }
                     },
                     returns = {
