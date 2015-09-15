@@ -11,7 +11,7 @@ return {
             functions = {
                 {
                     name = 'getError',
-                    description = 'Retrieves the error string from the thread if it produced a error.',
+                    description = 'Retrieves the error string from the thread if it produced an error.',
                     variants = {
                         {
                             returns = {
