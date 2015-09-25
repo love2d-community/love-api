@@ -3,6 +3,13 @@ return {
     description = 'The primary responsibility for the love.graphics module is the drawing of lines, shapes, text, Images and other Drawable objects onto the screen. Its secondary responsibilities include loading external files (including Images and Fonts) into memory, creating specialized objects (such as ParticleSystems or Framebuffers) and managing screen geometry.\n\nLÖVE\'s coordinate system is rooted in the upper-left corner of the screen, which is at location (0, 0). The x-axis is horizontal: larger values are further to the right. The y-axis is vertical: larger values are further towards the bottom.\n\nIn many cases, you draw images or shapes in terms of their upper-left corner (See the picture above).\n\nMany of the functions are used to manipulate the graphics coordinate system, which is essentially the way coordinates are mapped to the display. You can change the position, scale, and even rotation in this way.',
     functions = {
         {
+            name = 'close',
+            description = 'Closes the window. It can be reopened with love.window.setMode.',
+            variants = {
+                {}
+            }
+        },
+        {
             name = 'fromPixels',
             description = 'Converts a number from pixels to density-independent units.\n\nIf the highdpi window flag is enabled in Mac OS X and the window is in a retina screen, density-independent units will be twice the size of pixels. Otherwise they will usually be the same. This function can be used to convert coordinates from pixels to the the size users are expecting them to display at onscreen. love.window.toPixels does the opposite.\n\nMost LÖVE functions return values and expect arguments in terms of pixels rather than density-independent units.',
             variants = {
