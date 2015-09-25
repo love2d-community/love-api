@@ -120,6 +120,19 @@ return {
                     }
                 },
                 {
+                    name = 'isActive',
+                    description = 'Gets whether the graphics module is able to be used. If it is not active, love.graphics function and method calls will not work correctly and may cause the program to crash. The graphics module is inactive if a window is not open, or if the app is in the background on iOS. Typically the app\'s execution will be automatically paused by the system, in the latter case.',
+                    variants = {
+                        {
+                            returns = {
+                                type = 'boolean',
+                                name = 'active',
+                                description = 'Whether the graphics module is active and able to be used.'
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'newImageData',
                     description = 'Generates ImageData from the contents of the Canvas.',
                     variants = {
