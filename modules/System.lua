@@ -108,6 +108,20 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'vibrate',
+            description = 'Causes the device to vibrate, if possible. Currently this will only work on Android and iOS devices that have a built-in vibration motor.',
+            variants = {
+                arguments = {
+                    {
+                        type = 'number',
+                        name = 'seconds',
+                        default = '0.5',
+                        description = 'The duration to vibrate for. If called on an iOS device, it will always vibrate for 0.5 seconds due to limitations in the iOS system APIs.'
+                    }
+                }
+            }
         }
     },
     enums = {
