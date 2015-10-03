@@ -2462,6 +2462,31 @@ return {
                             }
                         },
                     }
+                },
+                {
+                    name = 'sendColor',
+                    description = 'Sends one or more colors to a special (extern / uniform) vec3 or vec4 variable inside the shader. The color components must be in the range of [0, 255], unlike Shader:send. The colors are gamma-corrected if global gamma-correction is enabled.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'string',
+                                    name = 'name',
+                                    description = 'The name of the color extern variable to send to in the shader.'
+                                },
+                                {
+                                    type = 'table',
+                                    name = 'color',
+                                    description = 'A table with red, green, blue, and optional alpha color components in the range of [0, 255] to send to the extern as a vector.'
+                                },
+                                {
+                                    type = 'table',
+                                    name = '...',
+                                    description = 'Additional colors to send in case the extern is an array. All colors need to be of the same size (e.g. only vec3\'s).'
+                                }
+                            }
+                        }
+                    }
                 }
             },
             supertypes = {
