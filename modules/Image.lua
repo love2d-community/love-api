@@ -51,6 +51,21 @@ return {
                     }
                 },
                 {
+                    name = 'getFormat',
+                    description = 'Gets the format of the CompressedImageData.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'CompressedImageFormat',
+                                    name = 'format',
+                                    description = 'The format of the CompressedImageData.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getHeight',
                     description = 'Gets the height of the CompressedImageData.',
                     variants = {
