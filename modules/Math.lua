@@ -465,6 +465,40 @@ return {
     },
     functions = {
         {
+            name = 'compress',
+            description = 'Compresses a string or data using a specific compression algorithm.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'rawstring',
+                            description = 'The raw (un-compressed) string to compress.'
+                        },
+                        {
+                            type = 'CompressedDataFormat',
+                            name = 'format',
+                            default = '"lz4"',
+                            description = 'The format to compress the string to.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'level',
+                            default = '-1',
+                            description = 'The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'CompressedData',
+                            name = 'compressedData',
+                            description = 'A new Data object containing the compressed version of the string.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'gammaToLinear',
             description = 'Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful when doing gamma-correct rendering using colors created based on what they look like on-screen.\n\nGamma-space sRGB has more precision in the lower end than linear RGB. Using this function to convert from sRGB to RGB can result in non-integer color values, which get truncated to integers and lose precision when used with other functions such as love.graphics.setColor.',
             variants = {
