@@ -3,8 +3,8 @@ return {
     description = 'Provides an interface to decode encoded image data.',
     types = {
         {
-            name = 'CompressedData',
-            description = 'Represents compressed image data designed to stay compressed in RAM. CompressedData encompasses standard compressed formats such as DXT1, DXT5, and BC5 / 3Dc.\n\nYou can\'t draw CompressedData directly to the screen. See Image for that.',
+            name = 'CompressedImageData',
+            description = 'Represents compressed image data designed to stay compressed in RAM.\n\nCompressedImageData encompasses standard compressed texture formats such as DXT1, DXT5, and BC5 / 3Dc.\n\nYou can\'t draw CompressedImageData directly to the screen. See Image for that.',
             constructors = {
                 'newCompressedData'
             },
