@@ -3974,7 +3974,7 @@ return {
         },
         {
             name = 'newImage',
-            description = 'Creates a new Image.',
+            description = 'Creates a new Image from a filepath, FileData, an ImageData, or a CompressedImageData.',
             variants = {
                 {
                     arguments = {
@@ -3997,7 +3997,7 @@ return {
                         {
                             type = 'string',
                             name = 'filename',
-                            description = 'The filepath to the image file.'
+                            description = 'The filepath to the image file (or a FileData or ImageData or CompressedImageData object.)'
                         },
                         {
                             type = 'TextureFormat',
@@ -4083,9 +4083,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'CompressedData',
-                            name = 'compressedData',
-                            description = 'A CompressedData object. The Image will use this CompressedData to reload itself when love.window.setMode is called.'
+                            type = 'CompressedImageData',
+                            name = 'compressedImageData',
+                            description = 'A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.'
                         },
                         {
                             type = 'TextureFormat',
