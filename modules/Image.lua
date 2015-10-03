@@ -98,14 +98,14 @@ return {
                 },
                 {
                     name = 'getWidth',
-                    description = 'Gets the width of the CompressedData.',
+                    description = 'Gets the width of the CompressedImageData.',
                     variants = {
                         {
                             returns = {
                                 {
                                     type = 'number',
                                     name = 'width',
-                                    description = 'The width of the CompressedData.'
+                                    description = 'The width of the CompressedImageData.'
                                 }
                             }
                         },
@@ -114,14 +114,14 @@ return {
                                 {
                                     type = 'number',
                                     name = 'level',
-                                    description = 'A mipmap level. Must be in the range of [1, CompressedData:getMipmapCount()].'
+                                    description = 'A mipmap level. Must be in the range of [1, CompressedImageData:getMipmapCount()].'
                                 }
                             },
                             returns = {
                                 {
                                     type = 'number',
                                     name = 'width',
-                                    description = 'The width of the CompressedData.'
+                                    description = 'The width of the CompressedImageData.'
                                 }
                             }
                         }
