@@ -523,6 +523,56 @@ return {
     },
     enums = {
         {
+            name = 'CompressedImageFormat',
+            description = 'Compressed image data formats. Here and here are a couple overviews of many of the formats.\n\nUnlike traditional PNG or jpeg, these formats stay compressed in RAM and in the graphics card\'s VRAM. This is good for saving memory space as well as improving performance, since the graphics card will be able to keep more of the image\'s pixels in its fast-access cache when drawing it.',
+            constants = {
+                {
+                    name = 'dxt1',
+                    description = 'The DXT1 format. RGB data at 4 bits per pixel (compared to 32 bits for ImageData and regular Images.) Suitable for fully opaque images.',
+                },
+                {
+                    name = 'dxt3',
+                    description = 'The DXT3 format. RGBA data at 8 bits per pixel. Smooth variations in opacity do not mix well with this format.',
+                },
+                {
+                    name = 'dxt5',
+                    description = 'The DXT5 format. RGBA data at 8 bits per pixel. Recommended for images with varying opacity.',
+                },
+                {
+                    name = 'bc4',
+                    description = 'The BC4 format (also known as 3Dc+ or ATI1.) Stores just the red channel, at 4 bits per pixel.',
+                },
+                {
+                    name = 'bc4s',
+                    description = 'The signed variant of the BC4 format. Same as above but the pixel values in the texture are in the range of [-1, 1] instead of [0, 1] in shaders.',
+                },
+                {
+                    name = 'bc5',
+                    description = 'The BC5 format (also known as 3Dc or ATI2.) Stores red and green channels at 8 bits per pixel.',
+                },
+                {
+                    name = 'bc5s',
+                    description = 'The signed variant of the BC5 format.',
+                },
+                {
+                    name = 'bc6h',
+                    description = 'The BC6H format. Stores half-precision floating-point RGB data in the range of [0, infinity) at 8 bits per pixel. Suitable for HDR images.',
+                },
+                {
+                    name = 'bc6hs',
+                    description = 'The signed variant of the BC6H format. Stores RGB data in the range of (-infinity, +infinity.)',
+                },
+                {
+                    name = 'bc7',
+                    description = 'The BC7 format (also known as BPTC.) Stores RGB or RGBA data at 8 bits per pixel.',
+                },
+                {
+                    name = 'bc7srgb',
+                    description = 'The sRGB-encoded variant of the BC7 format.',
+                }
+            }
+        },
+        {
             name = 'ImageFormat',
             description = 'Encoded image formats.',
             constants = {
