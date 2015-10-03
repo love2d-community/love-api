@@ -83,14 +83,14 @@ return {
                 },
                 {
                     name = 'getMipmapCount',
-                    description = 'Gets the number of mipmap levels in the CompressedData. The base mipmap level (original image) is included in the count.\n\nMipmap filtering cannot be activated for an Image created from a CompressedData which does not have enough mipmap levels to go down to 1x1. For example, a 256x256 image created from a CompressedData should have 8 mipmap levels or Image:setMipmapFilter will error. Most tools which can create compressed textures are able to automatically generate mipmaps for them in the same file.',
+                    description = 'Gets the number of mipmap levels in the CompressedImageData. The base mipmap level (original image) is included in the count.',
                     variants = {
                         {
                             arguments = {
                                 {
                                     type = 'number',
                                     name = 'mipmaps',
-                                    description = 'The number of mipmap levels stored in the CompressedData.'
+                                    description = 'The number of mipmap levels stored in the CompressedImageData.'
                                 }
                             }
                         }
