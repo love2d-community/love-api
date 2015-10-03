@@ -3982,6 +3982,22 @@ return {
                             type = 'string',
                             name = 'filename',
                             description = 'The filepath to the image file.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Image',
+                            name = 'image',
+                            description = 'An Image object which can be drawn on screen.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filepath to the image file.'
                         },
                         {
                             type = 'TextureFormat',
