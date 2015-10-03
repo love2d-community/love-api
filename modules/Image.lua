@@ -409,7 +409,7 @@ return {
         },
         {
             name = 'newCompressedData',
-            description = 'Create a new CompressedData object from a compressed image file. LÖVE currently supports DDS files compressed with the DXT1, DXT5, and BC5 / 3Dc formats.',
+            description = 'Create a new CompressedImageData object from a compressed image file. LÖVE supports several compressed texture formats, enumerated in the CompressedImageFormat page.',
             variants = {
                 {
                     arguments = {
@@ -421,9 +421,9 @@ return {
                     },
                     returns = {
                         {
-                            type = 'CompressedData',
-                            name = 'compressedData',
-                            description = 'The new CompressedData object.'
+                            type = 'CompressedImageData',
+                            name = 'compressedImageData',
+                            description = 'The new CompressedImageData object.'
                         }
                     }
                 },
@@ -437,9 +437,9 @@ return {
                     },
                     returns = {
                         {
-                            type = 'CompressedData',
-                            name = 'compressedData',
-                            description = 'The new CompressedData object.'
+                            type = 'CompressedImageData',
+                            name = 'compressedImageData',
+                            description = 'The new CompressedImageData object.'
                         }
                     }
                 }
