@@ -4017,28 +4017,6 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'File',
-                            name = 'file',
-                            description = 'A File pointing to an image.'
-                        },
-                        {
-                            type = 'TextureFormat',
-                            name = 'format',
-                            default = '"normal"',
-                            description = 'The format to interpret the image\'s data as.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
                             type = 'FileData',
                             name = 'fileData',
                             description = 'A FileData pointing to an image.'
