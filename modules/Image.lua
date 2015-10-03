@@ -52,14 +52,14 @@ return {
                 },
                 {
                     name = 'getHeight',
-                    description = 'Gets the height of the CompressedData.',
+                    description = 'Gets the height of the CompressedImageData.',
                     variants = {
                         {
                             returns = {
                                 {
                                     type = 'number',
                                     name = 'height',
-                                    description = 'The height of the CompressedData.'
+                                    description = 'The height of the CompressedImageData.'
                                 }
                             }
                         },
@@ -68,14 +68,14 @@ return {
                                 {
                                     type = 'number',
                                     name = 'level',
-                                    description = 'A mipmap level. Must be in the range of [1, CompressedData:getMipmapCount()].'
+                                    description = 'A mipmap level. Must be in the range of [1,  CompressedImageData:getMipmapCount()].'
                                 }
                             },
                             returns = {
                                 {
                                     type = 'number',
                                     name = 'height',
-                                    description = 'The height of the CompressedData.'
+                                    description = 'The height of the CompressedImageData.'
                                 }
                             }
                         }
