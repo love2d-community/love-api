@@ -499,6 +499,72 @@ return {
             }
         },
         {
+            name = 'decompress',
+            description = 'Decompresses a CompressedData or previously compressed string or Data object.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'CompressedData',
+                            name = 'compressedData',
+                            description = 'The compressed data to decompress.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'rawstring',
+                            description = 'A string containing the raw decompressed data.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'compressedString',
+                            description = 'A string containing data previously compressed with love.math.compress.'
+                        },
+                        {
+                            type = 'CompressedDataFormat',
+                            name = 'format',
+                            default = '"lz4"',
+                            description = 'The format that was used to compress the given string.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'rawstring',
+                            description = 'A string containing the raw decompressed data.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Data',
+                            name = 'data',
+                            description = 'A Data object containing data previously compressed with love.math.compress.'
+                        },
+                        {
+                            type = 'CompressedDataFormat',
+                            name = 'format',
+                            default = '"lz4"',
+                            description = 'The format that was used to compress the given data.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'rawstring',
+                            description = 'A string containing the raw decompressed data.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'gammaToLinear',
             description = 'Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful when doing gamma-correct rendering using colors created based on what they look like on-screen.\n\nGamma-space sRGB has more precision in the lower end than linear RGB. Using this function to convert from sRGB to RGB can result in non-integer color values, which get truncated to integers and lose precision when used with other functions such as love.graphics.setColor.',
             variants = {
