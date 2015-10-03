@@ -3593,6 +3593,21 @@ return {
             }
         },
         {
+            name = 'getSupported',
+            description = 'Gets the optional graphics features and whether they\'re supported on the system.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'features',
+                            description = 'A table containing GraphicsFeature keys, and boolean values indicating whether each feature is supported.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getSystemLimits',
             description = 'Gets the system-dependent maximum values for love.graphics features.',
             variants = {
