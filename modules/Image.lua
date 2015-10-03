@@ -11,40 +11,40 @@ return {
             functions = {
                 {
                     name = 'getDimensions',
-                    description = 'Gets the width and height of the CompressedData.',
+                    description = 'Gets the width and height of the CompressedImageData.',
                     variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'width',
+                                    description = 'The width of the CompressedImageData.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'height',
+                                    description = 'The height of the CompressedImageData.'
+                                }
+                            }
+                        },
                         {
                             arguments = {
                                 {
                                     type = 'number',
                                     name = 'level',
-                                    description = 'A mipmap level. Must be in the range of [1, CompressedData:getMipmapCount()].'
+                                    description = 'A mipmap level. Must be in the range of [1, CompressedImageData:getMipmapCount()].'
                                 }
                             },
                             returns = {
                                 {
                                     type = 'number',
                                     name = 'width',
-                                    description = 'The width of the CompressedData.'
+                                    description = 'The width of the CompressedImageData.'
                                 },
                                 {
                                     type = 'number',
                                     name = 'height',
-                                    description = 'The height of the CompressedData.'
-                                }
-                            }
-                        },
-                        {
-                            returns = {
-                                {
-                                    type = 'number',
-                                    name = 'width',
-                                    description = 'The width of the CompressedData.'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'height',
-                                    description = 'The height of the CompressedData.'
+                                    description = 'The height of the CompressedImageData.'
                                 }
                             }
                         }
