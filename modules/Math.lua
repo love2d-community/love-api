@@ -479,7 +479,7 @@ return {
                             type = 'CompressedDataFormat',
                             name = 'format',
                             default = '"lz4"',
-                            description = 'The format to compress the string to.'
+                            description = 'The format to use when compressing the string.'
                         },
                         {
                             type = 'number',
@@ -493,6 +493,34 @@ return {
                             type = 'CompressedData',
                             name = 'compressedData',
                             description = 'A new Data object containing the compressed version of the string.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Data',
+                            name = 'data',
+                            description = 'A Data object containing the raw (un-compressed) data to compress.'
+                        },
+                        {
+                            type = 'CompressedDataFormat',
+                            name = 'format',
+                            default = '"lz4"',
+                            description = 'The format to use when compressing the data.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'level',
+                            default = '-1',
+                            description = 'The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'CompressedData',
+                            name = 'compressedData',
+                            description = 'A new Data object containing the compressed version of the raw data.'
                         }
                     }
                 }
