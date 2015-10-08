@@ -5199,6 +5199,27 @@ return {
             }
         },
         {
+            name = 'stencil',
+            description = 'Draws geometry to the stencil buffer.\n\nThe passed function draws to the (invisible) stencil buffer instead of the regular screen. The stencil buffer acts like a mask or stencil – the geometry of everything drawn to the stencil buffer determines whether pixels in the buffer are \'enabled\' or not. When the Stencil Test is enabled after love.graphics.stencil is used, everything drawn after that point will clipped / stencilled out based on whether it intersects what has been drawn to the stencil buffer.\n\nEach Canvas has its own stencil buffer.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'function',
+                            name = 'stencilfunction',
+                            description = 'Function which draws the stencil geometry to the stencil buffer.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'keepbuffer',
+                            default = 'false',
+                            description = 'Whether to preserve the previous contents of the stencil buffer. Note that love.graphics.clear will also clear the stencil buffer.'
+                        }
+                    }
+                }
+            };
+        },
+        {
             name = 'translate',
             description = 'Translates the coordinate system in two dimensions.\n\nWhen this function is called with two numbers, dx, and dy, all the following drawing operations take effect as if their x and y coordinates were x+dx and y+dy.\n\nScale and translate are not commutative operations, therefore, calling them in different orders will change the outcome.\n\nThis change lasts until love.graphics.clear is called (which is called automatically before love.draw in the default love.run function), or a love.graphics.pop reverts to a previous coordinate system state.\n\nTranslating using whole numbers will prevent tearing/blurring of images and fonts draw after translating.',
             variants = {
