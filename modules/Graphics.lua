@@ -5164,6 +5164,28 @@ return {
             }
         },
         {
+            name = 'setStencilTest',
+            description = 'Enables or disables stencil testing.\n\nWhen stencil testing is enabled, the geometry of everything that is drawn will be clipped / stencilled out based on whether it intersects with what has been previously drawn to the stencil buffer.\n\nEach Canvas has its own stencil buffer.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            default = 'false',
+                            description = 'Whether to enable stencil testing.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'invert',
+                            default = 'false',
+                            description = 'Whether to invert the stencil test. If true, the parts of drawn geometry that touch what has been previously drawn to the stencil buffer will be clipped. Otherwise everything else will be clipped.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setWireframe',
             description = 'Sets whether wireframe lines will be used when drawing.\n\nWireframe mode should only be used for debugging. The lines drawn with it enabled do not behave like regular love.graphics lines: their widths don\'t scale with the coordinate transformations or with love.graphics.setLineWidth, and they don\'t use the smooth LineStyle.',
             variants = {
