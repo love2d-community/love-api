@@ -3032,6 +3032,43 @@ return {
             }
         },
         {
+            name = 'discard',
+            description = 'Discards (trashes) the contents of the screen or active Canvas. This is a performance optimization function with niche use cases.\n\nIf the active Canvas has just been changed and the "replace" BlendMode is about to be used to draw something which covers the entire screen, calling love.graphics.discard rather than calling love.graphics.clear or doing nothing may improve performance on mobile devices.\n\nOn some desktop systems this function may do nothing.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            type = 'discardcolor',
+                            default = 'true',
+                            description = 'Whether to discard the texture(s) of the active Canvas(es) (the contents of the screen if no Canvas is active).'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'discardstencil',
+                            default = 'true',
+                            description = 'Whether to discard the contents of the stencil buffer of the screen / active Canvas.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'table',
+                            type = 'discardcolors',
+                            description = 'An array containing boolean values indicating whether to discard the texture of each active Canvas, when multiple simultaneous Canvases are active.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'discardstencil',
+                            default = 'true',
+                            description = 'Whether to discard the contents of the stencil buffer of the screen / active Canvas.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'draw',
             description = 'Draws objects on screen. Drawable objects are loaded images, but may be other kinds of Drawable objects, such as a ParticleSystem.\n\nIn addition to simple drawing, this function can rotate and scale the object at the same time, as well as offset the image (for example, to center the image at the chosen coordinates).\n\nlove.graphics.draw anchors from the top left corner by default.\n\nYou can specify a negative value for sx or sy to flip the drawable horizontally or vertically.\n\nThe pivotal point is (x, y) on the screen and (ox, oy) in the internal coordinate system of the drawable object, before rotation and scaling. The object is scaled by (sx, sy), then rotated by r around the pivotal point.\n\nThe origin offset values are most often used to shift the images up and left by half of its height and width, so that (effectively) the specified x and y coordinates are where the center of the image will end up.',
             variants = {
