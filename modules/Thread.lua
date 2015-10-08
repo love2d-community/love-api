@@ -136,6 +136,43 @@ return {
                     }
                 },
                 {
+                    name = 'performAtomic',
+                    description = 'Executes the specified function atomically with respect to this Channel.\n\nCalling multiple methods in a row on the same Channel is often useful. However if multiple Threads are calling this Channel\'s methods at the same time, the different calls on each Thread might end up interleaved (e.g. one or more of the second thread\'s calls may happen in between the first thread\'s calls.)\n\nThis method avoids that issue by making sure the Thread calling the method has exclusive access to the Channel until the specified function has returned.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'function',
+                                    name = 'func',
+                                    description = 'The function to call, the form of function(channel, arg1, arg2, ...) end. The Channel is passed as the first argument to the function when it is called.'
+                                },
+                                {
+                                    type = 'any',
+                                    name = 'arg1',
+                                    description = 'Additional arguments that the given function will receive when it is called.'
+                                },
+                                {
+                                    type = 'any',
+                                    name = '...',
+                                    description = 'Additional arguments that the given function will receive when it is called.'
+                                }
+                            },
+                            returns = {
+                                {
+                                    type = 'any',
+                                    name = 'ret1',
+                                    description = 'The first return value of the given function (if any.)'
+                                },
+                                {
+                                    type = 'any',
+                                    name = '...',
+                                    description = 'Any other return values.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'pop',
                     description = 'Retrieves the value of a Channel message and removes it from the message queue.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It returns nil if there are no messages in the queue.',
                     variants = {
