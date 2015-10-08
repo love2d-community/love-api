@@ -109,6 +109,33 @@ return {
                     }
                 },
                 {
+                    name = 'getSegment',
+                    description = 'Gets a BezierCurve that corresponds to the specified segment of this BezierCurve.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'startpoint',
+                                    description = 'The starting point along the curve. Must be between 0 and 1.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'endpoint',
+                                    description = 'The end of the segment. Must be between 0 and 1.'
+                                }
+                            },
+                            returns = {
+                                {
+                                    type = 'BezierCurve',
+                                    name = 'curve',
+                                    description = 'A BezierCurve that corresponds to the specified segment.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'insertControlPoint',
                     description = 'Insert control point after the i-th control point. Indices start with 1. Negative indices wrap around: -1 is the last control point, -2 the one before the last, etc.',
                     variants = {
