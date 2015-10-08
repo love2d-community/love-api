@@ -5239,7 +5239,7 @@ return {
                         }
                     }
                 }
-            };
+            },
         },
         {
             name = 'translate',
