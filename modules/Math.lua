@@ -158,6 +158,39 @@ return {
                     }
                 },
                 {
+                    name = 'renderSegment',
+                    description = 'Get a list of coordinates on a specific part of the curve, to be used with love.graphics.line.\n\nThis function samples the Bézier curve using recursive subdivision. You can control the recursion depth using the depth parameter.\n\nIf you are just need to know the position on the curve given a parameter, use BezierCurve:evaluate.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'startpoint',
+                                    description = 'The starting point along the curve. Must be between 0 and 1.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'endpoint',
+                                    description = 'The end of the segment to render. Must be between 0 and 1.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'depth',
+                                    default = '5',
+                                    description = 'Number of recursive subdivision steps.'
+                                }
+                            },
+                            returns = {
+                                {
+                                    type = 'table',
+                                    name = 'coordinates',
+                                    description = 'List of x,y-coordinate pairs of points on the curve.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'rotate',
                     description = 'Rotate the Bézier curve by an angle.',
                     variants = {
