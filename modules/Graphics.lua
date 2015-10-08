@@ -940,6 +940,19 @@ return {
                     }
                 },
                 {
+                    name = 'getFlags',
+                    description = 'Gets the flags used when the image was created.',
+                    variants = {
+                        {
+                            returns = {
+                                type = 'table',
+                                name = 'flags',
+                                description = 'A table with ImageFlag keys.'
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getHeight',
                     description = 'Gets the height of the Image.',
                     variants = {
