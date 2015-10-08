@@ -3593,6 +3593,26 @@ return {
             }
         },
         {
+            name = 'getStencilTest',
+            description = 'Gets whether stencil testing is enabled.\n\nWhen stencil testing is enabled, the geometry of everything that is drawn will be clipped / stencilled out based on whether it intersects with what has been previously drawn to the stencil buffer.\n\nEach Canvas has its own stencil buffer.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            description = 'Whether stencil testing is enabled.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'inverted',
+                            description = 'Whether the stencil test is inverted or not.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getSupported',
             description = 'Gets the optional graphics features and whether they\'re supported on the system.',
             variants = {
