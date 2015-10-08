@@ -448,6 +448,26 @@ return {
                     }
                 },
                 {
+                    name = 'setFallbacks',
+                    description = 'Sets other Fonts to use if this Font doesn\'t have a specific character. When that happens, the glyph from the first fallback Font to have the character will be used, instead of a blank box or other \'no character\' symbol being used.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'Font',
+                                    name = 'fallbackfont1',
+                                    description = 'The first fallback Font to use.'
+                                },
+                                {
+                                    type = 'Font',
+                                    name = '...',
+                                    description = 'Additionall fallback Fonts.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'setFilter',
                     description = 'Sets the filter mode for a font.',
                     variants = {
