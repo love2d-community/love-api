@@ -135,6 +135,21 @@ return {
                     }
                 },
                 {
+                    name = 'removeControlPoint',
+                    description = 'Removes the specified control point.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'index',
+                                    description = 'The index of the control point to remove.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'render',
                     description = 'Get a list of coordinates to be used with love.graphics.line.\n\nThis function samples the Bézier curve using recursive subdivision. You can control the recursion depth using the depth parameter.\n\nIf you are just interested to know the position on the curve given a parameter, use BezierCurve:evalulate.',
                     variants = {
