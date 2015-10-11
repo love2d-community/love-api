@@ -58,26 +58,6 @@ return {
             }
         },
         {
-            name = 'getDimensions',
-            description = 'Gets the width and height of the window.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'width',
-                            description = 'The width of the window.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'height',
-                            description = 'The height of the window.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getDisplayName',
             description = 'Gets the name of a display.',
             variants = {
