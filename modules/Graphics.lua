@@ -4525,26 +4525,6 @@ return {
             }
         },
         {
-            name = 'point',
-            description = 'Draws a point.\n\nThe pixel grid is actually offset to the center of each pixel. So to get clean pixels drawn use 0.5 + integer increments.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'x',
-                            description = 'The position on the x-axis.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y',
-                            description = 'The position on the y-axis.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'polygon',
             description = 'Draw a polygon.\n\nFollowing the mode argument, this function can accept multiple numeric arguments or a single table of numeric arguments. In either case the arguments are interpreted as alternating x and y coordinates of the polygon\'s vertices.\n\nWhen in fill mode, the polygon must be convex and simple or rendering artifacts may occur.',
             variants = {
