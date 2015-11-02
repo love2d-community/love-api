@@ -1164,18 +1164,20 @@ return {
         },
         {
             name = 'random',
-            description = 'Generates a pseudo random number in a platform independent way.',
+            description = 'Generates a pseudo-random number in a platform independent manner.',
             variants = {
                 {
+                    description = 'Get uniformly distributed pseudo-random real number within [0, 1].',
                     returns = {
                         {
                             type = 'number',
                             name = 'number',
-                            description = 'The pseudo random number.'
+                            description = 'The pseudo-random number.'
                         }
                     }
                 },
                 {
+                    description = 'Get a uniformly distributed pseudo-random integer within [1, max].',
                     arguments = {
                         {
                             type = 'number',
@@ -1187,11 +1189,12 @@ return {
                         {
                             type = 'number',
                             name = 'number',
-                            description = 'The pseudo random number.'
+                            description = 'The pseudo-random integer number.'
                         }
                     }
                 },
                 {
+                    description = 'Get uniformly distributed pseudo-random integer within [min, max].',
                     arguments = {
                         {
                             type = 'number',
@@ -1208,7 +1211,7 @@ return {
                         {
                             type = 'number',
                             name = 'number',
-                            description = 'The pseudo random number.'
+                            description = 'The pseudo-random integer number.'
                         }
                     }
                 }
