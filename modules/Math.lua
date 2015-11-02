@@ -408,9 +408,10 @@ return {
                 },
                 {
                     name = 'random',
-                    description = 'Generates a pseudo random number in a platform independent way.',
+                    description = 'Generates a pseudo-random number in a platform independent manner.',
                     variants = {
                         {
+                            description = 'Get uniformly distributed pseudo-random number within [0, 1].',
                             returns = {
                                 {
                                     type = 'number',
@@ -420,6 +421,7 @@ return {
                             }
                         },
                         {
+                            description = 'Get uniformly distributed pseudo-random integer number within [1, max].',
                             arguments = {
                                 {
                                     type = 'number',
@@ -431,11 +433,12 @@ return {
                                 {
                                     type = 'number',
                                     name = 'number',
-                                    description = 'The pseudo random number.'
+                                    description = 'The pseudo-random integer number.'
                                 }
                             }
                         },
                         {
+                            description = 'Get uniformly distributed pseudo-random integer number within [min, max].',
                             arguments = {
                                 {
                                     type = 'number',
@@ -452,7 +455,7 @@ return {
                                 {
                                     type = 'number',
                                     name = 'number',
-                                    description = 'The pseudo random number.'
+                                    description = 'The pseudo-random integer number.'
                                 }
                             }
                         }
