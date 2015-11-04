@@ -3061,9 +3061,57 @@ return {
         },
         {
             name = 'clear',
-            description = 'Clears the screen to background color and restores the default coordinate system.\n\nThis function is called automatically before love.draw in the default love.run function. See the example in love.run for a typical use of this function.\n\nNote that the scissor area bounds the cleared region.',
+            description = 'Clears the screen to the background color in LÖVE 0.9.2 and earlier, or to the specified color in 0.10.0 and newer.\n\nThis function is called automatically before love.draw in the default love.run function. See the example in love.run for a typical use of this function.\n\nNote that the scissor area bounds the cleared region.',
             variants = {
-                {}
+                {
+                    description = 'Clears the screen to the background color in 0.9.2 and earlier, or to transparent black (0, 0, 0, 0) in LÖVE 0.10.0 and newer.'
+                },
+                {
+                    description = 'Clears the screen or active Canvas to the specified color.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'r',
+                            description = 'The red channel of the color to clear the screen to.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'g',
+                            description = 'The green channel of the color to clear the screen to.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'b',
+                            description = 'The blue channel of the color to clear the screen to.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'a',
+                            default = '255',
+                            description = 'The alpha channel of the color to clear the screen to.'
+                        },
+                    }
+                },
+                {
+                    description = 'Clears multiple active Canvases to different colors, if multiple Canvases are active at once via love.graphics.setCanvas.',
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'c1',
+                            description = 'A table in the form of {r, g, b, a} containing the color to clear the first active Canvas to.'
+                        },
+                        {
+                            type = 'table',
+                            name = 'c2',
+                            description = 'A table in the form of {r, g, b, a} containing the color to clear the second active Canvas to.'
+                        },
+                        {
+                            type = 'table',
+                            name = '...',
+                            description = 'Additional tables for each active Canvas.'
+                        }
+                    }
+                }
             }
         },
         {
