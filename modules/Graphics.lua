@@ -2912,7 +2912,6 @@ return {
                     name = 'setColor',
                     description = 'Sets the color that will be used for the next add and set operations. Calling the function without arguments will clear the color.\n\nThe global color set with love.graphics.setColor will not work on the SpriteBatch if any of the sprites has its own color.',
                     variants = {
-                        {},
                         {
                             arguments = {
                                 {
@@ -2935,8 +2934,11 @@ return {
                                     name = 'a',
                                     default = '255',
                                     description = 'The amount of alpha.'
-                                },
+                                }
                             }
+                        },
+                        {
+                            description = 'Disables all per-sprite colors for this SpriteBatch.'
                         }
                     }
                 },
