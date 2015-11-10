@@ -3122,7 +3122,7 @@ return {
                     arguments = {
                         {
                             type = 'boolean',
-                            type = 'discardcolor',
+                            name = 'discardcolor',
                             default = 'true',
                             description = 'Whether to discard the texture(s) of the active Canvas(es) (the contents of the screen if no Canvas is active).'
                         },
@@ -3138,7 +3138,7 @@ return {
                     arguments = {
                         {
                             type = 'table',
-                            type = 'discardcolors',
+                            name = 'discardcolors',
                             description = 'An array containing boolean values indicating whether to discard the texture of each active Canvas, when multiple simultaneous Canvases are active.'
                         },
                         {
