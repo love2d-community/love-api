@@ -302,7 +302,7 @@ return {
                         {
                             type = 'string',
                             name = 'codestring',
-                            description = 'A string containing the Lua code to use as the source.'
+                            description = 'A string containing the Lua code to use as the source. It needs to either be at least 1024 characters long, or contain at least one newline.'
                         }
                     },
                     returns = {
