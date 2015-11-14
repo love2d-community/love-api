@@ -204,6 +204,56 @@ return {
     },
     functions = {
         {
+            name = 'newDecoder',
+            description = 'Attempts to find a decoder for the encoded sound data in the specified file.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'File',
+                            name = 'file',
+                            description = 'The file with encoded sound data.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'buffer',
+                            default = '2048',
+                            description = 'The size of each decoded chunk, in bytes.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Decoder',
+                            name = 'decoder',
+                            description = 'A new Decoder object.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filename of the file with encoded sound data.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'buffer',
+                            default = '2048',
+                            description = 'The size of each decoded chunk, in bytes.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Decoder',
+                            name = 'decoder',
+                            description = 'A new Decoder object.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'newSoundData',
             description = 'Creates new SoundData from a file. It\'s also possible to create SoundData with a custom sample rate, channel and bit depth.\n\nThe sound data will be decoded to the memory in a raw format. It is recommended to create only short sounds like effects, as a 3 minute song uses 30 MB of memory this way.',
             variants = {
