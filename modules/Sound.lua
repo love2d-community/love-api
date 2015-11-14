@@ -7,6 +7,23 @@ return {
             description = 'An object which can gradually decode a sound file.',
             constructors = {
                 'newDecoder'
+            },
+            functions = {
+                {
+                    name = 'getBitDepth',
+                    description = 'Returns the number of bits per sample.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'bitDepth',
+                                    description = 'Either 8 or 16.'
+                                }
+                            }
+                        }
+                    }
+                }
             }
         },
         {
