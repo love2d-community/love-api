@@ -23,6 +23,21 @@ return {
                             }
                         }
                     }
+                },
+                {
+                    name = 'getChannels',
+                    description = 'Returns the number of channels in the stream.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'channels',
+                                    description = '1 for mono, 2 for stereo.'
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
