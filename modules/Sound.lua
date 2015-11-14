@@ -38,6 +38,21 @@ return {
                             }
                         }
                     }
+                },
+                {
+                    name = 'getSampleRate',
+                    description = 'Returns the sample rate of the Decoder.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'rate',
+                                    description = 'Number of samples per second.'
+                                }
+                            }
+                        }
+                    }
                 }
             }
         },
