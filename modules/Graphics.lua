@@ -5511,6 +5511,10 @@ return {
                     description = 'The default Canvas format - an alias for the rgba8 format, normally.'
                 },
                 {
+                    name = 'hdr',
+                    description = 'A format suitable for high dynamic range content - an alias for the rgba16f format, normally.'
+                },
+                {
                     name = 'rgba8',
                     description = '8 bits per channel (32 bpp) RGBA. Color channel values range from 0-255 (0-1 in shaders.)'
                 },
@@ -5531,10 +5535,6 @@ return {
                     description = 'RGB with 10 bits per channel, and a 2-bit alpha channel (32 bpp.)'
                 },
                 {
-                    name = 'hdr',
-                    description = 'A format suitable for high dynamic range content - an alias for the rgba16f format, normally.'
-                },
-                {
                     name = 'rgba16f',
                     description = 'Floating point RGBA with 16 bits per channel (64 bpp.) Color values can range from [-infinity, +infinity].'
                 },
@@ -5550,6 +5550,30 @@ return {
                     name = 'srgb',
                     description = 'The same as rgba8, but the Canvas is interpreted as being in the sRGB color space. Everything drawn to the Canvas will be converted from linear RGB to sRGB. When the Canvas is drawn (or used in a shader), it will be decoded from sRGB to linear RGB.'
                 },
+                {
+                    name = 'r8',
+                    description = 'Single-channel (red component) format (8 bpp.)'
+                },
+                {
+                    name = 'rg8',
+                    description = 'Two channels (red and green components) with 8 bits per channel (16 bpp.)'
+                },
+                {
+                    name = 'r16f',
+                    description = 'Floating point single-channel format (16 bpp.) Color values can range from [-infinity, +infinity].'
+                },
+                {
+                    name = 'rg16f',
+                    description = 'Floating point two-channel format with 16 bits per channel (32 bpp.) Color values can range from [-infinity, +infinity].'
+                },
+                {
+                    name = 'r32f',
+                    description = 'Floating point single-channel format (32 bpp.) Color values can range from [-infinity, +infinity].'
+                },
+                {
+                    name = 'rg32f',
+                    description = 'Floating point two-channel format with 32 bits per channel (64 bpp.) Color values can range from [-infinity, +infinity].'
+                }
             }
         },
         {
