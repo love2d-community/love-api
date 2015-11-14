@@ -3,6 +3,13 @@ return {
     description = 'This module is responsible for decoding sound files. It can\'t play the sounds, see love.audio for that.',
     types = {
         {
+            name = 'Decoder',
+            description = 'An object which can gradually decode a sound file.',
+            constructors = {
+                'newDecoder'
+            }
+        },
+        {
             name = 'SoundData',
             description = 'Contains raw audio samples. You can not play SoundData back directly. You must wrap a Source object around it.',
             constructors = {
