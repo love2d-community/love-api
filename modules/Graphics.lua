@@ -2984,7 +2984,15 @@ return {
             constructors = {
                 'newText'
             },
-            functions = {},
+            functions = {
+                {
+                    name = 'clear',
+                    description = 'Clears the contents of the Text object.',
+                    variants = {
+                        {}
+                    }
+                }
+            },
             supertypes = {
                 'Drawable',
                 'Object'
