@@ -110,6 +110,29 @@ return {
                     }
                 },
                 {
+                    name = 'getDuration',
+                    description = 'Gets the duration of the Source. For streaming Sources it may not always be sample-accurate, and may return -1 if the duration cannot be determined at all.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'TimeUnit',
+                                    name = 'unit',
+                                    default = '"seconds"',
+                                    description = 'The time unit for the return value.'
+                                }
+                            },
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'duration',
+                                    description = 'The duration of the Source, or -1 if it cannot be determined.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getPitch',
                     description = 'Gets the current pitch of the Source.',
                     variants = {
