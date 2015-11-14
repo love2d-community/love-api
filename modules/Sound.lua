@@ -40,6 +40,21 @@ return {
                     }
                 },
                 {
+                    name = 'getDuration',
+                    description = 'Gets the duration of the sound file. It may not always be sample-accurate, and it may return -1 if the duration cannot be determined at all.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'duration',
+                                    description = 'The duration of the sound file in seconds, or -1 if it cannot be determined.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getSampleRate',
                     description = 'Returns the sample rate of the Decoder.',
                     variants = {
