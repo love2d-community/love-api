@@ -55,6 +55,21 @@ return {
                     }
                 },
                 {
+                    name = 'getFormat',
+                    description = 'Gets the texture format of the Canvas.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'CanvasFormat',
+                                    name = 'format',
+                                    description = 'The format of the Canvas.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getHeight',
                     description = 'Gets the height of the Canvas.',
                     variants = {
