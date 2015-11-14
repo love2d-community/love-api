@@ -543,7 +543,7 @@ return {
             constants = {
                 {
                     name = 'dxt1',
-                    description = 'The DXT1 format. RGB data at 4 bits per pixel (compared to 32 bits for ImageData and regular Images.) Suitable for fully opaque images.',
+                    description = 'The DXT1 format. RGB data at 4 bits per pixel (compared to 32 bits for ImageData and regular Images.) Suitable for fully opaque images. Suitable for fully opaque images on desktop systems.',
                 },
                 {
                     name = 'dxt3',
@@ -551,7 +551,7 @@ return {
                 },
                 {
                     name = 'dxt5',
-                    description = 'The DXT5 format. RGBA data at 8 bits per pixel. Recommended for images with varying opacity.',
+                    description = 'The DXT5 format. RGBA data at 8 bits per pixel. Recommended for images with varying opacity on desktop systems.',
                 },
                 {
                     name = 'bc4',
@@ -571,7 +571,7 @@ return {
                 },
                 {
                     name = 'bc6h',
-                    description = 'The BC6H format. Stores half-precision floating-point RGB data in the range of [0, infinity) at 8 bits per pixel. Suitable for HDR images.',
+                    description = 'The BC6H format. Stores half-precision floating-point RGB data in the range of [0, infinity) at 8 bits per pixel. Suitable for HDR images on desktop systems.',
                 },
                 {
                     name = 'bc6hs',
