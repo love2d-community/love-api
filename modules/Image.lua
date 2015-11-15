@@ -650,10 +650,6 @@ return {
                 {
                     name = 'png',
                     description = 'PNG image format.'
-                },
-                {
-                    name = 'jpg',
-                    description = 'JPG image format.'
                 }
             }
         }
