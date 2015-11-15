@@ -742,7 +742,7 @@ return {
             constants = {
                 {
                     name = 'normal',
-                    description = 'Standard fullscreen mode. Changes the display mode (actual resolution) of the monitor.'
+                    description = 'Standard exclusive-fullscreen mode. Changes the display mode (actual resolution) of the monitor.'
                 },
                 {
                     name = 'desktop',
