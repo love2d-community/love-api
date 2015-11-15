@@ -3809,7 +3809,7 @@ return {
                         {
                             type = 'string',
                             name = 'name',
-                            description = 'The name of the renderer, e.g. "OpenGL".'
+                            description = 'The name of the renderer, e.g. "OpenGL" or "OpenGL ES".'
                         },
                         {
                             type = 'string',
@@ -3819,7 +3819,7 @@ return {
                         {
                             type = 'string',
                             name = 'vendor',
-                            description = 'The name of the graphics card vendor, e.g. "Intel Inc."'
+                            description = 'The name of the graphics card vendor, e.g. "Intel Inc".'
                         },
                         {
                             type = 'string',
