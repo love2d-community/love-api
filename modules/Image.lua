@@ -542,47 +542,47 @@ return {
             description = 'Compressed image data formats. Here and here are a couple overviews of many of the formats.\n\nUnlike traditional PNG or jpeg, these formats stay compressed in RAM and in the graphics card\'s VRAM. This is good for saving memory space as well as improving performance, since the graphics card will be able to keep more of the image\'s pixels in its fast-access cache when drawing it.',
             constants = {
                 {
-                    name = 'dxt1',
+                    name = 'DXT1',
                     description = 'The DXT1 format. RGB data at 4 bits per pixel (compared to 32 bits for ImageData and regular Images.) Suitable for fully opaque images. Suitable for fully opaque images on desktop systems.',
                 },
                 {
-                    name = 'dxt3',
+                    name = 'DXT3',
                     description = 'The DXT3 format. RGBA data at 8 bits per pixel. Smooth variations in opacity do not mix well with this format.',
                 },
                 {
-                    name = 'dxt5',
+                    name = 'DXT5',
                     description = 'The DXT5 format. RGBA data at 8 bits per pixel. Recommended for images with varying opacity on desktop systems.',
                 },
                 {
-                    name = 'bc4',
+                    name = 'BC4',
                     description = 'The BC4 format (also known as 3Dc+ or ATI1.) Stores just the red channel, at 4 bits per pixel.',
                 },
                 {
-                    name = 'bc4s',
+                    name = 'BC4s',
                     description = 'The signed variant of the BC4 format. Same as above but the pixel values in the texture are in the range of [-1, 1] instead of [0, 1] in shaders.',
                 },
                 {
-                    name = 'bc5',
+                    name = 'BC5',
                     description = 'The BC5 format (also known as 3Dc or ATI2.) Stores red and green channels at 8 bits per pixel.',
                 },
                 {
-                    name = 'bc5s',
+                    name = 'BC5s',
                     description = 'The signed variant of the BC5 format.',
                 },
                 {
-                    name = 'bc6h',
+                    name = 'BC6h',
                     description = 'The BC6H format. Stores half-precision floating-point RGB data in the range of [0, infinity) at 8 bits per pixel. Suitable for HDR images on desktop systems.',
                 },
                 {
-                    name = 'bc6hs',
+                    name = 'BC6hs',
                     description = 'The signed variant of the BC6H format. Stores RGB data in the range of (-infinity, +infinity.)',
                 },
                 {
-                    name = 'bc7',
+                    name = 'BC7',
                     description = 'The BC7 format (also known as BPTC.) Stores RGB or RGBA data at 8 bits per pixel.',
                 },
                 {
-                    name = 'bc7srgb',
+                    name = 'BC7srgb',
                     description = 'The sRGB-encoded variant of the BC7 format.',
                 },
                 {
@@ -619,19 +619,19 @@ return {
                 },
                 {
                     name = 'PVR1rgb2',
-                    description = 'The 2 bit per channel RGB variant of the PVRTC1 format. Stores RGB data at 2 bits per pixel. Textures compressed with PVRTC1 formats must be square.'
+                    description = 'The 2 bit per pixel RGB variant of the PVRTC1 format. Stores RGB data at 2 bits per pixel. Textures compressed with PVRTC1 formats must be square and power-of-two sized.'
                 },
                 {
                     name = 'PVR1rgb4',
-                    description = 'The 4 bit per channel RGB variant of the PVRTC1 format. Stores RGB data at 4 bits per pixel.'
+                    description = 'The 4 bit per pixel RGB variant of the PVRTC1 format. Stores RGB data at 4 bits per pixel.'
                 },
                 {
                     name = 'PVR1rgba2',
-                    description = 'The 2 bit per channel RGBA variant of the PVRTC1 format.'
+                    description = 'The 2 bit per pixel RGBA variant of the PVRTC1 format.'
                 },
                 {
                     name = 'PVR1rgba4',
-                    description = 'The 4 bit per channel RGBA variant of the PVRTC1 format.'
+                    description = 'The 4 bit per pixel RGBA variant of the PVRTC1 format.'
                 }
             }
         },
