@@ -5531,7 +5531,7 @@ return {
             constants = {
                 {
                     name = 'normal',
-                    description = 'The default Canvas format - an alias for the rgba8 format, normally.'
+                    description = 'The default Canvas format - usually an alias for the rgba8 format, or the srgb format if gamma-correct rendering is enabled in LÖVE 0.10.0 and newer.'
                 },
                 {
                     name = 'hdr',
@@ -5571,7 +5571,7 @@ return {
                 },
                 {
                     name = 'srgb',
-                    description = 'The same as rgba8, but the Canvas is interpreted as being in the sRGB color space. Everything drawn to the Canvas will be converted from linear RGB to sRGB. When the Canvas is drawn (or used in a shader), it will be decoded from sRGB to linear RGB.'
+                    description = 'The same as rgba8, but the Canvas is interpreted as being in the sRGB color space. Everything drawn to the Canvas will be converted from linear RGB to sRGB. When the Canvas is drawn (or used in a shader), it will be decoded from sRGB to linear RGB. This reduces color banding when doing gamma-correct rendering, since sRGB encoding has more precision than linear RGB for darker colors.'
                 },
                 {
                     name = 'r8',
