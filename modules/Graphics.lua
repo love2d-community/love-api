@@ -5616,28 +5616,6 @@ return {
             }
         },
         {
-            name = 'MeshDrawMode',
-            description = 'How a Mesh\'s vertices are used when drawing.',
-            constants = {
-                {
-                    name = 'fan',
-                    description = 'The vertices create a "fan" shape with the first vertex acting as the hub point. Can be easily used to draw simple convex polygons.'
-                },
-                {
-                    name = 'strip',
-                    description = 'The vertices create a series of connected triangles using vertices 1, 2, 3, then 3, 2, 4 (note the order), then 3, 4, 5 and so on.'
-                },
-                {
-                    name = 'triangles',
-                    description = 'The vertices create unconnected triangles.'
-                },
-                {
-                    name = 'points',
-                    description = 'The vertices are drawn as unconnected points (see love.graphics.setPointSize.)'
-                }
-            }
-        },
-        {
             name = 'GraphicsFeature',
             description = 'Graphics features that can be checked for with love.graphics.isSupported.\n\nsubtractive, mipmap, and dxt are supported on nearly every system.\n\ncanvas, multicanvas, npot, and shader have roughly the same minimum requirements for support: a DirectX 9.0c+ capable graphics card with drivers that support ~OpenGL 2.1+.\n\nhdrcanvas, bc5, and srgb all share mostly the same minimum requirements for support as well: a DirectX 10+ capable graphics card with drivers that support ~OpenGL 3+.\n\nDirectX 9.0c+ capable graphics cards include the nvidia GeForce 5000-series (2003) and newer, the ATI Radeon 9000-series and newer, and the Intel GMA x3100 GPU and newer.\n\nDirectX 10+ capable graphics cards include the nvidia GeForce 8000-series (2006) and newer, the ATI/AMD HD 2000-series and newer, and the Intel HD 2000/3000 GPUs and newer.',
             constants = {
@@ -5702,6 +5680,28 @@ return {
                 {
                     name = 'smooth',
                     description = 'Draw smooth lines.'
+                }
+            }
+        },
+        {
+            name = 'MeshDrawMode',
+            description = 'How a Mesh\'s vertices are used when drawing.',
+            constants = {
+                {
+                    name = 'fan',
+                    description = 'The vertices create a "fan" shape with the first vertex acting as the hub point. Can be easily used to draw simple convex polygons.'
+                },
+                {
+                    name = 'strip',
+                    description = 'The vertices create a series of connected triangles using vertices 1, 2, 3, then 3, 2, 4 (note the order), then 3, 4, 5 and so on.'
+                },
+                {
+                    name = 'triangles',
+                    description = 'The vertices create unconnected triangles.'
+                },
+                {
+                    name = 'points',
+                    description = 'The vertices are drawn as unconnected points (see love.graphics.setPointSize.)'
                 }
             }
         },
