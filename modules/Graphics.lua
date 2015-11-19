@@ -4345,7 +4345,7 @@ return {
                         {
                             type = 'ImageData',
                             name = 'imageData',
-                            description = '     The ImageData object to create the font from.'
+                            description = 'The ImageData object to create the font from.'
                         },
                         {
                             type = 'string',
