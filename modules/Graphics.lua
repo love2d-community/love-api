@@ -3876,6 +3876,36 @@ return {
             }
         },
         {
+            name = 'intersectScissor',
+            description = 'Sets the scissor to the rectangle created by the intersection of the specified rectangle with the existing scissor. If no scissor is active yet, it behaves like love.graphics.setScissor.\n\nThe scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.\n\nThe dimensions of the scissor is unaffected by graphical transformations (translate, scale, ...).',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-coordinate of the upper left corner of the rectangle to intersect with the existing scissor rectangle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-coordinate of the upper left corner of the rectangle to intersect with the existing scissor rectangle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'width',
+                            description = 'The width of the rectangle to intersect with the existing scissor rectangle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'The height of the rectangle to intersect with the existing scissor rectangle.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isWireframe',
             description = 'Gets whether wireframe mode is used when drawing.',
             variants = {
