@@ -4317,7 +4317,7 @@ return {
         },
         {
             name = 'newImageFont',
-            description = 'Creates a new font by loading a specifically formatted image. There can be up to 256 glyphs.\n\nExpects ISO 8859-1 encoding for the glyphs string.',
+            description = 'Creates a new Font by loading a specifically formatted image. There can be up to 256 glyphs.\n\nIn versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs string.',
             variants = {
                 {
                     arguments = {
@@ -4325,48 +4325,6 @@ return {
                             type = 'string',
                             name = 'filename',
                             description = 'The filepath to the image file.'
-                        },
-                        {
-                            type = 'string',
-                            name = 'glyphs',
-                            description = 'A string of the characters in the image in order from left to right.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'File',
-                            name = 'file',
-                            description = 'A File pointing to an image.'
-                        },
-                        {
-                            type = 'string',
-                            name = 'glyphs',
-                            description = 'A string of the characters in the image in order from left to right.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Data',
-                            name = 'data',
-                            description = 'The encoded data to decode into image data.'
                         },
                         {
                             type = 'string',
