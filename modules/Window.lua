@@ -451,7 +451,7 @@ return {
         },
         {
             name = 'setMode',
-            description = 'Changes the display mode.\n\nIf width or height is 0, the width or height of the desktop will be used.',
+            description = 'Changes the display mode.\n\nIf width or height is 0, the width or height of the desktop will be used.\n\nChanging the display mode may have side effects: for example, canvases will be cleared and values sent to shaders with Shader:send will be erased. Make sure to save the contents of canvases beforehand or re-draw to them afterward if you need to.',
             variants = {
                 {
                     arguments = {
