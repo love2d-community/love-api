@@ -3474,6 +3474,21 @@ return {
                             description = 'Clears the contents of the Text object.'
                         }
                     }
+                },
+                {
+                    name = 'setFont',
+                    description = 'Replaces the Font used with the text.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'Font',
+                                    name = 'font',
+                                    description = 'The new font to use with this Text object.'
+                                }
+                            }
+                        }
+                    }
                 }
             },
             supertypes = {
