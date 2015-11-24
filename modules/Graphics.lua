@@ -3389,7 +3389,7 @@ return {
                 },
                 {
                     name = 'getWidth',
-                    description = 'Gets the width in pixels of the text.',
+                    description = 'Gets the width of the text in pixels.',
                     variants = {
                         {
                             returns = {
