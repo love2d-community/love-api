@@ -3356,6 +3356,38 @@ return {
                     }
                 },
                 {
+                    name = 'getHeight',
+                    description = 'Gets the height of the text in pixels.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'height',
+                                    description = 'The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.'
+                                }
+                            }
+                        },
+                        {
+                            description = 'Gets the height of a specific sub-string that was previously added to the Text object.',
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'index',
+                                    description = 'An index number returned by Text:add or Text:addf.'
+                                }
+                            },
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'height',
+                                    description = 'The height of the sub-string (before scaling and other transformations).'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'getWidth',
                     description = 'Gets the width in pixels of the text.',
                     variants = {
