@@ -1061,7 +1061,31 @@ return {
                     name = 'refresh',
                     description = 'Reloads the Image\'s contents from the ImageData or CompressedData used to create the image.',
                     variants = {
-                        {}
+                        {},
+                        {
+                            arguments = {
+                                {
+                                    type = 'number',
+                                    name = 'x',
+                                    description = 'The x-axis of the top-left corner of the area within the Image to reload.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'y',
+                                    description = 'The y-axis of the top-left corner of the area within the Image to reload.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'width',
+                                    description = 'The width of the area within the Image to reload.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'height',
+                                    description = 'The height of the area within the Image to reload.'
+                                }
+                            }
+                        }
                     }
                 },
                 {
