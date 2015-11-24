@@ -3341,6 +3341,21 @@ return {
                     }
                 },
                 {
+                    name = 'getFont',
+                    description = 'Gets the Font used with the Text object.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'Font',
+                                    name = 'font',
+                                    description = 'The font used with this Text object.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
                     name = 'set',
                     description = 'Replaces the contents of the Text object with a new unformatted string.',
                     variants = {
