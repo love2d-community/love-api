@@ -555,7 +555,7 @@ return {
                                     name = 'y',
                                     default = 'nil',
                                     description = 'The y-coordinate of the window\'s position in the specified display.'
-                                },
+                                }
                             }
                         }
                     },
