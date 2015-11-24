@@ -3204,6 +3204,77 @@ return {
                             description = 'Clears the contents of the Text object.'
                         }
                     }
+                },
+                {
+                    name = 'setf',
+                    description = 'Replaces the contents of the Text object with a new formatted string.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'string',
+                                    name = 'textstring',
+                                    description = 'The new string of text to use.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'wraplimit',
+                                    description = 'The maximum width in pixels of the text before it gets automatically wrapped to a new line.'
+                                },
+                                {
+                                    type = 'AlignMode',
+                                    name = 'align',
+                                    default = '"left"',
+                                    description = 'The alignment of the text.'
+                                }
+                            }
+                        },
+                        {
+                            arguments = {
+                                {
+                                    type = 'table',
+                                    name = 'coloredtext',
+                                    description = 'A table containing colors and strings to use as the new text, in the form of { color1, string1, color2, string2, ... }.',
+                                    table = {
+                                        {
+                                            type = 'table',
+                                            name = 'color1',
+                                            description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.'
+                                        },
+                                        {
+                                            type = 'string',
+                                            name = 'string1',
+                                            description = 'A string of text which has a color specified by the previous color.'
+                                        },
+                                        {
+                                            type = 'table',
+                                            name = 'color2',
+                                            description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.'
+                                        },
+                                        {
+                                            type = 'string',
+                                            name = 'string2',
+                                            description = 'A string of text which has a color specified by the previous color.'
+                                        }
+                                    }
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'wraplimit',
+                                    description = 'The maximum width in pixels of the text before it gets automatically wrapped to a new line.'
+                                },
+                                {
+                                    type = 'AlignMode',
+                                    name = 'align',
+                                    default = '"left"',
+                                    description = 'The alignment of the text.'
+                                }
+                            }
+                        },
+                        {
+                            description = 'Clears the contents of the Text object.'
+                        }
+                    }
                 }
             },
             supertypes = {
