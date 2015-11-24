@@ -131,7 +131,7 @@ return {
         },
         {
             name = 'setTextInput',
-            description = 'Enables or disables text input events. It is enabled by default.',
+            description = 'Enables or disables text input events. It is enabled by default on Windows, Mac, and Linux, and disabled by default on iOS and Android.',
             variants = {
                 {
                     arguments = {
