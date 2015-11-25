@@ -688,7 +688,7 @@ return {
         },
         {
             name = 'toPixels',
-            description = 'Converts a number from density-independent units to pixels.\n\nIf the highdpi window flag is enabled in Mac OS X and the window is in a retina screen, density-independent units will be twice the size of pixels. Otherwise they will usually be the same. This function can be used to convert coordinates from the size users are expecting them to display at onscreen to pixels. love.window.fromPixels does the opposite.\n\nMost LÖVE functions return values and expect arguments in terms of pixels rather than density-independent units.',
+            description = 'Converts a number from density-independent units to pixels.\n\nThe pixel density inside the window might be greater (or smaller) than the "size" of the window. For example on a retina screen in Mac OS X with the highdpi window flag enabled, the window may take up the same physical size as an 800x600 window, but the area inside the window uses 1600x1200 pixels. love.window.toPixels(800) would return 1600 in that case.\n\nThis is used to convert coordinates from the size users are expecting them to display at onscreen to pixels. love.window.fromPixels does the opposite. The highdpi window flag must be enabled to use the full pixel density of a Retina screen on Mac OS X and iOS. The flag currently does nothing on Windows and Linux, and on Android it is effectively always enabled.\n\nMost LÖVE functions return values and expect arguments in terms of pixels rather than density-independent units.',
             variants = {
                 {
                     arguments = {
