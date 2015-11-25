@@ -3034,7 +3034,7 @@ return {
                                     type = 'number',
                                     name = 'angle',
                                     default = '0',
-                                    description = 'The orientation of the object in radians.'
+                                    description = 'The orientation of the new text in radians.'
                                 },
                                 {
                                     type = 'number',
@@ -3124,7 +3124,7 @@ return {
                                     type = 'number',
                                     name = 'angle',
                                     default = '0',
-                                    description = 'The orientation of the object in radians.'
+                                    description = 'The orientation of the new text in radians.'
                                 },
                                 {
                                     type = 'number',
