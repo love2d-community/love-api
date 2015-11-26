@@ -1111,9 +1111,8 @@ return {
                 },
                 {
                     name = 'setMipmapFilter',
-                    description = 'Sets the mipmap filter mode for an Image.\n\nMipmapping is useful when drawing an image at a reduced scale. It can improve performance and reduce aliasing issues.\n\nAutomatically creates mipmaps for the Image if none exist yet. If the image is compressed and its CompressedData has mipmap data included, it will use that.\n\nDisables mipmap filtering when called without arguments.',
+                    description = 'Sets the mipmap filter mode for an Image.\n\nMipmapping is useful when drawing an image at a reduced scale. It can improve performance and reduce aliasing issues.\n\nIn 0.10.0 and newer, the Image must be created with the mipmaps flag enabled for the mipmap filter to have any effect.',
                     variants = {
-                        {},
                         {
                             arguments = {
                                 {
@@ -1128,6 +1127,9 @@ return {
                                     description = 'A positive sharpness value makes the image use a more detailed mipmap level when drawing, at the expense of performance. A negative value does the reverse.'
                                 }
                             }
+                        },
+                        {
+                            description = 'Disables mipmap filtering.',
                         }
                     }
                 },
