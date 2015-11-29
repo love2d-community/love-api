@@ -582,10 +582,6 @@ return {
                     description = 'The BC7 format (also known as BPTC.) Stores RGB or RGBA data at 8 bits per pixel.',
                 },
                 {
-                    name = 'BC7srgb',
-                    description = 'The sRGB-encoded variant of the BC7 format.',
-                },
-                {
                     name = 'ETC1',
                     description = 'The ETC1 format. RGB data at 4 bits per pixel. Suitable for fully opaque images on older Android devices.'
                 },
