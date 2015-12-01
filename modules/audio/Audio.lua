@@ -453,67 +453,8 @@ return {
         }
     },
     enums = {
-        {
-            name = 'DistanceModel',
-            description = 'The different distance models.',
-            constants = {
-                {
-                    name = 'none',
-                    description = 'Sources do not get attenuated.'
-                },
-                {
-                    name = 'inverse',
-                    description = 'Inverse distance attenuation.'
-                },
-                {
-                    name = 'inverseclamped',
-                    description = 'Inverse distance attenuation. Gain is clamped.'
-                },
-                {
-                    name = 'linear',
-                    description = 'Linear attenuation.'
-                },
-                {
-                    name = 'linearclamped',
-                    description = 'Linear attenuation. Gain is clamped.'
-                },
-                {
-                    name = 'exponent',
-                    description = 'Exponential attenuation.'
-                },
-                {
-                    name = 'exponentclamped',
-                    description = 'Exponential attenuation. Gain is clamped.'
-                }
-            }
-        },
-        {
-            name = 'SourceType',
-            description = 'Types of audio sources.\n\nA good rule of thumb is to use stream for music files and static for all short sound effects. Basically, you want to avoid loading large files into memory at once.',
-            constants = {
-                {
-                    name = 'static',
-                    description = 'Decode the entire sound at once.'
-                },
-                {
-                    name = 'stream',
-                    description = 'Stream the sound; decode it gradually.'
-                }
-            }
-        },
-        {
-            name = 'TimeUnit',
-            description = 'Units that represent time.',
-            constants = {
-                {
-                    name = 'seconds',
-                    description = 'Regular seconds.'
-                },
-                {
-                    name = 'samples',
-                    description = 'Audio samples.'
-                }
-            }
-        }
+        require('modules.audio.enums.DistanceModel'),
+        require('modules.audio.enums.SourceType'),
+        require('modules.audio.enums.TimeUnit')
     }
 };

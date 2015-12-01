@@ -677,59 +677,8 @@ return {
         }
     },
     enums = {
-        {
-            name = 'BufferMode',
-            description = 'Buffer modes for File objects.',
-            constants = {
-                {
-                    name = 'none',
-                    description = 'No buffering. The result of write and append operations appears immediately.'
-                },
-                {
-                    name = 'line',
-                    description = 'Line buffering. Write and append operations are buffered until a newline is output or the buffer size limit is reached.'
-                },
-                {
-                    name = 'full',
-                    description = 'Full buffering. Write and append operations are always buffered until the buffer size limit is reached.'
-                }
-            }
-        },
-        {
-            name = 'FileDecoder',
-            description = 'How to decode a given FileData.',
-            constants = {
-                {
-                    name = 'file',
-                    description = 'The data is unencoded.'
-                },
-                {
-                    name = 'base64',
-                    description = 'The data is base64-encoded.'
-                }
-            }
-        },
-        {
-            name = 'FileMode',
-            description = 'The different modes you can open a file in.',
-            constants = {
-                {
-                    name = 'r',
-                    description = 'Open a file for read.'
-                },
-                {
-                    name = 'w',
-                    description = 'Open a file for write.'
-                },
-                {
-                    name = 'a',
-                    description = 'Open a file for append.'
-                },
-                {
-                    name = 'c',
-                    description = 'Do not open a file (represents a closed file.)'
-                }
-            }
-        }
+        require('modules.filesystem.enums.BufferMode'),
+        require('modules.filesystem.enums.FileDecoder'),
+        require('modules.filesystem.enums.FileMode')
     }
 }

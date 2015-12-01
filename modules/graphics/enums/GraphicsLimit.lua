@@ -1,0 +1,22 @@
+return {
+    name = 'GraphicsLimit',
+    description = 'Types of system-dependent graphics limits checked for using love.graphics.getSystemLimit.',
+    constants = {
+        {
+            name = 'pointsize',
+            description = 'The maximum size of points.'
+        },
+        {
+            name = 'texturesize',
+            description = 'The maximum width or height of Images and Canvases.'
+        },
+        {
+            name = 'multicanvas',
+            description = 'The maximum number of simultaneously active canvases (via love.graphics.setCanvas).'
+        },
+        {
+            name = 'canvasfsaa',
+            description = 'The maximum number of antialiasing samples for a Canvas.'
+        }
+    }
+}

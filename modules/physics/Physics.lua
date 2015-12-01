@@ -954,85 +954,8 @@ return {
         }
     },
     enums = {
-        {
-            name = 'BodyType',
-            constants = {
-                {
-                    name = 'static',
-                    description = 'Static bodies do not move.'
-                },
-                {
-                    name = 'dynamic',
-                    description = 'Dynamic bodies collide with all bodies.'
-                },
-                {
-                    name = 'kinematic',
-                    description = 'Kinematic bodies only collide with dynamic bodies.'
-                }
-            }
-        },
-        {
-            name = 'JointType',
-            constants = {
-                {
-                    name = 'distance',
-                    description = 'A DistanceJoint.'
-                },
-                {
-                    name = 'gear',
-                    description = 'A GearJoint.'
-                },
-                {
-                    name = 'mouse',
-                    description = 'A MouseJoint.'
-                },
-                {
-                    name = 'prismatic',
-                    description = 'A PrismaticJoint.'
-                },
-                {
-                    name = 'pulley',
-                    description = 'A PulleyJoint.'
-                },
-                {
-                    name = 'revolute',
-                    description = 'A RevoluteJoint.'
-                },
-                {
-                    name = 'friction',
-                    description = 'A FrictionJoint.'
-                },
-                {
-                    name = 'weld',
-                    description = 'A WeldJoint.'
-                },
-                {
-                    name = 'rope',
-                    description = 'A RopeJoint.'
-                }
-            }
-        },
-        {
-            name = 'ShapeType',
-            description = 'The different types of Shapes, as returned by Shape:getType.',
-            constants = {
-                {
-                    name = 'circle',
-                    description = 'The Shape is a CircleShape.'
-                },
-                {
-                    name = 'polygon',
-                    description = 'The Shape is a PolygonShape.'
-                },
-                {
-                    name = 'edge',
-                    description = 'The Shape is a EdgeShape.'
-                },
-                {
-                    name = 'chain',
-                    description = 'The Shape is a ChainShape.'
-                }
-            }
-        }
+        require('modules.physics.enums.BodyType'),
+        require('modules.physics.enums.JointType'),
+        require('modules.physics.enums.ShapeType')
     }
 }
