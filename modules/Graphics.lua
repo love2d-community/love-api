@@ -3075,7 +3075,7 @@ return {
                                     description = 'Shearing / skew factor on the y-axis.'
                                 },
                             },
-                            returns {
+                            returns = {
                                 {
                                     type = 'number',
                                     name = 'index',
@@ -3165,7 +3165,7 @@ return {
                                     description = 'Shearing / skew factor on the y-axis.'
                                 },
                             },
-                            returns {
+                            returns = {
                                 {
                                     type = 'number',
                                     name = 'index',
@@ -3249,7 +3249,7 @@ return {
                                     description = 'Shearing / skew factor on the y-axis.'
                                 },
                             },
-                            returns {
+                            returns = {
                                 {
                                     type = 'number',
                                     name = 'index',
@@ -3349,7 +3349,7 @@ return {
                                     description = 'Shearing / skew factor on the y-axis.'
                                 },
                             },
-                            returns {
+                            returns = {
                                 {
                                     type = 'number',
                                     name = 'index',
