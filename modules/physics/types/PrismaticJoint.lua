@@ -1,0 +1,277 @@
+return {
+    name = 'PrismaticJoint',
+    description = 'Restricts relative motion between Bodies to one shared axis.',
+    constructors = {
+        'newPrismaticJoint'
+    },
+    functions = {
+        {
+            name = 'setLimitsEnabled',
+            description = 'Enables or disables the limits of the joint.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'True to enable, false to disable.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setMotorEnabled',
+            description = 'Starts or stops the joint motor.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'True to enable, false to disable.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getJointSpeed',
+            description = 'Get the current joint angle speed.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 's',
+                            description = 'Joint angle speed in meters/second.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getJointTranslation',
+            description = 'Get the current joint translation.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 't',
+                            description = 'Joint translation, usually in meters.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getLimits',
+            description = 'Gets the joint limits.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'lower',
+                            description = 'The lower limit, usually in meters.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'upper',
+                            description = 'The upper limit, usually in meters.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getLowerLimit',
+            description = 'Gets the lower limit.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'lower',
+                            description = 'The lower limit, usually in meters.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getMaxMotorForce',
+            description = 'Gets the maximum motor force.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'f',
+                            description = 'The maximum motor force, usually in N.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getMotorForce',
+            description = 'Get the current motor force.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'f',
+                            description = 'The current motor force, usually in N.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getMotorSpeed',
+            description = 'Gets the motor speed.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 's',
+                            description = 'The motor speed, usually in meters per second.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getUpperLimit',
+            description = 'Gets the upper limit.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'upper',
+                            description = 'The upper limit, usually in meters.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'hasLimitsEnabled',
+            description = 'Checks whether the limits are enabled.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            description = 'True if enabled, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'isMotorEnabled',
+            description = 'Checks whether the motor is enabled.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            description = 'True if enabled, false if disabled.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setLimits',
+            description = 'Sets the limits.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'lower',
+                            description = 'The lower limit, usually in meters.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'upper',
+                            description = 'The upper limit, usually in meters.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setLowerLimit',
+            description = 'Sets the lower limit.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'lower',
+                            description = 'The lower limit, usually in meters.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setMaxMotorForce',
+            description = 'Set the maximum motor force.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'f',
+                            description = 'The maximum motor force, usually in N.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setMotorSpeed',
+            description = 'Sets the motor speed.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 's',
+                            description = 'The motor speed, usually in meters per second.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setUpperLimit',
+            description = 'Sets the upper limit.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'upper',
+                            description = 'The upper limit, usually in meters.'
+                        }
+                    }
+                }
+            }
+        }
+    },
+    supertypes = {
+        'Joint'
+    }
+}
