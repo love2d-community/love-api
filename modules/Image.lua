@@ -571,11 +571,11 @@ return {
                 },
                 {
                     name = 'BC6h',
-                    description = 'The BC6H format. Stores half-precision floating-point RGB data in the range of [0, infinity) at 8 bits per pixel. Suitable for HDR images on desktop systems.',
+                    description = 'The BC6H format. Stores half-precision floating-point RGB data in the range of [0, 65504] at 8 bits per pixel. Suitable for HDR images on desktop systems.',
                 },
                 {
                     name = 'BC6hs',
-                    description = 'The signed variant of the BC6H format. Stores RGB data in the range of (-infinity, +infinity.)',
+                    description = 'The signed variant of the BC6H format. Stores RGB data in the range of [-65504, +65504].',
                 },
                 {
                     name = 'BC7',
@@ -628,6 +628,62 @@ return {
                 {
                     name = 'PVR1rgba4',
                     description = 'The 4 bit per pixel RGBA variant of the PVRTC1 format.'
+                },
+                {
+                    name = 'ASTC4x4',
+                    description = 'The 4x4 pixels per block variant of the ASTC format. RGBA data at 8 bits per pixel.'
+                },
+                {
+                    name = 'ASTC5x4',
+                    description = 'The 5x4 pixels per block variant of the ASTC format. RGBA data at 6.4 bits per pixel.'
+                },
+                {
+                    name = 'ASTC5x5',
+                    description = 'The 5x5 pixels per block variant of the ASTC format. RGBA data at 5.12 bits per pixel.'
+                },
+                {
+                    name = 'ASTC6x5',
+                    description = 'The 6x5 pixels per block variant of the ASTC format. RGBA data at 4.27 bits per pixel.'
+                },
+                {
+                    name = 'ASTC6x6',
+                    description = 'The 6x6 pixels per block variant of the ASTC format. RGBA data at 3.56 bits per pixel.'
+                },
+                {
+                    name = 'ASTC8x5',
+                    description = 'The 8x5 pixels per block variant of the ASTC format. RGBA data at 3.2 bits per pixel.'
+                },
+                {
+                    name = 'ASTC8x6',
+                    description = 'The 8x6 pixels per block variant of the ASTC format. RGBA data at 2.67 bits per pixel.'
+                },
+                {
+                    name = 'ASTC8x8',
+                    description = 'The 8x8 pixels per block variant of the ASTC format. RGBA data at 2 bits per pixel.'
+                },
+                {
+                    name = 'ASTC10x5',
+                    description = 'The 10x5 pixels per block variant of the ASTC format. RGBA data at 2.56 bits per pixel.'
+                },
+                {
+                    name = 'ASTC10x6',
+                    description = 'The 10x6 pixels per block variant of the ASTC format. RGBA data at 2.13 bits per pixel.'
+                },
+                {
+                    name = 'ASTC10x8',
+                    description = 'The 10x8 pixels per block variant of the ASTC format. RGBA data at 1.6 bits per pixel.'
+                },
+                {
+                    name = 'ASTC10x10',
+                    description = 'The 10x10 pixels per block variant of the ASTC format. RGBA data at 1.28 bits per pixel.'
+                },
+                {
+                    name = 'ASTC12x10',
+                    description = 'The 12x10 pixels per block variant of the ASTC format. RGBA data at 1.07 bits per pixel.'
+                },
+                {
+                    name = 'ASTC12x12',
+                    description = 'The 12x12 pixels per block variant of the ASTC format. RGBA data at 0.89 bits per pixel.'
                 }
             }
         },
