@@ -531,7 +531,7 @@ return {
         },
         {
             name = 'Mesh',
-            description = '',
+            description = 'A 2D polygon mesh used for drawing arbitrary textured shapes.',
             constructors = {
                 'newMesh'
             },
