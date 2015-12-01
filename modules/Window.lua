@@ -340,6 +340,21 @@ return {
             }
         },
         {
+            name = 'isDisplaySleepEnabled',
+            description = 'Gets whether the display is allowed to sleep while the program is running.\n\nDisplay sleep is disabled by default. Some types of input (e.g. joystick button presses) might not prevent the display from sleeping, if display sleep is allowed.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            description = 'True if system display sleep is enabled / allowed, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isVisible',
             description = 'Checks if the game window is visible.\n\nThe window is considered visible if it\'s not minimized and the program isn\'t hidden.',
             variants = {
