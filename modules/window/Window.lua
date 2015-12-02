@@ -176,7 +176,7 @@ return {
                                 {
                                     type = 'number',
                                     name = 'fsaa',
-                                    description = 'The number of antialiasing samples used (0 if FSAA is disabled.)'
+                                    description = 'The number of antialiasing samples used (0 if FSAA is disabled).'
                                 },
                                 {
                                     type = 'boolean',
