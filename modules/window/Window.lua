@@ -232,7 +232,7 @@ return {
                                     type = 'number',
                                     name = 'y',
                                     description = 'The y-coordinate of the window\'s position in its current display.'
-                                },
+                                }
                             }
                         }
                     }
