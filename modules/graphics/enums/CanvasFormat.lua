@@ -32,15 +32,15 @@ return {
         },
         {
             name = 'rgba16f',
-            description = 'Floating point RGBA with 16 bits per channel (64 bpp.) Color values can range from [-infinity, +infinity].'
+            description = 'Floating point RGBA with 16 bits per channel (64 bpp.) Color values can range from [-65504, +65504].'
         },
         {
             name = 'rgba32f',
-            description = 'Floating point RGBA with 32 bits per channel (128 bpp.) Color values can range from [-infinity, +infinity].'
+            description = 'Floating point RGBA with 32 bits per channel (128 bpp.) Color values can range from [-65504, +65504].'
         },
         {
             name = 'rg11b10f',
-            description = 'Floating point RGB with 11 bits in the red and green channels, and 10 bits in the blue channel (32 bpp.) There is no alpha channel. Color values can range from [0, +infinity].'
+            description = 'Floating point RGB with 11 bits in the red and green channels, and 10 bits in the blue channel (32 bpp.) There is no alpha channel. Color values can range from [0, +65024].'
         },
         {
             name = 'srgb',
@@ -56,19 +56,19 @@ return {
         },
         {
             name = 'r16f',
-            description = 'Floating point single-channel format (16 bpp.) Color values can range from [-infinity, +infinity].'
+            description = 'Floating point single-channel format (16 bpp.) Color values can range from [-65504, +65504].'
         },
         {
             name = 'rg16f',
-            description = 'Floating point two-channel format with 16 bits per channel (32 bpp.) Color values can range from [-infinity, +infinity].'
+            description = 'Floating point two-channel format with 16 bits per channel (32 bpp.) Color values can range from [-65504, +65504].'
         },
         {
             name = 'r32f',
-            description = 'Floating point single-channel format (32 bpp.) Color values can range from [-infinity, +infinity].'
+            description = 'Floating point single-channel format (32 bpp.) Color values can range from [-65504, +65504].'
         },
         {
             name = 'rg32f',
-            description = 'Floating point two-channel format with 32 bits per channel (64 bpp.) Color values can range from [-infinity, +infinity].'
+            description = 'Floating point two-channel format with 32 bits per channel (64 bpp.) Color values can range from [-65504, +65504].'
         }
     }
 }
