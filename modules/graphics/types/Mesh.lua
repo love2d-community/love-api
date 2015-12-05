@@ -113,6 +113,43 @@ return {
             }
         },
         {
+            name = 'getVertexAttribute',
+            description = 'Gets the properties of a specific attribute within a vertex in the Mesh.\n\nMeshes without a custom vertex format specified in love.graphics.newMesh have position as their first attribute, texture coordinates as their second attribute, and color as their third attribute.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'vertexindex',
+                            description = 'The index of the the vertex to be modified.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'attributeindex',
+                            description = 'The index of the attribute within the vertex to be modified.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'value1',
+                            description = 'The value of the first component of the attribute.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'value2',
+                            description = 'The value of the second component of the attribute.'
+                        },
+                        {
+                            type = 'number',
+                            name = '...',
+                            description = 'Any additional vertex attribute components.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getVertexCount',
             description = 'Returns the total number of vertices in the Mesh.',
             variants = {
