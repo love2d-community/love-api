@@ -183,6 +183,21 @@ return {
             }
         },
         {
+            name = 'getRequirePath',
+            description = 'Gets the filesystem paths that will be searched when require is called.\n\nThe paths string returned by this function is a sequence of path templates separated by semicolons. The argument passed to require will be inserted in place of any question mark ("?") character in each template (after the dot characters in the argument passed to require are replaced by directory separators.)\n\nThe paths are relative to the game\'s source and save directories, as well as any paths mounted with love.filesystem.mount.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'paths',
+                            description = 'The paths that the require function will check in love\'s filesystem.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getSaveDirectory',
             description = 'Gets the full path to the designated save directory. This can be useful if you want to use the standard io library (or something else) to read or write in the save directory.',
             variants = {
