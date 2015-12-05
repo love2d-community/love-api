@@ -591,6 +591,21 @@ return {
             }
         },
         {
+            name = 'setRequirePath',
+            description = 'Sets the filesystem paths that will be searched when require is called.\n\nThe paths string given to this function is a sequence of path templates separated by semicolons. The argument passed to require will be inserted in place of any question mark ("?") character in each template (after the dot characters in the argument passed to require are replaced by directory separators.)\n\nThe paths are relative to the game\'s source and save directories, as well as any paths mounted with love.filesystem.mount.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'paths',
+                            description = 'The paths that the require function will check in love\'s filesystem.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setSource',
             description = 'Sets the source of the game, where the code is present. This function can only be called once, and is normally automatically done by LÖVE.',
             variants = {
