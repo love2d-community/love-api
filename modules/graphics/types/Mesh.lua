@@ -293,6 +293,41 @@ return {
             }
         },
         {
+            name = 'setVertexAttribute',
+            description = 'Sets the properties of a specific attribute within a vertex in the Mesh.\n\nMeshes without a custom vertex format specified in love.graphics.newMesh have position as their first attribute, texture coordinates as their second attribute, and color as their third attribute.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'vertexindex',
+                            description = 'The index of the the vertex to be modified.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'attributeindex',
+                            description = 'The index of the attribute within the vertex to be modified.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'value1',
+                            description = 'The value of the first component of the attribute.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'value2',
+                            description = 'The value of the second component of the attribute.'
+                        },
+                        {
+                            type = 'number',
+                            name = '...',
+                            description = 'Any additional vertex attribute components.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setVertexColors',
             description = 'Sets if the per-vertex colors are used when rendering instead of the constant color (constant color being love.graphics.setColor or SpriteBatch:setColor)\n\nThe per-vertex colors are automatically enabled by default when making a new Mesh or when doing Mesh:setVertex, but only if at least one vertex color is not the default (255,255,255,255).',
             variants = {
