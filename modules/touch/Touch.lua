@@ -30,6 +30,28 @@ return {
             }
         },
         {
+            name = 'getPressure',
+            description = 'Gets the current pressure of the specified touch-press.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'userdata',
+                            name = 'id',
+                            description = 'The identifier of the touch-press. Use love.touch.getTouches, love.touchpressed, or love.touchmoved to obtain touch id values.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'pressure',
+                            description = 'The pressure of the touch-press. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getTouches',
             description = 'Gets a list of all active touch-presses.',
             variants = {
