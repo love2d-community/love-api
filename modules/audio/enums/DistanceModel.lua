@@ -12,7 +12,7 @@ return {
         },
         {
             name = 'inverseclamped',
-            description = 'Inverse distance attenuation. Gain is clamped.'
+            description = 'Inverse distance attenuation. Gain is clamped. In version 0.9.2 and older this is named inverse clamped.'
         },
         {
             name = 'linear',
@@ -20,7 +20,7 @@ return {
         },
         {
             name = 'linearclamped',
-            description = 'Linear attenuation. Gain is clamped.'
+            description = 'Linear attenuation. Gain is clamped. In version 0.9.2 and older this is named linear clamped.'
         },
         {
             name = 'exponent',
@@ -28,7 +28,7 @@ return {
         },
         {
             name = 'exponentclamped',
-            description = 'Exponential attenuation. Gain is clamped.'
+            description = 'Exponential attenuation. Gain is clamped. In version 0.9.2 and older this is named exponent clamped.'
         }
     }
 }
