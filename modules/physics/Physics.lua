@@ -196,39 +196,50 @@ return {
         },
         {
             name = 'newCircleShape',
-            description = 'Create a new CircleShape at (x,y) in local coordinates.\n\nAnchors from the center of the shape by default.',
+            description = 'Creates a new CircleShape.',
             variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'Body',
-                            name = 'body',
-                            description = 'The body to attach the shape to.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'x',
-                            description = 'The x offset of the circle.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y',
-                            description = 'The y offset of the circle.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'radius',
-                            description = 'The radius of the circle.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'CircleShape',
-                            name = 'shape',
-                            description = 'A new CircleShape.'
-                        }
-                    }
-                }
+              {
+                  arguments = {
+                      {
+                          type = 'number',
+                          name = 'radius',
+                          description = 'The radius of the circle.'
+                      }
+                  },
+                  returns = {
+                      {
+                          type = 'CircleShape',
+                          name = 'shape',
+                          description = 'The new shape.'
+                      }
+                  }
+              },
+              {
+                  arguments = {
+                      {
+                          type = 'number',
+                          name = 'x',
+                          description = 'The x offset of the circle.'
+                      },
+                      {
+                          type = 'number',
+                          name = 'y',
+                          description = 'The y offset of the circle.'
+                      },
+                      {
+                          type = 'number',
+                          name = 'radius',
+                          description = 'The radius of the circle.'
+                      }
+                  },
+                  returns = {
+                      {
+                          type = 'CircleShape',
+                          name = 'shape',
+                          description = 'The new shape.'
+                      }
+                  }
+              }
             }
         },
         {
