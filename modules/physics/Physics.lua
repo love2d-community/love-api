@@ -470,7 +470,7 @@ return {
         },
         {
             name = 'newPolygonShape',
-            description = 'Creates a new PolygonShape.\nThis shape can have 8 vertices at most, and must form a convex shape.',
+            description = 'Creates a new PolygonShape.\n\nThis shape can have 8 vertices at most, and must form a convex shape.',
             variants = {
                 {
                     arguments = {
