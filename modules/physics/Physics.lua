@@ -660,15 +660,31 @@ return {
         },
         {
             name = 'newRectangleShape',
-            description = 'Shorthand for creating rectangluar PolygonShapes.\n\nThe rectangle will be created at (x,y) in local coordinates.\n\nAnchors from the center of the shape by default.',
+            description = 'Shorthand for creating rectangluar PolygonShapes.\n\nBy default, the local origin is located at the center of the rectangle as opposed to the top left for graphics.',
             variants = {
                 {
                     arguments = {
                         {
-                            type = 'Body',
-                            name = 'body',
-                            description = 'The Body to attach the Shape to.'
+                            type = 'number',
+                            name = 'width',
+                            description = 'The width of the rectangle.'
                         },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'The height of the rectangle.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'PolygonShape',
+                            name = 'shape',
+                            description = 'A new PolygonShape.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
                         {
                             type = 'number',
                             name = 'x',
