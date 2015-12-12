@@ -2367,7 +2367,7 @@ return {
         },
         {
             name = 'setStencilTest',
-            description = 'Enables or disables stencil testing.\n\nWhen stencil testing is enabled, the geometry of everything that is drawn will be clipped / stencilled out based on whether it intersects with what has been previously drawn to the stencil buffer.\n\nEach Canvas has its own stencil buffer.',
+            description = 'Enables or disables stencil testing.\n\nWhen stencil testing is enabled, the geometry of everything that is drawn will be clipped / stencilled out based on whether it intersects with what has been previously drawn to the stencil buffer via love.graphics.stencil.\n\nEach Canvas has its own stencil buffer.',
             variants = {
                 {
                     arguments = {
