@@ -47,6 +47,7 @@ return {
         require('modules.thread.Thread'),
         require('modules.timer.Timer'),
         require('modules.touch.Touch'),
+        require('modules.video.Video'),
         require('modules.window.Window')
     },
     types = {
