@@ -82,6 +82,28 @@ return {
             }
         },
         {
+            name = 'exists',
+            description = 'Check whether a file or directory exists.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The path to a potential file or directory.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'e',
+                            description = 'True if there is a file or directory with the specified name. False otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getAppdataDirectory',
             description = 'Returns the application data directory (could be the same as getUserDirectory)',
             variants = {
