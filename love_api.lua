@@ -599,6 +599,31 @@ return {
             }
         },
         {
+            name = 'textedited',
+            description = 'Called when the candidate text for an IME (Input Method Editor) has changed.\n\nThe candidate text is not the final text that the user will eventually choose. Use love.textinput for that.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'text',
+                            description = 'The UTF-8 encoded unicode candidate text.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'start',
+                            description = 'The start cursor of the selected candidate text.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'length',
+                            description = 'The length of the selected candidate text. May be 0.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'textinput',
             description = 'Called when text has been entered by the user. For example if shift-2 is pressed on an American keyboard layout, the text "@" will be generated.',
             variants = {
