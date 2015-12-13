@@ -15,7 +15,7 @@ return {
             description = 'The maximum number of simultaneously active canvases (via love.graphics.setCanvas).'
         },
         {
-            name = 'canvasfsaa',
+            name = 'canvasmsaa',
             description = 'The maximum number of antialiasing samples for a Canvas.'
         }
     }
