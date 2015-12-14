@@ -200,6 +200,26 @@ return {
             }
         },
         {
+            name = 'setAttributeEnabled',
+            description = 'Enables or disables a specific vertex attribute in the Mesh. Vertex data from disabled attributes is not used when drawing the Mesh.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the vertex attribute to enable or disable.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'Whether the vertex attribute is used when drawing this Mesh.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setDrawMode',
             description = 'Sets the mode used when drawing the Mesh.',
             variants = {
