@@ -6,6 +6,26 @@ return {
     },
     functions = {
         {
+            name = 'attachAttribute',
+            description = 'Attaches a vertex attribute from a different Mesh onto this Mesh, for use when drawing. This can be used to share vertex attribute data between several different Meshes.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the vertex attribute to attach.'
+                        },
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The Mesh to get the vertex attribute from.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getDrawMode',
             description = 'Gets the mode used when drawing the Mesh.',
             variants = {
