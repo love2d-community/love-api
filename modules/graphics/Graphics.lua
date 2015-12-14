@@ -1597,6 +1597,56 @@ return {
             }
         },
         {
+            name = 'newVideo',
+            description = 'Creates a new drawable Video. Currently only Ogg Theora video files are supported.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The file path to the Ogg Theora video file.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'loadaudio',
+                            default = 'nil',
+                            description = 'Whether to try to load the video\'s audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Video',
+                            name = 'video',
+                            description = 'A new Video.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'VideoStream',
+                            name = 'videostream',
+                            description = 'A video stream object.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'loadaudio',
+                            default = 'nil',
+                            description = 'Whether to try to load the video\'s audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Video',
+                            name = 'video',
+                            description = 'A new Video.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'origin',
             description = 'Resets the current coordinate transformation.\n\nThis function is always used to reverse any previous calls to love.graphics.rotate, love.graphics.scale, love.graphics.shear or love.graphics.translate. It returns the current transformation state to its defaults.',
             variants = {
