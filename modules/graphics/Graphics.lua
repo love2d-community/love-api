@@ -2417,23 +2417,24 @@ return {
         },
         {
             name = 'setStencilTest',
-            description = 'Enables or disables stencil testing.\n\nWhen stencil testing is enabled, the geometry of everything that is drawn will be clipped / stencilled out based on whether it intersects with what has been previously drawn to the stencil buffer via love.graphics.stencil.\n\nEach Canvas has its own stencil buffer.',
+            description = 'Configures or disables stencil testing.\n\nWhen stencil testing is enabled, the geometry of everything that is drawn afterward will be clipped / stencilled out based on a comparison between the arguments of this function and the stencil value of each pixel that the geometry touches. The stencil values of pixels are affected via love.graphics.stencil.\n\nEach Canvas has its own per-pixel stencil values.',
             variants = {
                 {
                     arguments = {
                         {
-                            type = 'boolean',
-                            name = 'enable',
-                            default = 'false',
-                            description = 'Whether to enable stencil testing.'
+                            type = 'CompareMode',
+                            name = 'comparemode',
+                            description = 'The type of comparison to make for each pixel.'
                         },
                         {
-                            type = 'boolean',
-                            name = 'invert',
-                            default = 'false',
-                            description = 'Whether to invert the stencil test. If true, the parts of drawn geometry that touch what has been previously drawn to the stencil buffer will be clipped. Otherwise everything else will be clipped.'
+                            type = 'number',
+                            name = 'comparevalue',
+                            description = 'The value to use when comparing with the stencil value of each pixel. Must be between 0 and 255.'
                         }
                     }
+                },
+                {
+                  description = 'Disables stencil testing.'
                 }
             }
         },
