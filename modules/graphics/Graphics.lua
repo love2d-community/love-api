@@ -2475,20 +2475,32 @@ return {
         },
         {
             name = 'stencil',
-            description = 'Draws geometry to the stencil buffer.\n\nThe passed function draws to the (invisible) stencil buffer instead of the regular screen. The stencil buffer acts like a mask or stencil – the geometry of everything drawn to the stencil buffer determines whether pixels in the buffer are \'enabled\' or not. When the Stencil Test is enabled after love.graphics.stencil is used, everything drawn after that point will clipped / stencilled out based on whether it intersects what has been drawn to the stencil buffer.\n\nEach Canvas has its own stencil buffer.',
+            description = 'Draws geometry as a stencil.\n\nThe geometry drawn by the supplied function sets the invisible stencil values of pixels, instead of setting pixel colors. The stencil values of pixels can act like a mask / stencil - love.graphics.setStencilTest can be used afterward to determine how further rendering is affected by the stencil values in each pixel.\n\nEach Canvas has its own per-pixel stencil values. Stencil values are within the range of [0, 255].',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'function',
                             name = 'stencilfunction',
-                            description = 'Function which draws the stencil geometry to the stencil buffer.'
+                            description = 'Function which draws geometry. The stencil values of pixels, rather than the color of each pixel, will be affected by the geometry.'
+                        },
+                        {
+                            type = 'StencilAction',
+                            name = 'action',
+                            default = '"replace"',
+                            description = 'How to modify any stencil values of pixels that are touched by what\'s drawn in the stencil function.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'value',
+                            default = '1',
+                            description = 'The new stencil value to use for pixels if the "replace" stencil action is used. Must be between 0 and 255.'
                         },
                         {
                             type = 'boolean',
-                            name = 'keepbuffer',
+                            name = 'keepvalues',
                             default = 'false',
-                            description = 'Whether to preserve the previous contents of the stencil buffer. Note that love.graphics.clear will also clear the stencil buffer.'
+                            description = 'True to preserve old stencil values of pixels, false to re-set every pixel\'s stencil value to 0 before executing the stencil function. love.graphics.clear will also re-set all stencil values.'
                         }
                     }
                 }
