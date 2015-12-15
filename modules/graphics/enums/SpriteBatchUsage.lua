@@ -1,6 +1,6 @@
 return {
     name = 'SpriteBatchUsage',
-    description = 'Usage hints for SpriteBatches to optimize sprite data storage on the GPU.',
+    description = 'Usage hints for SpriteBatches to optimize sprite data storage.',
     constants = {
         {
             name = 'dynamic',
