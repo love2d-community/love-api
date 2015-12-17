@@ -120,6 +120,28 @@ return {
             }
         },
         {
+            name = 'isScancodeDown',
+            description = 'Checks whether the specified Scancodes are pressed. Not to be confused with love.keypressed or love.keyreleased.\n\nUnlike regular KeyConstants, Scancodes are keyboard layout-independent. The scancode "w" is used if the key in the same place as the "w" key on an American keyboard is pressed, no matter what the key is labelled or what the user\'s operating system settings are.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Scancode',
+                            name = 'scancodeN',
+                            description = 'A Scancode to check.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'down',
+                            description = 'True if any supplied Scancode is down, false if not.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setKeyRepeat',
             description = 'Enables or disables key repeat. It is disabled by default.\n\nThe interval between repeats depends on the user\'s system settings.',
             variants = {
