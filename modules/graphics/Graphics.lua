@@ -2048,6 +2048,21 @@ return {
                             description = 'The blend mode to use.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'BlendMode',
+                            name = 'mode',
+                            description = 'The blend mode to use.'
+                        },
+                        {
+                            type = 'BlendAlphaMode',
+                            name = 'alphamode',
+                            default = '"alphamultiply"',
+                            description = 'What to do with the alpha of drawn objects when blending.'
+                        }
+                    }
                 }
             }
         },
