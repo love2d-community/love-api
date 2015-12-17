@@ -529,7 +529,7 @@ return {
         },
         {
             name = 'noise',
-            description = 'Generates a Simplex noise value in 1-4 dimensions.\n\nSimplex noise is closely related to Perlin noise. It is widely used for procedural content generation.',
+            description = 'Generates a Simplex or Perlin noise value in 1-4 dimensions.\n\nSimplex noise is closely related to Perlin noise. It is widely used for procedural content generation.\n\nThere are many webpages which discuss Perlin and Simplex noise in detail.',
             variants = {
                 {
                     arguments = {
