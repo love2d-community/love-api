@@ -398,7 +398,6 @@ return {
         }
     },
     enums = {
-        require('modules.mouse.enums.CursorType'),
-        require('modules.mouse.enums.MouseConstant')
+        require('modules.mouse.enums.CursorType')
     }
 }
