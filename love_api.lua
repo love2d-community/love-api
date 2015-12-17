@@ -406,7 +406,7 @@ return {
         },
         {
             name = 'keypressed',
-            description = 'Callback function triggered when a key is pressed.\n\nKey repeat needs to be enabled with love.keyboard.setKeyRepeat for repeat keypress events to be received.',
+            description = 'Callback function triggered when a key is pressed.',
             variants = {
                 {
                     arguments = {
@@ -414,6 +414,11 @@ return {
                             type = 'KeyConstant',
                             name = 'key',
                             description = 'Character of the key pressed.'
+                        },
+                        {
+                            type = 'Scancode',
+                            name = 'scancode',
+                            description = 'The scancode representing the key that was pressed.'
                         },
                         {
                             type = 'boolean',
