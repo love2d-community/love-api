@@ -431,7 +431,7 @@ return {
         },
         {
             name = 'keyreleased',
-            description = 'Callback function triggered when a key is released.',
+            description = 'Callback function triggered when a keyboard key is released.',
             variants = {
                 {
                     arguments = {
@@ -439,6 +439,20 @@ return {
                             type = 'KeyConstant',
                             name = 'key',
                             description = 'Character of the key released.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'KeyConstant',
+                            name = 'key',
+                            description = 'Character of the key released.'
+                        },
+                        {
+                            type = 'Scancode',
+                            name = 'scancode',
+                            description = 'The scancode representing the key that was released.'
                         }
                     }
                 }
