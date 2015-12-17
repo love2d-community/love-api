@@ -659,7 +659,7 @@ return {
         },
         {
             name = 'setSymlinksEnabled',
-            description = 'Sets whether love.filesystem follows symbolic links. It is disabled by default.',
+            description = 'Sets whether love.filesystem follows symbolic links. Sets whether love.filesystem follows symbolic links. It is enabled by default in version 0.10.0 and newer, and disabled by default in 0.9.2.',
             variants = {
                 {
                     arguments = {
