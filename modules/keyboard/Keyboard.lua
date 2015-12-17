@@ -100,8 +100,13 @@ return {
                     arguments = {
                         {
                             type = 'KeyConstant',
-                            name = '...',
+                            name = 'key',
                             description = 'A key to check.'
+                        },
+                        {
+                            type = 'KeyConstant',
+                            name = '...',
+                            description = 'Additional keys to check.'
                         }
                     },
                     returns = {
