@@ -127,8 +127,13 @@ return {
                     arguments = {
                         {
                             type = 'Scancode',
-                            name = 'scancodeN',
+                            name = 'scancode',
                             description = 'A Scancode to check.'
+                        },
+                        {
+                            type = 'Scancode',
+                            name = '...',
+                            description = 'Additional Scancodes to check.'
                         }
                     },
                     returns = {
