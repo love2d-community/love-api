@@ -1661,28 +1661,18 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'x1',
-                            description = 'The position on the x-axis of the first point.'
+                            name = 'x',
+                            description = 'The position of the first point on the x-axis.'
                         },
                         {
                             type = 'number',
-                            name = 'y1',
-                            description = 'The position on the y-axis of the first point.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'x2',
-                            description = 'The position on the x-axis of the second point.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y2',
-                            description = 'The position on the y-axis of the second point.'
+                            name = 'y',
+                            description = 'The position of the first point on the y-axis.'
                         },
                         {
                             type = 'number',
                             name = '...',
-                            description = 'x and y coordinates of additional points.'
+                            description = 'The x and y coordinates of additional points.'
                         }
                     }
                 },
@@ -1691,7 +1681,24 @@ return {
                         {
                             type = 'table',
                             name = 'points',
-                            description = 'A table containing multiple point positions, in the form of {x1, y1, x2, y2, ...}.'
+                            description = 'A table containing multiple point positions, in the form of {x, y, ...}.',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = 'x',
+                                    description = 'The position of the first point on the x-axis.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'y',
+                                    description = 'The position of the first point on the y-axis.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '...',
+                                    description = 'The x and y coordinates of additional points.'
+                                }
+                            }
                         }
                     }
                 },
@@ -1700,7 +1707,19 @@ return {
                         {
                             type = 'table',
                             name = 'points',
-                            description = 'A table containing multiple individually colored points, in the form of {point1, point2, ...}. Each table contains the position and color of a point in the form of {x, y, r, g, b, a}. The color components are optional.'
+                            description = 'A table containing multiple individually colored points, in the form of {point, ...}. Each table contains the position and color of a point in the form of {x, y, r, g, b, a}. The color components are optional.',
+                            table = {
+                                {
+                                    type = 'table',
+                                    name = 'point',
+                                    description = 'A table containing the position and color of the first point, in the form of {x, y, r, g, b, a}. The color components are optional.'
+                                },
+                                {
+                                    type = 'table',
+                                    name = '...',
+                                    description = 'Additional tables containing the position and color of more points, in the form of {x, y, r, g, b, a}. The color components are optional.'
+                                }
+                            }
                         }
                     }
                 }
