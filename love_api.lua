@@ -545,17 +545,22 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'Mouse x position.'
+                            description = 'Mouse x position, in pixels.'
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'Mouse y position.'
+                            description = 'Mouse y position, in pixels.'
                         },
                         {
-                            type = 'MouseConstant',
+                            type = 'number',
                             name = 'button',
-                            description = 'Mouse button released.'
+                            description = 'The button index that was released. 1 is the primary button (usually left-click), 2 is the secondary button, etc.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'isTouch',
+                            description = 'True if the mouse button press originated from a touchscreen touch-release.'
                         }
                     }
                 }
