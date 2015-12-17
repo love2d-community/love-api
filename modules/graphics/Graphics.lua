@@ -1932,12 +1932,12 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The position of top-left corner along x-axis.'
+                            description = 'The position of top-left corner along the x-axis.'
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The position of top-left corner along y-axis.'
+                            description = 'The position of top-left corner along the y-axis.'
                         },
                         {
                             type = 'number',
@@ -1948,6 +1948,53 @@ return {
                             type = 'number',
                             name = 'height',
                             description = 'Height of the rectangle.'
+                        }
+                    }
+                },
+                {
+                    description = 'Draws a rectangle with rounded corners.',
+                    arguments = {
+                        {
+                            type = 'DrawMode',
+                            name = 'mode',
+                            description = 'How to draw the rectangle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of top-left corner along the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of top-left corner along the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'width',
+                            description = 'Width of the rectangle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'Height of the rectangle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'rx',
+                            description = 'The x-axis radius of each round corner. Cannot be greater than half the rectangle\'s width.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ry',
+                            default = 'rx',
+                            description = 'The y-axis radius of each round corner. Cannot be greater than half the rectangle\'s height.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'segments',
+                            default = 'nil',
+                            description = 'The number of segments used for drawing the round corners. A default amount will be chosen if no number is given.'
                         }
                     }
                 }
