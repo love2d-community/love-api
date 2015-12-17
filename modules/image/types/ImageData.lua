@@ -7,28 +7,27 @@ return {
     functions = {
         {
             name = 'encode',
-            description = 'Encodes the ImageData and writes it to the save directory.',
+            description = 'Encodes the ImageData and optionally writes it to the save directory.',
             variants = {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'Name of a file to write encoded data to. The format will be automatically deduced from the file extension.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'Name of a file to write encoded data to.'
-                        },
-                        {
                             type = 'ImageFormat',
                             name = 'format',
-                            description = 'The format to encode the image in.'
+                            description = 'The format to encode the image as.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            default = 'nil',
+                            description = 'The filename to write the file to. If nil, no file will be written but the FileData will still be returned.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'FileData',
+                            name = 'filedata',
+                            description = 'The encoded image as a new FileData object.'
                         }
                     }
                 }
