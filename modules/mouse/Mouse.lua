@@ -136,7 +136,7 @@ return {
                         {
                             type = 'number',
                             name = '...',
-                            description = 'Additional button indexes to check.'
+                            description = 'Additional button numbers to check.'
                         }
                     },
                     returns = {
