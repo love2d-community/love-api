@@ -16,15 +16,15 @@ return {
         },
         {
             name = 'add',
-            description = 'The pixel colors of what\'s drawn are component-wise added to the pixel colors already on the screen.'
+            description = 'The pixel colors of what\'s drawn are added to the pixel colors already on the screen.'
         },
         {
             name = 'subtract',
-            description = 'The pixel colors of what\'s drawn are component-wise subtracted from the pixel colors already on the screen.'
+            description = 'The pixel colors of what\'s drawn are subtracted from the pixel colors already on the screen.'
         },
         {
             name = 'multiply',
-            description = 'The pixel colors of what\'s drawn are component-wise multiplied with the pixel colors already on the screen (effectively darkening them). The alpha of drawn objects is multiplied with the alpha of the screen rather than determining how much the colors on the screen are affected, even if the "alphamultiply" BlendAlphaMode is used.'
+            description = 'The pixel colors of what\'s drawn are multiplied with the pixel colors already on the screen (darkening them). The alpha of drawn objects is multiplied with the alpha of the screen rather than determining how much the colors on the screen are affected, even when the "alphamultiply" BlendAlphaMode is used.'
         }
     }
 }
