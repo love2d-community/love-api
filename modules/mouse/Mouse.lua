@@ -124,14 +124,19 @@ return {
         },
         {
             name = 'isDown',
-            description = 'Checks whether a certain mouse button is down. This function does not detect mousewheel scrolling; you must use the love.mousepressed callback for that.',
+            description = 'Checks whether a certain mouse button is down. This function does not detect mousewheel scrolling; you must use the love.wheelmoved (or love.mousepressed in version 0.9.2 and older) callback for that.',
             variants = {
                 {
                     arguments = {
                         {
-                            type = 'MouseConstant',
+                            type = 'number',
                             name = 'button',
-                            description = 'The button to check.'
+                            description = 'The index of a button to check. 1 is the primary mouse button, 2 is the secondary mouse button, etc.'
+                        },
+                        {
+                            type = 'number',
+                            name = '...',
+                            description = 'Additional button indexes to check.'
                         }
                     },
                     returns = {
