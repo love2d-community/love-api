@@ -601,56 +601,80 @@ return {
                     arguments = {
                         {
                             type = 'table',
-                            name = 'vertex_map',
-                            description = 'The table filled with vertex information tables for each vertex.',
+                            name = 'vertices',
+                            description = 'The table filled with vertex information tables for each vertex, in the form of {vertex, ...} where each vertex is a table in the form of {attributecomponent, ...}.',
                             table = {
                                 {
                                     type = 'number',
-                                    name = 'x',
-                                    description = 'The position of the vertex on the x-axis.'
+                                    name = 'attributecomponent',
+                                    description = 'The first component of the first vertex attribute in the vertex.'
                                 },
                                 {
                                     type = 'number',
-                                    name = 'y',
-                                    description = 'The position of the vertex on the y-axis.'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'u',
-                                    default = '0',
-                                    description = 'The horizontal component of the texture coordinate. Texture coordinates are normally in the range of [0, 1], but can be greater or less (see WrapMode.)'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'v',
-                                    default = '0',
-                                    description = 'The vertical component of the texture coordinate. Texture coordinates are normally in the range of [0, 1], but can be greater or less (see WrapMode.)'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'r',
-                                    default = '255',
-                                    description = 'The red color component.'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'g',
-                                    default = '255',
-                                    description = 'The green color component.'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'b',
-                                    default = '255',
-                                    description = 'The blue color component.'
-                                },
-                                {
-                                    type = 'number',
-                                    name = 'a',
-                                    default = '255',
-                                    description = 'The alpha color component.'
+                                    name = '...',
+                                    description = 'Additional components of all vertex attributes in the vertex.'
                                 }
                             }
+                        },
+                        {
+                            type = 'number',
+                            name = 'startvertex',
+                            default = '1',
+                            description = 'The index of the first vertex to replace.'
+                        }
+                    }
+                },
+                {
+                    description = 'Sets the vertex components of a Mesh that wasn\'t created with a custom vertex format.',
+                    arguments = {
+                        type = 'table',
+                        name = 'vertices',
+                        description = 'The table filled with vertex information tables for each vertex as follows:',
+                        table = {
+                            {
+                                type = 'number',
+                                name = '[1]',
+                                description = 'The position of the vertex on the x-axis.',
+                            },
+                            {
+                                type = 'number',
+                                name = '[2]',
+                                description = 'The position of the vertex on the y-axis.',
+                            },
+                            {
+                                type = 'number',
+                                name = '[3]',
+                                description = 'The horizontal component of the texture coordinate. Texture coordinates are normally in the range of [0, 1], but can be greater or less (see WrapMode).',
+                            },
+                            {
+                                type = 'number',
+                                name = '[4]',
+                                description = 'The vertical component of the texture coordinate. Texture coordinates are normally in the range of [0, 1], but can be greater or less (see WrapMode).',
+                            },
+                            {
+                                type = 'number',
+                                name = '[5]',
+                                default = '255',
+                                description = 'The red color component.',
+                            },
+                            {
+                                type = 'number',
+                                name = '[6]',
+                                default = '255',
+                                description = 'The green color component.',
+                            },
+                            {
+                                type = 'number',
+                                name = '[7]',
+                                default = '255',
+                                description = 'The blue color component.',
+                            },
+                            {
+                                type = 'number',
+                                name = '[8]',
+                                default = '255',
+                                description = 'The alpha color component.',
+                            },
                         }
                     }
                 }
