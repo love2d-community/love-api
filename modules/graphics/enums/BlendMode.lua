@@ -16,11 +16,11 @@ return {
         },
         {
             name = 'add',
-            description = 'The pixel colors of what\'s drawn are added to the pixel colors already on the screen.'
+            description = 'The pixel colors of what\'s drawn are added to the pixel colors already on the screen. The alpha of the screen is not modified.'
         },
         {
             name = 'subtract',
-            description = 'The pixel colors of what\'s drawn are subtracted from the pixel colors already on the screen.'
+            description = 'The pixel colors of what\'s drawn are subtracted from the pixel colors already on the screen. The alpha of the screen is not modified.'
         },
         {
             name = 'multiply',
