@@ -4,5 +4,28 @@ return {
     types = {
         require('modules.video.types.Video')
     },
-    functions = {}
+    functions = {
+        {
+            name = 'newVideoStream',
+            description = 'Creates a new VideoStream. Currently only Ogg Theora video files are supported. VideoStreams can\'t draw videos, see love.graphics.newVideo for that.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The file path to the Ogg Theora video file.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'VideoStream',
+                            name = 'videostream',
+                            description = 'A new VideoStream.'
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
