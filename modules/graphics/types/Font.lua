@@ -130,31 +130,31 @@ return {
         },
         {
             name = 'getWrap',
-            description = 'Returns how many lines text would be wrapped to. This function accounts for newlines correctly (i.e. \'\\n\')',
+            description = 'Gets formatting information for text, given a wrap limit.\n\nThis function accounts for newlines correctly (i.e. \'\\n\').',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'string',
                             name = 'text',
-                            description = 'The text that would be wrapped.'
+                            description = 'The text that will be wrapped.'
                         },
                         {
                             type = 'number',
-                            name = 'width',
-                            description = 'The width to which text should be wrapped.'
+                            name = 'wraplimit',
+                            description = 'The maximum width in pixels of each line that text is allowed before wrapping.'
                         }
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'width',
-                            description = 'The actual width the wrapped text.'
+                            description = 'The maximum width of the wrapped text.'
                         },
                         {
-                            type = 'number',
-                            name = 'lines',
-                            description = 'The number of lines text was wrapped to.'
+                            type = 'table',
+                            name = 'wrappedtext',
+                            description = 'A table containing each line of text that was wrapped.'
                         }
                     }
                 }
