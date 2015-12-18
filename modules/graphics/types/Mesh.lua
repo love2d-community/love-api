@@ -345,58 +345,165 @@ return {
         },
         {
             name = 'setVertex',
-            description = 'Sets the vertex information for a Mesh.',
+            description = 'Sets the properties of a vertex in the Mesh.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'i',
-                            description = 'The index of the the vertex you want to alter the information for.'
+                            name = 'index',
+                            description = 'The index of the the vertex you want to modify.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'attributecomponent',
+                            description = 'The first component of the first vertex attribute in the specified vertex.'
+                        },
+                        {
+                            type = 'number',
+                            name = '...',
+                            description = 'Additional components of all vertex attributes in the specified vertex.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'index',
+                            description = 'The index of the the vertex you want to modify.'
+                        },
+                        {
+                            type = 'table',
+                            name = 'vertex',
+                            description = 'A table with vertex information, in the form of {attributecomponent, ...}.',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = 'attributecomponent',
+                                    description = 'The first component of the first vertex attribute in the specified vertex.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '...',
+                                    description = 'Additional components of all vertex attributes in the specified vertex.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    description = 'Sets the vertex components of a Mesh that wasn\'t created with a custom vertex format.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'index',
+                            description = 'The index of the the vertex you want to modify.'
                         },
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x vertex coordinate.'
+                            description = 'The position of the vertex on the x-axis.'
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y vertex coordinate.'
+                            description = 'The position of the vertex on the y-axis.'
                         },
                         {
                             type = 'number',
                             name = 'u',
-                            description = 'The u vertex coordinate.'
+                            description = 'The horizontal component of the texture coordinate.'
                         },
                         {
                             type = 'number',
                             name = 'v',
-                            description = 'The v vertex coordinate.'
+                            description = 'The vertical component of the texture coordinate.'
                         },
                         {
                             type = 'number',
                             name = 'r',
                             default = '255',
-                            description = 'The red color component.'
+                            description = 'The red component of the vertex\'s color.'
                         },
                         {
                             type = 'number',
                             name = 'g',
                             default = '255',
-                            description = 'The green color component.'
+                            description = 'The green component of the vertex\'s color.'
                         },
                         {
                             type = 'number',
                             name = 'b',
                             default = '255',
-                            description = 'The blue color component.'
+                            description = 'The blue component of the vertex\'s color.'
                         },
                         {
                             type = 'number',
                             name = 'a',
                             default = '255',
-                            description = 'The alpha color component.'
+                            description = 'The alpha component of the vertex\'s color.'
+                        }
+                    }
+                },
+                {
+                    description = 'Sets the vertex components of a Mesh that wasn\'t created with a custom vertex format.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'index',
+                            description = 'The index of the the vertex you want to modify.'
+                        },
+                        {
+                            type = 'table',
+                            name = 'vertex',
+                            description = 'A table with vertex information.',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = '[1]',
+                                    description = 'The position of the vertex on the x-axis.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '[2]',
+                                    description = 'The position of the vertex on the y-axis.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '[3]',
+                                    description = 'The horizontal component of the texture coordinate.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '[4]',
+                                    description = 'The vertical component of the texture coordinate.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '[5]',
+                                    default = '255',
+                                    description = 'The red component of the vertex\'s color.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '[6]',
+                                    default = '255',
+                                    description = 'The green component of the vertex\'s color.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '[7]',
+                                    default = '255',
+                                    description = 'The blue component of the vertex\'s color.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '[8]',
+                                    default = '255',
+                                    description = 'The alpha component of the vertex\'s color.'
+                                }
+                            }
                         }
                     }
                 }
