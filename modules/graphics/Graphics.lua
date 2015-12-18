@@ -1220,7 +1220,7 @@ return {
         },
         {
             name = 'newImage',
-            description = 'Creates a new Image from a filepath, FileData, an ImageData, or a CompressedImageData.',
+            description = 'Creates a new Image from a filepath, FileData, an ImageData, or a CompressedImageData, and optionally generates or specifies mipmaps for the image.',
             variants = {
                 {
                     arguments = {
@@ -1241,59 +1241,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file (or a FileData or ImageData or CompressedImageData object.)'
-                        },
-                        {
-                            type = 'TextureFormat',
-                            name = 'format',
-                            default = '"normal"',
-                            description = 'The format to interpret the image\'s data as.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'FileData',
-                            name = 'fileData',
-                            description = 'A FileData pointing to an image.'
-                        },
-                        {
-                            type = 'TextureFormat',
-                            name = 'format',
-                            default = '"normal"',
-                            description = 'The format to interpret the image\'s data as.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
                             type = 'ImageData',
                             name = 'imageData',
-                            description = 'An ImageData object.'
-                        },
-                        {
-                            type = 'TextureFormat',
-                            name = 'format',
-                            default = '"normal"',
-                            description = 'The format to interpret the image\'s data as.'
+                            description = 'An ImageData object. The Image will use this ImageData to reload itself when love.window.setMode is called.'
                         }
                     },
                     returns = {
@@ -1310,12 +1260,41 @@ return {
                             type = 'CompressedImageData',
                             name = 'compressedImageData',
                             description = 'A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Image',
+                            name = 'image',
+                            description = 'An Image object which can be drawn on screen.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filepath to the image file (or a FileData or ImageData or CompressedImageData object).'
                         },
                         {
-                            type = 'TextureFormat',
-                            name = 'format',
-                            default = '"normal"',
-                            description = 'The format to interpret the image\'s data as.'
+                            type = 'table',
+                            name = 'flags',
+                            description = 'A table containing the following fields:',
+                            table = {
+                                {
+                                    type = 'boolean',
+                                    name = 'linear',
+                                    default = 'false',
+                                    description = 'True if the image\'s pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise.'
+                                },
+                                {
+                                    type = 'boolean or table',
+                                    name = 'mipmaps',
+                                    default = 'false',
+                                    description = 'If true, mipmaps for the image will be automatically generated (or taken from the images\'s file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image\'s mipmap levels.'
+                                }
+                            }
                         }
                     },
                     returns = {
