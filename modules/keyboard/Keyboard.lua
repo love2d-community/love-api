@@ -26,7 +26,7 @@ return {
         },
         {
             name = 'getScancodeFromKey',
-            description = 'Gets the hardware scancode corresponding to the given key.\n\nThe location of a key is based on the keyboard\'s current language layout, whereas scancodes are the layout-independent representations of where the physical keys are.\n\nFor example, the key located where "q" is on a U.S. keyboard has the scancode "q". When using a U.S. keyboard layout it produces the key "q", but when using a French keyboard layout it produces the key "a".\n\nScancodes are useful for creating default controls that have the same physical locations on on all systems.',
+            description = 'Gets the hardware scancode corresponding to the given key.\n\nUnlike key constants, Scancodes are keyboard layout-independent. For example the scancode "w" will be generated if the key in the same place as the "w" key on an American keyboard is pressed, no matter what the key is labelled or what the user\'s operating system settings are.\n\nScancodes are useful for creating default controls that have the same physical locations on on all systems.',
             variants = {
                 {
                     arguments = {
