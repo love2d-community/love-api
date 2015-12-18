@@ -185,6 +185,33 @@ return {
             }
         },
         {
+            name = 'getVertexFormat',
+            description = 'Gets the vertex format that the Mesh was created with.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'format',
+                            description = 'The vertex format of the Mesh, which is a table containing tables for each vertex attribute the Mesh was created with, in the form of {attribute, ...}.',
+                            table = {
+                                {
+                                    type = 'table',
+                                    name = 'attribute',
+                                    description = 'A table containing the attribute\'s name, it\'s data type, and the number of components in the attribute, in the form of {name, datatype, components}.',
+                                },
+                                {
+                                    type = 'table',
+                                    name = '...',
+                                    description = 'Additional vertex attributes in the Mesh.',
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getVertexMap',
             description = 'Gets the vertex map for the Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn. The vertices, vertex map, and mesh draw mode work together to determine what exactly is displayed on the screen.\n\nIf no vertex map has been set previously via Mesh:setVertexMap, then this function will return nil in LÖVE 0.10.0+, or an empty table in 0.9.2 and older.',
             variants = {
