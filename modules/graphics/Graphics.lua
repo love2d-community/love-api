@@ -133,13 +133,8 @@ return {
                     arguments = {
                         {
                             type = 'table',
-                            name = 'c1',
+                            name = 'color',
                             description = 'A table in the form of {r, g, b, a} containing the color to clear the first active Canvas to.'
-                        },
-                        {
-                            type = 'table',
-                            name = 'c2',
-                            description = 'A table in the form of {r, g, b, a} containing the color to clear the second active Canvas to.'
                         },
                         {
                             type = 'table',
