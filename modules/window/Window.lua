@@ -175,8 +175,8 @@ return {
                                 },
                                 {
                                     type = 'number',
-                                    name = 'fsaa',
-                                    description = 'The number of antialiasing samples used (0 if FSAA is disabled).'
+                                    name = 'msaa',
+                                    description = 'The number of antialiasing samples used (0 if MSAA is disabled).'
                                 },
                                 {
                                     type = 'boolean',
@@ -212,11 +212,6 @@ return {
                                     type = 'boolean',
                                     name = 'highdpi',
                                     description = 'True if high-dpi mode is allowed on Retina displays in OS X. Does nothing on non-Retina displays.'
-                                },
-                                {
-                                    type = 'boolean',
-                                    name = 'srgb',
-                                    description = 'True if sRGB gamma correction is applied when drawing to the screen.'
                                 },
                                 {
                                     type = 'number',
