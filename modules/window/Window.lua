@@ -481,26 +481,24 @@ return {
         },
         {
             name = 'setMode',
-            description = 'Changes the display mode.\n\nIf width or height is 0, the width or height of the desktop will be used.\n\nChanging the display mode may have side effects: for example, canvases will be cleared and values sent to shaders with Shader:send will be erased. Make sure to save the contents of canvases beforehand or re-draw to them afterward if you need to.',
+            description = 'Sets the display mode and properties of the window.\n\nIf width or height is 0, setMode will use the width and height of the desktop.\n\nChanging the display mode may have side effects: for example, canvases will be cleared and values sent to shaders with Shader:send will be erased. Make sure to save the contents of canvases beforehand or re-draw to them afterward if you need to.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'width',
-                            default = 'Screen width.',
                             description = 'Display width.'
                         },
                         {
                             type = 'number',
                             name = 'height',
-                            default = 'Screen height.',
                             description = 'Display height.'
                         },
                         {
                             type = 'table',
                             name = 'flags',
-                            description = 'The flags table.',
+                            description = 'The flags table with the options:',
                             table = {
                                 {
                                     type = 'boolean',
@@ -511,8 +509,8 @@ return {
                                 {
                                     type = 'FullscreenType',
                                     name = 'fullscreentype',
-                                    default = '"normal"',
-                                    description = 'The type of fullscreen to use.'
+                                    default = '"desktop"',
+                                    description = 'The type of fullscreen to use. This defaults to "normal" in 0.9.2 and older.'
                                 },
                                 {
                                     type = 'boolean',
@@ -567,12 +565,6 @@ return {
                                     name = 'highdpi',
                                     default = 'false',
                                     description = 'True if high-dpi mode should be used on Retina displays in OS X. Does nothing on non-Retina displays.'
-                                },
-                                {
-                                    type = 'boolean',
-                                    name = 'srgb',
-                                    default = 'false',
-                                    description = 'True if sRGB gamma correction should be applied when drawing to the screen.'
                                 },
                                 {
                                     type = 'number',
