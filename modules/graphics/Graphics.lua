@@ -1120,68 +1120,63 @@ return {
         },
         {
             name = 'newMesh',
-            description = 'Creates a new Mesh.',
+            description = 'Creates a new Mesh.\n\nUse Mesh:setTexture if the Mesh should be textured with an Image or Canvas when it\'s drawn.',
             variants = {
                 {
+                    description = 'Creates a standard Mesh with the specified vertices.',
                     arguments = {
                         {
                             type = 'table',
                             name = 'vertices',
-                            description = 'The table filled with vertex information tables.',
+                            description = 'The table filled with vertex information tables for each vertex as follows:',
                             table = {
                                 {
                                     type = 'number',
-                                    name = 'x',
+                                    name = '[1]',
                                     description = 'The position of the vertex on the x-axis.'
                                 },
                                 {
                                     type = 'number',
-                                    name = 'y',
+                                    name = '[2]',
                                     description = 'The position of the vertex on the y-axis.'
                                 },
                                 {
                                     type = 'number',
-                                    name = 'u',
+                                    name = '[3]',
                                     default = '0',
-                                    description = 'The horizontal component of the texture coordinate. Texture coordinates are normally in the range of [0, 1], but can be greater or less (see WrapMode.)'
+                                    description = 'The u texture coordinate of the vertex. Texture coordinates are normally in the range of [0, 1], but can be greater or less (see WrapMode.)'
                                 },
                                 {
                                     type = 'number',
-                                    name = 'v',
+                                    name = '[4]',
                                     default = '0',
-                                    description = 'The vertical component of the texture coordinate. Texture coordinates are normally in the range of [0, 1], but can be greater or less (see WrapMode.)'
+                                    description = 'The v texture coordinate of the vertex. Texture coordinates are normally in the range of [0, 1], but can be greater or less (see WrapMode.)'
                                 },
                                 {
                                     type = 'number',
-                                    name = 'r',
+                                    name = '[5]',
                                     default = '255',
-                                    description = 'The red color component.'
+                                    description = 'The red component of the vertex color.'
                                 },
                                 {
                                     type = 'number',
-                                    name = 'g',
+                                    name = '[6]',
                                     default = '255',
-                                    description = 'The green color component.'
+                                    description = 'The green component of the vertex color.'
                                 },
                                 {
                                     type = 'number',
-                                    name = 'b',
+                                    name = '[7]',
                                     default = '255',
-                                    description = 'The blue color component.'
+                                    description = 'The blue component of the vertex color.'
                                 },
                                 {
                                     type = 'number',
-                                    name = 'a',
+                                    name = '[8]',
                                     default = '255',
-                                    description = 'The alpha color component.'
+                                    description = 'The alpha component of the vertex color.'
                                 }
                             }
-                        },
-                        {
-                            type = 'Texture',
-                            name = 'texture',
-                            default = 'nil',
-                            description = 'The Image or Canvas to use when drawing the Mesh. May be nil to use no texture.'
                         },
                         {
                             type = 'MeshDrawMode',
@@ -1189,6 +1184,12 @@ return {
                             default = '"fan"',
                             description = 'How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.'
                         },
+                        {
+                            type = 'SpriteBatchUsage',
+                            name = 'usage',
+                            default = '"dynamic"',
+                            description = 'The expected usage of the Mesh. The specified usage mode affects the Mesh\'s memory usage and performance.'
+                        }
                     },
                     returns = {
                         {
@@ -1199,6 +1200,7 @@ return {
                     }
                 },
                 {
+                    description = 'Creates a standard Mesh with the specified number of vertices.',
                     arguments = {
                         {
                             type = 'number',
@@ -1206,10 +1208,62 @@ return {
                             description = 'The total number of vertices the Mesh will use. Each vertex is initialized to {0,0, 0,0, 255,255,255,255}.'
                         },
                         {
-                            type = 'Texture',
-                            name = 'texture',
-                            default = 'nil',
-                            description = 'The Image or Canvas to use when drawing the Mesh. May be nil to use no texture.'
+                            type = 'MeshDrawMode',
+                            name = 'mode',
+                            default = '"fan"',
+                            description = 'How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.'
+                        },
+                        {
+                            type = 'SpriteBatchUsage',
+                            name = 'usage',
+                            default = '"dynamic"',
+                            description = 'The expected usage of the Mesh. The specified usage mode affects the Mesh\'s memory usage and performance.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The new Mesh.'
+                        }
+                    }
+                },
+                {
+                    description = 'Creates a Mesh with custom vertex attributes and the specified vertex data.',
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'vertexformat',
+                            description = 'A table in the form of {attribute, ...}. Each attribute is a table which specifies a custom vertex attribute used for each vertex.',
+                            table = {
+                                {
+                                    type = 'table',
+                                    name = 'attribute',
+                                    description = 'A table containing the attribute\'s name, it\'s data type, and the number of components in the attribute, in the form of {name, datatype, components}.'
+                                },
+                                {
+                                    type = 'table',
+                                    name = '...',
+                                    description = 'Additional vertex attribute format tables.'
+                                }
+                            }
+                        },
+                        {
+                            type = 'table',
+                            name = 'vertices',
+                            description = 'The table filled with vertex information tables for each vertex, in the form of {vertex, ...} where each vertex is a table in the form of {attributecomponent, ...}.',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = 'attributecomponent',
+                                    description = 'The first component of the first vertex attribute in the vertex.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '...',
+                                    description = 'Additional components of all vertex attributes in the vertex.'
+                                }
+                            }
                         },
                         {
                             type = 'MeshDrawMode',
@@ -1217,6 +1271,58 @@ return {
                             default = '"fan"',
                             description = 'How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.'
                         },
+                        {
+                            type = 'SpriteBatchUsage',
+                            name = 'usage',
+                            default = '"dynamic"',
+                            description = 'The expected usage of the Mesh. The specified usage mode affects the Mesh\'s memory usage and performance.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The new Mesh.'
+                        }
+                    }
+                },
+                {
+                    description = 'Creates a Mesh with custom vertex attributes and the specified number of vertices.',
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'vertexformat',
+                            description = 'A table in the form of {attribute, ...}. Each attribute is a table which specifies a custom vertex attribute used for each vertex.',
+                            table = {
+                                {
+                                    type = 'table',
+                                    name = 'attribute',
+                                    description = 'A table containing the attribute\'s name, it\'s data type, and the number of components in the attribute, in the form of {name, datatype, components}.'
+                                },
+                                {
+                                    type = 'table',
+                                    name = '...',
+                                    description = 'Additional vertex attribute format tables.'
+                                }
+                            }
+                        },
+                        {
+                            type = 'number',
+                            name = 'vertexcount',
+                            description = 'The total number of vertices the Mesh will use.'
+                        },
+                        {
+                            type = 'MeshDrawMode',
+                            name = 'mode',
+                            default = '"fan"',
+                            description = 'How the vertices are used when drawing. The default mode "fan" is sufficient for simple convex polygons.'
+                        },
+                        {
+                            type = 'SpriteBatchUsage',
+                            name = 'usage',
+                            default = '"dynamic"',
+                            description = 'The expected usage of the Mesh. The specified usage mode affects the Mesh\'s memory usage and performance.'
+                        }
                     },
                     returns = {
                         {
