@@ -2562,9 +2562,6 @@ return {
             description = 'Sets or disables scissor.\n\nThe scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.',
             variants = {
                 {
-                    description = 'Disables scissor.',
-                },
-                {
                     description = 'Limits the drawing area to a specified rectangle.',
                     arguments = {
                         {
@@ -2588,6 +2585,9 @@ return {
                             description = 'The height of clipping rectangle.'
                         }
                     }
+                },
+                {
+                    description = 'Disables scissor.',
                 }
             }
         },
