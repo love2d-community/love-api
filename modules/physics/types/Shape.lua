@@ -114,6 +114,21 @@ return {
             }
         },
         {
+            name = 'getRadius',
+            description = 'Gets the radius of the shape.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'radius',
+                            description = 'The radius of the shape.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getType',
             description = 'Gets a string representing the Shape. This function can be useful for conditional debug drawing.',
             variants = {
