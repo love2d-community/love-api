@@ -795,21 +795,6 @@ return {
             }
         },
         {
-            name = 'isFrozen',
-            description = 'Get the frozen status of the body.\n\nA body becomes frozen when it goes outside the world boundary. A frozen body is no longer changed by World:update.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'status',
-                            description = 'The frozen status of the body.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'isSleepingAllowed',
             description = 'Returns the sleeping behaviour of the body.',
             variants = {
