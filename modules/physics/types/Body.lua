@@ -810,21 +810,6 @@ return {
             }
         },
         {
-            name = 'isStatic',
-            description = 'Get the static status of the body.\n\nA static body has no mass and a constant position. It will not react to collisions. Often used for walls.\n\nA dynamic body has mass and can move. It will react to collisions when the world is updated.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'status',
-                            description = 'The static status of the body.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'resetMassData',
             description = 'Resets the mass of the body by recalculating it from the mass properties of the fixtures.',
             variants = {
