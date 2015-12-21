@@ -99,56 +99,6 @@ return {
             }
         },
         {
-            name = 'getBoundingBox',
-            description = 'Gets the bounding box of the shape. This function can be used in a nested fashion with love.graphics.polygon.\n\nA bounding box is the smallest rectangle that encapsulates the entire polygon.\n\nVertexes are returned starting from the bottom-left in a clockwise fashion (bottom-left, top-left, top-right, bottom-right).',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'x1',
-                            description = 'The x component of the first vertex, bottom-left.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y1',
-                            description = 'The y component of the first vertex, bottom-left.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'x2',
-                            description = 'The x component of the second vertex, top-left.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y2',
-                            description = 'The y component of the second vertex, top-left.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'x3',
-                            description = 'The x component of the third vertex, top-right.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y3',
-                            description = 'The y component of the third vertex, top-right.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'x4',
-                            description = 'The x component of the fourth vertex, bottom-right.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y4',
-                            description = 'The y component of the fourth vertex, bottom-right.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getChildCount',
             description = 'Returns the number of children the shape has.',
             variants = {
