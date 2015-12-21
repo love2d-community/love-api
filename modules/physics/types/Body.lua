@@ -1032,13 +1032,6 @@ return {
             }
         },
         {
-            name = 'setMassFromShapes',
-            description = 'Sets mass properties from attatched shapes.\n\nIf you feel that finding the correct mass properties is tricky, then this function may be able to help you. After creating the needed shapes on the Body, a call to this function will set the mass properties based on those shapes. Remember to call this function after adding the shapes.\n\nSetting the mass properties this way always results in a realistic (or at least good-looking) simulation, so using it is highly recommended.',
-            variants = {
-                {}
-            }
-        },
-        {
             name = 'setPosition',
             description = 'Set the position of the body.\n\nNote that this may not be the center of mass of the body.',
             variants = {
