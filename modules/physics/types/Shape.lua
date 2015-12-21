@@ -114,61 +114,6 @@ return {
             }
         },
         {
-            name = 'getDensity',
-            description = 'Gets the density of the Shape.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'density',
-                            description = 'The density of the Shape.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getFilterData',
-            description = 'Gets the filter data of the Shape.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'categoryBits',
-                            description = 'A 16-bit integer representing category membership.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'maskBits',
-                            description = 'A 16-bit integer representing masked categories.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'groupIndex',
-                            description = 'An integer representing the group index.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getFriction',
-            description = 'Gets the friction of this shape.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'friction',
-                            description = 'The friction of the shape.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getType',
             description = 'Gets a string representing the Shape. This function can be useful for conditional debug drawing.',
             variants = {
@@ -257,76 +202,6 @@ return {
             }
         },
         {
-            name = 'setData',
-            description = 'Set data to be passed to the collision callback.\n\nWhen a shape collides, the value set here will be passed to the collision callback as one of the parameters. Typically, you would want to store a table reference here, but any value can be used.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'any',
-                            name = 'v',
-                            description = 'Any Lua value.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'setDensity',
-            description = 'Sets the density of a Shape. Do this before calling Body:setMassFromShapes.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'density',
-                            description = 'The new density of the Shape.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'setFilterData',
-            description = 'Sets the filter data for a Shape.\n\nCollision filtering is a system for preventing collision between shapes. For example, say you make a character that rides a bicycle. You want the bicycle to collide with the terrain and the character to collide with the terrain, but you don\'t want the character to collide with the bicycle (because they must overlap). Box2D supports such collision filtering using categories and groups.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'categoryBits',
-                            description = 'A 16-bit integer representing category membership.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'maskBits',
-                            description = 'A 16-bit integer representing masked categories.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'groupIndex',
-                            description = 'An integer representing the group index.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'setFriction',
-            description = 'Sets the friction of the shape. Friction determines how shapes react when they "slide" along other shapes. Low friction indicates a slippery surface, like ice, while high friction indicates a rough surface, like concrete. Range: 0.0 - 1.0.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'friction',
-                            description = 'The friction of the shape.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'testPoint',
             description = 'Checks whether a point lies inside the shape. This is particularly useful for mouse interaction with the shapes. By looping through all shapes and testing the mouse position with this function, we can find which shapes the mouse touches.',
             variants = {
@@ -348,53 +223,6 @@ return {
                             type = 'boolean',
                             name = 'hit',
                             description = 'True if inside, false if outside'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'testSegment',
-            description = 'Checks whether a line segment intersects a shape. This function will either return the "time" of impact and the surface normal at the point of collision, or nil if the line does not intersect the shape. The "time" is a value between 0.0 and 1.0 and can be used to calculate where the collision occured.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'x1',
-                            description = 'The x component of the first endpoint.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y1',
-                            description = 'The y component of the first endpoint.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'x2',
-                            description = 'The x component of the second endpoint.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y2',
-                            description = 'The y component of the second endpoint.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 't',
-                            description = 'The time of impact, or nil if no impact.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'xn',
-                            description = 'The x component of the surface normal.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'yn',
-                            description = 'The y component of the surface normal.'
                         }
                     }
                 }
