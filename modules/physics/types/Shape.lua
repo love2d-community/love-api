@@ -114,21 +114,6 @@ return {
             }
         },
         {
-            name = 'getData',
-            description = 'Get the data set with setData.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'any',
-                            name = 'v',
-                            description = 'The data previously set, or nil if none.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getDensity',
             description = 'Gets the density of the Shape.',
             variants = {
