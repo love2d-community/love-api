@@ -99,21 +99,6 @@ return {
             }
         },
         {
-            name = 'getBody',
-            description = 'Get the Body the shape is attached to.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'Body',
-                            name = 'body',
-                            description = 'The body the shape is attached to.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getBoundingBox',
             description = 'Gets the bounding box of the shape. This function can be used in a nested fashion with love.graphics.polygon.\n\nA bounding box is the smallest rectangle that encapsulates the entire polygon.\n\nVertexes are returned starting from the bottom-left in a clockwise fashion (bottom-left, top-left, top-right, bottom-right).',
             variants = {
