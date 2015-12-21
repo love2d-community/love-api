@@ -99,13 +99,6 @@ return {
             }
         },
         {
-            name = 'destroy',
-            description = 'Explicitly destroys the Shape. When you don\'t have time to wait for garbage collection, this function may be used to free the object immediately, but note that an error will occur if you attempt to use the object after calling this function.\n\nNote that Box2D doesn\'t allow destroying or creating shapes during collision callbacks.',
-            variants = {
-                {}
-            }
-        },
-        {
             name = 'getBody',
             description = 'Get the Body the shape is attached to.',
             variants = {
