@@ -765,7 +765,7 @@ return {
         },
         {
             name = 'getSupported',
-            description = 'Gets the optional graphics features and whether they\'re supported on the system.',
+            description = 'Gets the optional graphics features and whether they\'re supported on the system.\n\nSome older or low-end systems don\'t always support all graphics features.',
             variants = {
                 {
                     returns = {
