@@ -147,9 +147,9 @@ return {
             description = 'The nine key'
         },
         {
-            name = '(space)',
+            name = 'space',
             description = 'Space key',
-            notes = 'Replace (space) with the actual space character'
+            notes = 'In version 0.9.2 and earlier this is represented by the actual space character'
         },
         {
             name = '!',
