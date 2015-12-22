@@ -13,36 +13,6 @@ return {
             }
         },
         {
-            name = 'isDestroyed',
-            description = 'Gets whether the World is destroyed. Destroyed worlds cannot be used.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'destroyed',
-                            description = 'Whether the World is destroyed.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'isSleepingAllowed',
-            description = 'Returns the sleep behaviour of the world.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'allowSleep',
-                            description = 'True if the bodies are allowed to sleep or false if not.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getBodyCount',
             description = 'Get the number of bodies in the world.',
             variants = {
@@ -198,6 +168,21 @@ return {
             }
         },
         {
+            name = 'isDestroyed',
+            description = 'Gets whether the World is destroyed. Destroyed worlds cannot be used.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'destroyed',
+                            description = 'Whether the World is destroyed.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isLocked',
             description = 'Returns if the world is updating its state.\n\nThis will return true inside the callbacks from World:setCallbacks.',
             variants = {
@@ -207,6 +192,21 @@ return {
                             type = 'boolean',
                             name = 'locked',
                             description = 'Will be true if the world is in the process of updating its state.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'isSleepingAllowed',
+            description = 'Returns the sleep behaviour of the world.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'allowSleep',
+                            description = 'True if the bodies are allowed to sleep or false if not.'
                         }
                     }
                 }
@@ -283,21 +283,6 @@ return {
             }
         },
         {
-            name = 'setSleepingAllowed',
-            description = 'Set the sleep behaviour of the world.\n\nA sleeping body is much more efficient to simulate than when awake.\n\nIf sleeping is allowed, any body that has come to rest will sleep.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'boolean',
-                            name = 'allowSleep',
-                            description = 'True if the bodies are allowed to sleep or false if not.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'setCallbacks',
             description = 'Sets functions for the collision callbacks during the world update.\n\nFour Lua functions can be given as arguments. The value nil removes a function.\n\nWhen called, each function will be passed three arguments. The first two arguments are the colliding fixtures and the third argument is the Contact between them. The PostSolve callback additionally gets the normal and tangent impulse for each contact point.',
             variants = {
@@ -342,6 +327,21 @@ return {
                             type = 'number',
                             name = 'y',
                             description = 'The y component of gravity.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setSleepingAllowed',
+            description = 'Set the sleep behaviour of the world.\n\nA sleeping body is much more efficient to simulate than when awake.\n\nIf sleeping is allowed, any body that has come to rest will sleep.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'allowSleep',
+                            description = 'True if the bodies are allowed to sleep or false if not.'
                         }
                     }
                 }
