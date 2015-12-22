@@ -694,7 +694,7 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'userdata',
+                            type = 'light userdata',
                             name = 'id',
                             description = 'The identifier for the touch press.'
                         },
@@ -724,7 +724,7 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'userdata',
+                            type = 'light userdata',
                             name = 'id',
                             description = 'The identifier for the touch press.'
                         },
@@ -754,7 +754,7 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'userdata',
+                            type = 'light userdata',
                             name = 'id',
                             description = 'The identifier for the touch press.'
                         },
