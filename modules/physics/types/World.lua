@@ -363,6 +363,26 @@ return {
             }
         },
         {
+            name = 'translateOrigin',
+            description = 'Translates the World\'s origin. Useful in large worlds where floating point precision issues become noticeable at far distances from the origin.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x component of the new origin with respect to the old origin.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y component of the new origin with respect to the old origin.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'update',
             description = 'Update the state of the world.',
             variants = {
