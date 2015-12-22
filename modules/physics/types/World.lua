@@ -313,6 +313,21 @@ return {
             }
         },
         {
+            name = 'setContactFilter',
+            description = 'Sets a function for collision filtering.\n\nIf the group and category filtering doesn\'t generate a collision decision, this function gets called with the two fixtures as arguments. The function should return a boolean value where true means the fixtures will collide and false means they will pass through each other.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'function',
+                            name = 'filter',
+                            description = 'The function handling the contact filtering.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setGravity',
             description = 'Set the gravity of the world.',
             variants = {
