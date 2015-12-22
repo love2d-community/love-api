@@ -9,7 +9,7 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'userdata',
+                            type = 'light userdata',
                             name = 'id',
                             description = 'The identifier of the touch-press. Use love.touch.getTouches, love.touchpressed, or love.touchmoved to obtain touch id values.'
                         }
@@ -36,7 +36,7 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'userdata',
+                            type = 'light userdata',
                             name = 'id',
                             description = 'The identifier of the touch-press. Use love.touch.getTouches, love.touchpressed, or love.touchmoved to obtain touch id values.'
                         }
