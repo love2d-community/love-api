@@ -96,7 +96,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'e',
+                            name = 'exists',
                             description = 'True if there is a file or directory with the specified name. False otherwise.'
                         }
                     }
