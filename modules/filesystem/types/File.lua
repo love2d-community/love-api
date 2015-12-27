@@ -61,6 +61,21 @@ return         {
             }
         },
         {
+            name = 'getFilename',
+            description = 'Gets the filename that the File object was created with. If the file object originated from the love.filedropped callback, the filename will be the full platform-dependent file path.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filename of the File.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getMode',
             description = 'Gets the FileMode the file has been opened with.',
             variants = {
