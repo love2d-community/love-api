@@ -2025,7 +2025,7 @@ return {
         },
         {
             name = 'printf',
-            description = 'Draws formatted text, with word wrap and alignment.\n\nSee additional notes in love.graphics.print.',
+            description = 'Draws formatted text, with word wrap and alignment.\n\nSee additional notes in love.graphics.print.\n\nIn version 0.9.2 and earlier, wrapping was implemented by breaking up words by spaces and putting them back together to make sure things fit nicely within the limit provided. However, due to the way this is done, extra spaces between words would end up missing when printed on the screen, and some lines could overflow past the provided wrap limit. In version 0.10.0 and newer this is no longer the case.',
             variants = {
                 {
                     arguments = {
@@ -2096,6 +2096,104 @@ return {
                             name = 'ky',
                             default = '0',
                             description = 'Shear factor (y-axis).'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'coloredtext',
+                            description = 'A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.',
+                            table = {
+                                {
+                                    type = 'table',
+                                    name = 'color1',
+                                    description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.'
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'string1',
+                                    description = 'A string of text which has a color specified by the previous color.'
+                                },
+                                {
+                                    type = 'table',
+                                    name = 'color2',
+                                    description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.'
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'string2',
+                                    description = 'A string of text which has a color specified by the previous color.'
+                                },
+                                {
+                                    type = 'tables and strings',
+                                    name = '...',
+                                    description = 'Additional colors and strings.'
+                                }
+                            }
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the new text on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the new text on the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'wraplimit',
+                            description = 'The maximum width in pixels of the text before it gets automatically wrapped to a new line.'
+                        },
+                        {
+                            type = 'AlignMode',
+                            name = 'align',
+                            description = 'The alignment of the text.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'angle',
+                            default = '0',
+                            description = 'The orientation of the object in radians.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sx',
+                            default = '1',
+                            description = 'Scale factor on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sy',
+                            default = 'sx',
+                            description = 'Scale factor on the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ox',
+                            default = '0',
+                            description = 'Origin offset on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'oy',
+                            default = '0',
+                            description = 'Origin offset on the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'kx',
+                            default = '0',
+                            description = 'Shearing / skew factor on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ky',
+                            default = '0',
+                            description = 'Shearing / skew factor on the y-axis.'
                         }
                     }
                 }
