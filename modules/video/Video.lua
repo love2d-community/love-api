@@ -24,6 +24,22 @@ return {
                             description = 'A new VideoStream.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'File',
+                            name = 'file',
+                            description = 'The File object containing the Ogg Theora video.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'VideoStream',
+                            name = 'videostream',
+                            description = 'A new VideoStream.'
+                        }
+                    }
                 }
             }
         }
