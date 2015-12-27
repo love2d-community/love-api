@@ -206,16 +206,22 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'FileData',
-                            name = 'fileData',
-                            description = 'The FileData to create a Source from.'
+                            type = 'Decoder',
+                            name = 'decoder',
+                            description = 'The Decoder to create a Source from.'
+                        },
+                        {
+                            type = 'SourceType',
+                            name = 'type',
+                            default = '"stream"',
+                            description = 'Streaming or static source.'
                         }
                     },
                     returns = {
                         {
                             type = 'Source',
                             name = 'source',
-                            description = 'A new Source that can play the specified audio. The SourceType of the returned audio is "static".'
+                            description = 'A new Source that can play the specified audio.'
                         }
                     }
                 },
@@ -232,6 +238,22 @@ return {
                             type = 'Source',
                             name = 'source',
                             description = 'A new Source that can play the specified audio. The SourceType of the returned audio is "static".'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'FileData',
+                            name = 'fileData',
+                            description = 'The FileData to create a Source from.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Source',
+                            name = 'source',
+                            description = 'A new Source that can play the specified audio.'
                         }
                     }
                 }
