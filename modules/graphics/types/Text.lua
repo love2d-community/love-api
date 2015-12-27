@@ -67,7 +67,7 @@ return {
                             name = 'ky',
                             default = '0',
                             description = 'Shearing / skew factor on the y-axis.'
-                        },
+                        }
                     },
                     returns = {
                         {
@@ -162,7 +162,7 @@ return {
                             name = 'ky',
                             default = '0',
                             description = 'Shearing / skew factor on the y-axis.'
-                        },
+                        }
                     },
                     returns = {
                         {
@@ -246,7 +246,7 @@ return {
                             name = 'ky',
                             default = '0',
                             description = 'Shearing / skew factor on the y-axis.'
-                        },
+                        }
                     },
                     returns = {
                         {
@@ -351,7 +351,7 @@ return {
                             name = 'ky',
                             default = '0',
                             description = 'Shearing / skew factor on the y-axis.'
-                        },
+                        }
                     },
                     returns = {
                         {
