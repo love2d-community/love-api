@@ -103,6 +103,11 @@ return {
                                     type = 'string',
                                     name = 'string2',
                                     description = 'A string of text which has a color specified by the previous color.'
+                                },
+                                {
+                                    type = 'tables and strings',
+                                    name = '...',
+                                    description = 'Additional colors and strings.'
                                 }
                             }
                         },
@@ -277,6 +282,11 @@ return {
                                     type = 'string',
                                     name = 'string2',
                                     description = 'A string of text which has a color specified by the previous color.'
+                                },
+                                {
+                                    type = 'tables and strings',
+                                    name = '...',
+                                    description = 'Additional colors and strings.'
                                 }
                             }
                         },
@@ -478,6 +488,11 @@ return {
                                     type = 'string',
                                     name = 'string2',
                                     description = 'A string of text which has a color specified by the previous color.'
+                                },
+                                {
+                                    type = 'tables and strings',
+                                    name = '...',
+                                    description = 'Additional colors and strings.'
                                 }
                             }
                         }
@@ -538,6 +553,11 @@ return {
                                     type = 'string',
                                     name = 'string2',
                                     description = 'A string of text which has a color specified by the previous color.'
+                                },
+                                {
+                                    type = 'tables and strings',
+                                    name = '...',
+                                    description = 'Additional colors and strings.'
                                 }
                             }
                         },
