@@ -2,15 +2,15 @@ return {
     name = 'graphics',
     description = 'The primary responsibility for the love.graphics module is the drawing of lines, shapes, text, Images and other Drawable objects onto the screen. Its secondary responsibilities include loading external files (including Images and Fonts) into memory, creating specialized objects (such as ParticleSystems or Framebuffers) and managing screen geometry.\n\nLÖVE\'s coordinate system is rooted in the upper-left corner of the screen, which is at location (0, 0). The x-axis is horizontal: larger values are further to the right. The y-axis is vertical: larger values are further towards the bottom.\n\nIn many cases, you draw images or shapes in terms of their upper-left corner (See the picture above).\n\nMany of the functions are used to manipulate the graphics coordinate system, which is essentially the way coordinates are mapped to the display. You can change the position, scale, and even rotation in this way.',
     types = {
-        require('modules.graphics.types.Canvas'),
-        require('modules.graphics.types.Font'),
-        require('modules.graphics.types.Mesh'),
-        require('modules.graphics.types.Image'),
-        require('modules.graphics.types.ParticleSystem'),
-        require('modules.graphics.types.Quad'),
-        require('modules.graphics.types.Shader'),
-        require('modules.graphics.types.SpriteBatch'),
-        require('modules.graphics.types.Text')
+        require('modules.graphics.Canvas'),
+        require('modules.graphics.Font'),
+        require('modules.graphics.Mesh'),
+        require('modules.graphics.Image'),
+        require('modules.graphics.ParticleSystem'),
+        require('modules.graphics.Quad'),
+        require('modules.graphics.Shader'),
+        require('modules.graphics.SpriteBatch'),
+        require('modules.graphics.Text')
     },
     functions = {
         {
@@ -2890,22 +2890,22 @@ return {
         }
     },
     enums = {
-        require('modules.graphics.enums.AlignMode'),
-        require('modules.graphics.enums.AreaSpreadDistribution'),
-        require('modules.graphics.enums.BlendMode'),
-        require('modules.graphics.enums.CanvasFormat'),
-        require('modules.graphics.enums.DrawMode'),
-        require('modules.graphics.enums.FilterMode'),
-        require('modules.graphics.enums.GraphicsFeature'),
-        require('modules.graphics.enums.GraphicsLimit'),
-        require('modules.graphics.enums.LineJoin'),
-        require('modules.graphics.enums.LineStyle'),
-        require('modules.graphics.enums.MeshDrawMode'),
-        require('modules.graphics.enums.ParticleInsertMode'),
-        require('modules.graphics.enums.PointStyle'),
-        require('modules.graphics.enums.SpriteBatchUsage'),
-        require('modules.graphics.enums.StackType'),
-        require('modules.graphics.enums.TextureFormat'),
-        require('modules.graphics.enums.WrapMode')
+        require('modules.graphics.AlignMode'),
+        require('modules.graphics.AreaSpreadDistribution'),
+        require('modules.graphics.BlendMode'),
+        require('modules.graphics.CanvasFormat'),
+        require('modules.graphics.DrawMode'),
+        require('modules.graphics.FilterMode'),
+        require('modules.graphics.GraphicsFeature'),
+        require('modules.graphics.GraphicsLimit'),
+        require('modules.graphics.LineJoin'),
+        require('modules.graphics.LineStyle'),
+        require('modules.graphics.MeshDrawMode'),
+        require('modules.graphics.ParticleInsertMode'),
+        require('modules.graphics.PointStyle'),
+        require('modules.graphics.SpriteBatchUsage'),
+        require('modules.graphics.StackType'),
+        require('modules.graphics.TextureFormat'),
+        require('modules.graphics.WrapMode')
     }
 }

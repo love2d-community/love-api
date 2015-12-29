@@ -2,7 +2,7 @@ return {
     name = 'audio',
     description = 'Provides an interface to create noise with the user\'s speakers.',
     types = {
-        require('modules.audio.types.Source')
+        require('modules.audio.Source')
     },
     functions = {
         {
@@ -475,8 +475,8 @@ return {
         }
     },
     enums = {
-        require('modules.audio.enums.DistanceModel'),
-        require('modules.audio.enums.SourceType'),
-        require('modules.audio.enums.TimeUnit')
+        require('modules.audio.DistanceModel'),
+        require('modules.audio.SourceType'),
+        require('modules.audio.TimeUnit')
     }
 };

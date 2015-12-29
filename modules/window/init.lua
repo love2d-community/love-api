@@ -753,6 +753,6 @@ return {
         }
     },
     enums = {
-        require('modules.window.enums.FullscreenType')
+        require('modules.window.FullscreenType')
     }
 }

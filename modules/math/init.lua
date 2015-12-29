@@ -2,9 +2,9 @@ return {
     name = 'math',
     description = 'Provides system-independent mathematical functions.',
     types = {
-        require('modules.math.types.BezierCurve'),
-        require('modules.math.types.CompressedData'),
-        require('modules.math.types.RandomGenerator')
+        require('modules.math.BezierCurve'),
+        require('modules.math.CompressedData'),
+        require('modules.math.RandomGenerator')
     },
     functions = {
         {
@@ -826,6 +826,6 @@ return {
         }
     },
     enums = {
-        require('modules.math.enums.CompressedDataFormat')
+        require('modules.math.CompressedDataFormat')
     }
 }

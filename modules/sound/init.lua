@@ -2,8 +2,8 @@ return {
     name = 'sound',
     description = 'This module is responsible for decoding sound files. It can\'t play the sounds, see love.audio for that.',
     types = {
-        require('modules.sound.types.Decoder'),
-        require('modules.sound.types.SoundData')
+        require('modules.sound.Decoder'),
+        require('modules.sound.SoundData')
     },
     functions = {
         {

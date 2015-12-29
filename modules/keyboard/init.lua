@@ -178,6 +178,6 @@ return {
         }
     },
     enums = {
-        require('modules.keyboard.enums.KeyConstant')
+        require('modules.keyboard.KeyConstant')
     }
 }
