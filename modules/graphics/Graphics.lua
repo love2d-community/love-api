@@ -1666,13 +1666,63 @@ return {
                 {
                     arguments = {
                         {
+                            type = 'Image',
+                            name = 'image',
+                            description = 'The Image to use for the sprites.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'maxsprites',
+                            default = '1000',
+                            description = 'The maximum number of sprites that the SpriteBatch can contain at any given time.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'SpriteBatch',
+                            name = 'spriteBatch',
+                            description = 'The new SpriteBatch.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Image',
+                            name = 'image',
+                            description = 'The Image to use for the sprites.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'maxsprites',
+                            default = '1000',
+                            description = 'The maximum number of sprites that the SpriteBatch can contain at any given time.'
+                        },
+                        {
+                            type = 'SpriteBatchUsage',
+                            name = 'usage',
+                            default = '"dynamic"',
+                            description = 'The expected usage of the SpriteBatch. The specified usage mode affects the SpriteBatch\'s memory usage and performance.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'SpriteBatch',
+                            name = 'spriteBatch',
+                            description = 'The new SpriteBatch.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
                             type = 'Texture',
                             name = 'texture',
                             description = 'The Image or Canvas to use for the sprites.'
                         },
                         {
                             type = 'number',
-                            name = 'size',
+                            name = 'maxsprites',
                             default = '1000',
                             description = 'The max number of sprites.'
                         },
@@ -1680,7 +1730,7 @@ return {
                             type = 'SpriteBatchUsage',
                             name = 'usage',
                             default = '"dynamic"',
-                            description = 'The expected usage of the SpriteBatch.'
+                            description = 'The expected usage of the SpriteBatch. The specified usage mode affects the SpriteBatch\'s memory usage and performance.'
                         }
                     },
                     returns = {
