@@ -213,7 +213,7 @@ return {
                                 {
                                     type = 'boolean',
                                     name = 'highdpi',
-                                    description = 'True if high-dpi mode is allowed on Retina displays in OS X. Does nothing on non-Retina displays.'
+                                    description = 'True if high-dpi mode should be used on Retina displays in OS X and iOS. Does nothing on non-Retina displays. Added in 0.9.1.'
                                 },
                                 {
                                     type = 'number',
