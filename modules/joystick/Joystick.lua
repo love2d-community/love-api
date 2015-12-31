@@ -1,8 +1,10 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'joystick',
     description = 'Provides an interface to the user\'s joystick.',
     types = {
-        require('modules.joystick.types.Joystick')
+        require(path .. 'types.Joystick')
     },
     functions = {
         {
@@ -170,9 +172,9 @@ return {
         }
     },
     enums = {
-        require('modules.joystick.enums.GamepadAxis'),
-        require('modules.joystick.enums.GamepadButton'),
-        require('modules.joystick.enums.JoystickHat'),
-        require('modules.joystick.enums.JoystickInputType')
+        require(path .. 'enums.GamepadAxis'),
+        require(path .. 'enums.GamepadButton'),
+        require(path .. 'enums.JoystickHat'),
+        require(path .. 'enums.JoystickInputType')
     }
 }

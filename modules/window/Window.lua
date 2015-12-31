@@ -1,3 +1,5 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'window',
     description = 'Provides an interface for modifying and retrieving information about the program\'s window.',
@@ -753,6 +755,6 @@ return {
         }
     },
     enums = {
-        require('modules.window.enums.FullscreenType')
+        require(path .. 'enums.FullscreenType')
     }
 }

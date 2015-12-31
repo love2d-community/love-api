@@ -1,10 +1,12 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'math',
     description = 'Provides system-independent mathematical functions.',
     types = {
-        require('modules.math.types.BezierCurve'),
-        require('modules.math.types.CompressedData'),
-        require('modules.math.types.RandomGenerator')
+        require(path .. 'types.BezierCurve'),
+        require(path .. 'types.CompressedData'),
+        require(path .. 'types.RandomGenerator')
     },
     functions = {
         {
@@ -826,6 +828,6 @@ return {
         }
     },
     enums = {
-        require('modules.math.enums.CompressedDataFormat')
+        require(path .. 'enums.CompressedDataFormat')
     }
 }

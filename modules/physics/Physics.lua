@@ -1,27 +1,29 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'physics',
     description = 'Can simulate 2D rigid body physics in a realistic manner. This module is based on Box2D, and this API corresponds to the Box2D API as closely as possible.',
     types = {
-        require('modules.physics.types.Body'),
-        require('modules.physics.types.ChainShape'),
-        require('modules.physics.types.CircleShape'),
-        require('modules.physics.types.Contact'),
-        require('modules.physics.types.EdgeShape'),
-        require('modules.physics.types.DistanceJoint'),
-        require('modules.physics.types.Fixture'),
-        require('modules.physics.types.FrictionJoint'),
-        require('modules.physics.types.GearJoint'),
-        require('modules.physics.types.Joint'),
-        require('modules.physics.types.MouseJoint'),
-        require('modules.physics.types.PolygonShape'),
-        require('modules.physics.types.PrismaticJoint'),
-        require('modules.physics.types.PulleyJoint'),
-        require('modules.physics.types.RevoluteJoint'),
-        require('modules.physics.types.RopeJoint'),
-        require('modules.physics.types.Shape'),
-        require('modules.physics.types.WeldJoint'),
-        require('modules.physics.types.WheelJoint'),
-        require('modules.physics.types.World')
+        require(path .. 'types.Body'),
+        require(path .. 'types.ChainShape'),
+        require(path .. 'types.CircleShape'),
+        require(path .. 'types.Contact'),
+        require(path .. 'types.EdgeShape'),
+        require(path .. 'types.DistanceJoint'),
+        require(path .. 'types.Fixture'),
+        require(path .. 'types.FrictionJoint'),
+        require(path .. 'types.GearJoint'),
+        require(path .. 'types.Joint'),
+        require(path .. 'types.MouseJoint'),
+        require(path .. 'types.PolygonShape'),
+        require(path .. 'types.PrismaticJoint'),
+        require(path .. 'types.PulleyJoint'),
+        require(path .. 'types.RevoluteJoint'),
+        require(path .. 'types.RopeJoint'),
+        require(path .. 'types.Shape'),
+        require(path .. 'types.WeldJoint'),
+        require(path .. 'types.WheelJoint'),
+        require(path .. 'types.World')
     },
     functions = {
         {
@@ -1038,8 +1040,8 @@ return {
         }
     },
     enums = {
-        require('modules.physics.enums.BodyType'),
-        require('modules.physics.enums.JointType'),
-        require('modules.physics.enums.ShapeType')
+        require(path .. 'enums.BodyType'),
+        require(path .. 'enums.JointType'),
+        require(path .. 'enums.ShapeType')
     }
 }

@@ -1,3 +1,5 @@
+local path = (...):match('(.-)[^%.]+$') .. '.' 
+
 return {
     name = 'event',
     description = 'Manages events, like keypresses.',
@@ -122,6 +124,6 @@ return {
         }
     },
     enums = {
-        require('modules.event.enums.Event')
+        require(path .. 'enums.Event')
     }
 }

@@ -1,3 +1,5 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'keyboard',
     description = 'Provides an interface to the user\'s keyboard.',
@@ -178,6 +180,6 @@ return {
         }
     },
     enums = {
-        require('modules.keyboard.enums.KeyConstant')
+        require(path .. 'enums.KeyConstant')
     }
 }

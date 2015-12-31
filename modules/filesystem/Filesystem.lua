@@ -1,9 +1,11 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'filesystem',
     description = 'Provides an interface to the user\'s filesystem.',
     types = {
-        require('modules.filesystem.types.File'),
-        require('modules.filesystem.types.FileData')
+        require(path .. 'types.File'),
+        require(path .. 'types.FileData')
     },
     functions = {
         {
@@ -729,8 +731,8 @@ return {
         }
     },
     enums = {
-        require('modules.filesystem.enums.BufferMode'),
-        require('modules.filesystem.enums.FileDecoder'),
-        require('modules.filesystem.enums.FileMode')
+        require(path .. 'enums.BufferMode'),
+        require(path .. 'enums.FileDecoder'),
+        require(path .. 'enums.FileMode')
     }
 }
