@@ -1,3 +1,5 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'system',
     description = 'Provides access to information about the user\'s system.',
@@ -127,6 +129,6 @@ return {
         }
     },
     enums = {
-        require('modules.system.enums.PowerState')
+        require(path .. 'enums.PowerState')
     }
 }

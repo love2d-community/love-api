@@ -1,3 +1,5 @@
+local path = (...):match('(.-)[^%.]+$')
+
 return {
     functions = {
         {
@@ -32,23 +34,23 @@ return {
         }
     },
     modules = {
-        require('modules.audio.Audio'),
-        require('modules.event.Event'),
-        require('modules.filesystem.Filesystem'),
-        require('modules.graphics.Graphics'),
-        require('modules.image.Image'),
-        require('modules.joystick.Joystick'),
-        require('modules.keyboard.Keyboard'),
-        require('modules.math.Math'),
-        require('modules.mouse.Mouse'),
-        require('modules.physics.Physics'),
-        require('modules.sound.Sound'),
-        require('modules.system.System'),
-        require('modules.thread.Thread'),
-        require('modules.timer.Timer'),
-        require('modules.touch.Touch'),
-        require('modules.video.Video'),
-        require('modules.window.Window')
+        require(path .. 'modules.audio.Audio'),
+        require(path .. 'modules.event.Event'),
+        require(path .. 'modules.filesystem.Filesystem'),
+        require(path .. 'modules.graphics.Graphics'),
+        require(path .. 'modules.image.Image'),
+        require(path .. 'modules.joystick.Joystick'),
+        require(path .. 'modules.keyboard.Keyboard'),
+        require(path .. 'modules.math.Math'),
+        require(path .. 'modules.mouse.Mouse'),
+        require(path .. 'modules.physics.Physics'),
+        require(path .. 'modules.sound.Sound'),
+        require(path .. 'modules.system.System'),
+        require(path .. 'modules.thread.Thread'),
+        require(path .. 'modules.timer.Timer'),
+        require(path .. 'modules.touch.Touch'),
+        require(path .. 'modules.video.Video'),
+        require(path .. 'modules.window.Window')
     },
     types = {
         {

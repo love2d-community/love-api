@@ -1,8 +1,10 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'mouse',
     description = 'Provides an interface to the user\'s mouse.',
     types = {
-        require('modules.mouse.types.Cursor')
+        require(path .. 'types.Cursor')
     },
     functions = {
         {
@@ -398,6 +400,6 @@ return {
         }
     },
     enums = {
-        require('modules.mouse.enums.CursorType')
+        require(path .. 'enums.CursorType')
     }
 }

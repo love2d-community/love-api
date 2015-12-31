@@ -1,9 +1,11 @@
+local path = (...):match('(.-)[^%.]+$') .. '.'
+
 return {
     name = 'sound',
     description = 'This module is responsible for decoding sound files. It can\'t play the sounds, see love.audio for that.',
     types = {
-        require('modules.sound.types.Decoder'),
-        require('modules.sound.types.SoundData')
+        require(path .. 'types.Decoder'),
+        require(path .. 'types.SoundData')
     },
     functions = {
         {
