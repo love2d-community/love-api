@@ -1,6 +1,6 @@
 return {
     name = 'Thread',
-    description = 'A Thread is a chunk of code that can run in parallel with other threads.\n\nThreads will place all Lua errors in "error". To retrieve the error, call Thread:get(\'error\') in the main thread.',
+    description = 'A Thread is a chunk of code that can run in parallel with other threads. Data can be sent between different threads with Channel objects.',
     constructors = {
         'newThread'
     },
