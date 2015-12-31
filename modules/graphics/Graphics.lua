@@ -2858,7 +2858,7 @@ return {
                             type = 'number',
                             name = 'value',
                             default = '1',
-                            description = 'The new stencil value to use for pixels if the "replace" stencil action is used. Must be between 0 and 255.'
+                            description = 'The new stencil value to use for pixels if the "replace" stencil action is used. Has no effect with other stencil actions. Must be between 0 and 255.'
                         },
                         {
                             type = 'boolean',
