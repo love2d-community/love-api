@@ -9,8 +9,8 @@ The API information is updated manually based on the [LÖVE-Wiki](https://love2d
 Contributions are more than welcome!
 
 # Versions
-- The master branch currently contains the most recent documentation for LÖVE [0.9.2](https://love2d.org/wiki/0.9.2)
-- The develop branch contains the most recent documentation, is constantly updated and currently moves towards LÖVE [0.10.0](https://love2d.org/wiki/0.10.0)
+- The master branch contains the most recent documentation, is constantly updated and currently moves towards LÖVE [0.10.1](https://love2d.org/wiki/0.10.1)
+- You can find the documentation for older versions by checking the [releases](https://github.com/rm-code/love-api/releases).
 
 ## Projects using the LÖVE-API
 
