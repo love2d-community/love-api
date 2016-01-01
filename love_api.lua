@@ -1,3 +1,5 @@
+local path = (...):match('(.-)[^%.]+$')
+
 return {
     functions = {
         {
@@ -32,21 +34,23 @@ return {
         }
     },
     modules = {
-        require('modules.Audio'),
-        require('modules.Event'),
-        require('modules.Filesystem'),
-        require('modules.Graphics'),
-        require('modules.Image'),
-        require('modules.Joystick'),
-        require('modules.Keyboard'),
-        require('modules.Math'),
-        require('modules.Mouse'),
-        require('modules.Physics'),
-        require('modules.Sound'),
-        require('modules.System'),
-        require('modules.Thread'),
-        require('modules.Timer'),
-        require('modules.Window'),
+        require(path .. 'modules.audio.Audio'),
+        require(path .. 'modules.event.Event'),
+        require(path .. 'modules.filesystem.Filesystem'),
+        require(path .. 'modules.graphics.Graphics'),
+        require(path .. 'modules.image.Image'),
+        require(path .. 'modules.joystick.Joystick'),
+        require(path .. 'modules.keyboard.Keyboard'),
+        require(path .. 'modules.math.Math'),
+        require(path .. 'modules.mouse.Mouse'),
+        require(path .. 'modules.physics.Physics'),
+        require(path .. 'modules.sound.Sound'),
+        require(path .. 'modules.system.System'),
+        require(path .. 'modules.thread.Thread'),
+        require(path .. 'modules.timer.Timer'),
+        require(path .. 'modules.touch.Touch'),
+        require(path .. 'modules.video.Video'),
+        require(path .. 'modules.window.Window')
     },
     types = {
         {
@@ -156,6 +160,21 @@ return {
     },
     callbacks = {
         {
+            name = 'directorydropped',
+            description = 'Callback function triggered when a directory is dragged and dropped onto the window.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'The full platform-dependent path to the directory. It can be used as an argument to love.filesystem.mount, in order to gain read access to the directory with love.filesystem.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'draw',
             description = 'Callback function used to draw on the screen every frame.',
             variants = {
@@ -172,6 +191,21 @@ return {
                             type = 'string',
                             name = 'msg',
                             description = 'The error message.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'filedropped',
+            description = 'Callback function triggered when a file is dragged and dropped onto the window.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'File',
+                            name = 'file',
+                            description = 'The unopened File object representing the file that was dropped.'
                         }
                     }
                 }
@@ -374,7 +408,7 @@ return {
         },
         {
             name = 'keypressed',
-            description = 'Callback function triggered when a key is pressed.\n\nKey repeat needs to be enabled with love.keyboard.setKeyRepeat for repeat keypress events to be received.',
+            description = 'Callback function triggered when a key is pressed.',
             variants = {
                 {
                     arguments = {
@@ -382,6 +416,11 @@ return {
                             type = 'KeyConstant',
                             name = 'key',
                             description = 'Character of the key pressed.'
+                        },
+                        {
+                            type = 'Scancode',
+                            name = 'scancode',
+                            description = 'The scancode representing the key that was pressed.'
                         },
                         {
                             type = 'boolean',
@@ -394,7 +433,7 @@ return {
         },
         {
             name = 'keyreleased',
-            description = 'Callback function triggered when a key is released.',
+            description = 'Callback function triggered when a keyboard key is released.',
             variants = {
                 {
                     arguments = {
@@ -402,6 +441,20 @@ return {
                             type = 'KeyConstant',
                             name = 'key',
                             description = 'Character of the key released.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'KeyConstant',
+                            name = 'key',
+                            description = 'Character of the key released.'
+                        },
+                        {
+                            type = 'Scancode',
+                            name = 'scancode',
+                            description = 'The scancode representing the key that was released.'
                         }
                     }
                 }
@@ -420,6 +473,13 @@ return {
                         }
                     }
                 }
+            }
+        },
+        {
+            name = 'lowmemory',
+            description = 'Callback function triggered when the system is running out of memory on mobile devices.\n\n Mobile operating systems may forcefully kill the game if it uses too much memory, so any non-critical resource should be removed if possible (by setting all variables referencing the resources to nil, and calling collectgarbage()), when this event is triggered. Sounds and images in particular tend to use the most memory.',
+            variants = {
+                {}
             }
         },
         {
@@ -476,17 +536,22 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'Mouse x position.'
+                            description = 'Mouse x position, in pixels.'
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'Mouse y position.'
+                            description = 'Mouse y position, in pixels.'
                         },
                         {
-                            type = 'MouseConstant',
+                            type = 'number',
                             name = 'button',
-                            description = 'Mouse button pressed.'
+                            description = 'The button index that was pressed. 1 is the primary button (usually left-click), 2 is the secondary button, etc.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'isTouch',
+                            description = 'True if the mouse button press originated from a touchscreen touch-press.'
                         }
                     }
                 }
@@ -501,17 +566,22 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'Mouse x position.'
+                            description = 'Mouse x position, in pixels.'
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'Mouse y position.'
+                            description = 'Mouse y position, in pixels.'
                         },
                         {
-                            type = 'MouseConstant',
+                            type = 'number',
                             name = 'button',
-                            description = 'Mouse button released.'
+                            description = 'The button index that was released. 1 is the primary button (usually left-click), 2 is the secondary button, etc.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'isTouch',
+                            description = 'True if the mouse button press originated from a touchscreen touch-release.'
                         }
                     }
                 }
@@ -560,6 +630,31 @@ return {
             }
         },
         {
+            name = 'textedited',
+            description = 'Called when the candidate text for an IME (Input Method Editor) has changed.\n\nThe candidate text is not the final text that the user will eventually choose. Use love.textinput for that.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'text',
+                            description = 'The UTF-8 encoded unicode candidate text.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'start',
+                            description = 'The start cursor of the selected candidate text.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'length',
+                            description = 'The length of the selected candidate text. May be 0.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'textinput',
             description = 'Called when text has been entered by the user. For example if shift-2 is pressed on an American keyboard layout, the text "@" will be generated.',
             variants = {
@@ -595,6 +690,96 @@ return {
             }
         },
         {
+            name = 'touchmoved',
+            description = 'Callback function triggered when a touch press moves inside the touch screen.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'light userdata',
+                            name = 'id',
+                            description = 'The identifier for the touch press.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'pressure',
+                            description = 'The amount of pressure being applied. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'touchpressed',
+            description = 'Callback function triggered when the touch screen is touched.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'light userdata',
+                            name = 'id',
+                            description = 'The identifier for the touch press.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'pressure',
+                            description = 'The amount of pressure being applied. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'touchreleased',
+            description = 'Callback function triggered when the touch screen stops being touched.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'light userdata',
+                            name = 'id',
+                            description = 'The identifier for the touch press.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis position of the touch press inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'pressure',
+                            description = 'The amount of pressure being applied. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'update',
             description = 'Callback function triggered when a key is pressed.',
             variants = {
@@ -619,6 +804,26 @@ return {
                             type = 'boolean',
                             name = 'v',
                             description = 'Window visibility.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'wheelmoved',
+            description = 'Callback function triggered when the mouse wheel is moved.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'Amount of horizontal mouse wheel movement. Positive values indicate movement to the right.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'Amount of vertical mouse wheel movement. Positive values indicate upward movement.'
                         }
                     }
                 }
