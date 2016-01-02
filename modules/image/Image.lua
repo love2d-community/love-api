@@ -10,7 +10,7 @@ return {
     functions = {
         {
             name = 'isCompressed',
-            description = 'Determines whether a file can be loaded as CompressedData.',
+            description = 'Determines whether a file can be loaded as CompressedImageData.',
             variants = {
                 {
                     arguments = {
@@ -24,7 +24,7 @@ return {
                         {
                             type = 'boolean',
                             name = 'compressed',
-                            description = 'Whether the file can be loaded as CompressedData or not.'
+                            description = 'Whether the file can be loaded as CompressedImageData or not.'
                         }
                     }
                 },
@@ -40,7 +40,7 @@ return {
                         {
                             type = 'boolean',
                             name = 'compressed',
-                            description = 'Whether the FileData can be loaded as CompressedData or not.'
+                            description = 'Whether the FileData can be loaded as CompressedImageData or not.'
                         }
                     }
                 }
