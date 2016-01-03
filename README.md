@@ -18,3 +18,4 @@ Contributions are more than welcome!
 - [LÖVE Atom](https://atom.io/packages/love-atom) - Snippets and autocompletion for [Atom](https://atom.io/)
 - [LÖVE Hints](https://gitlab.com/sdonalcreative/brackets-love-hints/) - Snippets, code hints and autocompletion for [Brackets](http://brackets.io/)
 - [LÖVE-IDEA](https://github.com/rm-code/love-IDEA-plugin) - Snippets and code completion for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+- [Vim LOVE Docs](https://github.com/davisdude/vim-love-docs) - Syntax highlighting for [Vim](http://www.vim.org).
