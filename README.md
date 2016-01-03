@@ -10,7 +10,7 @@ Contributions are more than welcome!
 
 # Versions
 - The master branch contains the most recent documentation, is constantly updated and currently moves towards LÖVE [0.10.1](https://love2d.org/wiki/0.10.1)
-- You can find the documentation for older versions by checking the [releases](https://github.com/rm-code/love-api/releases).
+- You can find the documentation for older versions by checking the [releases](https://github.com/rm-code/love-api/releases)
 
 ## Projects using the LÖVE-API
 
@@ -18,4 +18,4 @@ Contributions are more than welcome!
 - [LÖVE Atom](https://atom.io/packages/love-atom) - Snippets and autocompletion for [Atom](https://atom.io/)
 - [LÖVE Hints](https://gitlab.com/sdonalcreative/brackets-love-hints/) - Snippets, code hints and autocompletion for [Brackets](http://brackets.io/)
 - [LÖVE-IDEA](https://github.com/rm-code/love-IDEA-plugin) - Snippets and code completion for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-- [Vim LOVE Docs](https://github.com/davisdude/vim-love-docs) - Syntax highlighting for [Vim](http://www.vim.org).
+- [Vim LOVE Docs](https://github.com/davisdude/vim-love-docs) - Syntax highlighting for [Vim](http://www.vim.org)
