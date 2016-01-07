@@ -133,7 +133,7 @@ return {
                         {
                             type = 'number',
                             name = 'button',
-                            description = 'The index of a button to check. 1 is the primary mouse button, 2 is the secondary mouse button, etc.'
+                            description = 'The index of a button to check. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependant.'
                         },
                         {
                             type = 'number',
