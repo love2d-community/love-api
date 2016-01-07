@@ -1,6 +1,6 @@
 return {
     name = 'GraphicsLimit',
-    description = 'Types of system-dependent graphics limits checked for using love.graphics.getSystemLimit.',
+    description = 'Types of system-dependent graphics limits checked for using love.graphics.getSystemLimits.',
     constants = {
         {
             name = 'pointsize',
