@@ -286,7 +286,7 @@ return {
         },
         {
             name = 'isDown',
-            description = 'Checks if a button on the Joystick is pressed.',
+            description = 'Checks if a button on the Joystick is pressed.\n\nLÖVE 0.9.0 had a bug which required the button indices passed to Joystick:isDown to be 0-based instead of 1-based, for example button 1 would be 0 for this function. It was fixed in 0.9.1.',
             variants = {
                 {
                     arguments = {
