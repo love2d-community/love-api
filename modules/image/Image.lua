@@ -105,6 +105,32 @@ return {
                         {
                             type = 'ImageData',
                             name = 'imageData',
+                            description = 'The new blank ImageData object. Each pixel\'s color values, (including the alpha values!) will be set to zero.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'width',
+                            description = 'The width of the ImageData.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'The height of the ImageData.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'data',
+                            description = 'The data to load into the ImageData.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'ImageData',
+                            name = 'imageData',
                             description = 'The new ImageData object.'
                         }
                     }
@@ -128,25 +154,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'File',
-                            name = 'file',
-                            description = 'A File pointing to an image.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'ImageData',
-                            name = 'imageData',
-                            description = 'The new ImageData object.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Data',
-                            name = 'data',
-                            description = 'The encoded data to decode into image data.'
+                            type = 'FileData',
+                            name = 'filedata',
+                            description = 'The encoded file data to decode into image data.'
                         }
                     },
                     returns = {
