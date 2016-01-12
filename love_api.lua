@@ -415,12 +415,12 @@ return {
                         {
                             type = 'KeyConstant',
                             name = 'key',
-                            description = 'Character of the key pressed.'
+                            description = 'Character of the pressed key.'
                         },
                         {
                             type = 'Scancode',
                             name = 'scancode',
-                            description = 'The scancode representing the key that was pressed.'
+                            description = 'The scancode representing the pressed key.'
                         },
                         {
                             type = 'boolean',
@@ -440,7 +440,7 @@ return {
                         {
                             type = 'KeyConstant',
                             name = 'key',
-                            description = 'Character of the key released.'
+                            description = 'Character of the released key.'
                         }
                     }
                 },
@@ -449,12 +449,12 @@ return {
                         {
                             type = 'KeyConstant',
                             name = 'key',
-                            description = 'Character of the key released.'
+                            description = 'Character of the released key.'
                         },
                         {
                             type = 'Scancode',
                             name = 'scancode',
-                            description = 'The scancode representing the key that was released.'
+                            description = 'The scancode representing the released key.'
                         }
                     }
                 }
