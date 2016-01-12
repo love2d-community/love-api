@@ -491,7 +491,7 @@ return {
                         {
                             type = 'boolean',
                             name = 'f',
-                            description = 'Window mouse focus.'
+                            description = 'Wether the window has mouse focus or not.'
                         }
                     }
                 }
