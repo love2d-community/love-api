@@ -168,7 +168,203 @@ return {
                         {
                             type = 'table',
                             name = 'defaults',
-                            description = 'A table filled with all the default values which you can overwrite to your liking.'
+                            description = 'A table filled with all the default values which you can overwrite to your liking.',
+                            table = {
+                                {
+                                    type = 'string',
+                                    name = 'identity',
+                                    description = 'The name of the save directory.'
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'version',
+                                    description = 'The LÖVE version this game was made for'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'console',
+                                    description = 'Attach a console.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'accelerometerjoystick',
+                                    description = 'Enable the accelerometer on iOS and Android by exposing it as a Joystick.'
+                                },
+                                { 
+                                    type = 'table',
+                                    name = 'window',
+                                    description = 'Window options.',
+                                    table = {
+                                        { 
+                                            type = 'string',
+                                            name = 'title'
+                                            description = 'The window title.'
+                                        },
+                                        {
+                                            type = 'string',
+                                            name = 'icon',
+                                            description = 'Filepath to an image to use as the window\'s icon.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'width',
+                                            description = 'The window width.'
+                                        },
+                                        {
+                                            type = 'string',
+                                            name = 'height',
+                                            description = 'The window height.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'borderless',
+                                            description = 'Remove all border visuals from the window.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'resizable',
+                                            description = 'Let the window be user-resizable.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'minwidth',
+                                            description = 'Minimum window width if the window is resizable.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'minwidth',
+                                            description = 'Minimum window height if the window is resizable.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'fullscreen',
+                                            description = 'Enable fullscreen.'
+                                        },
+                                        {
+                                            type = 'string',
+                                            name = 'fullscreentype',
+                                            description = 'Choose between "desktop" fullscreen or "exclusive" fullscreen mode.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'vsync',
+                                            description = 'Enable vertical sync.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'msaa',
+                                            description = 'The number of samples to use with multi-sampled antialiasing.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'display',
+                                            description = 'Index of the moniter to show the window in.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'highdpi',
+                                            description = 'Enable high-dpi mode for the window on a Retina display.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'x',
+                                            description = 'The x-coordinate of the window\'s position in the specified display.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'y',
+                                            description = 'The y-coordinate of the window\'s position in the specified display.'
+                                        },
+                                    }
+                                },
+                                { 
+                                    type = 'table',
+                                    name = 'modules',
+                                    description = 'Module options.',
+                                    table = {
+                                        { 
+                                            type = 'boolean',
+                                            name = 'audio'
+                                            description = 'Enable the audio module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'event',
+                                            description = 'Enable the event module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'graphics',
+                                            description = 'Enable the graphics module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'image',
+                                            description = 'Enable the image module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'joystick',
+                                            description = 'Enable the joystick module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'keyboard',
+                                            description = 'Enable the keyboard module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'math',
+                                            description = 'Enable the math module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'mouse',
+                                            description = 'Enable the mouse module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'physics',
+                                            description = 'Enable the physics module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'sound',
+                                            description = 'Enable the sound module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'system',
+                                            description = 'Enable the system module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'timer',
+                                            description = 'Enable the timer module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'touch',
+                                            description = 'Enable the touch module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'video',
+                                            description = 'Enable the video module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'window',
+                                            description = 'Enable the window module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'thread',
+                                            description = 'Enable the thread module.'
+                                        },
+                                    }
+                                }
+                            }
                         }
                     }
                 }
