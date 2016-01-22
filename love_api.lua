@@ -158,7 +158,241 @@ return {
             }
         }
     },
-    callbacks = {
+    config = {
+		name = 'conf',
+		description = 'If a file called conf.lua is present in your game folder (or .love file), it is run before the LÖVE modules are loaded. You can use this file to overwrite the love.conf function, which is later called by the LÖVE \'boot\' script. Using the love.conf function, you can set some configuration options, and change things like the default size of the window, which modules are loaded, and other stuff.',
+		{
+			type = 'string',
+			name = 'identity',
+			default = 'nil',
+			description = 'The name of the save directory.'
+		},
+		{
+			type = 'string',
+			name = 'version',
+			default = '"0.10.0"',
+			description = 'The LÖVE version this game was made for'
+		},
+		{
+			type = 'boolean',
+			name = 'console',
+			default = 'false',
+			description = 'Attach a console.'
+		},
+		{
+			type = 'boolean',
+			name = 'accelerometerjoystick',
+			default = 'true',
+			description = 'Enable the accelerometer on iOS and Android by exposing it as a Joystick.'
+		},
+		{ 
+			type = 'table',
+			name = 'window',
+			description = 'Window options.',
+			table = {
+				{ 
+					type = 'string',
+					name = 'title',
+					default = '"Untitled"',
+					description = 'The window title.'
+				},
+				{
+					type = 'string',
+					name = 'icon',
+					default = 'nil',
+					description = 'Filepath to an image to use as the window\'s icon.'
+				},
+				{
+					type = 'number',
+					name = 'width',
+					default = '800',
+					description = 'The window width.'
+				},
+				{
+					type = 'string',
+					name = 'height',
+					default = '600',
+					description = 'The window height.'
+				},
+				{
+					type = 'boolean',
+					name = 'borderless',
+					default = 'false',
+					description = 'Remove all border visuals from the window.'
+				},
+				{
+					type = 'boolean',
+					name = 'resizable',
+					default = 'false',
+					description = 'Let the window be user-resizable.'
+				},
+				{
+					type = 'number',
+					name = 'minwidth',
+					default = '1',
+					description = 'Minimum window width if the window is resizable.'
+				},
+				{
+					type = 'number',
+					name = 'minwidth',
+					default = '1',
+					description = 'Minimum window height if the window is resizable.'
+				},
+				{
+					type = 'boolean',
+					name = 'fullscreen',
+					default = 'false',
+					description = 'Enable fullscreen.'
+				},
+				{
+					type = 'string',
+					name = 'fullscreentype',
+					default = '"desktop"',
+					description = 'Choose between "desktop" fullscreen or "exclusive" fullscreen mode.'
+				},
+				{
+					type = 'boolean',
+					name = 'vsync',
+					default = 'true',
+					description = 'Enable vertical sync.'
+				},
+				{
+					type = 'number',
+					name = 'msaa',
+					default = '0',
+					description = 'The number of samples to use with multi-sampled antialiasing.'
+				},
+				{
+					type = 'number',
+					name = 'display',
+					default = '1',
+					description = 'Index of the moniter to show the window in.'
+				},
+				{
+					type = 'boolean',
+					name = 'highdpi',
+					default = 'false',
+					description = 'Enable high-dpi mode for the window on a Retina display.'
+				},
+				{
+					type = 'number',
+					name = 'x',
+					default = 'nil',
+					description = 'The x-coordinate of the window\'s position in the specified display.'
+				},
+				{
+					type = 'number',
+					name = 'y',
+					defalt = 'nil',
+					description = 'The y-coordinate of the window\'s position in the specified display.'
+				},
+			}
+		},
+		{ 
+			type = 'table',
+			name = 'modules',
+			description = 'Module options.',
+			table = {
+				{ 
+					type = 'boolean',
+					name = 'audio',
+					default = 'true',
+					description = 'Enable the audio module.'
+				},
+				{
+					type = 'boolean',
+					name = 'event',
+					default = 'true',
+					description = 'Enable the event module.'
+				},
+				{
+					type = 'boolean',
+					name = 'graphics',
+					default = 'true',
+					description = 'Enable the graphics module.'
+				},
+				{
+					type = 'boolean',
+					name = 'image',
+					default = 'true',
+					description = 'Enable the image module.'
+				},
+				{
+					type = 'boolean',
+					name = 'joystick',
+					default = 'true',
+					description = 'Enable the joystick module.'
+				},
+				{
+					type = 'boolean',
+					name = 'keyboard',
+					default = 'true',
+					description = 'Enable the keyboard module.'
+				},
+				{
+					type = 'boolean',
+					name = 'math',
+					default = 'true',
+					description = 'Enable the math module.'
+				},
+				{
+					type = 'boolean',
+					name = 'mouse',
+					default = 'true',
+					description = 'Enable the mouse module.'
+				},
+				{
+					type = 'boolean',
+					name = 'physics',
+					default = 'true',
+					description = 'Enable the physics module.'
+				},
+				{
+					type = 'boolean',
+					name = 'sound',
+					default = 'true',
+					description = 'Enable the sound module.'
+				},
+				{
+					type = 'boolean',
+					name = 'system',
+					default = 'true',
+					description = 'Enable the system module.'
+				},
+				{
+					type = 'boolean',
+					name = 'timer',
+					default = 'true',
+					description = 'Enable the timer module.'
+				},
+				{
+					type = 'boolean',
+					name = 'touch',
+					default = 'true',
+					description = 'Enable the touch module.'
+				},
+				{
+					type = 'boolean',
+					name = 'video',
+					default = 'true',
+					description = 'Enable the video module.'
+				},
+				{
+					type = 'boolean',
+					name = 'window',
+					default = 'true',
+					description = 'Enable the window module.'
+				},
+				{
+					type = 'boolean',
+					name = 'thread',
+					default = 'true',
+					description = 'Enable the thread module.'
+				},
+			}
+		}
+	},
+	callbacks = {
         {
             name = 'directorydropped',
             description = 'Callback function triggered when a directory is dragged and dropped onto the window.',
