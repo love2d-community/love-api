@@ -595,7 +595,7 @@ return {
         },
         {
             name = 'setVertices',
-            description = 'Replaces all vertices in the Mesh with new ones.',
+            description = 'Replaces a range of vertices in the Mesh with new ones. The total number of vertices in a Mesh cannot be changed after it has been created.',
             variants = {
                 {
                     arguments = {
