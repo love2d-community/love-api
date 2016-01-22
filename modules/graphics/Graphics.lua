@@ -430,6 +430,11 @@ return {
                             type = 'BlendMode',
                             name = 'mode',
                             description = 'The current blend mode.'
+                        },
+                        {
+                            type = 'BlendAlphaMode',
+                            name = 'alphamode',
+                            description = 'The current blend alpha mode – it determines how the alpha of drawn objects affects blending.'
                         }
                     }
                 }
