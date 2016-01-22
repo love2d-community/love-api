@@ -157,7 +157,7 @@ return {
                 }
             }
         }
-    }, 
+    },
 	config = {
 		name = 'conf',
 		description = 'If a file called conf.lua is present in your game folder (or .love file), it is run before the LÖVE modules are loaded. You can use this file to overwrite the love.conf function, which is later called by the LÖVE \'boot\' script. Using the love.conf function, you can set some configuration options, and change things like the default size of the window, which modules are loaded, and other stuff.',
