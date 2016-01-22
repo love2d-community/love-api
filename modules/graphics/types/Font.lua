@@ -200,7 +200,7 @@ return {
         },
         {
             name = 'setFallbacks',
-            description = 'Sets other Fonts to use if this Font doesn\'t have a specific character. When that happens, the glyph from the first fallback Font to have the character will be used, instead of a blank box or other \'no character\' symbol being used.',
+            description = 'Sets the fallback fonts. When the Font doesn\'t contain a glyph, it will substitute the glyph from the next subsequent fallback Fonts. This is akin to setting a "font stack" in Cascading Style Sheets (CSS).',
             variants = {
                 {
                     arguments = {
