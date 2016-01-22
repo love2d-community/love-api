@@ -192,7 +192,7 @@ return {
 			table = {
 				{ 
 					type = 'string',
-					name = 'title'
+					name = 'title',
 					default = '"Untitled"',
 					description = 'The window title.'
 				},
@@ -295,7 +295,7 @@ return {
 			table = {
 				{ 
 					type = 'boolean',
-					name = 'audio'
+					name = 'audio',
 					default = 'true',
 					description = 'Enable the audio module.'
 				},
