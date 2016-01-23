@@ -937,12 +937,22 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x-axis position of the touch press inside the window, in pixels.'
+                            description = 'The x-axis position of the touch inside the window, in pixels.'
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y-axis position of the touch press inside the window, in pixels.'
+                            description = 'The y-axis position of the touch inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'dx',
+                            description = 'The x-axis movement of the touch inside the window, in pixels.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'dy',
+                            description = 'The y-axis movement of the touch inside the window, in pixels.'
                         },
                         {
                             type = 'number',
