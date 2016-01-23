@@ -11,22 +11,22 @@ return {
                         {
                             type = 'number',
                             name = 'major',
-                            description = 'The major version of LÖVE, e.g. 0 for version 0.9.1.'
+                            description = 'The major version of LÖVE, i.e. 0 for version 0.9.1.'
                         },
                         {
                             type = 'number',
                             name = 'minor',
-                            description = 'The minor version of LÖVE, e.g. 9 for version 0.9.1.'
+                            description = 'The minor version of LÖVE, i.e. 9 for version 0.9.1.'
                         },
                         {
                             type = 'number',
                             name = 'revision',
-                            description = 'The revision version of LÖVE, e.g. 1 for version 0.9.1.'
+                            description = 'The revision version of LÖVE, i.e. 1 for version 0.9.1.'
                         },
                         {
                             type = 'string',
                             name = 'codename',
-                            description = 'The codename of the current version.'
+                            description = 'The codename of the current version, i.e. "Baby Inspector" for version 0.9.1.'
                         }
                     }
                 }
