@@ -186,6 +186,12 @@ return {
             description = 'Enable the accelerometer on iOS and Android by exposing it as a Joystick.'
         },
         {
+            type = 'boolean',
+            name = 'gammacorrect',
+            default = 'false',
+            description = 'Enable gamma-correct rendering, when supported by the system.'
+        },
+        {
             type = 'table',
             name = 'window',
             description = 'Window options.',
@@ -234,7 +240,7 @@ return {
                 },
                 {
                     type = 'number',
-                    name = 'minwidth',
+                    name = 'minheight',
                     default = '1',
                     description = 'Minimum window height if the window is resizable.'
                 },
