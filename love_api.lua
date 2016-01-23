@@ -986,6 +986,16 @@ return {
                         },
                         {
                             type = 'number',
+                            name = 'dx',
+                            description = 'The x-axis movement of the touch press inside the window, in pixels. This should always be zero.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'dy',
+                            description = 'The y-axis movement of the touch press inside the window, in pixels. This should always be zero.'
+                        },
+                        {
+                            type = 'number',
                             name = 'pressure',
                             description = 'The amount of pressure being applied. Most touch screens aren\'t pressure sensitive, in which case the pressure will be 1.'
                         }
