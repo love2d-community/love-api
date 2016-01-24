@@ -755,6 +755,7 @@ return {
         }
     },
     enums = {
-        require(path .. 'enums.FullscreenType')
+        require(path .. 'enums.FullscreenType'),
+        require(path .. 'enums.MessageBoxType')
     }
 }
