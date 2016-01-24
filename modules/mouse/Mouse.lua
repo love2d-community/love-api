@@ -127,46 +127,30 @@ return {
         {
             name = 'isDown',
             description = 'Checks whether a certain mouse button is down. This function does not detect mousewheel scrolling; you must use the love.wheelmoved (or love.mousepressed in version 0.9.2 and older) callback for that.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'button',
-                            description = 'The index of a button to check. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependant.'
+                variants = {
+                    {
+                        arguments = {
+                            {
+                                type = 'number',
+                                name = 'button',
+                                description = 'The index of a button to check. 1 is the primary mouse button, 2 is the secondary mouse button, etc.'
+                            },
+                            {
+                                type = 'number',
+                                name = '...',
+                                description = 'Additional button numbers to check.'
+                            }
                         },
-                        {
-                            type = 'number',
-                            name = '...',
-                            description = 'Additional button numbers to check.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'down',
-                            description = 'True if the specified button is down.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'MouseConstant',
-                            name = '...',
-                            description = 'A button to check.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'anyDown',
-                            description = 'True if any specified button is down, false otherwise.'
+                        returns = {
+                            {
+                                type = 'boolean',
+                                name = 'down',
+                                description = 'True if the specified button is down.'
+                            }
                         }
                     }
                 }
-            }
-        },
+            },
         {
             name = 'isGrabbed',
             description = 'Checks if the mouse is grabbed.',
