@@ -65,5 +65,8 @@ return {
                 }
             }
         }
+    },
+    supertypes = {
+        'Object'
     }
 }

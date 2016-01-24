@@ -167,6 +167,7 @@ return {
         }
     },
     supertypes = {
+        'Object',
         'Joint'
     }
 }
