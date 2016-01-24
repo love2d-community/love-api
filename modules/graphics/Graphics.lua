@@ -2605,22 +2605,6 @@ return {
             }
         },
         {
-            name = 'setInvertedStencil',
-            description = 'Defines an inverted stencil for the drawing operations or releases the active one.\n\nIt\'s the same as love.graphics.setStencil with the mask inverted.\n\nCalling the function without arguments releases the active stencil.',
-            variants = {
-                {},
-                {
-                    arguments = {
-                        {
-                            type = 'function',
-                            name = 'stencilFunction',
-                            description = 'Function that draws the stencil.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'setLineJoin',
             description = 'Sets the line join style.',
             variants = {
