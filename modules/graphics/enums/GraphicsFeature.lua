@@ -1,6 +1,6 @@
 return {
     name = 'GraphicsFeature',
-    description = 'Graphics features that can be checked for with love.graphics.getSupported (love.graphics.isSupported in versions prior to 0.10.0).',
+    description = 'Graphics features that can be checked for with love.graphics.getSupported.',
     constants = {
         {
             name = 'clampzero',
