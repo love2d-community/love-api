@@ -180,6 +180,7 @@ return {
         }
     },
     enums = {
-        require(path .. 'enums.KeyConstant')
+        require(path .. 'enums.KeyConstant'),
+        require(path .. 'enums.Scancode')
     }
 }
