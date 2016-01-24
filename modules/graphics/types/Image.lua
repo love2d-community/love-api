@@ -251,7 +251,8 @@ return         {
         }
     },
     supertypes = {
+        'Object',
         'Drawable',
-        'Object'
+        'Texture'
     }
 }
