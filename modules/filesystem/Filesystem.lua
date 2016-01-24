@@ -620,10 +620,10 @@ return {
                             description = 'The new identity that will be used as write directory.'
                         },
                         {
-                            type = 'SearchOrder',
-                            name = 'searchorder',
-                            default = '"first"',
-                            description = 'Whether love.filesystem will look for files in the write directory before or after looking in the main game source.'
+                            type = 'boolean',
+                            name = 'appendToPath',
+                            default = 'false',
+                            description = 'Whether the identity directory will be searched when reading a filepath before or after the game\'s source directory and any currently mounted archives.'
                         }
                     }
                 }
