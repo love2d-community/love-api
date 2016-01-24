@@ -59,9 +59,11 @@ return {
             variants = {
                 {
                     returns = {
-                        type = 'boolean',
-                        name = 'running',
-                        description = 'True if the thread is running, false otherwise.'
+                        {
+                            type = 'boolean',
+                            name = 'running',
+                            description = 'True if the thread is running, false otherwise.'
+                        }
                     }
                 }
             }
