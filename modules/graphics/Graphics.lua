@@ -12,7 +12,8 @@ return {
         require(path .. 'types.Quad'),
         require(path .. 'types.Shader'),
         require(path .. 'types.SpriteBatch'),
-        require(path .. 'types.Text')
+        require(path .. 'types.Text'),
+        require(path .. 'types.Texture')
     },
     functions = {
         {
