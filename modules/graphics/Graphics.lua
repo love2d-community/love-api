@@ -2949,8 +2949,10 @@ return {
     enums = {
         require(path .. 'enums.AlignMode'),
         require(path .. 'enums.AreaSpreadDistribution'),
+        require(path .. 'enums.BlendAlphaMode'),
         require(path .. 'enums.BlendMode'),
         require(path .. 'enums.CanvasFormat'),
+        require(path .. 'enums.CompareMode'),
         require(path .. 'enums.DrawMode'),
         require(path .. 'enums.FilterMode'),
         require(path .. 'enums.GraphicsFeature'),
@@ -2962,6 +2964,7 @@ return {
         require(path .. 'enums.PointStyle'),
         require(path .. 'enums.SpriteBatchUsage'),
         require(path .. 'enums.StackType'),
+        require(path .. 'enums.StencilAction'),
         require(path .. 'enums.TextureFormat'),
         require(path .. 'enums.WrapMode')
     }
