@@ -620,8 +620,9 @@ return {
                                     default = '1',
                                     description = 'The index of the first vertex to replace.'
                                 }
-                          }
-                     }
+							}
+						}
+					}
                 },
                 {
                     description = 'Sets the vertex components of a Mesh that wasn\'t created with a custom vertex format.',
