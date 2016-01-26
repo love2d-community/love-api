@@ -323,7 +323,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'is_dir',
+                            name = 'isDir',
                             description = 'True if there is a directory with the specified name. False otherwise.'
                         }
                     }
@@ -345,7 +345,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'is_file',
+                            name = 'isFile',
                             description = 'True if there is a file with the specified name. False otherwise.'
                         }
                     }
