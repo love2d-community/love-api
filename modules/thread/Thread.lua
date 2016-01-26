@@ -47,30 +47,14 @@ return {
         },
         {
             name = 'newThread',
-            description = 'Creates a new Thread from a File or Data object.',
+            description = 'Creates a new Thread.',
             variants = {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The name of the Lua File to use as source.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Thread',
-                            name = 'thread',
-                            description = 'A new Thread that has yet to be started.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'FileData',
-                            name = 'fileData',
-                            description = 'The FileData containing the Lua code to use as the source.'
+                            type = 'file',
+                            name = 'file',
+                            description = 'The file path/File/Data of the Lua File to use as source.'
                         }
                     },
                     returns = {

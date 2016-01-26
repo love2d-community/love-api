@@ -65,41 +65,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filename of the file to load.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'SoundData',
-                            name = 'soundData',
-                            description = 'A new SoundData object.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'File',
+                            type = 'file',
                             name = 'file',
-                            description = 'A File pointing to an audio file.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'SoundData',
-                            name = 'soundData',
-                            description = 'A new SoundData object.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Data',
-                            name = 'data',
-                            description = 'The encoded data to decode into audio.'
+                            description = 'The file path/File/FileData of the audio.'
                         }
                     },
                     returns = {

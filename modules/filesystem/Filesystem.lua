@@ -76,7 +76,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'ok',
+                            name = 'success',
                             description = 'True if the directory was created, false if not.'
                         }
                     }
@@ -323,7 +323,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'is_dir',
+                            name = 'isDir',
                             description = 'True if there is a directory with the specified name. False otherwise.'
                         }
                     }
@@ -345,7 +345,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'is_file',
+                            name = 'isFile',
                             description = 'True if there is a file with the specified name. False otherwise.'
                         }
                     }
@@ -550,6 +550,27 @@ return {
                             description = 'Your new FileData.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string or File',
+                            name = 'file',
+                            description = 'File to create FileData from.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'FileData',
+                            name = 'data',
+                            description = 'The new FileData, or nil if an error occurred.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'err',
+                            description = 'The error string, if an error occurred.'
+                        }
+                    }
                 }
             }
         },
@@ -601,7 +622,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'ok',
+                            name = 'success',
                             description = 'True if the file/directory was removed, false otherwise.'
                         }
                     }

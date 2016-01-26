@@ -377,24 +377,24 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'world_x',
+                            name = 'worldX',
                             description = 'The x position in world coordinates.'
                         },
                         {
                             type = 'number',
-                            name = 'world_y',
+                            name = 'worldY',
                             description = 'The y position in world coordinates.'
                         }
                     },
                     returns = {
                         {
                             type = 'number',
-                            name = 'local_x',
+                            name = 'localX',
                             description = 'The x position in local coordinates.'
                         },
                         {
                             type = 'number',
-                            name = 'local_y',
+                            name = 'localY',
                             description = 'The y position in local coordinates.'
                         }
                     }
@@ -409,24 +409,24 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'world_x',
+                            name = 'worldX',
                             description = 'The vector x component in world coordinates.'
                         },
                         {
                             type = 'number',
-                            name = 'world_y',
+                            name = 'worldY',
                             description = 'The vector y component in world coordinates.'
                         }
                     },
                     returns = {
                         {
                             type = 'number',
-                            name = 'local_x',
+                            name = 'localX',
                             description = 'The vector x component in local coordinates.'
                         },
                         {
                             type = 'number',
-                            name = 'local_y',
+                            name = 'localY',
                             description = 'The vector y component in local coordinates.'
                         }
                     }
@@ -571,24 +571,24 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'local_x',
+                            name = 'localX',
                             description = 'The x position in local coordinates.'
                         },
                         {
                             type = 'number',
-                            name = 'local_y',
+                            name = 'localY',
                             description = 'The y position in local coordinates.'
                         }
                     },
                     returns = {
                         {
                             type = 'number',
-                            name = 'world_x',
+                            name = 'worldX',
                             description = 'The x position in world coordinates.'
                         },
                         {
                             type = 'number',
-                            name = 'world_y',
+                            name = 'worldY',
                             description = 'The y position in world coordinates.'
                         }
                     }
@@ -665,24 +665,24 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'local_x',
+                            name = 'localX',
                             description = 'The vector x component in local coordinates.'
                         },
                         {
                             type = 'number',
-                            name = 'local_y',
+                            name = 'localY',
                             description = 'The vector y component in local coordinates.'
                         }
                     },
                     returns = {
                         {
                             type = 'number',
-                            name = 'world_x',
+                            name = 'worldX',
                             description = 'The vector x component in world coordinates.'
                         },
                         {
                             type = 'number',
-                            name = 'world_y',
+                            name = 'worldY',
                             description = 'The vector y component in world coordinates.'
                         }
                     }

@@ -2,7 +2,7 @@ return {
     name = 'CompressedData',
     description = 'Represents byte data compressed using a specific algorithm.\n\nlove.math.decompress can be used to de-compress the data.',
     constructors = {
-        'love.math.compress'
+        'compress'
     },
     functions = {
         {

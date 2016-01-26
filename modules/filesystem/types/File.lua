@@ -165,7 +165,7 @@ return         {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'ok',
+                            name = 'success',
                             description = 'True on success, false otherwise.'
                         }
                     }

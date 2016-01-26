@@ -3,7 +3,8 @@ return {
     description = 'Defines the shape of characters than can be drawn onto the screen.',
     constructors = {
         'newFont',
-        'newImageFont'
+        'newImageFont',
+        'setNewFont'
     },
     functions = {
         {

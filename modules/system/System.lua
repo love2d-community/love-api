@@ -27,7 +27,7 @@ return {
                     returns = {
                         {
                             type = 'string',
-                            name = 'os_string',
+                            name = 'osString',
                             description = 'The current operating system. "OS X", "Windows", "Linux", "Android" or "iOS".'
                         }
                     }

@@ -13,7 +13,8 @@ return {
         require(path .. 'types.Shader'),
         require(path .. 'types.SpriteBatch'),
         require(path .. 'types.Text'),
-        require(path .. 'types.Texture')
+        require(path .. 'types.Texture'),
+        require(path .. 'types.Video')
     },
     functions = {
         {
@@ -592,21 +593,6 @@ return {
             }
         },
         {
-            name = 'getFSAA',
-            description = 'Gets the number of antialiasing samples used when drawing to the Canvas.\n\nThis may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn\'t support that number.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'samples',
-                            description = 'The number of antialiasing samples used by the canvas when drawing to it.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getFont',
             description = 'Gets the current Font object.',
             variants = {
@@ -997,7 +983,7 @@ return {
         },
         {
             name = 'newCanvas',
-            description = 'Creates a new Canvas object for offscreen rendering.\n\nAntialiased Canvases have slightly higher system requirements than normal Canvases. Additionally, the supported maximum number of FSAA samples varies depending on the system. Use love.graphics.getSystemLimit to check.\n\nIf the number of FSAA samples specified is greater than the maximum supported by the system, the Canvas will still be created but only using the maximum supported amount (this includes 0.)',
+            description = 'Creates a new Canvas object for offscreen rendering.\n\nAntialiased Canvases have slightly higher system requirements than normal Canvases. Additionally, the supported maximum number of MSAA samples varies depending on the system. Use love.graphics.getSystemLimit to check.\n\nIf the number of MSAA samples specified is greater than the maximum supported by the system, the Canvas will still be created but only using the maximum supported amount (this includes 0.)',
             variants = {
                 {
                     arguments = {
@@ -1014,14 +1000,14 @@ return {
                             description = 'The height of the Canvas.'
                         },
                         {
-                            type = 'TextureFormat',
-                            name = 'texture_type',
+                            type = 'CanvasFormat',
+                            name = 'format',
                             default = '"normal"',
                             description = 'The desired texture mode of the Canvas.'
                         },
                         {
                             type = 'number',
-                            name = 'fsaa',
+                            name = 'msaa',
                             default = '0',
                             description = 'The desired number of antialiasing samples used when drawing to the Canvas.'
                         }
@@ -1043,53 +1029,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the font file.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font in pixels.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'File',
+                            type = 'file',
                             name = 'file',
-                            description = 'A File pointing to a font.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font in pixels.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'FileData',
-                            name = 'filedata',
-                            description = 'The encoded data to decode into a font.'
+                            description = 'The file path/File/FileData to create the Font from.'
                         },
                         {
                             type = 'number',
@@ -1349,57 +1291,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'ImageData',
-                            name = 'imageData',
-                            description = 'An ImageData object. The Image will use this ImageData to reload itself when love.window.setMode is called.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'CompressedImageData',
-                            name = 'compressedImageData',
-                            description = 'A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file (or a FileData or ImageData or CompressedImageData object).'
+                            type = 'file',
+                            name = 'file',
+                            description = 'The file path/File/FileData/ImageData/CompressedImageData of the image.'
                         },
                         {
                             type = 'table',
@@ -1438,51 +1332,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file.'
-                        },
-                        {
-                            type = 'string',
-                            name = 'glyphs',
-                            description = 'A string of the characters in the image in order from left to right.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'The Image object to create the font from.'
-                        },
-                        {
-                            type = 'string',
-                            name = 'glyphs',
-                            description = 'A string of the characters in the image in order from left to right.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file.'
+                            type = 'file',
+                            name = 'file',
+                            description = 'The file path/File/FileData of the image.'
                         },
                         {
                             type = 'string',
@@ -1492,6 +1344,7 @@ return {
                         {
                             type = 'number',
                             name = 'extraspacing',
+                            default = '0',
                             description = 'Additional spacing (positive or negative) to apply to each glyph in the Font.'
                         }
                     },
@@ -1672,56 +1525,6 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'The Image to use for the sprites.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'maxsprites',
-                            default = '1000',
-                            description = 'The maximum number of sprites that the SpriteBatch can contain at any given time.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'SpriteBatch',
-                            name = 'spriteBatch',
-                            description = 'The new SpriteBatch.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'The Image to use for the sprites.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'maxsprites',
-                            default = '1000',
-                            description = 'The maximum number of sprites that the SpriteBatch can contain at any given time.'
-                        },
-                        {
-                            type = 'SpriteBatchUsage',
-                            name = 'usage',
-                            default = '"dynamic"',
-                            description = 'The expected usage of the SpriteBatch. The specified usage mode affects the SpriteBatch\'s memory usage and performance.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'SpriteBatch',
-                            name = 'spriteBatch',
-                            description = 'The new SpriteBatch.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
                             type = 'Texture',
                             name = 'texture',
                             description = 'The Image or Canvas to use for the sprites.'
@@ -1756,31 +1559,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The file path to the Ogg Theora video file.'
-                        },
-                        {
-                            type = 'boolean',
-                            name = 'loadaudio',
-                            default = 'nil',
-                            description = 'Whether to try to load the video\'s audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Video',
-                            name = 'video',
-                            description = 'A new Video.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'VideoStream',
-                            name = 'videostream',
-                            description = 'A video stream object.'
+                            type = 'file',
+                            name = 'file',
+                            description = 'The file path/File/VideoStream of the Ogg Theora video file.'
                         },
                         {
                             type = 'boolean',
@@ -2656,92 +2437,15 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'The new font.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'Creates and sets a new font.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'The new font.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'File',
+                            type = 'file',
                             name = 'file',
-                            description = 'A File with the font.'
+                            description = 'The file path/File/FileData of the font.'
                         },
                         {
                             type = 'number',
                             name = 'size',
                             default = '12',
                             description = 'The size of the font.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'The new font.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Data',
-                            name = 'data',
-                            description = 'A Data with the font.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'The new font.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Rasterizer',
-                            name = 'rasterizer',
-                            description = 'A rasterizer.'
                         }
                     },
                     returns = {

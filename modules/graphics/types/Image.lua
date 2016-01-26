@@ -75,9 +75,11 @@ return         {
             variants = {
                 {
                     returns = {
-                        type = 'table',
-                        name = 'flags',
-                        description = 'A table with ImageFlag keys.'
+                        {
+                            type = 'table',
+                            name = 'flags',
+                            description = 'A table with ImageFlag keys.'
+                        }
                     }
                 }
             }
