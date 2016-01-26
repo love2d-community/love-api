@@ -14,6 +14,7 @@ return {
         require(path .. 'types.SpriteBatch'),
         require(path .. 'types.Text'),
         require(path .. 'types.Texture')
+        require(path .. 'types.Video')
     },
     functions = {
         {
