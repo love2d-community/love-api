@@ -136,9 +136,11 @@ return {
             variants = {
                 {
                     returns = {
-                        type = 'boolean',
-                        name = 'active',
-                        description = 'Whether the graphics module is active and able to be used.'
+                        {
+                            type = 'boolean',
+                            name = 'active',
+                            description = 'Whether the graphics module is active and able to be used.'
+                        }
                     }
                 }
             }
