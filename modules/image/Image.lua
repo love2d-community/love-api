@@ -15,9 +15,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'file',
-                            name = 'file',
-                            description = 'The file path/File/FileData of the potentially compressed image file.'
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filename of the potentially compressed image file.'
                         }
                     },
                     returns = {
@@ -25,6 +25,22 @@ return {
                             type = 'boolean',
                             name = 'compressed',
                             description = 'Whether the file can be loaded as CompressedImageData or not.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'FileData',
+                            name = 'fileData',
+                            description = 'A FileData potentially containing a compressed image.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'compressed',
+                            description = 'Whether the FileData can be loaded as CompressedImageData or not.'
                         }
                     }
                 }
@@ -37,9 +53,25 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'file',
-                            name = 'file',
-                            description = 'The file path/File/FileData of the compressed image file.'
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filename of the compressed image file.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'CompressedImageData',
+                            name = 'compressedImageData',
+                            description = 'The new CompressedImageData object.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'FileData',
+                            name = 'fileData',
+                            description = 'A FileData containing a compressed image.'
                         }
                     },
                     returns = {
@@ -59,16 +91,21 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'file',
-                            name = 'file',
-                            description = 'The file path/File/FileData of the image file.'
+                            type = 'number',
+                            name = 'width',
+                            description = 'The width of the ImageData.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'The height of the ImageData.'
                         }
                     },
                     returns = {
                         {
                             type = 'ImageData',
                             name = 'imageData',
-                            description = 'The new ImageData object.'
+                            description = 'The new blank ImageData object. Each pixel\'s color values, (including the alpha values!) will be set to zero.'
                         }
                     }
                 },
@@ -87,8 +124,39 @@ return {
                         {
                             type = 'string',
                             name = 'data',
-                            default = 'nil',
                             description = 'The data to load into the ImageData.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'ImageData',
+                            name = 'imageData',
+                            description = 'The new ImageData object.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filename of the image file.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'ImageData',
+                            name = 'imageData',
+                            description = 'The new ImageData object.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'FileData',
+                            name = 'filedata',
+                            description = 'The encoded file data to decode into image data.'
                         }
                     },
                     returns = {

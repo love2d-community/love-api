@@ -216,9 +216,37 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'file',
-                            name = 'file',
-                            description = 'The file path/File/FileData of the image to use for the new Cursor.'
+                            type = 'string',
+                            name = 'filepath',
+                            description = 'Path to the image to use for the new Cursor.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'hotx',
+                            default = '0',
+                            description = 'The x-coordinate in the ImageData of the cursor\'s hot spot.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'hoty',
+                            default = '0',
+                            description = 'The y-coordinate in the ImageData of the cursor\'s hot spot.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Cursor',
+                            name = 'cursor',
+                            description = 'The new Cursor object.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'FileData',
+                            name = 'fileData',
+                            description = 'Data representing the image to use for the new Cursor.'
                         },
                         {
                             type = 'number',

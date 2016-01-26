@@ -554,9 +554,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string or File',
-                            name = 'file',
-                            description = 'File to create FileData from.'
+                            type = 'string',
+                            name = 'filepath',
+                            description = 'Path to the file.'
                         }
                     },
                     returns = {

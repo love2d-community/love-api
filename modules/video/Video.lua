@@ -14,9 +14,25 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'file',
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The file path to the Ogg Theora video file.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'VideoStream',
+                            name = 'videostream',
+                            description = 'A new VideoStream.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'File',
                             name = 'file',
-                            description = 'The file path/File of the Ogg Theora video file.'
+                            description = 'The File object containing the Ogg Theora video.'
                         }
                     },
                     returns = {
