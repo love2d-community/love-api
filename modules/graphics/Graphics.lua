@@ -593,21 +593,6 @@ return {
             }
         },
         {
-            name = 'getFSAA',
-            description = 'Gets the number of antialiasing samples used when drawing to the Canvas.\n\nThis may be different than the number used as an argument to love.graphics.newCanvas if the system running LÖVE doesn\'t support that number.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'samples',
-                            description = 'The number of antialiasing samples used by the canvas when drawing to it.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getFont',
             description = 'Gets the current Font object.',
             variants = {
