@@ -1029,53 +1029,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the font file.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font in pixels.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'File',
+                            type = 'file',
                             name = 'file',
-                            description = 'A File pointing to a font.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font in pixels.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'FileData',
-                            name = 'filedata',
-                            description = 'The encoded data to decode into a font.'
+                            description = 'The file path/File/FileData to create the Font from.'
                         },
                         {
                             type = 'number',
@@ -1335,57 +1291,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'ImageData',
-                            name = 'imageData',
-                            description = 'An ImageData object. The Image will use this ImageData to reload itself when love.window.setMode is called.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'CompressedImageData',
-                            name = 'compressedImageData',
-                            description = 'A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file (or a FileData or ImageData or CompressedImageData object).'
+                            type = 'file',
+                            name = 'file',
+                            description = 'The file path/File/FileData/ImageData/CompressedImageData of the image.'
                         },
                         {
                             type = 'table',
@@ -1424,9 +1332,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file.'
+                            type = 'file',
+                            name = 'file',
+                            description = 'The file path/File/FileData of the image.'
                         },
                         {
                             type = 'string',
@@ -1651,31 +1559,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The file path to the Ogg Theora video file.'
-                        },
-                        {
-                            type = 'boolean',
-                            name = 'loadaudio',
-                            default = 'nil',
-                            description = 'Whether to try to load the video\'s audio into an audio Source. If not explicitly set to true or false, it will try without causing an error if the video has no audio.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Video',
-                            name = 'video',
-                            description = 'A new Video.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'VideoStream',
-                            name = 'videostream',
-                            description = 'A video stream object.'
+                            type = 'file',
+                            name = 'file',
+                            description = 'The file path/File/VideoStream of the Ogg Theora video file.'
                         },
                         {
                             type = 'boolean',
@@ -2551,53 +2437,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The path and name of the file with the font.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'The new font.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'File',
+                            type = 'file',
                             name = 'file',
-                            description = 'A File with the font.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'The new font.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Data',
-                            name = 'data',
-                            description = 'A Data with the font.'
+                            description = 'The file path/File/FileData of the font.'
                         },
                         {
                             type = 'number',

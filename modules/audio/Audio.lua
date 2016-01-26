@@ -164,31 +164,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to create a Source from.'
-                        },
-                        {
-                            type = 'SourceType',
-                            name = 'type',
-                            default = '"stream"',
-                            description = 'Streaming or static source.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Source',
-                            name = 'source',
-                            description = 'A new Source that can play the specified audio.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'File',
+                            type = 'string or File',
                             name = 'file',
-                            description = 'A File pointing to an audio file.'
+                            description = 'The file to create a Source from.'
                         },
                         {
                             type = 'SourceType',
@@ -208,31 +186,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'Decoder',
-                            name = 'decoder',
-                            description = 'The Decoder to create a Source from.'
-                        },
-                        {
-                            type = 'SourceType',
-                            name = 'type',
-                            default = '"stream"',
-                            description = 'Streaming or static source.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Source',
-                            name = 'source',
-                            description = 'A new Source that can play the specified audio.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'SoundData',
-                            name = 'soundData',
-                            description = 'The SoundData to create a Source from.'
+                            type = 'SoundData or FileData',
+                            name = 'data',
+                            description = 'The SoundData or FileData to create a Source from.'
                         }
                     },
                     returns = {
@@ -240,22 +196,6 @@ return {
                             type = 'Source',
                             name = 'source',
                             description = 'A new Source that can play the specified audio. The SourceType of the returned audio is "static".'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'FileData',
-                            name = 'fileData',
-                            description = 'The FileData to create a Source from.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Source',
-                            name = 'source',
-                            description = 'A new Source that can play the specified audio.'
                         }
                     }
                 }
