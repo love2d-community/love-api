@@ -550,6 +550,27 @@ return {
                             description = 'Your new FileData.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filepath',
+                            description = 'Path to the file.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'FileData',
+                            name = 'data',
+                            description = 'The new FileData, or nil if an error occurred.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'err',
+                            description = 'The error string, if an error occurred.'
+                        }
+                    }
                 }
             }
         },
