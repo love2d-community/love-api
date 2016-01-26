@@ -983,7 +983,7 @@ return {
         },
         {
             name = 'newCanvas',
-            description = 'Creates a new Canvas object for offscreen rendering.\n\nAntialiased Canvases have slightly higher system requirements than normal Canvases. Additionally, the supported maximum number of FSAA samples varies depending on the system. Use love.graphics.getSystemLimit to check.\n\nIf the number of FSAA samples specified is greater than the maximum supported by the system, the Canvas will still be created but only using the maximum supported amount (this includes 0.)',
+            description = 'Creates a new Canvas object for offscreen rendering.\n\nAntialiased Canvases have slightly higher system requirements than normal Canvases. Additionally, the supported maximum number of MSAA samples varies depending on the system. Use love.graphics.getSystemLimit to check.\n\nIf the number of MSAA samples specified is greater than the maximum supported by the system, the Canvas will still be created but only using the maximum supported amount (this includes 0.)',
             variants = {
                 {
                     arguments = {
@@ -1000,14 +1000,14 @@ return {
                             description = 'The height of the Canvas.'
                         },
                         {
-                            type = 'TextureFormat',
-                            name = 'texture_type',
+                            type = 'CanvasFormat',
+                            name = 'format',
                             default = '"normal"',
                             description = 'The desired texture mode of the Canvas.'
                         },
                         {
                             type = 'number',
-                            name = 'fsaa',
+                            name = 'msaa',
                             default = '0',
                             description = 'The desired number of antialiasing samples used when drawing to the Canvas.'
                         }
