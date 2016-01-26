@@ -2551,26 +2551,9 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'The new font.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
                             type = 'string',
                             name = 'filename',
-                            description = 'Creates and sets a new font.'
+                            description = 'The path and name of the file with the font.'
                         },
                         {
                             type = 'number',
@@ -2621,22 +2604,6 @@ return {
                             name = 'size',
                             default = '12',
                             description = 'The size of the font.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'The new font.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Rasterizer',
-                            name = 'rasterizer',
-                            description = 'A rasterizer.'
                         }
                     },
                     returns = {
