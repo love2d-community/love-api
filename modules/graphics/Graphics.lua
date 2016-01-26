@@ -1432,52 +1432,11 @@ return {
                             type = 'string',
                             name = 'glyphs',
                             description = 'A string of the characters in the image in order from left to right.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'The Image object to create the font from.'
-                        },
-                        {
-                            type = 'string',
-                            name = 'glyphs',
-                            description = 'A string of the characters in the image in order from left to right.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file.'
-                        },
-                        {
-                            type = 'string',
-                            name = 'glyphs',
-                            description = 'A string of the characters in the image in order from left to right.'
                         },
                         {
                             type = 'number',
                             name = 'extraspacing',
+                            default = '0',
                             description = 'Additional spacing (positive or negative) to apply to each glyph in the Font.'
                         }
                     },
