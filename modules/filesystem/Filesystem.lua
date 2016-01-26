@@ -76,7 +76,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'ok',
+                            name = 'success',
                             description = 'True if the directory was created, false if not.'
                         }
                     }
@@ -622,7 +622,7 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'ok',
+                            name = 'success',
                             description = 'True if the file/directory was removed, false otherwise.'
                         }
                     }
