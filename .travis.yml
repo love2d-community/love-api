@@ -1,24 +1,25 @@
-language: c
-sudo: false
+## https://github.com/mpeterv/hererocks
+language: python # Need python environment for pip
+sudo: false # Use container-based infrastructure
 
 env:
-  - LUA="lua=5.1"
-  - LUA="lua=5.2"
-  - LUA="lua=5.3"
-  - LUA="luajit=2.0"
-  - LUA="luajit=2.1"
+  - LUA="lua 5.1"
+  - LUA="lua 5.2"
+  - LUA="lua 5.3"
+  - LUA="luajit 2.0"
+  - LUA="luajit 2.1"
 
 before_install:
   - pip install hererocks
-  - hererocks lua_install -r^ --$LUA
-  - export PATH=$PATH:$PWD/lua_install/bin
-
-install:
+  - hererocks here -r^ --$LUA # Install latest LuaRocks version
+                              # plus the Lua version for this build job
+                              # into 'here' subdirectory
+  - export PATH=$PATH:$PWD/here/bin # Add directory with all installed binaries to PATH
   - luarocks install busted
 
-script: "busted specs"
+install:
+  - luarocks make # Install the rock, assuming there is a rockspec
+                  # in the root of the repository
 
-notifications:
-  email:
-    on_success: change
-    on_failure: always
+script:
+  - busted spec # Run the test suite, assuming tests are in the 'spec' subdirectory
