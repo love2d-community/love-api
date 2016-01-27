@@ -2805,7 +2805,6 @@ return {
         require(path .. 'enums.SpriteBatchUsage'),
         require(path .. 'enums.StackType'),
         require(path .. 'enums.StencilAction'),
-        require(path .. 'enums.TextureFormat'),
         require(path .. 'enums.WrapMode')
     }
 }
