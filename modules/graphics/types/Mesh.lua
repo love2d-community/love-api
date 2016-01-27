@@ -240,7 +240,7 @@ return {
                     returns = {
                         {
                             type = 'table',
-                            name = 'vertex_map',
+                            name = 'map',
                             description = 'A table containing a list of vertex indices used when drawing.'
                         }
                     }
@@ -561,13 +561,13 @@ return {
         },
         {
             name = 'setVertexMap',
-            description = 'Sets the vertex map for a Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn.\n\nThe vertex map allows you to re-order or reuse vertices when drawing without changing the actual vertex parameters or duplicating vertices. It is especially useful when combined with different Mesh draw modes.',
+            description = 'Sets the vertex map for the Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn. The vertices, vertex map, and mesh draw mode work together to determine what exactly is displayed on the screen.\n\nThe vertex map allows you to re-order or reuse vertices when drawing without changing the actual vertex parameters or duplicating vertices. It is especially useful when combined with different Mesh Draw Modes.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'table',
-                            name = 'vertex_map',
+                            name = 'map',
                             description = 'A table containing a list of vertex indices to use when drawing. Values must be in the range of [1, Mesh:getVertexCount()].'
                         }
                     }
