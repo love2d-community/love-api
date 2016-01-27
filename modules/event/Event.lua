@@ -1,4 +1,4 @@
-local path = (...):match('(.-)[^%.]+$') .. '.' 
+local path = (...):match('(.-)[^%.]+$') .. '.'
 
 return {
     name = 'event',
