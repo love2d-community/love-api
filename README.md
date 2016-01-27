@@ -1,5 +1,8 @@
 #LÖVE-API
 
+[![Build Status](https://travis-ci.org/rm-code/love-api.svg?branch=master)](https://travis-ci.org/rm-code/love-api)
+[![LOVE](https://img.shields.io/badge/L%C3%96VE-0.10.0-EA316E.svg)](http://love2d.org/)
+
 The complete API documentation of [LÖVE](https://love2d.org/) contained in a lua table.
 
 The project was originally started by [Santos](https://www.love2d.org/forums/memberlist.php?mode=viewprofile&u=3835) who did a majority of the work. He gave his [permission](https://www.love2d.org/forums/viewtopic.php?f=3&t=1796&start=60#p166919) to host the project online.
