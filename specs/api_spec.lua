@@ -1,0 +1,6 @@
+describe( 'LÖVE-API Integrity test', function()
+    it( 'makes sure the api table is valid', function()
+        local api = require( 'love_api' )
+        assert( api )
+    end)
+end)
