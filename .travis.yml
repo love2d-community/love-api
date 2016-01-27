@@ -15,11 +15,9 @@ before_install:
                               # plus the Lua version for this build job
                               # into 'here' subdirectory
   - export PATH=$PATH:$PWD/here/bin # Add directory with all installed binaries to PATH
-  - luarocks install busted
 
 install:
-  - luarocks make # Install the rock, assuming there is a rockspec
-                  # in the root of the repository
+  - luarocks install busted
 
 script:
   - busted spec # Run the test suite, assuming tests are in the 'spec' subdirectory
