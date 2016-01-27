@@ -1,4 +1,4 @@
-return         {
+return {
     name = 'Quad',
     description = 'A quadrilateral (a polygon with four sides and four corners) with texture coordinate information.\n\nQuads can be used to select part of a texture to draw. In this way, one large texture atlas can be loaded, and then split up into sub-images.',
     constructors = {

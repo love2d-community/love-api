@@ -1,4 +1,4 @@
-return         {
+return {
     name = 'File',
     description = 'Represents a file on the filesystem.',
     constructors = {

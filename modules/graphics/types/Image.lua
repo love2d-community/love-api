@@ -1,4 +1,4 @@
-return         {
+return {
     name = 'Image',
     description = 'Drawable image type.',
     constructors = {

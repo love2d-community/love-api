@@ -78,12 +78,12 @@ return {
             variants = {
                 {
                     arguments = {
-			{
-			    type = 'number',
-			    name = 'exitstatus',
-			    default = '0',
-			    description = 'The program exit status to use when closing the application.'
-			}
+                        {
+                            type = 'number',
+                            name = 'exitstatus',
+                            default = '0',
+                            description = 'The program exit status to use when closing the application.'
+                        }
                     }
                 }
             }
