@@ -668,21 +668,6 @@ return {
             }
         },
         {
-            name = 'getFullscreenModes',
-            description = 'Gets a list of supported fullscreen modes.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'table',
-                            name = 'modes',
-                            description = 'A table of width/height pairs. (Note that this may not be in order.)'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getShader',
             description = 'Returns the current Shader. Returns nil if none is set.',
             variants = {
@@ -1600,6 +1585,14 @@ return {
             description = 'Creates a screenshot and returns the image data.',
             variants = {
                 {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'copyAlpha',
+                            default = 'false',
+                            description = 'Whether to include the screen\'s alpha channel in the ImageData. If false, the screenshot will be fully opaque.'
+                        }
+                    },
                     returns = {
                         {
                             type = 'ImageData',
