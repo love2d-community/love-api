@@ -21,3 +21,8 @@ install:
 
 script:
   - busted specs # Run the specs
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
