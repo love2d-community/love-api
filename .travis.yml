@@ -17,7 +17,7 @@ before_install:
   - export PATH=$PATH:$PWD/here/bin # Add directory with all installed binaries to PATH
 
 install:
-  - luarocks install busted
+  - luarocks install busted # Install https://github.com/Olivine-Labs/busted
 
 script:
-  - busted spec # Run the test suite, assuming tests are in the 'spec' subdirectory
+  - busted specs # Run the specs
