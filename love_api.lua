@@ -730,7 +730,7 @@ return {
                     arguments = {
                         {
                             type = 'boolean',
-                            name = 'f',
+                            name = 'focus',
                             description = 'Wether the window has mouse focus or not.'
                         }
                     }
