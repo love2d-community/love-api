@@ -786,7 +786,7 @@ return {
                         {
                             type = 'number',
                             name = 'button',
-                            description = 'The button index that was pressed. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependant'
+                            description = 'The button index that was pressed. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependent'
                         },
                         {
                             type = 'boolean',
@@ -816,7 +816,7 @@ return {
                         {
                             type = 'number',
                             name = 'button',
-                            description = 'The button index that was released. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependant.'
+                            description = 'The button index that was released. 1 is the primary mouse button, 2 is the secondary mouse button and 3 is the middle button. Further buttons are mouse dependent.'
                         },
                         {
                             type = 'boolean',
