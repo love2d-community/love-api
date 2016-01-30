@@ -459,8 +459,8 @@ return {
                     arguments = {
                         {
                             type = 'boolean',
-                            name = 'f',
-                            description = 'Window focus.'
+                            name = 'focus',
+                            description = 'True if the window gains focus, false if it loses focus.'
                         }
                     }
                 }
