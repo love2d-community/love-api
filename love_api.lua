@@ -1072,8 +1072,8 @@ return {
                     arguments = {
                         {
                             type = 'boolean',
-                            name = 'v',
-                            description = 'Window visibility.'
+                            name = 'visible',
+                            description = 'True if the window is visible, false if it isn\'t.'
                         }
                     }
                 }
