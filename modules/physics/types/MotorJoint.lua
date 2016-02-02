@@ -1,5 +1,5 @@
 return {
-    name = 'MouseJoint',
+    name = 'MotorJoint',
     description = 'Controls the relative motion between two Bodies. Position and rotation offsets can be specified, as well as the maximum motor force and torque that will be be applied to reach the target offsets.',
     constructors = {
         'newMotorJoint'
