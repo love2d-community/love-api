@@ -14,6 +14,7 @@ return {
         require(path .. 'types.FrictionJoint'),
         require(path .. 'types.GearJoint'),
         require(path .. 'types.Joint'),
+        require(path .. 'types.MotorJoint'),
         require(path .. 'types.MouseJoint'),
         require(path .. 'types.PolygonShape'),
         require(path .. 'types.PrismaticJoint'),
@@ -444,6 +445,39 @@ return {
                             type = 'Joint',
                             name = 'joint',
                             description = 'The new gear joint.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'newMotorJoint',
+            description = 'Creates a joint between two bodies which controls the relative motion between them.\n\nPosition and rotation offsets can be specified once the MotorJoint has been created, as well as the maximum motor force and torque that will be be applied to reach the target offsets.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Body',
+                            name = 'body1',
+                            description = 'The first body to attach to the joint.'
+                        },
+                        {
+                            type = 'Body',
+                            name = 'body2',
+                            description = 'The second body to attach to the joint.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'correctionFactor',
+                            default = '0.3',
+                            description = 'The joint\'s initial position correction factor, in the range of [0, 1].'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'MotorJoint',
+                            name = 'joint',
+                            description = 'The new MotorJoint.'
                         }
                     }
                 }
