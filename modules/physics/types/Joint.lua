@@ -162,21 +162,6 @@ return {
             }
         },
         {
-            name = 'setCollideConnected',
-            description = 'Sets whether the connected Bodies should collide with eachother.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'boolean',
-                            name = 'collide',
-                            description = 'True for the Bodies to collide, false otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'setUserData',
             description = 'Associates a Lua value with the Joint.\n\nTo delete the reference, explicitly pass nil.',
             variants = {
