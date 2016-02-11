@@ -371,6 +371,48 @@ return {
             }
         },
         {
+            name = 'getDimensions',
+            description = 'Gets the width and height of the text in pixels.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'width',
+                            description = 'The width of the text. If multiple sub-strings have been added with Text:add, the width of the last sub-string is returned.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'The height of the text. If multiple sub-strings have been added with Text:add, the height of the last sub-string is returned.'
+                        }
+                    }
+                },
+                {
+                    description = 'Gets the width and height of a specific sub-string that was previously added to the Text object.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'index',
+                            description = 'An index number returned by Text:add or Text:addf.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'width',
+                            description = 'The width of the sub-string (before scaling and other transformations).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'The height of the sub-string (before scaling and other transformations).'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getFont',
             description = 'Gets the Font used with the Text object.',
             variants = {
