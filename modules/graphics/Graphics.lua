@@ -2835,6 +2835,7 @@ return {
     },
     enums = {
         require(path .. 'enums.AlignMode'),
+        require(path .. 'enums.ArcType')
         require(path .. 'enums.AreaSpreadDistribution'),
         require(path .. 'enums.BlendAlphaMode'),
         require(path .. 'enums.BlendMode'),
