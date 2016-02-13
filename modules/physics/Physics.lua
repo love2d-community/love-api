@@ -480,6 +480,39 @@ return {
                             description = 'The new MotorJoint.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Body',
+                            name = 'body1',
+                            description = 'The first body to attach to the joint.'
+                        },
+                        {
+                            type = 'Body',
+                            name = 'body2',
+                            description = 'The second body to attach to the joint.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'correctionFactor',
+                            default = '0.3',
+                            description = 'The joint\'s initial position correction factor, in the range of [0, 1].'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'collideConnected',
+                            default = 'false',
+                            description = 'Specifies whether the two bodies should collide with each other.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'MotorJoint',
+                            name = 'joint',
+                            description = 'The new MotorJoint.'
+                        }
+                    }
                 }
             }
         },
