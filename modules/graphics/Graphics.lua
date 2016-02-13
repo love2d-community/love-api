@@ -19,14 +19,61 @@ return {
     functions = {
         {
             name = 'arc',
-            description = 'Draws an arc.',
+            description = 'Draws a filled or unfilled arc at position (x, y). The arc is drawn from angle1 to angle2 in radians. The segments parameter determines how many segments are used to draw the arc. The more segments, the smoother the edge.',
             variants = {
                 {
+                    description = 'Draws an arc using the "pie" ArcType.',
                     arguments = {
                         {
                             type = 'DrawMode',
-                            name = 'mode',
+                            name = 'drawmode',
                             description = 'How to draw the arc.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the center along x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the center along y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radius',
+                            description = 'Radius of the arc.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'angle1',
+                            description = 'The angle at which the arc begins.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'angle2',
+                            description = 'The angle at which the arc terminates.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'segments',
+                            default = '10',
+                            description = 'The number of segments used for drawing the arc.'
+                        }
+                    }
+                },
+                {
+                    description = 'Draws an arc using the "pie" ArcType.',
+                    arguments = {
+                        {
+                            type = 'DrawMode',
+                            name = 'drawmode',
+                            description = 'How to draw the arc.'
+                        },
+                        {
+                            type = 'ArcType',
+                            name = 'arctype',
+                            description = 'The type of arc to draw.'
                         },
                         {
                             type = 'number',
