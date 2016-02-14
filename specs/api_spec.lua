@@ -19,4 +19,52 @@ describe( 'LÖVE-API Integrity test', function()
         end
         recursive( nil, api )
     end)
+
+    it( 'makes sure only certain keys are used', function()
+        local api = require( 'love_api' )
+
+        local valid_keys = {
+            'api',
+            'arguments',
+            'callbacks',
+            'config',
+            'constants',
+            'constructors',
+            'default',
+            'description',
+            'enums',
+            'functions',
+            'modules',
+            'name',
+            'notes',
+            'returns',
+            'supertypes',
+            'table',
+            'type',
+            'types',
+            'variants'
+        }
+
+        local function recursive( key, val )
+            if type( key ) == 'string' then
+                local valid = false;
+                for i = 1, #valid_keys do
+                    if key == valid_keys[i] then
+                        valid = true;
+                    end
+                end
+                if not valid then
+                    print( key, val )
+                end
+                assert.is_True( valid );
+            end
+
+            if type( val ) == 'table' then
+                for k, v in pairs( val ) do
+                    recursive( k, v )
+                end
+            end
+        end
+        recursive( 'api', api )
+    end)
 end)
