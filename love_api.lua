@@ -289,7 +289,7 @@ return {
                 {
                     type = 'number',
                     name = 'y',
-                    defalt = 'nil',
+                    default = 'nil',
                     description = 'The y-coordinate of the window\'s position in the specified display.'
                 },
             }
