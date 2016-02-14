@@ -2517,7 +2517,7 @@ return {
                         {
                             type = 'number',
                             name = 'anisotropy',
-                            default = 1,
+                            default = '1',
                             description = 'Maximum amount of Anisotropic Filtering used.'
                         }
                     }
