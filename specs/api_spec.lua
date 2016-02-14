@@ -67,4 +67,42 @@ describe( 'LÖVE-API Integrity test', function()
         end
         recursive( 'api', api )
     end)
+
+    it( 'checks each argument is wrapped in a table', function()
+        local api = require( 'love_api' )
+
+        local function recursive( key, val )
+            if key == 'arguments' then
+                for _, v in pairs( val ) do
+                    assert.is_True( type( v ) == 'table' )
+                end
+            end
+
+            if type( val ) == 'table' then
+                for k, v in pairs( val ) do
+                    recursive( k, v )
+                end
+            end
+        end
+        recursive( 'api', api )
+    end)
+
+    it( 'checks each return value is wrapped in a table', function()
+        local api = require( 'love_api' )
+
+        local function recursive( key, val )
+            if key == 'returns' then
+                for _, v in pairs( val ) do
+                    assert.is_True( type( v ) == 'table' )
+                end
+            end
+
+            if type( val ) == 'table' then
+                for k, v in pairs( val ) do
+                    recursive( k, v )
+                end
+            end
+        end
+        recursive( 'api', api )
+    end)
 end)
