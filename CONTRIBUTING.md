@@ -1,10 +1,10 @@
-# Contribution Guidelines
+# Contribution Guidelines :heart:
 
-Please ensure your pull request adheres to the following:
+First of all, thank you for taking the time to make a contribution and reading this! Please ensure your pull request adheres to the following:
 
 ## Information follows the official LÖVE-wiki
 
-For the sake of coherence the api documentation should follow the official [LÖVE-wiki](https://love2d.org/wiki). If there is something you want to change make sure that you edit the wiki __first__ and then submit a pull request.
+For the sake of coherence, the api documentation should follow the official [LÖVE-wiki](https://love2d.org/wiki). If there is something you want to change, make sure that you edit the wiki __first__ before submitting a pull request.
 
 ## Follow the default table layout
 
