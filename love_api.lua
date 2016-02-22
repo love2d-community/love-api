@@ -1,6 +1,7 @@
 local path = (...):match('(.-)[^%.]+$')
 
 return {
+    version = "0.10.1",
     functions = {
         {
             name = 'getVersion',
@@ -170,7 +171,7 @@ return {
         {
             type = 'string',
             name = 'version',
-            default = '"0.10.0"',
+            default = '"0.10.1"',
             description = 'The LÖVE version this game was made for'
         },
         {
