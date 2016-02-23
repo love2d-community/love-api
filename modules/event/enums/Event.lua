@@ -1,6 +1,6 @@
 return {
     name = 'Event',
-	description = 'Arguments to love.event.push() and the like.',
+    description = 'Arguments to love.event.push() and the like.',
     constants = {
         {
             name = 'focus',
