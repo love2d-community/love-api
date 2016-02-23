@@ -1,5 +1,6 @@
 return {
     name = 'JointType',
+	description = 'Different types of joints.',
     constants = {
         {
             name = 'distance',
