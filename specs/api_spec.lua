@@ -42,7 +42,8 @@ describe( 'LÖVE-API Integrity test', function()
             'table',
             'type',
             'types',
-            'variants'
+            'variants',
+            'version'
         }
 
         local function recursive( key, val )
