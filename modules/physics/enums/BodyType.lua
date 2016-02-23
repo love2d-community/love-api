@@ -1,5 +1,6 @@
 return {
     name = 'BodyType',
+	description = 'The types of a Body.',
     constants = {
         {
             name = 'static',
