@@ -106,6 +106,15 @@ return {
             },
             supertypes = {
                 'Object'
+            },
+            subtypes = {
+                'CompressedData',
+                'CompressedImageData',
+                'FileData',
+                'FontData',
+                'GlyphData',
+                'ImageData',
+                'SoundData'
             }
         },
         {
@@ -113,6 +122,17 @@ return {
             description = 'Superclass for all things that can be drawn on screen. This is an abstract type that can\'t be created directly.',
             supertypes = {
                 'Object'
+            },
+            subtypes = {
+                'Canvas',
+                'Framebuffer',
+                'Image',
+                'Mesh',
+                'ParticleSystem',
+                'SpriteBatch',
+                'Text',
+                'Texture',
+                'Video'
             }
         },
         {
@@ -156,6 +176,63 @@ return {
                         }
                     }
                 }
+            },
+            subtypes = {
+                'BezierCurve',
+                'Body',
+                'Canvas',
+                'ChainShape',
+                'Channel',
+                'CircleShape',
+                'CompressedData',
+                'CompressedImageData',
+                'Contact',
+                'Cursor',
+                'Data',
+                'Decoder',
+                'DistanceJoint',
+                'Drawable',
+                'EdgeShape',
+                'File',
+                'FileData',
+                'Fixture',
+                'Font',
+                'FontData',
+                'Framebuffer',
+                'FrictionJoint',
+                'GearJoint',
+                'GlyphData',
+                'Image',
+                'ImageData',
+                'Joint',
+                'Joystick',
+                'Mesh',
+                'MotorJoint',
+                'MouseJoint',
+                'ParticleSystem',
+                'PixelEffect',
+                'PolygonShape',
+                'PrismaticJoint',
+                'PulleyJoint',
+                'Quad',
+                'Quad',
+                'RandomGenerator',
+                'Rasterizer',
+                'RevoluteJoint',
+                'RopeJoint',
+                'Shader',
+                'Shape',
+                'SoundData',
+                'Source',
+                'SpriteBatch',
+                'Text',
+                'Texture',
+                'Thread',
+                'Video',
+                'VideoStream',
+                'WeldJoint',
+                'WheelJoint',
+                'World'
             }
         }
     },
