@@ -39,6 +39,7 @@ describe( 'LÖVE-API Integrity test', function()
             'notes',
             'returns',
             'supertypes',
+            'subtypes',
             'table',
             'type',
             'types',

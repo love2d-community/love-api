@@ -179,5 +179,18 @@ return {
     },
     supertypes = {
         'Object'
+    },
+    subtypes = {
+        'DistanceJoint',
+        'FrictionJoint',
+        'GearJoint',
+        'MotorJoint',
+        'MouseJoint',
+        'PrismaticJoint',
+        'PulleyJoint',
+        'RevoluteJoint',
+        'RopeJoint',
+        'WeldJoint',
+        'WheelJoint'
     }
 }

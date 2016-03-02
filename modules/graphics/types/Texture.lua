@@ -6,5 +6,9 @@ return {
     supertypes = {
         'Drawable',
         'Object'
+    },
+    subtypes = {
+        'Canvas',
+        'Image'
     }
 }

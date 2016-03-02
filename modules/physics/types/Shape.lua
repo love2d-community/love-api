@@ -246,5 +246,11 @@ return {
     },
     supertypes = {
         'Object'
+    },
+    subtypes = {
+        'ChainShape',
+        'CircleShape',
+        'EdgeShape',
+        'PolygonShape'
     }
 }

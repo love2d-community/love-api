@@ -684,6 +684,7 @@ return {
         }
     },
     supertypes = {
+        'Drawable',
         'Object'
     }
 }
