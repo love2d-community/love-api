@@ -375,7 +375,7 @@ return {
                     name = 'y',
                     default = 'nil',
                     description = 'Determines the position of the window on the user\'s screen. Alternatively love.window.setPosition can be used to change the position on the fly.'
-                },
+                }
             }
         },
         {
@@ -478,7 +478,7 @@ return {
                     name = 'thread',
                     default = 'true',
                     description = 'Enable the thread module.'
-                },
+                }
             }
         }
     },
