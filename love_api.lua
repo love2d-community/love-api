@@ -243,102 +243,108 @@ return {
             type = 'string',
             name = 'identity',
             default = 'nil',
-            description = 'The name of the save directory.'
+            description = 'This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created:\nt.identity = "gabe_HL3" -- Correct\n\nt.identity = "c:/Users/gabe/HL3" -- Incorrect\nAlternatively love.filesystem.setIdentity can be used to set the save directory outside of the config file.'
         },
         {
             type = 'string',
             name = 'version',
             default = '"0.10.1"',
-            description = 'The LÖVE version this game was made for'
+            description = 't.version should be a string, representing the version of LÖVE for which your game was made. It should be formatted as "X.Y.Z" where X is the major release number, Y the minor, and Z the patch level. It allows LÖVE to display a warning if it isn\'t compatible. Its default is the version of LÖVE running.'
         },
         {
             type = 'boolean',
             name = 'console',
             default = 'false',
-            description = 'Attach a console.'
+            description = 'Determines wether a console should be opened alongside the game window (Windows only) or not. Note: On OSX you can get console output by running LÖVE through the terminal.'
         },
         {
             type = 'boolean',
             name = 'accelerometerjoystick',
             default = 'true',
-            description = 'Enable the accelerometer on iOS and Android by exposing it as a Joystick.'
+            description = 'Sets whether the device accelerometer on iOS and Android should be exposed as a 3-axis Joystick. Disabling the accelerometer when it\'s not used may reduce CPU usage.'
+        },
+        { 
+            type = 'boolean',
+            name = 'externalstorage',
+            default = 'false',
+            description = 'Sets whether files are saved in external storage (true) or internal storage (false) on Android.'
         },
         {
             type = 'boolean',
             name = 'gammacorrect',
             default = 'false',
-            description = 'Enable gamma-correct rendering, when supported by the system.'
+            description = 'Determines whether gamma-correct rendering is enabled, when the system supports it.'
         },
         {
             type = 'table',
             name = 'window',
-            description = 'Window options.',
+            description = 'It is possible to defer window creation until love.window.setMode is first called in your code. To do so, set t.window = nil in love.conf (or t.screen = nil in older versions.) If this is done, LÖVE may crash if any function from love.graphics is called before the first love.window.setMode in your code.\n\nThe t.window table was named t.screen in versions prior to 0.9.0. The t.screen table doesn\'t exist in love.conf in 0.9.0, and the t.window table doesn\'t exist in love.conf in 0.8.0. This means love.conf will fail to execute (therefore it will fall back to default values) if care is not taken to use the correct table for the LÖVE version being used.',
             table = {
                 {
                     type = 'string',
                     name = 'title',
                     default = '"Untitled"',
-                    description = 'The window title.'
+                    description = 'Sets the title of the window the game is in. Alternatively love.window.setTitle can be used to change the window title outside of the config file.'
                 },
                 {
                     type = 'string',
                     name = 'icon',
                     default = 'nil',
-                    description = 'Filepath to an image to use as the window\'s icon.'
+                    description = 'A filepath to an image to use as the window\'s icon. Not all operating systems support very large icon images. The icon can also be changed with love.window.setIcon.'
                 },
                 {
                     type = 'number',
                     name = 'width',
                     default = '800',
-                    description = 'The window width.'
+                    description = 'Sets the window\'s dimensions. If these flags are set to 0 LÖVE automatically uses the user\'s desktop dimensions.'
                 },
                 {
                     type = 'string',
                     name = 'height',
                     default = '600',
-                    description = 'The window height.'
+                    description = 'Sets the window\'s dimensions. If these flags are set to 0 LÖVE automatically uses the user\'s desktop dimensions.'
                 },
                 {
                     type = 'boolean',
                     name = 'borderless',
                     default = 'false',
-                    description = 'Remove all border visuals from the window.'
+                    description = 'Removes all border visuals from the window. Note that the effects may wary between operating systems.'
                 },
                 {
                     type = 'boolean',
                     name = 'resizable',
                     default = 'false',
-                    description = 'Let the window be user-resizable.'
+                    description = 'If set to true this allows the user to resize the game\'s window.'
                 },
                 {
                     type = 'number',
                     name = 'minwidth',
                     default = '1',
-                    description = 'Minimum window width if the window is resizable.'
+                    description = 'Sets the minimum width and height for the game\'s window if it can be resized by the user. If you set lower values to window.width and window.height LÖVE will always favor the minimum dimensions set via window.minwidth and window.minheight.'
                 },
                 {
                     type = 'number',
                     name = 'minheight',
                     default = '1',
-                    description = 'Minimum window height if the window is resizable.'
+                    description = 'Sets the minimum width and height for the game\'s window if it can be resized by the user. If you set lower values to window.width and window.height LÖVE will always favor the minimum dimensions set via window.minwidth and window.minheight.'
                 },
                 {
                     type = 'boolean',
                     name = 'fullscreen',
                     default = 'false',
-                    description = 'Enable fullscreen.'
+                    description = 'Wether to run the game in fullscreen (true) or windowed (false) mode. The fullscreen can also be toggled via love.window.setFullscreen or love.window.setMode.'
                 },
                 {
                     type = 'string',
                     name = 'fullscreentype',
                     default = '"desktop"',
-                    description = 'Choose between "desktop" fullscreen or "exclusive" fullscreen mode.'
+                    description = 'Specifies the type of fullscreen mode to use (normal or desktop). Generally the desktop is recommended, as it is less restrictive than normal mode on some operating systems.'
                 },
                 {
                     type = 'boolean',
                     name = 'vsync',
                     default = 'true',
-                    description = 'Enable vertical sync.'
+                    description = 'Enables or deactivates vertical synchronization. Vsync tries to keep the game at a steady framerate and can prevent issues like screen tearing. It is recommended to keep vsync activated if you don\'t know about the possible implications of turning it off.'
                 },
                 {
                     type = 'number',
@@ -350,25 +356,25 @@ return {
                     type = 'number',
                     name = 'display',
                     default = '1',
-                    description = 'Index of the moniter to show the window in.'
+                    description = 'The index of the display to show the window in, if multiple monitors are available.'
                 },
                 {
                     type = 'boolean',
                     name = 'highdpi',
                     default = 'false',
-                    description = 'Enable high-dpi mode for the window on a Retina display.'
+                    description = 'See love.window.getPixelScale, love.window.toPixels, and love.window.fromPixels. It is recommended to keep this option disabled if you can\'t test your game on a Mac or iOS system with a Retina display, because code will need tweaking to make sure things look correct.'
                 },
                 {
                     type = 'number',
                     name = 'x',
                     default = 'nil',
-                    description = 'The x-coordinate of the window\'s position in the specified display.'
+                    description = 'Determines the position of the window on the user\'s screen. Alternatively love.window.setPosition can be used to change the position on the fly.'
                 },
                 {
                     type = 'number',
                     name = 'y',
                     default = 'nil',
-                    description = 'The y-coordinate of the window\'s position in the specified display.'
+                    description = 'Determines the position of the window on the user\'s screen. Alternatively love.window.setPosition can be used to change the position on the fly.'
                 },
             }
         },
