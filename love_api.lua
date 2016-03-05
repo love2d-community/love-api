@@ -37,251 +37,253 @@ return {
             name = 'conf',
             description = 'If a file called conf.lua is present in your game folder (or .love file), it is run before the LÖVE modules are loaded. You can use this file to overwrite the love.conf function, which is later called by the LÖVE \'boot\' script. Using the love.conf function, you can set some configuration options, and change things like the default size of the window, which modules are loaded, and other stuff.',
             variants = {
-                arguments = {
-                    { 
-                        type = 'table',
-                        name = 't',
-                        description = 'The love.conf function takes one argument: a table filled with all the default values which you can overwrite to your liking. If you want to change the default window size, for instance, do:\n\nfunction love.conf(t)\n    t.window.width = 1024\n    t.window.height = 768\nend\n\nIf you don\'t need the physics module or joystick module, do the following.\n\nfunction love.conf(t)\n    t.modules.joystick = false\n    t.modules.physics = false\nend\n\nSetting unused modules to false is encouraged when you release your game. It reduces startup time slightly (especially if the joystick module is disabled) and reduces memory usage (slightly).\n\n Note that you can\'t disable love.filesystem; it\'s mandatory. The same goes for the love module itself. love.graphics needs love.window to be enabled.',
-                        table = {
-                            {
-                                type = 'string',
-                                name = 'identity',
-                                default = 'nil',
-                                description = 'This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created:\nt.identity = "gabe_HL3" -- Correct\n\nt.identity = "c:/Users/gabe/HL3" -- Incorrect\nAlternatively love.filesystem.setIdentity can be used to set the save directory outside of the config file.'
-                            },
-                            {
-                                type = 'string',
-                                name = 'version',
-                                default = '"0.10.1"',
-                                description = 't.version should be a string, representing the version of LÖVE for which your game was made. It should be formatted as "X.Y.Z" where X is the major release number, Y the minor, and Z the patch level. It allows LÖVE to display a warning if it isn\'t compatible. Its default is the version of LÖVE running.'
-                            },
-                            {
-                                type = 'boolean',
-                                name = 'console',
-                                default = 'false',
-                                description = 'Determines wether a console should be opened alongside the game window (Windows only) or not. Note: On OSX you can get console output by running LÖVE through the terminal.'
-                            },
-                            {
-                                type = 'boolean',
-                                name = 'accelerometerjoystick',
-                                default = 'true',
-                                description = 'Sets whether the device accelerometer on iOS and Android should be exposed as a 3-axis Joystick. Disabling the accelerometer when it\'s not used may reduce CPU usage.'
-                            },
-                            { 
-                                type = 'boolean',
-                                name = 'externalstorage',
-                                default = 'false',
-                                description = 'Sets whether files are saved in external storage (true) or internal storage (false) on Android.'
-                            },
-                            {
-                                type = 'boolean',
-                                name = 'gammacorrect',
-                                default = 'false',
-                                description = 'Determines whether gamma-correct rendering is enabled, when the system supports it.'
-                            },
-                            {
-                                type = 'table',
-                                name = 'window',
-                                description = 'It is possible to defer window creation until love.window.setMode is first called in your code. To do so, set t.window = nil in love.conf (or t.screen = nil in older versions.) If this is done, LÖVE may crash if any function from love.graphics is called before the first love.window.setMode in your code.\n\nThe t.window table was named t.screen in versions prior to 0.9.0. The t.screen table doesn\'t exist in love.conf in 0.9.0, and the t.window table doesn\'t exist in love.conf in 0.8.0. This means love.conf will fail to execute (therefore it will fall back to default values) if care is not taken to use the correct table for the LÖVE version being used.',
-                                table = {
-                                    {
-                                        type = 'string',
-                                        name = 'title',
-                                        default = '"Untitled"',
-                                        description = 'Sets the title of the window the game is in. Alternatively love.window.setTitle can be used to change the window title outside of the config file.'
-                                    },
-                                    {
-                                        type = 'string',
-                                        name = 'icon',
-                                        default = 'nil',
-                                        description = 'A filepath to an image to use as the window\'s icon. Not all operating systems support very large icon images. The icon can also be changed with love.window.setIcon.'
-                                    },
-                                    {
-                                        type = 'number',
-                                        name = 'width',
-                                        default = '800',
-                                        description = 'Sets the window\'s dimensions. If these flags are set to 0 LÖVE automatically uses the user\'s desktop dimensions.'
-                                    },
-                                    {
-                                        type = 'string',
-                                        name = 'height',
-                                        default = '600',
-                                        description = 'Sets the window\'s dimensions. If these flags are set to 0 LÖVE automatically uses the user\'s desktop dimensions.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'borderless',
-                                        default = 'false',
-                                        description = 'Removes all border visuals from the window. Note that the effects may wary between operating systems.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'resizable',
-                                        default = 'false',
-                                        description = 'If set to true this allows the user to resize the game\'s window.'
-                                    },
-                                    {
-                                        type = 'number',
-                                        name = 'minwidth',
-                                        default = '1',
-                                        description = 'Sets the minimum width and height for the game\'s window if it can be resized by the user. If you set lower values to window.width and window.height LÖVE will always favor the minimum dimensions set via window.minwidth and window.minheight.'
-                                    },
-                                    {
-                                        type = 'number',
-                                        name = 'minheight',
-                                        default = '1',
-                                        description = 'Sets the minimum width and height for the game\'s window if it can be resized by the user. If you set lower values to window.width and window.height LÖVE will always favor the minimum dimensions set via window.minwidth and window.minheight.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'fullscreen',
-                                        default = 'false',
-                                        description = 'Wether to run the game in fullscreen (true) or windowed (false) mode. The fullscreen can also be toggled via love.window.setFullscreen or love.window.setMode.'
-                                    },
-                                    {
-                                        type = 'string',
-                                        name = 'fullscreentype',
-                                        default = '"desktop"',
-                                        description = 'Specifies the type of fullscreen mode to use (normal or desktop). Generally the desktop is recommended, as it is less restrictive than normal mode on some operating systems.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'vsync',
-                                        default = 'true',
-                                        description = 'Enables or deactivates vertical synchronization. Vsync tries to keep the game at a steady framerate and can prevent issues like screen tearing. It is recommended to keep vsync activated if you don\'t know about the possible implications of turning it off.'
-                                    },
-                                    {
-                                        type = 'number',
-                                        name = 'msaa',
-                                        default = '0',
-                                        description = 'The number of samples to use with multi-sampled antialiasing.'
-                                    },
-                                    {
-                                        type = 'number',
-                                        name = 'display',
-                                        default = '1',
-                                        description = 'The index of the display to show the window in, if multiple monitors are available.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'highdpi',
-                                        default = 'false',
-                                        description = 'See love.window.getPixelScale, love.window.toPixels, and love.window.fromPixels. It is recommended to keep this option disabled if you can\'t test your game on a Mac or iOS system with a Retina display, because code will need tweaking to make sure things look correct.'
-                                    },
-                                    {
-                                        type = 'number',
-                                        name = 'x',
-                                        default = 'nil',
-                                        description = 'Determines the position of the window on the user\'s screen. Alternatively love.window.setPosition can be used to change the position on the fly.'
-                                    },
-                                    {
-                                        type = 'number',
-                                        name = 'y',
-                                        default = 'nil',
-                                        description = 'Determines the position of the window on the user\'s screen. Alternatively love.window.setPosition can be used to change the position on the fly.'
+                {
+                    arguments = {
+                        { 
+                            type = 'table',
+                            name = 't',
+                            description = 'The love.conf function takes one argument: a table filled with all the default values which you can overwrite to your liking. If you want to change the default window size, for instance, do:\n\nfunction love.conf(t)\n    t.window.width = 1024\n    t.window.height = 768\nend\n\nIf you don\'t need the physics module or joystick module, do the following.\n\nfunction love.conf(t)\n    t.modules.joystick = false\n    t.modules.physics = false\nend\n\nSetting unused modules to false is encouraged when you release your game. It reduces startup time slightly (especially if the joystick module is disabled) and reduces memory usage (slightly).\n\n Note that you can\'t disable love.filesystem; it\'s mandatory. The same goes for the love module itself. love.graphics needs love.window to be enabled.',
+                            table = {
+                                {
+                                    type = 'string',
+                                    name = 'identity',
+                                    default = 'nil',
+                                    description = 'This flag determines the name of the save directory for your game. Note that you can only specify the name, not the location where it will be created:\nt.identity = "gabe_HL3" -- Correct\n\nt.identity = "c:/Users/gabe/HL3" -- Incorrect\nAlternatively love.filesystem.setIdentity can be used to set the save directory outside of the config file.'
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'version',
+                                    default = '"0.10.1"',
+                                    description = 't.version should be a string, representing the version of LÖVE for which your game was made. It should be formatted as "X.Y.Z" where X is the major release number, Y the minor, and Z the patch level. It allows LÖVE to display a warning if it isn\'t compatible. Its default is the version of LÖVE running.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'console',
+                                    default = 'false',
+                                    description = 'Determines wether a console should be opened alongside the game window (Windows only) or not. Note: On OSX you can get console output by running LÖVE through the terminal.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'accelerometerjoystick',
+                                    default = 'true',
+                                    description = 'Sets whether the device accelerometer on iOS and Android should be exposed as a 3-axis Joystick. Disabling the accelerometer when it\'s not used may reduce CPU usage.'
+                                },
+                                { 
+                                    type = 'boolean',
+                                    name = 'externalstorage',
+                                    default = 'false',
+                                    description = 'Sets whether files are saved in external storage (true) or internal storage (false) on Android.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'gammacorrect',
+                                    default = 'false',
+                                    description = 'Determines whether gamma-correct rendering is enabled, when the system supports it.'
+                                },
+                                {
+                                    type = 'table',
+                                    name = 'window',
+                                    description = 'It is possible to defer window creation until love.window.setMode is first called in your code. To do so, set t.window = nil in love.conf (or t.screen = nil in older versions.) If this is done, LÖVE may crash if any function from love.graphics is called before the first love.window.setMode in your code.\n\nThe t.window table was named t.screen in versions prior to 0.9.0. The t.screen table doesn\'t exist in love.conf in 0.9.0, and the t.window table doesn\'t exist in love.conf in 0.8.0. This means love.conf will fail to execute (therefore it will fall back to default values) if care is not taken to use the correct table for the LÖVE version being used.',
+                                    table = {
+                                        {
+                                            type = 'string',
+                                            name = 'title',
+                                            default = '"Untitled"',
+                                            description = 'Sets the title of the window the game is in. Alternatively love.window.setTitle can be used to change the window title outside of the config file.'
+                                        },
+                                        {
+                                            type = 'string',
+                                            name = 'icon',
+                                            default = 'nil',
+                                            description = 'A filepath to an image to use as the window\'s icon. Not all operating systems support very large icon images. The icon can also be changed with love.window.setIcon.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'width',
+                                            default = '800',
+                                            description = 'Sets the window\'s dimensions. If these flags are set to 0 LÖVE automatically uses the user\'s desktop dimensions.'
+                                        },
+                                        {
+                                            type = 'string',
+                                            name = 'height',
+                                            default = '600',
+                                            description = 'Sets the window\'s dimensions. If these flags are set to 0 LÖVE automatically uses the user\'s desktop dimensions.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'borderless',
+                                            default = 'false',
+                                            description = 'Removes all border visuals from the window. Note that the effects may wary between operating systems.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'resizable',
+                                            default = 'false',
+                                            description = 'If set to true this allows the user to resize the game\'s window.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'minwidth',
+                                            default = '1',
+                                            description = 'Sets the minimum width and height for the game\'s window if it can be resized by the user. If you set lower values to window.width and window.height LÖVE will always favor the minimum dimensions set via window.minwidth and window.minheight.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'minheight',
+                                            default = '1',
+                                            description = 'Sets the minimum width and height for the game\'s window if it can be resized by the user. If you set lower values to window.width and window.height LÖVE will always favor the minimum dimensions set via window.minwidth and window.minheight.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'fullscreen',
+                                            default = 'false',
+                                            description = 'Wether to run the game in fullscreen (true) or windowed (false) mode. The fullscreen can also be toggled via love.window.setFullscreen or love.window.setMode.'
+                                        },
+                                        {
+                                            type = 'string',
+                                            name = 'fullscreentype',
+                                            default = '"desktop"',
+                                            description = 'Specifies the type of fullscreen mode to use (normal or desktop). Generally the desktop is recommended, as it is less restrictive than normal mode on some operating systems.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'vsync',
+                                            default = 'true',
+                                            description = 'Enables or deactivates vertical synchronization. Vsync tries to keep the game at a steady framerate and can prevent issues like screen tearing. It is recommended to keep vsync activated if you don\'t know about the possible implications of turning it off.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'msaa',
+                                            default = '0',
+                                            description = 'The number of samples to use with multi-sampled antialiasing.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'display',
+                                            default = '1',
+                                            description = 'The index of the display to show the window in, if multiple monitors are available.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'highdpi',
+                                            default = 'false',
+                                            description = 'See love.window.getPixelScale, love.window.toPixels, and love.window.fromPixels. It is recommended to keep this option disabled if you can\'t test your game on a Mac or iOS system with a Retina display, because code will need tweaking to make sure things look correct.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'x',
+                                            default = 'nil',
+                                            description = 'Determines the position of the window on the user\'s screen. Alternatively love.window.setPosition can be used to change the position on the fly.'
+                                        },
+                                        {
+                                            type = 'number',
+                                            name = 'y',
+                                            default = 'nil',
+                                            description = 'Determines the position of the window on the user\'s screen. Alternatively love.window.setPosition can be used to change the position on the fly.'
+                                        }
                                     }
-                                }
-                            },
-                            {
-                                type = 'table',
-                                name = 'modules',
-                                description = 'Module options.',
-                                table = {
-                                    {
-                                        type = 'boolean',
-                                        name = 'audio',
-                                        default = 'true',
-                                        description = 'Enable the audio module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'event',
-                                        default = 'true',
-                                        description = 'Enable the event module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'graphics',
-                                        default = 'true',
-                                        description = 'Enable the graphics module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'image',
-                                        default = 'true',
-                                        description = 'Enable the image module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'joystick',
-                                        default = 'true',
-                                        description = 'Enable the joystick module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'keyboard',
-                                        default = 'true',
-                                        description = 'Enable the keyboard module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'math',
-                                        default = 'true',
-                                        description = 'Enable the math module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'mouse',
-                                        default = 'true',
-                                        description = 'Enable the mouse module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'physics',
-                                        default = 'true',
-                                        description = 'Enable the physics module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'sound',
-                                        default = 'true',
-                                        description = 'Enable the sound module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'system',
-                                        default = 'true',
-                                        description = 'Enable the system module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'timer',
-                                        default = 'true',
-                                        description = 'Enable the timer module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'touch',
-                                        default = 'true',
-                                        description = 'Enable the touch module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'video',
-                                        default = 'true',
-                                        description = 'Enable the video module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'window',
-                                        default = 'true',
-                                        description = 'Enable the window module.'
-                                    },
-                                    {
-                                        type = 'boolean',
-                                        name = 'thread',
-                                        default = 'true',
-                                        description = 'Enable the thread module.'
+                                },
+                                {
+                                    type = 'table',
+                                    name = 'modules',
+                                    description = 'Module options.',
+                                    table = {
+                                        {
+                                            type = 'boolean',
+                                            name = 'audio',
+                                            default = 'true',
+                                            description = 'Enable the audio module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'event',
+                                            default = 'true',
+                                            description = 'Enable the event module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'graphics',
+                                            default = 'true',
+                                            description = 'Enable the graphics module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'image',
+                                            default = 'true',
+                                            description = 'Enable the image module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'joystick',
+                                            default = 'true',
+                                            description = 'Enable the joystick module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'keyboard',
+                                            default = 'true',
+                                            description = 'Enable the keyboard module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'math',
+                                            default = 'true',
+                                            description = 'Enable the math module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'mouse',
+                                            default = 'true',
+                                            description = 'Enable the mouse module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'physics',
+                                            default = 'true',
+                                            description = 'Enable the physics module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'sound',
+                                            default = 'true',
+                                            description = 'Enable the sound module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'system',
+                                            default = 'true',
+                                            description = 'Enable the system module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'timer',
+                                            default = 'true',
+                                            description = 'Enable the timer module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'touch',
+                                            default = 'true',
+                                            description = 'Enable the touch module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'video',
+                                            default = 'true',
+                                            description = 'Enable the video module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'window',
+                                            default = 'true',
+                                            description = 'Enable the window module.'
+                                        },
+                                        {
+                                            type = 'boolean',
+                                            name = 'thread',
+                                            default = 'true',
+                                            description = 'Enable the thread module.'
+                                        }
                                     }
                                 }
                             }
