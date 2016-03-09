@@ -236,10 +236,6 @@ return {
             description = 'At sign key'
         },
         {
-            name = '?',
-            description = 'Question mark key'
-        },
-        {
             name = '[',
             description = 'Left square bracket key'
         },
