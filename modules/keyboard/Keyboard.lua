@@ -175,6 +175,35 @@ return {
                             description = 'Whether text input events should be enabled.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'Whether text input events should be enabled.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'On-screen keyboard x position.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'On-screen keyboard y position.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'w',
+                            description = 'On-screen keyboard width.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'h',
+                            description = 'On-screen keyboard height.'
+                        }
+                    }
                 }
             }
         }
