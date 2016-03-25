@@ -101,7 +101,6 @@ return {
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
-                            default = '"lz4"',
                             description = 'The format that was used to compress the given string.'
                         }
                     },
@@ -123,7 +122,6 @@ return {
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
-                            default = '"lz4"',
                             description = 'The format that was used to compress the given data.'
                         }
                     },
