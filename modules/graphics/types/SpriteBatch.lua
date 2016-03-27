@@ -195,9 +195,8 @@ return {
             name = 'getColor',
             description = 'Gets the color that will be used for the next add and set operations.\n\nIf no color has been set with SpriteBatch:setColor or the current SpriteBatch color has been cleared, this method will return nil.',
             variants = {
-                {},
                 {
-                    arguments = {
+                    returns = {
                         {
                             type = 'number',
                             name = 'r',
