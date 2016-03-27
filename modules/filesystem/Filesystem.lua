@@ -501,7 +501,7 @@ return {
                         {
                             type = 'FileMode',
                             name = 'mode',
-                            default = 'c',
+                            default = '"c"',
                             description = 'The mode to open the file in.'
                         }
                     },
