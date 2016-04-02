@@ -738,12 +738,12 @@ return {
                         {
                             type = 'number',
                             name = 'drawcalls',
-                            description = 'The number of draw calls made so far during the current frame. This includes all internal draw calls – for example, drawing smooth lines takes two draw calls.'
+                            description = 'The number of draw calls made so far during the current frame.'
                         },
                         {
                             type = 'number',
                             name = 'canvasswitches',
-                            description = 'The number of times the active Canvas has been switched so far during the current frame. This includes all internal canvas switches – for example, calling Canvas:clear if the Canvas isn\'t active will trigger two canvas switches.'
+                            description = 'The number of times the active Canvas has been switched so far during the current frame.'
                         },
                         {
                             type = 'number',
