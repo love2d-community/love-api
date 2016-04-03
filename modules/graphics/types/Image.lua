@@ -7,7 +7,7 @@ return {
     functions = {
         {
             name = 'getData',
-            description = 'Gets the original ImageData or CompressedData used to create the Image.\n\nAll Images keep a reference to the Data that was used to create the Image. The Data is used to refresh the Image when love.window.setMode or Image:refresh is called.',
+            description = 'Gets the original ImageData or CompressedImageData used to create the Image.\n\nAll Images keep a reference to the Data that was used to create the Image. The Data is used to refresh the Image when love.window.setMode or Image:refresh is called.',
             variants = {
                 {
                     returns = {
@@ -21,9 +21,9 @@ return {
                 {
                     returns = {
                         {
-                            type = 'CompressedData',
+                            type = 'CompressedImageData',
                             name = 'data',
-                            description = 'The original CompressedData used to create the Image, if the image is compressed.'
+                            description = 'The original CompressedImageData used to create the Image, if the image is compressed.'
                         }
                     }
                 }
@@ -156,7 +156,7 @@ return {
         },
         {
             name = 'refresh',
-            description = 'Reloads the Image\'s contents from the ImageData or CompressedData used to create the image.',
+            description = 'Reloads the Image\'s contents from the ImageData or CompressedImageData used to create the image.',
             variants = {
                 {},
                 {
