@@ -118,7 +118,7 @@ return {
         },
         {
             name = 'getType',
-            description = 'Gets an string representing the type.',
+            description = 'Gets a string representing the type.',
             variants = {
                 {
                     returns = {
