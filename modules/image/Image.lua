@@ -124,7 +124,7 @@ return {
                         {
                             type = 'string',
                             name = 'data',
-                            description = 'The data to load into the ImageData.'
+                            description = 'The data to load into the ImageData (RGBA bytes, left to right and top to bottom).'
                         }
                     },
                     returns = {
