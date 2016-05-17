@@ -1451,7 +1451,7 @@ return {
         },
         {
             name = 'newImageFont',
-            description = 'Creates a new Font by loading a specifically formatted image. There can be up to 256 glyphs.\n\nIn versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs string.',
+            description = 'Creates a new Font by loading a specifically formatted image.\n\nIn versions prior to 0.9.0, LÖVE expects ISO 8859-1 encoding for the glyphs string.',
             variants = {
                 {
                     arguments = {
