@@ -162,7 +162,7 @@ return {
             }
         },
         {
-            name = 'hasGlyph',
+            name = 'hasGlyphs',
             description = 'Gets whether the font can render a particular character.',
             variants = {
                 {
