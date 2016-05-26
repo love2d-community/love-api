@@ -263,10 +263,13 @@ return {
         },
         {
             name = 'pause',
-            description = 'Pauses all audio',
+            description = 'Pauses currently played Sources.',
             variants = {
-                {},
                 {
+                    description = 'This function will pause all currently active Sources.'
+                },
+                {
+                    description = 'This function will only pause the specified Source.',
                     arguments = {
                         {
                             type = 'Source',
@@ -461,10 +464,13 @@ return {
         },
         {
             name = 'stop',
-            description = 'Stops all playing audio.',
+            description = 'Stops currently played sources.',
             variants = {
-                {},
                 {
+                    description = 'This function will stop all currently active sources.'
+                },
+                {
+                    description = 'This function will only stop the specified source.',
                     arguments = {
                         {
                             type = 'Source',
