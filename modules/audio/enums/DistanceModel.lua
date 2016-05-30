@@ -1,6 +1,6 @@
 return {
     name = 'DistanceModel',
-    description = 'The different distance models.',
+    description = 'The different distance models.\n\nExtended information can be found in the chapter "3.4. Attenuation By Distance" of the OpenAL 1.1 specification.',
     constants = {
         {
             name = 'none',
