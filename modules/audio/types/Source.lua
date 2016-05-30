@@ -503,7 +503,7 @@ return {
         },
         {
             name = 'setRolloff',
-            description = 'Sets the rolloff factor.',
+            description = 'Sets the rolloff factor which affects the strength of the used distance attenuation.\n\nExtended information and detailed formulas can be found in the chapter "3.4. Attenuation By Distance" of OpenAL 1.1 specification.',
             variants = {
                 {
                     arguments = {
