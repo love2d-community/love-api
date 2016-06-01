@@ -70,7 +70,7 @@ return {
         },
         {
             name = 'getPixel',
-            description = 'Gets the pixel at the specified position.\n\nValid x and y values start at 0 and go up to image width and height minus 1.',
+            description = 'Gets the color of a pixel at a specific position in the image.\n\nValid x and y values start at 0 and go up to image width and height minus 1.',
             variants = {
                 {
                     arguments = {
