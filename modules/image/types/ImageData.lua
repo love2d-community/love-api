@@ -55,14 +55,14 @@ return {
         },
         {
             name = 'getHeight',
-            description = 'Gets the height of the ImageData.',
+            description = 'Gets the height of the ImageData in pixels.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'height',
-                            description = 'The height of the ImageData.'
+                            description = 'The height of the ImageData in pixels.'
                         }
                     }
                 }
@@ -112,14 +112,14 @@ return {
         },
         {
             name = 'getWidth',
-            description = 'Gets the width of the ImageData.',
+            description = 'Gets the width of the ImageData in pixels.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'width',
-                            description = 'The width of the ImageData.'
+                            description = 'The width of the ImageData in pixels.'
                         }
                     }
                 }
