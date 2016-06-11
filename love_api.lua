@@ -859,6 +859,11 @@ return {
                             type = 'number',
                             name = 'dy',
                             description = 'The amount moved along the y-axis since the last time love.mousemoved was called.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'istouch',
+                            description = 'True if the mouse button press originated from a touchscreen touch-press.'
                         }
                     }
                 }
