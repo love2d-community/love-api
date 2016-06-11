@@ -33,6 +33,210 @@ return {
                 }
             }
         },
+    },
+    modules = {
+        require(path .. 'modules.audio.Audio'),
+        require(path .. 'modules.event.Event'),
+        require(path .. 'modules.filesystem.Filesystem'),
+        require(path .. 'modules.graphics.Graphics'),
+        require(path .. 'modules.image.Image'),
+        require(path .. 'modules.joystick.Joystick'),
+        require(path .. 'modules.keyboard.Keyboard'),
+        require(path .. 'modules.math.Math'),
+        require(path .. 'modules.mouse.Mouse'),
+        require(path .. 'modules.physics.Physics'),
+        require(path .. 'modules.sound.Sound'),
+        require(path .. 'modules.system.System'),
+        require(path .. 'modules.thread.Thread'),
+        require(path .. 'modules.timer.Timer'),
+        require(path .. 'modules.touch.Touch'),
+        require(path .. 'modules.video.Video'),
+        require(path .. 'modules.window.Window')
+    },
+    types = {
+        {
+            name = 'Data',
+            description = 'The superclass of all data.',
+            functions = {
+                {
+                    name = 'getPointer',
+                    description = 'Gets a pointer to the Data.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'light userdata',
+                                    name = 'pointer',
+                                    description = 'A raw pointer to the Data.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    name = 'getSize',
+                    description = 'Gets the size of the Data.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'size',
+                                    description = 'The size of the Data in bytes.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    name = 'getString',
+                    description = 'Gets the full Data as a string.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'string',
+                                    name = 'data',
+                                    description = 'The raw data.'
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            supertypes = {
+                'Object'
+            },
+            subtypes = {
+                'CompressedData',
+                'CompressedImageData',
+                'FileData',
+                'FontData',
+                'GlyphData',
+                'ImageData',
+                'SoundData'
+            }
+        },
+        {
+            name = 'Drawable',
+            description = 'Superclass for all things that can be drawn on screen. This is an abstract type that can\'t be created directly.',
+            supertypes = {
+                'Object'
+            },
+            subtypes = {
+                'Canvas',
+                'Framebuffer',
+                'Image',
+                'Mesh',
+                'ParticleSystem',
+                'SpriteBatch',
+                'Text',
+                'Texture',
+                'Video'
+            }
+        },
+        {
+            name = 'Object',
+            description = 'The superclass of all LÖVE types.',
+            functions = {
+                {
+                    name = 'type',
+                    description = 'Gets the type of the object as a string.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'string',
+                                    name = 'type',
+                                    description = 'The type as a string.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    name = 'typeOf',
+                    description = 'Checks whether an object is of a certain type. If the object has the type with the specified name in its hierarchy, this function will return true.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'string',
+                                    name = 'name',
+                                    description = 'The name of the type to check for.'
+                                }
+                            },
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'b',
+                                    description = 'True if the object is of the specified type, false otherwise.'
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            subtypes = {
+                'BezierCurve',
+                'Body',
+                'Canvas',
+                'ChainShape',
+                'Channel',
+                'CircleShape',
+                'CompressedData',
+                'CompressedImageData',
+                'Contact',
+                'Cursor',
+                'Data',
+                'Decoder',
+                'DistanceJoint',
+                'Drawable',
+                'EdgeShape',
+                'File',
+                'FileData',
+                'Fixture',
+                'Font',
+                'FontData',
+                'Framebuffer',
+                'FrictionJoint',
+                'GearJoint',
+                'GlyphData',
+                'Image',
+                'ImageData',
+                'Joint',
+                'Joystick',
+                'Mesh',
+                'MotorJoint',
+                'MouseJoint',
+                'ParticleSystem',
+                'PixelEffect',
+                'PolygonShape',
+                'PrismaticJoint',
+                'PulleyJoint',
+                'Quad',
+                'Quad',
+                'RandomGenerator',
+                'Rasterizer',
+                'RevoluteJoint',
+                'RopeJoint',
+                'Shader',
+                'Shape',
+                'SoundData',
+                'Source',
+                'SpriteBatch',
+                'Text',
+                'Texture',
+                'Thread',
+                'Video',
+                'VideoStream',
+                'WeldJoint',
+                'WheelJoint',
+                'World'
+            }
+        }
+    },
+    callbacks = {
         {
             name = 'conf',
             description = 'If a file called conf.lua is present in your game folder (or .love file), it is run before the LÖVE modules are loaded. You can use this file to overwrite the love.conf function, which is later called by the LÖVE \'boot\' script. Using the love.conf function, you can set some configuration options, and change things like the default size of the window, which modules are loaded, and other stuff.',
@@ -291,211 +495,7 @@ return {
                     }
                 }
             }
-        }
-    },
-    modules = {
-        require(path .. 'modules.audio.Audio'),
-        require(path .. 'modules.event.Event'),
-        require(path .. 'modules.filesystem.Filesystem'),
-        require(path .. 'modules.graphics.Graphics'),
-        require(path .. 'modules.image.Image'),
-        require(path .. 'modules.joystick.Joystick'),
-        require(path .. 'modules.keyboard.Keyboard'),
-        require(path .. 'modules.math.Math'),
-        require(path .. 'modules.mouse.Mouse'),
-        require(path .. 'modules.physics.Physics'),
-        require(path .. 'modules.sound.Sound'),
-        require(path .. 'modules.system.System'),
-        require(path .. 'modules.thread.Thread'),
-        require(path .. 'modules.timer.Timer'),
-        require(path .. 'modules.touch.Touch'),
-        require(path .. 'modules.video.Video'),
-        require(path .. 'modules.window.Window')
-    },
-    types = {
-        {
-            name = 'Data',
-            description = 'The superclass of all data.',
-            functions = {
-                {
-                    name = 'getPointer',
-                    description = 'Gets a pointer to the Data.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'light userdata',
-                                    name = 'pointer',
-                                    description = 'A raw pointer to the Data.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    name = 'getSize',
-                    description = 'Gets the size of the Data.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'number',
-                                    name = 'size',
-                                    description = 'The size of the Data in bytes.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    name = 'getString',
-                    description = 'Gets the full Data as a string.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'string',
-                                    name = 'data',
-                                    description = 'The raw data.'
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            supertypes = {
-                'Object'
-            },
-            subtypes = {
-                'CompressedData',
-                'CompressedImageData',
-                'FileData',
-                'FontData',
-                'GlyphData',
-                'ImageData',
-                'SoundData'
-            }
         },
-        {
-            name = 'Drawable',
-            description = 'Superclass for all things that can be drawn on screen. This is an abstract type that can\'t be created directly.',
-            supertypes = {
-                'Object'
-            },
-            subtypes = {
-                'Canvas',
-                'Framebuffer',
-                'Image',
-                'Mesh',
-                'ParticleSystem',
-                'SpriteBatch',
-                'Text',
-                'Texture',
-                'Video'
-            }
-        },
-        {
-            name = 'Object',
-            description = 'The superclass of all LÖVE types.',
-            functions = {
-                {
-                    name = 'type',
-                    description = 'Gets the type of the object as a string.',
-                    variants = {
-                        {
-                            returns = {
-                                {
-                                    type = 'string',
-                                    name = 'type',
-                                    description = 'The type as a string.'
-                                }
-                            }
-                        }
-                    }
-                },
-                {
-                    name = 'typeOf',
-                    description = 'Checks whether an object is of a certain type. If the object has the type with the specified name in its hierarchy, this function will return true.',
-                    variants = {
-                        {
-                            arguments = {
-                                {
-                                    type = 'string',
-                                    name = 'name',
-                                    description = 'The name of the type to check for.'
-                                }
-                            },
-                            returns = {
-                                {
-                                    type = 'boolean',
-                                    name = 'b',
-                                    description = 'True if the object is of the specified type, false otherwise.'
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            subtypes = {
-                'BezierCurve',
-                'Body',
-                'Canvas',
-                'ChainShape',
-                'Channel',
-                'CircleShape',
-                'CompressedData',
-                'CompressedImageData',
-                'Contact',
-                'Cursor',
-                'Data',
-                'Decoder',
-                'DistanceJoint',
-                'Drawable',
-                'EdgeShape',
-                'File',
-                'FileData',
-                'Fixture',
-                'Font',
-                'FontData',
-                'Framebuffer',
-                'FrictionJoint',
-                'GearJoint',
-                'GlyphData',
-                'Image',
-                'ImageData',
-                'Joint',
-                'Joystick',
-                'Mesh',
-                'MotorJoint',
-                'MouseJoint',
-                'ParticleSystem',
-                'PixelEffect',
-                'PolygonShape',
-                'PrismaticJoint',
-                'PulleyJoint',
-                'Quad',
-                'Quad',
-                'RandomGenerator',
-                'Rasterizer',
-                'RevoluteJoint',
-                'RopeJoint',
-                'Shader',
-                'Shape',
-                'SoundData',
-                'Source',
-                'SpriteBatch',
-                'Text',
-                'Texture',
-                'Thread',
-                'Video',
-                'VideoStream',
-                'WeldJoint',
-                'WheelJoint',
-                'World'
-            }
-        }
-    },
-    callbacks = {
         {
             name = 'directorydropped',
             description = 'Callback function triggered when a directory is dragged and dropped onto the window.',
