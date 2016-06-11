@@ -39,7 +39,7 @@ return {
             variants = {
                 {
                     arguments = {
-                        { 
+                        {
                             type = 'table',
                             name = 't',
                             description = 'The love.conf function takes one argument: a table filled with all the default values which you can overwrite to your liking. If you want to change the default window size, for instance, do:\n\nfunction love.conf(t)\n    t.window.width = 1024\n    t.window.height = 768\nend\n\nIf you don\'t need the physics module or joystick module, do the following.\n\nfunction love.conf(t)\n    t.modules.joystick = false\n    t.modules.physics = false\nend\n\nSetting unused modules to false is encouraged when you release your game. It reduces startup time slightly (especially if the joystick module is disabled) and reduces memory usage (slightly).\n\nNote that you can\'t disable love.filesystem; it\'s mandatory. The same goes for the love module itself. love.graphics needs love.window to be enabled.',
@@ -68,7 +68,7 @@ return {
                                     default = 'true',
                                     description = 'Sets whether the device accelerometer on iOS and Android should be exposed as a 3-axis Joystick. Disabling the accelerometer when it\'s not used may reduce CPU usage.'
                                 },
-                                { 
+                                {
                                     type = 'boolean',
                                     name = 'externalstorage',
                                     default = 'false',
