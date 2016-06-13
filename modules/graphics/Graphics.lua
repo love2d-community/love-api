@@ -914,6 +914,7 @@ return {
             description = 'Sets the scissor to the rectangle created by the intersection of the specified rectangle with the existing scissor. If no scissor is active yet, it behaves like love.graphics.setScissor.\n\nThe scissor limits the drawing area to a specified rectangle. This affects all graphics calls, including love.graphics.clear.\n\nThe dimensions of the scissor is unaffected by graphical transformations (translate, scale, ...).',
             variants = {
                 {
+                    description = 'Limits the drawing area to a specified rectangle.',
                     arguments = {
                         {
                             type = 'number',
@@ -936,6 +937,9 @@ return {
                             description = 'The height of the rectangle to intersect with the existing scissor rectangle.'
                         }
                     }
+                },
+                {
+                    description = 'Disables scissor.'
                 }
             }
         },
