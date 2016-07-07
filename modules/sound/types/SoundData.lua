@@ -74,7 +74,7 @@ return {
         },
         {
             name = 'getSampleCount',
-            description = 'Returns the sample count of the SoundData.',
+            description = 'Returns the number of samples per channel of the SoundData.',
             variants = {
                 {
                     returns = {
