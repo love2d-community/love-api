@@ -309,6 +309,21 @@ return {
             }
         },
         {
+            name = 'init',
+            description = 'Initializes love.filesystem, will be called internally, so should not be used explicitly.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'appname',
+                            description = 'The name of the application binary, typically love.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isDirectory',
             description = 'Check whether something is a directory.',
             variants = {
