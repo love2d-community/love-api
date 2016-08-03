@@ -2471,8 +2471,8 @@ return {
             name = 'setColorMask',
             description = 'Sets the color mask. Enables or disables specific color components when rendering and clearing the screen. For example, if red is set to false, no further changes will be made to the red component of any pixels.\n\nEnables all color components when called without arguments.',
             variants = {
-                {},
                 {
+                    description = 'Enables color masking for the specified color components.',
                     arguments = {
                         {
                             type = 'boolean',
@@ -2495,6 +2495,9 @@ return {
                             description = 'Render alpha component.'
                         }
                     }
+                },
+                {
+                    description = 'Disables color masking.'
                 }
             }
         },
