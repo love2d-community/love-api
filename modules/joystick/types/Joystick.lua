@@ -179,7 +179,7 @@ return {
         },
         {
             name = 'getHat',
-            description = 'Gets the direction of a hat.',
+            description = 'Gets the direction of the Joystick\'s hat.',
             variants = {
                 {
                     arguments = {
