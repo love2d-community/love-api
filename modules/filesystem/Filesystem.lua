@@ -567,6 +567,7 @@ return {
                     }
                 },
                 {
+                    description = 'Creates a new FileData from a file on the storage device.',
                     arguments = {
                         {
                             type = 'string',
