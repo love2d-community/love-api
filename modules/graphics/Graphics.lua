@@ -2409,10 +2409,10 @@ return {
         },
         {
             name = 'setCanvas',
-            description = 'Sets the render target to one or more Canvases. All drawing operations until the next love.graphics.setCanvas call will be redirected to the specified canvases and not shown on the screen.\n\nAll canvas arguments must have the same widths and heights and the same texture type. Normally the same thing will be drawn on each canvas, but that can be changed if a pixel shader is used with the "effects" function instead of the regular effect.\n\nNot all computers support Canvases, and not all computers which support Canvases will support multiple render targets. Use love.graphics.isSupported to check.\n\nnWhen called without arguments, the render target is reset to the screen.',
+            description = 'Captures drawing operations to a Canvas.',
             variants = {
-                {},
                 {
+                    description = 'Sets the render target to a specified Canvas. All drawing operations until the next love.graphics.setCanvas call will be redirected to the Canvas and not shown on the screen.',
                     arguments = {
                         {
                             type = 'Canvas',
@@ -2423,6 +2423,29 @@ return {
                             type = 'Canvas',
                             name = '...',
                             description = 'Additional render targets.'
+                        }
+                    }
+                },
+                {
+                    description = 'Resets the render target to the screen, i.e. re-enables drawing to the screen.'
+                },
+                {
+                    description = 'Sets the render target to multiple simultaneous Canvases. All drawing operations until the next love.graphics.setCanvas call will be redirected to the specified canvases and not shown on the screen.',
+                    arguments = {
+                        {
+                            type = 'Canvas',
+                            name = 'canvas1',
+                            description = 'The first render target.'
+                        },
+                        {
+                            type = 'Canvas',
+                            name = 'canvas2',
+                            description = 'The second render target.'
+                        },
+                        {
+                            type = 'Canvas',
+                            name = '...',
+                            description = 'More canvases.'
                         }
                     }
                 }
