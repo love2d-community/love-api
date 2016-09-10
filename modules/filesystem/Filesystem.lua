@@ -428,7 +428,7 @@ return {
         },
         {
             name = 'load',
-            description = 'Load a file (but not run it).',
+            description = 'Loads a Lua file (but does not run it).',
             variants = {
                 {
                     arguments = {
@@ -436,6 +436,12 @@ return {
                             type = 'string',
                             name = 'name',
                             description = 'The name (and path) of the file.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'errormsg',
+                            default = 'nil',
+                            description = 'The error message if file could not be opened.'
                         }
                     },
                     returns = {
