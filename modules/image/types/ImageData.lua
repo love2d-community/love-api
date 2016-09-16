@@ -187,7 +187,7 @@ return {
         },
         {
             name = 'setPixel',
-            description = 'Sets the color of a pixel.\n\nValid x and y values start at 0 and go up to image width and height minus 1.',
+            description = 'Sets the color of a pixel at a specific position in the image.\n\nValid x and y values start at 0 and go up to image width and height minus 1.',
             variants = {
                 {
                     arguments = {
