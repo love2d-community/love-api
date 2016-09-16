@@ -322,21 +322,6 @@ return {
             }
         },
         {
-            name = 'isCreated',
-            description = 'Checks if the window has been created.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'created',
-                            description = 'True if the window has been created, false otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'isDisplaySleepEnabled',
             description = 'Gets whether the display is allowed to sleep while the program is running.\n\nDisplay sleep is disabled by default. Some types of input (e.g. joystick button presses) might not prevent the display from sleeping, if display sleep is allowed.',
             variants = {
