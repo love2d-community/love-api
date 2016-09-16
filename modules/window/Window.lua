@@ -337,6 +337,21 @@ return {
             }
         },
         {
+            name = 'isOpen',
+            description = 'Checks if the window is open.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'open',
+                            description = 'True if the window is open, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isVisible',
             description = 'Checks if the game window is visible.\n\nThe window is considered visible if it\'s not minimized and the program isn\'t hidden.',
             variants = {
