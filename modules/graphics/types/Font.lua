@@ -213,7 +213,7 @@ return {
                         {
                             type = 'Font',
                             name = '...',
-                            description = 'Additionall fallback Fonts.'
+                            description = 'Additional fallback Fonts.'
                         }
                     }
                 }
