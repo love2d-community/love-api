@@ -155,7 +155,7 @@ return {
                         {
                             type = 'table',
                             name = 'wrappedtext',
-                            description = 'A table containing each line of text that was wrapped.'
+                            description = 'A sequence containing each line of text that was wrapped.'
                         }
                     }
                 }
