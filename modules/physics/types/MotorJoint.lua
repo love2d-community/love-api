@@ -7,7 +7,7 @@ return {
     functions = {
         {
             name = 'getAngularOffset',
-            description = 'Gets the target angluar offset between the two Bodies the Joint is attached to.',
+            description = 'Gets the target angular offset between the two Bodies the Joint is attached to.',
             variants = {
                 {
                     returns = {
