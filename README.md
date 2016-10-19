@@ -14,15 +14,6 @@ Contributions are more than welcome!
 - The master branch contains the most recent documentation, is constantly updated and follows the [official wiki](https://love2d.org/wiki)
 - You can find the documentation for older versions by checking the [releases](https://github.com/rm-code/love-api/releases)
 
-## Projects using the LÖVE-API
-
-- [ZeroBrane Studio](http://studio.zerobrane.com/) - A lightweight Lua IDE
-- [LÖVE Atom](https://atom.io/packages/love-atom) - Snippets and autocompletion for [Atom](https://atom.io/)
-- [LÖVE Hints](https://gitlab.com/sdonalcreative/brackets-love-hints/) - Snippets, code hints and autocompletion for [Brackets](http://brackets.io/)
-- [LÖVE-IDEA](https://github.com/rm-code/love-IDEA-plugin) - Snippets and code completion for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-- [Vim LOVE Docs](https://github.com/davisdude/vim-love-docs) - Syntax highlighting for [Vim](http://www.vim.org)
-- [Quick Reference](http://love2d-community.github.io/love-api/) - Online quick reference of the LÖVE API
-
 ## Table structure
 
 ```lua
@@ -127,3 +118,12 @@ functions = { -- callbacks = {
     }
 }
 ```
+
+## Projects using the LÖVE-API
+
+- [ZeroBrane Studio](http://studio.zerobrane.com/) - A lightweight Lua IDE
+- [LÖVE Atom](https://atom.io/packages/love-atom) - Snippets and autocompletion for [Atom](https://atom.io/)
+- [LÖVE Hints](https://gitlab.com/sdonalcreative/brackets-love-hints/) - Snippets, code hints and autocompletion for [Brackets](http://brackets.io/)
+- [LÖVE-IDEA](https://github.com/rm-code/love-IDEA-plugin) - Snippets and code completion for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+- [Vim LOVE Docs](https://github.com/davisdude/vim-love-docs) - Syntax highlighting for [Vim](http://www.vim.org)
+- [Quick Reference](http://love2d-community.github.io/love-api/) - Online quick reference of the LÖVE API
