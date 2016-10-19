@@ -1,6 +1,6 @@
 -- Script by @hahawoo aka Santos
 love = require('api.love_api')
-version = '0.10.0'
+version = '0.10.1'
 
 for i, m in ipairs(love.modules) do
     if m.name == 'font' then

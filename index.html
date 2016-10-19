@@ -166,7 +166,7 @@ a {
 
 
 </style>
-    <title>L&Ouml;VE 0.10.0 Reference</title>
+    <title>L&Ouml;VE 0.10.1 Reference</title>
     </head>
     <body>
 <div class = "navigation">
@@ -1134,6 +1134,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "type_link"><a href = "#type_FileData">FileData</a></p>
 <p class = "module_navigation">Functions</p>
 <p class = "function_link"><span class = "light">love.filesystem.</span><a href = "#filesystem_getRequirePath">get</a><span class = "light">/</span><a href = "#filesystem_setRequirePath">setRequirePath</a></p>
+<p class = "function_link"><span class = "light">love.filesystem.</span><a href = "#filesystem_getSource">getSource</a></p>
 <p class = "function_link"><span class = "light">love.filesystem.</span><a href = "#filesystem_init">init</a></p>
 
 
@@ -1229,6 +1230,13 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "synopsis"><span class = "background"><span class = "return">size</span>, <span class = "return">errormsg</span> = love.filesystem.getSize( <span class = "argument">filename</span> )</span></p>
 <table class = "returns_table"><tr><td class = "return_name">size</td><td class = "return_type">number</td><td class = "return_description">The size in bytes of the file, or nil on failure.</td></tr><tr><td class = "return_name">errormsg</td><td class = "return_type">string</td><td class = "return_description">The error message on failure.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">filename</td><td class = "argument_type">string</td><td class = "argument_description">The path and name to a file.</td></tr></table>
+</div>
+<div class = "function_section">
+<p class = "name"><a name = "filesystem_getSource"><span class = "light">love.filesystem.</span>getSource</a></p>
+<p class = "description">Returns the full path to the the .love file or directory. If the game is fused to the L&Ouml;VE executable, then the executable is returned.</p>
+<p class = "synopsis"><span class = "background"><span class = "return">path</span> = love.filesystem.getSource()</span></p>
+<table class = "returns_table"><tr><td class = "return_name">path</td><td class = "return_type">string</td><td class = "return_description">The full platform-dependent path of the .love file or directory.</td></tr></table>
+
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "filesystem_getSourceBaseDirectory"><span class = "light">love.filesystem.</span>getSourceBaseDirectory</a></p>
@@ -1920,6 +1928,12 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <div class = "function_section">
 <p class = "name"><a name = "graphics_newImageFont"><span class = "light">love.graphics.</span>newImageFont</a></p>
 <p class = "description">Creates a new Font by loading a specifically formatted image.<br /><br />In versions prior to 0.9.0, L&Ouml;VE expects ISO 8859-1 encoding for the glyphs string.</p>
+<p class = "synopsis"><span class = "background"><span class = "return">font</span> = love.graphics.newImageFont( <span class = "argument">filename</span>, <span class = "argument">glyphs</span> )</span></p>
+<table class = "returns_table"><tr><td class = "return_name">font</td><td class = "return_type"><a href = "#type_Font">Font</a></td><td class = "return_description">A Font object which can be used to draw text on screen.</td></tr></table>
+<table class = "arguments_table"><tr><td class = "argument_name">filename</td><td class = "argument_type">string</td><td class = "argument_description">The filepath to the image file.</td></tr><tr><td class = "argument_name">glyphs</td><td class = "argument_type">string</td><td class = "argument_description">A string of the characters in the image in order from left to right.</td></tr></table>
+<p class = "synopsis"><span class = "background"><span class = "return">font</span> = love.graphics.newImageFont( <span class = "argument">imageData</span>, <span class = "argument">glyphs</span> )</span></p>
+<table class = "returns_table"><tr><td class = "return_name">font</td><td class = "return_type"><a href = "#type_Font">Font</a></td><td class = "return_description">A Font object which can be used to draw text on screen.</td></tr></table>
+<table class = "arguments_table"><tr><td class = "argument_name">imageData</td><td class = "argument_type"><a href = "#type_ImageData">ImageData</a></td><td class = "argument_description">The ImageData object to create the font from.</td></tr><tr><td class = "argument_name">glyphs</td><td class = "argument_type">string</td><td class = "argument_description">A string of the characters in the image in order from left to right.</td></tr></table>
 <p class = "synopsis"><span class = "background"><span class = "return">font</span> = love.graphics.newImageFont( <span class = "argument">filename</span>, <span class = "argument">glyphs</span>, <span class = "argument">extraspacing</span> )</span></p>
 <table class = "returns_table"><tr><td class = "return_name">font</td><td class = "return_type"><a href = "#type_Font">Font</a></td><td class = "return_description">A Font object which can be used to draw text on screen.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">filename</td><td class = "argument_type">string</td><td class = "argument_description">The filepath to the image file.</td></tr><tr><td class = "argument_name">glyphs</td><td class = "argument_type">string</td><td class = "argument_description">A string of the characters in the image in order from left to right.</td></tr><tr><td class = "argument_name">extraspacing <span class = "default">(0)</span></td><td class = "argument_type">number</td><td class = "argument_description">Additional spacing (positive or negative) to apply to each glyph in the Font.</td></tr></table>
@@ -2441,7 +2455,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "name"><a name = "Font_getWrap"><span class = "light">Font:</span>getWrap</a></p>
 <p class = "description">Gets formatting information for text, given a wrap limit.<br /><br />This function accounts for newlines correctly (i.e. '\n').</p>
 <p class = "synopsis"><span class = "background"><span class = "return">width</span>, <span class = "return">wrappedtext</span> = Font:getWrap( <span class = "argument">text</span>, <span class = "argument">wraplimit</span> )</span></p>
-<table class = "returns_table"><tr><td class = "return_name">width</td><td class = "return_type">number</td><td class = "return_description">The maximum width of the wrapped text.</td></tr><tr><td class = "return_name">wrappedtext</td><td class = "return_type">table</td><td class = "return_description">A table containing each line of text that was wrapped.</td></tr></table>
+<table class = "returns_table"><tr><td class = "return_name">width</td><td class = "return_type">number</td><td class = "return_description">The maximum width of the wrapped text.</td></tr><tr><td class = "return_name">wrappedtext</td><td class = "return_type">table</td><td class = "return_description">A sequence containing each line of text that was wrapped.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">text</td><td class = "argument_type">string</td><td class = "argument_description">The text that will be wrapped.</td></tr><tr><td class = "argument_name">wraplimit</td><td class = "argument_type">number</td><td class = "argument_description">The maximum width in pixels of each line that text is allowed before wrapping.</td></tr></table>
 </div>
 <div class = "function_section">
@@ -2459,7 +2473,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "description">Sets the fallback fonts. When the Font doesn't contain a glyph, it will substitute the glyph from the next subsequent fallback Fonts. This is akin to setting a "font stack" in Cascading Style Sheets (CSS).</p>
 <p class = "synopsis"><span class = "background">Font:setFallbacks( <span class = "argument">fallbackfont1</span>, <span class = "argument">...</span> )</span></p>
 
-<table class = "arguments_table"><tr><td class = "argument_name">fallbackfont1</td><td class = "argument_type"><a href = "#type_Font">Font</a></td><td class = "argument_description">The first fallback Font to use.</td></tr><tr><td class = "argument_name">...</td><td class = "argument_type"><a href = "#type_Font">Font</a></td><td class = "argument_description">Additionall fallback Fonts.</td></tr></table>
+<table class = "arguments_table"><tr><td class = "argument_name">fallbackfont1</td><td class = "argument_type"><a href = "#type_Font">Font</a></td><td class = "argument_description">The first fallback Font to use.</td></tr><tr><td class = "argument_name">...</td><td class = "argument_type"><a href = "#type_Font">Font</a></td><td class = "argument_description">Additional fallback Fonts.</td></tr></table>
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "Font_setFilter"><span class = "light">Font:</span>setFilter</a></p>
@@ -4087,7 +4101,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "ImageData_setPixel"><span class = "light">ImageData:</span>setPixel</a></p>
-<p class = "description">Sets the color of a pixel.<br /><br />Valid x and y values start at 0 and go up to image width and height minus 1.</p>
+<p class = "description">Sets the color of a pixel at a specific position in the image.<br /><br />Valid x and y values start at 0 and go up to image width and height minus 1.</p>
 <p class = "synopsis"><span class = "background">ImageData:setPixel( <span class = "argument">x</span>, <span class = "argument">y</span>, <span class = "argument">r</span>, <span class = "argument">g</span>, <span class = "argument">b</span>, <span class = "argument">a</span> )</span></p>
 
 <table class = "arguments_table"><tr><td class = "argument_name">x</td><td class = "argument_type">number</td><td class = "argument_description">The position of the pixel on the x-axis.</td></tr><tr><td class = "argument_name">y</td><td class = "argument_type">number</td><td class = "argument_description">The position of the pixel on the y-axis.</td></tr><tr><td class = "argument_name">r</td><td class = "argument_type">number</td><td class = "argument_description">The red component (0-255).</td></tr><tr><td class = "argument_name">g</td><td class = "argument_type">number</td><td class = "argument_description">The green component (0-255).</td></tr><tr><td class = "argument_name">b</td><td class = "argument_type">number</td><td class = "argument_description">The blue component (0-255).</td></tr><tr><td class = "argument_name">a</td><td class = "argument_type">number</td><td class = "argument_description">The alpha component (0-255).</td></tr></table>
@@ -7201,7 +7215,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "MotorJoint_getAngularOffset"><span class = "light">MotorJoint:</span>getAngularOffset</a></p>
-<p class = "description">Gets the target angluar offset between the two Bodies the Joint is attached to.</p>
+<p class = "description">Gets the target angular offset between the two Bodies the Joint is attached to.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">angularoffset</span> = MotorJoint:getAngularOffset()</span></p>
 <table class = "returns_table"><tr><td class = "return_name">angularoffset</td><td class = "return_type">number</td><td class = "return_description">The target angular offset in radians: the second body's angle minus the first body's angle.</td></tr></table>
 
@@ -8654,8 +8668,8 @@ To open a file or folder, "file://" must be prepended to the path.</td></tr></ta
 <p class = "function_link"><span class = "light">love.window.</span><a href = "#window_getTitle">get</a><span class = "light">/</span><a href = "#window_setTitle">setTitle</a></p>
 <p class = "function_link"><span class = "light">love.window.</span><a href = "#window_hasFocus">hasFocus</a></p>
 <p class = "function_link"><span class = "light">love.window.</span><a href = "#window_hasMouseFocus">hasMouseFocus</a></p>
-<p class = "function_link"><span class = "light">love.window.</span><a href = "#window_isCreated">isCreated</a></p>
 <p class = "function_link"><span class = "light">love.window.</span><a href = "#window_isDisplaySleepEnabled">is</a><span class = "light">/</span><a href = "#window_setDisplaySleepEnabled">setDisplaySleepEnabled</a></p>
+<p class = "function_link"><span class = "light">love.window.</span><a href = "#window_isOpen">isOpen</a></p>
 <p class = "function_link"><span class = "light">love.window.</span><a href = "#window_isVisible">isVisible</a></p>
 <p class = "function_link"><span class = "light">love.window.</span><a href = "#window_maximize">maximize</a></p>
 <p class = "function_link"><span class = "light">love.window.</span><a href = "#window_minimize">minimize</a></p>
@@ -8761,17 +8775,17 @@ To open a file or folder, "file://" must be prepended to the path.</td></tr></ta
 
 </div>
 <div class = "function_section">
-<p class = "name"><a name = "window_isCreated"><span class = "light">love.window.</span>isCreated</a></p>
-<p class = "description">Checks if the window has been created.</p>
-<p class = "synopsis"><span class = "background"><span class = "return">created</span> = love.window.isCreated()</span></p>
-<table class = "returns_table"><tr><td class = "return_name">created</td><td class = "return_type">boolean</td><td class = "return_description">True if the window has been created, false otherwise.</td></tr></table>
-
-</div>
-<div class = "function_section">
 <p class = "name"><a name = "window_isDisplaySleepEnabled"><span class = "light">love.window.</span>isDisplaySleepEnabled</a></p>
 <p class = "description">Gets whether the display is allowed to sleep while the program is running.<br /><br />Display sleep is disabled by default. Some types of input (e.g. joystick button presses) might not prevent the display from sleeping, if display sleep is allowed.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">enabled</span> = love.window.isDisplaySleepEnabled()</span></p>
 <table class = "returns_table"><tr><td class = "return_name">enabled</td><td class = "return_type">boolean</td><td class = "return_description">True if system display sleep is enabled / allowed, false otherwise.</td></tr></table>
+
+</div>
+<div class = "function_section">
+<p class = "name"><a name = "window_isOpen"><span class = "light">love.window.</span>isOpen</a></p>
+<p class = "description">Checks if the window is open.</p>
+<p class = "synopsis"><span class = "background"><span class = "return">open</span> = love.window.isOpen()</span></p>
+<table class = "returns_table"><tr><td class = "return_name">open</td><td class = "return_type">boolean</td><td class = "return_description">True if the window is open, false otherwise.</td></tr></table>
 
 </div>
 <div class = "function_section">
