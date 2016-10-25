@@ -1,6 +1,5 @@
 -- Script by @hahawoo aka Santos
 love = require('api.love_api')
-version = '0.10.1'
 
 for i, m in ipairs(love.modules) do
     if m.name == 'font' then
@@ -314,7 +313,7 @@ function main()
     append(stylesheet)
 
     append([[</style>
-    <title>L&Ouml;VE ]]..version..[[ Reference</title>
+    <title>L&Ouml;VE ]]..love.version..[[ Reference</title>
     </head>
     <body>]])
 
@@ -1016,4 +1015,4 @@ function string_to_file(s, f)
     file:close()
 end
 
-string_to_file(output:gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), version..'.html')
+string_to_file(output:gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), love.version..'.html')
