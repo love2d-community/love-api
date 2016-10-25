@@ -135,12 +135,35 @@ return {
                             type = 'number',
                             name = 'radius',
                             description = 'The radius of the circle.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'DrawMode',
+                            name = 'mode',
+                            description = 'How to draw the circle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the center along x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the center along y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radius',
+                            description = 'The radius of the circle.'
                         },
                         {
                             type = 'number',
                             name = 'segments',
-                            default = 'max(radius, 10)',
-                            description = 'The number of segments used for drawing the circle.'
+                            description = 'The number of segments used for drawing the circle. Note: The default variable for the segments parameter varies between different versions of LÖVE.'
                         }
                     }
                 }
