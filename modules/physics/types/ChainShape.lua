@@ -28,6 +28,28 @@ return {
             }
         },
         {
+            name = 'getNextVertex',
+            description = 'Gets the vertex that establishes a connection to the next shape.\n\nSetting next and previous ChainShape vertices can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            default = 'nil',
+                            description = 'The x-component of the vertex, or nil if ChainShape:setNextVertex hasn\'t been called.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            default = 'nil',
+                            description = 'The y-component of the vertex, or nil if ChainShape:setNextVertex hasn\'t been called.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getPoint',
             description = 'Returns a point of the shape.',
             variants = {
