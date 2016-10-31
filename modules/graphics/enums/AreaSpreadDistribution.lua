@@ -11,6 +11,10 @@ return {
             description = 'Normal (gaussian) distribution.'
         },
         {
+            name = 'ellipse',
+            description = 'Uniform distribution in an ellipse.'
+        },
+        {
             name = 'none',
             description = 'No distribution - area spread is disabled.'
         }
