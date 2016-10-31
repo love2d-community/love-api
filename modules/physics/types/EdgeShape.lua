@@ -36,6 +36,46 @@ return {
             }
         },
         {
+            name = 'getNextVertex',
+            description = 'Gets the vertex that establishes a connection to the next shape.\n\nSetting next and previous EdgeShape vertices can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-component of the vertex, or nil if EdgeShape:setNextVertex hasn\'t been called.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-component of the vertex, or nil if EdgeShape:setNextVertex hasn\'t been called.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getPreviousVertex',
+            description = 'Gets the vertex that establishes a connection to the previous shape.\n\nSetting next and previous EdgeShape vertices can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-component of the vertex, or nil if EdgeShape:setPreviousVertex hasn\'t been called.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-component of the vertex, or nil if EdgeShape:setPreviousVertex hasn\'t been called.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setNextVertex',
             description = 'Sets a vertex that establishes a connection to the next shape.\n\nThis can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.',
             variants = {
