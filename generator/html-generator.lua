@@ -332,11 +332,11 @@ function main()
     -- Navigation
     append(div('navigation'))
 
-    append(p(a('Callbacks', nil, '#callbacks' ), 'navigation_link'))
+    append(p(a('love', nil, '#callbacks' ), 'navigation_link'))
 
     for _, m in ipairs(love.modules) do
         if m.name ~= 'font' then
-            append(p(a(m.name, nil, '#' .. m.name), 'navigation_link'))
+            append(p(a('love.' .. m.name, nil, '#' .. m.name), 'navigation_link'))
         end
     end
 
