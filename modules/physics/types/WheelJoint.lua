@@ -6,6 +6,26 @@ return {
     },
     functions = {
         {
+            name = 'getAxis',
+            description = 'Gets the world-space axis vector of the Wheel Joint.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis coordinate of the world-space axis vector.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis coordinate of the world-space axis vector.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getJointSpeed',
             description = 'Returns the current joint translation speed.',
             variants = {
