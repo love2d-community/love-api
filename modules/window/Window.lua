@@ -337,6 +337,21 @@ return {
             }
         },
         {
+            name = 'isMaximized',
+            description = 'Gets whether the Window is currently maximized.\n\nThe window can be maximized if it is not fullscreen and is resizable, and either the user has pressed the window\'s Maximize button or love.window.maximize has been called.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'maximized',
+                            description = 'True if the window is currently maximized in windowed mode, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isOpen',
             description = 'Checks if the window is open.',
             variants = {
