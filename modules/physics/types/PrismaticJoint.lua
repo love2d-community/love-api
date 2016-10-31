@@ -36,6 +36,26 @@ return {
             }
         },
         {
+            name = 'getAxis',
+            description = 'Gets the world-space axis vector of the Prismatic Joint.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-axis coordinate of the world-space axis vector.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-axis coordinate of the world-space axis vector.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getJointSpeed',
             description = 'Get the current joint angle speed.',
             variants = {
