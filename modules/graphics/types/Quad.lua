@@ -6,6 +6,26 @@ return {
     },
     functions = {
         {
+            name = 'getTextureDimensions',
+            description = 'Gets reference texture dimensions initially specified in love.graphics.newQuad.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'sw',
+                            description = 'The Texture width used by the Quad.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sh',
+                            description = 'The Texture height used by the Quad.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getViewport',
             description = 'Gets the current viewport of this Quad.',
             variants = {
