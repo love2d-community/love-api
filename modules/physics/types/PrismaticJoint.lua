@@ -6,36 +6,6 @@ return {
     },
     functions = {
         {
-            name = 'setLimitsEnabled',
-            description = 'Enables or disables the limits of the joint.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'boolean',
-                            name = 'enable',
-                            description = 'True to enable, false to disable.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'setMotorEnabled',
-            description = 'Starts or stops the joint motor.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'boolean',
-                            name = 'enable',
-                            description = 'True to enable, false to disable.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getAxis',
             description = 'Gets the world-space axis vector of the Prismatic Joint.',
             variants = {
@@ -231,6 +201,21 @@ return {
             }
         },
         {
+            name = 'setLimitsEnabled',
+            description = 'Enables or disables the limits of the joint.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'True to enable, false to disable.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setLowerLimit',
             description = 'Sets the lower limit.',
             variants = {
@@ -255,6 +240,21 @@ return {
                             type = 'number',
                             name = 'f',
                             description = 'The maximum motor force, usually in N.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setMotorEnabled',
+            description = 'Starts or stops the joint motor.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'True to enable, false to disable.'
                         }
                     }
                 }
