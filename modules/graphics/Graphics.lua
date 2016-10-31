@@ -788,6 +788,11 @@ return {
                             name = 'fonts',
                             description = 'The number of Font objects currently loaded.'
                         },
+                        {
+                            type = 'number',
+                            name = 'shaderswitches',
+                            description = 'The number of times the active Shader has been changed so far during the current frame.'
+                        },
                     }
                 }
             }
