@@ -76,6 +76,7 @@ return {
             name = 'quit',
             description = 'Adds the quit event to the queue.\n\nThe quit event is a signal for the event handler to close LÖVE. It\'s possible to abort the exit process with the love.quit callback.',
             variants = {
+                {},
                 {
                     arguments = {
                         {
@@ -83,6 +84,15 @@ return {
                             name = 'exitstatus',
                             default = '0',
                             description = 'The program exit status to use when closing the application.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = '"restart"',
+                            description = 'Restarts the game without relaunching the executable.'
                         }
                     }
                 }
