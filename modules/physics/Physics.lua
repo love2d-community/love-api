@@ -713,6 +713,69 @@ return {
                             description = 'The new prismatic joint.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Body',
+                            name = 'body1',
+                            description = 'The first body to connect with a prismatic joint.'
+                        },
+                        {
+                            type = 'Body',
+                            name = 'body2',
+                            description = 'The second body to connect with a prismatic joint.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x1',
+                            description = 'The x coordinate of the first anchor point.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y1',
+                            description = 'The y coordinate of the first anchor point.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x2',
+                            description = 'The x coordinate of the second anchor point.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y2',
+                            description = 'The y coordinate of the second anchor point.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ax',
+                            description = 'The x coordinate of the axis unit vector.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ay',
+                            description = 'The y coordinate of the axis unit vector.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'collideConnected',
+                            default = 'false',
+                            description = 'Specifies whether the two bodies should collide with each other.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'referenceAngle',
+                            default = '0',
+                            description = 'The reference angle between body1 and body2, in radians.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'PrismaticJoint',
+                            name = 'joint',
+                            description = 'The new prismatic joint.'
+                        }
+                    }
                 }
             }
         },
