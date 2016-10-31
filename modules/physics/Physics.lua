@@ -1068,7 +1068,7 @@ return {
         },
         {
             name = 'newWeldJoint',
-            description = 'Create a friction joint between two bodies. A WeldJoint essentially glues two bodies together.',
+            description = 'Creates a constraint joint between two bodies. A WeldJoint essentially glues two bodies together. The constraint is a bit soft, however, due to Box2D\'s iterative solver.',
             variants = {
                 {
                     arguments = {
@@ -1085,18 +1085,118 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x position of the anchor point.'
+                            description = 'The x position of the anchor point (world space).'
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y position of the anchor point.'
+                            description = 'The y position of the anchor point (world space).'
                         },
                         {
                             type = 'boolean',
                             name = 'collideConnected',
                             default = 'false',
                             description = 'Specifies whether the two bodies should collide with each other.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'WeldJoint',
+                            name = 'joint',
+                            description = 'The new WeldJoint.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Body',
+                            name = 'body1',
+                            description = 'The first body to attach to the joint.'
+                        },
+                        {
+                            type = 'Body',
+                            name = 'body2',
+                            description = 'The second body to attach to the joint.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x1',
+                            description = 'The x position of the first anchor point. (local space body 1).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y1',
+                            description = 'The y position of the first anchor point. (local space body 1).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x2',
+                            description = 'The x position of the second anchor point. (local space body 2).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y2',
+                            description = 'The y position of the second anchor point. (local space body 2).'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'collideConnected',
+                            default = 'false',
+                            description = 'Specifies whether the two bodies should collide with each other.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'WeldJoint',
+                            name = 'joint',
+                            description = 'The new WeldJoint.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Body',
+                            name = 'body1',
+                            description = 'The first body to attach to the joint.'
+                        },
+                        {
+                            type = 'Body',
+                            name = 'body2',
+                            description = 'The second body to attach to the joint.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x1',
+                            description = 'The x position of the first anchor point. (local space body 1).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y1',
+                            description = 'The y position of the first anchor point. (local space body 1).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x2',
+                            description = 'The x position of the second anchor point. (local space body 2).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y2',
+                            description = 'The y position of the second anchor point. (local space body 2).'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'collideConnected',
+                            default = 'false',
+                            description = 'Specifies whether the two bodies should collide with each other.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'referenceAngle',
+                            default = '0',
+                            description = 'The reference angle between body1 and body2, in radians.'
                         }
                     },
                     returns = {
