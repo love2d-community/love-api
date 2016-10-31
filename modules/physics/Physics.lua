@@ -868,12 +868,12 @@ return {
                         {
                             type = 'Body',
                             name = 'body1',
-                            description = 'The first body to connect with a Revolute Joint.'
+                            description = 'The first body.'
                         },
                         {
                             type = 'Body',
                             name = 'body2',
-                            description = 'The second body to connect with a Revolute Joint.'
+                            description = 'The second body.'
                         },
                         {
                             type = 'number',
@@ -886,8 +886,52 @@ return {
                             description = 'The y position of the connecting point.'
                         },
                         {
-                            type = 'number',
+                            type = 'boolean',
                             name = 'collideConnected',
+                            default = 'false',
+                            description = 'Specifies whether the two bodies should collide with each other.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Joint',
+                            name = 'joint',
+                            description = 'The new revolute joint.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Body',
+                            name = 'body1',
+                            description = 'The first body.'
+                        },
+                        {
+                            type = 'Body',
+                            name = 'body2',
+                            description = 'The second body.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x position of the connecting point.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y position of the connecting point.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'collideConnected',
+                            default = 'false',
+                            description = 'Specifies whether the two bodies should collide with each other.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'referenceAngle',
+                            default = '0',
                             description = 'Specifies whether the two bodies should collide with each other.'
                         }
                     },
