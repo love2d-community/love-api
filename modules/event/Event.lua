@@ -92,7 +92,7 @@ return {
                         {
                             type = 'string',
                             name = '"restart"',
-                            description = 'Restarts the game without relaunching the executable.'
+                            description = 'Restarts the game without relaunching the executable. This cleanly shuts down the main Lua state instance and creates a brand new one.'
                         }
                     }
                 }
