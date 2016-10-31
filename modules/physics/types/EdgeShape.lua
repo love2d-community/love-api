@@ -34,6 +34,46 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'setNextVertex',
+            description = 'Sets a vertex that establishes a connection to the next shape.\n\nThis can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-component of the vertex.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-component of the vertex.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setPreviousVertex',
+            description = 'Sets a vertex that establishes a connection to the previous shape.\n\nThis can help prevent unwanted collisions when a flat shape slides along the edge and moves over to the new shape.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-component of the vertex.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-component of the vertex.'
+                        }
+                    }
+                }
+            }
         }
     },
     supertypes = {
