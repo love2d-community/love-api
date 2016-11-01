@@ -2,5 +2,5 @@
 rm -rf api
 git clone https://github.com/rm-code/love-api api
 lua html-generator.lua
-mv 0.10.1.html ../index.html
+mv index.html ../index.html
 rm -rf api

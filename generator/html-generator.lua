@@ -844,4 +844,4 @@ function string_to_file(s, f)
     file:close()
 end
 
-string_to_file(output:gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), love.version..'.html')
+string_to_file(output:gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), 'index.html')
