@@ -54,24 +54,24 @@ return {
         },
         {
             name = 'send',
-            description = 'Sends one or more values to a special (extern) variable inside the shader.',
+            description = 'Sends one or more values to a special (uniform) variable inside the shader. Uniform variables have to be marked using the uniform or extern keyword.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'string',
                             name = 'name',
-                            description = 'Name of the number to send to the pixel effect.'
+                            description = 'Name of the number to send to the shader.'
                         },
                         {
                             type = 'number',
                             name = 'number',
-                            description = 'Number to send to the pixel effect.'
+                            description = 'Number to send to store in the uniform variable.'
                         },
                         {
                             type = 'number',
                             name = '...',
-                            description = 'Additional numbers to send in case the extern is an array.'
+                            description = 'Additional numbers to send if the uniform variable is an array.'
                         }
                     }
                 },
@@ -85,12 +85,12 @@ return {
                         {
                             type = 'table',
                             name = 'vector',
-                            description = 'Numbers to send to the extern as a vector. The number of elements in the table determines the type of the vector (e.g. two numbers -> vec2). At least two and at most four numbers can be used.'
+                            description = 'Numbers to send to the uniform variable as a vector. The number of elements in the table determines the type of the vector (e.g. two numbers -> vec2). At least two and at most four numbers can be used.'
                         },
                         {
                             type = 'table',
                             name = '...',
-                            description = 'Additional vectors to send in case the extern is an array. All vectors need to be of the same size (e.g. only vec3\'s)'
+                            description = 'Additional vectors to send if the uniform variable is an array. All vectors need to be of the same size (e.g. only vec3\'s).'
                         }
                     }
                 },
@@ -104,12 +104,12 @@ return {
                         {
                             type = 'table',
                             name = 'matrix',
-                            description = '2x2, 3x3, or 4x4 matrix to send to the extern. Using table form: {{a,b,c,d}, {e,f,g,h}, ... }'
+                            description = '2x2, 3x3, or 4x4 matrix to send to the uniform variable. Using table form: {{a,b,c,d}, {e,f,g,h}, ... }.'
                         },
                         {
                             type = 'table',
                             name = '...',
-                            description = 'Additional matrices of the same type as matrix to store in the extern array.'
+                            description = 'Additional matrices of the same type as matrix to store in a uniform array.'
                         }
                     }
                 },
@@ -118,36 +118,12 @@ return {
                         {
                             type = 'string',
                             name = 'name',
-                            description = 'Name of the Image to send to the shader.'
+                            description = 'Name of the Texture to send to the shader.'
                         },
                         {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'Image to send to the extern.'
-                        },
-                        {
-                            type = 'Image',
-                            name = '...',
-                            description = 'Additional images in case the extern is an array.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'name',
-                            description = 'Name of the Canvas to send to the shader.'
-                        },
-                        {
-                            type = 'Canvas',
-                            name = 'canvas',
-                            description = 'Canvas to send to the extern. The shader extern type is Image.'
-                        },
-                        {
-                            type = 'Canvas',
-                            name = '...',
-                            description = 'Additional canvases to send to the extern array.'
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'Texture (Image or Canvas) to send to the uniform variable.'
                         }
                     }
                 },
@@ -161,12 +137,12 @@ return {
                         {
                             type = 'boolean',
                             name = 'boolean',
-                            description = 'Boolean to send to store in the extern.'
+                            description = 'Boolean to send to store in the uniform variable.'
                         },
                         {
                             type = 'boolean',
                             name = '...',
-                            description = 'Additional booleans to send in case the extern is an array.'
+                            description = 'Additional booleans to send if the uniform variable is an array.'
                         }
                     }
                 },
