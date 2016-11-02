@@ -1153,7 +1153,7 @@ return {
         },
         {
             name = 'update',
-            description = 'Callback function triggered when a key is pressed.',
+            description = 'Callback function used to update the state of the game every frame.',
             variants = {
                 {
                     arguments = {
