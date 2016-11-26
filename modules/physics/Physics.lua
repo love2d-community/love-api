@@ -1122,22 +1122,22 @@ return {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The x position of the first anchor point. (local space body 1).'
+                            description = 'The x position of the first anchor point (local space body 1).'
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The y position of the first anchor point. (local space body 1).'
+                            description = 'The y position of the first anchor point (local space body 1).'
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The x position of the second anchor point. (local space body 2).'
+                            description = 'The x position of the second anchor point (local space body 2).'
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The y position of the second anchor point. (local space body 2).'
+                            description = 'The y position of the second anchor point (local space body 2).'
                         },
                         {
                             type = 'boolean',
@@ -1169,22 +1169,22 @@ return {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The x position of the first anchor point. (local space body 1).'
+                            description = 'The x position of the first anchor point (local space body 1).'
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The y position of the first anchor point. (local space body 1).'
+                            description = 'The y position of the first anchor point (local space body 1).'
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The x position of the second anchor point. (local space body 2).'
+                            description = 'The x position of the second anchor point (local space body 2).'
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The y position of the second anchor point. (local space body 2).'
+                            description = 'The y position of the second anchor point (local space body 2).'
                         },
                         {
                             type = 'boolean',
