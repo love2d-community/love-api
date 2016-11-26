@@ -4,15 +4,15 @@ return {
     constants = {
         {
             name = 'miter',
-            description = 'Miter style.'
+            description = 'The ends of the line segments beveled in an angle so that they join seamlessly.'
         },
         {
             name = 'bevel',
-            description = 'Bevel style.'
+            description = 'No cap applied to the ends of the line segments.'
         },
         {
             name = 'none',
-            description = 'None style.'
+            description = 'Flattens the point where line segments join together.'
         }
     }
 }
