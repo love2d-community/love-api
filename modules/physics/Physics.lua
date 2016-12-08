@@ -264,22 +264,22 @@ return {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The x position of the first anchor point.'
+                            description = 'The x position of the first anchor point (world space).'
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The y position of the first anchor point.'
+                            description = 'The y position of the first anchor point (world space).'
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The x position of the second anchor point.'
+                            description = 'The x position of the second anchor point (world space).'
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The y position of the second anchor point.'
+                            description = 'The y position of the second anchor point (world space).'
                         },
                         {
                             type = 'boolean',
