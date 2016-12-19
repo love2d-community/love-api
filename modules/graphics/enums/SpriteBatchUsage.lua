@@ -4,7 +4,7 @@ return {
     constants = {
         {
             name = 'dynamic',
-            description = 'The object\'s data will change repeatedly during its lifetime.'
+            description = 'The object\'s data will change occasionally during its lifetime.'
         },
         {
             name = 'static',
