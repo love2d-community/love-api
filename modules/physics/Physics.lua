@@ -201,48 +201,48 @@ return {
             name = 'newCircleShape',
             description = 'Creates a new CircleShape.',
             variants = {
-              {
-                  arguments = {
-                      {
-                          type = 'number',
-                          name = 'radius',
-                          description = 'The radius of the circle.'
-                      }
-                  },
-                  returns = {
-                      {
-                          type = 'CircleShape',
-                          name = 'shape',
-                          description = 'The new shape.'
-                      }
-                  }
-              },
-              {
-                  arguments = {
-                      {
-                          type = 'number',
-                          name = 'x',
-                          description = 'The x offset of the circle.'
-                      },
-                      {
-                          type = 'number',
-                          name = 'y',
-                          description = 'The y offset of the circle.'
-                      },
-                      {
-                          type = 'number',
-                          name = 'radius',
-                          description = 'The radius of the circle.'
-                      }
-                  },
-                  returns = {
-                      {
-                          type = 'CircleShape',
-                          name = 'shape',
-                          description = 'The new shape.'
-                      }
-                  }
-              }
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'radius',
+                            description = 'The radius of the circle.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'CircleShape',
+                            name = 'shape',
+                            description = 'The new shape.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x offset of the circle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y offset of the circle.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'radius',
+                            description = 'The radius of the circle.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'CircleShape',
+                            name = 'shape',
+                            description = 'The new shape.'
+                        }
+                    }
+                }
             }
         },
         {
