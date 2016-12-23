@@ -860,7 +860,7 @@ return {
         },
         {
             name = 'newRectangleShape',
-            description = 'Shorthand for creating rectangluar PolygonShapes.\n\nBy default, the local origin is located at the center of the rectangle as opposed to the top left for graphics.',
+            description = 'Shorthand for creating rectangular PolygonShapes.\n\nBy default, the local origin is located at the center of the rectangle as opposed to the top left for graphics.',
             variants = {
                 {
                     arguments = {
