@@ -850,7 +850,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'Joint',
+                            type = 'PulleyJoint',
                             name = 'joint',
                             description = 'The new pulley joint.'
                         }
