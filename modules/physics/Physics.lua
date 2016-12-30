@@ -957,7 +957,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'Joint',
+                            type = 'RevoluteJoint',
                             name = 'joint',
                             description = 'The new revolute joint.'
                         }
@@ -1000,7 +1000,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'Joint',
+                            type = 'RevoluteJoint',
                             name = 'joint',
                             description = 'The new revolute joint.'
                         }
