@@ -977,13 +977,23 @@ return {
                         },
                         {
                             type = 'number',
-                            name = 'x',
-                            description = 'The x position of the connecting point.'
+                            name = 'x1',
+                            description = 'The x position of the first connecting point.'
                         },
                         {
                             type = 'number',
-                            name = 'y',
-                            description = 'The y position of the connecting point.'
+                            name = 'y1',
+                            description = 'The y position of the first connecting point.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x2',
+                            description = 'The x position of the second connecting point.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y2',
+                            description = 'The y position of the second connecting point.'
                         },
                         {
                             type = 'boolean',
