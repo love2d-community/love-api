@@ -442,7 +442,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'Joint',
+                            type = 'GearJoint',
                             name = 'joint',
                             description = 'The new gear joint.'
                         }
