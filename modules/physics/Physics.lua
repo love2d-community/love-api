@@ -540,7 +540,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'Joint',
+                            type = 'MouseJoint',
                             name = 'joint',
                             description = 'The new mouse joint.'
                         }
