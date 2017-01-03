@@ -257,7 +257,6 @@ order = {
     },
 }
 
-
 output = ''
 
 function make_function_navigation_link(m, f_, prefix)
@@ -308,10 +307,13 @@ end
 function main()
     append([[<html>
     <head>
-    <link rel="stylesheet" type="text/css" href="pure-love.css">
     <title>L&Ouml;VE ]]..love.version..[[ Reference</title>
     </head>
     <body>]])
+    
+    local file = io.open("pure-love.css")
+    append(style(file:read("*a")))
+    file:close()
 
     types = {}
     for _, m in ipairs(love.modules) do
@@ -697,6 +699,10 @@ end
 
 td = function (s, c)
     return class('td', s, c)
+end
+
+style = function (s, c)
+    return class('style', s, c)
 end
 
 div = function (c)
