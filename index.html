@@ -1,9 +1,170 @@
 <html>
     <head>
-    <link rel="stylesheet" type="text/css" href="pure-love.css">
     <title>L&Ouml;VE 0.10.2 Reference</title>
     </head>
     <body>
+<style>* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+p, td, h1, h2, h3 {
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.synopsis, .return_name, .return_type, .argument_name, .argument_type, .constant_name {
+    font-family: "Consolas", monospace;
+}
+
+.navigation {
+    position: fixed;
+    margin-left: 2px;
+    margin-top: 12px;
+}
+
+.container {
+    margin-left: 105px;
+}
+
+p, td {
+    font-size: 10pt;
+}
+.modules, .callbacks, .navigation_link {
+    font-size: 10pt;
+}
+.module_name, .callbacks_title, .name, .type_name, .enum_name {
+    font-size: 16pt;
+    margin-bottom: 8px;
+}
+.synopsis {
+    font-size: 12pt;
+}
+
+.argument_name, .return_name {
+    text-align: right;
+}
+
+.argument_type, .return_type {
+    padding-left: 16px;
+}
+
+body {
+    margin-left: 12px;
+    margin-bottom: 24px;
+}
+
+.function, .function_link, .type_link, .enum_link, .subsection {
+    margin-left: 24px;
+}
+
+.description {
+    margin-left: 12px;
+}
+
+.callbacks_title, .module_navigation, .subsection {
+    margin-top: 8px;
+}
+.module_name, .synopsis {
+    margin-top: 16px;
+}
+.synopsis {
+    margin-bottom: 12px;
+}
+
+.constant_description {
+    margin-bottom: 8px;
+}
+
+.returns_table, .arguments_table, .flags_table {
+    margin-bottom: 8px;
+}
+
+table {
+    vertical-align: text-top;
+}
+td {
+    vertical-align: top;
+}
+.name, .arguments, .returns, .argument, .return, .argument_name, .return_name, .argument_type, .argument_type a, .return_type, .return_type a, .constant_name, .type_name, .enum_name, .module_navigation, .module_name, .callbacks_title, .subsection {
+    font-weight: bold;
+}
+
+.name, .type_name, .enum_name, .module_name {
+    margin-top: 12px;
+}
+
+
+.arguments, .returns {
+    text-transform: uppercase;
+}
+
+.module_name a, .type_name a, .enum_name a, .callbacks_title a, .module_navigation, .default, .subsection {
+    color: #777474;
+}
+
+a {
+    color: #2680C6; /* Blue */
+}
+.name a, .argument_name, .argument, .constant_name, .green {
+    color: #7CAF45; /* Green */
+}
+.return_name, .return {
+    color: #CC6600; /* Orange */
+    color: #D86C00; /* Orange */
+}
+.argument_name, .argument {
+    color: #E658A0; /* Pink */
+}
+
+.argument_name, .return_name {
+    width: 120px;
+}
+
+.argument_type, .return_type {
+    width: 100px;
+}
+
+.callbacks_title {
+    margin-top: 0;
+}
+
+.navigation_link a:hover, .function_link a:hover, .type_link a:hover, .enum_link a:hover, .return_type a:hover, .argument_type a:hover  {
+    background-color: #ECF3F7;
+}
+
+.background {
+    margin-left: -12px;
+    line-height: 150%;
+    background-color: #F5F5F5;
+    border-color: #D7D4D4;
+    background-color: #F7F4F4;
+    border-width: 1px;
+    border-style: solid;
+    padding: 2px 5px 2px 5px;
+    margin-left: -5px;
+}
+
+.function_section, .navigation_section, .module_section, .enum_section, .navigation_links_section {
+    margin-bottom: 40px;
+}
+
+.navigation_links_section {
+    margin-top: 20px;
+}
+
+.module_name, .callbacks_title {
+    font-size: 28px;
+}
+
+.light, .arguments, .returns, .subsection {
+    color: #A7A4A4;
+}
+</style>
 <div class = "navigation">
 <p class = "navigation_link"><a href = "#callbacks">love</a></p>
 <p class = "navigation_link"><a href = "#audio">love.audio</a></p>
@@ -3730,7 +3891,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <div class = "enum_section">
 <p class = "enum_name"><a name = "enum_SpriteBatchUsage">SpriteBatchUsage</a></p>
 <p class = "constant_name">dynamic</p>
-<p class = "constant_description">The object's data will change repeatedly during its lifetime.</p>
+<p class = "constant_description">The object's data will change occasionally during its lifetime.</p>
 <p class = "constant_name">static</p>
 <p class = "constant_description">The object will not be modified after initial sprites or vertices are added.</p>
 <p class = "constant_name">stream</p>
@@ -5806,7 +5967,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "description">Create a distance joint between two bodies.<br /><br />This joint constrains the distance between two points on two bodies to be constant. These two points are specified in world coordinates and the two bodies are assumed to be in place when this joint is created. The first anchor point is connected to the first body and the second to the second body, and the points define the length of the distance joint.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newDistanceJoint( <span class = "argument">body1</span>, <span class = "argument">body2</span>, <span class = "argument">x1</span>, <span class = "argument">y1</span>, <span class = "argument">x2</span>, <span class = "argument">y2</span>, <span class = "argument">collideConnected</span> )</span></p>
 <table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_DistanceJoint">DistanceJoint</a></td><td class = "return_description">The new distance joint.</td></tr></table>
-<table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body to attach to the joint.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body to attach to the joint.</td></tr><tr><td class = "argument_name">x1</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the first anchor point.</td></tr><tr><td class = "argument_name">y1</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the first anchor point.</td></tr><tr><td class = "argument_name">x2</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the second anchor point.</td></tr><tr><td class = "argument_name">y2</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the second anchor point.</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
+<table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body to attach to the joint.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body to attach to the joint.</td></tr><tr><td class = "argument_name">x1</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the first anchor point (world space).</td></tr><tr><td class = "argument_name">y1</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the first anchor point (world space).</td></tr><tr><td class = "argument_name">x2</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the second anchor point (world space).</td></tr><tr><td class = "argument_name">y2</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the second anchor point (world space).</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "physics_newEdgeShape"><span class = "light">love.physics.</span>newEdgeShape</a></p>
@@ -5833,7 +5994,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "name"><a name = "physics_newGearJoint"><span class = "light">love.physics.</span>newGearJoint</a></p>
 <p class = "description">Create a gear joint connecting two joints.<br /><br />The gear joint connects two joints that must be either prismatic or revolute joints. Using this joint requires that the joints it uses connect their respective bodies to the ground and have the ground as the first body. When destroying the bodies and joints you must make sure you destroy the gear joint before the other joints.<br /><br />The gear joint has a ratio the determines how the angular or distance values of the connected joints relate to each other. The formula coordinate1 + ratio * coordinate2 always has a constant value that is set when the gear joint is created.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newGearJoint( <span class = "argument">joint1</span>, <span class = "argument">joint2</span>, <span class = "argument">ratio</span>, <span class = "argument">collideConnected</span> )</span></p>
-<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_Joint">Joint</a></td><td class = "return_description">The new gear joint.</td></tr></table>
+<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_GearJoint">GearJoint</a></td><td class = "return_description">The new gear joint.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">joint1</td><td class = "argument_type"><a href = "#type_Joint">Joint</a></td><td class = "argument_description">The first joint to connect with a gear joint.</td></tr><tr><td class = "argument_name">joint2</td><td class = "argument_type"><a href = "#type_Joint">Joint</a></td><td class = "argument_description">The second joint to connect with a gear joint.</td></tr><tr><td class = "argument_name">ratio <span class = "default">(1)</span></td><td class = "argument_type">number</td><td class = "argument_description">The gear ratio.</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
 </div>
 <div class = "function_section">
@@ -5850,7 +6011,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "name"><a name = "physics_newMouseJoint"><span class = "light">love.physics.</span>newMouseJoint</a></p>
 <p class = "description">Create a joint between a body and the mouse.<br /><br />This joint actually connects the body to a fixed point in the world. To make it follow the mouse, the fixed point must be updated every timestep (example below).<br /><br />The advantage of using a MouseJoint instead of just changing a body position directly is that collisions and reactions to other joints are handled by the physics engine.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newMouseJoint( <span class = "argument">body</span>, <span class = "argument">x</span>, <span class = "argument">y</span> )</span></p>
-<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_Joint">Joint</a></td><td class = "return_description">The new mouse joint.</td></tr></table>
+<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_MouseJoint">MouseJoint</a></td><td class = "return_description">The new mouse joint.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">body</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The body to attach to the mouse.</td></tr><tr><td class = "argument_name">x</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the connecting point.</td></tr><tr><td class = "argument_name">y</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the connecting point.</td></tr></table>
 </div>
 <div class = "function_section">
@@ -5880,12 +6041,12 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "name"><a name = "physics_newPulleyJoint"><span class = "light">love.physics.</span>newPulleyJoint</a></p>
 <p class = "description">Create a pulley joint to join two bodies to each other and the ground.<br /><br />The pulley joint simulates a pulley with an optional block and tackle. If the ratio parameter has a value different from one, then the simulated rope extends faster on one side than the other. In a pulley joint the total length of the simulated rope is the constant length1 + ratio * length2, which is set when the pulley joint is created.<br /><br />Pulley joints can behave unpredictably if one side is fully extended. It is recommended that the method setMaxLengths  be used to constrain the maximum lengths each side can attain.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newPulleyJoint( <span class = "argument">body1</span>, <span class = "argument">body2</span>, <span class = "argument">gx1</span>, <span class = "argument">gy1</span>, <span class = "argument">gx2</span>, <span class = "argument">gy2</span>, <span class = "argument">x1</span>, <span class = "argument">y1</span>, <span class = "argument">x2</span>, <span class = "argument">y2</span>, <span class = "argument">ratio</span>, <span class = "argument">collideConnected</span> )</span></p>
-<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_Joint">Joint</a></td><td class = "return_description">The new pulley joint.</td></tr></table>
+<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_PulleyJoint">PulleyJoint</a></td><td class = "return_description">The new pulley joint.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body to connect with a pulley joint.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body to connect with a pulley joint.</td></tr><tr><td class = "argument_name">gx1</td><td class = "argument_type">number</td><td class = "argument_description">The x coordinate of the first body's ground anchor.</td></tr><tr><td class = "argument_name">gy1</td><td class = "argument_type">number</td><td class = "argument_description">The y coordinate of the first body's ground anchor.</td></tr><tr><td class = "argument_name">gx2</td><td class = "argument_type">number</td><td class = "argument_description">The x coordinate of the second body's ground anchor.</td></tr><tr><td class = "argument_name">gy2</td><td class = "argument_type">number</td><td class = "argument_description">The y coordinate of the second body's ground anchor.</td></tr><tr><td class = "argument_name">x1</td><td class = "argument_type">number</td><td class = "argument_description">The x coordinate of the pulley joint anchor in the first body.</td></tr><tr><td class = "argument_name">y1</td><td class = "argument_type">number</td><td class = "argument_description">The y coordinate of the pulley joint anchor in the first body.</td></tr><tr><td class = "argument_name">x2</td><td class = "argument_type">number</td><td class = "argument_description">The x coordinate of the pulley joint anchor in the second body.</td></tr><tr><td class = "argument_name">y2</td><td class = "argument_type">number</td><td class = "argument_description">The y coordinate of the pulley joint anchor in the second body.</td></tr><tr><td class = "argument_name">ratio <span class = "default">(1)</span></td><td class = "argument_type">number</td><td class = "argument_description">The joint ratio.</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(true)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "physics_newRectangleShape"><span class = "light">love.physics.</span>newRectangleShape</a></p>
-<p class = "description">Shorthand for creating rectangluar PolygonShapes.<br /><br />By default, the local origin is located at the center of the rectangle as opposed to the top left for graphics.</p>
+<p class = "description">Shorthand for creating rectangular PolygonShapes.<br /><br />By default, the local origin is located at the center of the rectangle as opposed to the top left for graphics.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">shape</span> = love.physics.newRectangleShape( <span class = "argument">width</span>, <span class = "argument">height</span> )</span></p>
 <table class = "returns_table"><tr><td class = "return_name">shape</td><td class = "return_type"><a href = "#type_PolygonShape">PolygonShape</a></td><td class = "return_description">A new PolygonShape.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">width</td><td class = "argument_type">number</td><td class = "argument_description">The width of the rectangle.</td></tr><tr><td class = "argument_name">height</td><td class = "argument_type">number</td><td class = "argument_description">The height of the rectangle.</td></tr></table>
@@ -5897,11 +6058,11 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "name"><a name = "physics_newRevoluteJoint"><span class = "light">love.physics.</span>newRevoluteJoint</a></p>
 <p class = "description">Creates a pivot joint between two bodies.<br /><br />This joint connects two bodies to a point around which they can pivot.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newRevoluteJoint( <span class = "argument">body1</span>, <span class = "argument">body2</span>, <span class = "argument">x</span>, <span class = "argument">y</span>, <span class = "argument">collideConnected</span> )</span></p>
-<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_Joint">Joint</a></td><td class = "return_description">The new revolute joint.</td></tr></table>
+<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_RevoluteJoint">RevoluteJoint</a></td><td class = "return_description">The new revolute joint.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body.</td></tr><tr><td class = "argument_name">x</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the connecting point.</td></tr><tr><td class = "argument_name">y</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the connecting point.</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
-<p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newRevoluteJoint( <span class = "argument">body1</span>, <span class = "argument">body2</span>, <span class = "argument">x</span>, <span class = "argument">y</span>, <span class = "argument">collideConnected</span>, <span class = "argument">referenceAngle</span> )</span></p>
-<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_Joint">Joint</a></td><td class = "return_description">The new revolute joint.</td></tr></table>
-<table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body.</td></tr><tr><td class = "argument_name">x</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the connecting point.</td></tr><tr><td class = "argument_name">y</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the connecting point.</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr><tr><td class = "argument_name">referenceAngle <span class = "default">(0)</span></td><td class = "argument_type">number</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
+<p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newRevoluteJoint( <span class = "argument">body1</span>, <span class = "argument">body2</span>, <span class = "argument">x1</span>, <span class = "argument">y1</span>, <span class = "argument">x2</span>, <span class = "argument">y2</span>, <span class = "argument">collideConnected</span>, <span class = "argument">referenceAngle</span> )</span></p>
+<table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_RevoluteJoint">RevoluteJoint</a></td><td class = "return_description">The new revolute joint.</td></tr></table>
+<table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body.</td></tr><tr><td class = "argument_name">x1</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the first connecting point.</td></tr><tr><td class = "argument_name">y1</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the first connecting point.</td></tr><tr><td class = "argument_name">x2</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the second connecting point.</td></tr><tr><td class = "argument_name">y2</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the second connecting point.</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr><tr><td class = "argument_name">referenceAngle <span class = "default">(0)</span></td><td class = "argument_type">number</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "physics_newRopeJoint"><span class = "light">love.physics.</span>newRopeJoint</a></p>
@@ -5918,10 +6079,10 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body to attach to the joint.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body to attach to the joint.</td></tr><tr><td class = "argument_name">x</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the anchor point (world space).</td></tr><tr><td class = "argument_name">y</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the anchor point (world space).</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
 <p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newWeldJoint( <span class = "argument">body1</span>, <span class = "argument">body2</span>, <span class = "argument">x1</span>, <span class = "argument">y1</span>, <span class = "argument">x2</span>, <span class = "argument">y2</span>, <span class = "argument">collideConnected</span> )</span></p>
 <table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_WeldJoint">WeldJoint</a></td><td class = "return_description">The new WeldJoint.</td></tr></table>
-<table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body to attach to the joint.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body to attach to the joint.</td></tr><tr><td class = "argument_name">x1</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the first anchor point (local space body 1).</td></tr><tr><td class = "argument_name">y1</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the first anchor point (local space body 1).</td></tr><tr><td class = "argument_name">x2</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the second anchor point (local space body 2).</td></tr><tr><td class = "argument_name">y2</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the second anchor point (local space body 2).</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
+<table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body to attach to the joint.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body to attach to the joint.</td></tr><tr><td class = "argument_name">x1</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the first anchor point (world space).</td></tr><tr><td class = "argument_name">y1</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the first anchor point (world space).</td></tr><tr><td class = "argument_name">x2</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the second anchor point (world space).</td></tr><tr><td class = "argument_name">y2</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the second anchor point (world space).</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr></table>
 <p class = "synopsis"><span class = "background"><span class = "return">joint</span> = love.physics.newWeldJoint( <span class = "argument">body1</span>, <span class = "argument">body2</span>, <span class = "argument">x1</span>, <span class = "argument">y1</span>, <span class = "argument">x2</span>, <span class = "argument">y2</span>, <span class = "argument">collideConnected</span>, <span class = "argument">referenceAngle</span> )</span></p>
 <table class = "returns_table"><tr><td class = "return_name">joint</td><td class = "return_type"><a href = "#type_WeldJoint">WeldJoint</a></td><td class = "return_description">The new WeldJoint.</td></tr></table>
-<table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body to attach to the joint.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body to attach to the joint.</td></tr><tr><td class = "argument_name">x1</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the first anchor point (local space body 1).</td></tr><tr><td class = "argument_name">y1</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the first anchor point (local space body 1).</td></tr><tr><td class = "argument_name">x2</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the second anchor point (local space body 2).</td></tr><tr><td class = "argument_name">y2</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the second anchor point (local space body 2).</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr><tr><td class = "argument_name">referenceAngle <span class = "default">(0)</span></td><td class = "argument_type">number</td><td class = "argument_description">The reference angle between body1 and body2, in radians.</td></tr></table>
+<table class = "arguments_table"><tr><td class = "argument_name">body1</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The first body to attach to the joint.</td></tr><tr><td class = "argument_name">body2</td><td class = "argument_type"><a href = "#type_Body">Body</a></td><td class = "argument_description">The second body to attach to the joint.</td></tr><tr><td class = "argument_name">x1</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the first anchor point (world space).</td></tr><tr><td class = "argument_name">y1</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the first anchor point (world space).</td></tr><tr><td class = "argument_name">x2</td><td class = "argument_type">number</td><td class = "argument_description">The x position of the second anchor point (world space).</td></tr><tr><td class = "argument_name">y2</td><td class = "argument_type">number</td><td class = "argument_description">The y position of the second anchor point (world space).</td></tr><tr><td class = "argument_name">collideConnected <span class = "default">(false)</span></td><td class = "argument_type">boolean</td><td class = "argument_description">Specifies whether the two bodies should collide with each other.</td></tr><tr><td class = "argument_name">referenceAngle <span class = "default">(0)</span></td><td class = "argument_type">number</td><td class = "argument_description">The reference angle between body1 and body2, in radians.</td></tr></table>
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "physics_newWheelJoint"><span class = "light">love.physics.</span>newWheelJoint</a></p>
