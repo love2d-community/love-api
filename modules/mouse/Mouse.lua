@@ -304,7 +304,7 @@ return {
         },
         {
             name = 'setPosition',
-            description = 'Sets the position of the mouse.',
+            description = 'Sets the current position of the mouse. Non-integer values are floored.',
             variants = {
                 {
                     arguments = {
