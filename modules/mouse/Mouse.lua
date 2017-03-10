@@ -354,7 +354,7 @@ return {
         },
         {
             name = 'setX',
-            description = 'Sets the current X position of the mouse.',
+            description = 'Sets the current X position of the mouse. Non-integer values are floored.',
             variants = {
                 {
                     arguments = {
@@ -369,7 +369,7 @@ return {
         },
         {
             name = 'setY',
-            description = 'Sets the current Y position of the mouse.',
+            description = 'Sets the current Y position of the mouse. Non-integer values are floored.',
             variants = {
                 {
                     arguments = {
