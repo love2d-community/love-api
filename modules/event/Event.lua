@@ -45,25 +45,25 @@ return {
                             description = 'The name of the event.'
                         },
                         {
-                            type = 'mixed',
+                            type = 'Variant',
                             name = 'a',
                             default = 'nil',
                             description = 'First event argument.'
                         },
                         {
-                            type = 'mixed',
+                            type = 'Variant',
                             name = 'b',
                             default = 'nil',
                             description = 'Second event argument.'
                         },
                         {
-                            type = 'mixed',
+                            type = 'Variant',
                             name = 'c',
                             default = 'nil',
                             description = 'Third event argument.'
                         },
                         {
-                            type = 'mixed',
+                            type = 'Variant',
                             name = 'd',
                             default = 'nil',
                             description = 'Fourth event argument.'
@@ -110,22 +110,22 @@ return {
                             description = 'The type of event.'
                         },
                         {
-                            type = 'mixed',
+                            type = 'Variant',
                             name = 'a',
                             description = 'First event argument.'
                         },
                         {
-                            type = 'mixed',
+                            type = 'Variant',
                             name = 'b',
                             description = 'Second event argument.'
                         },
                         {
-                            type = 'mixed',
+                            type = 'Variant',
                             name = 'c',
                             description = 'Third event argument.'
                         },
                         {
-                            type = 'mixed',
+                            type = 'Variant',
                             name = 'd',
                             description = 'Fourth event argument.'
                         }
