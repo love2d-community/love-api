@@ -112,12 +112,12 @@ return {
         },
         {
             name = 'push',
-            description = 'Send a message to the thread Channel.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua\'s files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.',
+            description = 'Send a message to the thread Channel.\n\nSee Variant for the list of supported types.',
             variants = {
                 {
                     arguments = {
                         {
-                            type = 'value',
+                            type = 'Variant',
                             name = 'value',
                             description = 'The contents of the message.'
                         }
