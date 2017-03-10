@@ -15,12 +15,12 @@ return {
         },
         {
             name = 'demand',
-            description = 'Retrieves the value of a Channel message and removes it from the message queue.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It waits until a message is in the queue then returns the message value.',
+            description = 'Retrieves the value of a Channel message and removes it from the message queue.\n\nIt waits until a message is in the queue then returns the message value.',
             variants = {
                 {
                     returns = {
                         {
-                            type = 'value',
+                            type = 'Variant',
                             name = 'value',
                             description = 'The contents of the message.'
                         }
@@ -45,12 +45,12 @@ return {
         },
         {
             name = 'peek',
-            description = 'Retrieves the value of a Channel message, but leaves it in the queue.\n\nThe value of the message can be a boolean, string, number or a LÖVE userdata. It returns nil if there\'s no message in the queue.',
+            description = 'Retrieves the value of a Channel message, but leaves it in the queue.\n\nIt returns nil if there\'s no message in the queue.',
             variants = {
                 {
                     returns = {
                         {
-                            type = 'value',
+                            type = 'Variant',
                             name = 'value',
                             description = 'The contents of the message.'
                         }
@@ -97,12 +97,12 @@ return {
         },
         {
             name = 'pop',
-            description = 'Retrieves the value of a Channel message and removes it from the message queue.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. It returns nil if there are no messages in the queue.',
+            description = 'Retrieves the value of a Channel message and removes it from the message queue.\n\nIt returns nil if there are no messages in the queue.',
             variants = {
                 {
                     returns = {
                         {
-                            type = 'value',
+                            type = 'Variant',
                             name = 'value',
                             description = 'The contents of the message.'
                         }
@@ -127,12 +127,12 @@ return {
         },
         {
             name = 'supply',
-            description = 'Send a message to the thread Channel and wait for a thread to accept it.\n\nThe value of the message can be a boolean, string, number, LÖVE userdata, or a simple flat table. Foreign userdata (Lua\'s files, LuaSocket, ENet, ...), functions, and tables inside tables are not supported.',
+            description = 'Send a message to the thread Channel and wait for a thread to accept it.\n\nSee Variant for the list of supported types.',
             variants = {
                 {
                     arguments = {
                         {
-                            type = 'value',
+                            type = 'Variant',
                             name = 'value',
                             description = 'The contents of the message.'
                         }
