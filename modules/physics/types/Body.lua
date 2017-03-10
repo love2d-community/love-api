@@ -515,12 +515,12 @@ return {
         },
         {
             name = 'getUserData',
-            description = 'Returns the Lua value associated with this Body.\n\nUse this function in one thread only.',
+            description = 'Returns the Lua value associated with this Body.',
             variants = {
                 {
                     returns = {
                         {
-                            type = 'value',
+                            type = 'any',
                             name = 'value',
                             description = 'The Lua value associated with the Body.'
                         }
@@ -1083,12 +1083,12 @@ return {
         },
         {
             name = 'setUserData',
-            description = 'Associates a Lua value with the Body.\n\nTo delete the reference, explicitly pass nil.\n\nUse this function in one thread only.',
+            description = 'Associates a Lua value with the Body.\n\nTo delete the reference, explicitly pass nil.',
             variants = {
                 {
                     arguments = {
                         {
-                            type = 'value',
+                            type = 'any',
                             name = 'value',
                             description = 'The Lua value to associate with the Body.'
                         }
