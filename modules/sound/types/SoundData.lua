@@ -59,7 +59,7 @@ return {
                         {
                             type = 'number',
                             name = 'i',
-                            description = 'The position of the sample (0 means first sample).'
+                            description = 'An integer value specifying the position of the sample (0 points to the first sample).'
                         }
                     },
                     returns = {
