@@ -138,7 +138,7 @@ return {
                 {
                     returns = {
                         {
-                            type = 'mixed',
+                            type = 'any',
                             name = 'value',
                             description = 'The Lua value associated with the Joint.'
                         }
@@ -168,7 +168,7 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'mixed',
+                            type = 'any',
                             name = 'value',
                             description = 'The Lua value to associate with the Joint.'
                         }
