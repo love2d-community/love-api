@@ -252,7 +252,7 @@ return {
                 {
                     returns = {
                         {
-                            type = 'mixed',
+                            type = 'any',
                             name = 'value',
                             description = 'The Lua value associated with the fixture.'
                         }
@@ -505,7 +505,7 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'mixed',
+                            type = 'any',
                             name = 'value',
                             description = 'The Lua value associated with the fixture.'
                         }
