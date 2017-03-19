@@ -417,12 +417,12 @@ return {
                         {
                             type = 'number',
                             name = 'radiusx',
-                            description = 'The radius of the ellipse along the x-axis (half the ellipse\'s width.)'
+                            description = 'The radius of the ellipse along the x-axis (half the ellipse\'s width).'
                         },
                         {
                             type = 'number',
                             name = 'radiusy',
-                            description = 'The radius of the ellipse along the y-axis (half the ellipse\'s height.)'
+                            description = 'The radius of the ellipse along the y-axis (half the ellipse\'s height).'
                         }
                     }
                 },
@@ -446,12 +446,12 @@ return {
                         {
                             type = 'number',
                             name = 'radiusx',
-                            description = 'The radius of the ellipse along the x-axis (half the ellipse\'s width.)'
+                            description = 'The radius of the ellipse along the x-axis (half the ellipse\'s width).'
                         },
                         {
                             type = 'number',
                             name = 'radiusy',
-                            description = 'The radius of the ellipse along the y-axis (half the ellipse\'s height.)'
+                            description = 'The radius of the ellipse along the y-axis (half the ellipse\'s height).'
                         },
                         {
                             type = 'number',
