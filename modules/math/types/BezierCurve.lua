@@ -133,7 +133,7 @@ return {
         },
         {
             name = 'insertControlPoint',
-            description = 'Insert control point after the i-th control point. Indices start with 1. Negative indices wrap around: -1 is the last control point, -2 the one before the last, etc.',
+            description = 'Insert control point as the new i-th control point. Existing control points from i onwards are pushed back by 1. Indices start with 1. Negative indices wrap around: -1 is the last control point, -2 the one before the last, etc.',
             variants = {
                 {
                     arguments = {
