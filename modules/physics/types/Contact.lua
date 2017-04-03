@@ -104,7 +104,7 @@ return {
         },
         {
             name = 'isEnabled',
-            description = 'Returns whether the contact is enabled. The collision will be ignored if a contact gets disabled in the post solve callback.',
+            description = 'Returns whether the contact is enabled. The collision will be ignored if a contact gets disabled in the preSolve callback.',
             variants = {
                 {
                     returns = {
