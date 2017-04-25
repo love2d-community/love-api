@@ -1088,19 +1088,36 @@ return {
         },
         {
             name = 'newFont',
-            description = 'Creates a new Font.',
+            description = 'Creates a new Font from a TrueType Font or BMFont file. Created fonts are not cached, in that calling this function with the same arguments will always create a new Font object.\n\nAll variants which accept a filename can also accept a Data object instead.',
             variants = {
                 {
+                    description = 'Create a new BMFont or TrueType font.',
                     arguments = {
                         {
                             type = 'string',
                             name = 'filename',
-                            description = 'The filepath to the font file.'
+                            description = 'The filepath to the BMFont or TrueType font file.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Font',
+                            name = 'font',
+                            description = 'A Font object which can be used to draw text on screen.'
+                        }
+                    }
+                },
+                {
+                    description = 'Create a new TrueType font.',
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filepath to the TrueType font file.'
                         },
                         {
                             type = 'number',
                             name = 'size',
-                            default = '12',
                             description = 'The size of the font in pixels.'
                         }
                     },
@@ -1113,17 +1130,17 @@ return {
                     }
                 },
                 {
+                    description = 'Create a new BMFont.',
                     arguments = {
                         {
-                            type = 'File',
-                            name = 'file',
-                            description = 'A File pointing to a font.'
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filepath to the BMFont file.'
                         },
                         {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font in pixels.'
+                            type = 'string',
+                            name = 'imagefilename',
+                            description = 'The filepath to the BMFont\'s image file. If this argument is omitted, the path specified inside the BMFont file will be used.'
                         }
                     },
                     returns = {
@@ -1135,34 +1152,11 @@ return {
                     }
                 },
                 {
-                    arguments = {
-                        {
-                            type = 'FileData',
-                            name = 'filedata',
-                            description = 'The encoded data to decode into a font.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'size',
-                            default = '12',
-                            description = 'The size of the font in pixels.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.'
-                        }
-                    }
-                },
-                {
-                    description = 'This variant uses the default font (Vera Sans) with a custom size.',
+                    description = 'Create a new instance of the default font (Vera Sans) with a custom size.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'size',
-                            default = '12',
                             description = 'The size of the font in pixels.'
                         }
                     },
