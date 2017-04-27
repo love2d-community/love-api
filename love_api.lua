@@ -778,15 +778,6 @@ return {
                             type = 'KeyConstant',
                             name = 'key',
                             description = 'Character of the released key.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'KeyConstant',
-                            name = 'key',
-                            description = 'Character of the released key.'
                         },
                         {
                             type = 'Scancode',
