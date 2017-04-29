@@ -240,6 +240,7 @@ return {
             }
         }
     },
+    parenttype = 'Texture',
     supertypes = {
         'Object',
         'Drawable',

@@ -76,6 +76,7 @@ return {
             }
         }
     },
+    parenttype = 'Shape',
     supertypes = {
         'Shape',
         'Object'

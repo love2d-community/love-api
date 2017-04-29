@@ -5,6 +5,7 @@ return {
         'newVideoStream'
     },
     functions = {},
+    parenttype = 'Object',
     supertypes = {
         'Object'
     }

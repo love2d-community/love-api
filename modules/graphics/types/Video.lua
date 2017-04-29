@@ -220,6 +220,7 @@ return {
             }
         }
     },
+    parenttype = 'Drawable',
     supertypes = {
         'Drawable',
         'Object'

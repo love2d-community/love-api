@@ -262,6 +262,7 @@ return {
             }
         }
     },
+    parenttype = 'Object',
     supertypes = {
         'Object'
     }

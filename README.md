@@ -66,6 +66,7 @@ types = {
         functions = { -- Optional
             -- See function structure below
         },
+        parenttype = 'Parenttype' --Optional
         supertypes = { -- Optional
             'Supertype'
         },
