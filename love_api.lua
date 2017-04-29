@@ -215,7 +215,6 @@ return {
                 'PrismaticJoint',
                 'PulleyJoint',
                 'Quad',
-                'Quad',
                 'RandomGenerator',
                 'Rasterizer',
                 'RevoluteJoint',
