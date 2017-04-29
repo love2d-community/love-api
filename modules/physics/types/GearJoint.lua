@@ -56,6 +56,7 @@ return {
             }
         }
     },
+    parenttype = 'Joint',
     supertypes = {
         'Object',
         'Joint'

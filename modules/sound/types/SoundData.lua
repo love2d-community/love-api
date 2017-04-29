@@ -123,6 +123,7 @@ return {
             }
         }
     },
+    parenttype = 'Data',
     supertypes = {
         'Data',
         'Object'
