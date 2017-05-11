@@ -532,6 +532,7 @@ return {
             description = 'Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value will always be the same, given the same arguments.\n\nSimplex noise is closely related to Perlin noise. It is widely used for procedural content generation.\n\nThere are many webpages which discuss Perlin and Simplex noise in detail.',
             variants = {
                 {
+                    description = 'Generates Simplex noise from 1 dimension.',
                     arguments = {
                         {
                             type = 'number',
@@ -548,6 +549,7 @@ return {
                     }
                 },
                 {
+                    description = 'Generates Simplex noise from 2 dimensions.',
                     arguments = {
                         {
                             type = 'number',
@@ -569,6 +571,7 @@ return {
                     }
                 },
                 {
+                    description = 'Generates Perlin noise (Simplex noise in version 0.9.2 and older) from 3 dimensions.',
                     arguments = {
                         {
                             type = 'number',
@@ -595,6 +598,7 @@ return {
                     }
                 },
                 {
+                    description = 'Generates Perlin noise (Simplex noise in version 0.9.2 and older) from 4 dimensions.',
                     arguments = {
                         {
                             type = 'number',
