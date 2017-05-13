@@ -63,7 +63,6 @@ return {
                     }
                 },
                 {
-                    description = 'Draws an arc using the "pie" ArcType.',
                     arguments = {
                         {
                             type = 'DrawMode',
