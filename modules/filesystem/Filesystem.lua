@@ -768,7 +768,7 @@ return {
                         {
                             type = 'string',
                             name = 'data',
-                            description = 'The data that should be written to the file'
+                            description = 'The string data to write to the file.'
                         },
                         {
                             type = 'number',
@@ -781,7 +781,44 @@ return {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'If the operation was successful'
+                            description = 'If the operation was successful.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'message',
+                            description = 'Error message if operation was unsuccessful.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name (and path) of the file.'
+                        },
+                        {
+                            type = 'Data',
+                            name = 'data',
+                            description = 'The Data object to write to the file.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'size',
+                            default = 'all',
+                            description = 'How many bytes to write.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'If the operation was successful.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'message',
+                            description = 'Error message if operation was unsuccessful.'
                         }
                     }
                 }
