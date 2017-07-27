@@ -513,7 +513,6 @@ return {
                         {
                             type = 'number',
                             name = 'high',
-                            default = '0',
                             description = 'The higher 32 bits of the state number to use for this instance of the object.'
                         }
                     },
