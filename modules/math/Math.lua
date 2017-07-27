@@ -483,7 +483,23 @@ return {
                         {
                             type = 'RandomGenerator',
                             name = 'rng',
-                            description = 'A Random Number Generator object.'
+                            description = 'The new Random Number Generator object.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'seed',
+                            description = 'The initial seed number to use for this object.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'RandomGenerator',
+                            name = 'rng',
+                            description = 'The new Random Number Generator object.'
                         }
                     }
                 },
@@ -505,23 +521,7 @@ return {
                         {
                             type = 'RandomGenerator',
                             name = 'rng',
-                            description = 'A Random Number Generator object.'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'seed',
-                            description = 'A state of a RandomGenerator object returned by RandomGenerator:getState.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'RandomGenerator',
-                            name = 'rng',
-                            description = 'A Random Number Generator object.'
+                            description = 'The new Random Number Generator object.'
                         }
                     }
                 }
