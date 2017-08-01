@@ -545,21 +545,6 @@ return {
             }
         },
         {
-            name = 'setVertexColors',
-            description = 'Sets if the per-vertex colors are used when rendering instead of the constant color (constant color being love.graphics.setColor or SpriteBatch:setColor)\n\nThe per-vertex colors are automatically enabled by default when making a new Mesh or when doing Mesh:setVertex, but only if at least one vertex color is not the default (255,255,255,255).',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'boolean',
-                            name = 'on',
-                            description = 'True to use per-vertex coloring.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'setVertexMap',
             description = 'Sets the vertex map for the Mesh. The vertex map describes the order in which the vertices are used when the Mesh is drawn. The vertices, vertex map, and mesh draw mode work together to determine what exactly is displayed on the screen.\n\nThe vertex map allows you to re-order or reuse vertices when drawing without changing the actual vertex parameters or duplicating vertices. It is especially useful when combined with different Mesh Draw Modes.',
             variants = {
