@@ -297,6 +297,21 @@ return {
             }
         },
         {
+            name = 'getQuads',
+            description = 'Gets the series of Quads used for the particle sprites.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'quads',
+                            description = 'A table containing the Quads used.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getPosition',
             description = 'Gets the position of the emitter.',
             variants = {
@@ -885,6 +900,15 @@ return {
                             name = 'quad2',
                             description = 'The second Quad to use.'
                         },
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'quads',
+                            description = 'A table containing the Quads to use.'
+                        }
                     }
                 }
             }
