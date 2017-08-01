@@ -37,7 +37,7 @@ return {
         },
         {
             name = 'getDuration',
-            description = 'Returns the number of channels in the stream.',
+            description = 'Gets the duration of the sound data.',
             variants = {
                 {
                     returns = {
