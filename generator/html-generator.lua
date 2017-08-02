@@ -15,11 +15,7 @@ for i, m in ipairs(love.modules) do
     end
 
     if m.name == 'video' then
-        for ii, f in ipairs(m.functions) do
-            if f.name == 'newVideoStream' then
-                table.remove(m.functions, ii)
-            end
-        end
+        table.remove(love.modules, i)
     end
 end
 
@@ -317,16 +313,14 @@ function main()
 
     types = {}
     for _, m in ipairs(love.modules) do
-        if m.name ~= 'font' then
-            if m.types then
-                for _, t in ipairs(m.types) do
-                    table.insert(types, {name = t.name, fullname = 'type_' .. t.name})
-                end
+        if m.types then
+            for _, t in ipairs(m.types) do
+                table.insert(types, {name = t.name, fullname = 'type_' .. t.name})
             end
-            if m.enums then
-                for _, t in ipairs(m.enums) do
-                    table.insert(types, {name = t.name, fullname = 'enum_' .. t.name})
-                end
+        end
+        if m.enums then
+            for _, t in ipairs(m.enums) do
+                table.insert(types, {name = t.name, fullname = 'enum_' .. t.name})
             end
         end
     end
@@ -337,9 +331,7 @@ function main()
     append(p(a('love', nil, '#callbacks' ), 'navigation_link'))
 
     for _, m in ipairs(love.modules) do
-        if m.name ~= 'font' then
-            append(p(a('love.' .. m.name, nil, '#' .. m.name), 'navigation_link'))
-        end
+        append(p(a('love.' .. m.name, nil, '#' .. m.name), 'navigation_link'))
     end
 
     append(div())
@@ -445,212 +437,210 @@ function main()
     end
 
     for _, m in ipairs(love.modules) do
-        if m.name ~= 'font' then
-            -- Module name
-            append(div('module_section'))
-            append(p(a(span('love.', 'light')..m.name, m.name), 'module_name'))
-            -- Module navigation
-            -- Types navigation
-            append(div('navigation_links_section'))
-            local has_functions = false
-            if m.types then
-                for _, type_ in ipairs(m.types) do
-                    if not has_functions then
-                        append(p('Types', 'module_navigation'))
-                        has_functions = true
-                    end
-                    append(p(a(type_.name, nil, '#'..'type_'..type_.name), 'type_link'))
+        -- Module name
+        append(div('module_section'))
+        append(p(a(span('love.', 'light')..m.name, m.name), 'module_name'))
+        -- Module navigation
+        -- Types navigation
+        append(div('navigation_links_section'))
+        local has_functions = false
+        if m.types then
+            for _, type_ in ipairs(m.types) do
+                if not has_functions then
+                    append(p('Types', 'module_navigation'))
+                    has_functions = true
                 end
+                append(p(a(type_.name, nil, '#'..'type_'..type_.name), 'type_link'))
             end
+        end
 
-            -- Function navigation
+        -- Function navigation
 
-            local is_not_other_constructor = function(name)
-                return name ~= 'newImageFont' and name ~= 'newRectangleShape' --  and name ~= 'getJoysticks' and name ~= 'getSystemCursor'
-            end
+        local is_not_other_constructor = function(name)
+            return name ~= 'newImageFont' and name ~= 'newRectangleShape' --  and name ~= 'getJoysticks' and name ~= 'getSystemCursor'
+        end
 
-            local has_functions = false
-            for _, f_ in ipairs(m.functions) do
-                if is_not_other_constructor(f_.name) then
-                    local is_not_constructor = true
-                    if f_.name:sub(1, 3) == 'new' then
-                        local test = false
-                        for i, v in ipairs(types) do
-                            if v.name == f_.name:sub(4) then
-                                is_not_constructor = true
-                            end
-                        end
-                        if test then
-                            has_functions = true
-                        end
-                    else
-                        has_functions = true
-                    end
-                end
-            end
-
-            if has_functions then
-                append(p('Functions', 'module_navigation'))
-            end
-
-            local make_link = function(f_, m)
-                local out = ''
+        local has_functions = false
+        for _, f_ in ipairs(m.functions) do
+            if is_not_other_constructor(f_.name) then
                 local is_not_constructor = true
                 if f_.name:sub(1, 3) == 'new' then
+                    local test = false
                     for i, v in ipairs(types) do
                         if v.name == f_.name:sub(4) then
-                            is_not_constructor = false
+                            is_not_constructor = true
                         end
                     end
+                    if test then
+                        has_functions = true
+                    end
+                else
+                    has_functions = true
                 end
-                if not is_not_other_constructor(f_.name) then
-                    is_not_constructor = false
-                end
+            end
+        end
 
-                if is_not_constructor then
-                    local lovedotmodule = span('love.' .. m.name .. '.', 'light')
-                    local link = make_function_navigation_link(m, f_, lovedotmodule)
-                    if link then
-                        out = out .. (link)
+        if has_functions then
+            append(p('Functions', 'module_navigation'))
+        end
+
+        local make_link = function(f_, m)
+            local out = ''
+            local is_not_constructor = true
+            if f_.name:sub(1, 3) == 'new' then
+                for i, v in ipairs(types) do
+                    if v.name == f_.name:sub(4) then
+                        is_not_constructor = false
                     end
                 end
-                return out
+            end
+            if not is_not_other_constructor(f_.name) then
+                is_not_constructor = false
             end
 
-            done = {}
-            out = ''
-            if order[m.name] then
-                for _, c in ipairs(order[m.name]) do
-                    if type(c) == 'string' then
+            if is_not_constructor then
+                local lovedotmodule = span('love.' .. m.name .. '.', 'light')
+                local link = make_function_navigation_link(m, f_, lovedotmodule)
+                if link then
+                    out = out .. (link)
+                end
+            end
+            return out
+        end
+
+        done = {}
+        out = ''
+        if order[m.name] then
+            for _, c in ipairs(order[m.name]) do
+                if type(c) == 'string' then
+                    for _, f_ in ipairs(m.functions) do
+                        if c == f_.name then
+                            done[f_.name] = true
+                            out = out .. make_link(f_, m)
+                        end
+                    end
+                else
+                    out = out .. p(c.name, 'subsection')
+                    for _, f in ipairs(c.functions) do
                         for _, f_ in ipairs(m.functions) do
-                            if c == f_.name then
+                            if f == f_.name then
                                 done[f_.name] = true
                                 out = out .. make_link(f_, m)
                             end
                         end
-                    else
-                        out = out .. p(c.name, 'subsection')
-                        for _, f in ipairs(c.functions) do
-                            for _, f_ in ipairs(m.functions) do
-                                if f == f_.name then
-                                    done[f_.name] = true
-                                    out = out .. make_link(f_, m)
-                                end
-                            end
-                        end
                     end
                 end
             end
+        end
 
-            for _, f_ in ipairs(m.functions) do
-                if not done[f_.name] then
-                    append(make_link(f_, m))
-                end
+        for _, f_ in ipairs(m.functions) do
+            if not done[f_.name] then
+                append(make_link(f_, m))
             end
+        end
 
-            append(out)
+        append(out)
 
-            -- Enums navigation
-            if m.enums then
-                append(p('Enums', 'module_navigation'))
-                for _, type_ in ipairs(m.enums) do
-                    append(p(a(type_.name, nil, '#'..'enum_'..type_.name), 'enum_link'))
-                end
+        -- Enums navigation
+        if m.enums then
+            append(p('Enums', 'module_navigation'))
+            for _, type_ in ipairs(m.enums) do
+                append(p(a(type_.name, nil, '#'..'enum_'..type_.name), 'enum_link'))
+            end
+        end
+        append(div())
+
+        -- Functions for modules
+
+        table.sort(m.functions, function(a, b) return a.name < b.name end)
+
+        for _, f_ in ipairs(m.functions) do
+            append(div('function_section'))
+            append(p(a(span('love.' .. m.name .. '.', 'light') .. f_.name, m.name..'_'..f_.name), 'name'))
+            append(p(f_.description, 'description'))
+            for _, f in ipairs(f_.variants) do
+                append(p(span(synopsis(m.name, f_.name, f.arguments, f.returns), 'background'), 'synopsis'))
+                append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
+                append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
             end
             append(div())
+        end
+        -- Types
+        if m.types then
+            for _, type_ in ipairs(m.types) do
+                -- Type navigation title
 
-            -- Functions for modules
+                append(div('navigation_section'))
+                append(p(a(type_.name, 'type_'..type_.name), 'type_name'))
+                append(p(type_.description:gsub('\\n', '<br />'), 'description'))
+                append(div('navigation_links_section'))
+                if type_.constructors then
+                    append(p('Constructors', 'module_navigation'))
+                    for _, constructor in ipairs(type_.constructors) do
+                        append(p(span('love.'..m.name ..'.', 'light') .. a(constructor, nil, '#'..m.name..'_'..constructor), 'function_link'))
+                    end
+                end
+                -- Type navigation functions
 
-            table.sort(m.functions, function(a, b) return a.name < b.name end)
+                if type_.functions then
+                    append(p('Functions', 'module_navigation'))
+                    for _, f_ in ipairs(type_.functions) do
+                        local prefix = span(type_.name .. ':', 'light')
+                        local link = make_function_navigation_link(type_, f_, prefix)
+                        if link then
+                            append(link)
+                        end
+                    end
+                end
+                -- Type navigation supertypes
+                is_object = false
+                if type_.supertypes then
+                    append(p('Supertypes', 'module_navigation'))
+                    for _, supertype in ipairs(type_.supertypes) do
+                        append(p(a(supertype, nil, '#type_'..supertype), 'function_link'))
+                        if supertype == 'Object' then
+                            is_object = true
+                        end
+                    end
+                end
+                if not is_object then
+                    --print(type_.name..' does not have supertype Object.')
+                end
+                append(div())
+                append(div())
 
-            for _, f_ in ipairs(m.functions) do
-                append(div('function_section'))
-                append(p(a(span('love.' .. m.name .. '.', 'light') .. f_.name, m.name..'_'..f_.name), 'name'))
-                append(p(f_.description, 'description'))
-                for _, f in ipairs(f_.variants) do
-                    append(p(span(synopsis(m.name, f_.name, f.arguments, f.returns), 'background'), 'synopsis'))
-                    append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
-                    append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
+
+                if type_.functions then
+                    for _, f_ in ipairs(type_.functions) do
+                        append(div('function_section'))
+                        append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
+                        append(p(f_.description, 'description'))
+                        for _, f in ipairs(f_.variants) do
+                            append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
+                            append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
+                            append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
+                        end
+                        append(div())
+                    end
+                end
+            end
+        end
+
+
+        -- Enums for modules
+        if m.enums then
+            for _, enum in ipairs(m.enums) do
+                append(div('enum_section'))
+                append(p(a(enum.name, 'enum_'..enum.name), 'enum_name'))
+                for _, constant in ipairs(enum.constants) do
+                    append(p(constant.name, 'constant_name'))
+                    append(p(constant.description, 'constant_description'))
                 end
                 append(div())
             end
-            -- Types
-            if m.types then
-                for _, type_ in ipairs(m.types) do
-                    -- Type navigation title
-
-                    append(div('navigation_section'))
-                    append(p(a(type_.name, 'type_'..type_.name), 'type_name'))
-                    append(p(type_.description:gsub('\\n', '<br />'), 'description'))
-                    append(div('navigation_links_section'))
-                    if type_.constructors then
-                        append(p('Constructors', 'module_navigation'))
-                        for _, constructor in ipairs(type_.constructors) do
-                            append(p(span('love.'..m.name ..'.', 'light') .. a(constructor, nil, '#'..m.name..'_'..constructor), 'function_link'))
-                        end
-                    end
-                    -- Type navigation functions
-
-                    if type_.functions then
-                        append(p('Functions', 'module_navigation'))
-                        for _, f_ in ipairs(type_.functions) do
-                            local prefix = span(type_.name .. ':', 'light')
-                            local link = make_function_navigation_link(type_, f_, prefix)
-                            if link then
-                                append(link)
-                            end
-                        end
-                    end
-                    -- Type navigation supertypes
-                    is_object = false
-                    if type_.supertypes then
-                        append(p('Supertypes', 'module_navigation'))
-                        for _, supertype in ipairs(type_.supertypes) do
-                            append(p(a(supertype, nil, '#type_'..supertype), 'function_link'))
-                            if supertype == 'Object' then
-                                is_object = true
-                            end
-                        end
-                    end
-                    if not is_object then
-                        --print(type_.name..' does not have supertype Object.')
-                    end
-                    append(div())
-                    append(div())
-
-
-                    if type_.functions then
-                        for _, f_ in ipairs(type_.functions) do
-                            append(div('function_section'))
-                            append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
-                            append(p(f_.description, 'description'))
-                            for _, f in ipairs(f_.variants) do
-                                append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
-                                append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
-                                append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
-                            end
-                            append(div())
-                        end
-                    end
-                end
-            end
-
-
-            -- Enums for modules
-            if m.enums then
-                for _, enum in ipairs(m.enums) do
-                    append(div('enum_section'))
-                    append(p(a(enum.name, 'enum_'..enum.name), 'enum_name'))
-                    for _, constant in ipairs(enum.constants) do
-                        append(p(constant.name, 'constant_name'))
-                        append(p(constant.description, 'constant_description'))
-                    end
-                    append(div())
-                end
-            end
-
-            append(div())
         end
+
+        append(div())
     end
     append(div())
 
