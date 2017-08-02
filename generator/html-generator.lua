@@ -313,15 +313,11 @@ function main()
 
     types = {}
     for _, m in ipairs(love.modules) do
-        if m.types then
-            for _, t in ipairs(m.types) do
-                table.insert(types, {name = t.name, fullname = 'type_' .. t.name})
-            end
+        for _, t in ipairs(m.types) do
+            table.insert(types, {name = t.name, fullname = 'type_' .. t.name})
         end
-        if m.enums then
-            for _, t in ipairs(m.enums) do
-                table.insert(types, {name = t.name, fullname = 'enum_' .. t.name})
-            end
+        for _, t in ipairs(m.enums) do
+            table.insert(types, {name = t.name, fullname = 'enum_' .. t.name})
         end
     end
 
@@ -381,16 +377,14 @@ function main()
     for _, c in ipairs(love.callbacks) do
         append(div('function_section'))
         append(p(a(span('love.', 'light') .. c.name, c.name), 'name'))
-        if c.variants then
-            for _, f_ in ipairs(c.variants) do
-                append(p(c.description, 'callback_description'))
-                for _, f in ipairs(c.variants) do
-                    append(p(span(synopsis('', c.name, f.arguments, f.returns), 'background'), 'synopsis'))
-                    append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
-                    append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
-                end
-
+        for _, f_ in ipairs(c.variants) do
+            append(p(c.description, 'callback_description'))
+            for _, f in ipairs(c.variants) do
+                append(p(span(synopsis('', c.name, f.arguments, f.returns), 'background'), 'synopsis'))
+                append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
+                append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
             end
+
         end
         append(div())
     end
@@ -405,14 +399,14 @@ function main()
         append(p(type_.description, 'description'))
         append(div('navigation_links_section'))
         -- Type navigation functions
-        if type_.functions then
+        if #type_.functions > 0 then
             append(p('Functions', 'module_navigation'))
             for _, f_ in ipairs(type_.functions) do
                 append(p(a(span(type_.name .. ':', 'light') .. f_.name, nil, '#'..type_.name..'_'..f_.name), 'function_link'))
             end
         end
         -- Type navigation supertypes
-        if type_.supertypes then
+        if #type_.supertypes > 0 then
             append(p('Supertypes', 'module_navigation'))
             for _, supertype in ipairs(type_.supertypes) do
                 append(p(a(supertype, nil, '#type_'..supertype), 'function_link'))
@@ -420,18 +414,16 @@ function main()
         end
         append(div())
         append(div())
-        if type_.functions then
-            for _, f_ in ipairs(type_.functions) do
-                append(div('function_section'))
-                append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
-                append(p(f_.description, 'description'))
-                for _, f in ipairs(f_.variants) do
-                    append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
-                    append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
-                    append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
-                end
-                append(div())
+        for _, f_ in ipairs(type_.functions) do
+            append(div('function_section'))
+            append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
+            append(p(f_.description, 'description'))
+            for _, f in ipairs(f_.variants) do
+                append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
+                append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
+                append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
             end
+            append(div())
         end
         append(div())
     end
@@ -444,14 +436,12 @@ function main()
         -- Types navigation
         append(div('navigation_links_section'))
         local has_functions = false
-        if m.types then
-            for _, type_ in ipairs(m.types) do
-                if not has_functions then
-                    append(p('Types', 'module_navigation'))
-                    has_functions = true
-                end
-                append(p(a(type_.name, nil, '#'..'type_'..type_.name), 'type_link'))
+        for _, type_ in ipairs(m.types) do
+            if not has_functions then
+                append(p('Types', 'module_navigation'))
+                has_functions = true
             end
+            append(p(a(type_.name, nil, '#'..'type_'..type_.name), 'type_link'))
         end
 
         -- Function navigation
@@ -542,7 +532,7 @@ function main()
         append(out)
 
         -- Enums navigation
-        if m.enums then
+        if #m.enums > 0 then
             append(p('Enums', 'module_navigation'))
             for _, type_ in ipairs(m.enums) do
                 append(p(a(type_.name, nil, '#'..'enum_'..type_.name), 'enum_link'))
@@ -566,78 +556,72 @@ function main()
             append(div())
         end
         -- Types
-        if m.types then
-            for _, type_ in ipairs(m.types) do
-                -- Type navigation title
+        for _, type_ in ipairs(m.types) do
+            -- Type navigation title
 
-                append(div('navigation_section'))
-                append(p(a(type_.name, 'type_'..type_.name), 'type_name'))
-                append(p(type_.description:gsub('\\n', '<br />'), 'description'))
-                append(div('navigation_links_section'))
-                if type_.constructors then
-                    append(p('Constructors', 'module_navigation'))
-                    for _, constructor in ipairs(type_.constructors) do
-                        append(p(span('love.'..m.name ..'.', 'light') .. a(constructor, nil, '#'..m.name..'_'..constructor), 'function_link'))
-                    end
+            append(div('navigation_section'))
+            append(p(a(type_.name, 'type_'..type_.name), 'type_name'))
+            append(p(type_.description:gsub('\\n', '<br />'), 'description'))
+            append(div('navigation_links_section'))
+            if #type_.constructors > 0 then
+                append(p('Constructors', 'module_navigation'))
+                for _, constructor in ipairs(type_.constructors) do
+                    append(p(span('love.'..m.name ..'.', 'light') .. a(constructor, nil, '#'..m.name..'_'..constructor), 'function_link'))
                 end
-                -- Type navigation functions
+            end
+            -- Type navigation functions
 
-                if type_.functions then
-                    append(p('Functions', 'module_navigation'))
-                    for _, f_ in ipairs(type_.functions) do
-                        local prefix = span(type_.name .. ':', 'light')
-                        local link = make_function_navigation_link(type_, f_, prefix)
-                        if link then
-                            append(link)
-                        end
+            if #type_.functions > 0 then
+                append(p('Functions', 'module_navigation'))
+                for _, f_ in ipairs(type_.functions) do
+                    local prefix = span(type_.name .. ':', 'light')
+                    local link = make_function_navigation_link(type_, f_, prefix)
+                    if link then
+                        append(link)
                     end
                 end
-                -- Type navigation supertypes
-                is_object = false
-                if type_.supertypes then
-                    append(p('Supertypes', 'module_navigation'))
-                    for _, supertype in ipairs(type_.supertypes) do
-                        append(p(a(supertype, nil, '#type_'..supertype), 'function_link'))
-                        if supertype == 'Object' then
-                            is_object = true
-                        end
+            end
+            -- Type navigation supertypes
+            is_object = false
+            if #type_.supertypes > 0 then
+                append(p('Supertypes', 'module_navigation'))
+                for _, supertype in ipairs(type_.supertypes) do
+                    append(p(a(supertype, nil, '#type_'..supertype), 'function_link'))
+                    if supertype == 'Object' then
+                        is_object = true
                     end
                 end
-                if not is_object then
-                    --print(type_.name..' does not have supertype Object.')
+            end
+            if not is_object then
+                --print(type_.name..' does not have supertype Object.')
+            end
+            append(div())
+            append(div())
+
+
+            for _, f_ in ipairs(type_.functions) do
+                append(div('function_section'))
+                append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
+                append(p(f_.description, 'description'))
+                for _, f in ipairs(f_.variants) do
+                    append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
+                    append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
+                    append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
                 end
                 append(div())
-                append(div())
-
-
-                if type_.functions then
-                    for _, f_ in ipairs(type_.functions) do
-                        append(div('function_section'))
-                        append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
-                        append(p(f_.description, 'description'))
-                        for _, f in ipairs(f_.variants) do
-                            append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
-                            append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
-                            append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
-                        end
-                        append(div())
-                    end
-                end
             end
         end
 
 
         -- Enums for modules
-        if m.enums then
-            for _, enum in ipairs(m.enums) do
-                append(div('enum_section'))
-                append(p(a(enum.name, 'enum_'..enum.name), 'enum_name'))
-                for _, constant in ipairs(enum.constants) do
-                    append(p(constant.name, 'constant_name'))
-                    append(p(constant.description, 'constant_description'))
-                end
-                append(div())
+        for _, enum in ipairs(m.enums) do
+            append(div('enum_section'))
+            append(p(a(enum.name, 'enum_'..enum.name), 'enum_name'))
+            for _, constant in ipairs(enum.constants) do
+                append(p(constant.name, 'constant_name'))
+                append(p(constant.description, 'constant_description'))
             end
+            append(div())
         end
 
         append(div())
@@ -764,31 +748,30 @@ function synopsis(module_name, function_name, arguments, returns, types)
     argument_list = ''
     return_list = ''
 
-    if arguments then
-        for i, v in ipairs(arguments) do
-            argument_list = argument_list .. '<span class = "argument">'
-            argument_list = argument_list .. v.name
-            argument_list = argument_list .. '</span>'
-            if i ~= #arguments then
-                argument_list = argument_list .. ', '
-            end
+    for i, v in ipairs(arguments) do
+        argument_list = argument_list .. '<span class = "argument">'
+        argument_list = argument_list .. v.name
+        argument_list = argument_list .. '</span>'
+        if i ~= #arguments then
+            argument_list = argument_list .. ', '
         end
     end
 
-    if returns then
-        for i, v in ipairs(returns) do
-            return_list = return_list .. '<span class = "return">'
-            return_list = return_list .. v.name
-            return_list = return_list .. '</span>'
-            if i ~= #returns then
-                return_list = return_list .. ', '
-            end
+    for i, v in ipairs(returns) do
+        return_list = return_list .. '<span class = "return">'
+        return_list = return_list .. v.name
+        return_list = return_list .. '</span>'
+        if i ~= #returns then
+            return_list = return_list .. ', '
         end
+    end
+
+    if #returns > 0 then
         return_list = return_list .. ' = '
     end
 
     if module_name == '' then
-        if arguments then
+        if #arguments > 0 then
             return string.format('%slove.%s( %s )', return_list, function_name, argument_list)
         else
             return string.format('%slove.%s()', return_list, function_name, argument_list)
@@ -796,13 +779,13 @@ function synopsis(module_name, function_name, arguments, returns, types)
     end
 
     if not types then
-        if arguments then
+        if #arguments > 0 then
             return string.format('%slove.%s.%s( %s )', return_list, module_name, function_name, argument_list)
         else
             return string.format('%slove.%s.%s()', return_list, module_name, function_name)
         end
     else
-        if arguments then
+        if #arguments > 0 then
             return string.format('%s%s:%s( %s )', return_list, module_name, function_name, argument_list)
         else
             return string.format('%s%s:%s()', return_list, module_name, function_name)
