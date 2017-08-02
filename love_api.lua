@@ -1,4 +1,5 @@
-local path = (...):match('(.-)[^%.]+$')
+-- Match the parent directory
+local path = (...):match('(.-)[^%./]+$')
 
 return {
     version = "0.10.2",
