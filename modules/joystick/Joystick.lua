@@ -141,7 +141,7 @@ return {
                         },
                         {
                             type = 'GamepadButton',
-                            name = 'button',
+                            name = 'axis',
                             description = 'The virtual gamepad axis to bind.'
                         },
                         {
