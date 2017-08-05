@@ -737,7 +737,6 @@ return {
                         {
                             type = 'number',
                             name = 'high',
-                            default = '0';
                             description = 'The higher 32 bits of the state value. Must be within the range of [0, 2^32 - 1].'
                         }
                     }
