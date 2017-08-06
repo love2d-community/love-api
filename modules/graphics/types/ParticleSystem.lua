@@ -796,7 +796,7 @@ return {
                         {
                             type = 'number',
                             name = 'ymax',
-                            default = 'ymax',
+                            default = 'ymin',
                             description = 'The maximum acceleration along the y axis.'
                         }
                     }
