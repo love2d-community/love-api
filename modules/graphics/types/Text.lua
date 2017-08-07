@@ -19,11 +19,13 @@ return {
                         {
                             type = 'number',
                             name = 'x',
+                            default = '0',
                             description = 'The position of the new text on the x-axis.'
                         },
                         {
                             type = 'number',
                             name = 'y',
+                            default = '0',
                             description = 'The position of the new text on the y-axis.'
                         },
                         {
@@ -114,11 +116,13 @@ return {
                         {
                             type = 'number',
                             name = 'x',
+                            default = '0',
                             description = 'The position of the new text on the x-axis.'
                         },
                         {
                             type = 'number',
                             name = 'y',
+                            default = '0',
                             description = 'The position of the new text on the y-axis.'
                         },
                         {
