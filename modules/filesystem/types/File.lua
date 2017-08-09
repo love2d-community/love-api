@@ -236,6 +236,7 @@ return {
                         {
                             type = 'number',
                             name = 'size',
+                            default = '0',
                             description = 'The maximum size in bytes of the file\'s buffer.'
                         }
                     },
