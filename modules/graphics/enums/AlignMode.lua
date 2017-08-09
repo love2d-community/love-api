@@ -13,6 +13,10 @@ return {
         {
             name = 'right',
             description = 'Align text right.'
+        },
+        {
+            name = 'justify',
+            description = 'Align text both left and right.'
         }
     }
 }
