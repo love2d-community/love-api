@@ -1563,6 +1563,7 @@ return {
                         {
                             type = 'number',
                             name = 'buffer',
+                            default = '1000',
                             description = 'The max number of particles at the same time.'
                         }
                     },
