@@ -60,7 +60,7 @@ return {
             description = 'Sets the texture coordinates according to a viewport.',
             variants = {
                 {
-                    returns = {
+                    arguments = {
                         {
                             type = 'number',
                             name = 'x',
