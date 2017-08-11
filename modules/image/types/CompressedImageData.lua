@@ -97,7 +97,7 @@ return {
             description = 'Gets the number of mipmap levels in the CompressedImageData. The base mipmap level (original image) is included in the count.',
             variants = {
                 {
-                    arguments = {
+                    returns = {
                         {
                             type = 'number',
                             name = 'mipmaps',
