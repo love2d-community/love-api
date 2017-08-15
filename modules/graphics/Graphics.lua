@@ -758,40 +758,47 @@ return {
                 {
                     returns = {
                         {
-                            type = 'number',
-                            name = 'drawcalls',
-                            description = 'The number of draw calls made so far during the current frame.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'canvasswitches',
-                            description = 'The number of times the active Canvas has been switched so far during the current frame.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'texturememory',
-                            description = 'The estimated total size in bytes of video memory used by all loaded Images, Canvases, and Fonts.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'images',
-                            description = 'The number of Image objects currently loaded.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'canvases',
-                            description = 'The number of Canvas objects currently loaded.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'fonts',
-                            description = 'The number of Font objects currently loaded.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'shaderswitches',
-                            description = 'The number of times the active Shader has been changed so far during the current frame.'
-                        },
+                            type = 'table',
+                            name = 'stats',
+                            description = 'A table with the following fields:',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = 'drawcalls',
+                                    description = 'The number of draw calls made so far during the current frame.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'canvasswitches',
+                                    description = 'The number of times the active Canvas has been switched so far during the current frame.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'texturememory',
+                                    description = 'The estimated total size in bytes of video memory used by all loaded Images, Canvases, and Fonts.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'images',
+                                    description = 'The number of Image objects currently loaded.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'canvases',
+                                    description = 'The number of Canvas objects currently loaded.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'fonts',
+                                    description = 'The number of Font objects currently loaded.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'shaderswitches',
+                                    description = 'The number of times the active Shader has been changed so far during the current frame.'
+                                }
+                            }
+                        }
                     }
                 }
             }
