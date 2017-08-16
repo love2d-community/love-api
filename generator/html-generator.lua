@@ -732,11 +732,20 @@ function make_table(t, table_name, name, type, description)
                 output = output .. _table('flags_table')
                 for _, zz in ipairs(z.table) do
                     output = output .. tr('')
+                    local default = ''
                     if zz.default then
-                        output = output .. td('<span class = "light">'..flags..'<wbr>.</span><span class = "green">'..zz.name..'</span> <span class = "default">(' .. zz.default .. ')</span>', name)
-                    else
-                        output = output .. td('<span class = "light">'..flags..'<wbr>.</span><span class = "green">'..zz.name .. '</span>', name)
+                         default = ' <span class = "default">(' .. zz.default .. ')</span>'
                     end
+                    local nameWithoutBrackets = zz.name:gsub('[%[%]]', '')
+                    local dot = '.'
+                    local namePart
+                    if zz.name ~= nameWithoutBrackets then
+                        dot = ''
+                        namePart = '<span class = "light">[</span><span class = "green">'..nameWithoutBrackets..'</span><span class = "light">]</span>'
+                    else
+                        namePart = '<span class = "green">'..zz.name..'</span>'
+                    end
+                    output = output .. td('<span class = "light">'..flags..'<wbr>'..dot..'</span>'..namePart..default, name)
                     outputted_name = false
                     for _, t in ipairs(types) do
                         if zz.type == t.name then
@@ -839,5 +848,6 @@ function string_to_file(s, f)
     file:write(s)
     file:close()
 end
+
 
 string_to_file(output:gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), 'index.html')
