@@ -256,6 +256,21 @@ return {
             }
         },
         {
+            name = 'tell',
+            description = 'Returns the position in the file.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'pos',
+                            description = 'The current position.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'write',
             description = 'Write data to a file.',
             variants = {
