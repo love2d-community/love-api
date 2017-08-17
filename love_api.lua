@@ -265,7 +265,7 @@ return {
                                     type = 'boolean',
                                     name = 'console',
                                     default = 'false',
-                                    description = 'Determines wether a console should be opened alongside the game window (Windows only) or not. Note: On OSX you can get console output by running LÖVE through the terminal.'
+                                    description = 'Determines whether a console should be opened alongside the game window (Windows only) or not. Note: On OSX you can get console output by running LÖVE through the terminal.'
                                 },
                                 {
                                     type = 'boolean',
@@ -342,7 +342,7 @@ return {
                                             type = 'boolean',
                                             name = 'fullscreen',
                                             default = 'false',
-                                            description = 'Wether to run the game in fullscreen (true) or windowed (false) mode. The fullscreen can also be toggled via love.window.setFullscreen or love.window.setMode.'
+                                            description = 'Whether to run the game in fullscreen (true) or windowed (false) mode. The fullscreen can also be toggled via love.window.setFullscreen or love.window.setMode.'
                                         },
                                         {
                                             type = 'string',
@@ -820,7 +820,7 @@ return {
                         {
                             type = 'boolean',
                             name = 'focus',
-                            description = 'Wether the window has mouse focus or not.'
+                            description = 'Whether the window has mouse focus or not.'
                         }
                     }
                 }
