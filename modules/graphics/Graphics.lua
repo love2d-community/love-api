@@ -2947,7 +2947,6 @@ return {
         require(path .. 'enums.LineStyle'),
         require(path .. 'enums.MeshDrawMode'),
         require(path .. 'enums.ParticleInsertMode'),
-        require(path .. 'enums.PointStyle'),
         require(path .. 'enums.SpriteBatchUsage'),
         require(path .. 'enums.StackType'),
         require(path .. 'enums.StencilAction'),
