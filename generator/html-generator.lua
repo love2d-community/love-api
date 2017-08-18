@@ -8,7 +8,7 @@ for i, m in ipairs(love.modules) do
 
     if m.name == 'filesystem' then
         for ii, f in ipairs(m.functions) do
-            if f.name == 'setSource' then
+            if f.name == 'setSource' or f.name == 'init' then
                 table.remove(m.functions, ii)
             end
         end
