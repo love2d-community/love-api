@@ -1,21 +1,52 @@
 -- Script by @hahawoo aka Santos
 love = require('api.love_api')
 
-for i, m in ipairs(love.modules) do
-    if m.name == 'font' then
-        table.remove(love.modules, i)
-    end
+local linkTypes = {}
+local linkFunctions = {}
 
-    if m.name == 'filesystem' then
-        for ii, f in ipairs(m.functions) do
-            if f.name == 'setSource' or f.name == 'init' then
-                table.remove(m.functions, ii)
-            end
+local function loopFunctions(functions, module_, moduleOrTypeOrCallback, prefix)
+    for functionIndex, function_ in ipairs(functions or {}) do
+        if module_.name == 'filesystem' and (function_.name == 'setSource' or function_.name == 'init') then
+            table.remove(module_.functions, functionIndex)
+        else
+            linkFunctions[prefix..function_.name] = module_.name..'_'..function_.name
         end
     end
+end
 
-    if m.name == 'video' then
-        table.remove(love.modules, i)
+local function loopTypes(types, module_)
+    for _, type_ in ipairs(types or {}) do
+        loopFunctions(type_.functions, type_, 'type', type_.name..':')
+        linkTypes[type_.name] = 'type_'..type_.name
+        if linkTypes[type_.name]:sub(-1) == 'y' then
+            linkTypes[type_.name:sub(1, -2)..'ies'] = 'type_'..type_.name
+        else
+            linkTypes[type_.name..'s'] = 'type_'..type_.name
+        end
+    end
+end
+
+loopTypes(love.types)
+
+local function makeLinks(description)
+    for k, v in pairs(linkTypes) do
+        description = description:gsub('([ %>])'..k..'([\n%. \'])', '%1<a href="#'..v..'">'..k..'</a>%2')
+    end
+    for k, v in pairs(linkFunctions) do
+        description = description:gsub(k, '<a href="#'..v..'">'..k..'</a>')
+    end
+    return description
+end
+
+for moduleIndex, module_ in ipairs(love.modules) do
+    if module_.name.name == 'video' or module_.name == 'font' then
+        table.remove(love.modules, moduleIndex)
+    else
+        loopFunctions(module_.functions, module_, 'module', 'love.'..module_.name..'.')
+        loopTypes(module_.types, module_)
+
+        for _, enum in ipairs(module_.enums or {}) do
+        end
     end
 end
 
@@ -383,7 +414,7 @@ function main()
         append(p(a(span('love.', 'light') .. c.name, c.name), 'name'))
         if c.variants then
             for _, f_ in ipairs(c.variants) do
-                append(p(c.description, 'callback_description'))
+                append(p(makeLinks(c.description), 'callback_description'))
                 for _, f in ipairs(c.variants) do
                     append(p(span(synopsis('', c.name, f.arguments, f.returns), 'background'), 'synopsis'))
                     append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
@@ -402,7 +433,7 @@ function main()
         append(div('module_section'))
         append(div('navigation_section'))
         append(p(a(type_.name, 'type_'..type_.name), 'type_name'))
-        append(p(type_.description, 'description'))
+        append(p(makeLinks(type_.description), 'description'))
         append(div('navigation_links_section'))
         -- Type navigation functions
         if type_.functions then
@@ -424,7 +455,7 @@ function main()
             for _, f_ in ipairs(type_.functions) do
                 append(div('function_section'))
                 append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
-                append(p(f_.description, 'description'))
+                append(p(makeLinks(f_.description), 'description'))
                 for _, f in ipairs(f_.variants) do
                     append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
                     append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
@@ -437,6 +468,7 @@ function main()
     end
 
     for _, m in ipairs(love.modules) do
+        print(os.time())
         -- Module name
         append(div('module_section'))
         append(p(a(span('love.', 'light')..m.name, m.name), 'module_name'))
@@ -557,7 +589,7 @@ function main()
         for _, f_ in ipairs(m.functions) do
             append(div('function_section'))
             append(p(a(span('love.' .. m.name .. '.', 'light') .. f_.name, m.name..'_'..f_.name), 'name'))
-            append(p(f_.description, 'description'))
+            append(p(makeLinks(f_.description), 'description'))
             for _, f in ipairs(f_.variants) do
                 append(p(span(synopsis(m.name, f_.name, f.arguments, f.returns), 'background'), 'synopsis'))
                 append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
@@ -572,7 +604,7 @@ function main()
 
                 append(div('navigation_section'))
                 append(p(a(type_.name, 'type_'..type_.name), 'type_name'))
-                append(p(type_.description:gsub('\\n', '<br />'), 'description'))
+                append(p(makeLinks(type_.description:gsub('\\n', '<br />')), 'description'))
                 append(div('navigation_links_section'))
                 if type_.constructors then
                     append(p('Constructors', 'module_navigation'))
@@ -614,7 +646,7 @@ function main()
                     for _, f_ in ipairs(type_.functions) do
                         append(div('function_section'))
                         append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
-                        append(p(f_.description, 'description'))
+                        append(p(makeLinks(f_.description), 'description'))
                         for _, f in ipairs(f_.variants) do
                             append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
                             append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
@@ -634,7 +666,7 @@ function main()
                 append(p(a(enum.name, 'enum_'..enum.name), 'enum_name'))
                 for _, constant in ipairs(enum.constants) do
                     append(p(constant.name, 'constant_name'))
-                    append(p(constant.description, 'constant_description'))
+                    append(p(makeLinks(constant.description), 'constant_description'))
                 end
                 append(div())
             end
@@ -725,7 +757,7 @@ function make_table(t, table_name, name, type, description)
                 end
                 output = output .. td(z.type, type)
             end
-            output = output .. td(z.description, description)
+            output = output .. td(makeLinks(z.description), description)
             output = output .. tr()
             local function doTable(z, givenFlags)
                 if z.table then
@@ -762,7 +794,7 @@ function make_table(t, table_name, name, type, description)
                         if not outputted_name then
                             output = output .. td(zz.type, type)
                         end
-                        output = output .. td(zz.description, description)
+                        output = output .. td(makeLinks(zz.description), description)
                         output = output .. tr()
 
                         doTable(zz, flags)
