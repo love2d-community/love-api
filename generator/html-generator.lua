@@ -727,41 +727,50 @@ function make_table(t, table_name, name, type, description)
             end
             output = output .. td(z.description, description)
             output = output .. tr()
-            if z.table then
-                local flags = z.name
-                output = output .. _table('flags_table')
-                for _, zz in ipairs(z.table) do
-                    output = output .. tr('')
-                    local default = ''
-                    if zz.default then
-                         default = ' <span class = "default">(' .. zz.default .. ')</span>'
-                    end
-                    local nameWithoutBrackets = zz.name:gsub('[%[%]]', '')
-                    local dot = '.'
-                    local namePart
-                    if zz.name ~= nameWithoutBrackets then
-                        dot = ''
-                        namePart = '<span class = "light">[</span><span class = "green">'..nameWithoutBrackets..'</span><span class = "light">]</span>'
-                    else
-                        namePart = '<span class = "green">'..zz.name..'</span>'
-                    end
-                    output = output .. td('<span class = "light">'..flags..'<wbr>'..dot..'</span>'..namePart..default, name)
-                    outputted_name = false
-                    for _, t in ipairs(types) do
-                        if zz.type == t.name then
-                            output = output .. td(a(zz.type, nil, '#'..t.fullname), type)
-                            outputted_name = true
-                            break
+            local function doTable(z, givenFlags)
+                if z.table then
+                    local flags = z.name or givenFlags
+                    output = output .. _table('flags_table')
+                    for _, zz in ipairs(z.table) do
+                        output = output .. tr('')
+                        local default = ''
+                        if zz.default then
+                             default = ' <span class = "default">(' .. zz.default .. ')</span>'
                         end
+                        local nameWithoutBrackets = zz.name:gsub('[%[%]]', '')
+                        local dot = '.'
+                        local namePart
+                        if zz.name ~= nameWithoutBrackets then
+                            dot = ''
+                            namePart = '<span class = "light">[</span><span class = "green">'..nameWithoutBrackets..'</span><span class = "light">]</span>'
+                        else
+                            namePart = '<span class = "green">'..zz.name..'</span>'
+                        end
+                        if givenFlags then
+                            output = output .. td('<span class = "light">'..givenFlags..'<wbr>'..dot..'</span><span class = "green">'..flags..'</span><wbr><span class = "light">'..dot..'</span>'..namePart..default, name)
+                        else
+                            output = output .. td('<span class = "light">'..flags..'<wbr>'..dot..'</span>'..namePart..default, name)
+                        end
+                        outputted_name = false
+                        for _, t in ipairs(types) do
+                            if zz.type == t.name then
+                                output = output .. td(a(zz.type, nil, '#'..t.fullname), type)
+                                outputted_name = true
+                                break
+                            end
+                        end
+                        if not outputted_name then
+                            output = output .. td(zz.type, type)
+                        end
+                        output = output .. td(zz.description, description)
+                        output = output .. tr()
+
+                        doTable(zz, flags)
                     end
-                    if not outputted_name then
-                        output = output .. td(zz.type, type)
-                    end
-                    output = output .. td(zz.description, description)
-                    output = output .. tr()
+                    --output = output .. _table()
                 end
-                --output = output .. _table()
             end
+            doTable(z)
         end
         output = output .. _table()
     end
