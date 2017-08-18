@@ -28,9 +28,11 @@ end
 
 loopTypes(love.types)
 
-local function makeLinks(description)
+local function makeLinks(description, typeName)
     for k, v in pairs(linkTypes) do
-        description = description:gsub('([ %>])'..k..'([\n%. \'])', '%1<a href="#'..v..'">'..k..'</a>%2')
+        if v ~= 'type_'..(typeName or '') then
+            description = description:gsub('([ %>])'..k..'([\n%. \'%(])', '%1<a href="#'..v..'">'..k..'</a>%2')
+        end
     end
     for k, v in pairs(linkFunctions) do
         description = description:gsub(k, '<a href="#'..v..'">'..k..'</a>')
@@ -433,7 +435,7 @@ function main()
         append(div('module_section'))
         append(div('navigation_section'))
         append(p(a(type_.name, 'type_'..type_.name), 'type_name'))
-        append(p(makeLinks(type_.description), 'description'))
+        append(p(makeLinks(type_.description, type_.name), 'description'))
         append(div('navigation_links_section'))
         -- Type navigation functions
         if type_.functions then
@@ -468,7 +470,6 @@ function main()
     end
 
     for _, m in ipairs(love.modules) do
-        print(os.time())
         -- Module name
         append(div('module_section'))
         append(p(a(span('love.', 'light')..m.name, m.name), 'module_name'))
@@ -604,7 +605,7 @@ function main()
 
                 append(div('navigation_section'))
                 append(p(a(type_.name, 'type_'..type_.name), 'type_name'))
-                append(p(makeLinks(type_.description:gsub('\\n', '<br />')), 'description'))
+                append(p(makeLinks(type_.description:gsub('\\n', '<br />'), type_.name), 'description'))
                 append(div('navigation_links_section'))
                 if type_.constructors then
                     append(p('Constructors', 'module_navigation'))
