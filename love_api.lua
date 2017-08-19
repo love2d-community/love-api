@@ -199,7 +199,6 @@ return {
                 'Fixture',
                 'Font',
                 'FontData',
-                'Framebuffer',
                 'FrictionJoint',
                 'GearJoint',
                 'GlyphData',
