@@ -59,7 +59,7 @@ end
 
 for moduleIndex = #love.modules, 1, -1 do
     local module_ = love.modules[moduleIndex]
-    if module_.name.name == 'video' or module_.name == 'font' then
+    if module_.name == 'video' or module_.name == 'font' then
         table.remove(love.modules, moduleIndex)
     else
         loopFunctions(module_.functions, module_, 'love.'..module_.name..'.')
@@ -471,6 +471,9 @@ function main()
             for _, f_ in ipairs(c.variants) do
                 append(p(makeLinks(c.description), 'description'))
                 for _, f in ipairs(c.variants) do
+                    if f.description then
+                        append(p(makeLinks(f.description), 'description'))
+                    end
                     append(p(span(synopsis('', c.name, f.arguments, f.returns), 'background'), 'synopsis'))
                     append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
                     append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
@@ -488,6 +491,9 @@ function main()
         append(p(a(span('love.', 'light') .. f_.name, 'love_'..f_.name), 'name'))
         append(p(makeLinks(f_.description), 'description'))
         for _, f in ipairs(f_.variants) do
+            if f.description then
+                append(p(makeLinks(f.description), 'description'))
+            end
             append(p(span(synopsis('', f_.name, f.arguments, f.returns), 'background'), 'synopsis'))
             append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
             append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
@@ -531,6 +537,9 @@ function main()
                 append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
                 append(p(makeLinks(f_.description), 'description'))
                 for _, f in ipairs(f_.variants) do
+                    if f.description then
+                        append(p(makeLinks(f.description), 'description'))
+                    end
                     append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
                     append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
                     append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
@@ -666,6 +675,9 @@ function main()
             append(p(a(span('love.' .. m.name .. '.', 'light') .. f_.name, m.name..'_'..f_.name), 'name'))
             append(p(makeLinks(f_.description), 'description'))
             for _, f in ipairs(f_.variants) do
+                if f.description then
+                    append(p(makeLinks(f.description), 'description'))
+                end
                 append(p(span(synopsis(m.name, f_.name, f.arguments, f.returns), 'background'), 'synopsis'))
                 append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
                 append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
@@ -723,6 +735,9 @@ function main()
                         append(p(a(span(type_.name .. ':', 'light') .. f_.name, type_.name..'_'..f_.name), 'name'))
                         append(p(makeLinks(f_.description), 'description'))
                         for _, f in ipairs(f_.variants) do
+                            if f.description then
+                                append(p(makeLinks(f.description), 'description'))
+                            end
                             append(p(span(synopsis(type_.name, f_.name, f.arguments, f.returns, true), 'background'), 'synopsis'))
                             append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
                             append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
