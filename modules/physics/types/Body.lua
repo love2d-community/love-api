@@ -222,7 +222,7 @@ return {
         },
         {
             name = 'getInertia',
-            description = 'Gets the rotational inertia of the body.\n\nThe rotational inertia is how hard is it to make the body spin. It is set with the 4th argument to Body:setMass, or automatically with Body:setMassFromShapes.',
+            description = 'Gets the rotational inertia of the body.\n\nThe rotational inertia is how hard is it to make the body spin.',
             variants = {
                 {
                     returns = {
@@ -938,7 +938,7 @@ return {
         },
         {
             name = 'setInertia',
-            description = 'Set the inertia of a body.\n\nThis value can also be set by the fourth argument of Body:setMass.',
+            description = 'Set the inertia of a body.',
             variants = {
                 {
                     arguments = {
