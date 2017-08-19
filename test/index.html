@@ -4,9 +4,204 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
     </head>
     <body>
-<link href="pure-love.css" rel="stylesheet">
+<style>* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+p, td, h1, h2, h3 {
+    font-family: "Quicksand", "Trebuchet MS", sans-serif;
+}
+
+p, td, tr {
+    font-weight: 500;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.synopsis, .return_name, .argument_name, .constant_name {
+    font-family: "Consolas", monospace;
+}
+
+.navigation {
+    position: fixed;
+    margin-left: 2px;
+    margin-top: 12px;
+}
+
+.container {
+    margin-left: 80px;
+}
+
+p, td {
+    font-size: 10pt;
+}
+.modules, .callbacks, .navigation_link {
+    font-size: 10pt;
+}
+.module_name, .callbacks_title, .name, .type_name, .enum_name {
+    font-size: 16pt;
+}
+
+.enum_name {
+    margin-bottom: 8px;
+}
+
+.synopsis {
+    font-size: 12pt;
+}
+
+.argument_name, .return_name {
+    text-align: right;
+}
+
+.argument_type, .return_type {
+    padding-left: 16px;
+}
+
+body {
+    margin-left: 12px;
+    margin-bottom: 24px;
+}
+
+.function, .function_link, .type_link, .enum_link, .subsection {
+    margin-left: 24px;
+}
+
+.description {
+    margin-left: 12px;
+}
+
+.module_navigation, .subsection {
+    margin-top: 8px;
+}
+
+.synopsis {
+    margin-top: 16px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+}
+
+.name {
+    margin-bottom: 12px;
+}
+
+.constant_description {
+    margin-bottom: 8px;
+}
+
+.returns_table, .arguments_table, .flags_table {
+    margin-bottom: 8px;
+}
+
+table {
+    vertical-align: text-top;
+}
+td {
+    vertical-align: top;
+}
+.name, .arguments, .returns, .argument, .return, .argument_name, .return_name, .argument_type, .argument_type a, .return_type, .return_type a, .constant_name, .type_name, .enum_name, .module_navigation, .module_name, .callbacks_title, .subsection {
+    font-weight: 500;
+}
+
+.return_name, .argument_name, .constant_name {
+    font-weight: bold;
+}
+
+.arguments, .returns {
+    text-transform: uppercase;
+}
+
+.module_name a, .type_name a, .enum_name a, .callbacks_title a, .module_navigation, .default, .subsection {
+    color: #333;
+}
+
+a {
+    color: #2680C6; /* Blue */
+    color: #059dc5; /* Blue */
+    font-weight: 500;
+}
+.name a, .argument_name, .argument, .constant_name, .green {
+    color: #7CAF45; /* Green */
+    color: #E658A0; /* Pink */
+}
+.return_name, .return {
+    color: #CC6600; /* Orange */
+    color: #D86C00; /* Orange */
+    color: #a240b5; /* Purple */
+    color: #ab38c1; /* Purple */
+}
+.argument_name, .argument {
+    color: #f38d28; /* Orange */
+    color: #ea9b4c;
+}
+
+.argument_name, .return_name {
+    width: 120px;
+}
+
+.argument_type, .return_type {
+    width: 100px;
+}
+
+.navigation_link a:hover, .function_link a:hover, .type_link a:hover, .enum_link a:hover, .return_type a:hover, .argument_type a:hover  {
+    /* background-color: #ECF3F7; */
+    text-decoration: underline;
+}
+
+.background {
+    /*
+    background-color: #F5F5F5;
+    background-color: #F7F4F4;
+    */
+    background-color: #efefef;
+    border-radius: 6px;
+    padding: 2px 5px 2px 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+body {
+    background-color: #e0f4fc; /* Light blue */
+    background-color: #efefef;
+}
+
+.function_section, .navigation_links_section, .module_navigation_section, .navigation_section, .enum_section {
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 8px 0 0 8px;
+}
+
+.module_navigation_section, .function_section, .navigation_section, .module_section, .enum_section {
+    margin-bottom: 10px;
+}
+
+.module_name, .callbacks_title {
+    font-size: 28px;
+}
+
+.slash {
+    color: #a7a7a7;
+}
+
+.callbacks_navigation_section {
+    padding-top: 0;
+    border-radius: 0 0 0 8px;
+}
+
+.argument_description {
+    padding-bottom: 8px;
+}
+
+.name, .module_name, .callbacks_title {
+    margin-left: 12px;
+}
+</style>
 <div class = "navigation">
-<p class = "navigation_link"><a href = "#callbacks">love</a></p>
+<p class = "navigation_link"><a href = "#love">love</a></p>
 <p class = "navigation_link"><a href = "#audio">audio</a></p>
 <p class = "navigation_link"><a href = "#event">event</a></p>
 <p class = "navigation_link"><a href = "#filesystem">filesystem</a></p>
@@ -28,10 +223,17 @@
 <div class = "container">
 <div class = "module_section">
 <div class = "navigation_section callbacks_navigation_section">
-<p class = "callbacks_title"><a name = "callbacks">Callbacks</a></p>
+<p class = "callbacks_title"><a name = "love">love</a></p>
 <div class = "navigation_links_section">
+<p class = "module_navigation">Callbacks</p>
 <p class = "function_link"><span class = "light">love.</span><a href = "#conf">conf</a></p>
 <p class = "function_link"><span class = "light">love.</span><a href = "#load">load</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#update">update</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#draw">draw</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#quit">quit</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#run">run</a></p><p class = "subsection">Input</p><p class = "function_link"><span class = "light">love.</span><a href = "#keypressed">keypressed</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#keyreleased">keyreleased</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#textedited">textedited</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#textinput">textinput</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#mousepressed">mousepressed</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#mousereleased">mousereleased</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#mousemoved">mousemoved</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#mousefocus">mousefocus</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#wheelmoved">wheelmoved</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#touchmoved">touchmoved</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#touchpressed">touchpressed</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#touchreleased">touchreleased</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#joystickpressed">joystickpressed</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#joystickreleased">joystickreleased</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#joystickaxis">joystickaxis</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#joystickhat">joystickhat</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#joystickadded">joystickadded</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#joystickremoved">joystickremoved</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#gamepadpressed">gamepadpressed</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#gamepadreleased">gamepadreleased</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#gamepadaxis">gamepadaxis</a></p><p class = "subsection">Window</p><p class = "function_link"><span class = "light">love.</span><a href = "#resize">resize</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#visible">visible</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#focus">focus</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#filedropped">filedropped</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#directorydropped">directorydropped</a></p><p class = "subsection">Error handling</p><p class = "function_link"><span class = "light">love.</span><a href = "#errhand">errhand</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#threaderror">threaderror</a></p><p class = "function_link"><span class = "light">love.</span><a href = "#lowmemory">lowmemory</a></p>
+<p class = "module_navigation">Types</p>
+<p class = "type_link"><a href = "#type_Data">Data</a></p>
+<p class = "type_link"><a href = "#type_Drawable">Drawable</a></p>
+<p class = "type_link"><a href = "#type_Object">Object</a></p>
+<p class = "module_navigation">Functions</p>
+<p class = "function_link"><span class = "light">love.</span><a href = "#getVersion">getVersion</a></p>
 </div>
 </div>
 <div class = "function_section">
@@ -313,6 +515,14 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "function_link"><a href = "#Data_getString"><span class = "light">Data:</span>getString</a></p>
 <p class = "module_navigation">Supertypes</p>
 <p class = "function_link"><a href = "#type_Object">Object</a></p>
+<p class = "module_navigation">Subtypes</p>
+<p class = "function_link"><a href = "#type_CompressedData">CompressedData</a></p>
+<p class = "function_link"><a href = "#type_CompressedImageData">CompressedImageData</a></p>
+<p class = "function_link"><a href = "#type_FileData">FileData</a></p>
+<p class = "function_link"><a href = "#type_FontData">FontData</a></p>
+<p class = "function_link"><a href = "#type_GlyphData">GlyphData</a></p>
+<p class = "function_link"><a href = "#type_ImageData">ImageData</a></p>
+<p class = "function_link"><a href = "#type_SoundData">SoundData</a></p>
 </div>
 </div>
 <div class = "function_section">
@@ -344,6 +554,16 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <div class = "navigation_links_section">
 <p class = "module_navigation">Supertypes</p>
 <p class = "function_link"><a href = "#type_Object">Object</a></p>
+<p class = "module_navigation">Subtypes</p>
+<p class = "function_link"><a href = "#type_Canvas">Canvas</a></p>
+<p class = "function_link"><a href = "#type_Framebuffer">Framebuffer</a></p>
+<p class = "function_link"><a href = "#type_Image">Image</a></p>
+<p class = "function_link"><a href = "#type_Mesh">Mesh</a></p>
+<p class = "function_link"><a href = "#type_ParticleSystem">ParticleSystem</a></p>
+<p class = "function_link"><a href = "#type_SpriteBatch">SpriteBatch</a></p>
+<p class = "function_link"><a href = "#type_Text">Text</a></p>
+<p class = "function_link"><a href = "#type_Texture">Texture</a></p>
+<p class = "function_link"><a href = "#type_Video">Video</a></p>
 </div>
 </div>
 </div>
@@ -355,6 +575,61 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "module_navigation">Functions</p>
 <p class = "function_link"><a href = "#Object_type"><span class = "light">Object:</span>type</a></p>
 <p class = "function_link"><a href = "#Object_typeOf"><span class = "light">Object:</span>typeOf</a></p>
+<p class = "module_navigation">Subtypes</p>
+<p class = "function_link"><a href = "#type_BezierCurve">BezierCurve</a></p>
+<p class = "function_link"><a href = "#type_Body">Body</a></p>
+<p class = "function_link"><a href = "#type_Canvas">Canvas</a></p>
+<p class = "function_link"><a href = "#type_ChainShape">ChainShape</a></p>
+<p class = "function_link"><a href = "#type_Channel">Channel</a></p>
+<p class = "function_link"><a href = "#type_CircleShape">CircleShape</a></p>
+<p class = "function_link"><a href = "#type_CompressedData">CompressedData</a></p>
+<p class = "function_link"><a href = "#type_CompressedImageData">CompressedImageData</a></p>
+<p class = "function_link"><a href = "#type_Contact">Contact</a></p>
+<p class = "function_link"><a href = "#type_Cursor">Cursor</a></p>
+<p class = "function_link"><a href = "#type_Data">Data</a></p>
+<p class = "function_link"><a href = "#type_Decoder">Decoder</a></p>
+<p class = "function_link"><a href = "#type_DistanceJoint">DistanceJoint</a></p>
+<p class = "function_link"><a href = "#type_Drawable">Drawable</a></p>
+<p class = "function_link"><a href = "#type_EdgeShape">EdgeShape</a></p>
+<p class = "function_link"><a href = "#type_File">File</a></p>
+<p class = "function_link"><a href = "#type_FileData">FileData</a></p>
+<p class = "function_link"><a href = "#type_Fixture">Fixture</a></p>
+<p class = "function_link"><a href = "#type_Font">Font</a></p>
+<p class = "function_link"><a href = "#type_FontData">FontData</a></p>
+<p class = "function_link"><a href = "#type_Framebuffer">Framebuffer</a></p>
+<p class = "function_link"><a href = "#type_FrictionJoint">FrictionJoint</a></p>
+<p class = "function_link"><a href = "#type_GearJoint">GearJoint</a></p>
+<p class = "function_link"><a href = "#type_GlyphData">GlyphData</a></p>
+<p class = "function_link"><a href = "#type_Image">Image</a></p>
+<p class = "function_link"><a href = "#type_ImageData">ImageData</a></p>
+<p class = "function_link"><a href = "#type_Joint">Joint</a></p>
+<p class = "function_link"><a href = "#type_Joystick">Joystick</a></p>
+<p class = "function_link"><a href = "#type_Mesh">Mesh</a></p>
+<p class = "function_link"><a href = "#type_MotorJoint">MotorJoint</a></p>
+<p class = "function_link"><a href = "#type_MouseJoint">MouseJoint</a></p>
+<p class = "function_link"><a href = "#type_ParticleSystem">ParticleSystem</a></p>
+<p class = "function_link"><a href = "#type_PixelEffect">PixelEffect</a></p>
+<p class = "function_link"><a href = "#type_PolygonShape">PolygonShape</a></p>
+<p class = "function_link"><a href = "#type_PrismaticJoint">PrismaticJoint</a></p>
+<p class = "function_link"><a href = "#type_PulleyJoint">PulleyJoint</a></p>
+<p class = "function_link"><a href = "#type_Quad">Quad</a></p>
+<p class = "function_link"><a href = "#type_RandomGenerator">RandomGenerator</a></p>
+<p class = "function_link"><a href = "#type_Rasterizer">Rasterizer</a></p>
+<p class = "function_link"><a href = "#type_RevoluteJoint">RevoluteJoint</a></p>
+<p class = "function_link"><a href = "#type_RopeJoint">RopeJoint</a></p>
+<p class = "function_link"><a href = "#type_Shader">Shader</a></p>
+<p class = "function_link"><a href = "#type_Shape">Shape</a></p>
+<p class = "function_link"><a href = "#type_SoundData">SoundData</a></p>
+<p class = "function_link"><a href = "#type_Source">Source</a></p>
+<p class = "function_link"><a href = "#type_SpriteBatch">SpriteBatch</a></p>
+<p class = "function_link"><a href = "#type_Text">Text</a></p>
+<p class = "function_link"><a href = "#type_Texture">Texture</a></p>
+<p class = "function_link"><a href = "#type_Thread">Thread</a></p>
+<p class = "function_link"><a href = "#type_Video">Video</a></p>
+<p class = "function_link"><a href = "#type_VideoStream">VideoStream</a></p>
+<p class = "function_link"><a href = "#type_WeldJoint">WeldJoint</a></p>
+<p class = "function_link"><a href = "#type_WheelJoint">WheelJoint</a></p>
+<p class = "function_link"><a href = "#type_World">World</a></p>
 </div>
 </div>
 <div class = "function_section">
@@ -3422,6 +3697,9 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "module_navigation">Supertypes</p>
 <p class = "function_link"><a href = "#type_Drawable">Drawable</a></p>
 <p class = "function_link"><a href = "#type_Object">Object</a></p>
+<p class = "module_navigation">Subtypes</p>
+<p class = "function_link"><a href = "#type_Canvas">Canvas</a></p>
+<p class = "function_link"><a href = "#type_Image">Image</a></p>
 </div>
 </div>
 <div class = "navigation_section">
@@ -7043,6 +7321,18 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "function_link"><span class = "light">Joint:</span><a href = "#Joint_isDestroyed">isDestroyed</a></p>
 <p class = "module_navigation">Supertypes</p>
 <p class = "function_link"><a href = "#type_Object">Object</a></p>
+<p class = "module_navigation">Subtypes</p>
+<p class = "function_link"><a href = "#type_DistanceJoint">DistanceJoint</a></p>
+<p class = "function_link"><a href = "#type_FrictionJoint">FrictionJoint</a></p>
+<p class = "function_link"><a href = "#type_GearJoint">GearJoint</a></p>
+<p class = "function_link"><a href = "#type_MotorJoint">MotorJoint</a></p>
+<p class = "function_link"><a href = "#type_MouseJoint">MouseJoint</a></p>
+<p class = "function_link"><a href = "#type_PrismaticJoint">PrismaticJoint</a></p>
+<p class = "function_link"><a href = "#type_PulleyJoint">PulleyJoint</a></p>
+<p class = "function_link"><a href = "#type_RevoluteJoint">RevoluteJoint</a></p>
+<p class = "function_link"><a href = "#type_RopeJoint">RopeJoint</a></p>
+<p class = "function_link"><a href = "#type_WeldJoint">WeldJoint</a></p>
+<p class = "function_link"><a href = "#type_WheelJoint">WheelJoint</a></p>
 </div>
 </div>
 <div class = "function_section">
@@ -7660,6 +7950,11 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 <p class = "function_link"><span class = "light">Shape:</span><a href = "#Shape_testPoint">testPoint</a></p>
 <p class = "module_navigation">Supertypes</p>
 <p class = "function_link"><a href = "#type_Object">Object</a></p>
+<p class = "module_navigation">Subtypes</p>
+<p class = "function_link"><a href = "#type_ChainShape">ChainShape</a></p>
+<p class = "function_link"><a href = "#type_CircleShape">CircleShape</a></p>
+<p class = "function_link"><a href = "#type_EdgeShape">EdgeShape</a></p>
+<p class = "function_link"><a href = "#type_PolygonShape">PolygonShape</a></p>
 </div>
 </div>
 <div class = "function_section">

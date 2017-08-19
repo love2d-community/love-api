@@ -362,12 +362,12 @@ function main()
     </head>
     <body>]])
     
-    --[[
+    ---[[
     local file = io.open("pure-love.css")
     append(style(file:read("*a")))
     file:close()
     --]]
-    append('<link href="pure-love.css" rel="stylesheet">')
+    --append('<link href="pure-love.css" rel="stylesheet">')
 
     types = {}
     for _, m in ipairs(love.modules) do
@@ -386,7 +386,7 @@ function main()
     -- Navigation
     append(div('navigation'))
 
-    append(p(a('love', nil, '#callbacks' ), 'navigation_link'))
+    append(p(a('love', nil, '#love' ), 'navigation_link'))
 
     for _, m in ipairs(love.modules) do
         append(p(a(m.name, nil, '#' .. m.name), 'navigation_link'))
@@ -399,9 +399,10 @@ function main()
 
     append(div('module_section'))
     append(div('navigation_section callbacks_navigation_section'))
-    append(p(a('Callbacks', 'callbacks'), 'callbacks_title'))
+    append(p(a('love', 'love'), 'callbacks_title'))
     append(div('navigation_links_section'))
 
+    append(p('Callbacks', 'module_navigation'))
     done = {}
     out = ''
     for _, c in ipairs(order.callbacks) do
@@ -432,6 +433,30 @@ function main()
     end
 
     append(out)
+
+    if love.types then
+        for _, type_ in ipairs(love.types) do
+            if not has_functions then
+                append(p('Types', 'module_navigation'))
+                has_functions = true
+            end
+            append(p(a(type_.name, nil, '#'..'type_'..type_.name), 'type_link'))
+        end
+    end
+
+    if love.functions then
+        for _, type_ in ipairs(love.functions) do
+            append(p('Functions', 'module_navigation'))
+            append(p(span('love.', 'light') .. a(type_.name, nil, '#' .. type_.name), 'function_link'))
+        end
+    end
+
+    if love.enums then
+        append(p('Enums', 'module_navigation'))
+        for _, type_ in ipairs(love.enums) do
+            append(p(a(type_.name, nil, '#'..'enum_'..type_.name), 'enum_link'))
+        end
+    end
 
     append(div())
     append(div())
@@ -474,6 +499,13 @@ function main()
             append(p('Supertypes', 'module_navigation'))
             for _, supertype in ipairs(type_.supertypes) do
                 append(p(a(supertype, nil, '#type_'..supertype), 'function_link'))
+            end
+        end
+        -- Type navigation subtypes
+        if type_.subtypes then
+            append(p('Subtypes', 'module_navigation'))
+            for _, subtype in ipairs(type_.subtypes) do
+                append(p(a(subtype, nil, '#type_'..subtype), 'function_link'))
             end
         end
         append(div())
@@ -653,19 +685,19 @@ function main()
                     end
                 end
                 -- Type navigation supertypes
-                is_object = false
                 if type_.supertypes then
                     append(p('Supertypes', 'module_navigation'))
                     for _, supertype in ipairs(type_.supertypes) do
                         append(p(a(supertype, nil, '#type_'..supertype), 'function_link'))
-                        if supertype == 'Object' then
-                            is_object = true
-                        end
                     end
                 end
-                if not is_object then
-                    --print(type_.name..' does not have supertype Object.')
+                if type_.subtypes then
+                    append(p('Subtypes', 'module_navigation'))
+                    for _, subtype in ipairs(type_.subtypes) do
+                        append(p(a(subtype, nil, '#type_'..subtype), 'function_link'))
+                    end
                 end
+
                 append(div())
                 append(div())
 
