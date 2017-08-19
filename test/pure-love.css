@@ -79,7 +79,7 @@ body {
     margin-left: 12px;
 }
 
-.name {
+.name, .type_name {
     margin-bottom: 12px;
 }
 
@@ -105,10 +105,6 @@ td {
     font-weight: bold;
 }
 
-.arguments, .returns {
-    text-transform: uppercase;
-}
-
 .module_name a, .type_name a, .enum_name a, .callbacks_title a, .module_navigation, .default, .subsection {
     color: #333;
 }
@@ -118,7 +114,7 @@ a {
     color: #059dc5; /* Blue */
     font-weight: 500;
 }
-.name a, .argument_name, .argument, .constant_name, .green {
+.name a, .constant_name {
     color: #7CAF45; /* Green */
     color: #E658A0; /* Pink */
 }
@@ -169,12 +165,21 @@ body {
     border-radius: 8px 0 0 8px;
 }
 
+.navigation_links_section {
+    padding-top: 0;
+}
+
 .module_navigation_section, .function_section, .navigation_section, .module_section, .enum_section {
     margin-bottom: 10px;
 }
 
-.module_name, .callbacks_title {
+.module_name, .callbacks_title, .type_name, .enum_name {
     font-size: 28px;
+}
+
+.module_name, .callbacks_title, .type_name, .enum_name, .name,
+.constant_name, .constant_description {
+    margin-left: 12px;
 }
 
 .slash {
@@ -188,8 +193,4 @@ body {
 
 .argument_description {
     padding-bottom: 8px;
-}
-
-.name, .module_name, .callbacks_title {
-    margin-left: 12px;
 }

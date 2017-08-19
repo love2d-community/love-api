@@ -45,12 +45,6 @@ local function makeLinks(description, typeName)
         end
     end
     for _, v in ipairs(linkFunctions) do
-        --if description:match('saveGamepadMappings') then
-            --print('1')
-        --end
-        if linkFunctions.name == 'love.joystick.saveGamepadMappings' then
-            print('asdf')
-        end
         description = description:gsub(v.name, '<a href="#'..v.link..'">'..encode(v.name)..'</a>')
     end
     description = decode(description)
@@ -367,7 +361,9 @@ function main()
     append(style(file:read("*a")))
     file:close()
     --]]
-    --append('<link href="pure-love.css" rel="stylesheet">')
+    --[[
+    append('<link href="pure-love.css" rel="stylesheet">')
+    --]]
 
     types = {}
     for _, m in ipairs(love.modules) do
@@ -434,6 +430,7 @@ function main()
 
     append(out)
 
+    local has_functions
     if love.types then
         for _, type_ in ipairs(love.types) do
             if not has_functions then
@@ -503,7 +500,7 @@ function main()
         if type_.functions then
             append(p('Functions', 'module_navigation'))
             for _, f_ in ipairs(type_.functions) do
-                append(p(a(span(type_.name .. ':', 'light') .. f_.name, nil, '#'..type_.name..'_'..f_.name), 'function_link'))
+                append(p(span(type_.name..':', 'light') .. a(f_.name, nil, '#'..type_.name..'_'..f_.name), 'function_link'))
             end
         end
         -- Type navigation supertypes
@@ -844,14 +841,21 @@ function make_table(t, table_name, name, type, description)
                         local nameWithoutBrackets = zz.name:gsub('[%[%]]', '')
                         local dot = '.'
                         local namePart
+                        local class
+                        if table_name == 'returns_table' then
+                            class = 'return_name'
+                        else
+                            class = 'argument_name'
+                        end
+
                         if zz.name ~= nameWithoutBrackets then
                             dot = ''
-                            namePart = '<span class = "light">[</span><span class = "green">'..nameWithoutBrackets..'</span><span class = "light">]</span>'
+                            namePart = '<span class = "light">[</span><span class = "'..class..'">'..nameWithoutBrackets..'</span><span class = "light">]</span>'
                         else
-                            namePart = '<span class = "green">'..zz.name..'</span>'
+                            namePart = '<span class = "'..class..'">'..zz.name..'</span>'
                         end
                         if givenFlags then
-                            output = output .. td('<span class = "light">'..givenFlags..'<wbr>'..dot..'</span><span class = "green">'..flags..'</span><wbr><span class = "light">'..dot..'</span>'..namePart..default, name)
+                            output = output .. td('<span class = "light">'..givenFlags..'<wbr>'..dot..'</span><span class = "'..class..'">'..flags..'</span><wbr><span class = "light">'..dot..'</span>'..namePart..default, name)
                         else
                             output = output .. td('<span class = "light">'..flags..'<wbr>'..dot..'</span>'..namePart..default, name)
                         end
