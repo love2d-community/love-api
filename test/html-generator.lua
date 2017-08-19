@@ -447,7 +447,7 @@ function main()
     if love.functions then
         for _, type_ in ipairs(love.functions) do
             append(p('Functions', 'module_navigation'))
-            append(p(span('love.', 'light') .. a(type_.name, nil, '#' .. type_.name), 'function_link'))
+            append(p(span('love.', 'light') .. a(type_.name, nil, '#love_' .. type_.name), 'function_link'))
         end
     end
 
@@ -479,6 +479,18 @@ function main()
     end
 
     append(div())
+
+    for _, f_ in ipairs(love.functions) do
+        append(div('function_section'))
+        append(p(a(span('love.', 'light') .. f_.name, 'love_'..f_.name), 'name'))
+        append(p(makeLinks(f_.description), 'description'))
+        for _, f in ipairs(f_.variants) do
+            append(p(span(synopsis('', f_.name, f.arguments, f.returns), 'background'), 'synopsis'))
+            append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
+            append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
+        end
+        append(div())
+    end
 
     -- Types
     for _, type_ in ipairs(love.types) do
