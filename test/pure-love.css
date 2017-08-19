@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+p, td, h1, h2, h3 {
+    font-family: "Quicksand", "Trebuchet MS", sans-serif;
+}
+
+p, td, tr {
+    font-weight: 500;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.synopsis, .return_name, .argument_name, .constant_name {
+    font-family: "Consolas", monospace;
+}
+
+.navigation {
+    position: fixed;
+    margin-left: 2px;
+    margin-top: 12px;
+}
+
+.container {
+    margin-left: 80px;
+}
+
+p, td {
+    font-size: 10pt;
+}
+.modules, .callbacks, .navigation_link {
+    font-size: 10pt;
+}
+.module_name, .callbacks_title, .name, .type_name, .enum_name {
+    font-size: 16pt;
+}
+
+.enum_name {
+    margin-bottom: 8px;
+}
+
+.synopsis {
+    font-size: 12pt;
+}
+
+.argument_name, .return_name {
+    text-align: right;
+}
+
+.argument_type, .return_type {
+    padding-left: 16px;
+}
+
+body {
+    margin-left: 12px;
+    margin-bottom: 24px;
+}
+
+.function, .function_link, .type_link, .enum_link, .subsection {
+    margin-left: 24px;
+}
+
+.description {
+    margin-left: 12px;
+}
+
+.module_navigation, .subsection {
+    margin-top: 8px;
+}
+
+.synopsis {
+    margin-top: 16px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+}
+
+.name {
+    margin-bottom: 12px;
+}
+
+.constant_description {
+    margin-bottom: 8px;
+}
+
+.returns_table, .arguments_table, .flags_table {
+    margin-bottom: 8px;
+}
+
+table {
+    vertical-align: text-top;
+}
+td {
+    vertical-align: top;
+}
+.name, .arguments, .returns, .argument, .return, .argument_name, .return_name, .argument_type, .argument_type a, .return_type, .return_type a, .constant_name, .type_name, .enum_name, .module_navigation, .module_name, .callbacks_title, .subsection {
+    font-weight: 500;
+}
+
+.return_name, .argument_name, .constant_name {
+    font-weight: bold;
+}
+
+.arguments, .returns {
+    text-transform: uppercase;
+}
+
+.module_name a, .type_name a, .enum_name a, .callbacks_title a, .module_navigation, .default, .subsection {
+    color: #333;
+}
+
+a {
+    color: #2680C6; /* Blue */
+    color: #059dc5; /* Blue */
+    font-weight: 500;
+}
+.name a, .argument_name, .argument, .constant_name, .green {
+    color: #7CAF45; /* Green */
+    color: #E658A0; /* Pink */
+}
+.return_name, .return {
+    color: #CC6600; /* Orange */
+    color: #D86C00; /* Orange */
+    color: #a240b5; /* Purple */
+    color: #ab38c1; /* Purple */
+}
+.argument_name, .argument {
+    color: #f38d28; /* Orange */
+    color: #ea9b4c;
+}
+
+.argument_name, .return_name {
+    width: 120px;
+}
+
+.argument_type, .return_type {
+    width: 100px;
+}
+
+.navigation_link a:hover, .function_link a:hover, .type_link a:hover, .enum_link a:hover, .return_type a:hover, .argument_type a:hover  {
+    /* background-color: #ECF3F7; */
+    text-decoration: underline;
+}
+
+.background {
+    /*
+    background-color: #F5F5F5;
+    background-color: #F7F4F4;
+    */
+    background-color: #efefef;
+    border-radius: 6px;
+    padding: 2px 5px 2px 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+body {
+    background-color: #e0f4fc; /* Light blue */
+    background-color: #efefef;
+}
+
+.function_section, .navigation_links_section, .module_navigation_section, .navigation_section, .enum_section {
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-radius: 8px 0 0 8px;
+}
+
+.module_navigation_section, .function_section, .navigation_section, .module_section, .enum_section {
+    margin-bottom: 10px;
+}
+
+.module_name, .callbacks_title {
+    font-size: 28px;
+}
+
+.slash {
+    color: #a7a7a7;
+}
+
+.callbacks_navigation_section {
+    padding-top: 0;
+    border-radius: 0 0 0 8px;
+}
+
+.argument_description {
+    padding-bottom: 8px;
+}
+
+.name, .module_name, .callbacks_title {
+    margin-left: 12px;
+}
