@@ -137,9 +137,13 @@ a {
     width: 100px;
 }
 
-.navigation_link a:hover, .function_link a:hover, .type_link a:hover, .enum_link a:hover, .return_type a:hover, .argument_type a:hover  {
+a:hover  {
     /* background-color: #ECF3F7; */
     text-decoration: underline;
+}
+
+.name a:hover, .module_name a:hover, .enum_name a:hover, .type_name a:hover, .callbacks_title a:hover {
+    text-decoration: none;
 }
 
 .background {

@@ -143,9 +143,13 @@ a {
     width: 100px;
 }
 
-.navigation_link a:hover, .function_link a:hover, .type_link a:hover, .enum_link a:hover, .return_type a:hover, .argument_type a:hover  {
+a:hover  {
     /* background-color: #ECF3F7; */
     text-decoration: underline;
+}
+
+.name a:hover, .module_name a:hover, .enum_name a:hover, .type_name a:hover, .callbacks_title a:hover {
+    text-decoration: none;
 }
 
 .background {
@@ -1400,7 +1404,7 @@ The t.window table was named t.screen in versions prior to 0.9.0. The t.screen t
 </div>
 <div class = "function_section">
 <p class = "name"><a name = "filesystem_isSymlink"><span class = "light">love.filesystem.</span>isSymlink</a></p>
-<p class = "description">Gets whether a filepath is actually a symbolic link.<br /><br />If symbolic links are not enabled (via love.filesystem.setSymlinksEnabled), this function will always return false.</p>
+<p class = "description">Gets whether a filepath is actually a symbolic link.<br /><br />If symbolic links are not enabled (via <a href="#filesystem_setSymlinksEnabled">love.filesystem.setSymlinksEnabled</a>), this function will always return false.</p>
 <p class = "synopsis"><span class = "background"><span class = "return">symlink</span> = love.filesystem.isSymlink( <span class = "argument">path</span> )</span></p>
 <table class = "returns_table"><tr><td class = "return_name">symlink</td><td class = "return_type">boolean</td><td class = "return_description">True if the path is a symbolic link, false otherwise.</td></tr></table>
 <table class = "arguments_table"><tr><td class = "argument_name">path</td><td class = "argument_type">string</td><td class = "argument_description">The file or directory path to check.</td></tr></table>

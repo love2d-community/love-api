@@ -5,12 +5,15 @@ local linkTypes = {}
 local linkFunctions = {}
 
 local function loopFunctions(functions, module_, prefix)
-    for functionIndex, function_ in ipairs(functions or {}) do
-        if module_ and module_.name == 'filesystem' and (function_.name == 'setSource' or function_.name == 'init') then
-            table.remove(module_.functions, functionIndex)
-        else
-            local name
-            table.insert(linkFunctions, {name = prefix..function_.name, link = module_.name..'_'..function_.name})
+    if functions then
+        for functionIndex = #functions, 1, -1 do
+            local function_ = functions[functionIndex]
+            if module_ and module_.name == 'filesystem' and (function_.name == 'setSource' or function_.name == 'init') then
+                table.remove(functions, functionIndex)
+            else
+                local name
+                table.insert(linkFunctions, {name = prefix..function_.name, link = module_.name..'_'..function_.name})
+            end
         end
     end
 end
@@ -45,6 +48,9 @@ local function makeLinks(description, typeName)
         end
     end
     for _, v in ipairs(linkFunctions) do
+        if description:match('setSymlinksEnabled') then
+            --print(v.name)
+        end
         description = description:gsub(v.name, '<a href="#'..v.link..'">'..encode(v.name)..'</a>')
     end
     description = decode(description)
