@@ -127,7 +127,6 @@ return {
             },
             subtypes = {
                 'Canvas',
-                'Framebuffer',
                 'Image',
                 'Mesh',
                 'ParticleSystem',
