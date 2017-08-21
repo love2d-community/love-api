@@ -89,7 +89,7 @@ body {
 }
 
 .returns_table, .arguments_table, .flags_table {
-    margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 table {
