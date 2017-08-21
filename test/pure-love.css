@@ -90,6 +90,7 @@ body {
 
 .returns_table, .arguments_table, .flags_table {
     margin-top: 8px;
+    margin-bottom: 4px;
 }
 
 table {
