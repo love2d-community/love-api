@@ -2490,11 +2490,6 @@ return {
                             type = 'Canvas',
                             name = 'canvas',
                             description = 'A render target.'
-                        },
-                        {
-                            type = 'Canvas',
-                            name = '...',
-                            description = 'Additional render targets.'
                         }
                     }
                 },
