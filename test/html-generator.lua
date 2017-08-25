@@ -317,12 +317,12 @@ local function makeLinks(description, typeName)
 
     for _, v in ipairs(linkTypes) do
         if v.name ~= typeName then
-            description, count = description:gsub('([ %>])'..v.name..'([\n%. \'%(%)%,])', '%1<a href="#'..v.link..'">'..encode(v.name)..'</a>%2')
+            description, count = description:gsub('([ %>])'..v.name..'([\n%. \'%(%)%,])', '%1<a href="#'..encode(v.link)..'">'..encode(v.name)..'</a>%2')
         end
     end
     if (description:match('%w%.%w') or description:match('%w%:%w')) then
         for _, v in ipairs(linkFunctions) do
-            description = description:gsub(v.name, '<a href="#'..v.link..'">'..encode(v.name)..'</a>')
+            description = description:gsub(v.name, '<a href="#'..encode(v.link)..'">'..encode(v.name)..'</a>')
         end
     end
     description = decode(description)
@@ -371,7 +371,7 @@ local function doFunctions(f_, name)
                             local dot = '.'
 
                             local class
-                            if table_name == 'returns_table' then
+                            if name == 'ra_name returns' then
                                 class = 'returns'
                             else
                                 class = 'arguments'
