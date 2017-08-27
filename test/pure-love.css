@@ -166,3 +166,7 @@ td {
 .description {
     margin-top: 12px;
 }
+
+.relative {
+    position: relative;
+}

@@ -442,7 +442,7 @@ local function doFunctions(f_, name)
             return_list = return_list..' = '
         end
 
-        append(p(span(string.format('%s%s(%s)', return_list, prefix..f_.name, argument_list), 'synopsis_background'), 'synopsis'))
+        append(p(span(span(string.format('%s%s(%s)', return_list, prefix..f_.name, argument_list), 'relative'), 'synopsis_background'), 'synopsis'))
 
         if f.description then
             append(p(makeLinks(f.description), 'description'))
