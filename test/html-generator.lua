@@ -1,13 +1,286 @@
 -- Script by @hahawoo aka Santos
-local love_api = require('love-api.love_api')
+local api = require('api')
+
+local FAST_MODE = false
+
+do
+    local function functions(f)
+        for _, function_ in ipairs(f) do
+            for _, variant in ipairs(function_.variants) do
+                if not variant.returns then variant.returns = {} end
+                if not variant.arguments then variant.arguments = {} end
+            end
+        end
+    end
+
+    local function types(t)
+        for _, type_ in ipairs(t) do
+            if not type_.functions then type_.functions = {} end
+            if not type_.constructors then type_.constructors = {} end
+            if not type_.supertypes then type_.supertypes = {} end
+            if not type_.subtypes then type_.subtypes = {} end
+
+            functions(type_.functions)
+        end
+    end
+
+    functions(api.functions)
+    functions(api.callbacks)
+    types(api.types)
+
+    table.insert(api.modules, {
+        name = 'love',
+        functions = api.functions,
+        callbacks = api.callbacks,
+        types = api.types,
+    })
+
+    for _, module_ in ipairs(api.modules) do
+        if not module_.functions then module_.functions = {} end
+        if not module_.types then module_.types = {} end
+        if not module_.enums then module_.enums = {} end
+        if not module_.callbacks then module_.callbacks = {} end
+
+        functions(module_.functions)
+        types(module_.types)
+    end
+end    
 
 local order = {
+    Source = {
+        {
+            name = 'Playback',
+            functions = {
+                'play',
+                'stop',
+                'pause',
+                'resume',
+                'rewind',
+                'seek',
+                'setLooping',
+                'setPitch',
+                'setVolume',
+                'isPlaying',
+                'isStopped',
+                'isPaused',
+            },
+        },
+        {
+            name = 'Spatial',
+            functions = {
+                'setPosition',
+                'setDirection',
+                'setRolloff',
+                'setVelocity',
+                'setCone',
+                'setAttenuationDistances',
+                'setVolumeLimits',
+            },
+        },
+        {
+            name = 'Info',
+            functions = {
+                'getType',
+                'getChannels',
+                'getDuration',
+            },
+        },
+    },
+    File = {
+        'open',
+        'close',
+        'read',
+        'lines',
+        'write',
+        'setBuffer',
+        'flush',
+        'getMode',
+        'isOpen',
+        'tell/seek',
+        'isEOF',
+        'getFilename',
+        'getSize',
+    },
+    FileData = {
+        'getFilename',
+        'getExtension',
+    },
+    Canvas = {
+        'getFormat',
+        'getMSAA',
+        'setFilter',
+        'setWrap',
+        'newImageData',
+        'renderTo',
+        {
+            name = 'Dimensions',
+            functions = {
+                'getDimensions',
+                'getWidth',
+                'getHeight',
+            }
+        },
+    },
+    Font = {
+        'setFilter',
+        {
+            name = 'Glyph support',
+            functions = {
+                'hasGlyphs',
+                'setFallbacks',
+            },
+        {
+            name = 'Info',
+            functions = {
+                'getWrap',
+                'setLineHeight',
+                'getWidth',
+                'getHeight',
+                'getBaseline',
+                'getAscent',
+                'getDescent',
+            },
+        },
+    },
+    Mesh = {
+        'setTexture',
+        'getVertexFormat',
+        'setVertex',
+        'setVertices',
+        'attachAttribute',
+        'setVertexAttribute',
+        'is/setAttributeEnabled',
+        'setVertexMap',
+        'getVertexCount',
+        'setDrawMode',
+        'setDrawRange',
+    },
+    Image = {
+        'getFlags',
+        'setFilter',
+        'setMipmapFilter',
+        'setWrap',
+        'refresh',
+        'getData',
+        {
+            name = 'Dimensions',
+            functions = {
+                'getDimensions',
+                'getWidth',
+                'getHeight',
+            }
+        },
+    },
+    ParticleSystem = {
+        'start',
+        'stop',
+        'pause',
+        'reset',
+        'update',
+        'emit',
+        'isActive',
+        'isPaused',
+        'isStopped',
+        'clone',
+        'setBufferSize',
+        'getCount',
+        {
+            name = 'Emitter',
+            functions = {
+                'setPosition',
+                'moveTo',
+                'setAreaSpread',
+                'setEmissionRate',
+                'setEmitterLifetime',
+            }
+        },
+        {
+            name = 'Particles',
+            functions = {
+                'setColors',
+                'setDirection',
+                'setInsertMode',
+                'setLinearAcceleration',
+                'setLinearDamping',
+                'setOffset',
+                'setParticleLifetime',
+                'setRadialAcceleration',
+                'setTangentialAcceleration',
+                'setRelativeRotation',
+                'setRotation',
+                'setSizes',
+                'setSizeVariation',
+                'setSpeed',
+                'setSpin',
+                'setSpinVariation',
+                'setSpread',
+                'setTexture',
+                'setQuads',
+                }
+            }
+        }
+    },
+    Shader = {
+        'send',
+        'sendColor',
+        'getExternVariable',
+        'getWarnings',
+    },
+    Text = {
+        'add',
+        'addf',
+        'set',
+        'setf',
+        'clear',
+        'setFont',
+        {
+            name = 'Dimensions',
+            functions = {
+                'getDimensions',
+                'getWidth',
+                'getHeight',
+            }
+        },
+    },
+    Video = {
+        'play',
+        'isPlaying',
+        'pause',
+        'seek',
+        'rewind',
+        'setSource',
+        'setFilter',
+        'getStream',
+        {
+            name = 'Dimensions',
+            functions = {
+                'getDimensions',
+                'getWidth',
+                'getHeight',
+            }
+        },
+    },
+    ImageData = {
+        'setPixel',
+        'mapPixel',
+        'paste',
+        'encode',
+        {
+            name = 'Dimensions',
+            functions = {
+                'getDimensions',
+                'getWidth',
+                'getHeight',
+            }
+        },
+    },
     callbacks = {
         'load',
         'update',
         'draw',
         'quit',
         'run',
+        'conf',
         {
             name = 'Input',
             functions = {
@@ -54,6 +327,96 @@ local order = {
             },
         },
     },
+    audio = {
+        {
+            name = 'Playback',
+            functions = {
+                'play',
+                'stop',
+                'pause',
+                'resume',
+                'rewind',
+            },
+        },
+        {
+            name = 'Listener',
+            functions = {
+                'setPosition',
+                'setOrientation',
+                'setVelocity',
+                'setDistanceModel',
+                'setDopplerScale',
+            },
+        },
+        {
+            name = 'Other',
+            functions = {
+                'setVolume',
+                'getSourceCount',
+            },
+        },
+    },
+    event = {
+        'push',
+        'poll',
+        'pump',
+        'wait',
+        'clear',
+        'quit',
+    },
+    filesystem = {
+        {
+            name = 'Mounting',
+            functions = {
+                'mount',
+                'unmount',
+            }
+        },
+        {
+            name = 'Directory paths',
+            functions = {
+                'getAppdataDirectory',
+                'getRealDirectory',
+                'getSaveDirectory',
+                'getSourceBaseDirectory',
+                'getUserDirectory',
+                'getWorkingDirectory',
+            },
+        },
+        {
+            name = 'File properties',
+            functions = {
+                'isFile',
+                'isDirectory',
+                'isSymname',
+                'exists',
+                'getLastModified',
+                'getSize',
+            },
+        },
+        {
+            name = 'File operations',
+            functions = {
+                'read',
+                'lines',
+                'write',
+                'append',
+                'remove',
+            },
+        },
+        {
+            name = 'Other',
+            functions = {
+                'setSymnamesEnabled',
+                'isFused',
+                'createDirectory',
+                'getDirectoryItems',
+                'getIdentity',
+                'load',
+                'setRequirePath',
+            },
+        },
+    },
     graphics = {
         {
             name = 'Drawing',
@@ -75,7 +438,7 @@ local order = {
             name = 'Stencil',
             functions = {
                 'stencil',
-                'getStencilTest',
+                'setStencilTest',
             },
         },
         {
@@ -84,21 +447,21 @@ local order = {
                 'push',
                 'pop',
                 'reset',
-                'getFont',
+                'setFont',
                 'setNewFont',
-                'getBackgroundColor',
-                'getBlendMode',
-                'getCanvas',
-                'getColor',
-                'getColorMask',
-                'getDefaultFilter',
-                'getLineJoin',
-                'getLineStyle',
-                'getLineWidth',
-                'getShader',
-                'getPointSize',
-                'getPointStyle',
-                'getScissor',
+                'setBackgroundColor',
+                'setBlendMode',
+                'setCanvas',
+                'setColor',
+                'setColorMask',
+                'setDefaultFilter',
+                'setLineJoin',
+                'setLineStyle',
+                'setLineWidth',
+                'setShader',
+                'setPointSize',
+                'setPointStyle',
+                'setScissor',
                 'intersectScissor',
                 'isWireframe',
                 'setStencil',
@@ -139,57 +502,131 @@ local order = {
                 'isGammaCorrect',
             },
         },
+        {
+            name = 'Other',
+            functions = {
+                'newScreenshot',
+                'setWireframe',
+                'clear',
+                'discard',
+                'present',
+            },
+        },
     },
-    filesystem = {
-        'areSymlinksEnabled',
-        'isFused',
-        'isSymlink',
-        'createDirectory',
-        'getDirectoryItems',
-        'getIdentity',
-        'isFile',
-        'isDirectory',
-        'exists',
-        'load',
-        'mount',
-        'unmount',
+    Joystick = {
         {
-            name = 'Directory paths',
+            name = 'Input',
             functions = {
-                'getAppdataDirectory',
-                'getRealDirectory',
-                'getSaveDirectory',
-                'getSourceBaseDirectory',
-                'getUserDirectory',
-                'getWorkingDirectory',
-            },
+                'isDown',
+                'getAxis',
+                'getAxes',
+                'getHat',
+                'isGamepadDown',
+                'getGamepadAxis',
+            }
         },
         {
-            name = 'File properties',
+            name = 'Count',
             functions = {
-                'getLastModified',
-                'getSize',
-            },
+                'getAxisCount',
+                'getButtonCount',
+                'getHatCount',
+            }
         },
         {
-            name = 'File operations',
+            name = 'Info',
             functions = {
-                'read',
-                'lines',
-                'write',
-                'append',
-                'remove',
-            },
+                'getName',
+                'getID',
+                'getGUID',
+                'isConnected',
+                'isGamepad',
+                'getGamepadMapping',
+            }
         },
+        {
+            name = 'Vibration',
+            functions = {
+                'setVibration',
+                'isVibrationSupported',
+            }
+        },
+    },
+    BezierCurve = {
+        'evalulate',
+        'render',
+        'renderSegment',
+        'getSegment',
+        'getDerivative',
+        'getDegree',
+        {
+            name = 'Control points',
+            functions = {
+                'insertControlPoint',
+                'removeControlPoint',
+                'setControlPoint',
+                'getControlPointCount',
+            }
+        },
+        {
+            name = 'Transform',
+            functions = {
+                'translate',
+                'scale',
+                'rotate',
+            }
+        },
+    },
+    RandomGenerator = {
+        'random',
+        'randomNormal',
+        'setSeed',
+        'setState',
+    },
+    SoundData = {
+        'setSample',
+        'getSampleCount',
+        'getDuration',
+        'getSampleRate',
+        'getBitDepth',
+        'getChannels',
+    },
+    Thread = {
+        'start',
+        'wait',
+        'getError',
+        'isRunning',
+    },
+    Channel = {
+        'push',
+        'pop',
+        'supply',
+        'demand',
+        'peek',
+        'clear',
+        'performAtomic',
+        'getCount',
+    },
+    joystick = {
+        'setJoysticks',
+    },
+    keyboard = {
+        'isDown',
+        'isScancodeDown',
+        'getScancodeFromKey',
+        'getKeyFromScancode',
+        'setKeyRepeat',
+        'setTextInput',
     },
     math = {
+        'noise',
         {
             name = "Random numbers",
             functions = {
                 "random",
                 "randomNormal",
-                "getRandomSeed",
-                "getRandomState",
+                "setRandomSeed",
+                "setRandomState",
             },
         },
         {
@@ -219,30 +656,80 @@ local order = {
             name = "Input",
             functions = {
                 "isDown",
-                "getPosition",
-                "getX",
-                "getY",
+                "setPosition",
+                "setX",
+                "setY",
+                'setGrabbed',
+                'setRelativeMode',
             },
         },
         {
             name = "Cursor",
             functions = {
-                "getCursor",
+                "setCursor",
                 "getSystemCursor",
+                "setVisible",
                 "hasCursor",
             },
         },
     },
+    system = {
+        'openURL',
+        'setClipboardText',
+        'vibrate',
+        {
+            name = 'Info',
+            functions = {
+                'getOS',
+                'getPowerInfo',
+                'getProcessorCount',
+            }
+        },
+    },
+    timer = {
+        'getTime',
+        'getFPS',
+        'getAverageDelta',
+        'getDelta',
+        'sleep',
+        'step',
+    },
+    touch = {
+        'getTouches',
+        'getPosition',
+        'getPressure',
+    },
+    window = {
+        'setTitle',
+        'setIcon',
+        'getFullscreenModes',
+        'setMode',
+        'setFullscreen',
+        'setPosition',
+        'hasFocus',
+        'hasMouseFocus',
+        'maximize',
+        'minimize',
+        'isMaximized',
+        'isVisible',
+        'isOpen',
+        'close',
+        'requestAttention',
+        'getDisplayName',
+        'setDisplaySleepEnabled',
+        'showMessageBox',
+        'fromPixels',
+        'getPixelScale',
+    },
 }
 
+local output = {}
 
-local output = ''
-
-local function append(s)
-    output = output..s..'\n'
+local function A(s)
+    table.insert(output, s)
 end
 
-local function a(s, name, href)
+local function a(s, href, name)
     local attr = ''
     if href then
         attr = ' href = "'..href..'"'
@@ -283,233 +770,182 @@ local function h3(s, c) return class('h3', s, c) end
 local function td(s, c) return class('td', s, c) end
 local function style(s, c) return class('style', s, c) end
 
-local gettersetter = {}
-
-local function make_function_navigation_link(m, f_, prefix)
-    local link
-    local gs = gettersetter[prefix..f_.name]
-    if type(gs) == 'table' then
-        link = a(gs.getterprefix, nil, '#'..prefix..gs.getter)..span('/', 'slash')..a(f_.name, nil, '#'..prefix..f_.name)
-    elseif gettersetter[prefix..f_.name] == 'getter' then
-        return
-    else
-        link = a(f_.name, nil, '#'..prefix..f_.name)
-    end
-    return p(prefix..link, 'link')
-end
-
-local linkTypes = {}
-local linkFunctions = {}
-
-local function splitPrefix(s)
-    return s:match('(.+[%.%:])(.+)')
-end
+local nameTypes = {}
+local nameFunctions = {}
 
 local function makeLinks(description, typeName)
+    if FAST_MODE then
+        return description
+    end
+
+    -- So that (for example) Joystick:isGamepadDown isn't linked to twice for its own name and the substring Joystick:isGamepad, the name is temporarily "encoded".
     local temp = 'TEMP!'
     local function encode(s)
         return s:sub(1, 1)..temp..s:sub(2)
     end
-
     local function decode(s)
         return s:gsub(temp, '')
     end
 
-    for _, v in ipairs(linkTypes) do
+    for _, v in ipairs(nameTypes) do
         if v.name ~= typeName then
-            description, count = description:gsub('([ %>])'..v.name..'([\n%. \'%(%)%,])', '%1<a href="#'..encode(v.link)..'">'..encode(v.name)..'</a>%2')
+            description, count = description:gsub('([ %>])'..v.name..'([\n%. \'%(%)%,])', '%1<a href="#'..encode(v.name)..'">'..encode(v.name)..'</a>%2')
         end
     end
     if (description:match('%w%.%w') or description:match('%w%:%w')) then
-        for _, v in ipairs(linkFunctions) do
-            description = description:gsub(v.name, '<a href="#'..encode(v.link)..'">'..encode(v.name)..'</a>')
+        for _, v in ipairs(nameFunctions) do
+            description = description:gsub(v.name, '<a href="#'..encode(v.name)..'">'..encode(v.name)..'</a>')
         end
     end
     description = decode(description)
     return description
 end
 
-local function doFunctions(f_, name)
-
-    local function make_table(t, table_name, name, type_, description)
-        local output = ''
-        if t and table_name then
-            output = output.._table(table_name)
-
-            for _, z in ipairs(t) do
-                output = output..tr('')
-                if z.default then
-                    output = output..td(z.name..' <span class = "default">('..z.default..')</span>', name)
-                else
-                    output = output..td(z.name, name)
-                end
-                outputted_name = false
-                for _, t in ipairs(types) do
-                    if z.type == t.name then
-                        output = output..td(a(z.type, nil, '#'..t.linkname), type_)
-                        outputted_name = true
-                        break
-                    end
-                end
-                if not outputted_name then
-                    output = output..td(z.type, type_)
-                end
-                output = output..td(makeLinks(z.description), description)
-                output = output..tr()
-                local function doTable(z, givenFlags)
-                    if z.table then
-                        local flags = z.name or givenFlags
-                        output = output.._table('flags_table')
-                        for _, zz in ipairs(z.table) do
-                            output = output..tr('')
-                            local default = ''
-                            if zz.default then
-                                 default = ' <span class = "default">('..zz.default..')</span>'
-                            end
-
-                            local nameWithoutBrackets = zz.name:gsub('[%[%]]', '')
-                            local dot = '.'
-
-                            local class
-                            if name == 'ra_name returns' then
-                                class = 'returns'
-                            else
-                                class = 'arguments'
-                            end
-
-                            local namePart
-                            if zz.name ~= nameWithoutBrackets then
-                                dot = ''
-                                namePart = '[<span class = "'..class..'">'..nameWithoutBrackets..'</span>]'
-                            else
-                                namePart = '<span class = "'..class..'">'..zz.name..'</span>'
-                            end
-
-                            local flagPart = ''
-                            if givenFlags then
-                                flagPart = givenFlags..'<wbr>'..dot..'<span class = "'..class..'">'
-                            end
-                            output = output..td(flagPart..flags..'<wbr>'..dot..namePart..default, name)
-
-                            outputted_name = false
-                            for _, t in ipairs(types) do
-                                if zz.type == t.name then
-                                    output = output..td(a(zz.type, nil, '#'..t.linkname), type_)
-                                    outputted_name = true
-                                    break
-                                end
-                            end
-                            if not outputted_name then
-                                output = output..td(zz.type, type_)
-                            end
-                            output = output..td(makeLinks(zz.description), description)
-                            output = output..tr()
-
-                            doTable(zz, flags)
-                        end
-                    end
-                end
-                doTable(z)
-            end
-            output = output.._table()
-        end
-
-        return output
+function getDescription(a, languageCode)
+    if a.descriptiont and a.descriptiont[languageCode] then
+        return (a.descriptiont[languageCode]:gsub(' %[auto%]', ''))
     end
-
-    append(div('section'))
-    local prefix, functionName = splitPrefix(name)
-    append(p(a(span(prefix, 'prefix')..functionName, name), 'name'))
-    append(p(makeLinks(f_.description), 'description'))
-    for _, f in ipairs(f_.variants) do
-        local function ar(args, class)
-            local argument_list = ''
-            for i, v in ipairs(args or {}) do
-                argument_list = argument_list..'<span class = "'..class..'">'..v.name..'</span>'
-                if i ~= #args then
-                    argument_list = argument_list..', '
-                end
-            end
-            return argument_list
-        end
-
-        local argument_list = ar(f.arguments, 'arguments')
-        if f.arguments then
-            argument_list = ' '..argument_list..' '
-        end
-        local return_list = ar(f.returns, 'returns')
-        if f.returns then
-            return_list = return_list..' = '
-        end
-
-        append(p(span(span(string.format('%s%s(%s)', return_list, prefix..f_.name, argument_list), 'relative'), 'synopsis_background'), 'synopsis'))
-
-        if f.description then
-            append(p(makeLinks(f.description), 'description'))
-        end
-
-        append(make_table(f.returns, 'ra_table', 'ra_name returns', 'ra_type', 'ra_description'))
-        append(make_table(f.arguments, 'ra_table', 'ra_name arguments', 'ra_type', 'ra_description'))
-    end
-    append(div())
+    return a.description
 end
 
-local function doTypes(types, moduleName)
-    for _, type_ in ipairs(types or {}) do
-        -- Type navigation title
-        
-        append(div('section'))
-        append(p(a(type_.name, type_.name), 'heading'))
-        append(p(makeLinks(type_.description), type_.name), 'description')
-        append(div('navigation_links_section'))
-        if type_.constructors then
-            append(p('Constructors', 'module_navigation'))
-            for _, constructor in ipairs(type_.constructors) do
-                local modulePart = ''
-                if moduleName then
-                    modulePart = moduleName..'.'
+local function doFunctions(functions, prefix, languageCode)
+    for _, function_ in ipairs(functions) do
+        local function make_table(t, table_name, name, type_, description)
+            if t and table_name then
+                A(_table(table_name))
+
+                for _, z in ipairs(t) do
+                    A(tr(''))
+                    if z.default then
+                        A(td(z.name..' <span class = "default">('..z.default..')</span>', name))
+                    else
+                        A(td(z.name, name))
+                    end
+                    local typeNames = {}
+                    for _, t in ipairs(types) do
+                        typeNames[t.name] = t.link
+                    end
+                    local namePart = {}
+                    for match in (z.type..' / '):gmatch('(.-) %/ ') do
+                        if typeNames[match] then
+                            table.insert(namePart, a(match, '#'..typeNames[match]))
+                        else
+                            table.insert(namePart, match)
+                        end
+                    end
+                    A(td(table.concat(namePart, ' / '), type_))
+                    A(td(makeLinks(getDescription(z, languageCode)), description))
+                    A(tr())
+                    local function doTable(z, givenFlags)
+                        if z.table then
+                            local flags = z.name or givenFlags
+                            A(_table('flags_table'))
+                            for _, zz in ipairs(z.table) do
+                                A(tr(''))
+                                local default = ''
+                                if zz.default then
+                                     default = ' <span class = "default">('..zz.default..')</span>'
+                                end
+
+                                local nameWithoutBrackets = zz.name:gsub('[%[%]]', '')
+                                local dot = '.'
+
+                                local class
+                                if name == 'ra_name returns' then
+                                    class = 'returns'
+                                else
+                                    class = 'arguments'
+                                end
+
+                                local namePart
+                                if zz.name ~= nameWithoutBrackets then
+                                    dot = ''
+                                    namePart = '[<span class = "'..class..'">'..nameWithoutBrackets..'</span>]'
+                                else
+                                    namePart = '<span class = "'..class..'">'..zz.name..'</span>'
+                                end
+
+                                local flagPart = ''
+                                if givenFlags then
+                                    flagPart = givenFlags..'<wbr>'..dot..'<span class = "'..class..'">'
+                                end
+                                A(td(flagPart..flags..'<wbr>'..dot..namePart..default, name))
+
+                                local typeNames = {}
+                                for _, t in ipairs(types) do
+                                    typeNames[t.name] = t.link
+                                end
+                                local namePart = {}
+                                for match in (zz.type..' / '):gmatch('(.-) %/ ') do
+                                    if typeNames[match] then
+                                        table.insert(namePart, a(match, '#'..typeNames[match]))
+                                    else
+                                        table.insert(namePart, match)
+                                    end
+                                end
+                                A(td(table.concat(namePart, ' / '), type_))
+                                A(td(makeLinks(getDescription(zz, languageCode)), description))
+                                A(tr())
+
+                                doTable(zz, flags)
+                            end
+                        end
+                    end
+                    doTable(z)
                 end
-                append(p('love.'..modulePart..a(constructor, nil, '#love.'..moduleName..'.'..constructor), 'link'))
+                A(_table())
             end
         end
-        -- Type navigation functions
 
-        if type_.functions then
-            append(p('Functions', 'module_navigation'))
-            for _, f_ in ipairs(type_.functions) do
-                local prefix = type_.name..':'
-                local link = make_function_navigation_link(type_, f_, prefix)
-                if link then
-                    append(link)
-                end
-            end
-        end
-
-        local function t(types, s)
-            if types then
-                append(p(s, 'module_navigation'))
-                for _, supertype in ipairs(types) do
-                    if
-                        supertype ~= 'FontData' and
-                        supertype ~= 'GlyphData' and
-                        supertype ~= 'Rasterizer' and
-                        supertype ~= 'Decoder' and
-                        supertype ~= 'VideoStream'
-                    then
-                        append(p(a(supertype, nil, '#'..supertype), 'link'))
+        A(div('section'))
+        A(p(a(span(prefix, 'prefix')..function_.name, nil, prefix..function_.name), 'name'))
+        A(p(makeLinks(getDescription(function_, languageCode)), 'description'))
+        for _, variant in ipairs(function_.variants) do
+            local function makeList(args, class)
+                local argumentList = ''
+                for i, v in ipairs(args or {}) do
+                    argumentList = argumentList..'<span class = "'..class..'">'..v.name..'</span>'
+                    if i ~= #args then
+                        argumentList = argumentList..', '
                     end
                 end
+                return argumentList
             end
-        end
-        t(type_.supertypes, 'Supertypes')
-        t(type_.subtypes, 'Subtypes')
 
-        append(div())
-        append(div())
+            local returnList = ''
+            if #variant.returns > 0 then
+                returnList = makeList(variant.returns, 'returns')
+                returnList = returnList..' = '
+            end
 
-        for _, f_ in ipairs(type_.functions or {}) do
-            doFunctions(f_, type_.name..':'..f_.name)
+            local argumentList = ''
+            if #variant.arguments > 0 then
+                argumentList = makeList(variant.arguments, 'arguments')
+                argumentList = ' '..argumentList..' '
+            end
+
+            A(p(span(span(string.format('%s%s(%s)', returnList, prefix..function_.name, argumentList), 'relative'), 'synopsis_background'), 'synopsis'))
+
+            if getDescription(variant, languageCode)then
+                A(p(makeLinks(getDescription(variant, languageCode)), 'description'))
+            end
+
+            A(make_table(variant.returns, 'ra_table', 'ra_name returns', 'ra_type', 'ra_description'))
+            A(make_table(variant.arguments, 'ra_table', 'ra_name arguments', 'ra_type', 'ra_description'))
         end
+        A(div()) -- section
+    end
+end
+
+local function doEnums(enums, languageCode)
+    for _, enum in ipairs(enums or {}) do
+        A(div('section'))
+        A(p(a(enum.name, nil, enum.name), 'heading'))
+        for _, constant in ipairs(enum.constants) do
+            A(p(constant.name, 'constant_name'))
+            A(p(makeLinks(getDescription(constant, languageCode)), 'constant_description'))
+        end
+        A(div()) -- section
     end
 end
 
@@ -523,18 +959,18 @@ local function loopFunctions(functions, module_, prefix)
             then
                 table.remove(functions, functionIndex)
             else
-                table.insert(linkFunctions, {name = prefix..function_.name, link = prefix..function_.name})
+                table.insert(nameFunctions, {name = prefix..function_.name, name = prefix..function_.name})
             end
         end
     end
 end
 
 local function insertIntoLinks(name)
-    table.insert(linkTypes, {name = name, link = name})
+    table.insert(nameTypes, {name = name, name = name})
     if name:sub(-1) == 'y' then
-        table.insert(linkTypes, {name = name:sub(1, -2)..'ies', link = name})
+        table.insert(nameTypes, {name = name:sub(1, -2)..'ies', name = name})
     else
-        table.insert(linkTypes, {name = name..'s', link = name})
+        table.insert(nameTypes, {name = name..'s', name = name})
     end
 end
 
@@ -552,50 +988,64 @@ local function loopTypes(types, module_)
     end
 end
 
-loopTypes(love_api.types)
+loopTypes(api.types)
 
-for moduleIndex = #love_api.modules, 1, -1 do
-    local module_ = love_api.modules[moduleIndex]
+for moduleIndex = #api.modules, 1, -1 do
+    local module_ = api.modules[moduleIndex]
     if module_.name == 'video' or module_.name == 'font' then
-        table.remove(love_api.modules, moduleIndex)
+        table.remove(api.modules, moduleIndex)
     else
         loopFunctions(module_.functions, module_, 'love.'..module_.name..'.')
         loopTypes(module_.types, module_)
     end
 
-    for _, enum in ipairs(module_.enums or {}) do
+    for _, enum in ipairs(module_.enums) do
         insertIntoLinks(enum.name)
     end
 end
 
-loopFunctions(love_api.callbacks, nil, 'love.')
+loopFunctions(api.callbacks, nil, 'love.')
 
-table.sort(linkFunctions, function(a, b) return #a.name > #b.name end)
-table.sort(linkTypes, function(a, b) return #a.name > #b.name end)
+table.sort(nameFunctions, function(a, b) return #a.name > #b.name end)
+table.sort(nameTypes, function(a, b) return #a.name > #b.name end)
 
-for moduleIndex, module_ in ipairs(love_api.modules) do
-    local function loopFunctions2(functions, prefix)
+local gettersetter = {}
+
+function makeNavigationLink(m, function_, prefix, languageCode)
+    local name
+    local gs = gettersetter[prefix..function_.name]
+    if type(gs) == 'table' then
+        name = a(gs.getterprefix, '#'..prefix..gs.getter)..span('/', 'slash')..a(function_.name, '#'..prefix..function_.name)
+    elseif gettersetter[prefix..function_.name] == 'getter' then
+        return
+    else
+        name = a(function_.name, '#'..prefix..function_.name)
+    end
+    local minidescription = ''
+    if function_.minidescriptiont and function_.minidescriptiont[languageCode] then
+        minidescription = ' ('..function_.minidescriptiont[languageCode]:gsub(' %[auto%]', '')..')'
+    end
+    A(p(prefix..name..minidescription, 'navigation_link'))
+end
+
+for moduleIndex, module_ in ipairs(api.modules) do
+    local function f(functions, prefix)
         local t = {}
-        for functionIndex, function_ in ipairs(functions or {}) do
-            for _, getterprefix in ipairs({'get', 'is', 'has', 'are', 'to', 'load', 'tell'}) do
-                if function_.name:sub(1, #getterprefix) == getterprefix and function_.name ~= 'hasCursor' then
-                    local withoutprefix = function_.name:sub(#getterprefix+1)
-                    if not t[withoutprefix] then
-                        t[withoutprefix] = {}
+        for functionIndex, function_ in ipairs(functions) do
+
+            local function f(key, getters)
+                for _, getterprefix in ipairs(getters) do
+                    if function_.name:sub(1, #getterprefix) == getterprefix and function_.name ~= 'hasCursor' then
+                        local withoutprefix = function_.name:sub(#getterprefix+1)
+                        t[withoutprefix] = t[withoutprefix] or {}
+                        t[withoutprefix][key] = {name = function_.name, prefix = getterprefix}
                     end
-                    t[withoutprefix].getter = {name = function_.name, prefix = getterprefix}
                 end
             end
-            for _, setterprefix in ipairs({'set', 'from', 'save', 'seek'}) do
-                if function_.name:sub(1, #setterprefix) == setterprefix and function_.name ~= 'hasCursor' then
-                    local withoutprefix = function_.name:sub(#setterprefix+1)
-                    if not t[withoutprefix] then
-                        t[withoutprefix] = {}
-                    end
-                    t[withoutprefix].setter = {name = function_.name, prefix = setterprefix}
-                end
-            end
+            f('getter', {'get', 'is', 'has', 'are', 'to', 'load', 'tell'})
+            f('setter', {'set', 'from', 'save', 'seek'})
         end
+
         for k, v in pairs(t) do
             if v.getter and v.setter then
                 gettersetter[prefix..v.getter.name] = 'getter'
@@ -604,278 +1054,209 @@ for moduleIndex, module_ in ipairs(love_api.modules) do
         end
     end
 
-    loopFunctions2(module_.functions, 'love.'..module_.name..'.')
-    for _, type_ in ipairs(module_.types or {}) do
-        loopFunctions2(type_.functions, type_.name..':')
+    f(module_.functions, 'love.'..module_.name..'.')
+    for _, type_ in ipairs(module_.types) do
+        f(type_.functions, type_.name..':')
     end
 end
 
-local function main()
-    append([[<html>
-    <head>
-    <title>L&Ouml;VE ]]..love_api.version..[[ Reference</title>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">
-    </head>
-    <body>]])
+local function main(languageCode)
+    A([[<html><head>
+    <title>L&Ouml;VE ]]..api.version..[[ Reference</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet">]])
     
-    ---[[
-    local file = io.open("pure-love.css")
-    append(style(file:read("*a")))
-    file:close()
-    --]]
-    --[[
-    append('<link href="pure-love.css" rel="stylesheet">')
-    --]]
+    if true then
+        local file = io.open("pure-love.css")
+        A(style(file:read("*a")))
+        file:close()
+    else
+        A('<link href="pure-love.css" rel="stylesheet">')
+    end
+
+    A('</head><body>')
 
     types = {}
-    for _, m in ipairs(love_api.modules) do
-        if m.types then
-            for _, t in ipairs(m.types) do
-                table.insert(types, {name = t.name, linkname = t.name})
+    for _, module_ in ipairs(api.modules) do
+        if module_.types then
+            for _, type_ in ipairs(module_.types) do
+                table.insert(types, {name = type_.name, link = type_.name})
             end
         end
-        if m.enums then
-            for _, t in ipairs(m.enums) do
-                table.insert(types, {name = t.name, linkname = t.name})
+        if module_.enums then
+            for _, enum in ipairs(module_.enums) do
+                table.insert(types, {name = enum.name, link = enum.name})
             end
         end
     end
 
-    -- Navigation
-    append(div('navigation'))
-
-    append(p(a('love', nil, '#love' )))
-
-    for _, m in ipairs(love_api.modules) do
-        append(p(a(m.name, nil, '#love.'..m.name)))
+    -- Side navigation
+    A(div('navigation'))
+    A(p(a('love', '#love')))
+    for _, module_ in ipairs(api.modules) do
+        if module_.name ~= 'love' then
+            A(p(a(module_.name, '#love.'..module_.name)))
+        end
     end
+    A(div()) -- navigation
 
-    append(div())
-    append(div('container'))
+    -- The 'container' class sets a margin-left to move the contents away from the side navigation.
+    A(div('container'))
+    -- The 'first_section' class removes the padding and border radius from the top, so that scrolling to the top of the screen and clicking 'love' in the side navigation looks the same.
+    
+    local function doModule(module_, typeConstructorPrefix, isFirst, languageCode)
+        local heading
+        local prefix
 
-    -- Callbacks
-
-    append(div('module_section'))
-    append(div('section callbacks_section'))
-    append(p(a('love', 'love'), 'heading'))
-
-    append(p('Callbacks', 'module_navigation'))
-    done = {}
-    out = ''
-    for _, c in ipairs(order.callbacks) do
-        if type(c) == 'string' then
-            for _, m in ipairs(love_api.callbacks) do
-                if c == m.name then
-                    done[m.name] = true
-                    out = out..p('love.'..a(m.name, nil, '#love.'..m.name), 'link')
-                end
-            end
+        if module_.name == 'love' then
+            heading = module_.name
+            prefix = module_.name..'.'
+        elseif typeConstructorPrefix then
+            heading = module_.name
+            prefix = module_.name..':'
         else
-            out = out..p(c.name, 'subsection')
-            for _, f in ipairs(c.functions) do
-                for _, m in ipairs(love_api.callbacks) do
-                    if f == m.name then
-                        done[m.name] = true
-                        out = out..p('love.'..a(m.name, nil, '#love.'..m.name), 'link')
+            heading = 'love.'..module_.name
+            prefix = 'love.'..module_.name..'.'
+        end
+
+        if isFirst then
+            A(div('section first_section'))
+        else
+            A(div('section'))
+        end
+
+        A(p(a(heading, nil, heading), 'heading'))
+
+        if typeConstructorPrefix then
+            A(p(makeLinks(getDescription(module_, languageCode)), module_.name), 'description')
+        end
+
+        local function doNavigation(heading, prefix, constructorPrefix, languageCode)
+            if ({
+                FontData = true,
+                GlyphData = true,
+                Rasterizer = true,
+                Decoder = true,
+                VideoStream = true,
+            })[heading] then
+                return
+            end
+
+            if constructorPrefix then
+                prefix = constructorPrefix
+            end
+
+            local functionTable = module_[heading:lower()]
+
+            if not constructorPrefix then
+                local hasFunctions = false
+                for _, function_ in ipairs(functionTable or {}) do
+                    if type(function_) == 'table' and not (not constructorPrefix and function_.name:sub(1, 3) == 'new') then
+                        hasFunctions = true
+                        break
+                    end
+                end
+                if not hasFunctions then
+                    return
+                end
+            end
+
+            prefix = prefix or ''
+            local done = {}
+
+            A(p(heading, 'navigation_subheading'))
+
+            local function outputOrderItem(orderItem, languageCode)
+                for _, function_ in ipairs(functionTable) do
+                    if orderItem == function_.name then
+                        done[function_.name] = true
+                        makeNavigationLink(module_, function_, prefix, languageCode)
                     end
                 end
             end
-        end
-    end
 
-    for _, m in ipairs(love_api.callbacks) do
-        if not done[m.name] then
-            append(p('love.'..a(m.name, nil, '#love.'..m.name), 'link'))
-        end
-    end
-
-    append(out)
-
-    local has_functions
-    if love_api.types then
-        for _, type_ in ipairs(love_api.types) do
-            if not has_functions then
-                append(p('Types', 'module_navigation'))
-                has_functions = true
+            local orderKey = module_.name
+            if heading == 'Callbacks' then
+                --print(languageCode)
+                orderKey = 'callbacks'
             end
-            append(p(a(type_.name, nil, '#'..type_.name), 'link'))
-        end
-    end
-
-    if love_api.functions then
-        for _, type_ in ipairs(love_api.functions) do
-            append(p('Functions', 'module_navigation'))
-            append(p('love.'..a(type_.name, nil, '#love.'..type_.name), 'link'))
-        end
-    end
-
-    if love_api.enums then
-        append(p('Enums', 'module_navigation'))
-        for _, type_ in ipairs(love_api.enums) do
-            append(p(a(type_.name, nil, '#'..type_.name), 'link'))
-        end
-    end
-
-    append(div())
-
-    for _, f_ in ipairs(love_api.callbacks or {}) do
-        doFunctions(f_, 'love.'..f_.name)
-    end
-
-    append(div())
-
-    for _, f_ in ipairs(love_api.functions or {}) do
-        doFunctions(f_, 'love.'..f_.name)
-    end
-
-    doTypes(love_api.types)
-
-    for _, m in ipairs(love_api.modules) do
-        -- Module name
-        append(div('module_section'))
-        append(div('section'))
-        append(p(a('love.'..m.name, 'love.'..m.name), 'heading'))
-
-        -- Types navigation
-        append(div('navigation_links_section'))
-        local has_functions = false
-        if m.types then
-            for _, type_ in ipairs(m.types) do
-                if not has_functions then
-                    append(p('Types', 'module_navigation'))
-                    has_functions = true
+            for _, orderItem in ipairs(order[orderKey] or {}) do
+                if type(orderItem) == 'string' then
+                    outputOrderItem(orderItem, languageCode)
+                elseif heading == 'Functions' or heading == 'Callbacks' then
+                    if not languageCode then
+                        A(p(orderItem.name, 'navigation_subsection'))
+                    end
+                    for _, orderFunction in ipairs(orderItem.functions) do
+                        outputOrderItem(orderFunction, languageCode)
+                    end
                 end
-                append(p(a(type_.name, nil, '#'..type_.name), 'link'))
             end
-        end
 
-        -- Function navigation
-
-        local is_not_other_constructor = function(name)
-            return name ~= 'newImageFont' and name ~= 'newRectangleShape' --  and name ~= 'getJoysticks' and name ~= 'getSystemCursor'
-        end
-
-        local has_functions = false
-        for _, f_ in ipairs(m.functions) do
-            if is_not_other_constructor(f_.name) then
-                local is_not_constructor = true
-                if f_.name:sub(1, 3) == 'new' then
-                    local test = false
-                    for i, v in ipairs(types) do
-                        if v.name == f_.name:sub(4) then
-                            is_not_constructor = true
-                        end
-                    end
-                    if test then
-                        has_functions = true
-                    end
+            for _, function_ in ipairs(functionTable) do
+                if type(function_) == 'string' then -- subtype/supertype
+                    makeNavigationLink(module_, {name = function_}, prefix, languageCode)
                 else
-                    has_functions = true
-                end
-            end
-        end
-
-        if has_functions then
-            append(p('Functions', 'module_navigation'))
-        end
-
-        local make_link = function(f_, m)
-            local out = ''
-            local is_not_constructor = true
-            if f_.name:sub(1, 3) == 'new' then
-                for i, v in ipairs(types) do
-                    if v.name == f_.name:sub(4) then
-                        is_not_constructor = false
-                    end
-                end
-            end
-            if not is_not_other_constructor(f_.name) then
-                is_not_constructor = false
-            end
-
-            if is_not_constructor then
-                local lovedotmodule = 'love.'..m.name..'.'
-                local link = make_function_navigation_link(m, f_, lovedotmodule)
-                if link then
-                    out = out..(link)
-                end
-            end
-            return out
-        end
-
-        done = {}
-        out = ''
-        if order[m.name] then
-            for _, c in ipairs(order[m.name]) do
-                if type(c) == 'string' then
-                    for _, f_ in ipairs(m.functions) do
-                        if c == f_.name then
-                            done[f_.name] = true
-                            out = out..make_link(f_, m)
-                        end
-                    end
-                else
-                    out = out..p(c.name, 'subsection')
-                    for _, f in ipairs(c.functions) do
-                        for _, f_ in ipairs(m.functions) do
-                            if f == f_.name then
-                                done[f_.name] = true
-                                out = out..make_link(f_, m)
-                            end
-                        end
+                    if not done[function_.name] and not (not constructorPrefix and function_.name:sub(1, 3) == 'new') then
+                        makeNavigationLink(module_, function_, prefix, languageCode)
                     end
                 end
             end
         end
 
-        for _, f_ in ipairs(m.functions) do
-            if not done[f_.name] then
-                append(make_link(f_, m))
+        if typeConstructorPrefix then
+            doNavigation('Constructors', prefix, typeConstructorPrefix, languageCode)
+            doNavigation('Functions', prefix, nil, languageCode)
+            doNavigation('Supertypes', prefix, nil, languageCode)
+            doNavigation('Subtypes', prefix, nil, languageCode)
+            A(div()) -- section
+
+            doFunctions(module_.functions, prefix, languageCode)
+        else
+            doNavigation('Callbacks', prefix, nil, languageCode)
+            doNavigation('Types', nil, nil, languageCode)
+            doNavigation('Functions', prefix, nil, languageCode)
+            doNavigation('Enums', nil, nil, languageCode)
+            A(div()) -- section
+
+            doFunctions(module_.callbacks or {}, prefix, languageCode)
+            for _, type_ in ipairs(module_.types or {}) do
+                doModule(type_, 'love.'..module_.name..'.', false, languageCode)
             end
+            doFunctions(module_.functions, prefix, languageCode)
+            doEnums(module_.enums, languageCode)
         end
-
-        append(out)
-
-        -- Enums navigation
-        if m.enums then
-            append(p('Enums', 'module_navigation'))
-            for _, type_ in ipairs(m.enums) do
-                append(p(a(type_.name, nil, '#'..type_.name), 'link'))
-            end
-        end
-        append(div())
-        append(div())
-
-        -- Functions for modules
-
-        table.sort(m.functions, function(a, b) return a.name < b.name end)
-
-        for _, f_ in ipairs(m.functions or {}) do
-            doFunctions(f_, 'love.'..m.name..'.'..f_.name)
-        end
-
-        -- Types
-        doTypes(m.types, m.name)
-
-        for _, enum in ipairs(m.enums or {}) do
-            append(div('section'))
-            append(p(a(enum.name, enum.name), 'heading'))
-            for _, constant in ipairs(enum.constants) do
-                append(p(constant.name, 'constant_name'))
-                append(p(makeLinks(constant.description), 'constant_description'))
-            end
-            append(div())
-        end
-
-        append(div())
     end
-    append(div())
 
-    append('</body></html>')
+    for _, module_ in ipairs(api.modules) do
+        if module_.name == 'love' then
+            doModule(module_, false, true, languageCode)
+        end
+    end
+
+    for _, module_ in ipairs(api.modules) do
+        if module_.name ~= 'love' then
+            doModule(module_, false, false, languageCode)
+            for _, type_ in ipairs(module_.types or {}) do
+                doModule(type_, 'love.'..module_.name..'.', false, languageCode)
+            end
+        end
+    end
+
+    A(div()) -- container
+
+    A('</body></html>')
 end
 
-main()
+for _, languageCode in ipairs({'jp', 'ko', 'de', 'ru', 'pt'}) do
+    output = {}
+    main(languageCode)
+    local file = io.open((languageCode or 'index')..'.html', 'w')
+    local out = table.concat(output)
+    if FAST_MODE then
+        file:write(out)
+    else
+        file:write((out:gsub('Ö', '&Ouml;'):gsub('é', '&eacute;')))
+    end
+    file:close()
+end
 
-local file = io.open('index.html', 'w')
-file:write((output:gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;')))
-file:close()
