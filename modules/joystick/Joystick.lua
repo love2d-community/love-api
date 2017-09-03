@@ -141,7 +141,7 @@ return {
                             description = 'The OS-dependent GUID for the type of Joystick the binding will affect.'
                         },
                         {
-                            type = 'GamepadButton',
+                            type = 'GamepadAxis',
                             name = 'axis',
                             description = 'The virtual gamepad axis to bind.'
                         },
