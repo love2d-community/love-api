@@ -56,26 +56,6 @@ return {
             }
         },
         {
-            name = 'getLimits',
-            description = 'Gets the joint limits.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'lower',
-                            description = 'The lower limit, usually in meters.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'upper',
-                            description = 'The upper limit, usually in meters.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getMaxMotorTorque',
             description = 'Returns the maximum motor torque.',
             variants = {
