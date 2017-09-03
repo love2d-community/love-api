@@ -374,8 +374,8 @@ languages = {
         language = 'Deutsch',
     },
 
-    jp = {
-        code = 'jp',
+    ja = {
+        code = 'ja',
         function_ = '関数',
         synopsis = '概要',
         arguments = '引数',
@@ -419,7 +419,7 @@ languages = {
     },
 }
 
-addLanguage(languages.jp)
+addLanguage(languages.ja)
 addLanguage(languages.ko)
 addLanguage(languages.ru)
 addLanguage(languages.de)
