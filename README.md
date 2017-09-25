@@ -127,5 +127,7 @@ functions = { -- callbacks = {
 - [LÖVE Hints](https://gitlab.com/sdonalcreative/brackets-love-hints/) - Snippets, code hints and autocompletion for [Brackets](http://brackets.io/)
 - [LÖVE-IDEA](https://github.com/rm-code/love-IDEA-plugin) - Snippets and code completion for [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 - [Vim LOVE Docs](https://github.com/davisdude/vim-love-docs) - Syntax highlighting for [Vim](http://www.vim.org)
-- [Quick Reference](http://love2d-community.github.io/love-api/) - Online quick reference of the LÖVE API
 - [LÖVE API for Notepad++](https://github.com/dail8859/love-api-npp) - Code completion and documentation for [Notepad++](https://notepad-plus-plus.org/)
+- [love-eclipse-ldt](https://github.com/leafi/love-eclipse-ldt) - Code completion and documentation for [Lua Development Tools](https://eclipse.org/ldt/)
+- [love-ide](https://github.com/rameshvarun/love-ide) - Code completion and other tools for [Atom](https://atom.io/)
+- [Quick Reference](http://love2d-community.github.io/love-api/) - Online quick reference of the LÖVE API
