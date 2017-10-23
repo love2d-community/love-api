@@ -568,7 +568,6 @@ return {
                         {
                             type = 'AlignMode',
                             name = 'align',
-                            default = '"left"',
                             description = 'The alignment of the text.'
                         }
                     }
@@ -615,7 +614,6 @@ return {
                         {
                             type = 'AlignMode',
                             name = 'align',
-                            default = '"left"',
                             description = 'The alignment of the text.'
                         }
                     }
