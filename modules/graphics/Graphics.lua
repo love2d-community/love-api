@@ -1630,7 +1630,7 @@ return {
         },
         {
             name = 'newText',
-            description = 'Creates a new Font.',
+            description = 'Creates a new drawable Text object.',
             variants = {
                 {
                     arguments = {
