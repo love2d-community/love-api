@@ -137,6 +137,84 @@ return {
             }
         },
         {
+            name = 'getInfo',
+            description = 'Gets information about the specified file or directory.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'The file or directory path to check.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'info',
+                            description = 'A table containing information about the specified path, or nil if nothing exists at the path. The table contains the following fields:',
+                            table = {
+                                {
+                                    type = 'FileType',
+                                    name = 'type',
+                                    description = 'The type of the object at the path (file, directory, symlink, etc.).'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'size',
+                                    description = 'The size in bytes of the file, or nil if it can\'t be determined.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'modtime',
+                                    description = 'The file\'s last modification time in seconds since the unix epoch, or nil if it can\'t be determined.'
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    description = 'This variant accepts an existing table to fill in, instead of creating a new one.',
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'path',
+                            description = 'The file or directory path to check.'
+                        },
+                        {
+                            type = 'table',
+                            name = 'info',
+                            description = 'A table which will be filled in with info about the specified path.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'info',
+                            description = 'A table containing information about the specified path, or nil if nothing exists at the path. The table contains the following fields:',
+                            table = {
+                                {
+                                    type = 'FileType',
+                                    name = 'type',
+                                    description = 'The type of the object at the path (file, directory, symlink, etc.).'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'size',
+                                    description = 'The size in bytes of the file, or nil if it can\'t be determined.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'modtime',
+                                    description = 'The file\'s last modification time in seconds since the unix epoch, or nil if it can\'t be determined.'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getRealDirectory',
             description = 'Gets the platform-specific absolute path of the directory containing a filepath.\n\nThis can be used to determine whether a file is inside the save directory or the game\'s source .love.',
             variants = {
