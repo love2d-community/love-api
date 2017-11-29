@@ -257,7 +257,7 @@ return {
                                 {
                                     type = 'string',
                                     name = 'version',
-                                    default = '"0.10.2"',
+                                    default = '"0.11.0"',
                                     description = 't.version should be a string, representing the version of LÖVE for which your game was made. It should be formatted as "X.Y.Z" where X is the major release number, Y the minor, and Z the patch level. It allows LÖVE to display a warning if it isn\'t compatible. Its default is the version of LÖVE running.'
                                 },
                                 {
