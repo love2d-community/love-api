@@ -578,6 +578,11 @@ return {
                             type = 'GamepadAxis',
                             name = 'axis',
                             description = 'The virtual gamepad axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'value',
+                            description = 'The new axis value.'
                         }
                     }
                 }
