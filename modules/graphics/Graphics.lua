@@ -966,6 +966,21 @@ return {
             }
         },
         {
+            name = 'getTextureTypes',
+            description = 'Gets the available texture types, and whether each is supported.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'texturetypes',
+                            description = 'A table containing TextureTypes as keys, and a boolean indicating whether the type is supported as values. Not all systems support all types.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getWidth',
             description = 'Gets the width of the window.',
             variants = {
