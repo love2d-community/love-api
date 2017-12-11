@@ -9,6 +9,21 @@ return {
     },
     functions = {
         {
+            name = 'getActiveSourceCount',
+            description = 'Gets the current number of simultaneously playing sources.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'count',
+                            description = 'The current number of simultaneously playing sources.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getDistanceModel',
             description = 'Returns the distance attenuation model.',
             variants = {
