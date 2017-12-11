@@ -519,7 +519,7 @@ return {
             }
         },
         {
-            name = 'errhand',
+            name = 'errorhandler',
             description = 'The error handler, used to display error messages.',
             variants = {
                 {
