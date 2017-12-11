@@ -353,6 +353,21 @@ return {
             }
         },
         {
+            name = 'isMinimized',
+            description = 'Gets whether the Window is currently minimized.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'maximized',
+                            description = 'True if the window is currently minimized, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isOpen',
             description = 'Checks if the window is open.',
             variants = {
