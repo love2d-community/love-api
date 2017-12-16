@@ -41,7 +41,7 @@ return {
             }
         },
         {
-            name = 'getChannels',
+            name = 'getChannelCount',
             description = 'Gets the number of channels in the Source. Only 1-channel (mono) Sources can use directional and positional effects.',
             variants = {
                 {
