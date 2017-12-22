@@ -83,6 +83,21 @@ return {
             }
         },
         {
+            name = 'getDPIScale',
+            description = 'Gets the DPI scale factor associated with the window.\n\nThe pixel density inside the window might be greater (or smaller) than the "size" of the window. For example on a retina screen in Mac OS X with the highdpi window flag enabled, the window may take up the same physical size as an 800x600 window, but the area inside the window uses 1600x1200 pixels. love.window.getDPIScale() would return 2.0 in that case.\n\nThe love.window.fromPixels and love.window.toPixels functions can also be used to convert between units.\n\nThe highdpi window flag must be enabled to use the full pixel density of a Retina screen on Mac OS X and iOS. The flag currently does nothing on Windows and Linux, and on Android it is effectively always enabled.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'scale',
+                            description = 'The pixel scale factor associated with the window.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getFullscreen',
             description = 'Gets whether the window is fullscreen.',
             variants = {
