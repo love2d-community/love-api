@@ -48,6 +48,21 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'hasDeprecationOutput',
+            description = 'Gets whether LÖVE displays warnings when using deprecated functionality. It is disabled by default in fused mode, and enabled by default otherwise.\n\nWhen deprecation output is enabled, the first use of a formally deprecated LÖVE API will show a message at the bottom of the screen for a short time, and print the message to the console.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            description = 'Whether deprecation output is enabled.'
+                        }
+                    }
+                }
+            }
         }
     },
     modules = {
