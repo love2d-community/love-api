@@ -34,6 +34,21 @@ return {
                 }
             }
         },
+        {
+            name = 'setDeprecationOutput',
+            description = 'Sets whether LÖVE displays warnings when using deprecated functionality. It is disabled by default in fused mode, and enabled by default otherwise.\n\nWhen deprecation output is enabled, the first use of a formally deprecated LÖVE API will show a message at the bottom of the screen for a short time, and print the message to the console.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'Whether to enable or disable deprecation output.'
+                        }
+                    }
+                }
+            }
+        }
     },
     modules = {
         require(path .. 'modules.audio.Audio'),
