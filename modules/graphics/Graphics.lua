@@ -2953,6 +2953,69 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'validateShader',
+            description = 'Validates shader code. Check if specificed shader code does not contain any errors.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'gles',
+                            description = 'Validate code as GLSL ES shader.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'code',
+                            description = 'The pixel shader or vertex shader code, or a filename pointing to a file with the code.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'status',
+                            description = 'true if specified shader code doesn\'t contain any errors. false otherwise.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'message',
+                            description = 'Reason why shader code validation failed (or nil if validation succeded).'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'gles',
+                            description = 'Validate code as GLSL ES shader.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'pixelcode',
+                            description = 'The pixel shader code, or a filename pointing to a file with the code.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'vertexcode',
+                            description = 'The vertex shader code, or a filename pointing to a file with the code.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'status',
+                            description = 'true if specified shader code doesn\'t contain any errors. false otherwise.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'message',
+                            description = 'Reason why shader code validation failed (or nil if validation succeded).'
+                        }
+                    }
+                }
+            }
         }
     },
     enums = {
