@@ -798,6 +798,105 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'updateMode',
+            description = 'Sets the display mode and properties of the window, without modifying unspecified properties.\n\nIf width or height is 0, updateMode will use the width and height of the desktop.\n\nChanging the display mode may have side effects: for example, canvases will be cleared. Make sure to save the contents of canvases beforehand or re-draw to them afterward if you need to.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'width',
+                            description = 'Window width.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'Window height.'
+                        },
+                        {
+                            type = 'table',
+                            name = 'settings',
+                            description = 'The settings table with the following optional fields. Any field not filled in will use the current value that would be returned by love.window.getMode.',
+                            table = {
+                                {
+                                    type = 'boolean',
+                                    name = 'fullscreen',
+                                    description = 'Fullscreen (true), or windowed (false).'
+                                },
+                                {
+                                    type = 'FullscreenType',
+                                    name = 'fullscreentype',
+                                    description = 'The type of fullscreen to use.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'vsync',
+                                    description = 'True if LÖVE should wait for vsync, false otherwise.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'msaa',
+                                    description = 'The number of antialiasing samples.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'resizable',
+                                    description = 'True if the window should be resizable in windowed mode, false otherwise.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'borderless',
+                                    description = 'True if the window should be borderless in windowed mode, false otherwise.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'centered',
+                                    description = 'True if the window should be centered in windowed mode, false otherwise.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'display',
+                                    description = 'The index of the display to show the window in, if multiple monitors are available.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'minwidth',
+                                    description = 'The minimum width of the window, if it\'s resizable. Cannot be less than 1.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'minheight',
+                                    description = 'The minimum height of the window, if it\'s resizable. Cannot be less than 1.'
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'highdpi',
+                                    description = 'True if high-dpi mode should be used on Retina displays in macOS and iOS. Does nothing on non-Retina displays.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'x',
+                                    description = 'The x-coordinate of the window\'s position in the specified display.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'y',
+                                    description = 'The y-coordinate of the window\'s position in the specified display.'
+                                }
+                            }
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'True if successful, false otherwise.'
+                        }
+                    }
+                }
+            }
         }
     },
     enums = {
