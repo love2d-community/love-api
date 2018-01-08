@@ -789,6 +789,21 @@ return {
             }
         },
         {
+            name = 'getStackDepth',
+            description = 'Gets the current depth of the transform / state stack (the number of pushes without corresponding pops).',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'depth',
+                            description = 'The current depth of the transform and state love.graphics stack.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getStats',
             description = 'Gets performance-related rendering statistics.',
             variants = {
