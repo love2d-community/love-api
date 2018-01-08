@@ -765,6 +765,7 @@ return {
     enums = {
         require(path .. 'enums.BufferMode'),
         require(path .. 'enums.FileDecoder'),
-        require(path .. 'enums.FileMode')
+        require(path .. 'enums.FileMode'),
+        require(path .. 'enums.FileType')
     }
 }
