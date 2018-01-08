@@ -176,21 +176,6 @@ return {
             }
         },
         {
-            name = 'hasLimitsEnabled',
-            description = 'Checks whether limits are enabled.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'enabled',
-                            description = 'True if enabled, false otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'isMotorEnabled',
             description = 'Checks whether the motor is enabled.',
             variants = {
