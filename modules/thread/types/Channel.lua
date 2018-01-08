@@ -56,9 +56,11 @@ return {
                         }
                     },
                     returns = {
-                        type = 'boolean',
-                        name = 'hasread',
-                        description = 'Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.'
+                        {
+                            type = 'boolean',
+                            name = 'hasread',
+                            description = 'Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.'
+                        }
                     }
                 }
             }
