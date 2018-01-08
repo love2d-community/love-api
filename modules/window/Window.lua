@@ -427,6 +427,10 @@ return {
             }
         },
         {
+            name = 'restore',
+            description = 'Restores the size and position of the window if it was minimized or maximized.'
+        },
+        {
             name = 'requestAttention',
             description = 'Causes the window to request the attention of the user if it is not in the foreground.\n\nIn Windows the taskbar icon will flash, and in OS X the dock icon will bounce.',
             variants = {
