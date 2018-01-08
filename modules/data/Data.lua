@@ -1,3 +1,6 @@
+-- Match the parent directory
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'data',
     description = 'Provides functionality for creating and transforming data.',
@@ -136,5 +139,8 @@ return {
                 }
             }
         }
+    },
+    enums = {
+        require(path .. 'enums.ContainerType')
     }
 }
