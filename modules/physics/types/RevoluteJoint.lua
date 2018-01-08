@@ -6,6 +6,21 @@ return {
     },
     functions = {
         {
+            name = 'areLimitsEnabled',
+            description = 'Checks whether the limits are enabled.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            description = 'True if enabled, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setLimitsEnabled',
             description = 'Enables or disables the joint limits.',
             variants = {
