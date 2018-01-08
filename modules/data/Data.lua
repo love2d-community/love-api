@@ -9,6 +9,11 @@ return {
                 {
                     arguments = {
                         {
+                            type = 'ContainerType',
+                            name = 'container',
+                            description = 'What type to return the compressed data as.'
+                        },
+                        {
                             type = 'CompressedDataFormat',
                             name = 'format',
                             description = 'The format to use when compressing the string.'
@@ -27,14 +32,19 @@ return {
                     },
                     returns = {
                         {
-                            type = 'CompressedData',
+                            type = 'CompressedData or string',
                             name = 'compressedData',
-                            description = 'A new Data object containing the compressed version of the string.'
+                            description = 'CompressedData/string which contains the compressed version of data.'
                         }
                     }
                 },
                 {
                     arguments = {
+                        {
+                            type = 'ContainerType',
+                            name = 'container',
+                            description = 'What type to return the compressed data as.'
+                        },
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
@@ -54,9 +64,9 @@ return {
                     },
                     returns = {
                         {
-                            type = 'CompressedData',
+                            type = 'CompressedData or string',
                             name = 'compressedData',
-                            description = 'A new Data object containing the compressed version of the string.'
+                            description = 'CompressedData/string which contains the compressed version of data.'
                         }
                     }
                 }
