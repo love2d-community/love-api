@@ -44,6 +44,26 @@ return {
             }
         },
         {
+            name = 'hasRead',
+            description = 'Gets whether a pushed value has been popped or otherwise removed from the Channel.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'id',
+                            description = 'An id value previously returned by Channel:push.'
+                        }
+                    },
+                    returns = {
+                        type = 'boolean',
+                        name = 'hasread',
+                        description = 'Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.'
+                    }
+                }
+            }
+        },
+        {
             name = 'peek',
             description = 'Retrieves the value of a Channel message, but leaves it in the queue.\n\nIt returns nil if there\'s no message in the queue.',
             variants = {
