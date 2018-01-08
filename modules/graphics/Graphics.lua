@@ -430,6 +430,99 @@ return {
             }
         },
         {
+            name = 'drawInstanced',
+            description = 'Draws many instances of a Mesh with a single draw call, using hardware geometry instancing.\n\nEach instance can have unique properties (positions, colors, etc.) but will not by default unless a custom Shader along with either per-instance attributes or the love_InstanceID GLSL 3 vertex shader variable is used, otherwise they will all render at the same position on top of each other.\n\nInstancing is not supported by some older GPUs that are only capable of using OpenGL ES 2 or OpenGL 2. Use love.graphics.getSupported to check.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The mesh to render.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'instancecount',
+                            description = 'The number of instances to render.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            default = '0',
+                            description = 'The position to draw the instances (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            default = '0',
+                            description = 'The position to draw the instances (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'r',
+                            default = '0',
+                            description = 'Orientation (radians).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sx',
+                            default = '1',
+                            description = 'Scale factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sy',
+                            default = 'sx',
+                            description = 'Scale factor (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ox',
+                            default = '0',
+                            description = 'Origin offset (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'oy',
+                            default = '0',
+                            description = 'Origin offset (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'kx',
+                            default = '0',
+                            description = 'Shearing factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ky',
+                            default = '0',
+                            description = 'Shearing factor (y-axis).'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The mesh to render.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'instancecount',
+                            description = 'The number of instances to render.'
+                        },
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'A transform object.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'ellipse',
             description = 'Draws an ellipse.',
             variants = {
