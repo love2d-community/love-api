@@ -4,6 +4,21 @@ return {
     constructors = {},
     functions = {
         {
+            name = 'getDepth',
+            description = 'Gets the depth of a Volume Texture. Returns 1 for 2D, Cubemap, and Array textures.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'depth',
+                            description = 'The depth of the volume Texture.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getMipmapCount',
             description = 'Gets the number of mipmaps contained in the Texture. If the texture was not created with mipmaps, it will return 1.',
             variants = {
