@@ -25,6 +25,22 @@ return {
                             description = 'The contents of the message.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'timeout',
+                            description = 'The maximum amount of time to wait.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Variant',
+                            name = 'value',
+                            description = 'The contents of the message or nil if the timeout expired.'
+                        }
+                    }
                 }
             }
         },
