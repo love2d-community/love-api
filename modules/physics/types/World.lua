@@ -392,6 +392,18 @@ return {
                             type = 'number',
                             name = 'dt',
                             description = 'The time (in seconds) to advance the physics simulation.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'velocityiterations',
+                            default = '8',
+                            description = 'The maximum number of steps used to determine the new velocities when resolving a collision.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'positioniterations',
+                            default = '3',
+                            description = 'The maximum number of steps used to determine the new positions when resolving a collision.'
                         }
                     }
                 }
