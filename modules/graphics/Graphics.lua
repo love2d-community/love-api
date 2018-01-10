@@ -111,6 +111,21 @@ return {
             }
         },
         {
+            name = 'applyTransform',
+            description = 'Applies the given Transform object to the current coordinate transformation.\n\nThis effectively multiplies the existing coordinate transformation\'s matrix with the Transform object\'s internal matrix to produce the new coordinate transformation.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'The Transform object to apply to the current graphics coordinate transform.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'captureScreenshot',
             description = 'Creates a screenshot once the current frame is done (after love.draw has finished).\n\nSince this function enqueues a screenshot capture rather than executing it immediately, it can be called from an input callback or love.update and it will still capture all of what\'s drawn to the screen in that frame.',
             variants = {
