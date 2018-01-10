@@ -100,6 +100,21 @@ return {
             }
         },
         {
+            name = 'getCRequirePath',
+            description = 'Gets the filesystem paths that will be searched for c libraries when require is called.\n\nThe paths string returned by this function is a sequence of path templates separated by semicolons. The argument passed to require will be inserted in place of any question mark ("?") character in each template (after the dot characters in the argument passed to require are replaced by directory separators.) Additionally, any occurrence of a double question mark ("??") will be replaced by the name passed to require and the default library extension for the platform.\n\nThe paths are relative to the game\'s source and save directories, as well as any paths mounted with love.filesystem.mount.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'paths',
+                            description = 'The paths that the require function will check for c libraries in love\'s filesystem.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getDirectoryItems',
             description = 'Returns a table with the names of files and subdirectories in the specified path. The table is not sorted in any way; the order is undefined.\n\nIf the path passed to the function exists in the game and the save directory, it will list the files and directories from both places.',
             variants = {
