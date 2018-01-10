@@ -17,6 +17,21 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'getTextureType',
+            description = 'Gets the type of the Texture.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'TextureType',
+                            name = 'texturetype',
+                            description = 'The type of the Texture.'
+                        }
+                    }
+                }
+            }
         }
     },
     parenttype = 'Drawable',
