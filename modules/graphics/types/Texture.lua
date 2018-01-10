@@ -19,6 +19,21 @@ return {
             }
         },
         {
+            name = 'getLayerCount',
+            description = 'Gets the number of layers / slices in an Array Texture. Returns 1 for 2D, Cubemap, and Volume textures.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'layers',
+                            description = 'The number of layers in the Array Texture.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getMipmapCount',
             description = 'Gets the number of mipmaps contained in the Texture. If the texture was not created with mipmaps, it will return 1.',
             variants = {
