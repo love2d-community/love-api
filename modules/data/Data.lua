@@ -82,6 +82,11 @@ return {
                 {
                     arguments = {
                         {
+                            type = 'ContainerType',
+                            name = 'container',
+                            description = 'What type to return the decompressed data as.'
+                        },
+                        {
                             type = 'CompressedData',
                             name = 'compressedData',
                             description = 'The compressed data to decompress.'
@@ -97,6 +102,11 @@ return {
                 },
                 {
                     arguments = {
+                        {
+                            type = 'ContainerType',
+                            name = 'container',
+                            description = 'What type to return the decompressed data as.'
+                        },
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
@@ -118,6 +128,11 @@ return {
                 },
                 {
                     arguments = {
+                        {
+                            type = 'ContainerType',
+                            name = 'container',
+                            description = 'What type to return the decompressed data as.'
+                        },
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
