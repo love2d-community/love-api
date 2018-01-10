@@ -77,6 +77,21 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'isReadable',
+            description = 'Gets whether the Texture can be drawn and sent to a Shader.\n\nCanvases created with stencil and/or depth PixelFormats are not readable by default, unless readable=true is specified in the settings table passed into love.graphics.newCanvas.\n\nNon-readable Canvases can still be rendered to.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'readable',
+                            description = 'Whether the Texture is readable.'
+                        }
+                    }
+                }
+            }
         }
     },
     parenttype = 'Drawable',
