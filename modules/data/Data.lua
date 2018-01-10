@@ -211,6 +211,76 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'encode',
+            description = 'Encode Data or a string to a Data or string in one of the EncodeFormats.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'ContainerType',
+                            name = 'containerType',
+                            description = 'What type to return the encoded data as.'
+                        },
+                        {
+                            type = 'EncodeFormat',
+                            name = 'format',
+                            description = 'The format of the output data.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'sourceString',
+                            description = 'The raw data to encode.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'lineLength',
+                            default = '0',
+                            description = 'The maximum line length of the output. Only supported for base64, ignored if 0.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Variant',
+                            name = 'encoded',
+                            description = 'ByteData/string which contains the encoded version of source.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'ContainerType',
+                            name = 'containerType',
+                            description = 'What type to return the encoded data as.'
+                        },
+                        {
+                            type = 'EncodeFormat',
+                            name = 'format',
+                            description = 'The format of the output data.'
+                        },
+                        {
+                            type = 'Data',
+                            name = 'sourceData',
+                            description = 'The raw data to encode.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'lineLength',
+                            default = '0',
+                            description = 'The maximum line length of the output. Only supported for base64, ignored if 0.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Variant',
+                            name = 'encoded',
+                            description = 'ByteData/string which contains the encoded version of source.'
+                        }
+                    }
+                }
+            }
         }
     },
     enums = {
