@@ -5,7 +5,8 @@ return {
     name = 'audio',
     description = 'Provides an interface to create noise with the user\'s speakers.',
     types = {
-        require(path .. 'types.Source')
+        require(path .. 'types.Source'),
+        require(path .. 'types.RecordingDevice')
     },
     functions = {
         {
