@@ -76,6 +76,64 @@ return {
             }
         },
         {
+            name = 'decode',
+            description = 'Decode Data or a string from any of the EncodeFormats to Data or string.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'ContainerType',
+                            name = 'containerType',
+                            description = 'What type to return the decoded data as.'
+                        },
+                        {
+                            type = 'EncodeFormat',
+                            name = 'format',
+                            description = 'The format of the input data.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'sourceString',
+                            description = 'The raw (encoded) data to decode.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Variant',
+                            name = 'decoded',
+                            description = 'ByteData/string which contains the decoded version of source.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'ContainerType',
+                            name = 'containerType',
+                            description = 'What type to return the decoded data as.'
+                        },
+                        {
+                            type = 'EncodeFormat',
+                            name = 'format',
+                            description = 'The format of the input data.'
+                        },
+                        {
+                            type = 'Data',
+                            name = 'sourceData',
+                            description = 'The raw (encoded) data to decode.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Variant',
+                            name = 'decoded',
+                            description = 'ByteData/string which contains the decoded version of source.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'decompress',
             description = 'Decompresses a CompressedData or previously compressed string or Data object.',
             variants = {
