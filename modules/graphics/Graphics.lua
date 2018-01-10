@@ -2522,6 +2522,21 @@ return {
             }
         },
         {
+            name = 'replaceTransform',
+            description = 'Replaces the current coordinate transformation with the given Transform object.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'The Transform object to replace the current graphics coordinate transform with.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'reset',
             description = 'Resets the current graphics settings.\n\nCalling reset makes the current drawing color white, the current background color black, resets any active Canvas or Shader, and removes any scissor settings. It sets the BlendMode to alpha. It also sets both the point and line drawing modes to smooth and their sizes to 1.0.',
             variants = {
