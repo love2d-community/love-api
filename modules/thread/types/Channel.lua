@@ -174,6 +174,34 @@ return {
                             name = 'value',
                             description = 'The contents of the message.'
                         }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'Whether the message was successfully supplied (always true).'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Variant',
+                            name = 'value',
+                            description = 'The contents of the message.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'timeout',
+                            description = 'The maximum amount of time to wait.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'Whether the message was successfully supplied before the timeout expired.'
+                        }
                     }
                 }
             }
