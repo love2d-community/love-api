@@ -619,6 +619,21 @@ return {
             }
         },
         {
+            name = 'setCRequirePath',
+            description = 'Sets the filesystem paths that will be searched for c libraries when require is called.\n\nThe paths string returned by this function is a sequence of path templates separated by semicolons. The argument passed to require will be inserted in place of any question mark ("?") character in each template (after the dot characters in the argument passed to require are replaced by directory separators.) Additionally, any occurrence of a double question mark ("??") will be replaced by the name passed to require and the default library extension for the platform.\n\nThe paths are relative to the game\'s source and save directories, as well as any paths mounted with love.filesystem.mount.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'paths',
+                            description = 'The paths that the require function will check in love\'s filesystem.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setIdentity',
             description = 'Sets the write directory for your game. Note that you can only set the name of the folder to store your files in, not the location.',
             variants = {
