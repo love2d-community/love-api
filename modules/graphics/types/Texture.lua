@@ -19,6 +19,21 @@ return {
             }
         },
         {
+            name = 'getFormat',
+            description = 'Gets the PixelFormat of the Texture.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'PixelFormat',
+                            name = 'format',
+                            description = 'The pixel format the Texture was created with.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getLayerCount',
             description = 'Gets the number of layers / slices in an Array Texture. Returns 1 for 2D, Cubemap, and Volume textures.',
             variants = {
