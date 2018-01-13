@@ -1,10 +1,10 @@
 return {
     name = 'ContainerType',
-    description = 'Return type of love.data.decompress and love.data.compress.',
+    description = 'Return type of various encoding and decoding functions.',
     constants = {
         {
             name = 'data',
-            description = 'Return type is Data. CompressedData for love.data.compress and ByteData for love.data.decompress.'
+            description = 'Return type is Data.'
         },
         {
             name = 'string',
