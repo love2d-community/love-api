@@ -281,6 +281,54 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'hash',
+            description = 'Compute the message digest of specified string with specified algorithm.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'HashFunction',
+                            name = 'hashFunction',
+                            description = 'Hash algorithm to use.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'string',
+                            description = 'String to hash.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'rawdigest',
+                            description = 'Raw message digest string.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'HashFunction',
+                            name = 'hashFunction',
+                            description = 'Hash algorithm to use.'
+                        },
+                        {
+                            type = 'Data',
+                            name = 'data',
+                            description = 'Data to hash.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'rawdigest',
+                            description = 'Raw message digest string.'
+                        }
+                    }
+                }
+            }
         }
     },
     enums = {
