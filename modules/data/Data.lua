@@ -332,6 +332,7 @@ return {
         }
     },
     enums = {
-        require(path .. 'enums.ContainerType')
+        require(path .. 'enums.ContainerType'),
+        require(path .. 'enums.HashFunction')
     }
 }
