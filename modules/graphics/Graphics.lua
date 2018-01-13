@@ -826,6 +826,21 @@ return {
             }
         },
         {
+            name = 'getFrontFaceWinding',
+            description = 'Gets whether triangles with clockwise- or counterclockwise-ordered vertices are considered front-facing.\n\nThis is designed for use in combination with Mesh face culling. Other love.graphics shapes, lines, and sprites are not guaranteed to have a specific winding order to their internal vertices.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'VertexWinding',
+                            name = 'winding',
+                            description = 'The winding mode to use. The default winding is counterclockwise ("ccw").'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getHeight',
             description = 'Gets the height of the window.',
             variants = {
@@ -2798,6 +2813,21 @@ return {
                             type = 'Font',
                             name = 'font',
                             description = 'The Font object to use.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setFrontFaceWinding',
+            description = 'Sets whether triangles with clockwise- or counterclockwise-ordered vertices are considered front-facing.\n\nThis is designed for use in combination with Mesh face culling. Other love.graphics shapes, lines, and sprites are not guaranteed to have a specific winding order to their internal vertices.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'VertexWinding',
+                            name = 'winding',
+                            description = 'The winding mode to use. The default winding is counterclockwise ("ccw").'
                         }
                     }
                 }
