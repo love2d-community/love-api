@@ -791,6 +791,26 @@ return {
             }
         },
         {
+            name = 'getDepthMode',
+            description = 'Gets the current depth test mode and whether writing to the depth buffer is enabled.\n\nThis is low-level functionality designed for use with custom vertex shaders and Meshes with custom vertex attributes. No higher level APIs are provided to set the depth of 2D graphics such as shapes, lines, and Images.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'CompareMode',
+                            name = 'comparemode',
+                            description = 'Depth comparison mode used for depth testing.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'write',
+                            description = 'Whether to write update / write values to the depth buffer when rendering.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'getDimensions',
             description = 'Gets the width and height of the window.',
             variants = {
