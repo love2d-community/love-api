@@ -3107,6 +3107,38 @@ return {
             },
         },
         {
+            name = 'transformPoint',
+            description = 'Converts the given 2D position from global coordinates into screen-space.\n\nThis effectively applies the current graphics transformations to the given position. A similar Transform:transformPoint method exists for Transform objects.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'globalX',
+                            description = 'The x component of the position in global coordinates.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'globalY',
+                            description = 'The y component of the position in global coordinates.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'screenX',
+                            description = 'The x component of the position with graphics transformations applied.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sreenY',
+                            description = 'The y component of the position with graphics transformations applied.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'translate',
             description = 'Translates the coordinate system in two dimensions.\n\nWhen this function is called with two numbers, dx, and dy, all the following drawing operations take effect as if their x and y coordinates were x+dx and y+dy.\n\nScale and translate are not commutative operations, therefore, calling them in different orders will change the outcome.\n\nThis change lasts until love.graphics.clear is called (which is called automatically before love.draw in the default love.run function), or a love.graphics.pop reverts to a previous coordinate system state.\n\nTranslating using whole numbers will prevent tearing/blurring of images and fonts draw after translating.',
             variants = {
