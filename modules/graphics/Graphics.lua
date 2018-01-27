@@ -538,6 +538,200 @@ return {
             }
         },
         {
+            name = 'drawLayer',
+            description = 'Draws a layer of an Array Texture.',
+            variants = {
+                {
+                    description = 'Draws a layer of an Array Texture.',
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Array Texture to draw.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'layerindex',
+                            description = 'The index of the layer to use when drawing.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            default = '0',
+                            description = 'The position to draw the texture (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            default = '0',
+                            description = 'The position to draw the texture (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'r',
+                            default = '0',
+                            description = 'Orientation (radians).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sx',
+                            default = '1',
+                            description = 'Scale factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sy',
+                            default = 'sx',
+                            description = 'Scale factor (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ox',
+                            default = '0',
+                            description = 'Origin offset (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'oy',
+                            default = '0',
+                            description = 'Origin offset (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'kx',
+                            default = '0',
+                            description = 'Shearing factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ky',
+                            default = '0',
+                            description = 'Shearing factor (y-axis).'
+                        }
+                    }
+                },
+                {
+                    description = 'Draws a layer of an Array Texture using the specified Quad.',
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Array Texture to draw.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'layerindex',
+                            description = 'The index of the layer to use when drawing.'
+                        },
+                        {
+                            type = 'Quad',
+                            name = 'quad',
+                            description = 'The subsection of the texture\'s layer to use when drawing.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            default = '0',
+                            description = 'The position to draw the texture (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            default = '0',
+                            description = 'The position to draw the texture (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'r',
+                            default = '0',
+                            description = 'Orientation (radians).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sx',
+                            default = '1',
+                            description = 'Scale factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sy',
+                            default = 'sx',
+                            description = 'Scale factor (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ox',
+                            default = '0',
+                            description = 'Origin offset (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'oy',
+                            default = '0',
+                            description = 'Origin offset (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'kx',
+                            default = '0',
+                            description = 'Shearing factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ky',
+                            default = '0',
+                            description = 'Shearing factor (y-axis).'
+                        }
+                    }
+                },
+                {
+                    description = 'Draws a layer of an Array Texture using the specified Transform.',
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Array Texture to draw.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'layerindex',
+                            description = 'The index of the layer to use when drawing.'
+                        },
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'A transform object.'
+                        }
+                    }
+                },
+                {
+                    description = 'Draws a layer of an Array Texture using the specified Quad and Transform.',
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Array Texture to draw.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'layerindex',
+                            description = 'The index of the layer to use when drawing.'
+                        },
+                        {
+                            type = 'Quad',
+                            name = 'quad',
+                            description = 'The subsection of the texture\'s layer to use when drawing.'
+                        },
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'A transform object.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'ellipse',
             description = 'Draws an ellipse.',
             variants = {
