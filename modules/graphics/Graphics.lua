@@ -901,6 +901,21 @@ return {
             }
         },
         {
+             name = 'getMeshCullMode',
+             description = 'Gets whether back-facing triangles in a Mesh are culled.\n\nMesh face culling is designed for use with low level custom hardware-accelerated 3D rendering via custom vertex attributes on Meshes, custom vertex shaders, and depth testing with a depth buffer.',
+             variants = {
+                 {
+                     returns = {
+                         {
+                             type = 'CullMode',
+                             name = 'mode',
+                             description = 'The Mesh face culling mode in use (whether to render everything, cull back-facing triangles, or cull front-facing triangles).'
+                         }
+                     }
+                 }
+             }
+        },
+        {
             name = 'getShader',
             description = 'Returns the current Shader. Returns nil if none is set.',
             variants = {
