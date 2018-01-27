@@ -2911,6 +2911,21 @@ return {
             }
         },
         {
+            name = 'setMeshCullMode',
+            description = 'Sets whether back-facing triangles in a Mesh are culled.\n\nThis is designed for use with low level custom hardware-accelerated 3D rendering via custom vertex attributes on Meshes, custom vertex shaders, and depth testing with a depth buffer.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'CullMode',
+                            name = 'mode',
+                            description = 'The Mesh face culling mode to use (whether to render everything, cull back-facing triangles, or cull front-facing triangles).'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setNewFont',
             description = 'Creates and sets a new font.',
             variants = {
