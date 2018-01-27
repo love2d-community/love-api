@@ -528,6 +528,86 @@ return {
             }
         },
         {
+            name = 'newTransformation',
+            description = 'Creates a new Transform object.',
+            variants = {
+                {
+                    description = 'Creates a Transform with no transformations applied. Call methods on the returned object to apply transformations.',
+                    returns = {
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'The new Transform object.'
+                        }
+                    }
+                },
+                {
+                    description = 'Creates a Transform with the specified transformation applied on creation.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the new Transform on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the new Transform on the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'angle',
+                            default = '0',
+                            description = 'The orientation of the new Transform in radians.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sx',
+                            default = '1',
+                            description = 'Scale factor on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sy',
+                            default = 'sx',
+                            description = 'Scale factor on the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ox',
+                            default = '0',
+                            description = 'Origin offset on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'oy',
+                            default = '0',
+                            description = 'Origin offset on the y-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'kx',
+                            default = '0',
+                            description = 'Shearing / skew factor on the x-axis.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ky',
+                            default = '0',
+                            description = 'Shearing / skew factor on the y-axis.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'The new Transform object.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'noise',
             description = 'Generates a Simplex or Perlin noise value in 1-4 dimensions. The return value will always be the same, given the same arguments.\n\nSimplex noise is closely related to Perlin noise. It is widely used for procedural content generation.\n\nThere are many webpages which discuss Perlin and Simplex noise in detail.',
             variants = {
