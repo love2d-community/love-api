@@ -2871,6 +2871,26 @@ return {
             }
         },
         {
+            name = 'setDepthMode',
+            description = 'Configures depth testing and writing to the depth buffer.\n\nThis is low-level functionality designed for use with custom vertex shaders and Meshes with custom vertex attributes. No higher level APIs are provided to set the depth of 2D graphics such as shapes, lines, and Images.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'CompareMode',
+                            name = 'comparemode',
+                            description = 'Depth comparison mode used for depth testing.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'write',
+                            description = 'Whether to write update / write values to the depth buffer when rendering.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'setFont',
             description = 'Set an already-loaded Font as the current font or create and load a new one from the file and size.\n\nIt\'s recommended that Font objects are created with love.graphics.newFont in the loading stage and then passed to this function in the drawing stage.',
             variants = {
