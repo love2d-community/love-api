@@ -333,6 +333,7 @@ return {
     },
     enums = {
         require(path .. 'enums.ContainerType'),
+        require(path .. 'enums.EncodeFormat'),
         require(path .. 'enums.HashFunction')
     }
 }
