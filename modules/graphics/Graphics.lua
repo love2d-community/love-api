@@ -1172,6 +1172,38 @@ return {
             }
         },
         {
+            name = 'inverseTransformPoint',
+            description = 'Converts the given 2D position from screen-space into global coordinates.\n\nThis effectively applies the reverse of the current graphics transformations to the given position. A similar Transform:inverseTransformPoint method exists for Transform objects.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'screenX',
+                            description = 'The x component of the screen-space position.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'screenY',
+                            description = 'The y component of the screen-space position.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'globalX',
+                            description = 'The x component of the position in global coordinates.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'globalY',
+                            description = 'The y component of the position in global coordinates.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'isGammaCorrect',
             description = 'Gets whether gamma-correct rendering is supported and enabled. It can be enabled by setting t.gammacorrect = true in love.conf.\n\nNot all devices support gamma-correct rendering, in which case it will be automatically disabled and this function will return false. It is supported on desktop systems which have graphics cards that are capable of using OpenGL 3 / DirectX 10, and iOS devices that can use OpenGL ES 3.',
             variants = {
