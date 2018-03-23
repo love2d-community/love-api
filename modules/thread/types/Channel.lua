@@ -25,6 +25,22 @@ return {
                             description = 'The contents of the message.'
                         }
                     }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'timeout',
+                            description = 'The maximum amount of time to wait.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Variant',
+                            name = 'value',
+                            description = 'The contents of the message or nil if the timeout expired.'
+                        }
+                    }
                 }
             }
         },
@@ -38,6 +54,28 @@ return {
                             type = 'number',
                             name = 'count',
                             description = 'The number of messages in the queue.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'hasRead',
+            description = 'Gets whether a pushed value has been popped or otherwise removed from the Channel.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'id',
+                            description = 'An id value previously returned by Channel:push.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'hasread',
+                            description = 'Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.'
                         }
                     }
                 }
@@ -135,6 +173,34 @@ return {
                             type = 'Variant',
                             name = 'value',
                             description = 'The contents of the message.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'Whether the message was successfully supplied (always true).'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Variant',
+                            name = 'value',
+                            description = 'The contents of the message.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'timeout',
+                            description = 'The maximum amount of time to wait.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'Whether the message was successfully supplied before the timeout expired.'
                         }
                     }
                 }

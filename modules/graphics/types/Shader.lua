@@ -53,6 +53,28 @@ return {
             }
         },
         {
+            name = 'hasUniform',
+            description = 'Gets whether a uniform / extern variable exists in the Shader.\n\nIf a graphics driver\'s shader compiler determines that a uniform / extern variable doesn\'t affect the final output of the shader, it may optimize the variable out. This function will return false in that case.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the uniform variable.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'hasuniform',
+                            description = 'Whether the uniform exists in the shader and affects its final output.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'send',
             description = 'Sends one or more values to a special (uniform) variable inside the shader. Uniform variables have to be marked using the uniform or extern keyword.',
             variants = {

@@ -186,6 +186,32 @@ return {
             }
         },
         {
+            name = 'replacePixels',
+            description = 'Replaces the contents of an Image.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'ImageData',
+                            name = 'data',
+                            description = 'The new ImageData to replace the contents with.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'slice',
+                            description = 'Which slice to replace, if applicable.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'mipmap',
+                            default = '0',
+                            description = 'The mimap level of the new ImageData. If 0 Image:replacePixels will generate new mimaps.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'setFilter',
             description = 'Sets the filter mode for an image.',
             variants = {

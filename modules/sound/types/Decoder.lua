@@ -21,7 +21,7 @@ return {
             }
         },
         {
-            name = 'getChannels',
+            name = 'getChannelCount',
             description = 'Returns the number of channels in the stream.',
             variants = {
                 {

@@ -26,6 +26,28 @@ return {
             }
         },
         {
+            name = 'detachAttribute',
+            description = 'Removes a previously attached vertex attribute from this Mesh.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the attached vertex attribute to detach.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'Whether the attribute was successfully detached.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getDrawMode',
             description = 'Gets the mode used when drawing the Mesh.',
             variants = {

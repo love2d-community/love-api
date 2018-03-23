@@ -434,6 +434,29 @@ return {
             }
         },
         {
+            name = 'setDrawRange',
+            description = 'Restricts the drawn sprites in the SpriteBatch to a subset of the total.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'start',
+                            description = 'The index of the first sprite to draw. Index 1 corresponds to the first sprite added with SpriteBatch:add.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'count',
+                            description = 'The number of sprites to draw.'
+                        }
+                    }
+                },
+                {
+                    description = 'Allows all sprites in the SpriteBatch to be drawn.'
+                }
+            }
+        },
+        {
             name = 'setTexture',
             description = 'Replaces the Image or Canvas used for the sprites.',
             variants = {
