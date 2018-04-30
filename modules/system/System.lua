@@ -76,6 +76,21 @@ return {
             }
         },
         {
+            name = 'hasBackgroundMusic',
+            description = 'Gets whether another application on the system is playing music in the background. ',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'backgroundmusic',
+                            description = 'True if the user is playing music in the background via another app, false otherwise.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'openURL',
             description = 'Opens a URL with the user\'s web or file browser.',
             variants = {

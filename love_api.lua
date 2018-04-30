@@ -2,7 +2,7 @@
 local path = (...):match('(.-)[^%./]+$')
 
 return {
-    version = "0.10.2",
+    version = "0.11.1",
     functions = {
         {
             name = 'getVersion',
@@ -33,6 +33,14 @@ return {
                     }
                 }
             }
+        },
+        {
+        	name = 'hasDeprecationOutput',
+        	description = 'Gets whether LÖVE displays warnings when using deprecated functionality.',
+        },
+        {
+        	name = 'setDeprecationOutput',
+        	description = 'Sets whether LÖVE displays warnings when using deprecated functionality.',
         },
     },
     modules = {

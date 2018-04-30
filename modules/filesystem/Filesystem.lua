@@ -85,28 +85,6 @@ return {
             }
         },
         {
-            name = 'exists',
-            description = 'Check whether a file or directory exists.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The path to a potential file or directory.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'exists',
-                            description = 'True if there is a file or directory with the specified name. False otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getAppdataDirectory',
             description = 'Returns the application data directory (could be the same as getUserDirectory)',
             variants = {
@@ -116,6 +94,21 @@ return {
                             type = 'string',
                             name = 'path',
                             description = 'The path of the application data directory.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getCRequirePath',
+            description = 'Gets the filesystem paths that will be searched for c libraries when require is called.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'paths',
+                            description = 'The paths that the require function will check for c libraries in loves filesystem.'
                         }
                     }
                 }
@@ -159,28 +152,26 @@ return {
             }
         },
         {
-            name = 'getLastModified',
-            description = 'Gets the last modification time of a file.',
+            name = 'getInfo',
+            description = 'Gets information about the specified file or directory.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'string',
-                            name = 'filename',
-                            description = 'The path and name to a file.'
+                            name = 'path',
+                            description = 'The file or directory path to check.'
+                        },
+                        {
+													type = 'FileType',
+													name = 'filtertype',
+													description = 'If supplied, this parameter causes getInfo to only return the info table if the item at the given path matches the specified file type.'
                         }
                     },
                     returns = {
-                        {
-                            type = 'number',
-                            name = 'modtime',
-                            description = 'The last modification time in seconds since the unix epoch or nil on failure.'
-                        },
-                        {
-                            type = 'string',
-                            name = 'errormsg',
-                            description = 'The error message on failure.'
-                        }
+                    	type = 'table',
+                    	name = 'info',
+                    	description = 'A table containing information about the specified path, or nil if nothing exists at the path. The table contains the following fields: '
                     }
                 }
             }
@@ -232,33 +223,6 @@ return {
                             type = 'string',
                             name = 'path',
                             description = 'The absolute path to the save directory.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getSize',
-            description = 'Gets the size in bytes of a file.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The path and name to a file.'
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'size',
-                            description = 'The size in bytes of the file, or nil on failure.'
-                        },
-                        {
-                            type = 'string',
-                            name = 'errormsg',
-                            description = 'The error message on failure.'
                         }
                     }
                 }
@@ -340,50 +304,6 @@ return {
             }
         },
         {
-            name = 'isDirectory',
-            description = 'Check whether something is a directory.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'path',
-                            description = 'The path to a potential directory.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'isDir',
-                            description = 'True if there is a directory with the specified name. False otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'isFile',
-            description = 'Check whether something is a file.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'path',
-                            description = 'The path to a potential file.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'isFile',
-                            description = 'True if there is a file with the specified name. False otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'isFused',
             description = 'Gets whether the game is in fused mode or not.\n\nIf a game is in fused mode, its save directory will be directly in the Appdata directory instead of Appdata/LOVE/. The game will also be able to load C Lua dynamic libraries which are located in the save directory.\n\nA game is in fused mode if the source .love has been fused to the executable (see Game Distribution), or if "--fused" has been given as a command-line argument when starting the game.',
             variants = {
@@ -393,28 +313,6 @@ return {
                             type = 'boolean',
                             name = 'fused',
                             description = 'True if the game is in fused mode, false otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'isSymlink',
-            description = 'Gets whether a filepath is actually a symbolic link.\n\nIf symbolic links are not enabled (via love.filesystem.setSymlinksEnabled), this function will always return false.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'path',
-                            description = 'The file or directory path to check.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'symlink',
-                            description = 'True if the path is a symbolic link, false otherwise.'
                         }
                     }
                 }
@@ -664,6 +562,21 @@ return {
                             description = 'True if the file/directory was removed, false otherwise.'
                         }
                     }
+                }
+            }
+        },
+        {
+            name = 'setCRequirePath',
+            description = 'Sets the filesystem paths that will be searched for c libraries when require is called.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'paths',
+                            description = 'The paths that the require function will check in loves filesystem.'
+                        }
+                    },
                 }
             }
         },
