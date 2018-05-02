@@ -39,7 +39,7 @@ return {
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The top-right corner along the y-axis.'
+                            description = 'The top-left corner along the y-axis.'
                         },
                         {
                             type = 'number',

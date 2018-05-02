@@ -2,7 +2,7 @@
 local path = (...):match('(.-)[^%./]+$')
 
 return {
-    version = "0.10.2",
+    version = "0.11.0",
     functions = {
         {
             name = 'getVersion',
@@ -34,6 +34,36 @@ return {
                 }
             }
         },
+        {
+            name = 'setDeprecationOutput',
+            description = 'Sets whether LÖVE displays warnings when using deprecated functionality. It is disabled by default in fused mode, and enabled by default otherwise.\n\nWhen deprecation output is enabled, the first use of a formally deprecated LÖVE API will show a message at the bottom of the screen for a short time, and print the message to the console.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'Whether to enable or disable deprecation output.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'hasDeprecationOutput',
+            description = 'Gets whether LÖVE displays warnings when using deprecated functionality. It is disabled by default in fused mode, and enabled by default otherwise.\n\nWhen deprecation output is enabled, the first use of a formally deprecated LÖVE API will show a message at the bottom of the screen for a short time, and print the message to the console.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            description = 'Whether deprecation output is enabled.'
+                        }
+                    }
+                }
+            }
+        }
     },
     modules = {
         require(path .. 'modules.audio.Audio'),
@@ -257,7 +287,7 @@ return {
                                 {
                                     type = 'string',
                                     name = 'version',
-                                    default = '"0.10.2"',
+                                    default = '"0.11.0"',
                                     description = 't.version should be a string, representing the version of LÖVE for which your game was made. It should be formatted as "X.Y.Z" where X is the major release number, Y the minor, and Z the patch level. It allows LÖVE to display a warning if it isn\'t compatible. Its default is the version of LÖVE running.'
                                 },
                                 {
@@ -519,7 +549,7 @@ return {
             }
         },
         {
-            name = 'errhand',
+            name = 'errorhandler',
             description = 'The error handler, used to display error messages.',
             variants = {
                 {

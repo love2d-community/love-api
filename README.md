@@ -1,7 +1,7 @@
 # LÖVE-API
 
 [![Build Status](https://travis-ci.org/love2d-community/love-api.svg?branch=master)](https://travis-ci.org/love2d-community/love-api)
-[![LOVE](https://img.shields.io/badge/L%C3%96VE-0.10.2-EA316E.svg)](http://love2d.org/)
+[![LOVE](https://img.shields.io/badge/L%C3%96VE-0.11.0-EA316E.svg)](http://love2d.org/)
 
 The complete API documentation of [LÖVE](https://love2d.org/) contained in a Lua table.
 
@@ -18,7 +18,7 @@ Contributions are more than welcome!
 
 ```lua
 return {
-    version = '0.10.2',
+    version = '0.11.0',
     functions = { -- love.something functions, currently only love.getVersion
         -- See function structure below
     },

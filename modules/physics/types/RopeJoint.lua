@@ -19,6 +19,21 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'setMaxLength',
+            description = 'Sets the maximum length of a RopeJoint.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'maxLength',
+                            description = 'The maximum length of the RopeJoint.'
+                        }
+                    }
+                }
+            }
         }
     },
     parenttype = 'Joint',

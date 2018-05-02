@@ -81,7 +81,16 @@ return {
             name = 'step',
             description = 'Measures the time between two frames. Calling this changes the return value of love.timer.getDelta.',
             variants = {
-                {}
+                {},
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'dt',
+                            description = 'The time passed (in seconds).'
+                        }
+                    }
+                }
             }
         }
     }

@@ -111,6 +111,57 @@ return {
             }
         },
         {
+            name = 'applyTransform',
+            description = 'Applies the given Transform object to the current coordinate transformation.\n\nThis effectively multiplies the existing coordinate transformation\'s matrix with the Transform object\'s internal matrix to produce the new coordinate transformation.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'The Transform object to apply to the current graphics coordinate transform.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'captureScreenshot',
+            description = 'Creates a screenshot once the current frame is done (after love.draw has finished).\n\nSince this function enqueues a screenshot capture rather than executing it immediately, it can be called from an input callback or love.update and it will still capture all of what\'s drawn to the screen in that frame.',
+            variants = {
+                {
+                    description = 'Capture a screenshot and save it to a file at the end of the current frame.',
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'filename',
+                            description = 'The filename to save the screenshot to. The encoded image type is determined based on the extension of the filename, and must be one of the ImageFormats.'
+                        }
+                    }
+                },
+                {
+                    description = 'Capture a screenshot and call a callback with the generated ImageData at the end of the current frame.',
+                    arguments = {
+                        {
+                            type = 'function',
+                            name = 'callback',
+                            description = 'Function which gets called once the screenshot has been captured. An ImageData is passed into the function as its only argument.'
+                        }
+                    }
+                },
+                {
+                    description = 'Capture a screenshot and push the generated ImageData to a Channel at the end of the current frame.',
+                    arguments = {
+                        {
+                            type = 'Channel',
+                            name = 'channel',
+                            description = 'The Channel to push the generated ImageData to.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'circle',
             description = 'Draws a circle.',
             variants = {
@@ -258,7 +309,7 @@ return {
         },
         {
             name = 'draw',
-            description = 'Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh, or Video) on the screen with optional rotation, scaling and shearing.\n\nObjects are drawn relative to their local coordinate system. The origin is by default located at the top left corner of Image and Canvas. All scaling, shearing, and rotation arguments transform the object relative to that point. Also, the position of the origin can be specified on the screen coordinate system.\n\nIt\'s possible to rotate an object about its center by offsetting the origin to the center. Angles must be given in radians for rotation. One can also use a negative scaling factor to flip about its centerline.\n\nNote that the offsets are applied before rotation, scaling, or shearing; scaling and shearing are applied before rotation.\n\nThe right and bottom edges of the object are shifted at an angle defined by the shearing factors.',
+            description = 'Draws a Drawable object (an Image, Canvas, SpriteBatch, ParticleSystem, Mesh, Text object, or Video) on the screen with optional rotation, scaling and shearing.\n\nObjects are drawn relative to their local coordinate system. The origin is by default located at the top left corner of Image and Canvas. All scaling, shearing, and rotation arguments transform the object relative to that point. Also, the position of the origin can be specified on the screen coordinate system.\n\nIt\'s possible to rotate an object about its center by offsetting the origin to the center. Angles must be given in radians for rotation. One can also use a negative scaling factor to flip about its centerline.\n\nNote that the offsets are applied before rotation, scaling, or shearing; scaling and shearing are applied before rotation.\n\nThe right and bottom edges of the object are shifted at an angle defined by the shearing factors.',
             variants = {
                 {
                     arguments = {
@@ -394,6 +445,293 @@ return {
             }
         },
         {
+            name = 'drawInstanced',
+            description = 'Draws many instances of a Mesh with a single draw call, using hardware geometry instancing.\n\nEach instance can have unique properties (positions, colors, etc.) but will not by default unless a custom Shader along with either per-instance attributes or the love_InstanceID GLSL 3 vertex shader variable is used, otherwise they will all render at the same position on top of each other.\n\nInstancing is not supported by some older GPUs that are only capable of using OpenGL ES 2 or OpenGL 2. Use love.graphics.getSupported to check.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The mesh to render.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'instancecount',
+                            description = 'The number of instances to render.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            default = '0',
+                            description = 'The position to draw the instances (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            default = '0',
+                            description = 'The position to draw the instances (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'r',
+                            default = '0',
+                            description = 'Orientation (radians).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sx',
+                            default = '1',
+                            description = 'Scale factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sy',
+                            default = 'sx',
+                            description = 'Scale factor (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ox',
+                            default = '0',
+                            description = 'Origin offset (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'oy',
+                            default = '0',
+                            description = 'Origin offset (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'kx',
+                            default = '0',
+                            description = 'Shearing factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ky',
+                            default = '0',
+                            description = 'Shearing factor (y-axis).'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'Mesh',
+                            name = 'mesh',
+                            description = 'The mesh to render.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'instancecount',
+                            description = 'The number of instances to render.'
+                        },
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'A transform object.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'drawLayer',
+            description = 'Draws a layer of an Array Texture.',
+            variants = {
+                {
+                    description = 'Draws a layer of an Array Texture.',
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Array Texture to draw.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'layerindex',
+                            description = 'The index of the layer to use when drawing.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            default = '0',
+                            description = 'The position to draw the texture (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            default = '0',
+                            description = 'The position to draw the texture (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'r',
+                            default = '0',
+                            description = 'Orientation (radians).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sx',
+                            default = '1',
+                            description = 'Scale factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sy',
+                            default = 'sx',
+                            description = 'Scale factor (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ox',
+                            default = '0',
+                            description = 'Origin offset (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'oy',
+                            default = '0',
+                            description = 'Origin offset (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'kx',
+                            default = '0',
+                            description = 'Shearing factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ky',
+                            default = '0',
+                            description = 'Shearing factor (y-axis).'
+                        }
+                    }
+                },
+                {
+                    description = 'Draws a layer of an Array Texture using the specified Quad.',
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Array Texture to draw.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'layerindex',
+                            description = 'The index of the layer to use when drawing.'
+                        },
+                        {
+                            type = 'Quad',
+                            name = 'quad',
+                            description = 'The subsection of the texture\'s layer to use when drawing.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            default = '0',
+                            description = 'The position to draw the texture (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            default = '0',
+                            description = 'The position to draw the texture (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'r',
+                            default = '0',
+                            description = 'Orientation (radians).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sx',
+                            default = '1',
+                            description = 'Scale factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sy',
+                            default = 'sx',
+                            description = 'Scale factor (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ox',
+                            default = '0',
+                            description = 'Origin offset (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'oy',
+                            default = '0',
+                            description = 'Origin offset (y-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'kx',
+                            default = '0',
+                            description = 'Shearing factor (x-axis).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'ky',
+                            default = '0',
+                            description = 'Shearing factor (y-axis).'
+                        }
+                    }
+                },
+                {
+                    description = 'Draws a layer of an Array Texture using the specified Transform.',
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Array Texture to draw.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'layerindex',
+                            description = 'The index of the layer to use when drawing.'
+                        },
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'A transform object.'
+                        }
+                    }
+                },
+                {
+                    description = 'Draws a layer of an Array Texture using the specified Quad and Transform.',
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Array Texture to draw.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'layerindex',
+                            description = 'The index of the layer to use when drawing.'
+                        },
+                        {
+                            type = 'Quad',
+                            name = 'quad',
+                            description = 'The subsection of the texture\'s layer to use when drawing.'
+                        },
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'A transform object.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'ellipse',
             description = 'Draws an ellipse.',
             variants = {
@@ -461,6 +799,10 @@ return {
                     }
                 }
             }
+        },
+        {
+            name = 'flushBatch',
+            description = 'Immediately renders any pending automatically batched draws.\n\nLÖVE will call this function internally as needed when most state is changed, so it is not necessary to manually call it.\n\nThe current batch will be automatically flushed by love.graphics state changes (except for the transform stack and the current color), as well as Shader:send and methods on Textures which change their state. Using a different Image in consecutive love.graphics.draw calls will also flush the current batch.\n\nSpriteBatches, ParticleSystems, Meshes, and Text objects do their own batching and do not affect automatic batching of other draws.',
         },
         {
             name = 'getBackgroundColor',
@@ -643,6 +985,26 @@ return {
             }
         },
         {
+            name = 'getDepthMode',
+            description = 'Gets the current depth test mode and whether writing to the depth buffer is enabled.\n\nThis is low-level functionality designed for use with custom vertex shaders and Meshes with custom vertex attributes. No higher level APIs are provided to set the depth of 2D graphics such as shapes, lines, and Images.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'CompareMode',
+                            name = 'comparemode',
+                            description = 'Depth comparison mode used for depth testing.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'write',
+                            description = 'Whether to write update / write values to the depth buffer when rendering.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'getDimensions',
             description = 'Gets the width and height of the window.',
             variants = {
@@ -672,6 +1034,21 @@ return {
                             type = 'Font',
                             name = 'font',
                             description = 'The current Font, or nil if none is set.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getFrontFaceWinding',
+            description = 'Gets whether triangles with clockwise- or counterclockwise-ordered vertices are considered front-facing.\n\nThis is designed for use in combination with Mesh face culling. Other love.graphics shapes, lines, and sprites are not guaranteed to have a specific winding order to their internal vertices.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'VertexWinding',
+                            name = 'winding',
+                            description = 'The winding mode to use. The default winding is counterclockwise ("ccw").'
                         }
                     }
                 }
@@ -738,6 +1115,21 @@ return {
             }
         },
         {
+             name = 'getMeshCullMode',
+             description = 'Gets whether back-facing triangles in a Mesh are culled.\n\nMesh face culling is designed for use with low level custom hardware-accelerated 3D rendering via custom vertex attributes on Meshes, custom vertex shaders, and depth testing with a depth buffer.',
+             variants = {
+                 {
+                     returns = {
+                         {
+                             type = 'CullMode',
+                             name = 'mode',
+                             description = 'The Mesh face culling mode in use (whether to render everything, cull back-facing triangles, or cull front-facing triangles).'
+                         }
+                     }
+                 }
+             }
+        },
+        {
             name = 'getShader',
             description = 'Returns the current Shader. Returns nil if none is set.',
             variants = {
@@ -747,6 +1139,21 @@ return {
                             type = 'Shader',
                             name = 'shader',
                             description = 'The current Shader.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getStackDepth',
+            description = 'Gets the current depth of the transform / state stack (the number of pushes without corresponding pops).',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'depth',
+                            description = 'The current depth of the transform and state love.graphics stack.'
                         }
                     }
                 }
@@ -930,6 +1337,21 @@ return {
             }
         },
         {
+            name = 'getTextureTypes',
+            description = 'Gets the available texture types, and whether each is supported.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'texturetypes',
+                            description = 'A table containing TextureTypes as keys, and a boolean indicating whether the type is supported as values. Not all systems support all types.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getWidth',
             description = 'Gets the width of the window.',
             variants = {
@@ -975,6 +1397,38 @@ return {
                 },
                 {
                     description = 'Disables scissor.'
+                }
+            }
+        },
+        {
+            name = 'inverseTransformPoint',
+            description = 'Converts the given 2D position from screen-space into global coordinates.\n\nThis effectively applies the reverse of the current graphics transformations to the given position. A similar Transform:inverseTransformPoint method exists for Transform objects.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'screenX',
+                            description = 'The x component of the screen-space position.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'screenY',
+                            description = 'The y component of the screen-space position.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'globalX',
+                            description = 'The x component of the position in global coordinates.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'globalY',
+                            description = 'The y component of the position in global coordinates.'
+                        }
+                    }
                 }
             }
         },
@@ -1704,29 +2158,6 @@ return {
             }
         },
         {
-            name = 'newScreenshot',
-            description = 'Creates a screenshot and returns the image data.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'boolean',
-                            name = 'copyAlpha',
-                            default = 'false',
-                            description = 'Whether to include the screen\'s alpha channel in the ImageData. If false, the screenshot will be fully opaque.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'ImageData',
-                            name = 'screenshot',
-                            description = 'The image data of the screenshot.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'newSpriteBatch',
             description = 'Creates a new SpriteBatch object.',
             variants = {
@@ -2367,6 +2798,21 @@ return {
             }
         },
         {
+            name = 'replaceTransform',
+            description = 'Replaces the current coordinate transformation with the given Transform object.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'The Transform object to replace the current graphics coordinate transform with.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'reset',
             description = 'Resets the current graphics settings.\n\nCalling reset makes the current drawing color white, the current background color black, resets any active Canvas or Shader, and removes any scissor settings. It sets the BlendMode to alpha. It also sets both the point and line drawing modes to smooth and their sizes to 1.0.',
             variants = {
@@ -2619,6 +3065,26 @@ return {
             }
         },
         {
+            name = 'setDepthMode',
+            description = 'Configures depth testing and writing to the depth buffer.\n\nThis is low-level functionality designed for use with custom vertex shaders and Meshes with custom vertex attributes. No higher level APIs are provided to set the depth of 2D graphics such as shapes, lines, and Images.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'CompareMode',
+                            name = 'comparemode',
+                            description = 'Depth comparison mode used for depth testing.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'write',
+                            description = 'Whether to write update / write values to the depth buffer when rendering.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'setFont',
             description = 'Set an already-loaded Font as the current font or create and load a new one from the file and size.\n\nIt\'s recommended that Font objects are created with love.graphics.newFont in the loading stage and then passed to this function in the drawing stage.',
             variants = {
@@ -2628,6 +3094,21 @@ return {
                             type = 'Font',
                             name = 'font',
                             description = 'The Font object to use.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setFrontFaceWinding',
+            description = 'Sets whether triangles with clockwise- or counterclockwise-ordered vertices are considered front-facing.\n\nThis is designed for use in combination with Mesh face culling. Other love.graphics shapes, lines, and sprites are not guaranteed to have a specific winding order to their internal vertices.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'VertexWinding',
+                            name = 'winding',
+                            description = 'The winding mode to use. The default winding is counterclockwise ("ccw").'
                         }
                     }
                 }
@@ -2673,6 +3154,21 @@ return {
                             type = 'number',
                             name = 'width',
                             description = 'The width of the line.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setMeshCullMode',
+            description = 'Sets whether back-facing triangles in a Mesh are culled.\n\nThis is designed for use with low level custom hardware-accelerated 3D rendering via custom vertex attributes on Meshes, custom vertex shaders, and depth testing with a depth buffer.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'CullMode',
+                            name = 'mode',
+                            description = 'The Mesh face culling mode to use (whether to render everything, cull back-facing triangles, or cull front-facing triangles).'
                         }
                     }
                 }
@@ -2907,6 +3403,38 @@ return {
             },
         },
         {
+            name = 'transformPoint',
+            description = 'Converts the given 2D position from global coordinates into screen-space.\n\nThis effectively applies the current graphics transformations to the given position. A similar Transform:transformPoint method exists for Transform objects.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'globalX',
+                            description = 'The x component of the position in global coordinates.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'globalY',
+                            description = 'The y component of the position in global coordinates.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'screenX',
+                            description = 'The x component of the position with graphics transformations applied.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'sreenY',
+                            description = 'The y component of the position with graphics transformations applied.'
+                        },
+                    }
+                }
+            }
+        },
+        {
             name = 'translate',
             description = 'Translates the coordinate system in two dimensions.\n\nWhen this function is called with two numbers, dx, and dy, all the following drawing operations take effect as if their x and y coordinates were x+dx and y+dy.\n\nScale and translate are not commutative operations, therefore, calling them in different orders will change the outcome.\n\nThis change lasts until love.graphics.clear is called (which is called automatically before love.draw in the default love.run function), or a love.graphics.pop reverts to a previous coordinate system state.\n\nTranslating using whole numbers will prevent tearing/blurring of images and fonts draw after translating.',
             variants = {
@@ -2921,6 +3449,69 @@ return {
                             type = 'number',
                             name = 'dy',
                             description = 'The translation relative to the y-axis.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'validateShader',
+            description = 'Validates shader code. Check if specificed shader code does not contain any errors.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'gles',
+                            description = 'Validate code as GLSL ES shader.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'code',
+                            description = 'The pixel shader or vertex shader code, or a filename pointing to a file with the code.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'status',
+                            description = 'true if specified shader code doesn\'t contain any errors. false otherwise.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'message',
+                            description = 'Reason why shader code validation failed (or nil if validation succeded).'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'gles',
+                            description = 'Validate code as GLSL ES shader.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'pixelcode',
+                            description = 'The pixel shader code, or a filename pointing to a file with the code.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'vertexcode',
+                            description = 'The vertex shader code, or a filename pointing to a file with the code.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'status',
+                            description = 'true if specified shader code doesn\'t contain any errors. false otherwise.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'message',
+                            description = 'Reason why shader code validation failed (or nil if validation succeded).'
                         }
                     }
                 }
