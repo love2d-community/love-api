@@ -528,7 +528,7 @@ return {
             }
         },
         {
-            name = 'newTransformation',
+            name = 'newTransform',
             description = 'Creates a new Transform object.',
             variants = {
                 {
