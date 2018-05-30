@@ -286,7 +286,7 @@ order = {
     },
 }
 
-output = ''
+output = {}
 
 function make_function_navigation_link(m, f_, prefix)
     local getterprefixes = {'get', 'is', 'has', 'are', 'to', 'load', 'tell'}
@@ -880,7 +880,7 @@ function tr(s)
 end
 
 function append(s)
-    output = output .. s .. '\n'
+    table.insert(output, s)
 end
 
 main()
@@ -892,4 +892,4 @@ function string_to_file(s, f)
 end
 
 
-string_to_file(output:gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), 'index.html')
+string_to_file(table.concat(output, ''):gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), 'index.html')
