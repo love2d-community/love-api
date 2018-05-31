@@ -286,7 +286,7 @@ order = {
     },
 }
 
-output = ''
+output = {""}
 
 function make_function_navigation_link(m, f_, prefix)
     local getterprefixes = {'get', 'is', 'has', 'are', 'to', 'load', 'tell'}
@@ -339,7 +339,7 @@ function main()
     <title>L&Ouml;VE ]]..love.version..[[ Reference</title>
     </head>
     <body>]])
-    
+
     local file = io.open("pure-love.css")
     append(style(file:read("*a")))
     file:close()
@@ -361,11 +361,84 @@ function main()
     -- Navigation
     append(div('navigation'))
 
-    append(p(a('love', nil, '#callbacks' ), 'navigation_link'))
+    append([[<div class="navigation_header">
+      <a href="#container">
+        <img class="navigation_header_logo" src="./assets/logo.png">
+      </a>
+      <p> ]]..love.version..[[ </p>
+    </div>]])
+
+    append(div('navigation_links'))
+    append(p('', 'non_expandable') .. p(a('love', nil, '#callbacks' ), 'navigation_link'))
 
     for _, m in ipairs(love.modules) do
-        append(p(a('love.' .. m.name, nil, '#' .. m.name), 'navigation_link'))
+      append(div('navigation_container'))
+      if m.types then
+        append(summary('expandable'))
+      else
+        append(p('', 'non_expandable'))
+      end
+
+      append(p(a('love.' .. m.name, nil, '#' .. m.name), 'navigation_link'))
+
+      if m.types then
+        append(details('expandable_menu'))
+        append(summary('expand'))
+        append('')
+        append(summary())
+        for _, type_ in ipairs(m.types) do
+            append(p(a('&#45&nbsp;' .. type_.name, nil, '#'..'type_'..type_.name), 'navigation_link navigation_type_link'))
+        end
+        append(details())
+      end
+      if m.types then
+          append(summary())
+      end
+      append(div())
     end
+    append(div())
+
+    append(div('navigation_footer'))
+    local versions = {
+      {
+        version = 'latest',
+        link = 'http://love2d-community.github.io/love-api/',
+      },
+      {
+        version = '11.0',
+        link = 'http://love2d-community.github.io/love-api/0.10.0/',
+      },
+      {
+        version = '0.10.2',
+        link = 'http://love2d-community.github.io/love-api/0.10.2/',
+      },
+      {
+        version = '0.10.1',
+        link = 'http://love2d-community.github.io/love-api/0.10.1/'
+      },
+      {
+        version = '0.10.0',
+        link = 'http://love2d-community.github.io/love-api/0.10.0/'
+      },
+      {
+        version = '0.9.2',
+        link = 'http://love2d-community.github.io/love-api/0.9.2/'
+      },
+      {
+        version = '0.9.1',
+        link = 'http://love2d-community.github.io/love-api/0.9.1/'
+      }
+    }
+    append('Version: <select onchange="window.open(this.value)">')
+    for i,version in ipairs(versions) do
+      if(version.version == 'latest') then
+        append('<option selected="selected" value="' .. version.link .. '">' .. version.version .. '</option>')
+      else
+        append('<option value="' .. version.link .. '">' .. version.version .. '</option>')
+      end
+    end
+    append('</select>')
+    append(div())
 
     append(div())
     append(div('container'))
@@ -591,7 +664,7 @@ function main()
             append(div('function_section'))
             append(p(a(span('love.' .. m.name .. '.', 'light') .. f_.name, m.name..'_'..f_.name), 'name'))
             append(p(makeLinks(f_.description), 'description'))
-            for _, f in ipairs(f_.variants) do
+            for _, f in ipairs(f_.variants or {}) do
                 append(p(span(synopsis(m.name, f_.name, f.arguments, f.returns), 'background'), 'synopsis'))
                 append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
                 append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
@@ -732,6 +805,14 @@ div = function (c)
     return open_close(c ,'div')
 end
 
+summary = function (c)
+    return open_close(c ,'summary')
+end
+
+details = function (c)
+    return open_close(c ,'details')
+end
+
 function make_table(t, table_name, name, type, description)
     local output = ''
     if t and table_name then
@@ -867,7 +948,7 @@ function open_close(s, t)
     elseif s == '' then
         return '<' .. t .. '>'
     else
-        return '<' .. t .. ' class = "' .. s .. '">'
+        return '<' .. t .. ' id = "' .. s .. '" class = "' .. s .. '">'
     end
 end
 
@@ -880,7 +961,7 @@ function tr(s)
 end
 
 function append(s)
-    output = output .. s .. '\n'
+    table.insert(output, s)
 end
 
 main()
@@ -892,4 +973,4 @@ function string_to_file(s, f)
 end
 
 
-string_to_file(output:gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), 'index.html')
+string_to_file(table.concat(output, ''):gsub('�', '&Ouml;'):gsub('Ö', '&Ouml;'):gsub('é', '&eacute;'), 'index.html')
