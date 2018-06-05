@@ -286,7 +286,7 @@ order = {
     },
 }
 
-output = {""}
+output = {}
 
 function make_function_navigation_link(m, f_, prefix)
     local getterprefixes = {'get', 'is', 'has', 'are', 'to', 'load', 'tell'}
