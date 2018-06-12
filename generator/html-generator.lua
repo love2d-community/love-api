@@ -591,7 +591,7 @@ function main()
             append(div('function_section'))
             append(p(a(span('love.' .. m.name .. '.', 'light') .. f_.name, m.name..'_'..f_.name), 'name'))
             append(p(makeLinks(f_.description), 'description'))
-            for _, f in ipairs(f_.variants) do
+            for _, f in ipairs(f_.variants or {}) do
                 append(p(span(synopsis(m.name, f_.name, f.arguments, f.returns), 'background'), 'synopsis'))
                 append(make_table(f.returns, 'returns_table', 'return_name', 'return_type', 'return_description'))
                 append(make_table(f.arguments, 'arguments_table', 'argument_name', 'argument_type', 'argument_description'))
