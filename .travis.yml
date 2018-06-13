@@ -22,6 +22,9 @@ install:
 script:
   - busted specs # Run the specs
 
+after_success:
+  - .travis/push.sh
+
 notifications:
   email:
     on_success: change
