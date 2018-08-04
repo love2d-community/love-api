@@ -62,14 +62,14 @@ return {
         },
         {
             name = 'getProcessorCount',
-            description = 'Gets the number of CPU cores in the system.\n\nThe number includes the threads reported if technologies such as Intel\'s Hyper-threading are enabled. For example, on a 4-core CPU with Hyper-threading, this function will return 8.',
+            description = 'Gets the amount of logical processor in the system.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
-                            name = 'cores',
-                            description = 'Gets the number of CPU cores in the system.'
+                            name = 'processorCount',
+                            description = 'Amount of logical processors.'
                         }
                     }
                 }
