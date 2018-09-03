@@ -803,6 +803,9 @@ return {
         {
             name = 'flushBatch',
             description = 'Immediately renders any pending automatically batched draws.\n\nLÖVE will call this function internally as needed when most state is changed, so it is not necessary to manually call it.\n\nThe current batch will be automatically flushed by love.graphics state changes (except for the transform stack and the current color), as well as Shader:send and methods on Textures which change their state. Using a different Image in consecutive love.graphics.draw calls will also flush the current batch.\n\nSpriteBatches, ParticleSystems, Meshes, and Text objects do their own batching and do not affect automatic batching of other draws.',
+            variants = {
+                {}
+            }
         },
         {
             name = 'getBackgroundColor',
