@@ -428,7 +428,10 @@ return {
         },
         {
             name = 'restore',
-            description = 'Restores the size and position of the window if it was minimized or maximized.'
+            description = 'Restores the size and position of the window if it was minimized or maximized.',
+            variants = {
+                {}
+            }
         },
         {
             name = 'requestAttention',
