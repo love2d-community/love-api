@@ -7,7 +7,8 @@ return {
     types = {
         require(path .. 'types.BezierCurve'),
         require(path .. 'types.CompressedData'),
-        require(path .. 'types.RandomGenerator')
+        require(path .. 'types.RandomGenerator'),
+        require(path .. 'types.Transform')
     },
     functions = {
         {
@@ -909,6 +910,7 @@ return {
         }
     },
     enums = {
-        require(path .. 'enums.CompressedDataFormat')
+        require(path .. 'enums.CompressedDataFormat'),
+        require(path .. 'enums.MatrixLayout')
     }
 }

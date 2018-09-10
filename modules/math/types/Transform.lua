@@ -125,9 +125,11 @@ return {
 			variants = {
 				{
 					returns = {
-						type = 'Transform',
-						name = 'transform',
-						description = 'The Transform object the method was called on. Allows easily chaining Transform methods.'
+						{
+							type = 'Transform',
+							name = 'transform',
+							description = 'The Transform object the method was called on. Allows easily chaining Transform methods.'
+						}
 					}
 				}
 			}
