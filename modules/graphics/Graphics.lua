@@ -877,6 +877,22 @@ return {
             description = 'Gets the available Canvas formats, and whether each is supported.',
             variants = {
                 {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'readable',
+                            description = 'If true, the returned formats will only be indicated as supported if love.graphics.newCanvas will work with the readable flag set to true for that format, and vice versa if the parameter is false.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'formats',
+                            description = 'A table containing CanvasFormats as keys, and a boolean indicating whether the format is supported as values (taking into account the readable parameter). Not all systems support all formats.'
+                        }
+                    }
+                },
+                {
                     returns = {
                         {
                             type = 'table',
