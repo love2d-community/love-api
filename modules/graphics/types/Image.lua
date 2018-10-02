@@ -6,30 +6,6 @@ return {
     },
     functions = {
         {
-            name = 'getData',
-            description = 'Gets the original ImageData or CompressedImageData used to create the Image.\n\nAll Images keep a reference to the Data that was used to create the Image. The Data is used to refresh the Image when love.window.setMode or Image:refresh is called.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'ImageData',
-                            name = 'data',
-                            description = 'The original ImageData used to create the Image, if the image is not compressed.'
-                        }
-                    }
-                },
-                {
-                    returns = {
-                        {
-                            type = 'CompressedImageData',
-                            name = 'data',
-                            description = 'The original CompressedImageData used to create the Image, if the image is compressed.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getDimensions',
             description = 'Gets the width and height of the Image.',
             variants = {
@@ -149,37 +125,6 @@ return {
                             type = 'WrapMode',
                             name = 'vertical',
                             description = 'Vertical wrapping mode of the image.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'refresh',
-            description = 'Reloads the Image\'s contents from the ImageData or CompressedImageData used to create the image.',
-            variants = {
-                {},
-                {
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'x',
-                            description = 'The x-axis of the top-left corner of the area within the Image to reload.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'y',
-                            description = 'The y-axis of the top-left corner of the area within the Image to reload.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'width',
-                            description = 'The width of the area within the Image to reload.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'height',
-                            description = 'The height of the area within the Image to reload.'
                         }
                     }
                 }
