@@ -523,12 +523,6 @@ return {
                             type = 'string',
                             name = 'name',
                             description = 'The name of the file.'
-                        },
-                        {
-                            type = 'FileDecoder',
-                            name = 'decoder',
-                            default = '"file"',
-                            description = 'The method to use when decoding the contents.'
                         }
                     },
                     returns = {
