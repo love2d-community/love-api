@@ -313,22 +313,6 @@ return {
             }
         },
         {
-            name = 'resume',
-            description = 'Resumes all audio',
-            variants = {
-                {},
-                {
-                    arguments = {
-                        {
-                            type = 'Source',
-                            name = 'source',
-                            description = 'The source on which to resume the playback.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'setDistanceModel',
             description = 'Sets the distance attenuation model.',
             variants = {

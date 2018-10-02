@@ -341,13 +341,6 @@ return {
             }
         },
         {
-            name = 'resume',
-            description = 'Resumes a paused Source.',
-            variants = {
-                {}
-            }
-        },
-        {
             name = 'seek',
             description = 'Sets the playing position of the Source.',
             variants = {
