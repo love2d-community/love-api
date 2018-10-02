@@ -543,9 +543,6 @@ return {
                             }
                         }
                     }
-                },
-                {
-                    description = 'Clears the contents of the Text object.'
                 }
             }
         },
