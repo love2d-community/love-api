@@ -176,19 +176,18 @@ return {
         },
         {
             name = 'newSource',
-            description = 'Creates a new Source from a file or SoundData. Sources created from SoundData are always static.',
+            description = 'Creates a new Source from a filepath, File, Decoder or SoundData. Sources created from SoundData are always static.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'string',
                             name = 'filename',
-                            description = 'The filepath to create a Source from.'
+                            description = 'The filepath to the audio file.'
                         },
                         {
                             type = 'SourceType',
                             name = 'type',
-                            default = '"stream"',
                             description = 'Streaming or static source.'
                         }
                     },
@@ -210,7 +209,6 @@ return {
                         {
                             type = 'SourceType',
                             name = 'type',
-                            default = '"stream"',
                             description = 'Streaming or static source.'
                         }
                     },
@@ -228,12 +226,22 @@ return {
                             type = 'Decoder',
                             name = 'decoder',
                             description = 'The Decoder to create a Source from.'
-                        },
+                        }
+                    },
+                    returns = {
                         {
-                            type = 'SourceType',
-                            name = 'type',
-                            default = '"stream"',
-                            description = 'Streaming or static source.'
+                            type = 'Source',
+                            name = 'source',
+                            description = 'A new Source that can play the specified audio.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'FileData',
+                            name = 'fileData',
+                            description = 'The FileData to create a Source from.'
                         }
                     },
                     returns = {
@@ -257,22 +265,6 @@ return {
                             type = 'Source',
                             name = 'source',
                             description = 'A new Source that can play the specified audio. The SourceType of the returned audio is "static".'
-                        }
-                    }
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'FileData',
-                            name = 'fileData',
-                            description = 'The FileData to create a Source from.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'Source',
-                            name = 'source',
-                            description = 'A new Source that can play the specified audio.'
                         }
                     }
                 }
