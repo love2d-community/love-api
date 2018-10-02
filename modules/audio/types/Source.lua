@@ -274,21 +274,6 @@ return {
             }
         },
         {
-            name = 'isPaused',
-            description = 'Returns whether the Source is paused.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'paused',
-                            description = 'True if the Source is paused, false otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'isPlaying',
             description = 'Returns whether the Source is playing.',
             variants = {
@@ -298,21 +283,6 @@ return {
                             type = 'boolean',
                             name = 'playing',
                             description = 'True if the Source is playing, false otherwise.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'isStopped',
-            description = 'Returns whether the Source is stopped.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'stopped',
-                            description = 'True if the Source is stopped, false otherwise.'
                         }
                     }
                 }
