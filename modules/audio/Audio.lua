@@ -329,22 +329,6 @@ return {
             }
         },
         {
-            name = 'rewind',
-            description = 'Rewinds all playing audio.',
-            variants = {
-                {},
-                {
-                    arguments = {
-                        {
-                            type = 'Source',
-                            name = 'source',
-                            description = 'The source to rewind.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'setDistanceModel',
             description = 'Sets the distance attenuation model.',
             variants = {

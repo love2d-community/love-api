@@ -348,13 +348,6 @@ return {
             }
         },
         {
-            name = 'rewind',
-            description = 'Rewinds a Source.',
-            variants = {
-                {}
-            }
-        },
-        {
             name = 'seek',
             description = 'Sets the playing position of the Source.',
             variants = {
