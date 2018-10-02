@@ -964,21 +964,6 @@ return {
             }
         },
         {
-            name = 'getCompressedImageFormats',
-            description = 'Gets the available compressed image formats, and whether each is supported.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'table',
-                            name = 'formats',
-                            description = 'A table containing CompressedFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getDefaultFilter',
             description = 'Returns the default scaling filters used with Images, Canvases, and Fonts.',
             variants = {
@@ -1083,6 +1068,21 @@ return {
                             type = 'number',
                             name = 'height',
                             description = 'The height of the window.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getImageFormats',
+            description = 'Gets the raw and compressed pixel formats usable for Images, and whether each is supported.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'formats',
+                            description = 'A table containing PixelFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.'
                         }
                     }
                 }
