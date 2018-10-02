@@ -6,38 +6,6 @@ return {
     },
     functions = {
         {
-            name = 'getExternVariable',
-            description = 'Gets information about an \'extern\' (\'uniform\') variable in the shader.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'name',
-                            description = 'The name of the extern variable.'
-                        }
-                    },
-                    returns = {
-                        {
-                            type = 'ShaderVariableType',
-                            name = 'type',
-                            description = 'The base type of the variable.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'components',
-                            description = 'The number of components in the variable (e.g. 2 for a vec2 or mat2.)'
-                        },
-                        {
-                            type = 'number',
-                            name = 'arrayelements',
-                            description = 'The number of elements in the array if the variable is an array, or 1 if not.'
-                        }
-                    }
-                }
-            }
-        },
-        {
             name = 'getWarnings',
             description = 'Returns any warning and error messages from compiling the shader code. This can be used for debugging your shaders if there\'s anything the graphics hardware doesn\'t like.',
             variants = {
