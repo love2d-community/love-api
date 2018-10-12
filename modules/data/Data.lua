@@ -284,7 +284,7 @@ return {
         },
         {
             name = 'hash',
-            description = 'Compute the message digest of specified string with specified algorithm.',
+            description = 'Compute the message digest of a string using a specified hash algorithm.',
             variants = {
                 {
                     arguments = {
