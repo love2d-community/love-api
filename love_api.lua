@@ -67,6 +67,7 @@ return {
     },
     modules = {
         require(path .. 'modules.audio.Audio'),
+        require(path .. 'modules.data.Data'),
         require(path .. 'modules.event.Event'),
         require(path .. 'modules.filesystem.Filesystem'),
         require(path .. 'modules.graphics.Graphics'),
