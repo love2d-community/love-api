@@ -313,7 +313,7 @@ return {
                         },
                         {
                             type = 'number',
-                            name = 'y1',
+                            name = 'y2',
                             description = 'The y position of the ray end point.'
                         },
                         {
