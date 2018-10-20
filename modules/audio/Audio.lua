@@ -10,6 +10,21 @@ return {
     },
     functions = {
         {
+            name = 'getActiveEffects',
+            description = 'Gets a list of the names of the currently enabled effects.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'effects',
+                            description = 'The list of the names of the currently enabled effects.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getActiveSourceCount',
             description = 'Gets the current number of simultaneously playing sources.',
             variants = {
@@ -49,6 +64,28 @@ return {
                             type = 'number',
                             name = 'scale',
                             description = 'The current doppler scale factor.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getEffect',
+            description = 'Gets the settings associated with an effect.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the effect.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'settings',
+                            description = 'The settings associated with the effect.'
                         }
                     }
                 }
@@ -330,6 +367,72 @@ return {
                             name = 'scale',
                             description = 'The new doppler scale factor. The scale must be greater than 0.'
                         },
+                    }
+                }
+            }
+        },
+        {
+            name = 'setEffect',
+            description = 'Defines an effect that can be applied to a Source.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the effect.'
+                        },
+                        {
+                            type = 'table',
+                            name = 'settings',
+                            description = 'The settings to use for this effect, with the following fields:',
+                            table = {
+                                {
+                                    type = 'string',
+                                    name = 'type',
+                                    description = 'The type of effect to use.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'volume',
+                                    description = 'The volume of the effect.'
+                                },
+                                {
+                                    type = 'number',
+                                    name = '...',
+                                    description = 'Effect-specific settings (listed below).'
+                                }
+                            }
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'Whether the effect was successfully created.'
+                        }
+                    }
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the effect.'
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'enabled',
+                            default = 'true',
+                            description = 'If false and the given effect name was previously set, disables the effect.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'Whether the effect was successfully disabled.'
+                        }
                     }
                 }
             }
