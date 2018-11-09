@@ -4,10 +4,6 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'audio',
     description = 'Provides an interface to create noise with the user\'s speakers.',
-    types = {
-        require(path .. 'types.Source'),
-        require(path .. 'types.RecordingDevice')
-    },
     functions = {
         {
             name = 'getActiveEffects',
@@ -92,15 +88,30 @@ return {
             }
         },
         {
-            name = 'getSourceCount',
-            description = 'Returns the number of sources which are currently playing or paused.',
+            name = 'getMaxActiveEffects',
+            description = 'Gets the maximum number of active Effects supported by the system.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
-                            name = 'numSources',
-                            description = 'The number of sources which are currently playing or paused.'
+                            name = 'maximum',
+                            description = 'The maximum number of active Effects.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getMaxSourceEffects',
+            description = 'Gets the maximum number of active Effects in a single Source object, that the system can support.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'maximum',
+                            description = 'The maximum number of active Effects per Source.'
                         }
                     }
                 }
@@ -172,6 +183,36 @@ return {
             }
         },
         {
+            name = 'getRecordingDevices',
+            description = 'Gets a list of RecordingDevices on the system. The first device in the list is the user\'s default recording device.\n\nIf no device is available, it will return an empty list.\nRecording is not supported on iOS',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'devices',
+                            description = 'The list of RecordingDevices'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'getSourceCount',
+            description = 'Returns the number of sources which are currently playing or paused.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'numSources',
+                            description = 'The number of sources which are currently playing or paused.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'getVelocity',
             description = 'Returns the velocity of the listener.',
             variants = {
@@ -206,6 +247,21 @@ return {
                             type = 'number',
                             name = 'volume',
                             description = 'The current master volume.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'isEffectsSupported',
+            description = 'Gets whether Effects are supported in the system.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'supported',
+                            description = 'True if Effects are supported, false otherwise.'
                         }
                     }
                 }
@@ -308,6 +364,44 @@ return {
             }
         },
         {
+            name = 'newQueueableSource',
+            description = 'Creates a new Source usable for real-time generated sound playback with Source:queue.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'samplerate',
+                            description = 'Number of samples per second when playing.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'bitdepth',
+                            description = 'Bits per sample (8 or 16).'
+                        },
+                        {
+                            type = 'number',
+                            name = 'channels',
+                            description = '1 for mono, 2 for stereo.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'buffercount',
+                            default = '0',
+                            description = 'The number of buffers that can be queued up at any given time with Source:queue. Cannot be greater than 64. A sensible default (~8) is chosen if no value is specified.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'Source',
+                            name = 'source',
+                            description = 'The new Source usable with Source:queue.'
+                        }
+                    }
+                }
+            }
+        },
+        {
             name = 'pause',
             description = 'Pauses currently played Sources.',
             variants = {
@@ -388,7 +482,7 @@ return {
                             description = 'The settings to use for this effect, with the following fields:',
                             table = {
                                 {
-                                    type = 'string',
+                                    type = 'EffectType',
                                     name = 'type',
                                     description = 'The type of effect to use.'
                                 },
@@ -400,7 +494,7 @@ return {
                                 {
                                     type = 'number',
                                     name = '...',
-                                    description = 'Effect-specific settings (listed below).'
+                                    description = 'Effect-specific settings.'
                                 }
                             }
                         }
@@ -431,7 +525,29 @@ return {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'Whether the effect was successfully disabled.'
+                            description = 'Whether the Effect was successfully disabled.'
+                        }
+                    }
+                }
+            }
+        },
+        {
+            name = 'setMixWithSystem',
+            description = 'Sets whether the system should mix the audio with the system\'s audio.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'mix',
+                            description = 'True to enable mixing, false to disable it.'
+                        }
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'success',
+                            description = 'True if the change succeeded, false otherwise.'
                         }
                     }
                 }
@@ -521,6 +637,7 @@ return {
                         {
                             type = 'number',
                             name = 'z',
+                            default = '0',
                             description = 'The Z velocity of the listener.'
                         }
                     }
@@ -562,8 +679,15 @@ return {
             }
         }
     },
+    types = {
+        require(path .. 'types.Source'),
+        require(path .. 'types.RecordingDevice')
+    },
     enums = {
         require(path .. 'enums.DistanceModel'),
+        require(path .. 'enums.EffectType'),
+        require(path .. 'enums.EffectWaveform'),
+        require(path .. 'enums.FilterType'),
         require(path .. 'enums.SourceType'),
         require(path .. 'enums.TimeUnit')
     }
