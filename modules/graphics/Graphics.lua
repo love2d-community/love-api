@@ -2401,11 +2401,13 @@ return {
                         {
                             type = 'number',
                             name = 'x',
+                            default = '0',
                             description = 'The position to draw the object (x-axis).'
                         },
                         {
                             type = 'number',
                             name = 'y',
+                            default = '0',
                             description = 'The position to draw the object (y-axis).'
                         },
                         {
@@ -2489,11 +2491,13 @@ return {
                         {
                             type = 'number',
                             name = 'x',
+                            default = '0',
                             description = 'The position of the new text on the x-axis.'
                         },
                         {
                             type = 'number',
                             name = 'y',
+                            default = '0',
                             description = 'The position of the new text on the y-axis.'
                         },
                         {
