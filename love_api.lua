@@ -921,6 +921,11 @@ return {
                             type = 'boolean',
                             name = 'isTouch',
                             description = 'True if the mouse button press originated from a touchscreen touch-press.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'presses',
+                            description = 'The number of presses in a short time frame and small area, used to simulate double, triple clicks'
                         }
                     }
                 }
@@ -951,6 +956,11 @@ return {
                             type = 'boolean',
                             name = 'isTouch',
                             description = 'True if the mouse button press originated from a touchscreen touch-release.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'presses',
+                            description = 'The number of presses in a short time frame and small area, used to simulate double, triple clicks'
                         }
                     }
                 }
