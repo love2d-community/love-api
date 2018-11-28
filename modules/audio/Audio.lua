@@ -88,8 +88,8 @@ return {
             }
         },
         {
-            name = 'getMaxActiveEffects',
-            description = 'Gets the maximum number of active Effects supported by the system.',
+            name = 'getMaxSceneEffects',
+            description = 'Gets the maximum number of active Effects, supported by the system.',
             variants = {
                 {
                     returns = {
