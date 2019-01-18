@@ -60,6 +60,13 @@ a:link {
 	background: #FFF;
 	box-shadow: 0 -8px 6px -6px #DDD;
 	height: 32px;
+	text-align: center;
+}
+
+.navigation_footer select {
+	font-size: inherit;
+	font-family: inherit;
+	padding: 0 .5em;
 }
 
 .container {
@@ -119,6 +126,11 @@ details details summary {
 	left: -5px;
 }
 
+.expandable_menu .navigation_type_link {
+	margin-left: 4px;
+	opacity: 0;
+}
+
 .expandable {
 	position: relative;
 	left: 14px;
@@ -147,10 +159,11 @@ details details summary {
 
 .expandable_menu[open=""] .navigation_type_link {
 	margin: 4px;
+	opacity: 1;
 }
 
 .navigation_container {
-	min-height: 30px;
+	min-height: 2em;
 	width: 100%;
 }
 
@@ -165,7 +178,6 @@ details details summary {
 }
 
 .modules, .callbacks, .navigation_link {
-	font-size: 13px;
 	transition: 0.3s;
 }
 
