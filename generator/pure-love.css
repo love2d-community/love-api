@@ -4,8 +4,12 @@
 	color: #333;
 }
 
-p, td, h1, h2, h3 {
+body {
+	margin-left: 12px;
+	margin-bottom: 24px;
+	background: #fcfcfc;
 	font-family: "Trebuchet MS", sans-serif;
+	line-height: 1.375;
 }
 
 a:link {
@@ -63,10 +67,6 @@ a:link {
 	padding: 6px;
 }
 
-p, td {
-	font-size: 10pt;
-}
-
 summary {
 	width: 12px;
 }
@@ -100,7 +100,6 @@ details details summary {
 
 .expand {
 	color: #ea316e;
-	font-size: 20px;
 	transition: 0.2s;
 }
 
@@ -113,6 +112,7 @@ details details summary {
 	color: #25aae1;
 	transition: 0.2s;
 }
+
 .expandable_menu {
 	position: relative;
 	top: -15px;
@@ -149,7 +149,7 @@ details details summary {
 	margin: 4px;
 }
 
-.navigation_container{
+.navigation_container {
 	min-height: 30px;
 	width: 100%;
 }
@@ -183,22 +183,12 @@ details details summary {
 	margin-bottom: 8px;
 }
 
-.synopsis {
-	font-size: 12pt;
-}
-
 .argument_name, .return_name {
 	text-align: right;
 }
 
 .argument_type, .return_type {
 	padding-left: 16px;
-}
-
-body {
-	margin-left: 12px;
-	margin-bottom: 24px;
-	background: #fcfcfc;
 }
 
 .function, .function_link, .type_link, .enum_link, .subsection {
@@ -228,14 +218,17 @@ body {
 
 .returns_table, .arguments_table, .flags_table {
 	margin-bottom: 8px;
+	line-height: 1.75;
+}
+
+tr:nth-child(even) {
+	background: rgba(0, 0, 0, .05);
 }
 
 table {
 	vertical-align: text-top;
-}
-
-td {
-	vertical-align: top;
+	border-spacing: 0;
+	width: 100%;
 }
 
 tr {
