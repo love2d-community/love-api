@@ -919,7 +919,7 @@ return {
                         },
                         {
                             type = 'boolean',
-                            name = 'isTouch',
+                            name = 'istouch',
                             description = 'True if the mouse button press originated from a touchscreen touch-press.'
                         },
                         {
@@ -954,7 +954,7 @@ return {
                         },
                         {
                             type = 'boolean',
-                            name = 'isTouch',
+                            name = 'istouch',
                             description = 'True if the mouse button press originated from a touchscreen touch-release.'
                         },
                         {
