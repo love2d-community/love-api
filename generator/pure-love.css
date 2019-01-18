@@ -1,73 +1,73 @@
 * {
-    margin: 0;
-    padding: 0;
-    color: #333;
+	margin: 0;
+	padding: 0;
+	color: #333;
 }
 
 p, td, h1, h2, h3 {
-    font-family: "Trebuchet MS", sans-serif;
+	font-family: "Trebuchet MS", sans-serif;
 }
 
 a:link {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .synopsis, .return_name, .return_type, .argument_name, .argument_type, .constant_name {
-    font-family: "Consolas", monospace;
+	font-family: "Consolas", monospace;
 }
 
 .navigation {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 250px;
-    height: 100%;
-    /*background: #e0f4fc;*/
-    box-shadow: 0px 0px 40px inset #DDD;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 250px;
+	height: 100%;
+	/*background: #e0f4fc;*/
+	box-shadow: 0px 0px 40px inset #DDD;
 }
 
 .navigation_header{
-  padding: 8px 0 40px 0;
-  background: #FFF;
-  box-shadow: 0 8px 6px -6px #DDD;
-  margin-bottom: 8px;
+	padding: 8px 0 40px 0;
+	background: #FFF;
+	box-shadow: 0 8px 6px -6px #DDD;
+	margin-bottom: 8px;
 }
 
 .navigation_header p{
-  text-align: center;
-  color: #999;
+	text-align: center;
+	color: #999;
 }
 
 .navigation_header_logo{
-  width: calc(100% - 32px);
-  padding: 16px;
+	width: calc(100% - 32px);
+	padding: 16px;
 }
 .navigation_links{
-  height: calc(100% - 194px);
-  overflow-y: auto;
-  overflow-x: hidden;
+	height: calc(100% - 194px);
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 .navigation_footer{
-  position: absolute;
-  bottom: 0px;
-  width: calc(100% - 8px);
-  padding: 4px;
-  background: #FFF;
-  box-shadow: 0 -8px 6px -6px #DDD;
-  height: 32px;
+	position: absolute;
+	bottom: 0px;
+	width: calc(100% - 8px);
+	padding: 4px;
+	background: #FFF;
+	box-shadow: 0 -8px 6px -6px #DDD;
+	height: 32px;
 }
 
 .container {
-    margin-left: 250px;
-    padding: 6px;
+	margin-left: 250px;
+	padding: 6px;
 }
 
 p, td {
-    font-size: 10pt;
+	font-size: 10pt;
 }
 
 summary{
-  width: 12px;
+	width: 12px;
 }
 summary::-webkit-details-marker {
 color: #00ACF3;
@@ -91,60 +91,60 @@ details details summary {
  font-size: 16px;
 }
 .expand{
-  color: #ea316e;
-  font-size: 20px;
-  transition: 0.2s;
+	color: #ea316e;
+	font-size: 20px;
+	transition: 0.2s;
 }
 .expand:hover{
-  color: #25aae1;
-  transition: 0.2s;
+	color: #25aae1;
+	transition: 0.2s;
 }
 .expand:focus{
-  color: #25aae1;
-  transition: 0.2s;
+	color: #25aae1;
+	transition: 0.2s;
 }
 .expandable_menu{
-  position: relative;
-  top: -15px;
-  left: -5px;
+	position: relative;
+	top: -15px;
+	left: -5px;
 }
 .expandable{
-  position: relative;
-  left: 14px;
-  cursor: pointer;
-  color: #25aae1;
+	position: relative;
+	left: 14px;
+	cursor: pointer;
+	color: #25aae1;
 }
 .non_expandable{
-  position: relative;
-  float: left;
-  font-size: 16px;
-  color: rgba(0,0,0,0.5);
-  left: 10px;
-  top: -2px;
-  margin: 12px 11px;
-  padding: 2px 3px;
+	position: relative;
+	float: left;
+	font-size: 16px;
+	color: rgba(0,0,0,0.5);
+	left: 10px;
+	top: -2px;
+	margin: 12px 11px;
+	padding: 2px 3px;
 }
 .expandable_menu[open=""] .navigation_type_link:nth-child(2){
-  margin-top: 8px;
+	margin-top: 8px;
 }
 .expandable_menu[open=""] .navigation_type_link:last-child{
-  margin-bottom: -6px;
+	margin-bottom: -6px;
 }
 .expandable_menu[open=""] .navigation_type_link{
-  margin: 4px;
+	margin: 4px;
 }
 .navigation_container{
-  min-height: 30px;
-  width: 100%;
+	min-height: 30px;
+	width: 100%;
 }
 
 .modules, .callbacks, .navigation_link a{
-  display: block;
-  color: #7f7f7f;
-  padding: 0px 14px;
+	display: block;
+	color: #7f7f7f;
+	padding: 0px 14px;
 }
 .modules, .callbacks, .navigation_link a:hover{
-  color: #ea316e;
+	color: #ea316e;
 }
 .modules, .callbacks, .navigation_link a:active{
 
@@ -153,173 +153,173 @@ details details summary {
 
 }
 .modules, .callbacks, .navigation_link {
-    font-size: 13px;
-    transition: 0.3s;
+	font-size: 13px;
+	transition: 0.3s;
 }
 .modules, .callbacks, .navigation_link:hover {
-    transition: 0.3s;
+	transition: 0.3s;
 }
 .modules, .callbacks, .navigation_link:hover a{
-    color: #ea316e;
-    transition: 0.3s;
+	color: #ea316e;
+	transition: 0.3s;
 }
 .module_name, .callbacks_title, .name, .type_name, .enum_name {
-    font-size: 16pt;
-    margin-bottom: 8px;
+	font-size: 16pt;
+	margin-bottom: 8px;
 }
 .synopsis {
-    font-size: 12pt;
+	font-size: 12pt;
 }
 
 .argument_name, .return_name {
-    text-align: right;
+	text-align: right;
 }
 
 .argument_type, .return_type {
-    padding-left: 16px;
+	padding-left: 16px;
 }
 
 body {
-    margin-left: 12px;
-    margin-bottom: 24px;
-    background: #fcfcfc;
+	margin-left: 12px;
+	margin-bottom: 24px;
+	background: #fcfcfc;
 }
 
 .function, .function_link, .type_link, .enum_link, .subsection {
-    margin-left: 24px;
+	margin-left: 24px;
 }
 
 .description {
-    margin-left: 12px;
+	margin-left: 12px;
 }
 
 .callbacks_title, .module_navigation, .subsection {
-    margin: 8px 0 2px 0;
-    color: #333 !important;
+	margin: 8px 0 2px 0;
+	color: #333 !important;
 }
 .module_name, .synopsis {
-    margin-top: 16px;
+	margin-top: 16px;
 }
 .synopsis {
-    margin-bottom: 12px;
+	margin-bottom: 12px;
 }
 
 .constant_description {
-    margin-bottom: 8px;
+	margin-bottom: 8px;
 }
 
 .returns_table, .arguments_table, .flags_table {
-    margin-bottom: 8px;
+	margin-bottom: 8px;
 }
 
 table {
-    vertical-align: text-top;
+	vertical-align: text-top;
 }
 td {
-    vertical-align: top;
+	vertical-align: top;
 }
 tr {
-    margin: 4px;
-    padding: 4px;
+	margin: 4px;
+	padding: 4px;
 }
 .name, .arguments, .returns, .argument, .return, .argument_name, .return_name, .argument_type, .argument_type a, .return_type, .return_type a, .constant_name, .type_name, .enum_name, .module_navigation, .module_name, .callbacks_title, .subsection {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .name, .type_name, .enum_name, .module_name {}
 
 .arguments, .returns {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .module_name a, .type_name a, .enum_name a, .callbacks_title a, .module_navigation, .default, .subsection {
-    color: #ea316e;
+	color: #ea316e;
 }
 
 a {
-    color: #25aae1; /* lightblue */
+	color: #25aae1; /* lightblue */
 }
 .name a, .argument_name, .argument, .constant_name, .green {
-    color: #25aae1; /* lightblue */
+	color: #25aae1; /* lightblue */
 }
 .return_name, .return {
-    color: #CC6600; /* Orange */
-    color: #D86C00; /* Orange */
+	color: #CC6600; /* Orange */
+	color: #D86C00; /* Orange */
 }
 .argument_name, .argument {
-    color: #ea316e; /* Pink */
+	color: #ea316e; /* Pink */
 }
 
 .argument_name, .return_name {
-    width: 200px;
+	width: 200px;
 }
 
 .argument_type, .return_type {
-    width: 100px;
-    color: #D86C00;
+	width: 100px;
+	color: #D86C00;
 }
 .argument_type{
 
 }
 .argument_description{
-  line-height: 1.5em;
-  color: #444;
-  transition: 0.3s;
+	line-height: 1.5em;
+	color: #444;
+	transition: 0.3s;
 }
 tr:hover .argument_description{
-  color: #000;
-  transition: 0.3s;
+	color: #000;
+	transition: 0.3s;
 }
 
 .callbacks_title {
-    margin-top: 0;
-    font-size: 16pt;
-    margin-bottom: 8px;
+	margin-top: 0;
+	font-size: 16pt;
+	margin-bottom: 8px;
 }
 
 .function_link a:hover, .type_link a:hover, .enum_link a:hover, .return_type a:hover, .argument_type a:hover  {
-    background-color: #ECF3F7;
+	background-color: #ECF3F7;
 }
 
 .background {
 
-    margin-left: -12px;
-    line-height: 150%;
-    background-color: #F5F5F5;
-    border-color: #D7D4D4;
-    background-color: #F7F4F4;
-    border-width: 1px;
-    border-style: solid;
-    padding: 2px 5px 2px 5px;
-    margin-left: -5px;
+	margin-left: -12px;
+	line-height: 150%;
+	background-color: #F5F5F5;
+	border-color: #D7D4D4;
+	background-color: #F7F4F4;
+	border-width: 1px;
+	border-style: solid;
+	padding: 2px 5px 2px 5px;
+	margin-left: -5px;
 }
 
 .function_section, .navigation_section, .module_section, .enum_section, .navigation_links_section {}
 
 .function_section{
-  border-top: 5px dotted #DFDFDF;
-  padding: 30px 0;
+	border-top: 5px dotted #DFDFDF;
+	padding: 30px 0;
 }
 
 .navigation_links_section {
-  padding-bottom: 30px;
+	padding-bottom: 30px;
 }
 
 .module_name, .callbacks_title {
-    font-size: 28px;
-    border-top: 5px dotted #DFDFDF;
-    margin-top: 30px;
-    padding-top: 30px;
-    margin-bottom: 30px;
+	font-size: 28px;
+	border-top: 5px dotted #DFDFDF;
+	margin-top: 30px;
+	padding-top: 30px;
+	margin-bottom: 30px;
 }
 
 .module_name, .callbacks_title:first-child {
-  border-top: 0;
-  margin-top: 30px;
-  padding-top: 0px;
-  margin-bottom: 0px;
+	border-top: 0;
+	margin-top: 30px;
+	padding-top: 0px;
+	margin-bottom: 0px;
 }
 
 .light, .arguments, .returns, .subsection {
-    color: #ea316e;
+	color: #ea316e;
 }
