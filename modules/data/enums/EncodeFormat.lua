@@ -1,5 +1,5 @@
 return {
-    name = 'HashFunction',
+    name = 'EncodeFormat',
     description = 'Encoding format used to encode or decode data.',
     constants = {
         {
