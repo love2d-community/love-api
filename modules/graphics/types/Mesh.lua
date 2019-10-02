@@ -445,25 +445,25 @@ return {
                         {
                             type = 'number',
                             name = 'r',
-                            default = '255',
+                            default = '1',
                             description = 'The red component of the vertex\'s color.'
                         },
                         {
                             type = 'number',
                             name = 'g',
-                            default = '255',
+                            default = '1',
                             description = 'The green component of the vertex\'s color.'
                         },
                         {
                             type = 'number',
                             name = 'b',
-                            default = '255',
+                            default = '1',
                             description = 'The blue component of the vertex\'s color.'
                         },
                         {
                             type = 'number',
                             name = 'a',
-                            default = '255',
+                            default = '1',
                             description = 'The alpha component of the vertex\'s color.'
                         }
                     }
@@ -504,25 +504,25 @@ return {
                                 {
                                     type = 'number',
                                     name = '[5]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The red component of the vertex\'s color.'
                                 },
                                 {
                                     type = 'number',
                                     name = '[6]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The green component of the vertex\'s color.'
                                 },
                                 {
                                     type = 'number',
                                     name = '[7]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The blue component of the vertex\'s color.'
                                 },
                                 {
                                     type = 'number',
                                     name = '[8]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The alpha component of the vertex\'s color.'
                                 }
                             }
@@ -662,25 +662,25 @@ return {
                                 {
                                     type = 'number',
                                     name = '[5]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The red color component.',
                                 },
                                 {
                                     type = 'number',
                                     name = '[6]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The green color component.',
                                 },
                                 {
                                     type = 'number',
                                     name = '[7]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The blue color component.',
                                 },
                                 {
                                     type = 'number',
                                     name = '[8]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The alpha color component.',
                                 },
                             }

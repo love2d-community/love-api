@@ -99,42 +99,42 @@ return {
                         {
                             type = 'number',
                             name = 'r1',
-                            description = 'First color, red component (0-255).'
+                            description = 'First color, red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'g1',
-                            description = 'First color, green component (0-255).'
+                            description = 'First color, green component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'b1',
-                            description = 'First color, blue component (0-255).'
+                            description = 'First color, blue component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'a1',
-                            description = 'First color, alpha component (0-255).'
+                            description = 'First color, alpha component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'r2',
-                            description = 'Second color, red component (0-255).'
+                            description = 'Second color, red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'g2',
-                            description = 'Second color, green component (0-255).'
+                            description = 'Second color, green component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'b2',
-                            description = 'Second color, blue component (0-255).'
+                            description = 'Second color, blue component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'a2',
-                            description = 'Second color, alpha component (0-255).'
+                            description = 'Second color, alpha component (0-1).'
                         },
                         {
                             type = 'number',
@@ -664,42 +664,42 @@ return {
                         {
                             type = 'number',
                             name = 'r1',
-                            description = 'First color, red component (0-255).'
+                            description = 'First color, red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'g1',
-                            description = 'First color, green component (0-255).'
+                            description = 'First color, green component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'b1',
-                            description = 'First color, blue component (0-255).'
+                            description = 'First color, blue component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'a1',
-                            description = 'First color, alpha component (0-255).'
+                            description = 'First color, alpha component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'r2',
-                            description = 'Second color, red component (0-255).'
+                            description = 'Second color, red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'g2',
-                            description = 'Second color, green component (0-255).'
+                            description = 'Second color, green component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'b2',
-                            description = 'Second color, blue component (0-255).'
+                            description = 'Second color, blue component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'a2',
-                            description = 'Second color, alpha component (0-255).'
+                            description = 'Second color, alpha component (0-1).'
                         },
                         {
                             type = 'number',
