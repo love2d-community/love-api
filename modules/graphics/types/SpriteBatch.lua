@@ -200,22 +200,22 @@ return {
                         {
                             type = 'number',
                             name = 'r',
-                            description = 'The red component (0-255).'
+                            description = 'The red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'g',
-                            description = 'The green component (0-255).'
+                            description = 'The green component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'b',
-                            description = 'The blue component (0-255).'
+                            description = 'The blue component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'a',
-                            description = 'The alpha component (0-255).'
+                            description = 'The alpha component (0-1).'
                         },
                     }
                 }
@@ -408,7 +408,7 @@ return {
                         {
                             type = 'number',
                             name = 'a',
-                            default = '255',
+                            default = '1',
                             description = 'The amount of alpha.'
                         }
                     }

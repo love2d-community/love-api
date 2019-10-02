@@ -248,7 +248,7 @@ return {
                         {
                             type = 'number',
                             name = 'a',
-                            default = '255',
+                            default = '1',
                             description = 'The alpha channel of the color to clear the screen to.'
                         },
                     }
@@ -816,22 +816,22 @@ return {
                         {
                             type = 'number',
                             name = 'r',
-                            description = 'The red component (0-255).'
+                            description = 'The red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'g',
-                            description = 'The green component (0-255).'
+                            description = 'The green component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'b',
-                            description = 'The blue component (0-255).'
+                            description = 'The blue component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'a',
-                            description = 'The alpha component (0-255).'
+                            description = 'The alpha component (0-1).'
                         }
                     }
                 }
@@ -912,22 +912,22 @@ return {
                         {
                             type = 'number',
                             name = 'r',
-                            description = 'The red component (0-255).'
+                            description = 'The red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'g',
-                            description = 'The red component (0-255).'
+                            description = 'The red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'b',
-                            description = 'The blue component (0-255).'
+                            description = 'The blue component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'a',
-                            description = 'The alpha component (0-255).'
+                            description = 'The alpha component (0-1).'
                         }
                     }
                 }
@@ -1687,25 +1687,25 @@ return {
                                 {
                                     type = 'number',
                                     name = '[5]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The red component of the vertex color.'
                                 },
                                 {
                                     type = 'number',
                                     name = '[6]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The green component of the vertex color.'
                                 },
                                 {
                                     type = 'number',
                                     name = '[7]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The blue component of the vertex color.'
                                 },
                                 {
                                     type = 'number',
                                     name = '[8]',
-                                    default = '255',
+                                    default = '1',
                                     description = 'The alpha component of the vertex color.'
                                 }
                             }
@@ -1737,7 +1737,7 @@ return {
                         {
                             type = 'number',
                             name = 'vertexcount',
-                            description = 'The total number of vertices the Mesh will use. Each vertex is initialized to {0,0, 0,0, 255,255,255,255}.'
+                            description = 'The total number of vertices the Mesh will use. Each vertex is initialized to {0,0, 0,0, 1,1,1,1}.'
                         },
                         {
                             type = 'MeshDrawMode',
@@ -2887,23 +2887,23 @@ return {
                         {
                             type = 'number',
                             name = 'r',
-                            description = 'The red component (0-255).'
+                            description = 'The red component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'g',
-                            description = 'The green component (0-255).'
+                            description = 'The green component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'b',
-                            description = 'The blue component (0-255).'
+                            description = 'The blue component (0-1).'
                         },
                         {
                             type = 'number',
                             name = 'a',
-                            default = '255',
-                            description = 'The alpha component (0-255).'
+                            default = '1',
+                            description = 'The alpha component (0-1).'
                         }
                     }
                 },
@@ -2912,7 +2912,7 @@ return {
                         {
                             type = 'table',
                             name = 'rgba',
-                            description = 'A numerical indexed table with the red, green and blue values as numbers. Alpha is 255 if it is not in the table'
+                            description = 'A numerical indexed table with the red, green and blue values as numbers. Alpha is 1 if it is not in the table'
                         }
                     }
                 }
@@ -3020,7 +3020,7 @@ return {
                         {
                             type = 'table',
                             name = 'rgba',
-                            description = 'A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 255 if it is left out.'
+                            description = 'A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 1 if it is left out.'
                         }
                     }
                 }
@@ -3348,7 +3348,7 @@ return {
                         {
                             type = 'number',
                             name = 'comparevalue',
-                            description = 'The value to use when comparing with the stencil value of each pixel. Must be between 0 and 255.'
+                            description = 'The value to use when comparing with the stencil value of each pixel. Must be between 0 and 1.'
                         }
                     }
                 },
@@ -3394,7 +3394,7 @@ return {
         },
         {
             name = 'stencil',
-            description = 'Draws geometry as a stencil.\n\nThe geometry drawn by the supplied function sets invisible stencil values of pixels, instead of setting pixel colors. The stencil values of pixels can act like a mask / stencil - love.graphics.setStencilTest can be used afterward to determine how further rendering is affected by the stencil values in each pixel.\n\nEach Canvas has its own per-pixel stencil values. Stencil values are within the range of [0, 255].',
+            description = 'Draws geometry as a stencil.\n\nThe geometry drawn by the supplied function sets invisible stencil values of pixels, instead of setting pixel colors. The stencil values of pixels can act like a mask / stencil - love.graphics.setStencilTest can be used afterward to determine how further rendering is affected by the stencil values in each pixel.\n\nEach Canvas has its own per-pixel stencil values. Stencil values are within the range of [0, 1].',
             variants = {
                 {
                     arguments = {
@@ -3413,7 +3413,7 @@ return {
                             type = 'number',
                             name = 'value',
                             default = '1',
-                            description = 'The new stencil value to use for pixels if the "replace" stencil action is used. Has no effect with other stencil actions. Must be between 0 and 255.'
+                            description = 'The new stencil value to use for pixels if the "replace" stencil action is used. Has no effect with other stencil actions. Must be between 0 and 1.'
                         },
                         {
                             type = 'boolean',
