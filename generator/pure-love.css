@@ -1,7 +1,43 @@
+html {
+  --background-color: #fcfcfc;
+  --text-color: #333;
+  --text-color-dark: #000;
+  --text-color-light: #444;
+  --text-color-extra-light: #999;
+  --link-hover-background-color: #ECF3F7;
+  --box-shadow-color: #ddd;
+  --nav-background-color: #fff;
+  --nav-link-color: #7f7f7f;
+  --theme-color-pink: #ea316e;
+  --theme-color-blue: #25aae1;
+  --theme-color-orange: #D86C00;
+  --code-background-color: #f7f4f4;
+  --code-border-color: ##d7d4d4;
+  --section-divider-color: #dfdfdf;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    --background-color: #222;
+    --text-color: #ccc;
+    --text-color-dark: #fff;
+    --text-color-light: #aaa;
+    --text-color-extra-light: #999;
+    --link-hover-background-color: #111;
+    --box-shadow-color: #111;
+    --nav-background-color: #222;
+    --nav-link-color: #aaa;
+    --theme-color-pink: #f73b98;
+    --theme-color-blue: #25aae1;
+    --theme-color-orange: #fd8d1d;
+    --code-background-color: #333;
+    --code-border-color: #111;
+    --section-divider-color: #444;
+  }
+}
 * {
     margin: 0;
     padding: 0;
-    color: #333;
+    color: var(--text-color);
 }
 
 p, td, h1, h2, h3 {
@@ -23,19 +59,19 @@ a:link {
     width: 250px;
     height: 100%;
     /*background: #e0f4fc;*/
-    box-shadow: 0px 0px 40px inset #DDD;
+    box-shadow: 0px 0px 40px inset var(--box-shadow-color);
 }
 
 .navigation_header{
   padding: 8px 0 40px 0;
-  background: #FFF;
-  box-shadow: 0 8px 6px -6px #DDD;
+  background: var(--nav-backgound-color);
+  box-shadow: 0 8px 6px -6px var(--box-shadow-color);
   margin-bottom: 8px;
 }
 
 .navigation_header p{
   text-align: center;
-  color: #999;
+  color: var(--text-color-extra-light);
 }
 
 .navigation_header_logo{
@@ -52,8 +88,8 @@ a:link {
   bottom: 0px;
   width: calc(100% - 8px);
   padding: 4px;
-  background: #FFF;
-  box-shadow: 0 -8px 6px -6px #DDD;
+  background: var(--nav-background-color);
+  box-shadow: 0 -8px 6px -6px var(--box-shadow-color);
   height: 32px;
 }
 
@@ -91,16 +127,16 @@ details details summary {
  font-size: 16px;
 }
 .expand{
-  color: #ea316e;
+  color: var(--theme-color-pink);
   font-size: 20px;
   transition: 0.2s;
 }
 .expand:hover{
-  color: #25aae1;
+  color: var(--theme-color-blue);
   transition: 0.2s;
 }
 .expand:focus{
-  color: #25aae1;
+  color: var(--theme-color-blue);
   transition: 0.2s;
 }
 .expandable_menu{
@@ -112,7 +148,7 @@ details details summary {
   position: relative;
   left: 14px;
   cursor: pointer;
-  color: #25aae1;
+  color: var(--theme-color-blue);
 }
 .non_expandable{
   position: relative;
@@ -140,11 +176,11 @@ details details summary {
 
 .modules, .callbacks, .navigation_link a{
   display: block;
-  color: #7f7f7f;
+  color: var(--nav-link-color);
   padding: 0px 14px;
 }
 .modules, .callbacks, .navigation_link a:hover{
-  color: #ea316e;
+  color: var(--theme-color-pink);
 }
 .modules, .callbacks, .navigation_link a:active{
 
@@ -160,7 +196,7 @@ details details summary {
     transition: 0.3s;
 }
 .modules, .callbacks, .navigation_link:hover a{
-    color: #ea316e;
+    color: var(--theme-color-pink);
     transition: 0.3s;
 }
 .module_name, .callbacks_title, .name, .type_name, .enum_name {
@@ -182,7 +218,7 @@ details details summary {
 body {
     margin-left: 12px;
     margin-bottom: 24px;
-    background: #fcfcfc;
+    background: var(--background-color);
 }
 
 .function, .function_link, .type_link, .enum_link, .subsection {
@@ -195,7 +231,7 @@ body {
 
 .callbacks_title, .module_navigation, .subsection {
     margin: 8px 0 2px 0;
-    color: #333 !important;
+    color: var(--text-color) !important;
 }
 .module_name, .synopsis {
     margin-top: 16px;
@@ -233,21 +269,20 @@ tr {
 }
 
 .module_name a, .type_name a, .enum_name a, .callbacks_title a, .module_navigation, .default, .subsection {
-    color: #ea316e;
+    color: var(--theme-color-pink);
 }
 
 a {
-    color: #25aae1; /* lightblue */
+    color: var(--theme-color-blue); /* lightblue */
 }
 .name a, .argument_name, .argument, .constant_name, .green {
-    color: #25aae1; /* lightblue */
+    color: var(--theme-color-blue); /* lightblue */
 }
 .return_name, .return {
-    color: #CC6600; /* Orange */
-    color: #D86C00; /* Orange */
+    color: var(--theme-color-orange); /* Orange */
 }
 .argument_name, .argument {
-    color: #ea316e; /* Pink */
+    color: var(--theme-color-pink); /* Pink */
 }
 
 .argument_name, .return_name {
@@ -256,18 +291,18 @@ a {
 
 .argument_type, .return_type {
     width: 100px;
-    color: #D86C00;
+    color: var(--theme-color-orange);
 }
 .argument_type{
 
 }
 .argument_description{
   line-height: 1.5em;
-  color: #444;
+  color: var(--text-color-light);
   transition: 0.3s;
 }
 tr:hover .argument_description{
-  color: #000;
+  color: var(--text-color-dark);
   transition: 0.3s;
 }
 
@@ -278,16 +313,15 @@ tr:hover .argument_description{
 }
 
 .function_link a:hover, .type_link a:hover, .enum_link a:hover, .return_type a:hover, .argument_type a:hover  {
-    background-color: #ECF3F7;
+    background-color: var(--link-hover-background-color);
 }
 
 .background {
 
     margin-left: -12px;
     line-height: 150%;
-    background-color: #F5F5F5;
-    border-color: #D7D4D4;
-    background-color: #F7F4F4;
+    border-color: var(--code-border-color);
+    background-color: var(--code-background-color);
     border-width: 1px;
     border-style: solid;
     padding: 2px 5px 2px 5px;
@@ -297,7 +331,7 @@ tr:hover .argument_description{
 .function_section, .navigation_section, .module_section, .enum_section, .navigation_links_section {}
 
 .function_section{
-  border-top: 5px dotted #DFDFDF;
+  border-top: 5px dotted var(--section-divider-color);
   padding: 30px 0;
 }
 
@@ -307,7 +341,7 @@ tr:hover .argument_description{
 
 .module_name, .callbacks_title {
     font-size: 28px;
-    border-top: 5px dotted #DFDFDF;
+    border-top: 5px dotted var(--section-divider-color);
     margin-top: 30px;
     padding-top: 30px;
     margin-bottom: 30px;
@@ -321,5 +355,5 @@ tr:hover .argument_description{
 }
 
 .light, .arguments, .returns, .subsection {
-    color: #ea316e;
+    color: var(--theme-color-pink);
 }
