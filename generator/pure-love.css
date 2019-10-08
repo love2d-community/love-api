@@ -12,7 +12,7 @@ html {
   --theme-color-blue: #25aae1;
   --theme-color-orange: #D86C00;
   --code-background-color: #f7f4f4;
-  --code-border-color: ##d7d4d4;
+  --code-border-color: #d7d4d4;
   --section-divider-color: #dfdfdf;
 }
 @media (prefers-color-scheme: dark) {
