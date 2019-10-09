@@ -502,6 +502,31 @@ return {
             },
         },
         {
+            name = 'getTransform',
+            description = 'Get the position and angle of the body.\n\nNote that the position may not be the center of mass of the body. An angle of 0 radians will mean \'looking to the right\'. Although radians increase counter-clockwise, the y axis points down so it becomes clockwise from our point of view.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x component of the position.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y component of the position.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'angle',
+                            description = 'The angle in radians.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getType',
             description = 'Returns the type of the body.',
             variants = {
@@ -1077,6 +1102,31 @@ return {
                             type = 'boolean',
                             name = 'allowed',
                             description = 'True if the body is allowed to sleep or false if not.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'setTransform',
+            description = 'Set the position and angle of the body.\n\nNote that the position may not be the center of mass of the body. An angle of 0 radians will mean \'looking to the right\'. Although radians increase counter-clockwise, the y axis points down so it becomes clockwise from our point of view.\n\nThis function cannot wake up the body.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x component of the position.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y component of the position.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'angle',
+                            description = 'The angle in radians.',
                         },
                     },
                 },
