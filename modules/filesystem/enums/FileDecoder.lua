@@ -4,11 +4,11 @@ return {
     constants = {
         {
             name = 'file',
-            description = 'The data is unencoded.'
+            description = 'The data is unencoded.',
         },
         {
             name = 'base64',
-            description = 'The data is base64-encoded.'
-        }
-    }
+            description = 'The data is base64-encoded.',
+        },
+    },
 }

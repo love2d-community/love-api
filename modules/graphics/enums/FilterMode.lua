@@ -4,11 +4,11 @@ return {
     constants = {
         {
             name = 'linear',
-            description = 'Scale image with linear interpolation.'
+            description = 'Scale image with linear interpolation.',
         },
         {
             name = 'nearest',
-            description = 'Scale image with nearest neighbor interpolation.'
-        }
-    }
+            description = 'Scale image with nearest neighbor interpolation.',
+        },
+    },
 }

@@ -4,11 +4,11 @@ return {
     constants = {
         {
             name = 'rough',
-            description = 'Draw rough lines.'
+            description = 'Draw rough lines.',
         },
         {
             name = 'smooth',
-            description = 'Draw smooth lines.'
-        }
-    }
+            description = 'Draw smooth lines.',
+        },
+    },
 }

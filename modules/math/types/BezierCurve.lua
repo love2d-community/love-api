@@ -1,8 +1,10 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'BezierCurve',
-    description = 'A Bézier curve object that can evaluate and render Bézier curves of arbitrary degree.',
-    constructors = {
-        'newBezierCurve'
+    description = 'A Bézier curve object that can evaluate and render Bézier curves of arbitrary degree.\n\nFor more information on Bézier curves check this great article on Wikipedia.',
+    supertypes = {
+        'Object',
     },
     functions = {
         {
@@ -14,23 +16,23 @@ return {
                         {
                             type = 'number',
                             name = 't',
-                            description = 'Where to evaluate the curve.'
-                        }
+                            description = 'Where to evaluate the curve.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'x coordinate of the curve at parameter t.'
+                            description = 'x coordinate of the curve at parameter t.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'y coordinate of the curve at parameter t.'
-                        }
-                    }
-                }
-            }
+                            description = 'y coordinate of the curve at parameter t.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getControlPoint',
@@ -41,23 +43,23 @@ return {
                         {
                             type = 'number',
                             name = 'i',
-                            description = 'Index of the control point.'
-                        }
+                            description = 'Index of the control point.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'Position of the control point along the x axis.'
+                            description = 'Position of the control point along the x axis.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'Position of the control point along the y axis.'
-                        }
-                    }
-                }
-            }
+                            description = 'Position of the control point along the y axis.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getControlPointCount',
@@ -68,11 +70,11 @@ return {
                         {
                             type = 'number',
                             name = 'count',
-                            description = 'The number of control points.'
-                        }
-                    }
-                }
-            }
+                            description = 'The number of control points.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getDegree',
@@ -83,11 +85,11 @@ return {
                         {
                             type = 'number',
                             name = 'degree',
-                            description = 'Degree of the Bézier curve.'
-                        }
-                    }
-                }
-            }
+                            description = 'Degree of the Bézier curve.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getDerivative',
@@ -98,11 +100,11 @@ return {
                         {
                             type = 'BezierCurve',
                             name = 'derivative',
-                            description = 'The derivative curve.'
-                        }
-                    }
-                }
-            }
+                            description = 'The derivative curve.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSegment',
@@ -113,23 +115,23 @@ return {
                         {
                             type = 'number',
                             name = 'startpoint',
-                            description = 'The starting point along the curve. Must be between 0 and 1.'
+                            description = 'The starting point along the curve. Must be between 0 and 1.',
                         },
                         {
                             type = 'number',
                             name = 'endpoint',
-                            description = 'The end of the segment. Must be between 0 and 1.'
-                        }
+                            description = 'The end of the segment. Must be between 0 and 1.',
+                        },
                     },
                     returns = {
                         {
                             type = 'BezierCurve',
                             name = 'curve',
-                            description = 'A BezierCurve that corresponds to the specified segment.'
-                        }
-                    }
-                }
-            }
+                            description = 'A BezierCurve that corresponds to the specified segment.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'insertControlPoint',
@@ -140,22 +142,22 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'Position of the control point along the x axis.'
+                            description = 'Position of the control point along the x axis.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'Position of the control point along the y axis.'
+                            description = 'Position of the control point along the y axis.',
                         },
                         {
                             type = 'number',
                             name = 'i',
+                            description = 'Index of the control point.',
                             default = '-1',
-                            description = 'Index of the control point.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'removeControlPoint',
@@ -166,11 +168,11 @@ return {
                         {
                             type = 'number',
                             name = 'index',
-                            description = 'The index of the control point to remove.'
-                        }
-                    }
-                }
-            }
+                            description = 'The index of the control point to remove.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'render',
@@ -181,19 +183,19 @@ return {
                         {
                             type = 'number',
                             name = 'depth',
+                            description = 'Number of recursive subdivision steps.',
                             default = '5',
-                            description = 'Number of recursive subdivision steps.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'table',
                             name = 'coordinates',
-                            description = 'List of x,y-coordinate pairs of points on the curve.'
-                        }
-                    }
-                }
-            }
+                            description = 'List of x,y-coordinate pairs of points on the curve.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'renderSegment',
@@ -204,29 +206,29 @@ return {
                         {
                             type = 'number',
                             name = 'startpoint',
-                            description = 'The starting point along the curve. Must be between 0 and 1.'
+                            description = 'The starting point along the curve. Must be between 0 and 1.',
                         },
                         {
                             type = 'number',
                             name = 'endpoint',
-                            description = 'The end of the segment to render. Must be between 0 and 1.'
+                            description = 'The end of the segment to render. Must be between 0 and 1.',
                         },
                         {
                             type = 'number',
                             name = 'depth',
+                            description = 'Number of recursive subdivision steps.',
                             default = '5',
-                            description = 'Number of recursive subdivision steps.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'table',
                             name = 'coordinates',
-                            description = 'List of x,y-coordinate pairs of points on the curve.'
-                        }
-                    }
-                }
-            }
+                            description = 'List of x,y-coordinate pairs of points on the specified part of the curve.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'rotate',
@@ -237,23 +239,23 @@ return {
                         {
                             type = 'number',
                             name = 'angle',
-                            description = 'Rotation angle in radians.'
+                            description = 'Rotation angle in radians.',
                         },
                         {
                             type = 'number',
                             name = 'ox',
+                            description = 'X coordinate of the rotation center.',
                             default = '0',
-                            description = 'X coordinate of the rotation center.'
                         },
                         {
                             type = 'number',
                             name = 'oy',
+                            description = 'Y coordinate of the rotation center.',
                             default = '0',
-                            description = 'Y coordinate of the rotation center.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'scale',
@@ -264,23 +266,23 @@ return {
                         {
                             type = 'number',
                             name = 's',
-                            description = 'Scale factor.'
+                            description = 'Scale factor.',
                         },
                         {
                             type = 'number',
                             name = 'ox',
+                            description = 'X coordinate of the scaling center.',
                             default = '0',
-                            description = 'X coordinate of the scaling center.'
                         },
                         {
                             type = 'number',
                             name = 'oy',
+                            description = 'Y coordinate of the scaling center.',
                             default = '0',
-                            description = 'Y coordinate of the scaling center.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setControlPoint',
@@ -291,21 +293,21 @@ return {
                         {
                             type = 'number',
                             name = 'i',
-                            description = 'Index of the control point.'
+                            description = 'Index of the control point.',
                         },
                         {
                             type = 'number',
-                            name = 'ox',
-                            description = 'Position of the control point along the x axis.'
+                            name = 'x',
+                            description = 'Position of the control point along the x axis.',
                         },
                         {
                             type = 'number',
-                            name = 'oy',
-                            description = 'Position of the control point along the y axis.'
-                        }
-                    }
-                }
-            }
+                            name = 'y',
+                            description = 'Position of the control point along the y axis.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'translate',
@@ -316,20 +318,16 @@ return {
                         {
                             type = 'number',
                             name = 'dx',
-                            description = 'Offset along the x axis.'
+                            description = 'Offset along the x axis.',
                         },
                         {
                             type = 'number',
                             name = 'dy',
-                            description = 'Offset along the y axis.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'Offset along the y axis.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Object',
-    supertypes = {
-        'Object'
-    }
 }

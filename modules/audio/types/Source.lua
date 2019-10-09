@@ -1,44 +1,62 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'Source',
-    description = 'A Source represents audio you can play back. You can do interesting things with Sources, like set the volume, pitch, and its position relative to the listener.',
-    constructors = {
-        'newSource'
+    description = 'A Source represents audio you can play back.\n\nYou can do interesting things with Sources, like set the volume, pitch, and its position relative to the listener. Please note that positional audio only works for mono (i.e. non-stereo) sources.\n\nThe Source controls (play/pause/stop) act according to the following state table.',
+    supertypes = {
+        'Object',
     },
     functions = {
         {
             name = 'clone',
-            description = 'Creates an identical copy of the Source in the stopped state.\n\nStatic Sources will use significantly less memory and take much less time to be created if Source:clone is used to create them instead of love.audio.newSource, so this method should be preferred when making multiple Sources which play the same sound.\n\nCloned Sources inherit all the set-able state of the original Source, but they are initialized stopped.',
+            description = 'Creates an identical copy of the Source in the stopped state.\n\nStatic Sources will use significantly less memory and take much less time to be created if Source:clone is used to create them instead of love.audio.newSource, so this method should be preferred when making multiple Sources which play the same sound.',
             variants = {
                 {
+                    description = 'Cloned Sources inherit all the set-able state of the original Source, but they are initialized stopped.',
                     returns = {
                         {
                             type = 'Source',
                             name = 'source',
-                            description = 'The new identical copy of this Source.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new identical copy of this Source.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getActiveEffects',
+            description = 'Gets a list of the Source\'s active effect names.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'effects',
+                            description = 'A list of the source\'s active effect names.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getAttenuationDistances',
-            description = 'Returns the reference and maximum distance of the source.',
+            description = 'Gets the reference and maximum attenuation distances of the Source. The values, combined with the current DistanceModel, affect how the Source\'s volume attenuates based on distance from the listener.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'ref',
-                            description = 'The reference distance.'
+                            description = 'The current reference attenuation distance. If the current DistanceModel is clamped, this is the minimum distance before the Source is no longer attenuated.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            description = 'The maximum distance.'
-                        }
-                    }
-                }
-            }
+                            description = 'The current maximum attenuation distance.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getChannelCount',
@@ -49,11 +67,11 @@ return {
                         {
                             type = 'number',
                             name = 'channels',
-                            description = '1 for mono, 2 for stereo.'
-                        }
-                    }
-                }
-            }
+                            description = '1 for mono, 2 for stereo.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getCone',
@@ -64,26 +82,21 @@ return {
                         {
                             type = 'number',
                             name = 'innerAngle',
-                            description = 'The inner angle from the Source\'s direction, in radians. The Source will play at normal volume if the listener is inside the cone defined by this angle.'
+                            description = 'The inner angle from the Source\'s direction, in radians. The Source will play at normal volume if the listener is inside the cone defined by this angle.',
                         },
                         {
                             type = 'number',
                             name = 'outerAngle',
-                            description = 'The outer angle from the Source\'s direction, in radians. The Source will play at a volume between the normal and outer volumes, if the listener is in between the cones defined by the inner and outer angles.'
+                            description = 'The outer angle from the Source\'s direction, in radians. The Source will play at a volume between the normal and outer volumes, if the listener is in between the cones defined by the inner and outer angles.',
                         },
                         {
                             type = 'number',
                             name = 'outerVolume',
-                            description = 'The Source\'s volume when the listener is outside both the inner and outer cone angles.'
+                            description = 'The Source\'s volume when the listener is outside both the inner and outer cone angles.',
                         },
-                        {
-                            type = 'number',
-                            name = 'outerHighGain',
-                            description = 'The gain for the high tones when the listener is outside both the inner and outer cone angles. Not supported in iOS.'
-                        }
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         {
             name = 'getDirection',
@@ -94,21 +107,21 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The X part of the direction vector.'
+                            description = 'The X part of the direction vector.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The Y part of the direction vector.'
+                            description = 'The Y part of the direction vector.',
                         },
                         {
                             type = 'number',
                             name = 'z',
-                            description = 'The Z part of the direction vector.'
-                        }
-                    }
-                }
-            }
+                            description = 'The Z part of the direction vector.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getDuration',
@@ -119,144 +132,116 @@ return {
                         {
                             type = 'TimeUnit',
                             name = 'unit',
-                            default = '"seconds"',
-                            description = 'The time unit for the return value.'
-                        }
+                            description = 'The time unit for the return value.',
+                            default = '\'seconds\'',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'duration',
-                            description = 'The duration of the Source, or -1 if it cannot be determined.'
-                        }
-                    }
-                }
-            }
+                            description = 'The duration of the Source, or -1 if it cannot be determined.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getEffect',
-            description = 'Gets the filter settings associated to a specific Effect.\n\nThis function returns nil if the Effect was applied with no filter settings associated to it.',
+            description = 'Gets the filter settings associated to a specific effect.\n\nThis function returns nil if the effect was applied with no filter settings associated to it.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'string',
                             name = 'name',
-                            description = 'The name of the effect.'
+                            description = 'The name of the effect.',
                         },
                         {
                             type = 'table',
                             name = 'filtersettings',
+                            description = 'An optional empty table that will be filled with the filter settings.',
                             default = '{}',
-                            description = 'An optional empty table that will be filled with the filter settings.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'table',
                             name = 'filtersettings',
-                            description = ' The settings for the filter associated to this effect, or nil if the effect is not present in this Source or has no filter associated. The table has the following fields:',
+                            description = 'The settings for the filter associated to this effect, or nil if the effect is not present in this Source or has no filter associated. The table has the following fields:',
                             table = {
-                                {
-                                    type = 'FilterType',
-                                    name = 'type',
-                                    description = 'The type of filter in use.'
-                                },
                                 {
                                     type = 'number',
                                     name = 'volume',
-                                    description = 'The overall volume of the audio. Must be between 0 and 1.'
+                                    description = 'The overall volume of the audio.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'highgain',
-                                    description = 'Volume of high-frequency audio. Only applies to low-pass and band-pass filters.'
+                                    description = 'Volume of high-frequency audio. Only applies to low-pass and band-pass filters.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'lowgain',
-                                    description = 'Volume of low-frequency audio. Only applies to high-pass and band-pass filters.'
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getActiveEffects',
-            description = 'Returns a list of all the active effects currently applied to the Source',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'table',
-                            name = 'effects',
-                            description = 'The list with all the names for the currently applied effects'
-                        }
-                    }
-                }
-            }
+                                    description = 'Volume of low-frequency audio. Only applies to high-pass and band-pass filters.',
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFilter',
             description = 'Gets the filter settings currently applied to the Source.',
             variants = {
                 {
-                    arguments = {
-                        {
-                            type = 'table',
-                            name = 'settings',
-                            default = '{}',
-                            description = 'An optional empty table that will be filled with the filter settings.'
-                        }
-                    },
                     returns = {
                         {
                             type = 'table',
                             name = 'settings',
-                            description = 'The settings for the active filter on this Source, or nil if the Source has no active filter. The table has the following fields:',
+                            description = 'The filter settings to use for this Source, or nil if the Source has no active filter. The table has the following fields:',
                             table = {
                                 {
                                     type = 'FilterType',
                                     name = 'type',
-                                    description = 'The type of filter in use.'
+                                    description = 'The type of filter to use.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'volume',
-                                    description = 'The overall volume of the audio. Must be between 0 and 1.'
+                                    description = 'The overall volume of the audio.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'highgain',
-                                    description = 'Volume of high-frequency audio. Only applies to low-pass and band-pass filters.'
+                                    description = 'Volume of high-frequency audio. Only applies to low-pass and band-pass filters.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'lowgain',
-                                    description = 'Volume of low-frequency audio. Only applies to high-pass and band-pass filters.'
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+                                    description = 'Volume of low-frequency audio. Only applies to high-pass and band-pass filters.',
+                                },
+                            },
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFreeBufferCount',
-            description = 'Gets the number of free buffer slots of a queueable Source.',
+            description = 'Gets the number of free buffer slots in a queueable Source. If the queueable Source is playing, this value will increase up to the amount the Source was created with. If the queueable Source is stopped, it will process all of its internal buffers first, in which case this function will always return the amount it was created with.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'buffers',
-                            description = 'How many more SoundData objects can be queued up.'
-                        }
-                    }
-                }
-            }
+                            description = 'How many more SoundData objects can be queued up.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getPitch',
@@ -267,11 +252,11 @@ return {
                         {
                             type = 'number',
                             name = 'pitch',
-                            description = 'The pitch, where 1.0 is normal.'
-                        }
-                    }
-                }
-            }
+                            description = 'The pitch, where 1.0 is normal.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getPosition',
@@ -282,21 +267,21 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The X position of the Source.'
+                            description = 'The X position of the Source.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The Y position of the Source.'
+                            description = 'The Y position of the Source.',
                         },
                         {
                             type = 'number',
                             name = 'z',
-                            description = 'The Z position of the Source.'
-                        }
-                    }
-                }
-            }
+                            description = 'The Z position of the Source.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRolloff',
@@ -307,26 +292,26 @@ return {
                         {
                             type = 'number',
                             name = 'rolloff',
-                            description = 'The rolloff factor.'
-                        }
-                    }
-                }
-            }
+                            description = 'The rolloff factor.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getType',
-            description = 'Gets the type (static or stream) of the Source.',
+            description = 'Gets the type of the Source.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'SourceType',
                             name = 'sourcetype',
-                            description = 'The type of the source.'
-                        }
-                    }
-                }
-            }
+                            description = 'The type of the source.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getVelocity',
@@ -337,21 +322,21 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The X part of the velocity vector.'
+                            description = 'The X part of the velocity vector.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The Y part of the velocity vector.'
+                            description = 'The Y part of the velocity vector.',
                         },
                         {
                             type = 'number',
                             name = 'z',
-                            description = 'The Z part of the velocity vector.'
-                        }
-                    }
-                }
-            }
+                            description = 'The Z part of the velocity vector.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getVolume',
@@ -362,11 +347,11 @@ return {
                         {
                             type = 'number',
                             name = 'volume',
-                            description = 'The volume of the Source, where 1.0 is normal volume.'
-                        }
-                    }
-                }
-            }
+                            description = 'The volume of the Source, where 1.0 is normal volume.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getVolumeLimits',
@@ -377,16 +362,16 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum volume.'
+                            description = 'The minimum volume.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            description = 'The maximum volume.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum volume.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isLooping',
@@ -397,11 +382,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'loop',
-                            description = 'True if the Source will loop, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if the Source will loop, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isPlaying',
@@ -412,33 +397,34 @@ return {
                         {
                             type = 'boolean',
                             name = 'playing',
-                            description = 'True if the Source is playing, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if the Source is playing, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isRelative',
-            description = 'Gets whether the Source\'s position and direction are relative to the listener.',
+            description = 'Gets whether the Source\'s position, velocity, direction, and cone angles are relative to the listener.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'boolean',
                             name = 'relative',
-                            description = 'True if the position, velocity, direction and cone angles are relative to the listener, false if they\'re absolute.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if the position, velocity, direction and cone angles are relative to the listener, false if they\'re absolute.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'pause',
             description = 'Pauses the Source.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'play',
@@ -449,11 +435,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'True if the Source started playing successfully, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'Whether the Source was able to successfully start playing.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'queue',
@@ -464,59 +450,59 @@ return {
                         {
                             type = 'SoundData',
                             name = 'sounddata',
-                            description = 'The data to queue. The SoundData\'s sample rate, bit depth, and channel count must match the Source\'s.'
-                        }
+                            description = 'The data to queue. The SoundData\'s sample rate, bit depth, and channel count must match the Source\'s.',
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'True if the data was successfully queued for playback, false if there were no available buffers to use for queueing.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if the data was successfully queued for playback, false if there were no available buffers to use for queueing.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'seek',
-            description = 'Sets the playing position of the Source.',
+            description = 'Sets the currently playing position of the Source.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'position',
-                            description = 'The position to seek to.'
+                            name = 'offset',
+                            description = 'The position to seek to.',
                         },
                         {
                             type = 'TimeUnit',
                             name = 'unit',
-                            default = '"seconds"',
-                            description = 'The unit of the position value.'
-                        }
-                    }
-                }
-            }
+                            description = 'The unit of the position value.',
+                            default = '\'seconds\'',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setAttenuationDistances',
-            description = 'Sets the reference and maximum distance of the source.',
+            description = 'Sets the reference and maximum attenuation distances of the Source. The parameters, combined with the current DistanceModel, affect how the Source\'s volume attenuates based on distance.\n\nDistance attenuation is only applicable to Sources based on mono (rather than stereo) audio.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'ref',
-                            description = 'The new reference distance.'
+                            description = 'The new reference attenuation distance. If the current DistanceModel is clamped, this is the minimum attenuation distance.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            description = 'The new maximum distance.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new maximum attenuation distance.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setCone',
@@ -527,28 +513,22 @@ return {
                         {
                             type = 'number',
                             name = 'innerAngle',
-                            description = 'The inner angle from the Source\'s direction, in radians. The Source will play at normal volume if the listener is inside the cone defined by this angle.'
+                            description = 'The inner angle from the Source\'s direction, in radians. The Source will play at normal volume if the listener is inside the cone defined by this angle.',
                         },
                         {
                             type = 'number',
                             name = 'outerAngle',
-                            description = 'The outer angle from the Source\'s direction, in radians. The Source will play at a volume between the normal and outer volumes, if the listener is in between the cones defined by the inner and outer angles.'
+                            description = 'The outer angle from the Source\'s direction, in radians. The Source will play at a volume between the normal and outer volumes, if the listener is in between the cones defined by the inner and outer angles.',
                         },
                         {
                             type = 'number',
                             name = 'outerVolume',
+                            description = 'The Source\'s volume when the listener is outside both the inner and outer cone angles.',
                             default = '0',
-                            description = 'The Source\'s volume when the listener is outside both the inner and outer cone angles.'
                         },
-                        {
-                            type = 'number',
-                            name = 'outerHighGain',
-                            default = '1',
-                            description = 'The gain for the high tones when the listener is outside both the inner and outer cone angles.'
-                        }
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         {
             name = 'setDirection',
@@ -559,93 +539,94 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The X part of the direction vector.'
+                            description = 'The X part of the direction vector.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The Y part of the direction vector.'
+                            description = 'The Y part of the direction vector.',
                         },
                         {
                             type = 'number',
                             name = 'z',
-                            default = '0',
-                            description = 'The Z part of the direction vector.'
-                        }
-                    }
-                }
-            }
+                            description = 'The Z part of the direction vector.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setEffect',
             description = 'Applies an audio effect to the Source.\n\nThe effect must have been previously defined using love.audio.setEffect.',
             variants = {
                 {
+                    description = 'Applies the given previously defined effect to this Source.',
                     arguments = {
                         {
                             type = 'string',
                             name = 'name',
-                            description = 'The name of the effect previously set up with love.audio.setEffect.'
+                            description = 'The name of the effect previously set up with love.audio.setEffect.',
                         },
                         {
                             type = 'boolean',
                             name = 'enable',
+                            description = 'If false and the given effect name was previously enabled on this Source, disables the effect.',
                             default = 'true',
-                            description = 'If false and the given effect name was previously enabled on this Source, disables the effect.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'Whether the effect and filter were successfully applied to this Source.'
-                        }
-                    }
+                            description = 'Whether the effect was successfully applied to this Source.',
+                        },
+                    },
                 },
                 {
+                    description = 'Applies the given previously defined effect to this Source, and applies a filter to the Source which affects the sound fed into the effect.\n\nAudio effect functionality is not supported on iOS.',
                     arguments = {
                         {
                             type = 'string',
                             name = 'name',
-                            description = 'The name of the effect previously set up with love.audio.setEffect.'
+                            description = 'The name of the effect previously set up with love.audio.setEffect.',
                         },
                         {
                             type = 'table',
                             name = 'filtersettings',
-                            description = 'The filter settings to apply prior to, with the following fields:',
+                            description = 'The filter settings to apply prior to the effect, with the following fields:',
                             table = {
                                 {
                                     type = 'FilterType',
                                     name = 'type',
-                                    description = 'The type of filter to use.'
+                                    description = 'The type of filter to use.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'volume',
-                                    description = 'The overall volume of the audio. Must be between 0 and 1.'
+                                    description = 'The overall volume of the audio. Must be between 0 and 1.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'highgain',
-                                    description = 'Volume of high-frequency audio. Only applies to low-pass and band-pass filters. Must be between 0 and 1.'
+                                    description = 'Volume of high-frequency audio. Only applies to low-pass and band-pass filters. Must be between 0 and 1.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'lowgain',
-                                    description = 'Volume of low-frequency audio. Only applies to high-pass and band-pass filters. Must be between 0 and 1.'
-                                }
-                            }
-                        }
+                                    description = 'Volume of low-frequency audio. Only applies to high-pass and band-pass filters. Must be between 0 and 1.',
+                                },
+                            },
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'Whether the effect and filter were successfully applied to this Source.'
-                        }
-                    }
-                }
-            }
+                            description = 'Whether the effect and filter were successfully applied to this Source.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setFilter',
@@ -661,35 +642,38 @@ return {
                                 {
                                     type = 'FilterType',
                                     name = 'type',
-                                    description = 'The type of filter to use.'
+                                    description = 'The type of filter to use.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'volume',
-                                    description = 'The overall volume of the audio. Must be between 0 and 1.'
+                                    description = 'The overall volume of the audio. Must be between 0 and 1.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'highgain',
-                                    description = 'Volume of high-frequency audio. Only applies to low-pass and band-pass filters. Must be between 0 and 1.'
+                                    description = 'Volume of high-frequency audio. Only applies to low-pass and band-pass filters. Must be between 0 and 1.',
                                 },
                                 {
                                     type = 'number',
                                     name = 'lowgain',
-                                    description = 'Volume of low-frequency audio. Only applies to high-pass and band-pass filters. Must be between 0 and 1.'
-                                }
-                            }
-                        }
+                                    description = 'Volume of low-frequency audio. Only applies to high-pass and band-pass filters. Must be between 0 and 1.',
+                                },
+                            },
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'Whether the filter was successfully applied to the Source.'
-                        }
-                    }
-                }
-            }
+                            description = 'Whether the filter was successfully applied to the Source.',
+                        },
+                    },
+                },
+                {
+                    description = 'Disables filtering on this Source.\n\n',
+                },
+            },
         },
         {
             name = 'setLooping',
@@ -700,11 +684,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'loop',
-                            description = 'True if the source should loop, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if the source should loop, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setPitch',
@@ -715,108 +699,107 @@ return {
                         {
                             type = 'number',
                             name = 'pitch',
-                            description = 'Calculated with regard to 1 being the base pitch. Each reduction by 50 percent equals a pitch shift of -12 semitones (one octave reduction). Each doubling equals a pitch shift of 12 semitones (one octave increase). Zero is not a legal value.'
-                        }
-                    }
-                }
-            }
+                            description = 'Calculated with regard to 1 being the base pitch. Each reduction by 50 percent equals a pitch shift of -12 semitones (one octave reduction). Each doubling equals a pitch shift of 12 semitones (one octave increase). Zero is not a legal value.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setPosition',
-            description = 'Sets the position of the Source.',
+            description = 'Sets the position of the Source. Please note that this only works for mono (i.e. non-stereo) sound files!',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The X position of the Source.'
+                            description = 'The X position of the Source.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The Y position of the Source.'
+                            description = 'The Y position of the Source.',
                         },
                         {
                             type = 'number',
                             name = 'z',
-                            default = '0',
-                            description = 'The Z position of the Source.'
-                        }
-                    }
-                }
-            }
+                            description = 'The Z position of the Source.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRelative',
-            description = 'Sets whether the Source\'s position and direction are relative to the listener. Relative Sources move with the listener so they aren\'t affected by it\'s position',
+            description = 'Sets whether the parent::Source\'s position, velocity, direction, and cone angles are relative to the listener, or absolute.\n\nBy default, all sources are absolute and therefore relative to the origin of love\'s coordinate system 0, 0. Only absolute sources are affected by the position of the listener. Please note that positional audio only works for mono (i.e. non-stereo) sources. ',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'boolean',
                             name = 'enable',
-                            description = 'True to make the position, velocity, direction and cone angles relative to the listener, false to make them absolute.'
-                        }
-                    }
-                }
-            }
+                            description = 'True to make the position, velocity, direction and cone angles relative to the listener, false to make them absolute.',
+                            default = '\'false\'',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRolloff',
-            description = 'Sets the rolloff factor which affects the strength of the used distance attenuation.\n\nExtended information and detailed formulas can be found in the chapter "3.4. Attenuation By Distance" of OpenAL 1.1 specification.',
+            description = 'Sets the rolloff factor which affects the strength of the used distance attenuation.\n\nExtended information and detailed formulas can be found in the chapter \'3.4. Attenuation By Distance\' of OpenAL 1.1 specification.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'rolloff',
-                            description = 'The new rolloff factor.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new rolloff factor.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setVelocity',
-            description = 'Sets the velocity of the Source.\n\nThis does not change the position of the Source, but is used to calculate the doppler effect.',
+            description = 'Sets the velocity of the Source.\n\nThis does \'\'\'not\'\'\' change the position of the Source, but lets the application know how it has to calculate the doppler effect.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The X part of the velocity vector.'
+                            description = 'The X part of the velocity vector.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The Y part of the velocity vector.'
+                            description = 'The Y part of the velocity vector.',
                         },
                         {
                             type = 'number',
                             name = 'z',
-                            default = '0',
-                            description = 'The Z part of the velocity vector.'
-                        }
-                    }
-                }
-            }
+                            description = 'The Z part of the velocity vector.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setVolume',
-            description = 'Sets the volume of the Source.',
+            description = 'Sets the current volume of the Source.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'volume',
-                            description = 'The volume of the Source, where 1.0 is normal volume.'
-                        }
-                    }
-                }
-            }
+                            description = 'The volume for a Source, where 1.0 is normal volume. Volume cannot be raised above 1.0.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setVolumeLimits',
@@ -827,23 +810,24 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum volume.'
+                            description = 'The minimum volume.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            description = 'The maximum volume.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum volume.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'stop',
             description = 'Stops a Source.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'tell',
@@ -854,23 +838,19 @@ return {
                         {
                             type = 'TimeUnit',
                             name = 'unit',
-                            default = '"seconds"',
-                            description = 'The type of unit for the return value.'
-                        }
+                            description = 'The type of unit for the return value.',
+                            default = '\'seconds\'',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'position',
-                            description = 'The currently playing position of the Source.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The currently playing position of the Source.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Object',
-    supertypes = {
-        'Object'
-    }
 }

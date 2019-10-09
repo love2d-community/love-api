@@ -4,39 +4,39 @@ return {
     constants = {
         {
             name = 'c',
-            description = 'Centered'
+            description = 'Centered',
         },
         {
             name = 'd',
-            description = 'Down'
+            description = 'Down',
         },
         {
             name = 'l',
-            description = 'Left'
+            description = 'Left',
         },
         {
             name = 'ld',
-            description = 'Left+Down'
+            description = 'Left+Down',
         },
         {
             name = 'lu',
-            description = 'Left+Up'
+            description = 'Left+Up',
         },
         {
             name = 'r',
-            description = 'Right'
+            description = 'Right',
         },
         {
             name = 'rd',
-            description = 'Right+Down'
+            description = 'Right+Down',
         },
         {
             name = 'ru',
-            description = 'Right+Up'
+            description = 'Right+Up',
         },
         {
             name = 'u',
-            description = 'Up'
-        }
-    }
+            description = 'Up',
+        },
+    },
 }

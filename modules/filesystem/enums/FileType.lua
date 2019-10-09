@@ -4,19 +4,19 @@ return {
     constants = {
         {
             name = 'file',
-            description = 'Regular file.'
+            description = 'Regular file.',
         },
         {
             name = 'directory',
-            description = 'Directory'
+            description = 'Directory.',
         },
         {
             name = 'symlink',
-            description = 'Symbolic link.'
+            description = 'Symbolic link.',
         },
         {
             name = 'other',
-            description = 'Something completely different like a device.'
-        }
-    }
+            description = 'Something completely different like a device.',
+        },
+    },
 }

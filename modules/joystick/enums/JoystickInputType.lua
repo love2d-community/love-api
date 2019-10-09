@@ -4,15 +4,15 @@ return {
     constants = {
         {
             name = 'axis',
-            description = 'Analog axis.'
+            description = 'Analog axis.',
         },
         {
             name = 'button',
-            description = 'Button.'
+            description = 'Button.',
         },
         {
             name = 'hat',
-            description = '8-direction hat value.'
-        }
-    }
+            description = '8-direction hat value.',
+        },
+    },
 }

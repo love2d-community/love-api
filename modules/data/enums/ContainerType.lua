@@ -1,14 +1,14 @@
 return {
     name = 'ContainerType',
-    description = 'Return type of various encoding and decoding functions.',
+    description = 'Return type of various data-returning functions.',
     constants = {
         {
             name = 'data',
-            description = 'Return type is Data.'
+            description = 'Return type is ByteData.',
         },
         {
             name = 'string',
-            description = 'Return type is string.'
-        }
-    }
+            description = 'Return type is string.',
+        },
+    },
 }

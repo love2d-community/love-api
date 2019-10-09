@@ -4,15 +4,15 @@ return {
     constants = {
         {
             name = 'static',
-            description = 'The whole audio is decoded.'
+            description = 'The whole audio is decoded.',
         },
         {
             name = 'stream',
-            description = 'The audio is decoded in chunks when needed.'
+            description = 'The audio is decoded in chunks when needed.',
         },
         {
             name = 'queue',
-            description = 'The audio must be manually queued by the user with Source:queue.'
-        }
-    }
+            description = 'The audio must be manually queued by the user.',
+        },
+    },
 }

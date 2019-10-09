@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'FileData',
     description = 'Data representing the contents of a file.',
-    constructors = {
-        'newFileData'
+    supertypes = {
+        'Data',
+        'Object',
     },
     functions = {
         {
@@ -14,11 +17,11 @@ return {
                         {
                             type = 'string',
                             name = 'ext',
-                            description = 'The extension of the file the FileData represents.'
-                        }
-                    }
-                }
-            }
+                            description = 'The extension of the file the FileData represents.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFilename',
@@ -29,16 +32,11 @@ return {
                         {
                             type = 'string',
                             name = 'name',
-                            description = 'The name of the file the FileData represents.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The name of the file the FileData represents.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Data',
-    supertypes = {
-        'Data',
-        'Object'
-    }
 }

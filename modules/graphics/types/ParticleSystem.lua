@@ -1,24 +1,28 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'ParticleSystem',
-    description = 'Used to create cool effects, like fire. The particle systems are created and drawn on the screen using functions in love.graphics. They also need to be updated in the update(dt) callback for you to see any changes in the particles emitted.',
-    constructors = {
-        'newParticleSystem'
+    description = 'A ParticleSystem can be used to create particle effects like fire or smoke.\n\nThe particle system has to be created using update it in the update callback to see any changes in the particles emitted.\n\nThe particle system won\'t create any particles unless you call setParticleLifetime and setEmissionRate.',
+    supertypes = {
+        'Drawable',
+        'Object',
     },
     functions = {
         {
             name = 'clone',
-            description = 'Creates an identical copy of the ParticleSystem in the stopped state.\n\nCloned ParticleSystem inherit all the set-able state of the original ParticleSystem, but they are initialized stopped.',
+            description = 'Creates an identical copy of the ParticleSystem in the stopped state.',
             variants = {
                 {
+                    description = 'Cloned ParticleSystem inherit all the set-able state of the original ParticleSystem, but they are initialized stopped.',
                     returns = {
                         {
                             type = 'ParticleSystem',
                             name = 'particlesystem',
-                            description = 'The new identical copy of this ParticleSystem.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new identical copy of this ParticleSystem.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'emit',
@@ -29,29 +33,129 @@ return {
                         {
                             type = 'number',
                             name = 'numparticles',
-                            description = 'The amount of particles to emit. The number of emitted particles will be truncated if the particle system\'s max buffer size is reached.'
-                        }
-                    }
-                }
-            }
+                            description = 'The amount of particles to emit. The number of emitted particles will be truncated if the particle system\'s max buffer size is reached.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getBufferSize',
+            description = 'Gets the maximum number of particles the ParticleSystem can have at once.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'size',
+                            description = 'The maximum number of particles.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getColors',
+            description = 'Gets the series of colors applied to the particle sprite.\n\nIn versions prior to 11.0, color component values were within the range of 0 to 255 instead of 0 to 1.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'r1',
+                            description = 'First color, red component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'g1',
+                            description = 'First color, green component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'b1',
+                            description = 'First color, blue component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'a1',
+                            description = 'First color, alpha component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'r2',
+                            description = 'Second color, red component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'g2',
+                            description = 'Second color, green component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'b2',
+                            description = 'Second color, blue component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'a2',
+                            description = 'Second color, alpha component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'r8',
+                            description = 'Eighth color, red component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'g8',
+                            description = 'Eighth color, green component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'b8',
+                            description = 'Eighth color, blue component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'a8',
+                            description = 'Eighth color, alpha component (0-1).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getCount',
-            description = 'Gets the amount of particles that are currently in the system.',
+            description = 'Gets the number of particles that are currently in the system.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'count',
-                            description = 'The current number of live particles.'
-                        }
-                    }
-                }
-            }
+                            description = 'The current number of live particles.',
+                        },
+                    },
+                },
+            },
         },
         {
-            name = 'getAreaSpread',
+            name = 'getDirection',
+            description = 'Gets the direction of the particle emitter (in radians).',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'direction',
+                            description = 'The direction of the emitter (radians).',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getEmissionArea',
             description = 'Gets the area-based spawn parameters for the particles.',
             variants = {
                 {
@@ -59,106 +163,31 @@ return {
                         {
                             type = 'AreaSpreadDistribution',
                             name = 'distribution',
-                            description = 'The type of distribution for new particles.'
+                            description = 'The type of distribution for new particles.',
                         },
                         {
                             type = 'number',
                             name = 'dx',
-                            description = 'The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.'
+                            description = 'The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.',
                         },
                         {
                             type = 'number',
                             name = 'dy',
-                            description = 'The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getBufferSize',
-            description = 'Gets the size of the buffer (the max allowed amount of particles in the system).',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'buffer',
-                            description = 'The buffer size.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getColors',
-            description = 'Gets a series of colors to apply to the particle sprite. The particle system will interpolate between each color evenly over the particle\'s lifetime. Color modulation needs to be activated for this function to have any effect.\n\nArguments are passed in groups of four, representing the components of the desired RGBA value. At least one color must be specified. A maximum of eight may be used.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'r1',
-                            description = 'First color, red component (0-1).'
+                            description = 'The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.',
                         },
                         {
                             type = 'number',
-                            name = 'g1',
-                            description = 'First color, green component (0-1).'
+                            name = 'angle',
+                            description = 'The angle in radians of the emission area.',
                         },
                         {
-                            type = 'number',
-                            name = 'b1',
-                            description = 'First color, blue component (0-1).'
+                            type = 'boolean',
+                            name = 'directionRelativeToCenter',
+                            description = 'True if newly spawned particles will be oriented relative to the center of the emission area, false otherwise.',
                         },
-                        {
-                            type = 'number',
-                            name = 'a1',
-                            description = 'First color, alpha component (0-1).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'r2',
-                            description = 'Second color, red component (0-1).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'g2',
-                            description = 'Second color, green component (0-1).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'b2',
-                            description = 'Second color, blue component (0-1).'
-                        },
-                        {
-                            type = 'number',
-                            name = 'a2',
-                            description = 'Second color, alpha component (0-1).'
-                        },
-                        {
-                            type = 'number',
-                            name = '...',
-                            description = 'Etc.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getDirection',
-            description = 'Gets the direction the particles will be emitted in.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'direction',
-                            description = 'The direction of the particles (in radians).'
-                        }
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         {
             name = 'getEmissionRate',
@@ -169,26 +198,41 @@ return {
                         {
                             type = 'number',
                             name = 'rate',
-                            description = 'The amount of particles per second.'
-                        }
-                    }
-                }
-            }
+                            description = 'The amount of particles per second.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getEmitterLifetime',
+            description = 'Gets how long the particle system will emit particles (if -1 then it emits particles forever).',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'life',
+                            description = 'The lifetime of the emitter (in seconds).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getInsertMode',
-            description = 'Gets the mode to use when the ParticleSystem adds new particles.',
+            description = 'Gets the mode used when the ParticleSystem adds new particles.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'ParticleInsertMode',
                             name = 'mode',
-                            description = 'The mode to use when the ParticleSystem adds new particles.'
-                        }
-                    }
-                }
-            }
+                            description = 'The mode used when the ParticleSystem adds new particles.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getLinearAcceleration',
@@ -199,26 +243,26 @@ return {
                         {
                             type = 'number',
                             name = 'xmin',
-                            description = 'The minimum acceleration along the x axis.'
+                            description = 'The minimum acceleration along the x axis.',
                         },
                         {
                             type = 'number',
                             name = 'ymin',
-                            description = 'The minimum acceleration along the y axis.'
+                            description = 'The minimum acceleration along the y axis.',
                         },
                         {
                             type = 'number',
                             name = 'xmax',
-                            description = 'The maximum acceleration along the x axis.'
+                            description = 'The maximum acceleration along the x axis.',
                         },
                         {
                             type = 'number',
                             name = 'ymax',
-                            description = 'The maximum acceleration along the y axis.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum acceleration along the y axis.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getLinearDamping',
@@ -229,87 +273,56 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum amount of linear damping applied to particles.'
+                            description = 'The minimum amount of linear damping applied to particles.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            description = 'The maximum amount of linear damping applied to particles.'
+                            description = 'The maximum amount of linear damping applied to particles.',
                         },
-                    }
-                }
-            }
-        },
-        {
-            name = 'getEmitterLifetime',
-            description = 'Gets how long the particle system should emit particles (if -1 then it emits particles forever).',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'life',
-                            description = 'The lifetime of the emitter (in seconds).'
-                        }
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         {
             name = 'getOffset',
-            description = 'Get the offget position which the particle sprite is rotated around. If this function is not used, the particles rotate around their center.',
+            description = 'Gets the particle image\'s draw offset.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
-                            name = 'x',
-                            description = 'The x coordinate of the rotation offget.'
+                            name = 'ox',
+                            description = 'The x coordinate of the particle image\'s draw offset.',
                         },
                         {
                             type = 'number',
-                            name = 'y',
-                            description = 'The y coordinate of the rotation offget.'
-                        }
-                    }
-                }
-            }
+                            name = 'oy',
+                            description = 'The y coordinate of the particle image\'s draw offset.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getParticleLifetime',
-            description = 'Gets the life of the particles.',
+            description = 'Gets the lifetime of the particles.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum life of the particles (seconds).'
+                            description = 'The minimum life of the particles (in seconds).',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            default = 'min',
-                            description = 'The maximum life of the particles (seconds).'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getQuads',
-            description = 'Gets the series of Quads used for the particle sprites.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'table',
-                            name = 'quads',
-                            description = 'A table containing the Quads used.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum life of the particles (in seconds).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getPosition',
@@ -320,37 +333,51 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'Position along x-axis.'
+                            description = 'Position along x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'Position along y-axis.'
-                        }
-                    }
-                }
-            }
+                            description = 'Position along y-axis.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getQuads',
+            description = 'Gets the series of Quads used for the particle sprites.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'quads',
+                            description = 'A table containing the Quads used.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRadialAcceleration',
-            description = 'Get the radial acceleration (away from the emitter).',
+            description = 'Gets the radial acceleration (away from the emitter).',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum acceleration.'
+                            description = 'The minimum acceleration.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            default = 'min',
-                            description = 'The maximum acceleration.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum acceleration.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRotation',
@@ -361,57 +388,56 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum initial angle (radians).'
+                            description = 'The minimum initial angle (radians).',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            default = 'min',
-                            description = 'The maximum initial angle (radians).'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getSizes',
-            description = 'Gets a series of sizes by which to scale a particle sprite. 1.0 is normal size. The particle system will interpolate between each size evenly over the particle\'s lifetime.\n\nAt least one size must be specified. A maximum of eight may be used.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'size1',
-                            description = 'The first size.'
+                            description = 'The maximum initial angle (radians).',
                         },
-                        {
-                            type = 'number',
-                            name = 'size2',
-                            description = 'The second size.'
-                        },
-                        {
-                            type = 'number',
-                            name = '...',
-                            description = 'Etc.'
-                        }
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         {
             name = 'getSizeVariation',
-            description = 'Gets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
+            description = 'Gets the amount of size variation (0 meaning no variation and 1 meaning full variation between start and end).',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'variation',
-                            description = 'The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).'
-                        }
-                    }
-                }
-            }
+                            description = 'The amount of variation (0 meaning no variation and 1 meaning full variation between start and end).',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getSizes',
+            description = 'Gets the series of sizes by which the sprite is scaled. 1.0 is normal size. The particle system will interpolate between each size evenly over the particle\'s lifetime.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'size1',
+                            description = 'The first size.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'size2',
+                            description = 'The second size.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'size8',
+                            description = 'The eighth size.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSpeed',
@@ -422,17 +448,16 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum linear speed of the particles.'
+                            description = 'The minimum linear speed of the particles.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            default = 'min',
-                            description = 'The maximum linear speed of the particles.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum linear speed of the particles.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSpin',
@@ -443,62 +468,51 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum spin (radians per second).'
+                            description = 'The minimum spin (radians per second).',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            default = 'min',
-                            description = 'The maximum spin (radians per second).'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum spin (radians per second).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'variation',
+                            description = 'The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSpinVariation',
-            description = 'Gets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
+            description = 'Gets the amount of spin variation (0 meaning no variation and 1 meaning full variation between start and end).',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'variation',
-                            description = 'The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).'
-                        }
-                    }
-                }
-            }
+                            description = 'The amount of variation (0 meaning no variation and 1 meaning full variation between start and end).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSpread',
-            description = 'Gets the amount of spread for the system.',
+            description = 'Gets the amount of directional spread of the particle emitter (in radians).',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'spread',
-                            description = 'The amount of spread (radians).'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getTexture',
-            description = 'Gets the Image or Canvas which is to be emitted.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'Texture',
-                            name = 'texture',
-                            description = 'An Image or Canvas to use for the particle.'
-                        }
-                    }
-                }
-            }
+                            description = 'The spread of the emitter (radians).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getTangentialAcceleration',
@@ -509,17 +523,31 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum acceleration.'
+                            description = 'The minimum acceleration.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            default = 'min',
-                            description = 'The maximum acceleration.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum acceleration.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getTexture',
+            description = 'Gets the texture (Image or Canvas) used for the particles.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The Image or Canvas used for the particles.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'hasRelativeRotation',
@@ -529,12 +557,12 @@ return {
                     returns = {
                         {
                             type = 'boolean',
-                            name = 'enabled',
-                            description = 'True if relative particle rotation is enabled, false if it\'s disabled.'
-                        }
-                    }
-                }
-            }
+                            name = 'enable',
+                            description = 'True if relative particle rotation is enabled, false if it\'s disabled.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isActive',
@@ -545,11 +573,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'active',
-                            description = 'True if system is active, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if system is active, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isPaused',
@@ -560,11 +588,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'paused',
-                            description = 'True if system is paused, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if system is paused, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isStopped',
@@ -575,11 +603,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'stopped',
-                            description = 'True if system is stopped, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if system is stopped, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'moveTo',
@@ -590,55 +618,32 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'Position along x-axis.'
+                            description = 'Position along x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'Position along y-axis.'
-                        }
-                    }
-                }
-            }
+                            description = 'Position along y-axis.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'pause',
             description = 'Pauses the particle emitter.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'reset',
             description = 'Resets the particle emitter, removing any existing particles and resetting the lifetime counter.',
             variants = {
-                {}
-            }
-        },
-        {
-            name = 'setAreaSpread',
-            description = 'Sets area-based spawn parameters for the particles. Newly created particles will spawn in an area around the emitter based on the parameters to this function.',
-            variants = {
                 {
-                    arguments = {
-                        {
-                            type = 'AreaSpreadDistribution',
-                            name = 'distribution',
-                            description = 'The type of distribution for new particles.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'dx',
-                            description = 'The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.'
-                        },
-                        {
-                            type = 'number',
-                            name = 'dy',
-                            description = 'The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.'
-                        }
-                    }
-                }
-            }
+                },
+            },
         },
         {
             name = 'setBufferSize',
@@ -648,67 +653,82 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'buffer',
-                            description = 'The buffer size.'
-                        }
-                    }
-                }
-            }
+                            name = 'size',
+                            description = 'The buffer size.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setColors',
-            description = 'Sets a series of colors to apply to the particle sprite. The particle system will interpolate between each color evenly over the particle\'s lifetime. Color modulation needs to be activated for this function to have any effect.\n\nArguments are passed in groups of four, representing the components of the desired RGBA value. At least one color must be specified. A maximum of eight may be used.',
+            description = 'Sets a series of colors to apply to the particle sprite. The particle system will interpolate between each color evenly over the particle\'s lifetime.\n\nArguments can be passed in groups of four, representing the components of the desired RGBA value, or as tables of RGBA component values, with a default alpha value of 1 if only three values are given. At least one color must be specified. A maximum of eight may be used.\n\nIn versions prior to 11.0, color component values were within the range of 0 to 255 instead of 0 to 1.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'r1',
-                            description = 'First color, red component (0-1).'
+                            description = 'First color, red component (0-1).',
                         },
                         {
                             type = 'number',
                             name = 'g1',
-                            description = 'First color, green component (0-1).'
+                            description = 'First color, green component (0-1).',
                         },
                         {
                             type = 'number',
                             name = 'b1',
-                            description = 'First color, blue component (0-1).'
+                            description = 'First color, blue component (0-1).',
                         },
                         {
                             type = 'number',
                             name = 'a1',
-                            description = 'First color, alpha component (0-1).'
+                            description = 'First color, alpha component (0-1).',
                         },
                         {
                             type = 'number',
                             name = 'r2',
-                            description = 'Second color, red component (0-1).'
+                            description = 'Second color, red component (0-1).',
                         },
                         {
                             type = 'number',
                             name = 'g2',
-                            description = 'Second color, green component (0-1).'
+                            description = 'Second color, green component (0-1).',
                         },
                         {
                             type = 'number',
                             name = 'b2',
-                            description = 'Second color, blue component (0-1).'
+                            description = 'Second color, blue component (0-1).',
                         },
                         {
                             type = 'number',
                             name = 'a2',
-                            description = 'Second color, alpha component (0-1).'
+                            description = 'Second color, alpha component (0-1).',
                         },
                         {
                             type = 'number',
-                            name = '...',
-                            description = 'Etc.'
-                        }
-                    }
-                }
-            }
+                            name = 'r8',
+                            description = 'Eighth color, red component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'g8',
+                            description = 'Eighth color, green component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'b8',
+                            description = 'Eighth color, blue component (0-1).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'a8',
+                            description = 'Eighth color, alpha component (0-1).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setDirection',
@@ -719,11 +739,48 @@ return {
                         {
                             type = 'number',
                             name = 'direction',
-                            description = 'The direction of the particles (in radians).'
-                        }
-                    }
-                }
-            }
+                            description = 'The direction of the particles (in radians).',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'setEmissionArea',
+            description = 'Sets area-based spawn parameters for the particles. Newly created particles will spawn in an area around the emitter based on the parameters to this function.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'AreaSpreadDistribution',
+                            name = 'distribution',
+                            description = 'The type of distribution for new particles.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'dx',
+                            description = 'The maximum spawn distance from the emitter along the x-axis for uniform distribution, or the standard deviation along the x-axis for normal distribution.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'dy',
+                            description = 'The maximum spawn distance from the emitter along the y-axis for uniform distribution, or the standard deviation along the y-axis for normal distribution.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'angle',
+                            description = 'The angle in radians of the emission area.',
+                            default = '0',
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'directionRelativeToCenter',
+                            description = 'True if newly spawned particles will be oriented relative to the center of the emission area, false otherwise.',
+                            default = 'false',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setEmissionRate',
@@ -734,11 +791,11 @@ return {
                         {
                             type = 'number',
                             name = 'rate',
-                            description = 'The amount of particles per second.'
-                        }
-                    }
-                }
-            }
+                            description = 'The amount of particles per second.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setEmitterLifetime',
@@ -749,11 +806,11 @@ return {
                         {
                             type = 'number',
                             name = 'life',
-                            description = 'The lifetime of the emitter (in seconds).'
-                        }
-                    }
-                }
-            }
+                            description = 'The lifetime of the emitter (in seconds).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setInsertMode',
@@ -764,11 +821,11 @@ return {
                         {
                             type = 'ParticleInsertMode',
                             name = 'mode',
-                            description = 'The mode to use when the ParticleSystem adds new particles.'
-                        }
-                    }
-                }
-            }
+                            description = 'The mode to use when the ParticleSystem adds new particles.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setLinearAcceleration',
@@ -779,29 +836,28 @@ return {
                         {
                             type = 'number',
                             name = 'xmin',
-                            description = 'The minimum acceleration along the x axis.'
+                            description = 'The minimum acceleration along the x axis.',
                         },
                         {
                             type = 'number',
                             name = 'ymin',
-                            default = '0',
-                            description = 'The minimum acceleration along the y axis.'
+                            description = 'The minimum acceleration along the y axis.',
                         },
                         {
                             type = 'number',
                             name = 'xmax',
+                            description = 'The maximum acceleration along the x axis.',
                             default = 'xmin',
-                            description = 'The maximum acceleration along the x axis.'
                         },
                         {
                             type = 'number',
                             name = 'ymax',
+                            description = 'The maximum acceleration along the y axis.',
                             default = 'ymin',
-                            description = 'The maximum acceleration along the y axis.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setLinearDamping',
@@ -812,57 +868,58 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum amount of linear damping applied to particles.'
+                            description = 'The minimum amount of linear damping applied to particles.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            description = 'The maximum amount of linear damping applied to particles.'
+                            description = 'The maximum amount of linear damping applied to particles.',
+                            default = 'min',
                         },
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         {
             name = 'setOffset',
-            description = 'Set the offset position which the particle sprite is rotated around. If this function is not used, the particles rotate around their center.',
+            description = 'Set the offset position which the particle sprite is rotated around.\n\nIf this function is not used, the particles rotate around their center.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x coordinate of the rotation offset.'
+                            description = 'The x coordinate of the rotation offset.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y coordinate of the rotation offset.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y coordinate of the rotation offset.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setParticleLifetime',
-            description = 'Sets the life of the particles.',
+            description = 'Sets the lifetime of the particles.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum life of the particles (seconds).'
+                            description = 'The minimum life of the particles (in seconds).',
                         },
                         {
                             type = 'number',
                             name = 'max',
+                            description = 'The maximum life of the particles (in seconds).',
                             default = 'min',
-                            description = 'The maximum life of the particles (seconds).'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setPosition',
@@ -873,16 +930,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'Position along x-axis.'
+                            description = 'Position along x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'Position along y-axis.'
-                        }
-                    }
-                }
-            }
+                            description = 'Position along y-axis.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setQuads',
@@ -893,25 +950,25 @@ return {
                         {
                             type = 'Quad',
                             name = 'quad1',
-                            description = 'The first Quad to use.'
+                            description = 'The first Quad to use.',
                         },
                         {
                             type = 'Quad',
                             name = 'quad2',
-                            description = 'The second Quad to use.'
+                            description = 'The second Quad to use.',
                         },
-                    }
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'table',
                             name = 'quads',
-                            description = 'A table containing the Quads to use.'
-                        }
-                    }
-                }
-            }
+                            description = 'A table containing the Quads to use.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRadialAcceleration',
@@ -922,17 +979,17 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum acceleration.'
+                            description = 'The minimum acceleration.',
                         },
                         {
                             type = 'number',
                             name = 'max',
+                            description = 'The maximum acceleration.',
                             default = 'min',
-                            description = 'The maximum acceleration.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRelativeRotation',
@@ -943,11 +1000,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'enable',
-                            description = 'True to enable relative particle rotation, false to disable it.'
-                        }
-                    }
-                }
-            }
+                            description = 'True to enable relative particle rotation, false to disable it.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRotation',
@@ -958,17 +1015,32 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum initial angle (radians).'
+                            description = 'The minimum initial angle (radians).',
                         },
                         {
                             type = 'number',
                             name = 'max',
+                            description = 'The maximum initial angle (radians).',
                             default = 'min',
-                            description = 'The maximum initial angle (radians).'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'setSizeVariation',
+            description = 'Sets the amount of size variation (0 meaning no variation and 1 meaning full variation between start and end).',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'variation',
+                            description = 'The amount of variation (0 meaning no variation and 1 meaning full variation between start and end).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSizes',
@@ -979,36 +1051,21 @@ return {
                         {
                             type = 'number',
                             name = 'size1',
-                            description = 'The first size.'
+                            description = 'The first size.',
                         },
                         {
                             type = 'number',
                             name = 'size2',
-                            description = 'The second size.'
+                            description = 'The second size.',
                         },
                         {
                             type = 'number',
-                            name = '...',
-                            description = 'Etc.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'setSizeVariation',
-            description = 'Sets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'variation',
-                            description = 'The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).'
-                        }
-                    }
-                }
-            }
+                            name = 'size8',
+                            description = 'The eighth size.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSpeed',
@@ -1019,17 +1076,17 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum linear speed of the particles.'
+                            description = 'The minimum linear speed of the particles.',
                         },
                         {
                             type = 'number',
                             name = 'max',
+                            description = 'The maximum linear speed of the particles.',
                             default = 'min',
-                            description = 'The maximum linear speed of the particles.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSpin',
@@ -1040,32 +1097,32 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum spin (radians per second).'
+                            description = 'The minimum spin (radians per second).',
                         },
                         {
                             type = 'number',
                             name = 'max',
+                            description = 'The maximum spin (radians per second).',
                             default = 'min',
-                            description = 'The maximum spin (radians per second).'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSpinVariation',
-            description = 'Sets the degree of variation (0 meaning no variation and 1 meaning full variation between start and end).',
+            description = 'Sets the amount of spin variation (0 meaning no variation and 1 meaning full variation between start and end).',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'variation',
-                            description = 'The degree of variation (0 meaning no variation and 1 meaning full variation between start and end).'
-                        }
-                    }
-                }
-            }
+                            description = 'The amount of variation (0 meaning no variation and 1 meaning full variation between start and end).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSpread',
@@ -1076,26 +1133,11 @@ return {
                         {
                             type = 'number',
                             name = 'spread',
-                            description = 'The amount of spread (radians).'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'setTexture',
-            description = 'Sets the Image or Canvas which is to be emitted.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'Texture',
-                            name = 'texture',
-                            description = 'An Image or Canvas to use for the particle.'
-                        }
-                    }
-                }
-            }
+                            description = 'The amount of spread (radians).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setTangentialAcceleration',
@@ -1106,31 +1148,48 @@ return {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum acceleration.'
+                            description = 'The minimum acceleration.',
                         },
                         {
                             type = 'number',
                             name = 'max',
+                            description = 'The maximum acceleration.',
                             default = 'min',
-                            description = 'The maximum acceleration.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'setTexture',
+            description = 'Sets the texture (Image or Canvas) to be used for the particles.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'An Image or Canvas to use for the particles.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'start',
             description = 'Starts the particle emitter.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'stop',
             description = 'Stops the particle emitter, resetting the lifetime counter.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'update',
@@ -1141,16 +1200,11 @@ return {
                         {
                             type = 'number',
                             name = 'dt',
-                            description = 'The time (seconds) since last frame.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The time (seconds) since last frame.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Drawable',
-    supertypes = {
-        'Drawable',
-        'Object'
-    }
 }

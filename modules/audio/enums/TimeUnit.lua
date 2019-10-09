@@ -4,11 +4,11 @@ return {
     constants = {
         {
             name = 'seconds',
-            description = 'Regular seconds.'
+            description = 'Regular seconds.',
         },
         {
             name = 'samples',
-            description = 'Audio samples.'
-        }
-    }
+            description = 'Audio samples.',
+        },
+    },
 }

@@ -4,11 +4,11 @@ return {
     constants = {
         {
             name = 'fill',
-            description = 'Draw filled shape.'
+            description = 'Draw filled shape.',
         },
         {
             name = 'line',
-            description = 'Draw outlined shape.'
-        }
-    }
+            description = 'Draw outlined shape.',
+        },
+    },
 }

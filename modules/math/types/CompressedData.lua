@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'CompressedData',
-    description = 'Represents byte data compressed using a specific algorithm.\n\nlove.math.decompress can be used to de-compress the data.',
-    constructors = {
-        'compress'
+    description = 'Represents byte data compressed using a specific algorithm.\n\nlove.data.decompress can be used to de-compress the data (or love.math.decompress in 0.10.2 or earlier).',
+    supertypes = {
+        'Data',
+        'Object',
     },
     functions = {
         {
@@ -14,16 +17,11 @@ return {
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
-                            description = 'The format of the CompressedData.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The format of the CompressedData.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Data',
-    supertypes = {
-        'Data',
-        'Object'
-    }
 }

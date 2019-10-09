@@ -4,15 +4,15 @@ return {
     constants = {
         {
             name = 'pie',
-            description = 'The arc is drawn like a slice of pie, with the arc circle connected to the center at its end-points.'
+            description = 'The arc is drawn like a slice of pie, with the arc circle connected to the center at its end-points.',
         },
         {
             name = 'open',
-            description = 'The arc circle\'s two end-points are unconnected when the arc is drawn as a line. Behaves like the "closed" arc type when the arc is drawn in filled mode.'
+            description = 'The arc circle\'s two end-points are unconnected when the arc is drawn as a line. Behaves like the "closed" arc type when the arc is drawn in filled mode.',
         },
         {
             name = 'closed',
-            description = 'The arc circle\'s two end-points are connected to each other.'
-        }
-    }
+            description = 'The arc circle\'s two end-points are connected to each other.',
+        },
+    },
 }

@@ -1,8 +1,12 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'Image',
     description = 'Drawable image type.',
-    constructors = {
-        'newImage'
+    supertypes = {
+        'Texture',
+        'Drawable',
+        'Object',
     },
     functions = {
         {
@@ -14,16 +18,16 @@ return {
                         {
                             type = 'number',
                             name = 'width',
-                            description = 'The width of the Image, in pixels.'
+                            description = 'The width of the Image, in pixels.',
                         },
                         {
                             type = 'number',
                             name = 'height',
-                            description = 'The height of the Image, in pixels.'
-                        }
-                    }
-                }
-            }
+                            description = 'The height of the Image, in pixels.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFilter',
@@ -34,16 +38,35 @@ return {
                         {
                             type = 'FilterMode',
                             name = 'min',
-                            description = 'Filter mode used when minifying the image.'
+                            description = 'Filter mode used when minifying the image.',
                         },
                         {
                             type = 'FilterMode',
                             name = 'mag',
-                            description = 'Filter mode used when magnifying the image.'
-                        }
-                    }
-                }
-            }
+                            description = 'Filter mode used when magnifying the image.',
+                        },
+                    },
+                },
+                {
+                    returns = {
+                        {
+                            type = 'FilterMode',
+                            name = 'min',
+                            description = 'Filter mode used when minifying the image.',
+                        },
+                        {
+                            type = 'FilterMode',
+                            name = 'mag',
+                            description = 'Filter mode used when magnifying the image.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'anisotropy',
+                            description = 'Maximum amount of anisotropic filtering used.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFlags',
@@ -54,11 +77,11 @@ return {
                         {
                             type = 'table',
                             name = 'flags',
-                            description = 'A table with ImageFlag keys.'
-                        }
-                    }
-                }
-            }
+                            description = 'A table with ImageFlag keys.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getHeight',
@@ -69,31 +92,11 @@ return {
                         {
                             type = 'number',
                             name = 'height',
-                            description = 'The height of the Image, in pixels.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'getMipmapFilter',
-            description = 'Gets the mipmap filter mode for an Image.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'FilterMode',
-                            name = 'mode',
-                            description = 'The filter mode used in between mipmap levels. nil if mipmap filtering is not enabled.'
+                            description = 'The height of the Image, in pixels.',
                         },
-                        {
-                            type = 'number',
-                            name = 'sharpness',
-                            description = 'Value used to determine whether the image should use more or less detailed mipmap levels than normal when drawing.'
-                        }
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         {
             name = 'getWidth',
@@ -104,11 +107,11 @@ return {
                         {
                             type = 'number',
                             name = 'width',
-                            description = 'The width of the Image, in pixels.'
-                        }
-                    }
-                }
-            }
+                            description = 'The width of the Image, in pixels.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getWrap',
@@ -118,43 +121,60 @@ return {
                     returns = {
                         {
                             type = 'WrapMode',
-                            name = 'horizontal',
-                            description = 'Horizontal wrapping mode of the image.'
+                            name = 'horiz',
+                            description = 'Horizontal wrapping mode of the image.',
                         },
                         {
                             type = 'WrapMode',
-                            name = 'vertical',
-                            description = 'Vertical wrapping mode of the image.'
-                        }
-                    }
-                }
-            }
+                            name = 'vert',
+                            description = 'Vertical wrapping mode of the image.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'replacePixels',
-            description = 'Replaces the contents of an Image.',
+            description = 'Replace the contents of an Image.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'ImageData',
                             name = 'data',
-                            description = 'The new ImageData to replace the contents with.'
+                            description = 'The new ImageData to replace the contents with.',
                         },
                         {
                             type = 'number',
                             name = 'slice',
-                            description = 'Which slice to replace, if applicable.'
+                            description = 'Which cubemap face, array index, or volume layer to replace, if applicable.',
                         },
                         {
                             type = 'number',
                             name = 'mipmap',
+                            description = 'The mimap level to replace, if the Image has mipmaps.',
+                            default = '1',
+                        },
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The x-offset in pixels from the top-left of the image to replace. The given ImageData\'s width plus this value must not be greater than the pixel width of the Image\'s specified mipmap level.',
                             default = '0',
-                            description = 'The mimap level of the new ImageData. If 0 Image:replacePixels will generate new mimaps.'
-                        }
-                    }
-                }
-            }
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The y-offset in pixels from the top-left of the image to replace. The given ImageData\'s height plus this value must not be greater than the pixel height of the Image\'s specified mipmap level.',
+                            default = '0',
+                        },
+                        {
+                            type = 'boolean',
+                            name = 'reloadmipmaps',
+                            description = 'Whether to generate new mipmaps after replacing the Image\'s pixels. True by default if the Image was created with automatically generated mipmaps, false by default otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setFilter',
@@ -165,68 +185,56 @@ return {
                         {
                             type = 'FilterMode',
                             name = 'min',
-                            description = 'How to scale an image down.'
+                            description = 'How to scale an image down.',
                         },
                         {
                             type = 'FilterMode',
                             name = 'mag',
-                            default = 'min',
-                            description = 'How to scale an image up.'
-                        }
-                    }
-                }
-            }
-        },
-        {
-            name = 'setMipmapFilter',
-            description = 'Sets the mipmap filter mode for an Image.\n\nMipmapping is useful when drawing an image at a reduced scale. It can improve performance and reduce aliasing issues.\n\nIn 0.10.0 and newer, the Image must be created with the mipmaps flag enabled for the mipmap filter to have any effect.',
-            variants = {
+                            description = 'How to scale an image up.',
+                        },
+                    },
+                },
                 {
                     arguments = {
                         {
                             type = 'FilterMode',
-                            name = 'filtermode',
-                            description = 'The filter mode to use in between mipmap levels. "nearest" will often give better performance.'
+                            name = 'min',
+                            description = 'How to scale an image down.',
+                        },
+                        {
+                            type = 'FilterMode',
+                            name = 'mag',
+                            description = 'How to scale an image up.',
                         },
                         {
                             type = 'number',
-                            name = 'sharpness',
-                            default = '0',
-                            description = 'A positive sharpness value makes the image use a more detailed mipmap level when drawing, at the expense of performance. A negative value does the reverse.'
-                        }
-                    }
+                            name = 'anisotropy',
+                            description = 'Maximum amount of anisotropic filtering used.',
+                            default = '1',
+                        },
+                    },
                 },
-                {
-                    description = 'Disables mipmap filtering.',
-                }
-            }
+            },
         },
         {
             name = 'setWrap',
-            description = 'Sets the wrapping properties of an Image.\n\nThis function sets the way an Image is repeated when it is drawn with a Quad that is larger than the image\'s extent. An image may be clamped or set to repeat in both horizontal and vertical directions. Clamped images appear only once, but repeated ones repeat as many times as there is room in the Quad.\n\nIf you use a Quad that is larger than the image extent and do not use repeated tiling, there may be an unwanted visual effect of the image stretching all the way to fill the Quad. If this is the case, setting Image:getWrap("repeat", "repeat") for all the images to be repeated, and using Quad of appropriate size will result in the best visual appearance.',
+            description = 'Sets the wrapping properties of an Image.\n\nThis function sets the way an Image is repeated when it is drawn with a  Quad that is larger than the image\'s extent. An image may be clamped or set to repeat in both horizontal and vertical directions. Clamped images appear only once, but repeated ones repeat as many times as there is room in the Quad.\n\nN.B. If you use a Quad that is larger than the image extent and do not use repeated tiling, there may be an unwanted visual effect of the image stretching all the way to fill the Quad. If this is the case, setting Image:setWrap(\'repeat\', \'repeat\') for all the images to be repeated, and using Quads of appropriate size will result in the best visual appearance.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'WrapMode',
-                            name = 'horizontal',
-                            description = 'Horizontal wrapping mode of the image.'
+                            name = 'horiz',
+                            description = 'Horizontal wrapping mode of the image.',
                         },
                         {
                             type = 'WrapMode',
-                            name = 'vertical',
-                            default = 'horizontal',
-                            description = 'Vertical wrapping mode of the image.'
-                        }
-                    }
-                }
-            }
-        }
+                            name = 'vert',
+                            description = 'Vertical wrapping mode of the image.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Texture',
-    supertypes = {
-        'Object',
-        'Drawable',
-        'Texture'
-    }
 }

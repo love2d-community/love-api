@@ -1,4 +1,3 @@
--- Match the parent directory
 local path = (...):match('(.-)[^%./]+$')
 
 return {
@@ -8,7 +7,7 @@ return {
         require(path .. 'types.BezierCurve'),
         require(path .. 'types.CompressedData'),
         require(path .. 'types.RandomGenerator'),
-        require(path .. 'types.Transform')
+        require(path .. 'types.Transform'),
     },
     functions = {
         {
@@ -20,58 +19,58 @@ return {
                         {
                             type = 'string',
                             name = 'rawstring',
-                            description = 'The raw (un-compressed) string to compress.'
+                            description = 'The raw (un-compressed) string to compress.',
                         },
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
-                            default = '"lz4"',
-                            description = 'The format to use when compressing the string.'
+                            description = 'The format to use when compressing the string.',
+                            default = '\'lz4\'',
                         },
                         {
                             type = 'number',
                             name = 'level',
+                            description = 'The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.',
                             default = '-1',
-                            description = 'The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'CompressedData',
                             name = 'compressedData',
-                            description = 'A new Data object containing the compressed version of the string.'
-                        }
-                    }
+                            description = 'A new Data object containing the compressed version of the string.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'Data',
                             name = 'data',
-                            description = 'A Data object containing the raw (un-compressed) data to compress.'
+                            description = 'A Data object containing the raw (un-compressed) data to compress.',
                         },
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
-                            default = '"lz4"',
-                            description = 'The format to use when compressing the data.'
+                            description = 'The format to use when compressing the data.',
+                            default = '\'lz4\'',
                         },
                         {
                             type = 'number',
                             name = 'level',
+                            description = 'The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.',
                             default = '-1',
-                            description = 'The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'CompressedData',
                             name = 'compressedData',
-                            description = 'A new Data object containing the compressed version of the raw data.'
-                        }
-                    }
-                }
-            }
+                            description = 'A new Data object containing the compressed version of the raw data.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'decompress',
@@ -82,331 +81,329 @@ return {
                         {
                             type = 'CompressedData',
                             name = 'compressedData',
-                            description = 'The compressed data to decompress.'
-                        }
+                            description = 'The compressed data to decompress.',
+                        },
                     },
                     returns = {
                         {
                             type = 'string',
                             name = 'rawstring',
-                            description = 'A string containing the raw decompressed data.'
-                        }
-                    }
+                            description = 'A string containing the raw decompressed data.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'string',
-                            name = 'compressedString',
-                            description = 'A string containing data previously compressed with love.math.compress.'
+                            name = 'compressedstring',
+                            description = 'A string containing data previously compressed with love.math.compress.',
                         },
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
-                            description = 'The format that was used to compress the given string.'
-                        }
+                            description = 'The format that was used to compress the given string.',
+                        },
                     },
                     returns = {
                         {
                             type = 'string',
                             name = 'rawstring',
-                            description = 'A string containing the raw decompressed data.'
-                        }
-                    }
+                            description = 'A string containing the raw decompressed data.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'Data',
                             name = 'data',
-                            description = 'A Data object containing data previously compressed with love.math.compress.'
+                            description = 'A Data object containing data previously compressed with love.math.compress.',
                         },
                         {
                             type = 'CompressedDataFormat',
                             name = 'format',
-                            description = 'The format that was used to compress the given data.'
-                        }
+                            description = 'The format that was used to compress the given data.',
+                        },
                     },
                     returns = {
                         {
                             type = 'string',
                             name = 'rawstring',
-                            description = 'A string containing the raw decompressed data.'
-                        }
-                    }
-                }
-            }
+                            description = 'A string containing the raw decompressed data.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'gammaToLinear',
-            description = 'Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful when doing gamma-correct rendering and you need to do math in linear RGB in the few cases where LÖVE doesn\'t handle conversions automatically.',
+            description = 'Converts a color from gamma-space (sRGB) to linear-space (RGB). This is useful when doing gamma-correct rendering and you need to do math in linear RGB in the few cases where LÖVE doesn\'t handle conversions automatically.\n\nRead more about gamma-correct rendering here, here, and here.\n\nIn versions prior to 11.0, color component values were within the range of 0 to 255 instead of 0 to 1.',
             variants = {
                 {
+                    description = 'An alpha value can be passed into the function as a fourth argument, but it will be returned unchanged because alpha is always linear.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'r',
-                            description = 'The red channel of the sRGB color to convert.'
+                            description = 'The red channel of the sRGB color to convert.',
                         },
                         {
                             type = 'number',
                             name = 'g',
-                            description = 'The green channel of the sRGB color to convert.'
+                            description = 'The green channel of the sRGB color to convert.',
                         },
                         {
                             type = 'number',
                             name = 'b',
-                            description = 'The blue channel of the sRGB color to convert.'
-                        }
+                            description = 'The blue channel of the sRGB color to convert.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'lr',
-                            description = 'The red channel of the converted color in linear RGB space.'
+                            description = 'The red channel of the converted color in linear RGB space.',
                         },
                         {
                             type = 'number',
                             name = 'lg',
-                            description = 'The green channel of the converted color in linear RGB space.'
+                            description = 'The green channel of the converted color in linear RGB space.',
                         },
                         {
                             type = 'number',
                             name = 'lb',
-                            description = 'The blue channel of the converted color in linear RGB space.'
-                        }
-                    }
+                            description = 'The blue channel of the converted color in linear RGB space.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'table',
                             name = 'color',
-                            description = 'An array with the red, green, and blue channels of the sRGB color to convert.'
-                        }
+                            description = 'An array with the red, green, and blue channels of the sRGB color to convert.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'lr',
-                            description = 'The red channel of the converted color in linear RGB space.'
+                            description = 'The red channel of the converted color in linear RGB space.',
                         },
                         {
                             type = 'number',
                             name = 'lg',
-                            description = 'The green channel of the converted color in linear RGB space.'
+                            description = 'The green channel of the converted color in linear RGB space.',
                         },
                         {
                             type = 'number',
                             name = 'lb',
-                            description = 'The blue channel of the converted color in linear RGB space.'
-                        }
-                    }
+                            description = 'The blue channel of the converted color in linear RGB space.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'c',
-                            description = 'The value of a color channel in sRGB space to convert.'
-                        }
+                            description = 'The value of a color channel in sRGB space to convert.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'lc',
-                            description = 'The value of the color channel in linear RGB space.'
-                        }
-                    }
-                }
-            }
+                            description = 'The value of the color channel in linear RGB space.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRandomSeed',
-            description = 'Gets the seed of the random number generator.\n\nThe state is split into two numbers due to Lua\'s use of doubles for all number values - doubles can\'t accurately represent integer values above 2^53.',
+            description = 'Gets the seed of the random number generator.\n\nThe seed is split into two numbers due to Lua\'s use of doubles for all number values - doubles can\'t accurately represent integer  values above 2^53, but the seed can be an integer value up to 2^64.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'low',
-                            description = 'Integer number representing the lower 32 bits of the random number generator\'s 64 bit state value.'
+                            description = 'Integer number representing the lower 32 bits of the random number generator\'s 64 bit seed value.',
                         },
                         {
                             type = 'number',
                             name = 'high',
-                            description = 'Integer number representing the higher 32 bits of the random number generator\'s 64 bit state value.'
-                        }
-                    }
-                }
-            }
+                            description = 'Integer number representing the higher 32 bits of the random number generator\'s 64 bit seed value.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRandomState',
-            description = 'Gets the current state of the random number generator. This returns an opaque implementation-dependent string which is only useful for later use with RandomGenerator:setState.\n\nThis is different from RandomGenerator:getSeed in that getState gets the RandomGenerator\'s current state, whereas getSeed gets the previously set seed number.\n\nThe value of the state string does not depend on the current operating system.',
+            description = 'Gets the current state of the random number generator. This returns an opaque implementation-dependent string which is only useful for later use with love.math.setRandomState or RandomGenerator:setState.\n\nThis is different from love.math.getRandomSeed in that getRandomState gets the random number generator\'s current state, whereas getRandomSeed gets the previously set seed number.',
             variants = {
                 {
+                    description = 'The value of the state string does not depend on the current operating system.',
                     returns = {
                         {
                             type = 'string',
                             name = 'state',
-                            description = 'The current state of the RandomGenerator object, represented as a string.'
-                        }
-                    }
-                }
-            }
+                            description = 'The current state of the random number generator, represented as a string.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isConvex',
-            description = 'Checks whether a polygon is convex.\n\nPolygonShapes in love.physics, some forms of Mesh, and polygons drawn with love.graphics.polygon must be simple convex polygons.',
+            description = 'Checks whether a polygon is convex.\n\nPolygonShapes in love.physics, some forms of Meshes, and polygons drawn with love.graphics.polygon must be simple convex polygons.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'table',
                             name = 'vertices',
-                            description = 'The vertices of the polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.'
-                        }
+                            description = 'The vertices of the polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.',
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'convex',
-                            description = 'Whether the given polygon is convex.'
-                        }
-                    }
+                            description = 'Whether the given polygon is convex.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The position of the first vertex of the polygon on the x-axis.'
+                            description = 'The position of the first vertex of the polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The position of the first vertex of the polygon on the y-axis.'
+                            description = 'The position of the first vertex of the polygon on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The position of the second vertex of the polygon on the x-axis.'
+                            description = 'The position of the second vertex of the polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The position of the second vertex of the polygon on the y-axis.'
+                            description = 'The position of the second vertex of the polygon on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'x3',
-                            description = 'The position of the third vertex of the polygon on the x-axis.'
+                            description = 'The position of the third vertex of the polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y3',
-                            description = 'The position of the third vertex of the polygon on the y-axis.'
+                            description = 'The position of the third vertex of the polygon on the y-axis.',
                         },
-                        {
-                            type = 'number',
-                            name = '...',
-                            description = 'Additional vertices.'
-                        }
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'convex',
-                            description = 'Whether the given polygon is convex.'
-                        }
-                    }
-                }
-            }
+                            description = 'Whether the given polygon is convex.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'linearToGamma',
-            description = 'Converts a color from linear-space (RGB) to gamma-space (sRGB). This is useful when storing linear RGB color values in an image, because the linear RGB color space has less precision than sRGB for dark colors, which can result in noticeable color banding when drawing.\n\nIn general, colors chosen based on what they look like on-screen are already in gamma-space and should not be double-converted. Colors calculated using math are often in the linear RGB space.',
+            description = 'Converts a color from linear-space (RGB) to gamma-space (sRGB). This is useful when storing linear RGB color values in an image, because the linear RGB color space has less precision than sRGB for dark colors, which can result in noticeable color banding when drawing.\n\nIn general, colors chosen based on what they look like on-screen are already in gamma-space and should not be double-converted. Colors calculated using math are often in the linear RGB space.\n\nRead more about gamma-correct rendering here, here, and here.\n\nIn versions prior to 11.0, color component values were within the range of 0 to 255 instead of 0 to 1.',
             variants = {
                 {
+                    description = 'An alpha value can be passed into the function as a fourth argument, but it will be returned unchanged because alpha is always linear.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'lr',
-                            description = 'The red channel of the linear RGB color to convert.'
+                            description = 'The red channel of the linear RGB color to convert.',
                         },
                         {
                             type = 'number',
                             name = 'lg',
-                            description = 'The green channel of the linear RGB color to convert.'
+                            description = 'The green channel of the linear RGB color to convert.',
                         },
                         {
                             type = 'number',
                             name = 'lb',
-                            description = 'The blue channel of the linear RGB color to convert.'
-                        }
+                            description = 'The blue channel of the linear RGB color to convert.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'cr',
-                            description = 'The red channel of the converted color in gamma sRGB space.'
+                            description = 'The red channel of the converted color in gamma sRGB space.',
                         },
                         {
                             type = 'number',
                             name = 'cg',
-                            description = 'The green channel of the converted color in gamma sRGB space.'
+                            description = 'The green channel of the converted color in gamma sRGB space.',
                         },
                         {
                             type = 'number',
                             name = 'cb',
-                            description = 'The blue channel of the converted color in gamma sRGB space.'
-                        }
-                    }
+                            description = 'The blue channel of the converted color in gamma sRGB space.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'table',
                             name = 'color',
-                            description = 'An array with the red, green, and blue channels of the linear RGB color to convert.'
-                        }
+                            description = 'An array with the red, green, and blue channels of the linear RGB color to convert.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'cr',
-                            description = 'The red channel of the converted color in gamma sRGB space.'
+                            description = 'The red channel of the converted color in gamma sRGB space.',
                         },
                         {
                             type = 'number',
                             name = 'cg',
-                            description = 'The green channel of the converted color in gamma sRGB space.'
+                            description = 'The green channel of the converted color in gamma sRGB space.',
                         },
                         {
                             type = 'number',
                             name = 'cb',
-                            description = 'The blue channel of the converted color in gamma sRGB space.'
-                        }
-                    }
+                            description = 'The blue channel of the converted color in gamma sRGB space.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'lc',
-                            description = 'The value of a color channel in linear RGB space to convert.'
-                        }
+                            description = 'The value of a color channel in linear RGB space to convert.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'c',
-                            description = 'The value of the color channel in gamma sRGB space.'
-                        }
-                    }
-                }
-            }
+                            description = 'The value of the color channel in gamma sRGB space.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'newBezierCurve',
@@ -417,64 +414,59 @@ return {
                         {
                             type = 'table',
                             name = 'vertices',
-                            description = 'The vertices of the control polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.'
-                        }
+                            description = 'The vertices of the control polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.',
+                        },
                     },
                     returns = {
                         {
                             type = 'BezierCurve',
                             name = 'curve',
-                            description = 'A Bézier curve object.'
-                        }
-                    }
+                            description = 'A Bézier curve object.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The position of the first vertex of the control polygon on the x-axis.'
+                            description = 'The position of the first vertex of the control polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The position of the first vertex of the control polygon on the y-axis.'
+                            description = 'The position of the first vertex of the control polygon on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The position of the second vertex of the control polygon on the x-axis.'
+                            description = 'The position of the second vertex of the control polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The position of the second vertex of the control polygon on the y-axis.'
+                            description = 'The position of the second vertex of the control polygon on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'x3',
-                            description = 'The position of the third vertex of the control polygon on the x-axis.'
+                            description = 'The position of the third vertex of the control polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y3',
-                            description = 'The position of the third vertex of the control polygon on the y-axis.'
+                            description = 'The position of the third vertex of the control polygon on the y-axis.',
                         },
-                        {
-                            type = 'number',
-                            name = '...',
-                            description = 'Additional vertices.'
-                        }
                     },
                     returns = {
                         {
                             type = 'BezierCurve',
                             name = 'curve',
-                            description = 'A Bézier curve object.'
-                        }
-                    }
-                }
-            }
+                            description = 'A Bézier curve object.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'newRandomGenerator',
@@ -485,48 +477,50 @@ return {
                         {
                             type = 'RandomGenerator',
                             name = 'rng',
-                            description = 'The new Random Number Generator object.'
-                        }
-                    }
+                            description = 'The new Random Number Generator object.',
+                        },
+                    },
                 },
                 {
+                    description = 'See RandomGenerator:setSeed.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'seed',
-                            description = 'The initial seed number to use for this object.'
-                        }
+                            description = 'The initial seed number to use for this object.',
+                        },
                     },
                     returns = {
                         {
                             type = 'RandomGenerator',
                             name = 'rng',
-                            description = 'The new Random Number Generator object.'
-                        }
-                    }
+                            description = 'The new Random Number Generator object.',
+                        },
+                    },
                 },
                 {
+                    description = 'See RandomGenerator:setSeed.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'low',
-                            description = 'The lower 32 bits of the state number to use for this instance of the object.'
+                            description = 'The lower 32 bits of the seed number to use for this object.',
                         },
                         {
                             type = 'number',
                             name = 'high',
-                            description = 'The higher 32 bits of the state number to use for this instance of the object.'
-                        }
+                            description = 'The higher 32 bits of the seed number to use for this object.',
+                        },
                     },
                     returns = {
                         {
                             type = 'RandomGenerator',
                             name = 'rng',
-                            description = 'The new Random Number Generator object.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new Random Number Generator object.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'newTransform',
@@ -538,9 +532,9 @@ return {
                         {
                             type = 'Transform',
                             name = 'transform',
-                            description = 'The new Transform object.'
-                        }
-                    }
+                            description = 'The new Transform object.',
+                        },
+                    },
                 },
                 {
                     description = 'Creates a Transform with the specified transformation applied on creation.',
@@ -548,65 +542,65 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The position of the new Transform on the x-axis.'
+                            description = 'The position of the new Transform on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The position of the new Transform on the y-axis.'
+                            description = 'The position of the new Transform on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'angle',
+                            description = 'The orientation of the new Transform in radians.',
                             default = '0',
-                            description = 'The orientation of the new Transform in radians.'
                         },
                         {
                             type = 'number',
                             name = 'sx',
+                            description = 'Scale factor on the x-axis.',
                             default = '1',
-                            description = 'Scale factor on the x-axis.'
                         },
                         {
                             type = 'number',
                             name = 'sy',
+                            description = 'Scale factor on the y-axis.',
                             default = 'sx',
-                            description = 'Scale factor on the y-axis.'
                         },
                         {
                             type = 'number',
                             name = 'ox',
+                            description = 'Origin offset on the x-axis.',
                             default = '0',
-                            description = 'Origin offset on the x-axis.'
                         },
                         {
                             type = 'number',
                             name = 'oy',
+                            description = 'Origin offset on the y-axis.',
                             default = '0',
-                            description = 'Origin offset on the y-axis.'
                         },
                         {
                             type = 'number',
                             name = 'kx',
+                            description = 'Shearing / skew factor on the x-axis.',
                             default = '0',
-                            description = 'Shearing / skew factor on the x-axis.'
                         },
                         {
                             type = 'number',
                             name = 'ky',
+                            description = 'Shearing / skew factor on the y-axis.',
                             default = '0',
-                            description = 'Shearing / skew factor on the y-axis.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'Transform',
                             name = 'transform',
-                            description = 'The new Transform object.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new Transform object.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'noise',
@@ -618,16 +612,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The number used to generate the noise value.'
-                        }
+                            description = 'The number used to generate the noise value.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'value',
-                            description = 'The noise value in the range of [0, 1].'
-                        }
-                    }
+                            description = 'The noise value in the range of 1.',
+                        },
+                    },
                 },
                 {
                     description = 'Generates Simplex noise from 2 dimensions.',
@@ -635,21 +629,21 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The first value of the 2-dimensional vector used to generate the noise value.'
+                            description = 'The first value of the 2-dimensional vector used to generate the noise value.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The second value of the 2-dimensional vector used to generate the noise value.'
-                        }
+                            description = 'The second value of the 2-dimensional vector used to generate the noise value.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'value',
-                            description = 'The noise value in the range of [0, 1].'
-                        }
-                    }
+                            description = 'The noise value in the range of 1.',
+                        },
+                    },
                 },
                 {
                     description = 'Generates Perlin noise (Simplex noise in version 0.9.2 and older) from 3 dimensions.',
@@ -657,26 +651,26 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The first value of the 3-dimensional vector used to generate the noise value.'
+                            description = 'The first value of the 3-dimensional vector used to generate the noise value.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The second value of the 3-dimensional vector used to generate the noise value.'
+                            description = 'The second value of the 3-dimensional vector used to generate the noise value.',
                         },
                         {
                             type = 'number',
                             name = 'z',
-                            description = 'The third value of the 3-dimensional vector used to generate the noise value.'
-                        }
+                            description = 'The third value of the 3-dimensional vector used to generate the noise value.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'value',
-                            description = 'The noise value in the range of [0, 1].'
-                        }
-                    }
+                            description = 'The noise value in the range of 1.',
+                        },
+                    },
                 },
                 {
                     description = 'Generates Perlin noise (Simplex noise in version 0.9.2 and older) from 4 dimensions.',
@@ -684,88 +678,88 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The first value of the 4-dimensional vector used to generate the noise value.'
+                            description = 'The first value of the 4-dimensional vector used to generate the noise value.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The second value of the 4-dimensional vector used to generate the noise value.'
+                            description = 'The second value of the 4-dimensional vector used to generate the noise value.',
                         },
                         {
                             type = 'number',
                             name = 'z',
-                            description = 'The third value of the 4-dimensional vector used to generate the noise value.'
+                            description = 'The third value of the 4-dimensional vector used to generate the noise value.',
                         },
                         {
                             type = 'number',
                             name = 'w',
-                            description = 'The fourth value of the 4-dimensional vector used to generate the noise value.'
-                        }
+                            description = 'The fourth value of the 4-dimensional vector used to generate the noise value.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'value',
-                            description = 'The noise value in the range of [0, 1].'
-                        }
-                    }
-                }
-            }
+                            description = 'The noise value in the range of 1.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'random',
-            description = 'Generates a pseudo-random number in a platform independent manner.',
+            description = 'Generates a pseudo-random number in a platform independent manner. The default love.run seeds this function at startup, so you generally don\'t need to seed it yourself.',
             variants = {
                 {
-                    description = 'Get uniformly distributed pseudo-random real number within [0, 1].',
+                    description = 'Get uniformly distributed pseudo-random real number within 1.',
                     returns = {
                         {
                             type = 'number',
                             name = 'number',
-                            description = 'The pseudo-random number.'
-                        }
-                    }
+                            description = 'The pseudo-random number.',
+                        },
+                    },
                 },
                 {
-                    description = 'Get a uniformly distributed pseudo-random integer within [1, max].',
+                    description = 'Get a uniformly distributed pseudo-random integer within max.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'max',
-                            description = 'The maximum possible value it should return.'
-                        }
+                            description = 'The maximum possible value it should return.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'number',
-                            description = 'The pseudo-random integer number.'
-                        }
-                    }
+                            description = 'The pseudo-random integer number.',
+                        },
+                    },
                 },
                 {
-                    description = 'Get uniformly distributed pseudo-random integer within [min, max].',
+                    description = 'Get uniformly distributed pseudo-random integer within max.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'min',
-                            description = 'The minimum possible value it should return.'
+                            description = 'The minimum possible value it should return.',
                         },
                         {
                             type = 'number',
                             name = 'max',
-                            description = 'The maximum possible value it should return.'
-                        }
+                            description = 'The maximum possible value it should return.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'number',
-                            description = 'The pseudo-random integer number.'
-                        }
-                    }
-                }
-            }
+                            description = 'The pseudo-random integer number.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'randomNormal',
@@ -776,141 +770,138 @@ return {
                         {
                             type = 'number',
                             name = 'stddev',
+                            description = 'Standard deviation of the distribution.',
                             default = '1',
-                            description = 'Standard deviation of the distribution.'
                         },
                         {
                             type = 'number',
                             name = 'mean',
+                            description = 'The mean of the distribution.',
                             default = '0',
-                            description = 'The mean of the distribution.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'number',
-                            description = 'Normally distributed random number with variance (stddev)² and the specified mean.'
-                        }
-                    }
-                }
-            }
+                            description = 'Normally distributed random number with variance (stddev)² and the specified mean.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRandomSeed',
-            description = 'Sets the seed of the random number generator using the specified integer number.',
+            description = 'Sets the seed of the random number generator using the specified integer number. This is called internally at startup, so you generally don\'t need to call it yourself.',
             variants = {
                 {
+                    description = 'Due to Lua\'s use of double-precision floating point numbers, integer values above 2^53 cannot be accurately represented. Use the other variant of the function if you want to use a larger number.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'seed',
-                            description = 'The integer number with which you want to seed the randomization. Must be within the range of [1, 2^53].'
-                        }
-                    }
+                            description = 'The integer number with which you want to seed the randomization. Must be within the range of 2^53 - 1.',
+                        },
+                    },
                 },
                 {
+                    description = 'Combines two 32-bit integer numbers into a 64-bit integer value and sets the seed of the random number generator using the value.',
                     arguments = {
                         {
                             type = 'number',
                             name = 'low',
-                            description = 'The lower 32 bits of the state value. Must be within the range of [0, 2^32 - 1].'
+                            description = 'The lower 32 bits of the seed value. Must be within the range of 2^32 - 1.',
                         },
                         {
                             type = 'number',
                             name = 'high',
-                            description = 'The higher 32 bits of the state value. Must be within the range of [0, 2^32 - 1].'
-                        }
-                    }
-                }
-            }
+                            description = 'The higher 32 bits of the seed value. Must be within the range of 2^32 - 1.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRandomState',
-            description = 'Gets the current state of the random number generator. This returns an opaque implementation-dependent string which is only useful for later use with RandomGenerator:setState.\n\nThis is different from RandomGenerator:getSeed in that getState gets the RandomGenerator\'s current state, whereas getSeed gets the previously set seed number.\n\nThe value of the state string does not depend on the current operating system.',
+            description = 'Sets the current state of the random number generator. The value used as an argument for this function is an opaque implementation-dependent string and should only originate from a previous call to love.math.getRandomState.\n\nThis is different from love.math.setRandomSeed in that setRandomState directly sets the random number generator\'s current implementation-dependent state, whereas setRandomSeed gives it a new seed value.',
             variants = {
                 {
+                    description = 'The effect of the state string does not depend on the current operating system.',
                     arguments = {
                         {
                             type = 'string',
                             name = 'state',
-                            description = 'The current state of the RandomGenerator object, represented as a string.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new state of the random number generator, represented as a string. This should originate from a previous call to love.math.getRandomState.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'triangulate',
-            description = 'Triangulate a simple polygon.',
+            description = 'Decomposes a simple convex or concave polygon into triangles.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'table',
                             name = 'polygon',
-                            description = 'Polygon to triangulate. Must not intersect itself.'
-                        }
+                            description = 'Polygon to triangulate. Must not intersect itself.',
+                        },
                     },
                     returns = {
                         {
                             type = 'table',
                             name = 'triangles',
-                            description = 'List of triangles the polygon is composed of, in the form of {{x1, y1, x2, y2, x3, y3}, {x1, y1, x2, y2, x3, y3}, ...}.'
-                        }
-                    }
+                            description = 'List of triangles the polygon is composed of, in the form of {{x1, y1, x2, y2, x3, y3},  {x1, y1, x2, y2, x3, y3}, ...}.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The position of the first vertex of the polygon on the x-axis.'
+                            description = 'The position of the first vertex of the polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The position of the first vertex of the polygon on the y-axis.'
+                            description = 'The position of the first vertex of the polygon on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The position of the second vertex of the polygon on the x-axis.'
+                            description = 'The position of the second vertex of the polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The position of the second vertex of the polygon on the y-axis.'
+                            description = 'The position of the second vertex of the polygon on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'x3',
-                            description = 'The position of the third vertex of the polygon on the x-axis.'
+                            description = 'The position of the third vertex of the polygon on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'y3',
-                            description = 'The position of the third vertex of the polygon on the y-axis.'
+                            description = 'The position of the third vertex of the polygon on the y-axis.',
                         },
-                        {
-                            type = 'number',
-                            name = '...',
-                            description = 'Additional vertices.'
-                        }
                     },
                     returns = {
                         {
                             type = 'table',
                             name = 'triangles',
-                            description = 'List of triangles the polygon is composed of, in the form of {{x1, y1, x2, y2, x3, y3}, {x1, y1, x2, y2, x3, y3}, ...}.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'List of triangles the polygon is composed of, in the form of {{x1, y1, x2, y2, x3, y3},  {x1, y1, x2, y2, x3, y3}, ...}.',
+                        },
+                    },
+                },
+            },
+        },
     },
     enums = {
         require(path .. 'enums.CompressedDataFormat'),
-        require(path .. 'enums.MatrixLayout')
-    }
+    },
 }

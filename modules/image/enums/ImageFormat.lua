@@ -4,11 +4,19 @@ return {
     constants = {
         {
             name = 'tga',
-            description = 'Targa image format.'
+            description = 'Targa image format.',
         },
         {
             name = 'png',
-            description = 'PNG image format.'
-        }
-    }
+            description = 'PNG image format.',
+        },
+        {
+            name = 'jpg',
+            description = 'JPG image format.',
+        },
+        {
+            name = 'bmp',
+            description = 'BMP image format.',
+        },
+    },
 }

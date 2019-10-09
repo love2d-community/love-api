@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'Video',
     description = 'A drawable video.',
-    constructors = {
-        'newVideo'
+    supertypes = {
+        'Drawable',
+        'Object',
     },
     functions = {
         {
@@ -14,16 +17,16 @@ return {
                         {
                             type = 'number',
                             name = 'width',
-                            description = 'The width of the Video.'
+                            description = 'The width of the Video.',
                         },
                         {
                             type = 'number',
                             name = 'height',
-                            description = 'The height of the video.'
-                        }
-                    }
-                }
-            }
+                            description = 'The height of the Video.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFilter',
@@ -34,22 +37,21 @@ return {
                         {
                             type = 'FilterMode',
                             name = 'min',
-                            description = 'The filter mode used when scaling the Video down.'
+                            description = 'The filter mode used when scaling the Video down.',
                         },
                         {
                             type = 'FilterMode',
                             name = 'mag',
-                            description = 'The filter mode used when scaling the Video up.'
+                            description = 'The filter mode used when scaling the Video up.',
                         },
                         {
                             type = 'number',
                             name = 'anisotropy',
-                            default = '1',
-                            description = 'Maximum amount of anisotropic filtering used.'
-                        }
-                    }
-                }
-            }
+                            description = 'Maximum amount of anisotropic filtering used.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getHeight',
@@ -60,11 +62,11 @@ return {
                         {
                             type = 'number',
                             name = 'height',
-                            description = 'The height of the Video.'
-                        }
-                    }
-                }
-            }
+                            description = 'The height of the Video.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSource',
@@ -75,11 +77,11 @@ return {
                         {
                             type = 'Source',
                             name = 'source',
-                            description = 'The audio Source used for audio playback, or nil if the video has no audio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The audio Source used for audio playback, or nil if the video has no audio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getStream',
@@ -90,11 +92,11 @@ return {
                         {
                             type = 'VideoStream',
                             name = 'stream',
-                            description = 'The VideoStream used for decoding and controlling the video.'
-                        }
-                    }
-                }
-            }
+                            description = 'The VideoStream used for decoding and controlling the video.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getWidth',
@@ -105,11 +107,11 @@ return {
                         {
                             type = 'number',
                             name = 'width',
-                            description = 'The width of the Video.'
-                        }
-                    }
-                }
-            }
+                            description = 'The width of the Video.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isPlaying',
@@ -120,32 +122,35 @@ return {
                         {
                             type = 'boolean',
                             name = 'playing',
-                            description = 'Whether the video is playing.'
-                        }
-                    }
-                }
-            }
+                            description = 'Whether the video is playing.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'pause',
             description = 'Pauses the Video.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'play',
             description = 'Starts playing the Video. In order for the video to appear onscreen it must be drawn with love.graphics.draw.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'rewind',
             description = 'Rewinds the Video to the beginning.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'seek',
@@ -156,11 +161,11 @@ return {
                         {
                             type = 'number',
                             name = 'offset',
-                            description = 'The time in seconds since the beginning of the Video.'
-                        }
-                    }
-                }
-            }
+                            description = 'The time in seconds since the beginning of the Video.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setFilter',
@@ -171,22 +176,22 @@ return {
                         {
                             type = 'FilterMode',
                             name = 'min',
-                            description = 'The filter mode used when scaling the Video down.'
+                            description = 'The filter mode used when scaling the Video down.',
                         },
                         {
                             type = 'FilterMode',
                             name = 'mag',
-                            description = 'The filter mode used when scaling the Video up.'
+                            description = 'The filter mode used when scaling the Video up.',
                         },
                         {
                             type = 'number',
                             name = 'anisotropy',
+                            description = 'Maximum amount of anisotropic filtering used.',
                             default = '1',
-                            description = 'Maximum amount of anisotropic filtering used.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSource',
@@ -197,32 +202,27 @@ return {
                         {
                             type = 'Source',
                             name = 'source',
+                            description = 'The audio Source used for audio playback, or nil to disable audio synchronization.',
                             default = 'nil',
-                            description = 'The audio Source used for audio playback, or nil to disable audio synchronization.'
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'tell',
             description = 'Gets the current playback position of the Video.',
             variants = {
                 {
-                    arguments = {
+                    returns = {
                         {
                             type = 'number',
                             name = 'seconds',
-                            description = 'The time in seconds since the beginning of the Video.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The time in seconds since the beginning of the Video.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Drawable',
-    supertypes = {
-        'Drawable',
-        'Object'
-    }
 }

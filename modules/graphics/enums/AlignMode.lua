@@ -4,19 +4,19 @@ return {
     constants = {
         {
             name = 'center',
-            description = 'Align text center.'
+            description = 'Align text center.',
         },
         {
             name = 'left',
-            description = 'Align text left.'
+            description = 'Align text left.',
         },
         {
             name = 'right',
-            description = 'Align text right.'
+            description = 'Align text right.',
         },
         {
             name = 'justify',
-            description = 'Align text both left and right.'
-        }
-    }
+            description = 'Align text both left and right.',
+        },
+    },
 }
