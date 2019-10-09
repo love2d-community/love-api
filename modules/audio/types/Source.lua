@@ -39,6 +39,22 @@ return {
             },
         },
         {
+            name = 'getAirAbsorption',
+            description = 'Gets the amount of air absorption applied to the Source.\n\nBy default the value is set to 0 which means that air absorption effects are disabled. A value of 1 will apply high frequency attenuation to the Source at a rate of 0.05 dB per meter.',
+            variants = {
+                {
+                    description = 'Audio air absorption functionality is not supported on iOS.',
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'amount',
+                            description = 'The amount of air absorption applied to the Source.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getAttenuationDistances',
             description = 'Gets the reference and maximum attenuation distances of the Source. The values, combined with the current DistanceModel, affect how the Source\'s volume attenuates based on distance from the listener.',
             variants = {
@@ -479,6 +495,22 @@ return {
                             name = 'unit',
                             description = 'The unit of the position value.',
                             default = '\'seconds\'',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'setAirAbsorption',
+            description = 'Sets the amount of air absorption applied to the Source.\n\nBy default the value is set to 0 which means that air absorption effects are disabled. A value of 1 will apply high frequency attenuation to the Source at a rate of 0.05 dB per meter.\n\nAir absorption can simulate sound transmission through foggy air, dry air, smoky atmosphere, etc. It can be used to simulate different atmospheric conditions within different locations in an area.',
+            variants = {
+                {
+                    description = 'Audio air absorption functionality is not supported on iOS.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'amount',
+                            description = 'The amount of air absorption applied to the Source. Must be between 0 and 10.',
                         },
                     },
                 },
