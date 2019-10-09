@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'PrismaticJoint',
     description = 'Restricts relative motion between Bodies to one shared axis.',
-    constructors = {
-        'newPrismaticJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -14,11 +17,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'enabled',
-                            description = 'True if enabled, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if enabled, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getAxis',
@@ -29,16 +32,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x-axis coordinate of the world-space axis vector.'
+                            description = 'The x-axis coordinate of the world-space axis vector.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y-axis coordinate of the world-space axis vector.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y-axis coordinate of the world-space axis vector.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getJointSpeed',
@@ -49,11 +52,11 @@ return {
                         {
                             type = 'number',
                             name = 's',
-                            description = 'Joint angle speed in meters/second.'
-                        }
-                    }
-                }
-            }
+                            description = 'Joint angle speed in meters/second.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getJointTranslation',
@@ -64,11 +67,11 @@ return {
                         {
                             type = 'number',
                             name = 't',
-                            description = 'Joint translation, usually in meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'Joint translation, usually in meters..',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getLimits',
@@ -79,16 +82,16 @@ return {
                         {
                             type = 'number',
                             name = 'lower',
-                            description = 'The lower limit, usually in meters.'
+                            description = 'The lower limit, usually in meters.',
                         },
                         {
                             type = 'number',
                             name = 'upper',
-                            description = 'The upper limit, usually in meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The upper limit, usually in meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getLowerLimit',
@@ -99,11 +102,11 @@ return {
                         {
                             type = 'number',
                             name = 'lower',
-                            description = 'The lower limit, usually in meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The lower limit, usually in meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMaxMotorForce',
@@ -114,26 +117,33 @@ return {
                         {
                             type = 'number',
                             name = 'f',
-                            description = 'The maximum motor force, usually in N.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum motor force, usually in N.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMotorForce',
-            description = 'Get the current motor force.',
+            description = 'Returns the current motor force.',
             variants = {
                 {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'invdt',
+                            description = 'How long the force applies. Usually the inverse time step or 1/dt.',
+                        },
+                    },
                     returns = {
                         {
                             type = 'number',
-                            name = 'f',
-                            description = 'The current motor force, usually in N.'
-                        }
-                    }
-                }
-            }
+                            name = 'force',
+                            description = 'The force on the motor in newtons.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMotorSpeed',
@@ -144,11 +154,11 @@ return {
                         {
                             type = 'number',
                             name = 's',
-                            description = 'The motor speed, usually in meters per second.'
-                        }
-                    }
-                }
-            }
+                            description = 'The motor speed, usually in meters per second.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getUpperLimit',
@@ -159,11 +169,11 @@ return {
                         {
                             type = 'number',
                             name = 'upper',
-                            description = 'The upper limit, usually in meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The upper limit, usually in meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isMotorEnabled',
@@ -174,11 +184,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'enabled',
-                            description = 'True if enabled, false if disabled.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if enabled, false if disabled.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setLimits',
@@ -189,31 +199,22 @@ return {
                         {
                             type = 'number',
                             name = 'lower',
-                            description = 'The lower limit, usually in meters.'
+                            description = 'The lower limit, usually in meters.',
                         },
                         {
                             type = 'number',
                             name = 'upper',
-                            description = 'The upper limit, usually in meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The upper limit, usually in meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setLimitsEnabled',
-            description = 'Enables or disables the limits of the joint.',
+            description = 'Enables/disables the joint limit.',
             variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'boolean',
-                            name = 'enable',
-                            description = 'True to enable, false to disable.'
-                        }
-                    }
-                }
-            }
+            },
         },
         {
             name = 'setLowerLimit',
@@ -224,11 +225,11 @@ return {
                         {
                             type = 'number',
                             name = 'lower',
-                            description = 'The lower limit, usually in meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The lower limit, usually in meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMaxMotorForce',
@@ -239,26 +240,17 @@ return {
                         {
                             type = 'number',
                             name = 'f',
-                            description = 'The maximum motor force, usually in N.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum motor force, usually in N.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMotorEnabled',
-            description = 'Starts or stops the joint motor.',
+            description = 'Enables/disables the joint motor.',
             variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'boolean',
-                            name = 'enable',
-                            description = 'True to enable, false to disable.'
-                        }
-                    }
-                }
-            }
+            },
         },
         {
             name = 'setMotorSpeed',
@@ -269,11 +261,11 @@ return {
                         {
                             type = 'number',
                             name = 's',
-                            description = 'The motor speed, usually in meters per second.'
-                        }
-                    }
-                }
-            }
+                            description = 'The motor speed, usually in meters per second.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setUpperLimit',
@@ -284,16 +276,11 @@ return {
                         {
                             type = 'number',
                             name = 'upper',
-                            description = 'The upper limit, usually in meters.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The upper limit, usually in meters.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

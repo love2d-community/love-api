@@ -1,11 +1,10 @@
--- Match the parent directory
 local path = (...):match('(.-)[^%./]+$')
 
 return {
     name = 'video',
     description = 'This module is responsible for decoding, controlling, and streaming video files.\n\nIt can\'t draw the videos, see love.graphics.newVideo and Video objects for that.',
     types = {
-        require(path .. 'types.VideoStream')
+        require(path .. 'types.VideoStream'),
     },
     functions = {
         {
@@ -17,34 +16,36 @@ return {
                         {
                             type = 'string',
                             name = 'filename',
-                            description = 'The file path to the Ogg Theora video file.'
-                        }
+                            description = 'The file path to the Ogg Theora video file.',
+                        },
                     },
                     returns = {
                         {
                             type = 'VideoStream',
                             name = 'videostream',
-                            description = 'A new VideoStream.'
-                        }
-                    }
+                            description = 'A new VideoStream.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'File',
                             name = 'file',
-                            description = 'The File object containing the Ogg Theora video.'
-                        }
+                            description = 'The File object containing the Ogg Theora video.',
+                        },
                     },
                     returns = {
                         {
                             type = 'VideoStream',
                             name = 'videostream',
-                            description = 'A new VideoStream.'
-                        }
-                    }
-                }
-            }
-        }
-    }
+                            description = 'A new VideoStream.',
+                        },
+                    },
+                },
+            },
+        },
+    },
+    enums = {
+    },
 }

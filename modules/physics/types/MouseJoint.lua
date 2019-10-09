@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'MouseJoint',
     description = 'For controlling objects with the mouse.',
-    constructors = {
-        'newMouseJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -14,11 +17,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The new damping ratio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new damping ratio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFrequency',
@@ -29,11 +32,11 @@ return {
                         {
                             type = 'number',
                             name = 'freq',
-                            description = 'The frequency in hertz.'
-                        }
-                    }
-                }
-            }
+                            description = 'The frequency in hertz.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMaxForce',
@@ -44,11 +47,11 @@ return {
                         {
                             type = 'number',
                             name = 'f',
-                            description = 'The max allowed force.'
-                        }
-                    }
-                }
-            }
+                            description = 'The max allowed force.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getTarget',
@@ -59,16 +62,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x component of the target.'
+                            description = 'The x-component of the target.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The x component of the target.'
-                        }
-                    }
-                }
-            }
+                            description = 'The x-component of the target.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setDampingRatio',
@@ -79,11 +82,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The new damping ratio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new damping ratio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setFrequency',
@@ -94,11 +97,11 @@ return {
                         {
                             type = 'number',
                             name = 'freq',
-                            description = 'The new frequency in hertz.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new frequency in hertz.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMaxForce',
@@ -109,11 +112,11 @@ return {
                         {
                             type = 'number',
                             name = 'f',
-                            description = 'The max allowed force.'
-                        }
-                    }
-                }
-            }
+                            description = 'The max allowed force.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setTarget',
@@ -124,21 +127,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x component of the target.'
+                            description = 'The x-component of the target.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y component of the target.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The y-component of the target.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

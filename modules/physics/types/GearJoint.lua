@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'GearJoint',
     description = 'Keeps bodies together in such a way that they act like gears.',
-    constructors = {
-        'newGearJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -14,16 +17,16 @@ return {
                         {
                             type = 'Joint',
                             name = 'joint1',
-                            description = 'The first connected Joint.'
+                            description = 'The first connected Joint.',
                         },
                         {
                             type = 'Joint',
                             name = 'joint2',
-                            description = 'The second connected Joint.'
-                        }
-                    }
-                }
-            }
+                            description = 'The second connected Joint.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRatio',
@@ -34,11 +37,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The ratio of the joint.'
-                        }
-                    }
-                }
-            }
+                            description = 'The ratio of the joint.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRatio',
@@ -49,16 +52,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The new ratio of the joint.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The new ratio of the joint.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

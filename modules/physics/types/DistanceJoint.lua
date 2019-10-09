@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'DistanceJoint',
     description = 'Keeps two bodies at the same distance.',
-    constructors = {
-        'newDistanceJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -14,11 +17,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The damping ratio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The damping ratio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFrequency',
@@ -29,11 +32,11 @@ return {
                         {
                             type = 'number',
                             name = 'Hz',
-                            description = 'The response speed.'
-                        }
-                    }
-                }
-            }
+                            description = 'The response speed.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getLength',
@@ -44,11 +47,11 @@ return {
                         {
                             type = 'number',
                             name = 'l',
-                            description = 'The length between the two Bodies.'
-                        }
-                    }
-                }
-            }
+                            description = 'The length between the two Bodies.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setDampingRatio',
@@ -59,11 +62,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The damping ratio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The damping ratio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setFrequency',
@@ -74,11 +77,11 @@ return {
                         {
                             type = 'number',
                             name = 'Hz',
-                            description = 'The response speed.'
-                        }
-                    }
-                }
-            }
+                            description = 'The response speed.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setLength',
@@ -89,16 +92,11 @@ return {
                         {
                             type = 'number',
                             name = 'l',
-                            description = 'The length between the two Bodies.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The length between the two Bodies.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

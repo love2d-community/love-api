@@ -1,13 +1,19 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'Joint',
     description = 'Attach multiple bodies together to interact in unique ways.',
+    supertypes = {
+        'Object',
+    },
     functions = {
         {
             name = 'destroy',
-            description = 'Explicitly destroys the Joint. When you don\'t have time to wait for garbage collection, this function may be used to free the object immediately, but note that an error will occur if you attempt to use the object after calling this function.',
+            description = 'Explicitly destroys the Joint. An error will occur if you attempt to use the object after calling this function.\n\nIn 0.7.2, when you don\'t have time to wait for garbage collection, this function \n\nmay be used to free the object immediately.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'getAnchors',
@@ -18,26 +24,26 @@ return {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The x component of the anchor on Body 1.'
+                            description = 'The x-component of the anchor on Body 1.',
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The y component of the anchor on Body 1.'
+                            description = 'The y-component of the anchor on Body 1.',
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The x component of the anchor on Body 2.'
+                            description = 'The x-component of the anchor on Body 2.',
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The y component of the anchor on Body 2.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y-component of the anchor on Body 2.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getBodies',
@@ -48,16 +54,16 @@ return {
                         {
                             type = 'Body',
                             name = 'bodyA',
-                            description = 'The first Body.'
+                            description = 'The first Body.',
                         },
                         {
                             type = 'Body',
                             name = 'bodyB',
-                            description = 'The second Body.'
+                            description = 'The second Body.',
                         },
-                    }
-                }
-            }
+                    },
+                },
+            },
         },
         {
             name = 'getCollideConnected',
@@ -68,31 +74,38 @@ return {
                         {
                             type = 'boolean',
                             name = 'c',
-                            description = 'True if they collide, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if they collide, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getReactionForce',
-            description = 'Gets the reaction force on Body 2 at the joint anchor.',
+            description = 'Returns the reaction force in newtons on the second body',
             variants = {
                 {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'How long the force applies. Usually the inverse time step or 1/dt.',
+                        },
+                    },
                     returns = {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x component of the force.'
+                            description = 'The x-component of the force.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y component of the force.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y-component of the force.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getReactionTorque',
@@ -103,18 +116,18 @@ return {
                         {
                             type = 'number',
                             name = 'invdt',
-                            description = 'How long the force applies. Usually the inverse time step or 1/dt.'
-                        }
+                            description = 'How long the force applies. Usually the inverse time step or 1/dt.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'torque',
-                            description = 'The reaction torque on the second body.'
-                        }
-                    }
-                }
-            }
+                            description = 'The reaction torque on the second body.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getType',
@@ -125,11 +138,11 @@ return {
                         {
                             type = 'JointType',
                             name = 'type',
-                            description = 'A string with the name of the Joint type.'
-                        }
-                    }
-                }
-            }
+                            description = 'A string with the name of the Joint type.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getUserData',
@@ -140,11 +153,11 @@ return {
                         {
                             type = 'any',
                             name = 'value',
-                            description = 'The Lua value associated with the Joint.'
-                        }
-                    }
-                }
-            }
+                            description = 'The Lua value associated with the Joint.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isDestroyed',
@@ -155,11 +168,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'destroyed',
-                            description = 'Whether the Joint is destroyed.'
-                        }
-                    }
-                }
-            }
+                            description = 'Whether the Joint is destroyed.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setUserData',
@@ -170,28 +183,11 @@ return {
                         {
                             type = 'any',
                             name = 'value',
-                            description = 'The Lua value to associate with the Joint.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The Lua value to associate with the Joint.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Object',
-    supertypes = {
-        'Object'
-    },
-    subtypes = {
-        'DistanceJoint',
-        'FrictionJoint',
-        'GearJoint',
-        'MotorJoint',
-        'MouseJoint',
-        'PrismaticJoint',
-        'PulleyJoint',
-        'RevoluteJoint',
-        'RopeJoint',
-        'WeldJoint',
-        'WheelJoint'
-    }
 }

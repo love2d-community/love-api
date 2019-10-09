@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'WheelJoint',
     description = 'Restricts a point on the second body to a line on the first body.',
-    constructors = {
-        'newWheelJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -14,16 +17,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x-axis coordinate of the world-space axis vector.'
+                            description = 'The x-axis coordinate of the world-space axis vector.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y-axis coordinate of the world-space axis vector.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y-axis coordinate of the world-space axis vector.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getJointSpeed',
@@ -34,11 +37,11 @@ return {
                         {
                             type = 'number',
                             name = 'speed',
-                            description = 'The translation speed of the joint in meters per second.'
-                        }
-                    }
-                }
-            }
+                            description = 'The translation speed of the joint in meters per second.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getJointTranslation',
@@ -49,11 +52,11 @@ return {
                         {
                             type = 'number',
                             name = 'position',
-                            description = 'The translation of the joint in meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The translation of the joint in meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMaxMotorTorque',
@@ -64,11 +67,11 @@ return {
                         {
                             type = 'number',
                             name = 'maxTorque',
-                            description = 'The maximum torque of the joint motor in newton meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum torque of the joint motor in newton meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMotorSpeed',
@@ -79,11 +82,11 @@ return {
                         {
                             type = 'number',
                             name = 'speed',
-                            description = 'The speed of the joint motor in radians per second.'
-                        }
-                    }
-                }
-            }
+                            description = 'The speed of the joint motor in radians per second.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMotorTorque',
@@ -94,18 +97,18 @@ return {
                         {
                             type = 'number',
                             name = 'invdt',
-                            description = 'How long the force applies. Usually the inverse time step or 1/dt.'
-                        }
+                            description = 'How long the force applies. Usually the inverse time step or 1/dt.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'torque',
-                            description = 'The torque on the motor in newton meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The torque on the motor in newton meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSpringDampingRatio',
@@ -116,11 +119,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The damping ratio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The damping ratio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSpringFrequency',
@@ -131,11 +134,11 @@ return {
                         {
                             type = 'number',
                             name = 'freq',
-                            description = 'The frequency in hertz.'
-                        }
-                    }
-                }
-            }
+                            description = 'The frequency in hertz.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMaxMotorTorque',
@@ -146,11 +149,11 @@ return {
                         {
                             type = 'number',
                             name = 'maxTorque',
-                            description = 'The new maximum torque for the joint motor in newton meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new maximum torque for the joint motor in newton meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMotorEnabled',
@@ -161,11 +164,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'enable',
-                            description = 'True turns the motor on and false turns it off.'
-                        }
-                    }
-                }
-            }
+                            description = 'True turns the motor on and false turns it off.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMotorSpeed',
@@ -176,11 +179,11 @@ return {
                         {
                             type = 'number',
                             name = 'speed',
-                            description = 'The new speed for the joint motor in radians per second.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new speed for the joint motor in radians per second.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSpringDampingRatio',
@@ -191,11 +194,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The new damping ratio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new damping ratio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSpringFrequency',
@@ -206,16 +209,11 @@ return {
                         {
                             type = 'number',
                             name = 'freq',
-                            description = 'The new frequency in hertz.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new frequency in hertz.',
+                        },
+                    },
+                },
+            },
         },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

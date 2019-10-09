@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'FrictionJoint',
     description = 'A FrictionJoint applies friction to a body.',
-    constructors = {
-        'newFrictionJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -14,11 +17,11 @@ return {
                         {
                             type = 'number',
                             name = 'force',
-                            description = 'Maximum force in Newtons.'
-                        }
-                    }
-                }
-            }
+                            description = 'Maximum force in Newtons.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMaxTorque',
@@ -29,11 +32,11 @@ return {
                         {
                             type = 'number',
                             name = 'torque',
-                            description = 'Maximum torque in Newton-meters.'
-                        }
-                    }
-                }
-            }
+                            description = 'Maximum torque in Newton-meters.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMaxForce',
@@ -44,11 +47,11 @@ return {
                         {
                             type = 'number',
                             name = 'maxForce',
-                            description = 'Max force in Newtons.'
-                        }
-                    }
-                }
-            }
+                            description = 'Max force in Newtons.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMaxTorque',
@@ -59,16 +62,11 @@ return {
                         {
                             type = 'number',
                             name = 'torque',
-                            description = 'Maximum torque in Newton-meters.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'Maximum torque in Newton-meters.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

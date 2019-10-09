@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'CircleShape',
     description = 'Circle extends Shape and adds a radius and a local position.',
-    constructors = {
-        'newCircleShape'
+    supertypes = {
+        'Shape',
+        'Object',
     },
     functions = {
         {
@@ -14,16 +17,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x-component of the center point of the circle.'
+                            description = 'The x-component of the center point of the circle.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y-component of the center point of the circle.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y-component of the center point of the circle.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRadius',
@@ -34,11 +37,11 @@ return {
                         {
                             type = 'number',
                             name = 'radius',
-                            description = 'The radius of the circle.'
-                        }
-                    }
-                }
-            }
+                            description = 'The radius of the circle',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setPoint',
@@ -49,16 +52,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x-component of the new center point of the circle.'
+                            description = 'The x-component of the new center point of the circle.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y-component of the new center point of the circle.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y-component of the new center point of the circle.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRadius',
@@ -69,16 +72,11 @@ return {
                         {
                             type = 'number',
                             name = 'radius',
-                            description = 'The radius of the circle.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The radius of the circle',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Shape',
-    supertypes = {
-        'Shape',
-        'Object'
-    }
 }

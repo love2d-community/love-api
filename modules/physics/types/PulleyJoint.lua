@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'PulleyJoint',
     description = 'Allows you to simulate bodies connected through pulleys.',
-    constructors = {
-        'newPulleyJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -14,11 +17,11 @@ return {
                         {
                             type = 'number',
                             name = 'length',
-                            description = 'The length of the rope in the joint.'
-                        }
-                    }
-                }
-            }
+                            description = 'The length of the rope in the joint.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getGroundAnchors',
@@ -29,26 +32,26 @@ return {
                         {
                             type = 'number',
                             name = 'a1x',
-                            description = 'The x coordinate of the first anchor.'
+                            description = 'The x coordinate of the first anchor.',
                         },
                         {
                             type = 'number',
                             name = 'a1y',
-                            description = 'The y coordinate of the first anchor.'
+                            description = 'The y coordinate of the first anchor.',
                         },
                         {
                             type = 'number',
                             name = 'a2x',
-                            description = 'The x coordinate of the second anchor.'
+                            description = 'The x coordinate of the second anchor.',
                         },
                         {
                             type = 'number',
                             name = 'a2y',
-                            description = 'The y coordinate of the second anchor.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y coordinate of the second anchor.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getLengthA',
@@ -59,11 +62,11 @@ return {
                         {
                             type = 'number',
                             name = 'length',
-                            description = 'The length of the rope segment.'
-                        }
-                    }
-                }
-            }
+                            description = 'The length of the rope segment.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getLengthB',
@@ -74,11 +77,11 @@ return {
                         {
                             type = 'number',
                             name = 'length',
-                            description = 'The length of the rope segment.'
-                        }
-                    }
-                }
-            }
+                            description = 'The length of the rope segment.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getMaxLengths',
@@ -89,16 +92,16 @@ return {
                         {
                             type = 'number',
                             name = 'len1',
-                            description = 'The maximum length of the first rope segment.'
+                            description = 'The maximum length of the first rope segment.',
                         },
                         {
                             type = 'number',
                             name = 'len2',
-                            description = 'The maximum length of the second rope segment.'
-                        }
-                    }
-                }
-            }
+                            description = 'The maximum length of the second rope segment.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRatio',
@@ -109,11 +112,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The pulley ratio of the joint.'
-                        }
-                    }
-                }
-            }
+                            description = 'The pulley ratio of the joint.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setConstant',
@@ -124,11 +127,11 @@ return {
                         {
                             type = 'number',
                             name = 'length',
-                            description = 'The new length of the rope in the joint.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new length of the rope in the joint.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setMaxLengths',
@@ -139,16 +142,16 @@ return {
                         {
                             type = 'number',
                             name = 'max1',
-                            description = 'The new maximum length of the first segment.'
+                            description = 'The new maximum length of the first segment.',
                         },
                         {
                             type = 'number',
                             name = 'max2',
-                            description = 'The new maximum length of the second segment.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new maximum length of the second segment.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRatio',
@@ -159,16 +162,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The new pulley ratio of the joint.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The new pulley ratio of the joint.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

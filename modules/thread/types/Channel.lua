@@ -1,17 +1,19 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'Channel',
-    description = 'A channel is a way to send and receive data to and from different threads.',
-    constructors = {
-        'getChannel',
-        'newChannel'
+    description = 'An object which can be used to send and receive data between different threads.',
+    supertypes = {
+        'Object',
     },
     functions = {
         {
             name = 'clear',
             description = 'Clears all the messages in the Channel queue.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'demand',
@@ -22,27 +24,27 @@ return {
                         {
                             type = 'Variant',
                             name = 'value',
-                            description = 'The contents of the message.'
-                        }
-                    }
+                            description = 'The contents of the message.',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'timeout',
-                            description = 'The maximum amount of time to wait.'
-                        }
+                            description = 'The maximum amount of time to wait.',
+                        },
                     },
                     returns = {
                         {
                             type = 'Variant',
                             name = 'value',
-                            description = 'The contents of the message or nil if the timeout expired.'
-                        }
-                    }
-                }
-            }
+                            description = 'The contents of the message or nil if the timeout expired.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getCount',
@@ -53,11 +55,11 @@ return {
                         {
                             type = 'number',
                             name = 'count',
-                            description = 'The number of messages in the queue.'
-                        }
-                    }
-                }
-            }
+                            description = 'The number of messages in the queue.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'hasRead',
@@ -68,18 +70,18 @@ return {
                         {
                             type = 'number',
                             name = 'id',
-                            description = 'An id value previously returned by Channel:push.'
-                        }
+                            description = 'An id value previously returned by Channel:push.',
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'hasread',
-                            description = 'Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.'
-                        }
-                    }
-                }
-            }
+                            description = 'Whether the value represented by the id has been removed from the Channel via Channel:pop, Channel:demand, or Channel:clear.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'peek',
@@ -90,11 +92,11 @@ return {
                         {
                             type = 'Variant',
                             name = 'value',
-                            description = 'The contents of the message.'
-                        }
-                    }
-                }
-            }
+                            description = 'The contents of the message.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'performAtomic',
@@ -105,33 +107,33 @@ return {
                         {
                             type = 'function',
                             name = 'func',
-                            description = 'The function to call, the form of function(channel, arg1, arg2, ...) end. The Channel is passed as the first argument to the function when it is called.'
+                            description = 'The function to call, the form of function(channel, arg1, arg2, ...) end. The Channel is passed as the first argument to the function when it is called.',
                         },
                         {
                             type = 'any',
                             name = 'arg1',
-                            description = 'Additional arguments that the given function will receive when it is called.'
+                            description = 'Additional arguments that the given function will receive when it is called.',
                         },
                         {
                             type = 'any',
                             name = '...',
-                            description = 'Additional arguments that the given function will receive when it is called.'
-                        }
+                            description = 'Additional arguments that the given function will receive when it is called.',
+                        },
                     },
                     returns = {
                         {
                             type = 'any',
                             name = 'ret1',
-                            description = 'The first return value of the given function (if any.)'
+                            description = 'The first return value of the given function (if any.)',
                         },
                         {
                             type = 'any',
                             name = '...',
-                            description = 'Any other return values.'
-                        }
-                    }
-                }
-            }
+                            description = 'Any other return values.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'pop',
@@ -142,11 +144,11 @@ return {
                         {
                             type = 'Variant',
                             name = 'value',
-                            description = 'The contents of the message.'
-                        }
-                    }
-                }
-            }
+                            description = 'The contents of the message.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'push',
@@ -157,11 +159,18 @@ return {
                         {
                             type = 'Variant',
                             name = 'value',
-                            description = 'The contents of the message.'
-                        }
-                    }
-                }
-            }
+                            description = 'The contents of the message.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'id',
+                            description = 'Identifier which can be supplied to Channel:hasRead',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'supply',
@@ -172,43 +181,39 @@ return {
                         {
                             type = 'Variant',
                             name = 'value',
-                            description = 'The contents of the message.'
-                        }
+                            description = 'The contents of the message.',
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'Whether the message was successfully supplied (always true).'
-                        }
-                    }
+                            description = 'Whether the message was successfully supplied (always true).',
+                        },
+                    },
                 },
                 {
                     arguments = {
                         {
                             type = 'Variant',
                             name = 'value',
-                            description = 'The contents of the message.'
+                            description = 'The contents of the message.',
                         },
                         {
                             type = 'number',
                             name = 'timeout',
-                            description = 'The maximum amount of time to wait.'
-                        }
+                            description = 'The maximum amount of time to wait.',
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'success',
-                            description = 'Whether the message was successfully supplied before the timeout expired.'
-                        }
-                    }
-                }
-            }
+                            description = 'Whether the message was successfully supplied before the timeout expired.',
+                        },
+                    },
+                },
+            },
         },
     },
-    parenttype = 'Object',
-    supertypes = {
-        'Object'
-    }
 }

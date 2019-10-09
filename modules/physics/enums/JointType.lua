@@ -4,39 +4,39 @@ return {
     constants = {
         {
             name = 'distance',
-            description = 'A DistanceJoint.'
-        },
-        {
-            name = 'gear',
-            description = 'A GearJoint.'
-        },
-        {
-            name = 'mouse',
-            description = 'A MouseJoint.'
-        },
-        {
-            name = 'prismatic',
-            description = 'A PrismaticJoint.'
-        },
-        {
-            name = 'pulley',
-            description = 'A PulleyJoint.'
-        },
-        {
-            name = 'revolute',
-            description = 'A RevoluteJoint.'
+            description = 'A DistanceJoint.',
         },
         {
             name = 'friction',
-            description = 'A FrictionJoint.'
+            description = 'A FrictionJoint.',
         },
         {
-            name = 'weld',
-            description = 'A WeldJoint.'
+            name = 'gear',
+            description = 'A GearJoint.',
+        },
+        {
+            name = 'mouse',
+            description = 'A MouseJoint.',
+        },
+        {
+            name = 'prismatic',
+            description = 'A PrismaticJoint.',
+        },
+        {
+            name = 'pulley',
+            description = 'A PulleyJoint.',
+        },
+        {
+            name = 'revolute',
+            description = 'A RevoluteJoint.',
         },
         {
             name = 'rope',
-            description = 'A RopeJoint.'
-        }
-    }
+            description = 'A RopeJoint.',
+        },
+        {
+            name = 'weld',
+            description = 'A WeldJoint.',
+        },
+    },
 }

@@ -4,15 +4,15 @@ return {
     constants = {
         {
             name = 'info',
-            description = 'Informational dialog.'
+            description = 'Informational dialog.',
         },
         {
             name = 'warning',
-            description = 'Warning dialog.'
+            description = 'Warning dialog.',
         },
         {
             name = 'error',
-            description = 'Error dialog.'
-        }
-    }
+            description = 'Error dialog.',
+        },
+    },
 }

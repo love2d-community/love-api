@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'MotorJoint',
     description = 'Controls the relative motion between two Bodies. Position and rotation offsets can be specified, as well as the maximum motor force and torque that will be applied to reach the target offsets.',
-    constructors = {
-        'newMotorJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -13,12 +16,12 @@ return {
                     returns = {
                         {
                             type = 'number',
-                            name = 'angularoffset',
-                            description = 'The target angular offset in radians: the second body\'s angle minus the first body\'s angle.'
-                        }
-                    }
-                }
-            }
+                            name = 'angleoffset',
+                            description = 'The target angular offset in radians: the second body\'s angle minus the first body\'s angle.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getLinearOffset',
@@ -29,16 +32,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x component of the target linear offset, relative to the first Body.'
+                            description = 'The x component of the target linear offset, relative to the first Body.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y component of the target linear offset, relative to the first Body.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y component of the target linear offset, relative to the first Body.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setAngularOffset',
@@ -48,12 +51,12 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'angularoffset',
-                            description = 'The target angular offset in radians: the second body\'s angle minus the first body\'s angle.'
-                        }
-                    }
-                }
-            }
+                            name = 'angleoffset',
+                            description = 'The target angular offset in radians: the second body\'s angle minus the first body\'s angle.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setLinearOffset',
@@ -64,21 +67,16 @@ return {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x component of the target linear offset, relative to the first Body.'
+                            description = 'The x component of the target linear offset, relative to the first Body.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y component of the target linear offset, relative to the first Body.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The y component of the target linear offset, relative to the first Body.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

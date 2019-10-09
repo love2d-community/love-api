@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'WeldJoint',
     description = 'A WeldJoint essentially glues two bodies together.',
-    constructors = {
-        'newWeldJoint'
+    supertypes = {
+        'Joint',
+        'Object',
     },
     functions = {
         {
@@ -14,11 +17,11 @@ return {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The damping ratio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The damping ratio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFrequency',
@@ -29,26 +32,26 @@ return {
                         {
                             type = 'number',
                             name = 'freq',
-                            description = 'The frequency in hertz.'
-                        }
-                    }
-                }
-            }
+                            description = 'The frequency in hertz.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setDampingRatio',
-            description = 'The new damping ratio.',
+            description = 'Sets a new damping ratio.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'ratio',
-                            description = 'The new damping ratio.'
-                        }
-                    }
-                }
-            }
+                            description = 'The new damping ratio.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setFrequency',
@@ -59,16 +62,11 @@ return {
                         {
                             type = 'number',
                             name = 'freq',
-                            description = 'The new frequency in hertz.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The new frequency in hertz.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Joint',
-    supertypes = {
-        'Object',
-        'Joint'
-    }
 }

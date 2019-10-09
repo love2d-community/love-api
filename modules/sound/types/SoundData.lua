@@ -1,8 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'SoundData',
-    description = 'Contains raw audio samples. You can not play SoundData back directly. You must wrap a Source object around it.',
-    constructors = {
-        'newSoundData'
+    description = 'Contains raw audio samples.\n\nYou can not play SoundData back directly. You must wrap a Source object around it.',
+    supertypes = {
+        'Data',
+        'Object',
     },
     functions = {
         {
@@ -13,27 +16,27 @@ return {
                     returns = {
                         {
                             type = 'number',
-                            name = 'bits',
-                            description = 'Either 8 or 16.'
-                        }
-                    }
-                }
-            }
+                            name = 'bitdepth',
+                            description = 'Either 8, or 16.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getChannelCount',
-            description = 'Returns the number of channels in the stream.',
+            description = 'Returns the number of channels in the SoundData.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'number',
                             name = 'channels',
-                            description = '1 for mono, 2 for stereo.'
-                        }
-                    }
-                }
-            }
+                            description = '1 for mono, 2 for stereo.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getDuration',
@@ -44,33 +47,55 @@ return {
                         {
                             type = 'number',
                             name = 'duration',
-                            description = 'The duration of the sound data in seconds.'
-                        }
-                    }
-                }
-            }
+                            description = 'The duration of the sound data in seconds.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSample',
-            description = 'Gets the sample at the specified position.',
+            description = 'Gets the value of the sample-point at the specified position. For stereo SoundData objects, the data from the left and right channels are interleaved in that order.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'i',
-                            description = 'An integer value specifying the position of the sample (0 points to the first sample).'
-                        }
+                            description = 'An integer value specifying the position of the sample (starting at 0).',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'sample',
-                            description = 'The normalized sample (range -1.0 to 1.0).'
-                        }
-                    }
-                }
-            }
+                            description = 'The normalized samplepoint (range -1.0 to 1.0).',
+                        },
+                    },
+                },
+                {
+                    description = 'Gets the value of a sample using an explicit sample index instead of interleaving them in the sample position parameter.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'i',
+                            description = 'An integer value specifying the position of the sample (starting at 0).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'channel',
+                            description = 'The index of the channel to get within the given sample.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'sample',
+                            description = 'The normalized samplepoint (range -1.0 to 1.0).',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSampleCount',
@@ -81,11 +106,11 @@ return {
                         {
                             type = 'number',
                             name = 'count',
-                            description = 'Total number of samples.'
-                        }
-                    }
-                }
-            }
+                            description = 'Total number of samples.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getSampleRate',
@@ -96,36 +121,51 @@ return {
                         {
                             type = 'number',
                             name = 'rate',
-                            description = 'Number of samples per second.'
-                        }
-                    }
-                }
-            }
+                            description = 'Number of samples per second.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setSample',
-            description = 'Sets the sample at the specified position.',
+            description = 'Sets the value of the sample-point at the specified position. For stereo SoundData objects, the data from the left and right channels are interleaved in that order.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
                             name = 'i',
-                            description = 'The position of the sample (0 means first sample).'
+                            description = 'An integer value specifying the position of the sample (starting at 0).',
                         },
                         {
                             type = 'number',
                             name = 'sample',
-                            description = 'A normalized sample (range -1.0 to 1.0).'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The normalized samplepoint (range -1.0 to 1.0).',
+                        },
+                    },
+                },
+                {
+                    description = 'Sets the value of a sample using an explicit sample index instead of interleaving them in the sample position parameter.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'i',
+                            description = 'An integer value specifying the position of the sample (starting at 0).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'channel',
+                            description = 'The index of the channel to set within the given sample.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'sample',
+                            description = 'The normalized samplepoint (range -1.0 to 1.0).',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Data',
-    supertypes = {
-        'Data',
-        'Object'
-    }
 }

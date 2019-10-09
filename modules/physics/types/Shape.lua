@@ -1,11 +1,10 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'Shape',
-    description = 'Shapes are solid 2d geometrical objects used in love.physics.\n\nShapes are attached to a Body via a Fixture. The Shape object is copied when this happens. Shape position is relative to Body position.',
-    constructors = {
-        'newChainShape',
-        'newEdgeShape',
-        'newPolygonShape',
-        'newRectangleShape'
+    description = 'Shapes are solid 2d geometrical objects which handle the mass and collision of a Body in love.physics.\n\nShapes are attached to a Body via a Fixture. The Shape object is copied when this happens. \n\nThe Shape\'s position is relative to the position of the Body it has been attached to.',
+    supertypes = {
+        'Object',
     },
     functions = {
         {
@@ -17,49 +16,49 @@ return {
                         {
                             type = 'number',
                             name = 'tx',
-                            description = 'The translation of the shape on the x-axis.'
+                            description = 'The translation of the shape on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'ty',
-                            description = 'The translation of the shape on the y-axis.'
+                            description = 'The translation of the shape on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'tr',
-                            description = 'The shape rotation.'
+                            description = 'The shape rotation.',
                         },
                         {
                             type = 'number',
                             name = 'childIndex',
+                            description = 'The index of the child to compute the bounding box of.',
                             default = '1',
-                            description = 'The index of the child to compute the bounding box of.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'topLeftX',
-                            description = 'The x position of the top-left point.'
+                            description = 'The x position of the top-left point.',
                         },
                         {
                             type = 'number',
                             name = 'topLeftY',
-                            description = 'The y position of the top-left point.'
+                            description = 'The y position of the top-left point.',
                         },
                         {
                             type = 'number',
                             name = 'bottomRightX',
-                            description = 'The x position of the bottom-right point.'
+                            description = 'The x position of the bottom-right point.',
                         },
                         {
                             type = 'number',
                             name = 'bottomRightY',
-                            description = 'The y position of the bottom-right point.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y position of the bottom-right point.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'computeMass',
@@ -70,33 +69,33 @@ return {
                         {
                             type = 'number',
                             name = 'density',
-                            description = 'The shape density.'
-                        }
+                            description = 'The shape density.',
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'x',
-                            description = 'The x postition of the center of mass.'
+                            description = 'The x postition of the center of mass.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y postition of the center of mass.'
+                            description = 'The y postition of the center of mass.',
                         },
                         {
                             type = 'number',
                             name = 'mass',
-                            description = 'The mass of the shape.'
+                            description = 'The mass of the shape.',
                         },
                         {
                             type = 'number',
                             name = 'inertia',
-                            description = 'The rotational inertia.'
-                        }
-                    }
-                }
-            }
+                            description = 'The rotational inertia.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getChildCount',
@@ -107,11 +106,11 @@ return {
                         {
                             type = 'number',
                             name = 'count',
-                            description = 'The number of children.'
-                        }
-                    }
-                }
-            }
+                            description = 'The number of children.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRadius',
@@ -122,26 +121,26 @@ return {
                         {
                             type = 'number',
                             name = 'radius',
-                            description = 'The radius of the shape.'
-                        }
-                    }
-                }
-            }
+                            description = 'The radius of the shape.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getType',
-            description = 'Gets a string representing the Shape. This function can be useful for conditional debug drawing.',
+            description = 'Gets a string representing the Shape.\n\nThis function can be useful for conditional debug drawing.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'ShapeType',
                             name = 'type',
-                            description = 'The type of the Shape.'
-                        }
-                    }
-                }
-            }
+                            description = 'The type of the Shape.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'rayCast',
@@ -152,106 +151,111 @@ return {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The x position of the input line starting point.'
+                            description = 'The x position of the input line starting point.',
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The y position of the input line starting point.'
+                            description = 'The y position of the input line starting point.',
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The x position of the input line end point.'
+                            description = 'The x position of the input line end point.',
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The y position of the input line end point.'
+                            description = 'The y position of the input line end point.',
                         },
                         {
                             type = 'number',
                             name = 'maxFraction',
-                            description = 'Ray length parameter.'
+                            description = 'Ray length parameter.',
                         },
                         {
                             type = 'number',
                             name = 'tx',
-                            description = 'The translation of the shape on the x-axis.'
+                            description = 'The translation of the shape on the x-axis.',
                         },
                         {
                             type = 'number',
                             name = 'ty',
-                            description = 'The translation of the shape on the y-axis.'
+                            description = 'The translation of the shape on the y-axis.',
                         },
                         {
                             type = 'number',
                             name = 'tr',
-                            description = 'The shape rotation.'
+                            description = 'The shape rotation.',
                         },
                         {
                             type = 'number',
                             name = 'childIndex',
+                            description = 'The index of the child the ray gets cast against.',
                             default = '1',
-                            description = 'The index of the child the ray gets cast against.'
-                        }
+                        },
                     },
                     returns = {
                         {
                             type = 'number',
                             name = 'xn',
-                            description = 'The x component of the normal vector of the edge where the ray hit the shape.'
+                            description = 'The x component of the normal vector of the edge where the ray hit the shape.',
                         },
                         {
                             type = 'number',
                             name = 'yn',
-                            description = 'The y component of the normal vector of the edge where the ray hit the shape.'
+                            description = 'The y component of the normal vector of the edge where the ray hit the shape.',
                         },
                         {
                             type = 'number',
                             name = 'fraction',
-                            description = 'The position on the input line where the intersection happened as a factor of the line length.'
-                        }
-                    }
-                }
-            }
+                            description = 'The position on the input line where the intersection happened as a factor of the line length.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'testPoint',
-            description = 'Checks whether a point lies inside the shape. This is particularly useful for mouse interaction with the shapes. By looping through all shapes and testing the mouse position with this function, we can find which shapes the mouse touches.',
+            description = 'This is particularly useful for mouse interaction with the shapes. By looping through all shapes and testing the mouse position with this function, we can find which shapes the mouse touches.',
             variants = {
                 {
                     arguments = {
                         {
                             type = 'number',
+                            name = 'tx',
+                            description = 'Translates the shape along the x-axis.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'ty',
+                            description = 'Translates the shape along the y-axis.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'tr',
+                            description = 'Rotates the shape.',
+                        },
+                        {
+                            type = 'number',
                             name = 'x',
-                            description = 'The x component of the point.'
+                            description = 'The x-component of the point.',
                         },
                         {
                             type = 'number',
                             name = 'y',
-                            description = 'The y component of the point.'
-                        }
+                            description = 'The y-component of the point.',
+                        },
                     },
                     returns = {
                         {
                             type = 'boolean',
                             name = 'hit',
-                            description = 'True if inside, false if outside'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'True if inside, false if outside',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Object',
-    supertypes = {
-        'Object'
-    },
-    subtypes = {
-        'ChainShape',
-        'CircleShape',
-        'EdgeShape',
-        'PolygonShape'
-    }
 }

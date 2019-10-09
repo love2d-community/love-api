@@ -4,19 +4,19 @@ return {
     constants = {
         {
             name = 'circle',
-            description = 'The Shape is a CircleShape.'
+            description = 'The Shape is a CircleShape.',
         },
         {
             name = 'polygon',
-            description = 'The Shape is a PolygonShape.'
+            description = 'The Shape is a PolygonShape.',
         },
         {
             name = 'edge',
-            description = 'The Shape is a EdgeShape.'
+            description = 'The Shape is a EdgeShape.',
         },
         {
             name = 'chain',
-            description = 'The Shape is a ChainShape.'
-        }
-    }
+            description = 'The Shape is a ChainShape.',
+        },
+    },
 }

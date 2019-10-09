@@ -1,6 +1,11 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'Contact',
     description = 'Contacts are objects created to manage collisions in worlds.',
+    supertypes = {
+        'Object',
+    },
     functions = {
         {
             name = 'getFixtures',
@@ -11,16 +16,16 @@ return {
                         {
                             type = 'Fixture',
                             name = 'fixtureA',
-                            description = 'The first Fixture.'
+                            description = 'The first Fixture.',
                         },
                         {
                             type = 'Fixture',
                             name = 'fixtureB',
-                            description = 'The second Fixture.'
-                        }
-                    }
-                }
-            }
+                            description = 'The second Fixture.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getFriction',
@@ -31,11 +36,11 @@ return {
                         {
                             type = 'number',
                             name = 'friction',
-                            description = 'The friction of the contact.'
-                        }
-                    }
-                }
-            }
+                            description = 'The friction of the contact.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getNormal',
@@ -46,16 +51,16 @@ return {
                         {
                             type = 'number',
                             name = 'nx',
-                            description = 'The x component of the normal vector.'
+                            description = 'The x component of the normal vector.',
                         },
                         {
                             type = 'number',
                             name = 'ny',
-                            description = 'The y component of the normal vector.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y component of the normal vector.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getPositions',
@@ -66,26 +71,26 @@ return {
                         {
                             type = 'number',
                             name = 'x1',
-                            description = 'The x coordinate of the first contact point. '
+                            description = 'The x coordinate of the first contact point.',
                         },
                         {
                             type = 'number',
                             name = 'y1',
-                            description = 'The y coordinate of the first contact point.'
+                            description = 'The y coordinate of the first contact point.',
                         },
                         {
                             type = 'number',
                             name = 'x2',
-                            description = 'The x coordinate of the second contact point.'
+                            description = 'The x coordinate of the second contact point.',
                         },
                         {
                             type = 'number',
                             name = 'y2',
-                            description = 'The y coordinate of the second contact point.'
-                        }
-                    }
-                }
-            }
+                            description = 'The y coordinate of the second contact point.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'getRestitution',
@@ -96,11 +101,11 @@ return {
                         {
                             type = 'number',
                             name = 'restitution',
-                            description = 'The restitution between the two shapes.'
-                        }
-                    }
-                }
-            }
+                            description = 'The restitution between the two shapes.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isEnabled',
@@ -111,11 +116,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'enabled',
-                            description = 'True if enabled, false otherwise.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if enabled, false otherwise.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'isTouching',
@@ -126,25 +131,27 @@ return {
                         {
                             type = 'boolean',
                             name = 'touching',
-                            description = 'True if they touch or false if not.'
-                        }
-                    }
-                }
-            }
+                            description = 'True if they touch or false if not.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'resetFriction',
             description = 'Resets the contact friction to the mixture value of both fixtures.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'resetRestitution',
             description = 'Resets the contact restitution to the mixture value of both fixtures.',
             variants = {
-                {}
-            }
+                {
+                },
+            },
         },
         {
             name = 'setEnabled',
@@ -155,11 +162,11 @@ return {
                         {
                             type = 'boolean',
                             name = 'enabled',
-                            description = 'True to enable or false to disable.'
-                        }
-                    }
-                }
-            }
+                            description = 'True to enable or false to disable.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setFriction',
@@ -170,11 +177,11 @@ return {
                         {
                             type = 'number',
                             name = 'friction',
-                            description = 'The contact friction.'
-                        }
-                    }
-                }
-            }
+                            description = 'The contact friction.',
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setRestitution',
@@ -185,15 +192,11 @@ return {
                         {
                             type = 'number',
                             name = 'restitution',
-                            description = 'The contact restitution.'
-                        }
-                    }
-                }
-            }
-        }
+                            description = 'The contact restitution.',
+                        },
+                    },
+                },
+            },
+        },
     },
-    parenttype = 'Object',
-    supertypes = {
-        'Object'
-    }
 }
