@@ -156,14 +156,14 @@ It makes the following changes:
 ### Example: function synopsis list
 
 ```lua
-api = require('extra')(require('love-api.love-api'))
+api = require('extra')(require('love-api.love_api'))
 
 table.sort(api.variants, function(a, b) return a.function_.fullname < b.function_.fullname end)
 
 local s = ''
 
 for _, variant in ipairs(api.variants) do
-    local function getList(t)
+    local function list(t)
         local s = ''
 
         for i, a in ipairs(t) do
@@ -182,13 +182,13 @@ for _, variant in ipairs(api.variants) do
     end
 
     if #variant.returns > 0 then
-        s = s..getList(variant.returns)..' = '
+        s = s..list(variant.returns)..' = '
     end
 
     s = s..variant.function_.fullname..'('
 
     if #variant.arguments > 0 then
-        s = s..getList(variant.arguments)
+        s = s..list(variant.arguments)
     end
 
     s = s..')\n'
