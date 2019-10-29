@@ -221,19 +221,24 @@ return {
     },
 
     byfullname = {}, -- Indexed by 'fullname' key
-    byid = {}, -- Index by 'id' key
+    byid = {}, -- Indexed by 'id' key
+    
     everything = {}, -- Every table with a 'what' key
+    
     allfullnames = {}, -- modules, functions, methods, callbacks, types, enums
     allfunctions = {}, -- functions, methods, callbacks
     noncallbackfunctions = {}, -- functions, methods
+    
     functions = {},
     methods = {},
     callbacks = {},
-    types = {},
-    enums = {},
+    variants = {},
     arguments = {},
     returns = {},
     tables = {},
+    types = {},
+    enums = {},
+    constants = {},
 }
 
 enums = {
@@ -336,7 +341,7 @@ returns = { -- or arguments
                 default = 'default argument', -- If argument and not return
                 description = 'Description.',
 
-                what = 'returntable', -- or 'argumenttable'
+                what = 'table',
                 id = 'love_module_functionName_rb_ast_a2_t1',
                 module = moduleTable,
                 type_ = typeTable,
