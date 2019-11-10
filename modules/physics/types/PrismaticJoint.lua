@@ -214,6 +214,15 @@ return {
             name = 'setLimitsEnabled',
             description = 'Enables/disables the joint limit.',
             variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'True if enabled, false if disabled.',
+                        },
+                    },
+                },
             },
         },
         {
@@ -250,6 +259,15 @@ return {
             name = 'setMotorEnabled',
             description = 'Enables/disables the joint motor.',
             variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'boolean',
+                            name = 'enable',
+                            description = 'True to enable, false to disable.',
+                        },
+                    },
+                },
             },
         },
         {
