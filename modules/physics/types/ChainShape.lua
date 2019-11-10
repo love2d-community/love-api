@@ -81,6 +81,30 @@ return {
             name = 'getPoints',
             description = 'Returns all points of the shape.',
             variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x1',
+                            description = 'The x-coordinate of the first point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y1',
+                            description = 'The y-coordinate of the first point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'x2',
+                            description = 'The x-coordinate of the second point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y2',
+                            description = 'The y-coordinate of the second point.',
+                        },
+                    },
+                },
             },
         },
         {
