@@ -12,6 +12,15 @@ return {
             name = 'getActiveEffects',
             description = 'Gets a list of the names of the currently enabled effects.',
             variants = {
+                {
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'effects',
+                            description = 'The list of the names of the currently enabled effects.',
+                        },
+                    },
+                },
             },
         },
         {
