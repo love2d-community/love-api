@@ -151,7 +151,7 @@ It makes the following changes:
 * Functions have an optional field **constructs**, which points to the type it constructs, and **getter** and **setter** which is the corresponding getter/setter to the state the function sets/gets.
 * **api.everything** contains every table with a **what** field.
 * There are fields with subsets of **api.everything**, e.g. **api.allfunctions** (containing functions, methods and callbacks), **api.enums**, etc.
-* **api.byfullname** which is indexed by fullname, and **api.byid** which is indexed by ID. For example `api.byfullname['love.graphics.draw]`
+* **api.byfullname** which is indexed by fullname, and **api.byid** which is indexed by ID. For example `api.byfullname['love.graphics.draw']`
 
 ### Example: function synopsis list
 
