@@ -764,7 +764,7 @@ return {
         },
         {
             name = 'setRelative',
-            description = 'Sets whether the parent::Source\'s position, velocity, direction, and cone angles are relative to the listener, or absolute.\n\nBy default, all sources are absolute and therefore relative to the origin of love\'s coordinate system 0, 0. Only absolute sources are affected by the position of the listener. Please note that positional audio only works for mono (i.e. non-stereo) sources. ',
+            description = 'Sets whether the Source\'s position, velocity, direction, and cone angles are relative to the listener, or absolute.\n\nBy default, all sources are absolute and therefore relative to the origin of love\'s coordinate system 0, 0. Only absolute sources are affected by the position of the listener. Please note that positional audio only works for mono (i.e. non-stereo) sources. ',
             variants = {
                 {
                     arguments = {

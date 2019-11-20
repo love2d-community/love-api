@@ -11,6 +11,114 @@ return {
     },
     functions = {
         {
+            name = 'colorFromBytes',
+            description = 'Converts a color from 0..255 to 0..1 range.',
+            variants = {
+                {
+                    description = 'Here\'s implementation for 11.2 and earlier.\n\nfunction love.math.colorFromBytes(r, g, b, a)\n\n	if type(r) == \'table\' then\n\n		r, g, b, a = rr[2, rr[4\n\n	end\n\n	r = clamp01(floor(r + 0.5) / 255)\n\n	g = clamp01(floor(g + 0.5) / 255)\n\n	b = clamp01(floor(b + 0.5) / 255)\n\n	a = a ~= nil and clamp01(floor(a + 0.5) / 255) or nil\n\n	return r, g, b, a\n\nend\n\nWhere clamp01 is defined as follows\n\nlocal function clamp01(x)\n\n	return math.min(math.max(x, 0), 1)\n\nend',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'rb',
+                            description = 'Red color component in 0..255 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'gb',
+                            description = 'Green color component in 0..255 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'bb',
+                            description = 'Blue color component in 0..255 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'ab',
+                            description = 'Alpha color component in 0..255 range.',
+                            default = 'nil',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'r',
+                            description = 'Red color component in 0..1 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'g',
+                            description = 'Green color component in 0..1 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'b',
+                            description = 'Blue color component in 0..1 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'a',
+                            description = 'Alpha color component in 0..1 range or nil if alpha is not specified.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'colorToBytes',
+            description = 'Converts a color from 0..1 to 0..255 range.',
+            variants = {
+                {
+                    description = 'Here\'s implementation for 11.2 and earlier.\n\nfunction love.math.colorToBytes(r, g, b, a)\n\n	if type(r) == \'table\' then\n\n		r, g, b, a = rr[2, rr[4\n\n	end\n\n	r = floor(clamp01(r) * 255 + 0.5)\n\n	g = floor(clamp01(g) * 255 + 0.5)\n\n	b = floor(clamp01(b) * 255 + 0.5)\n\n	a = a ~= nil and floor(clamp01(a) * 255 + 0.5) or nil\n\n	return r, g, b, a\n\nend\n\nWhere clamp01 is defined as follows\n\nlocal function clamp01(x)\n\n	return math.min(math.max(x, 0), 1)\n\nend',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'r',
+                            description = 'Red color component.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'g',
+                            description = 'Green color component.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'b',
+                            description = 'Blue color component.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'a',
+                            description = 'Alpha color component.',
+                            default = 'nil',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'rb',
+                            description = 'Red color component in 0..255 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'gb',
+                            description = 'Green color component in 0..255 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'bb',
+                            description = 'Blue color component in 0..255 range.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'ab',
+                            description = 'Alpha color component in 0..255 range or nil if alpha is not specified.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'compress',
             description = 'Compresses a string or data using a specific compression algorithm.',
             variants = {
@@ -903,5 +1011,6 @@ return {
     },
     enums = {
         require(path .. 'enums.CompressedDataFormat'),
+        require(path .. 'enums.MatrixLayout'),
     },
 }

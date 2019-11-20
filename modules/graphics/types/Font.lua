@@ -109,7 +109,7 @@ return {
         },
         {
             name = 'getLineHeight',
-            description = 'Gets the line height. \n\nThis will be the value previously set by Font:setLineHeight, or 1.0 by default.',
+            description = 'Gets the line height.\n\nThis will be the value previously set by Font:setLineHeight, or 1.0 by default.',
             variants = {
                 {
                     returns = {
@@ -289,7 +289,7 @@ return {
         },
         {
             name = 'setLineHeight',
-            description = 'Sets the line height. \n\nWhen rendering the font in lines the actual height will be \n\ndetermined by the line height multiplied by the height of the font. \n\nThe default is 1.0.',
+            description = 'Sets the line height.\n\nWhen rendering the font in lines the actual height will be determined by the line height multiplied by the height of the font. The default is 1.0.',
             variants = {
                 {
                     arguments = {

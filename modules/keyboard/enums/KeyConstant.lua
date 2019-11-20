@@ -4,583 +4,579 @@ return {
     constants = {
         {
             name = 'a',
-            description = 'The A key'
+            description = 'The A key',
         },
         {
             name = 'b',
-            description = 'The B key'
+            description = 'The B key',
         },
         {
             name = 'c',
-            description = 'The C key'
+            description = 'The C key',
         },
         {
             name = 'd',
-            description = 'The D key'
+            description = 'The D key',
         },
         {
             name = 'e',
-            description = 'The E key'
+            description = 'The E key',
         },
         {
             name = 'f',
-            description = 'The F key'
+            description = 'The F key',
         },
         {
             name = 'g',
-            description = 'The G key'
+            description = 'The G key',
         },
         {
             name = 'h',
-            description = 'The H key'
+            description = 'The H key',
         },
         {
             name = 'i',
-            description = 'The I key'
+            description = 'The I key',
         },
         {
             name = 'j',
-            description = 'The J key'
+            description = 'The J key',
         },
         {
             name = 'k',
-            description = 'The K key'
+            description = 'The K key',
         },
         {
             name = 'l',
-            description = 'The L key'
+            description = 'The L key',
         },
         {
             name = 'm',
-            description = 'The M key'
+            description = 'The M key',
         },
         {
             name = 'n',
-            description = 'The N key'
+            description = 'The N key',
         },
         {
             name = 'o',
-            description = 'The O key'
+            description = 'The O key',
         },
         {
             name = 'p',
-            description = 'The P key'
+            description = 'The P key',
         },
         {
             name = 'q',
-            description = 'The Q key'
+            description = 'The Q key',
         },
         {
             name = 'r',
-            description = 'The R key'
+            description = 'The R key',
         },
         {
             name = 's',
-            description = 'The S key'
+            description = 'The S key',
         },
         {
             name = 't',
-            description = 'The T key'
+            description = 'The T key',
         },
         {
             name = 'u',
-            description = 'The U key'
+            description = 'The U key',
         },
         {
             name = 'v',
-            description = 'The V key'
+            description = 'The V key',
         },
         {
             name = 'w',
-            description = 'The W key'
+            description = 'The W key',
         },
         {
             name = 'x',
-            description = 'The X key'
+            description = 'The X key',
         },
         {
             name = 'y',
-            description = 'The Y key'
+            description = 'The Y key',
         },
         {
             name = 'z',
-            description = 'The Z key'
+            description = 'The Z key',
         },
         {
             name = '0',
-            description = 'The zero key'
+            description = 'The zero key',
         },
         {
             name = '1',
-            description = 'The one key'
+            description = 'The one key',
         },
         {
             name = '2',
-            description = 'The two key'
+            description = 'The two key',
         },
         {
             name = '3',
-            description = 'The three key'
+            description = 'The three key',
         },
         {
             name = '4',
-            description = 'The four key'
+            description = 'The four key',
         },
         {
             name = '5',
-            description = 'The five key'
+            description = 'The five key',
         },
         {
             name = '6',
-            description = 'The six key'
+            description = 'The six key',
         },
         {
             name = '7',
-            description = 'The seven key'
+            description = 'The seven key',
         },
         {
             name = '8',
-            description = 'The eight key'
+            description = 'The eight key',
         },
         {
             name = '9',
-            description = 'The nine key'
+            description = 'The nine key',
         },
         {
             name = 'space',
             description = 'Space key',
-            notes = 'In version 0.9.2 and earlier this is represented by the actual space character'
         },
         {
             name = '!',
-            description = 'Exclamation mark key'
+            description = 'Exclamation mark key',
         },
         {
             name = '"',
-            description = 'Double quote key'
+            description = 'Double quote key',
         },
         {
             name = '#',
-            description = 'Hash key'
+            description = 'Hash key',
         },
         {
             name = '$',
-            description = 'Dollar key'
+            description = 'Dollar key',
         },
         {
             name = '&',
-            description = 'Ampersand key'
+            description = 'Ampersand key',
         },
         {
             name = '\'',
-            description = 'Single quote key'
+            description = 'Single quote key',
         },
         {
             name = '(',
-            description = 'Left parenthesis key'
+            description = 'Left parenthesis key',
         },
         {
             name = ')',
-            description = 'Right parenthesis key'
+            description = 'Right parenthesis key',
         },
         {
             name = '*',
-            description = 'Asterisk key'
+            description = 'Asterisk key',
         },
         {
             name = '+',
-            description = 'Plus key'
+            description = 'Plus key',
         },
         {
             name = ',',
-            description = 'Comma key'
+            description = 'Comma key',
         },
         {
             name = '-',
-            description = 'Hyphen-minus key'
+            description = 'Hyphen-minus key',
         },
         {
             name = '.',
-            description = 'Full stop key'
+            description = 'Full stop key',
         },
         {
             name = '/',
-            description = 'Slash key'
+            description = 'Slash key',
         },
         {
             name = ':',
-            description = 'Colon key'
+            description = 'Colon key',
         },
         {
             name = ';',
-            description = 'Semicolon key'
+            description = 'Semicolon key',
         },
         {
             name = '<',
-            description = 'Less-than key'
+            description = 'Less-than key',
         },
         {
             name = '=',
-            description = 'Equal key'
+            description = 'Equal key',
         },
         {
             name = '>',
-            description = 'Greater-than key'
+            description = 'Greater-than key',
         },
         {
             name = '?',
-            description = 'Question mark key'
+            description = 'Question mark key',
         },
         {
             name = '@',
-            description = 'At sign key'
+            description = 'At sign key',
         },
         {
             name = '[',
-            description = 'Left square bracket key'
+            description = 'Left square bracket key',
         },
         {
             name = '\\',
-            description = 'Backslash key'
+            description = 'Backslash key',
         },
         {
             name = ']',
-            description = 'Right square bracket key'
+            description = 'Right square bracket key',
         },
         {
             name = '^',
-            description = 'Caret key'
+            description = 'Caret key',
         },
         {
             name = '_',
-            description = 'Underscore key'
+            description = 'Underscore key',
         },
         {
             name = '`',
             description = 'Grave accent key',
-            notes = 'Also known as the "Back tick" key'
         },
         {
             name = 'kp0',
-            description = 'The numpad zero key'
+            description = 'The numpad zero key',
         },
         {
             name = 'kp1',
-            description = 'The numpad one key'
+            description = 'The numpad one key',
         },
         {
             name = 'kp2',
-            description = 'The numpad two key'
+            description = 'The numpad two key',
         },
         {
             name = 'kp3',
-            description = 'The numpad three key'
+            description = 'The numpad three key',
         },
         {
             name = 'kp4',
-            description = 'The numpad four key'
+            description = 'The numpad four key',
         },
         {
             name = 'kp5',
-            description = 'The numpad five key'
+            description = 'The numpad five key',
         },
         {
             name = 'kp6',
-            description = 'The numpad six key'
+            description = 'The numpad six key',
         },
         {
             name = 'kp7',
-            description = 'The numpad seven key'
+            description = 'The numpad seven key',
         },
         {
             name = 'kp8',
-            description = 'The numpad eight key'
+            description = 'The numpad eight key',
         },
         {
             name = 'kp9',
-            description = 'The numpad nine key'
+            description = 'The numpad nine key',
         },
         {
             name = 'kp.',
-            description = 'The numpad decimal point key'
+            description = 'The numpad decimal point key',
         },
         {
             name = 'kp/',
-            description = 'The numpad division key'
+            description = 'The numpad division key',
         },
         {
             name = 'kp*',
-            description = 'The numpad multiplication key'
+            description = 'The numpad multiplication key',
         },
         {
             name = 'kp-',
-            description = 'The numpad substraction key'
+            description = 'The numpad substraction key',
         },
         {
             name = 'kp+',
-            description = 'The numpad addition key'
+            description = 'The numpad addition key',
         },
         {
             name = 'kpenter',
-            description = 'The numpad enter key'
+            description = 'The numpad enter key',
         },
         {
             name = 'kp=',
-            description = 'The numpad equals key'
+            description = 'The numpad equals key',
         },
         {
             name = 'up',
-            description = 'Up cursor key'
+            description = 'Up cursor key',
         },
         {
             name = 'down',
-            description = 'Down cursor key'
+            description = 'Down cursor key',
         },
         {
             name = 'right',
-            description = 'Right cursor key'
+            description = 'Right cursor key',
         },
         {
             name = 'left',
-            description = 'Left cursor key'
+            description = 'Left cursor key',
         },
         {
             name = 'home',
-            description = 'Home key'
+            description = 'Home key',
         },
         {
             name = 'end',
-            description = 'End key'
+            description = 'End key',
         },
         {
             name = 'pageup',
-            description = 'Page up key'
+            description = 'Page up key',
         },
         {
             name = 'pagedown',
-            description = 'Page down key'
+            description = 'Page down key',
         },
         {
             name = 'insert',
-            description = 'Insert key'
+            description = 'Insert key',
         },
         {
             name = 'backspace',
-            description = 'Backspace key'
+            description = 'Backspace key',
         },
         {
             name = 'tab',
-            description = 'Tab key'
+            description = 'Tab key',
         },
         {
             name = 'clear',
-            description = 'Clear key'
+            description = 'Clear key',
         },
         {
             name = 'return',
             description = 'Return key',
-            notes = 'Also known as the Enter key'
         },
         {
             name = 'delete',
-            description = 'Delete key'
+            description = 'Delete key',
         },
         {
             name = 'f1',
-            description = 'The 1st function key'
+            description = 'The 1st function key',
         },
         {
             name = 'f2',
-            description = 'The 2nd function key'
+            description = 'The 2nd function key',
         },
         {
             name = 'f3',
-            description = 'The 3rd function key'
+            description = 'The 3rd function key',
         },
         {
             name = 'f4',
-            description = 'The 4th function key'
+            description = 'The 4th function key',
         },
         {
             name = 'f5',
-            description = 'The 5th function key'
+            description = 'The 5th function key',
         },
         {
             name = 'f6',
-            description = 'The 6th function key'
+            description = 'The 6th function key',
         },
         {
             name = 'f7',
-            description = 'The 7th function key'
+            description = 'The 7th function key',
         },
         {
             name = 'f8',
-            description = 'The 8th function key'
+            description = 'The 8th function key',
         },
         {
             name = 'f9',
-            description = 'The 9th function key'
+            description = 'The 9th function key',
         },
         {
             name = 'f10',
-            description = 'The 10th function key'
+            description = 'The 10th function key',
         },
         {
             name = 'f11',
-            description = 'The 11th function key'
+            description = 'The 11th function key',
         },
         {
             name = 'f12',
-            description = 'The 12th function key'
+            description = 'The 12th function key',
         },
         {
             name = 'f13',
-            description = 'The 13th function key'
+            description = 'The 13th function key',
         },
         {
             name = 'f14',
-            description = 'The 14th function key'
+            description = 'The 14th function key',
         },
         {
             name = 'f15',
-            description = 'The 15th function key'
+            description = 'The 15th function key',
         },
         {
             name = 'numlock',
-            description = 'Num-lock key'
+            description = 'Num-lock key',
         },
         {
             name = 'capslock',
             description = 'Caps-lock key',
-            notes = 'Caps-on is a key press. Caps-off is a key release.'
         },
         {
             name = 'scrollock',
-            description = 'Scroll-lock key'
+            description = 'Scroll-lock key',
         },
         {
             name = 'rshift',
-            description = 'Right shift key'
+            description = 'Right shift key',
         },
         {
             name = 'lshift',
-            description = 'Left shift key'
+            description = 'Left shift key',
         },
         {
             name = 'rctrl',
-            description = 'Right control key'
+            description = 'Right control key',
         },
         {
             name = 'lctrl',
-            description = 'Left control key'
+            description = 'Left control key',
         },
         {
             name = 'ralt',
-            description = 'Right alt key'
+            description = 'Right alt key',
         },
         {
             name = 'lalt',
-            description = 'Left alt key'
+            description = 'Left alt key',
         },
         {
             name = 'rmeta',
-            description = 'Right meta key'
+            description = 'Right meta key',
         },
         {
             name = 'lmeta',
-            description = 'Left meta key'
+            description = 'Left meta key',
         },
         {
             name = 'lsuper',
-            description = 'Left super key'
+            description = 'Left super key',
         },
         {
             name = 'rsuper',
-            description = 'Right super key'
+            description = 'Right super key',
         },
         {
             name = 'mode',
-            description = 'Mode key'
+            description = 'Mode key',
         },
         {
             name = 'compose',
-            description = 'Compose key'
+            description = 'Compose key',
         },
         {
             name = 'pause',
-            description = 'Pause key'
+            description = 'Pause key',
         },
         {
             name = 'escape',
-            description = 'Escape key'
+            description = 'Escape key',
         },
         {
             name = 'help',
-            description = 'Help key'
+            description = 'Help key',
         },
         {
             name = 'print',
-            description = 'Print key'
+            description = 'Print key',
         },
         {
             name = 'sysreq',
-            description = 'System request key'
+            description = 'System request key',
         },
         {
             name = 'break',
-            description = 'Break key'
+            description = 'Break key',
         },
         {
             name = 'menu',
-            description = 'Menu key'
+            description = 'Menu key',
         },
         {
             name = 'power',
-            description = 'Power key'
+            description = 'Power key',
         },
         {
             name = 'euro',
-            description = 'Euro (&euro;) key'
+            description = 'Euro (&euro;) key',
         },
         {
             name = 'undo',
-            description = 'Undo key'
+            description = 'Undo key',
         },
         {
             name = 'www',
-            description = 'WWW key'
+            description = 'WWW key',
         },
         {
             name = 'mail',
-            description = 'Mail key'
+            description = 'Mail key',
         },
         {
             name = 'calculator',
-            description = 'Calculator key'
+            description = 'Calculator key',
         },
         {
             name = 'appsearch',
-            description = 'Application search key'
+            description = 'Application search key',
         },
         {
             name = 'apphome',
-            description = 'Application home key'
+            description = 'Application home key',
         },
         {
             name = 'appback',
-            description = 'Application back key'
+            description = 'Application back key',
         },
         {
             name = 'appforward',
-            description = 'Application forward key'
+            description = 'Application forward key',
         },
         {
             name = 'apprefresh',
-            description = 'Application refresh key'
+            description = 'Application refresh key',
         },
         {
             name = 'appbookmarks',
-            description = 'Application bookmarks key'
-        }
-    }
+            description = 'Application bookmarks key',
+        },
+    },
 }

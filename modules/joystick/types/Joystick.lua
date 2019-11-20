@@ -85,6 +85,32 @@ return {
             },
         },
         {
+            name = 'getDeviceInfo',
+            description = 'Gets the USB vendor ID, product ID, and product version numbers of joystick which consistent across operating systems.\n\nCan be used to show different icons, etc. for different gamepads.',
+            variants = {
+                {
+                    description = 'Some Linux distribution may not ship with SDL 2.0.6 or later, in which case this function will returns 0 for all the three values.',
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'vendorID',
+                            description = 'The USB vendor ID of the joystick.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'productID',
+                            description = 'The USB product ID of the joystick.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'productVersion',
+                            description = 'The product version of the joystick.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getGUID',
             description = 'Gets a stable GUID unique to the type of the physical joystick which does not change over time. For example, all Sony Dualshock 3 controllers in OS X have the same GUID. The value is platform-dependent.',
             variants = {
@@ -176,6 +202,21 @@ return {
                             type = 'JoystickHat',
                             name = 'hatdirection',
                             description = 'The direction of the hat, if the virtual gamepad button is bound to a hat. nil otherwise.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getGamepadMappingString',
+            description = 'Gets the full gamepad mapping string of this Joystick, or nil if it\'s not recognized as a gamepad.\n\nThe mapping string contains binding information used to map the Joystick\'s buttons an axes to the standard gamepad layout, and can be used later with love.joystick.loadGamepadMappings.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'mappingstring',
+                            description = 'A string containing the Joystick\'s gamepad mappings, or nil if the Joystick is not recognized as a gamepad.',
                         },
                     },
                 },

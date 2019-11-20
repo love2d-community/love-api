@@ -8,6 +8,28 @@ return {
     },
     functions = {
         {
+            name = 'getGamepadMappingString',
+            description = 'Gets the full gamepad mapping string of the Joysticks which have the given GUID, or nil if the GUID isn\'t recognized as a gamepad.\n\nThe mapping string contains binding information used to map the Joystick\'s buttons an axes to the standard gamepad layout, and can be used later with love.joystick.loadGamepadMappings.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'guid',
+                            description = 'The GUID value to get the mapping string for.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'mappingstring',
+                            description = 'A string containing the Joystick\'s gamepad mappings, or nil if the GUID is not recognized as a gamepad.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getJoystickCount',
             description = 'Gets the number of connected joysticks.',
             variants = {

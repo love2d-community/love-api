@@ -1431,6 +1431,65 @@ return {
                         },
                     },
                 },
+                {
+                    description = 'This variant accepts an existing table to fill in, instead of creating a new one.',
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'stats',
+                            description = 'A table which will be filled in with the stat fields below.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'table',
+                            name = 'stats',
+                            description = 'The table that was passed in above, now containing the following fields:',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = 'drawcalls',
+                                    description = 'The number of draw calls made so far during the current frame.',
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'canvasswitches',
+                                    description = 'The number of times the active Canvas has been switched so far during the current frame.',
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'texturememory',
+                                    description = 'The estimated total size in bytes of video memory used by all loaded Images, Canvases, and Fonts.',
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'images',
+                                    description = 'The number of Image objects currently loaded.',
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'canvases',
+                                    description = 'The number of Canvas objects currently loaded.',
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'fonts',
+                                    description = 'The number of Font objects currently loaded.',
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'shaderswitches',
+                                    description = 'The number of times the active Shader has been changed so far during the current frame.',
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'drawcallsbatched',
+                                    description = 'The number of draw calls that were saved by LÖVE\'s automatic batching, since the start of the frame.',
+                                },
+                            },
+                        },
+                    },
+                },
             },
         },
         {
@@ -3259,6 +3318,67 @@ return {
                     },
                 },
                 {
+                    description = 'The color set by love.graphics.setColor will be combined (multiplied) with the colors of the text.',
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'coloredtext',
+                            description = 'A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.',
+                            table = {
+                                {
+                                    type = 'table',
+                                    name = 'color1',
+                                    description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.',
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'string1',
+                                    description = 'A string of text which has a color specified by the previous color.',
+                                },
+                                {
+                                    type = 'table',
+                                    name = 'color2',
+                                    description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.',
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'string2',
+                                    description = 'A string of text which has a color specified by the previous color.',
+                                },
+                                {
+                                    type = 'tables and strings',
+                                    name = '...',
+                                    description = 'Additional colors and strings.',
+                                },
+                            },
+                        },
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'Transformation object.',
+                        },
+                    },
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'text',
+                            description = 'The text to draw.',
+                        },
+                        {
+                            type = 'Font',
+                            name = 'font',
+                            description = 'The Font object to use.',
+                        },
+                        {
+                            type = 'Transform',
+                            name = 'transform',
+                            description = 'Transformation object.',
+                        },
+                    },
+                },
+                {
                     description = '',
                     arguments = {
                         {
@@ -3292,6 +3412,11 @@ return {
                                     description = 'Additional colors and strings.',
                                 },
                             },
+                        },
+                        {
+                            type = 'Font',
+                            name = 'font',
+                            description = 'The Font object to use.',
                         },
                         {
                             type = 'Transform',
@@ -4775,7 +4900,6 @@ return {
         require(path .. 'enums.GraphicsLimit'),
         require(path .. 'enums.LineJoin'),
         require(path .. 'enums.LineStyle'),
-        require(path .. 'enums.MatrixLayout'),
         require(path .. 'enums.MeshDrawMode'),
         require(path .. 'enums.ParticleInsertMode'),
         require(path .. 'enums.SpriteBatchUsage'),

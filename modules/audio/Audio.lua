@@ -168,9 +168,10 @@ return {
         },
         {
             name = 'getRecordingDevices',
-            description = 'Gets a list of RecordingDevices on the system.\n\nThe first device in the list is the user\'s default recording device. The list may be empty if there are no microphones connected to the system.\n\nAudio recording is currently not supported on iOS and Android.',
+            description = 'Gets a list of RecordingDevices on the system.\n\nThe first device in the list is the user\'s default recording device. The list may be empty if there are no microphones connected to the system.\n\nAudio recording is currently not supported on iOS.',
             variants = {
                 {
+                    description = 'Audio recording for Android is supported since 11.3. However, it\'s not supported when APK from Play Store is used.',
                     returns = {
                         {
                             type = 'table',

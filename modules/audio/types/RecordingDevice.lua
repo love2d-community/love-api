@@ -23,6 +23,21 @@ return {
             },
         },
         {
+            name = 'getBitDepth',
+            description = 'Gets the number of bits per sample in the data currently being recorded.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'bits',
+                            description = 'The number of bits per sample in the data that\'s currently being recorded.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getChannelCount',
             description = 'Gets the number of channels currently being recorded (mono or stereo).',
             variants = {
