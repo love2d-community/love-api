@@ -107,14 +107,14 @@ return {
         },
         {
             name = 'getContacts',
-            description = 'Returns a table with all contacts.',
+            description = 'Returns a table with all Contacts.',
             variants = {
                 {
                     returns = {
                         {
                             type = 'table',
                             name = 'contacts',
-                            description = 'A sequence with all contacts.',
+                            description = 'A sequence with all Contacts.',
                         },
                     },
                 },

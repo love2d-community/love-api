@@ -8,6 +8,21 @@ return {
     },
     functions = {
         {
+            name = 'clone',
+            description = 'Creates a new copy of current decoder.\n\nThe new decoder will start decoding from the beginning of the audio stream.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'Decoder',
+                            name = 'decoder',
+                            description = 'New copy of the decoder.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getBitDepth',
             description = 'Returns the number of bits per sample.',
             variants = {

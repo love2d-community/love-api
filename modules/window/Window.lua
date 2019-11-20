@@ -103,6 +103,29 @@ return {
             },
         },
         {
+            name = 'getDisplayOrientation',
+            description = 'Gets current device display orientation.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'index',
+                            description = 'Display index to get its display orientation, or nil for default display index.',
+                            default = 'nil',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'DisplayOrientation',
+                            name = 'orientation',
+                            description = 'Current device display orientation.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getFullscreen',
             description = 'Gets whether the window is fullscreen.',
             variants = {
@@ -288,6 +311,37 @@ return {
             },
         },
         {
+            name = 'getSafeArea',
+            description = 'Gets area inside the window which is known to be unobstructed by a system title bar, the iPhone X notch, etc. Useful for making sure UI elements can be seen by the user.',
+            variants = {
+                {
+                    description = 'Values returned are in DPI-scaled units (the same coordinate system as most other window-related APIs), not in pixels.',
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'Starting position of safe area (x-axis).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'Starting position of safe area (y-axis).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'w',
+                            description = 'Width of safe area.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'h',
+                            description = 'Height of safe area.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getTitle',
             description = 'Gets the window title.',
             variants = {
@@ -297,6 +351,22 @@ return {
                             type = 'string',
                             name = 'title',
                             description = 'The current window title.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getVSync',
+            description = 'Gets current vertical synchronization (vsync).',
+            variants = {
+                {
+                    description = 'This can be less expensive alternative to love.window.getMode if you want to get current vsync status.',
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'vsync',
+                            description = 'Current vsync status. 1 if enabled, 0 if disabled, and -1 for adaptive vsync.',
                         },
                     },
                 },
@@ -642,6 +712,12 @@ return {
                                 },
                                 {
                                     type = 'boolean',
+                                    name = 'usedpiscale',
+                                    description = 'Disables automatic DPI scaling when false.',
+                                    default = 'true',
+                                },
+                                {
+                                    type = 'boolean',
                                     name = 'srgb',
                                     description = 'Removed in 0.10.0 (set t.gammacorrect in conf.lua instead). True if sRGB gamma correction should be applied when drawing to the screen.',
                                     default = 'false',
@@ -695,6 +771,22 @@ return {
                             type = 'string',
                             name = 'title',
                             description = 'The new window title.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'setVSync',
+            description = 'Sets vertical synchronization mode.',
+            variants = {
+                {
+                    description = '* Not all graphics drivers support adaptive vsync (-1 value). In that case, it will be automatically set to 1.\n\n* It is recommended to keep vsync activated if you don\'t know about the possible implications of turning it off.\n\n* This function doesn\'t recreate the window, unlike love.window.setMode and love.window.updateMode.',
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'vsync',
+                            description = 'VSync number: 1 to enable, 0 to disable, and -1 for adaptive vsync.',
                         },
                     },
                 },
