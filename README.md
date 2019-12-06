@@ -1,7 +1,7 @@
 # LÖVE-API
 
 [![Build Status](https://travis-ci.org/love2d-community/love-api.svg?branch=master)](https://travis-ci.org/love2d-community/love-api)
-[![LOVE](https://img.shields.io/badge/L%C3%96VE-11.2-EA316E.svg)](http://love2d.org/)
+[![LOVE](https://img.shields.io/badge/L%C3%96VE-11.3-EA316E.svg)](http://love2d.org/)
 
 The complete API documentation of [LÖVE](https://love2d.org/) contained in a Lua table.
 
