@@ -1635,6 +1635,21 @@ return {
             },
         },
         {
+            name = 'isActive',
+            description = 'Gets whether the graphics module is able to be used. If it is not active, love.graphics function and method calls will not work correctly and may cause the program to crash.\nThe graphics module is inactive if a window is not open, or if the app is in the background on iOS. Typically the app\'s execution will be automatically paused by the system, in the latter case.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'active',
+                            description = 'Whether the graphics module is active and able to be used.'
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'isGammaCorrect',
             description = 'Gets whether gamma-correct rendering is supported and enabled. It can be enabled by setting t.gammacorrect = true in love.conf.\n\nNot all devices support gamma-correct rendering, in which case it will be automatically disabled and this function will return false. It is supported on desktop systems which have graphics cards that are capable of using OpenGL 3 / DirectX 10, and iOS devices that can use OpenGL ES 3.',
             variants = {
