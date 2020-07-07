@@ -162,7 +162,7 @@ return {
                                             default = '800',
                                         },
                                         {
-                                            type = 'string',
+                                            type = 'number',
                                             name = 'height',
                                             description = 'Sets the window\'s dimensions. If these flags are set to 0 LÖVE automatically uses the user\'s desktop dimensions.',
                                             default = '600',
