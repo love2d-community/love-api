@@ -1152,6 +1152,81 @@ return {
                 'Object',
             },
             functions = {
+                {
+                    name = 'clone',
+                    description = 'Creates a new copy of the Data object.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'Data',
+                                    name = 'clone',
+                                    description = 'The new copy.'
+                                }
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'getFFIPointer',
+                    description = 'Gets an FFI pointer to the Data.\n\nThis function should be preferred instead of Data:getPointer because the latter uses light userdata which can\'t store more all possible memory addresses on some new ARM64 architectures, when LuaJIT is used.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'cdata',
+                                    name = 'pointer',
+                                    description = 'A raw void* pointer to the Data, or nil if FFI is unavailable.',
+                                }
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'getPointer',
+                    description = 'Gets a pointer to the Data. Can be used with libraries such as LuaJIT\'s FFI.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'light userdata',
+                                    name = 'pointer',
+                                    description = 'A raw pointer to the Data.',
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'getSize',
+                    description = 'Gets the Data\'s size in bytes.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'size',
+                                    description = 'The size of the Data in bytes.',
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'getString',
+                    description = 'Gets the full Data as a string.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'string',
+                                    name = 'data',
+                                    description = 'The raw data.',
+                                }
+                            },
+                        },
+                    },
+                },
             },
         },
         {
