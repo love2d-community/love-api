@@ -4934,6 +4934,7 @@ return {
         require(path .. 'enums.StackType'),
         require(path .. 'enums.StencilAction'),
         require(path .. 'enums.TextureType'),
+        require(path .. 'enums.VertexAttributeStep'),
         require(path .. 'enums.WrapMode'),
     },
 }
