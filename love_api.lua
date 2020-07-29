@@ -1146,16 +1146,6 @@ return {
     },
     types = {
         {
-            name = 'ByteData',
-            description = 'Data object containing arbitrary bytes in an contiguous memory.\n\nThere are currently no LÖVE functions provided for manipulating the contents of a ByteData, but Data:getPointer can be used with LuaJIT\'s FFI to access and write to the contents directly.',
-            supertypes = {
-                'Object',
-                'Data',
-            },
-            functions = {
-            },
-        },
-        {
             name = 'Data',
             description = 'The superclass of all data.',
             supertypes = {

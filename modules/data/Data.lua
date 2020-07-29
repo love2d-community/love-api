@@ -4,6 +4,7 @@ return {
     name = 'data',
     description = 'Provides functionality for creating and transforming data.',
     types = {
+        require(path .. 'types.ByteData'),
     },
     functions = {
         {
