@@ -4926,6 +4926,7 @@ return {
         require(path .. 'enums.FilterMode'),
         require(path .. 'enums.GraphicsFeature'),
         require(path .. 'enums.GraphicsLimit'),
+        require(path .. 'emums.IndexDataType'),
         require(path .. 'enums.LineJoin'),
         require(path .. 'enums.LineStyle'),
         require(path .. 'enums.MeshDrawMode'),
