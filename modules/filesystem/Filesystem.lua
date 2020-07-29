@@ -4,6 +4,7 @@ return {
     name = 'filesystem',
     description = 'Provides an interface to the user\'s filesystem.',
     types = {
+        require(path .. 'types.DroppedFile'),
         require(path .. 'types.File'),
         require(path .. 'types.FileData'),
     },
