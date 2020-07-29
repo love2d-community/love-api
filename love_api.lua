@@ -1158,6 +1158,58 @@ return {
             name = 'Object',
             description = 'The superclass of all LÖVE types.',
             functions = {
+                {
+                    name = 'release',
+                    description = 'Destroys the object\'s Lua reference. The object will be completely deleted if it\'s not referenced by any other LÖVE object or thread.\n\nThis method can be used to immediately clean up resources without waiting for Lua\'s garbage collector.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'success',
+                                    description = 'True if the object was released by this call, false if it had been previously released.',
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'type',
+                    description = 'Gets the type of the object as a string.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'string',
+                                    name = 'type',
+                                    description = 'The type as a string.',
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'typeOf',
+                    description = 'Checks whether an object is of a certain type. If the object has the type with the specified name in its hierarchy, this function will return true.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'string',
+                                    name = 'name',
+                                    description = 'The name of the type to check for.',
+                                },
+                            },
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'b',
+                                    description = 'True if the object is of the specified type, false otherwise.',
+                                },
+                            },
+                        },
+                    },
+                },
             },
         },
     },
