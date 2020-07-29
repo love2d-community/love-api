@@ -2128,6 +2128,12 @@ return {
                             description = 'True Type hinting mode.',
                             default = '\'normal\'',
                         },
+                        {
+                            type = 'number',
+                            name = 'dpiscale',
+                            description = 'The DPI scale factor of the font.',
+                            default = 'love.graphics.getDPIScale()',
+                        },
                     },
                     returns = {
                         {
@@ -2173,6 +2179,12 @@ return {
                             name = 'hinting',
                             description = 'True Type hinting mode.',
                             default = '\'normal\'',
+                        },
+                        {
+                            type = 'number',
+                            name = 'dpiscale',
+                            description = 'The DPI scale factor of the font.',
+                            default = 'love.graphics.getDPIScale()',
                         },
                     },
                     returns = {
