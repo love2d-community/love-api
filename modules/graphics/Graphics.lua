@@ -2746,6 +2746,27 @@ return {
                     },
                 },
                 {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'pixelcode',
+                            description = 'The pixel shader code, or a filename pointing to a file with the code.',
+                        },
+                        {
+                            type = 'string',
+                            name = 'vertexcode',
+                            description = 'The vertex shader code, or a filename pointing to a file with the code.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Shader',
+                            name = 'shader',
+                            description = 'A Shader object for use in drawing operations.',
+                        },
+                    },
+                },
+                {
                     description = 'Vertex shader code is run for every vertex drawn to the screen (for example, love.graphics.rectangle will produce 4 vertices) and is used to transform the vertex positions from their original coordinates into screen-space, as well as to send information such as per-vertex color and texture coordinate values to the pixel shader.\n\nPixel shader code is run for every pixel on the screen that a drawn object touches, and is used to produce the color that will be blended onto the screen at that pixel, often by reading from an image. Pixel shaders are sometimes called fragment shaders.\n\nThe varying keyword can be used to set a value in the vertex shader and have it interpolated in between vertices and passed down to the pixel shader.\n\nVertex and Pixel shader code can be combined into one file or string if you wrap the vertex-specific code in #ifdef VERTEX .. #endif and the pixel-specific code in #ifdef PIXEL .. #endif.\n\n== Built-in variables ==\n\nLÖVE provides several built-in variables for both pixel and vertex shaders. The full list can be found here: Shader Variables.',
                     arguments = {
                         {
