@@ -122,7 +122,7 @@ return {
             },
         },
         {
-            name = 'isAffine',
+            name = 'isAffine2DTransform',
             description = 'Checks whether the Transform is an affine transformation.',
             variants = {
                 {
