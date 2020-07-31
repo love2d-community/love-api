@@ -34,9 +34,5 @@ return {
             name = 'anisotropy',
             description = 'The maximum amount of anisotropic filtering. Texture:setMipmapFilter internally clamps the given anisotropy value to the system\'s limit.',
         },
-        {
-            name = 'canvasfsaa',
-            description = 'The maximum number of antialiasing samples for a Canvas.',
-        },
     },
 }
