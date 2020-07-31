@@ -109,9 +109,11 @@ return {
             variants = {
                 {
                     returns = {
-                        type = 'number',
-                        name = 'height',
-                        description = 'Font height',
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'Font height',
+                        }
                     },
                 },
             },
@@ -122,9 +124,11 @@ return {
             variants = {
                 {
                     returns = {
-                        type = 'number',
-                        name = 'height',
-                        description = 'Line height of a font.',
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'Line height of a font.',
+                        }
                     },
                 },
             },

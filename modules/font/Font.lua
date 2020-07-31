@@ -264,60 +264,60 @@ return {
                         },
                     },
                 },
-            },
-            {
-                description = 'Creates a new BMFont Rasterizer.',
-                arguments = {
-                    {
-                        type = 'ImageData',
-                        name = 'imageData',
-                        description = 'The image data containing the drawable pictures of font glyphs.',
+                {
+                    description = 'Creates a new BMFont Rasterizer.',
+                    arguments = {
+                        {
+                            type = 'ImageData',
+                            name = 'imageData',
+                            description = 'The image data containing the drawable pictures of font glyphs.',
+                        },
+                        {
+                            type = 'string',
+                            name = 'glyphs',
+                            description = 'The sequence of glyphs in the ImageData.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'dpiscale',
+                            description = 'DPI scale.',
+                            default = '1',
+                        },
                     },
-                    {
-                        type = 'string',
-                        name = 'glyphs',
-                        description = 'The sequence of glyphs in the ImageData.',
-                    },
-                    {
-                        type = 'number',
-                        name = 'dpiscale',
-                        description = 'DPI scale.',
-                        default = '1',
-                    },
-                },
-                returns = {
-                    {
-                        type = 'Rasterizer',
-                        name = 'rasterizer',
-                        description = 'The rasterizer.',
-                    },
-                },
-            },
-            {
-                description = 'Creates a new BMFont Rasterizer.',
-                arguments = {
-                    {
-                        type = 'string',
-                        name = 'fileName',
-                        description = 'The path to file containing the drawable pictures of font glyphs.',
-                    },
-                    {
-                        type = 'string',
-                        name = 'glyphs',
-                        description = 'The sequence of glyphs in the ImageData.',
-                    },
-                    {
-                        type = 'number',
-                        name = 'dpiscale',
-                        description = 'DPI scale.',
-                        default = '1',
+                    returns = {
+                        {
+                            type = 'Rasterizer',
+                            name = 'rasterizer',
+                            description = 'The rasterizer.',
+                        },
                     },
                 },
-                returns = {
-                    {
-                        type = 'Rasterizer',
-                        name = 'rasterizer',
-                        description = 'The rasterizer.',
+                {
+                    description = 'Creates a new BMFont Rasterizer.',
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'fileName',
+                            description = 'The path to file containing the drawable pictures of font glyphs.',
+                        },
+                        {
+                            type = 'string',
+                            name = 'glyphs',
+                            description = 'The sequence of glyphs in the ImageData.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'dpiscale',
+                            description = 'DPI scale.',
+                            default = '1',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Rasterizer',
+                            name = 'rasterizer',
+                            description = 'The rasterizer.',
+                        },
                     },
                 },
             },
