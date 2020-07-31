@@ -1022,7 +1022,7 @@ return {
         },
     },
     enums = {
-        require(path .. 'emuns.DisplayOrientation'),
+        require(path .. 'enums.DisplayOrientation'),
         require(path .. 'enums.FullscreenType'),
         require(path .. 'enums.MessageBoxType'),
     },
