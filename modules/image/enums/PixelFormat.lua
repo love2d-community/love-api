@@ -34,12 +34,15 @@ return {
         },
         {
             name = 'r16',
+            description = 'Single-channel (red component) format (16 bpp).',
         },
         {
             name = 'rg16',
+            description = 'Two channels (red and green components) with 16 bits per channel (32 bpp).',
         },
         {
             name = 'rgba16',
+            description = '16 bits per channel (64 bpp) RGBA. Color channel values range from 0-65535 (0-1 in shaders).',
         },
         {
             name = 'r16f',
@@ -91,21 +94,27 @@ return {
         },
         {
             name = 'stencil8',
+            description = 'No depth buffer and 8-bit stencil buffer.'
         },
         {
             name = 'depth16',
+            description = '16-bit depth buffer and no stencil buffer.',
         },
         {
             name = 'depth24',
+            description = '24-bit depth buffer and no stencil buffer.',
         },
         {
             name = 'depth32f',
+            description = '32-bit float depth buffer and no stencil buffer.',
         },
         {
             name = 'depth24stencil8',
+            description = '24-bit depth buffer and 8-bit stencil buffer.',
         },
         {
             name = 'depth32fstencil8',
+            description = '32-bit float depth buffer and 8-bit stencil buffer.',
         },
         {
             name = 'DXT1',
