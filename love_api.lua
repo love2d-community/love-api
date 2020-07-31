@@ -1293,6 +1293,7 @@ return {
         require(path .. 'modules.data.Data'),
         require(path .. 'modules.event.Event'),
         require(path .. 'modules.filesystem.Filesystem'),
+        require(path .. 'modules.font.Font'),
         require(path .. 'modules.graphics.Graphics'),
         require(path .. 'modules.image.Image'),
         require(path .. 'modules.joystick.Joystick'),
