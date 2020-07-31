@@ -1856,7 +1856,7 @@ return {
                                     default = 'love.graphics.getDPIScale()',
                                 },
                                 {
-                                    type = 'CanvasMipmapMode',
+                                    type = 'MipmapMode',
                                     name = 'mipmaps',
                                     description = 'Whether the Canvas has mipmaps, and whether to automatically regenerate them if so.',
                                     default = '\'none\'',
@@ -1925,7 +1925,7 @@ return {
                                     default = 'love.graphics.getDPIScale()',
                                 },
                                 {
-                                    type = 'CanvasMipmapMode',
+                                    type = 'MipmapMode',
                                     name = 'mipmaps',
                                     description = 'Whether the Canvas has mipmaps, and whether to automatically regenerate them if so.',
                                     default = '\'none\'',
@@ -4940,7 +4940,6 @@ return {
         require(path .. 'enums.AreaSpreadDistribution'),
         require(path .. 'enums.BlendAlphaMode'),
         require(path .. 'enums.BlendMode'),
-        require(path .. 'enums.CanvasMipmapMode'),
         require(path .. 'enums.CompareMode'),
         require(path .. 'enums.CullMode'),
         require(path .. 'enums.DrawMode'),
@@ -4951,6 +4950,7 @@ return {
         require(path .. 'enums.LineJoin'),
         require(path .. 'enums.LineStyle'),
         require(path .. 'enums.MeshDrawMode'),
+        require(path .. 'enums.MipmapMode'),
         require(path .. 'enums.ParticleInsertMode'),
         require(path .. 'enums.SpriteBatchUsage'),
         require(path .. 'enums.StackType'),
