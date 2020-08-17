@@ -99,6 +99,28 @@ return {
                 },
             },
         },
+        {
+            name = 'getChannel',
+            description = 'Creates or retrieves a named thread channel.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the channel you want to create or retrieve.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Channel',
+                            name = 'channel',
+                            description = 'The Channel object associated with the name.',
+                        },
+                    },
+                },
+            },
+        },
     },
     enums = {
     },
