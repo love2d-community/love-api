@@ -201,7 +201,7 @@ print(s)
 
 ```lua
 return {
-    version = '0.11.2',
+    version = '11.3',
     modules = {
         {
             name = 'modulename',
