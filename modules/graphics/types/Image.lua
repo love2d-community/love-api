@@ -3,6 +3,12 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Image',
     description = 'Drawable image type.',
+    constructors = {
+        'newImage',
+        'newVolumeImage',
+        'newCubeImage',
+        'newArrayImage',
+    },
     supertypes = {
         'Texture',
         'Drawable',

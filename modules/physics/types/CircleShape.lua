@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'CircleShape',
     description = 'Circle extends Shape and adds a radius and a local position.',
+    constructors = {
+        'newCircleShape',
+    },
     supertypes = {
         'Shape',
         'Object',

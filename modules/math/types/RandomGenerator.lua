@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'RandomGenerator',
     description = 'A random number generation object which has its own random state.',
+    constructors = {
+        'newRandomGenerator',
+    },
     supertypes = {
         'Object',
     },

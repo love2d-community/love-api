@@ -1,6 +1,14 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'Rasterizer',
     description = 'A Rasterizer handles font rendering, containing the font data (image or TrueType font) and drawable glyphs.',
+    constructors = {
+        'newTrueTypeRasterizer',
+        'newRasterizer',
+        'newImageRasterizer',
+        'newBMFontRasterizer',
+    },
     supertypes = {
         'Object',
     },
@@ -113,7 +121,7 @@ return {
                             type = 'number',
                             name = 'height',
                             description = 'Font height',
-                        }
+                        },
                     },
                 },
             },
@@ -128,7 +136,7 @@ return {
                             type = 'number',
                             name = 'height',
                             description = 'Line height of a font.',
-                        }
+                        },
                     },
                 },
             },

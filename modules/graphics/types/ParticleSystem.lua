@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'ParticleSystem',
     description = 'A ParticleSystem can be used to create particle effects like fire or smoke.\n\nThe particle system has to be created using update it in the update callback to see any changes in the particles emitted.\n\nThe particle system won\'t create any particles unless you call setParticleLifetime and setEmissionRate.',
+    constructors = {
+        'newParticleSystem',
+    },
     supertypes = {
         'Drawable',
         'Object',

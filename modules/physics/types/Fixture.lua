@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Fixture',
     description = 'Fixtures attach shapes to bodies.',
+    constructors = {
+        'newFixture',
+    },
     supertypes = {
         'Object',
     },

@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'FileData',
     description = 'Data representing the contents of a file.',
+    constructors = {
+        'newFileData',
+    },
     supertypes = {
         'Data',
         'Object',

@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'BezierCurve',
     description = 'A Bézier curve object that can evaluate and render Bézier curves of arbitrary degree.\n\nFor more information on Bézier curves check this great article on Wikipedia.',
+    constructors = {
+        'newBezierCurve',
+    },
     supertypes = {
         'Object',
     },

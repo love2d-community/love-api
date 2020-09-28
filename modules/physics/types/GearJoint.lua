@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'GearJoint',
     description = 'Keeps bodies together in such a way that they act like gears.',
+    constructors = {
+        'newGearJoint',
+    },
     supertypes = {
         'Joint',
         'Object',

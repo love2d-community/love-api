@@ -3,6 +3,10 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Channel',
     description = 'An object which can be used to send and receive data between different threads.',
+    constructors = {
+        'newChannel',
+        'getChannel',
+    },
     supertypes = {
         'Object',
     },

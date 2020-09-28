@@ -3,6 +3,10 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Canvas',
     description = 'A Canvas is used for off-screen rendering. Think of it as an invisible screen that you can draw to, but that will not be visible until you draw it to the actual visible screen. It is also known as "render to texture".\n\nBy drawing things that do not change position often (such as background items) to the Canvas, and then drawing the entire Canvas instead of each item,  you can reduce the number of draw operations performed each frame.\n\nIn versions prior to love.graphics.isSupported("canvas") could be used to check for support at runtime.',
+    constructors = {
+        'newCanvas',
+        'getCanvas',
+    },
     supertypes = {
         'Texture',
         'Drawable',

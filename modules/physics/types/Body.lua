@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Body',
     description = 'Bodies are objects with velocity and position.',
+    constructors = {
+        'newBody',
+    },
     supertypes = {
         'Object',
     },

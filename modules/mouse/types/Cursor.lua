@@ -3,6 +3,11 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Cursor',
     description = 'Represents a hardware cursor.',
+    constructors = {
+        'getCursor',
+        'newCursor',
+        'getSystemCursor',
+    },
     supertypes = {
         'Object',
     },

@@ -3,6 +3,10 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Shader',
     description = 'A Shader is used for advanced hardware-accelerated pixel or vertex manipulation. These effects are written in a language based on GLSL (OpenGL Shading Language) with a few things simplified for easier coding.\n\nPotential uses for shaders include HDR/bloom, motion blur, grayscale/invert/sepia/any kind of color effect, reflection/refraction, distortions, bump mapping, and much more! Here is a collection of basic shaders and good starting point to learn: https://github.com/vrld/moonshine',
+    constructors = {
+        'getShader',
+        'newShader',
+    },
     supertypes = {
         'Object',
     },

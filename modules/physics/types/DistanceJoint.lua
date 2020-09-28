@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'DistanceJoint',
     description = 'Keeps two bodies at the same distance.',
+    constructors = {
+        'newDistanceJoint',
+    },
     supertypes = {
         'Joint',
         'Object',

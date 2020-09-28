@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'WheelJoint',
     description = 'Restricts a point on the second body to a line on the first body.',
+    constructors = {
+        'newWheelJoint',
+    },
     supertypes = {
         'Joint',
         'Object',

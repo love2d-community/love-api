@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Decoder',
     description = 'An object which can gradually decode a sound file.',
+    constructors = {
+        'newDecoder',
+    },
     supertypes = {
         'Object',
     },

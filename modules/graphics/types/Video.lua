@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Video',
     description = 'A drawable video.',
+    constructors = {
+        'newVideo',
+    },
     supertypes = {
         'Drawable',
         'Object',

@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'RevoluteJoint',
     description = 'Allow two Bodies to revolve around a shared point.',
+    constructors = {
+        'newRevoluteJoint',
+    },
     supertypes = {
         'Joint',
         'Object',

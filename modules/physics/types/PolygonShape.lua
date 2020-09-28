@@ -3,6 +3,10 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'PolygonShape',
     description = 'A PolygonShape is a convex polygon with up to 8 vertices.',
+    constructors = {
+        'newPolygonShape',
+        'newRectangleShape',
+    },
     supertypes = {
         'Shape',
         'Object',

@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'MouseJoint',
     description = 'For controlling objects with the mouse.',
+    constructors = {
+        'newMouseJoint',
+    },
     supertypes = {
         'Joint',
         'Object',

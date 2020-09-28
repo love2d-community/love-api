@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Mesh',
     description = 'A 2D polygon mesh used for drawing arbitrary textured shapes.',
+    constructors = {
+        'newMesh',
+    },
     supertypes = {
         'Drawable',
         'Object',

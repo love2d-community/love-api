@@ -3,6 +3,12 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Font',
     description = 'Defines the shape of characters that can be drawn onto the screen.',
+    constructors = {
+        'getFont',
+        'newFont',
+        'setNewFont',
+        'newImageFont',
+    },
     supertypes = {
         'Object',
     },

@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Transform',
     description = 'Object containing a coordinate system transformation.\n\nThe love.graphics module has several functions and function variants which accept Transform objects.',
+    constructors = {
+        'newTransform',
+    },
     supertypes = {
         'Object',
     },

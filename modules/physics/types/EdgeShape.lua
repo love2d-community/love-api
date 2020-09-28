@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'EdgeShape',
     description = 'A EdgeShape is a line segment. They can be used to create the boundaries of your terrain. The shape does not have volume and can only collide with PolygonShape and CircleShape.',
+    constructors = {
+        'newEdgeShape',
+    },
     supertypes = {
         'Shape',
         'Object',

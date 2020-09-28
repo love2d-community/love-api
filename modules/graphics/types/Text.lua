@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Text',
     description = 'Drawable text.',
+    constructors = {
+        'newText',
+    },
     supertypes = {
         'Drawable',
         'Object',

@@ -309,10 +309,10 @@ return {
                             type = 'CompareMode',
                             name = 'compare',
                             description = 'The comparison mode used when sampling from this texture in a shader.',
-                        }
-                    }
-                }
-            }
+                        },
+                    },
+                },
+            },
         },
         {
             name = 'setFilter',

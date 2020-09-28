@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Thread',
     description = 'A Thread is a chunk of code that can run in parallel with other threads. Data can be sent between different threads with Channel objects.',
+    constructors = {
+        'newThread',
+    },
     supertypes = {
         'Object',
     },

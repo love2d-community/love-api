@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'PrismaticJoint',
     description = 'Restricts relative motion between Bodies to one shared axis.',
+    constructors = {
+        'newPrismaticJoint',
+    },
     supertypes = {
         'Joint',
         'Object',

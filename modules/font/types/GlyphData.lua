@@ -1,3 +1,5 @@
+local path = (...):match('(.-)[^%./]+$')
+
 return {
     name = 'GlyphData',
     description = 'A GlyphData represents a drawable symbol of a font Rasterizer.',

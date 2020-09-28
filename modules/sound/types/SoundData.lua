@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'SoundData',
     description = 'Contains raw audio samples.\n\nYou can not play SoundData back directly. You must wrap a Source object around it.',
+    constructors = {
+        'newSoundData',
+    },
     supertypes = {
         'Data',
         'Object',

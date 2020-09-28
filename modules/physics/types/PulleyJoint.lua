@@ -3,6 +3,9 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'PulleyJoint',
     description = 'Allows you to simulate bodies connected through pulleys.',
+    constructors = {
+        'newPulleyJoint',
+    },
     supertypes = {
         'Joint',
         'Object',

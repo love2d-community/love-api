@@ -3,6 +3,10 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'ImageData',
     description = 'Raw (decoded) image data.\n\nYou can\'t draw ImageData directly to screen. See Image for that.',
+    constructors = {
+        'getIcon',
+        'newImageData',
+    },
     supertypes = {
         'Data',
         'Object',

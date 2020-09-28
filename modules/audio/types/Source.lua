@@ -3,6 +3,10 @@ local path = (...):match('(.-)[^%./]+$')
 return {
     name = 'Source',
     description = 'A Source represents audio you can play back.\n\nYou can do interesting things with Sources, like set the volume, pitch, and its position relative to the listener. Please note that positional audio only works for mono (i.e. non-stereo) sources.\n\nThe Source controls (play/pause/stop) act according to the following state table.',
+    constructors = {
+        'newQueueableSource',
+        'newSource',
+    },
     supertypes = {
         'Object',
     },
