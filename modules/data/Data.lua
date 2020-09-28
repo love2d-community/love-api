@@ -4,6 +4,8 @@ return {
     name = 'data',
     description = 'Provides functionality for creating and transforming data.',
     types = {
+        require(path .. 'types.ByteData'),
+        require(path .. 'types.CompressedData'),
     },
     functions = {
         {
@@ -578,6 +580,7 @@ return {
         },
     },
     enums = {
+        require(path .. 'enums.CompressedDataFormat'),
         require(path .. 'enums.ContainerType'),
         require(path .. 'enums.EncodeFormat'),
         require(path .. 'enums.HashFunction'),

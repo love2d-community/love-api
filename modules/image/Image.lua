@@ -206,5 +206,6 @@ return {
     enums = {
         require(path .. 'enums.CompressedImageFormat'),
         require(path .. 'enums.ImageFormat'),
+        require(path .. 'enums.PixelFormat'),
     },
 }

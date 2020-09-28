@@ -5,7 +5,6 @@ return {
     description = 'Provides system-independent mathematical functions.',
     types = {
         require(path .. 'types.BezierCurve'),
-        require(path .. 'types.CompressedData'),
         require(path .. 'types.RandomGenerator'),
         require(path .. 'types.Transform'),
     },
@@ -1010,7 +1009,6 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.CompressedDataFormat'),
         require(path .. 'enums.MatrixLayout'),
     },
 }

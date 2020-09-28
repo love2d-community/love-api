@@ -1146,37 +1146,145 @@ return {
     },
     types = {
         {
-            name = 'ByteData',
-            description = 'Data object containing arbitrary bytes in an contiguous memory.\n\nThere are currently no LÖVE functions provided for manipulating the contents of a ByteData, but Data:getPointer can be used with LuaJIT\'s FFI to access and write to the contents directly.',
-            supertypes = {
-                'Object',
-                'Data',
-            },
-            functions = {
-            },
-        },
-        {
             name = 'Data',
             description = 'The superclass of all data.',
             supertypes = {
                 'Object',
             },
             functions = {
-            },
-        },
-        {
-            name = 'Drawable',
-            description = 'Superclass for all things that can be drawn on screen. This is an abstract type that can\'t be created directly.',
-            supertypes = {
-                'Object',
-            },
-            functions = {
+                {
+                    name = 'clone',
+                    description = 'Creates a new copy of the Data object.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'Data',
+                                    name = 'clone',
+                                    description = 'The new copy.'
+                                }
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'getFFIPointer',
+                    description = 'Gets an FFI pointer to the Data.\n\nThis function should be preferred instead of Data:getPointer because the latter uses light userdata which can\'t store more all possible memory addresses on some new ARM64 architectures, when LuaJIT is used.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'cdata',
+                                    name = 'pointer',
+                                    description = 'A raw void* pointer to the Data, or nil if FFI is unavailable.',
+                                }
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'getPointer',
+                    description = 'Gets a pointer to the Data. Can be used with libraries such as LuaJIT\'s FFI.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'light userdata',
+                                    name = 'pointer',
+                                    description = 'A raw pointer to the Data.',
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'getSize',
+                    description = 'Gets the Data\'s size in bytes.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'number',
+                                    name = 'size',
+                                    description = 'The size of the Data in bytes.',
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'getString',
+                    description = 'Gets the full Data as a string.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'string',
+                                    name = 'data',
+                                    description = 'The raw data.',
+                                }
+                            },
+                        },
+                    },
+                },
             },
         },
         {
             name = 'Object',
             description = 'The superclass of all LÖVE types.',
             functions = {
+                {
+                    name = 'release',
+                    description = 'Destroys the object\'s Lua reference. The object will be completely deleted if it\'s not referenced by any other LÖVE object or thread.\n\nThis method can be used to immediately clean up resources without waiting for Lua\'s garbage collector.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'success',
+                                    description = 'True if the object was released by this call, false if it had been previously released.',
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'type',
+                    description = 'Gets the type of the object as a string.',
+                    variants = {
+                        {
+                            returns = {
+                                {
+                                    type = 'string',
+                                    name = 'type',
+                                    description = 'The type as a string.',
+                                },
+                            },
+                        },
+                    },
+                },
+                {
+                    name = 'typeOf',
+                    description = 'Checks whether an object is of a certain type. If the object has the type with the specified name in its hierarchy, this function will return true.',
+                    variants = {
+                        {
+                            arguments = {
+                                {
+                                    type = 'string',
+                                    name = 'name',
+                                    description = 'The name of the type to check for.',
+                                },
+                            },
+                            returns = {
+                                {
+                                    type = 'boolean',
+                                    name = 'b',
+                                    description = 'True if the object is of the specified type, false otherwise.',
+                                },
+                            },
+                        },
+                    },
+                },
             },
         },
     },
@@ -1185,6 +1293,7 @@ return {
         require(path .. 'modules.data.Data'),
         require(path .. 'modules.event.Event'),
         require(path .. 'modules.filesystem.Filesystem'),
+        require(path .. 'modules.font.Font'),
         require(path .. 'modules.graphics.Graphics'),
         require(path .. 'modules.image.Image'),
         require(path .. 'modules.joystick.Joystick'),

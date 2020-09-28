@@ -1022,6 +1022,7 @@ return {
         },
     },
     enums = {
+        require(path .. 'enums.DisplayOrientation'),
         require(path .. 'enums.FullscreenType'),
         require(path .. 'enums.MessageBoxType'),
     },

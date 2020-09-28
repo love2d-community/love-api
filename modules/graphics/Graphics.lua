@@ -5,6 +5,7 @@ return {
     description = 'The primary responsibility for the love.graphics module is the drawing of lines, shapes, text, Images and other Drawable objects onto the screen. Its secondary responsibilities include loading external files (including Images and Fonts) into memory, creating specialized objects (such as ParticleSystems or Canvases) and managing screen geometry.\n\nLÖVE\'s coordinate system is rooted in the upper-left corner of the screen, which is at location (0, 0). The x axis is horizontal: larger values are further to the right. The y axis is vertical: larger values are further towards the bottom.\n\nIn many cases, you draw images or shapes in terms of their upper-left corner.\n\nMany of the functions are used to manipulate the graphics coordinate system, which is essentially the way coordinates are mapped to the display. You can change the position, scale, and even rotation in this way.',
     types = {
         require(path .. 'types.Canvas'),
+        require(path .. 'types.Drawable'),
         require(path .. 'types.Font'),
         require(path .. 'types.Image'),
         require(path .. 'types.Mesh'),
@@ -1855,7 +1856,7 @@ return {
                                     default = 'love.graphics.getDPIScale()',
                                 },
                                 {
-                                    type = 'CanvasMipmapMode',
+                                    type = 'MipmapMode',
                                     name = 'mipmaps',
                                     description = 'Whether the Canvas has mipmaps, and whether to automatically regenerate them if so.',
                                     default = '\'none\'',
@@ -1924,7 +1925,7 @@ return {
                                     default = 'love.graphics.getDPIScale()',
                                 },
                                 {
-                                    type = 'CanvasMipmapMode',
+                                    type = 'MipmapMode',
                                     name = 'mipmaps',
                                     description = 'Whether the Canvas has mipmaps, and whether to automatically regenerate them if so.',
                                     default = '\'none\'',
@@ -2128,6 +2129,12 @@ return {
                             description = 'True Type hinting mode.',
                             default = '\'normal\'',
                         },
+                        {
+                            type = 'number',
+                            name = 'dpiscale',
+                            description = 'The DPI scale factor of the font.',
+                            default = 'love.graphics.getDPIScale()',
+                        },
                     },
                     returns = {
                         {
@@ -2173,6 +2180,12 @@ return {
                             name = 'hinting',
                             description = 'True Type hinting mode.',
                             default = '\'normal\'',
+                        },
+                        {
+                            type = 'number',
+                            name = 'dpiscale',
+                            description = 'The DPI scale factor of the font.',
+                            default = 'love.graphics.getDPIScale()',
                         },
                     },
                     returns = {
@@ -2722,6 +2735,27 @@ return {
                             type = 'string',
                             name = 'code',
                             description = 'The pixel shader or vertex shader code, or a filename pointing to a file with the code.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Shader',
+                            name = 'shader',
+                            description = 'A Shader object for use in drawing operations.',
+                        },
+                    },
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'pixelcode',
+                            description = 'The pixel shader code, or a filename pointing to a file with the code.',
+                        },
+                        {
+                            type = 'string',
+                            name = 'vertexcode',
+                            description = 'The vertex shader code, or a filename pointing to a file with the code.',
                         },
                     },
                     returns = {
@@ -4906,21 +4940,24 @@ return {
         require(path .. 'enums.AreaSpreadDistribution'),
         require(path .. 'enums.BlendAlphaMode'),
         require(path .. 'enums.BlendMode'),
-        require(path .. 'enums.CanvasMipmapMode'),
         require(path .. 'enums.CompareMode'),
         require(path .. 'enums.CullMode'),
         require(path .. 'enums.DrawMode'),
         require(path .. 'enums.FilterMode'),
         require(path .. 'enums.GraphicsFeature'),
         require(path .. 'enums.GraphicsLimit'),
+        require(path .. 'enums.IndexDataType'),
         require(path .. 'enums.LineJoin'),
         require(path .. 'enums.LineStyle'),
         require(path .. 'enums.MeshDrawMode'),
+        require(path .. 'enums.MipmapMode'),
         require(path .. 'enums.ParticleInsertMode'),
         require(path .. 'enums.SpriteBatchUsage'),
         require(path .. 'enums.StackType'),
         require(path .. 'enums.StencilAction'),
         require(path .. 'enums.TextureType'),
+        require(path .. 'enums.VertexAttributeStep'),
+        require(path .. 'enums.VertexWinding'),
         require(path .. 'enums.WrapMode'),
     },
 }
