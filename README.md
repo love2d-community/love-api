@@ -32,7 +32,7 @@ Contributions are more than welcome!
 ```lua
 return {
     version = '11.3',
-    functions = { -- love.something functions, currently only love.getVersion
+    functions = { -- Functions not in modules, currently only love.getVersion
         -- See function structure below
     },
     modules = {
