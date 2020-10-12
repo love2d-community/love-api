@@ -1941,72 +1941,6 @@ return {
                         },
                     },
                 },
-                {
-                    description = 'Some Canvas formats have higher system requirements than the default format. Use love.graphics.getCanvasFormats to check for support.',
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'width',
-                            description = 'The desired width of the Canvas.',
-                            default = 'window_width',
-                        },
-                        {
-                            type = 'number',
-                            name = 'height',
-                            description = 'The desired height of the Canvas.',
-                            default = 'window_height',
-                        },
-                        {
-                            type = 'CanvasFormat',
-                            name = 'format',
-                            description = 'The desired texture format of the Canvas.',
-                            default = '\'normal\'',
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'Canvas',
-                            name = 'canvas',
-                            description = 'A new Canvas with specified width and height.',
-                        },
-                    },
-                },
-                {
-                    description = 'Some Canvas formats have higher system requirements than the default format. Use love.graphics.getCanvasFormats to check for support.\n\nThe supported maximum number of MSAA samples varies depending on the system. Use love.graphics.getSystemLimits to check.\n\nIf the number of MSAA samples specified is greater than the maximum supported by the system, the Canvas will still be created but only using the maximum supported amount (this includes 0.)',
-                    arguments = {
-                        {
-                            type = 'number',
-                            name = 'width',
-                            description = 'The desired width of the Canvas.',
-                            default = 'window_width',
-                        },
-                        {
-                            type = 'number',
-                            name = 'height',
-                            description = 'The desired height of the Canvas.',
-                            default = 'window_height',
-                        },
-                        {
-                            type = 'CanvasFormat',
-                            name = 'format',
-                            description = 'The desired texture format of the Canvas.',
-                            default = '\'normal\'',
-                        },
-                        {
-                            type = 'number',
-                            name = 'msaa',
-                            description = 'The desired number of multisample antialiasing (MSAA) samples used when drawing to the Canvas.',
-                            default = '0',
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'Canvas',
-                            name = 'canvas',
-                            description = 'A new Canvas with specified width and height.',
-                        },
-                    },
-                },
             },
         },
         {
@@ -2282,27 +2216,6 @@ return {
                             type = 'Image',
                             name = 'image',
                             description = 'A new Image object which can be drawn on screen.',
-                        },
-                    },
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file (or a FileData or ImageData or CompressedImageData object.)',
-                        },
-                        {
-                            type = 'TextureFormat',
-                            name = 'format',
-                            description = 'The format to interpret the image\'s data as.',
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.',
                         },
                     },
                 },
