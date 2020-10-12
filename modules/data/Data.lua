@@ -38,7 +38,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'CompressedData or string',
                             name = 'compressedData',
                             description = 'CompressedData/string which contains the compressed version of rawstring.',
                         },
@@ -70,7 +70,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'CompressedData or string',
                             name = 'compressedData',
                             description = 'CompressedData/string which contains the compressed version of data.',
                         },
@@ -102,7 +102,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'ByteData or string',
                             name = 'decoded',
                             description = 'ByteData/string which contains the decoded version of source.',
                         },
@@ -128,7 +128,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'ByteData or string',
                             name = 'decoded',
                             description = 'ByteData/string which contains the decoded version of source.',
                         },
@@ -155,7 +155,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'Data or string',
                             name = 'decompressedData',
                             description = 'Data/string containing the raw decompressed data.',
                         },
@@ -181,7 +181,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'Data or string',
                             name = 'decompressedData',
                             description = 'Data/string containing the raw decompressed data.',
                         },
@@ -207,7 +207,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'Data or string',
                             name = 'decompressedData',
                             description = 'Data/string containing the raw decompressed data.',
                         },
@@ -245,7 +245,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'ByteData or string',
                             name = 'encoded',
                             description = 'ByteData/string which contains the encoded version of source.',
                         },
@@ -277,7 +277,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'ByteData or string',
                             name = 'encoded',
                             description = 'ByteData/string which contains the encoded version of source.',
                         },
@@ -477,19 +477,19 @@ return {
                             description = 'A string determining how the values are packed. Follows the rules of Lua 5.3\'s string.pack format strings.',
                         },
                         {
-                            type = 'value',
+                            type = 'number or boolean or string',
                             name = 'v1',
                             description = 'The first value (number, boolean, or string) to serialize.',
                         },
                         {
-                            type = 'value',
+                            type = 'number or boolean or string',
                             name = '...',
                             description = 'Additional values to serialize.',
                         },
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'Data or string',
                             name = 'data',
                             description = 'Data/string which contains the serialized data.',
                         },
@@ -522,12 +522,12 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'number or boolean or string',
                             name = 'v1',
                             description = 'The first value (number, boolean, or string) that was unpacked.',
                         },
                         {
-                            type = 'value',
+                            type = 'number or boolean or string',
                             name = '...',
                             description = 'Additional unpacked values.',
                         },
@@ -560,12 +560,12 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'number or boolean or string',
                             name = 'v1',
                             description = 'The first value (number, boolean, or string) that was unpacked.',
                         },
                         {
-                            type = 'value',
+                            type = 'number or boolean or string',
                             name = '...',
                             description = 'Additional unpacked values.',
                         },

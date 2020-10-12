@@ -782,7 +782,7 @@ return {
                     },
                     returns = {
                         {
-                            type = 'value',
+                            type = 'FileData or string',
                             name = 'contents',
                             description = 'FileData or string containing the file contents.',
                         },
