@@ -165,22 +165,6 @@ return {
                         },
                     },
                 },
-                {
-                    arguments = {
-                        {
-                            type = 'MouseConstant',
-                            name = 'buttonN',
-                            description = 'A button to check.',
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'boolean',
-                            name = 'anyDown',
-                            description = 'True if any specified button is down, false otherwise.',
-                        },
-                    },
-                },
             },
         },
         {
