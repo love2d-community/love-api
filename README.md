@@ -25,6 +25,7 @@ Contributions are more than welcome!
 - [love-eclipse-ldt](https://github.com/leafi/love-eclipse-ldt) - Code completion and documentation for [Lua Development Tools](https://eclipse.org/ldt/)
 - [love-ide](https://github.com/rameshvarun/love-ide) - Code completion and other tools for [Atom](https://atom.io/)
 - [Emmy-love-api](https://github.com/EmmyLua/Emmy-love-api) - A script to generate LÖVE API autocomplete files for EmmyLua
+- [love2d-tl](https://github.com/MikuAuahDark/love2d-tl) - Type definitions for [Teal](https://github.com/teal-language/tl)
 - [Quick Reference](http://love2d-community.github.io/love-api/) - Online quick reference of the LÖVE API
 
 ## Table structure
