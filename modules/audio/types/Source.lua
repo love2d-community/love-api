@@ -776,7 +776,7 @@ return {
                             type = 'boolean',
                             name = 'enable',
                             description = 'True to make the position, velocity, direction and cone angles relative to the listener, false to make them absolute.',
-                            default = '\'false\'',
+                            default = 'false',
                         },
                     },
                 },
