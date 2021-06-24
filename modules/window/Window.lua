@@ -108,6 +108,21 @@ return {
             },
         },
         {
+            name = 'getDisplayCount',
+            description = 'Gets the number of connected monitors.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'count',
+                            description = 'The number of currently connected displays.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getDisplayName',
             description = 'Gets the name of a display.',
             variants = {
