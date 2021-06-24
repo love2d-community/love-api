@@ -80,6 +80,34 @@ return {
             },
         },
         {
+            name = 'getDesktopDimensions',
+            description = 'Gets the width and height of the desktop.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'displayindex',
+                            description = 'The index of the display, if multiple monitors are available.',
+                            default = '1',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'width',
+                            description = 'The width of the desktop.',
+                        },
+                        {
+                            type = 'string',
+                            name = 'height',
+                            description = 'The height of the desktop.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getDisplayName',
             description = 'Gets the name of a display.',
             variants = {
