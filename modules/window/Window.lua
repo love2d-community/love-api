@@ -153,7 +153,7 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'index',
+                            name = 'displayindex',
                             description = 'Display index to get its display orientation, or nil for default display index.',
                             default = 'nil',
                         },
@@ -196,7 +196,7 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'display',
+                            name = 'displayindex',
                             description = 'The index of the display, if multiple monitors are available.',
                             default = '1',
                         },
@@ -346,7 +346,7 @@ return {
                         },
                         {
                             type = 'number',
-                            name = 'display',
+                            name = 'displayindex',
                             description = 'The index of the display that the window is in.',
                         },
                     },
@@ -796,7 +796,7 @@ return {
                         },
                         {
                             type = 'number',
-                            name = 'display',
+                            name = 'displayindex',
                             description = 'The index of the display that the new window position is relative to.',
                             default = '1',
                         },
