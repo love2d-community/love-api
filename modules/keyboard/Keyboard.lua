@@ -66,6 +66,21 @@ return {
             },
         },
         {
+            name = 'hasScreenKeyboard',
+            description = 'Gets whether screen keyboard is supported.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'supported',
+                            description = 'Whether screen keyboard is supported.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'hasTextInput',
             description = 'Gets whether text input events are enabled.',
             variants = {

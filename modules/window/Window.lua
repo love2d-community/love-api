@@ -80,6 +80,49 @@ return {
             },
         },
         {
+            name = 'getDesktopDimensions',
+            description = 'Gets the width and height of the desktop.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'displayindex',
+                            description = 'The index of the display, if multiple monitors are available.',
+                            default = '1',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'string',
+                            name = 'width',
+                            description = 'The width of the desktop.',
+                        },
+                        {
+                            type = 'string',
+                            name = 'height',
+                            description = 'The height of the desktop.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getDisplayCount',
+            description = 'Gets the number of connected monitors.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'count',
+                            description = 'The number of currently connected displays.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getDisplayName',
             description = 'Gets the name of a display.',
             variants = {
@@ -110,7 +153,7 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'index',
+                            name = 'displayindex',
                             description = 'Display index to get its display orientation, or nil for default display index.',
                             default = 'nil',
                         },
@@ -153,7 +196,7 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'display',
+                            name = 'displayindex',
                             description = 'The index of the display, if multiple monitors are available.',
                             default = '1',
                         },
@@ -303,7 +346,7 @@ return {
                         },
                         {
                             type = 'number',
-                            name = 'display',
+                            name = 'displayindex',
                             description = 'The index of the display that the window is in.',
                         },
                     },
@@ -753,7 +796,7 @@ return {
                         },
                         {
                             type = 'number',
-                            name = 'display',
+                            name = 'displayindex',
                             description = 'The index of the display that the new window position is relative to.',
                             default = '1',
                         },
