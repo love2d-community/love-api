@@ -1308,5 +1308,6 @@ return {
         require(path .. 'modules.touch.Touch'),
         require(path .. 'modules.video.Video'),
         require(path .. 'modules.window.Window'),
+        nil,
     },
 }
