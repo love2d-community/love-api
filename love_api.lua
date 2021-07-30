@@ -50,6 +50,54 @@ return {
             },
         },
         {
+            name = 'isVersionCompatible',
+            description = 'Gets whether the given version is compatible with the current running version of LÖVE.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'version',
+                            description = 'The version to check (for example \'11.3\' or \'0.10.2\').',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'compatible',
+                            description = 'Whether the given version is compatible with the current running version of LÖVE.',
+                        },
+                    },
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'major',
+                            description = 'The major version to check (for example 11 for 11.3 or 0 for 0.10.2).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'minor',
+                            description = 'The minor version to check (for example 3 for 11.3 or 10 for 0.10.2).',
+                        },
+                        {
+                            type = 'number',
+                            name = 'revision',
+                            description = 'The revision of version to check (for example 0 for 11.3 or 2 for 0.10.2).',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'compatible',
+                            description = 'Whether the given version is compatible with the current running version of LÖVE.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'setDeprecationOutput',
             description = 'Sets whether LÖVE displays warnings when using deprecated functionality. It is disabled by default in fused mode, and enabled by default otherwise.\n\nWhen deprecation output is enabled, the first use of a formally deprecated LÖVE API will show a message at the bottom of the screen for a short time, and print the message to the console.',
             variants = {
