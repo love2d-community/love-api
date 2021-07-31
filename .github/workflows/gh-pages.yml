@@ -1,0 +1,33 @@
+name: gh-pages
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get LuaJIT
+      run: sudo apt-get install -y luajit curl
+    - name: Checkout gh-pages
+      uses: actions/checkout@v2
+      with:
+        ref: gh-pages
+        fetch-depth: 0
+    - name: Checkout Inside
+      uses: actions/checkout@v2
+      with:
+        path: generator/api
+    - name: Generate Page
+      run: cd generator && luajit html-generator.lua
+    - name: Move Index
+      run: mv -f generator/index.html index.html
+    - name: Add and Commit
+      uses: EndBug/add-and-commit@v7
+      with:
+        add: index.html
+        default_author: github_actions
+        branch: gh-pages
+        message: 'Build ${{ github.sha }}'
+        push: true
