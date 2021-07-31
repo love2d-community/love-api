@@ -41,14 +41,11 @@ local function makeLinks(description, typeName)
 end
 
 for moduleIndex, module_ in ipairs(love.modules) do
-    if module_.name.name == 'video' or module_.name == 'font' then
-        table.remove(love.modules, moduleIndex)
-    else
-        loopFunctions(module_.functions, module_, 'module', 'love.'..module_.name..'.')
-        loopTypes(module_.types, module_)
+    print(module_.name)
+    loopFunctions(module_.functions, module_, 'module', 'love.'..module_.name..'.')
+    loopTypes(module_.types, module_)
 
-        for _, enum in ipairs(module_.enums or {}) do
-        end
+    for _, enum in ipairs(module_.enums or {}) do
     end
 end
 
