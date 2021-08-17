@@ -2161,54 +2161,6 @@ return {
                         {
                             type = 'string',
                             name = 'filename',
-                            description = 'The filepath to the image file.',
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.',
-                        },
-                    },
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'ImageData',
-                            name = 'imageData',
-                            description = 'An ImageData object. The Image will use this ImageData to reload itself when love.window.setMode is called.',
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.',
-                        },
-                    },
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'CompressedImageData',
-                            name = 'compressedImageData',
-                            description = 'A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.',
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'Image',
-                            name = 'image',
-                            description = 'An Image object which can be drawn on screen.',
-                        },
-                    },
-                },
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
                             description = 'The filepath to the image file (or a FileData or ImageData or CompressedImageData object).',
                         },
                         {
@@ -2217,15 +2169,21 @@ return {
                             description = 'A table containing the following fields:',
                             table = {
                                 {
+                                    type = 'number',
+                                    name = 'dpiscale',
+                                    description = 'The DPI scale to use when drawing the image and calling getWidth/getHeight.',
+                                    default = '1',
+                                },
+                                {
                                     type = 'boolean',
                                     name = 'linear',
-                                    description = 'True if the image\'s pixels should be interpreted as being linear RGB rather than sRGB-encoded, if gamma-correct rendering is enabled. Has no effect otherwise.',
+                                    description = 'True to treat the image\'s pixels as linear instead of sRGB, when gamma correct rendering is enabled. Most images are authored as sRGB.',
                                     default = 'false',
                                 },
                                 {
-                                    type = 'boolean or table',
+                                    type = 'boolean',
                                     name = 'mipmaps',
-                                    description = 'If true, mipmaps for the image will be automatically generated (or taken from the images\'s file if possible, if the image originated from a CompressedImageData). If this value is a table, it should contain a list of other filenames of images of the same format that have progressively half-sized dimensions, all the way down to 1x1. Those images will be used as this Image\'s mipmap levels.',
+                                    description = 'If true, mipmaps for the image will be automatically generated (or taken from the images\'s file if possible, if the image originated from a CompressedImageData).',
                                     default = 'false',
                                 },
                             },
