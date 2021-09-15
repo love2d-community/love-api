@@ -2161,7 +2161,130 @@ return {
                         {
                             type = 'string',
                             name = 'filename',
-                            description = 'The filepath to the image file (or a FileData or ImageData or CompressedImageData object).',
+                            description = 'The filepath to the image file.',
+                        },
+                        {
+                            type = 'table',
+                            name = 'flags',
+                            description = 'A table containing the following fields:',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = 'dpiscale',
+                                    description = 'The DPI scale to use when drawing the image and calling getWidth/getHeight.',
+                                    default = '1',
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'linear',
+                                    description = 'True to treat the image\'s pixels as linear instead of sRGB, when gamma correct rendering is enabled. Most images are authored as sRGB.',
+                                    default = 'false',
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'mipmaps',
+                                    description = 'If true, mipmaps for the image will be automatically generated (or taken from the images\'s file if possible, if the image originated from a CompressedImageData).',
+                                    default = 'false',
+                                },
+                            },
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Image',
+                            name = 'image',
+                            description = 'A new Image object which can be drawn on screen.',
+                        },
+                    },
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'FileData',
+                            name = 'fileData',
+                            description = 'The FileData containing image file.',
+                        },
+                        {
+                            type = 'table',
+                            name = 'flags',
+                            description = 'A table containing the following fields:',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = 'dpiscale',
+                                    description = 'The DPI scale to use when drawing the image and calling getWidth/getHeight.',
+                                    default = '1',
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'linear',
+                                    description = 'True to treat the image\'s pixels as linear instead of sRGB, when gamma correct rendering is enabled. Most images are authored as sRGB.',
+                                    default = 'false',
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'mipmaps',
+                                    description = 'If true, mipmaps for the image will be automatically generated (or taken from the images\'s file if possible, if the image originated from a CompressedImageData).',
+                                    default = 'false',
+                                },
+                            },
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Image',
+                            name = 'image',
+                            description = 'A new Image object which can be drawn on screen.',
+                        },
+                    },
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'ImageData',
+                            name = 'imageData',
+                            description = 'The ImageData containing image.',
+                        },
+                        {
+                            type = 'table',
+                            name = 'flags',
+                            description = 'A table containing the following fields:',
+                            table = {
+                                {
+                                    type = 'number',
+                                    name = 'dpiscale',
+                                    description = 'The DPI scale to use when drawing the image and calling getWidth/getHeight.',
+                                    default = '1',
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'linear',
+                                    description = 'True to treat the image\'s pixels as linear instead of sRGB, when gamma correct rendering is enabled. Most images are authored as sRGB.',
+                                    default = 'false',
+                                },
+                                {
+                                    type = 'boolean',
+                                    name = 'mipmaps',
+                                    description = 'If true, mipmaps for the image will be automatically generated (or taken from the images\'s file if possible, if the image originated from a CompressedImageData).',
+                                    default = 'false',
+                                },
+                            },
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Image',
+                            name = 'image',
+                            description = 'A new Image object which can be drawn on screen.',
+                        },
+                    },
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'CompressedImageData',
+                            name = 'compressedImageData',
+                            description = 'The CompressedImageData containing image.',
                         },
                         {
                             type = 'table',
