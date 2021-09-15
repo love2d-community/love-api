@@ -2284,7 +2284,7 @@ return {
                         {
                             type = 'CompressedImageData',
                             name = 'compressedImageData',
-                            description = 'The CompressedImageData containing image.',
+                            description = 'A CompressedImageData object. The Image will use this CompressedImageData to reload itself when love.window.setMode is called.',
                         },
                         {
                             type = 'table',
