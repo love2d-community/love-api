@@ -408,6 +408,68 @@ return {
             },
         },
         {
+            name = 'getLocalPoints',
+            description = 'Transforms multiple points from world coordinates to local coordinates.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x1',
+                            description = '(Argument) The x position of the first point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y1',
+                            description = '(Argument) The y position of the first point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'x2',
+                            description = '(Argument) The x position of the second point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y2',
+                            description = '(Argument) The y position of the second point.',
+                        },
+                        {
+                            type = 'number',
+                            name = '...',
+                            description = '(Argument) You can continue passing x and y position of the points.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'x1',
+                            description = '(Result) The transformed x position of the first point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y1',
+                            description = '(Result) The transformed y position of the first point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'x2',
+                            description = '(Result) The transformed x position of the second point.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y2',
+                            description = '(Result) The transformed y position of the second point.',
+                        },
+                        {
+                            type = 'number',
+                            name = '...',
+                            description = '(Result) Additional transformed x and y position of the points.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getLocalVector',
             description = 'Transform a vector from world coordinates to local coordinates.',
             variants = {
