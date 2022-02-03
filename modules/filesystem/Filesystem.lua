@@ -672,26 +672,49 @@ return {
         },
         {
             name = 'newFileData',
-            description = 'Creates a new FileData object.',
+            description = 'Creates a new FileData object from a file on disk, or from a string in memory.',
             variants = {
                 {
+                    description = 'Creates a new FileData object from a string in memory.',
                     arguments = {
                         {
                             type = 'string',
                             name = 'contents',
-                            description = 'The contents of the file.',
+                            description = 'The contents of the file in memory represented as a string.',
                         },
                         {
                             type = 'string',
                             name = 'name',
-                            description = 'The name of the file.',
+                            description = 'The name of the file. The extension may be parsed and used by LÖVE when passing the FileData object into love.audio.newSource.',
                         },
                     },
                     returns = {
                         {
                             type = 'FileData',
                             name = 'data',
-                            description = 'Your new FileData.',
+                            description = 'The new FileData.',
+                        },
+                    },
+                },
+                {
+                    description = 'Creates a new FileData object from a Data object in memory.',
+                    arguments = {
+                        {
+                            type = 'Data',
+                            name = 'originaldata',
+                            description = 'The Data object to copy into the new FileData object.',
+                        },
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'The name of the file. The extension may be parsed and used by LÖVE when passing the FileData object into love.audio.newSource.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'FileData',
+                            name = 'data',
+                            description = 'The new FileData.',
                         },
                     },
                 },
