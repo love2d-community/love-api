@@ -226,6 +226,38 @@ return {
                         },
                     },
                 },
+                {
+                    description = 'Sends uniform matrices to the Shader sourced from the contents of a Data object. This directly copies the bytes of the data.',
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'name',
+                            description = 'Name of the uniform matrix to send to the shader.',
+                        },
+                        {
+                            type = 'MatrixLayout',
+                            name = 'matrixlayout',
+                            description = 'The layout (row- or column-major) of the matrix in memory.',
+                        },
+                        {
+                            type = 'Data',
+                            name = 'data',
+                            description = 'Data object containing the values to send.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'offset',
+                            description = 'Offset in bytes from the start of the Data object.',
+                            default = '0',
+                        },
+                        {
+                            type = 'number',
+                            name = 'size',
+                            description = 'Size in bytes of the data to send. If nil, as many bytes as the specified uniform uses will be copied.',
+                            default = 'all',
+                        },
+                    },
+                },
             },
         },
         {
