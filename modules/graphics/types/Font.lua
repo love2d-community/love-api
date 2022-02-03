@@ -114,6 +114,54 @@ return {
             },
         },
         {
+            name = 'getKerning',
+            description = 'Gets the kerning between two characters in the Font.\n\nKerning is normally handled automatically in love.graphics.print, Text objects, Font:getWidth, Font:getWrap, etc. This function is useful when stitching text together manually.',
+            variants = {
+                {
+                    arguments = {
+                        {
+                            type = 'string',
+                            name = 'leftchar',
+                            description = 'The left character.'
+                        },
+                        {
+                            type = 'string',
+                            name = 'rightchar',
+                            description = 'The right character.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'kerning',
+                            description = 'The kerning amount to add to the spacing between the two characters. May be negative.',
+                        },
+                    },
+                },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'leftglyph',
+                            description = 'The unicode number for the left glyph.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'rightglyph',
+                            description = 'The unicode number for the right glyph.'
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'kerning',
+                            description = 'The kerning amount to add to the spacing between the two characters. May be negative.',
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getLineHeight',
             description = 'Gets the line height.\n\nThis will be the value previously set by Font:setLineHeight, or 1.0 by default.',
             variants = {
