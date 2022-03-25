@@ -26,6 +26,17 @@ return {
             },
         },
         {
+            name = 'decode',
+            description = 'Decodes the audio and returns a SoundData object containing the decoded audio data.',
+            variants = {
+                returns = {
+                    type = 'SoundData',
+                    name = 'soundData',
+                    description = 'Decoded audio data.'
+                }
+            }
+        },
+        {
             name = 'getBitDepth',
             description = 'Returns the number of bits per sample.',
             variants = {
