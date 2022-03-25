@@ -29556,6 +29556,17 @@
 							]
 						},
 						{
+							"description": "Decodes the audio and returns a SoundData object containing the decoded audio data.",
+							"name": "decode",
+							"variants": {
+								"returns": {
+									"description": "Decoded audio data.",
+									"name": "soundData",
+									"type": "SoundData"
+								}
+							}
+						},
+						{
 							"description": "Returns the number of bits per sample.",
 							"name": "getBitDepth",
 							"variants": [
