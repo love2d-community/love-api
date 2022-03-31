@@ -118,7 +118,7 @@ return {
                             description = 'The motor speed, radians per second.',
                         },
                     },
-                },
+            },
             },
         },
         {
@@ -131,6 +131,21 @@ return {
                             type = 'number',
                             name = 'f',
                             description = 'The current motor force, in Nm.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'getReferenceAngle',
+            description = 'Gets the reference angle.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'angle',
+                            description = 'The reference angle in radians.'
                         },
                     },
                 },
