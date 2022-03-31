@@ -96,5 +96,18 @@ return {
                 },
             },
         },
+        {
+            name = 'seek',
+            description = 'Sets the currently playing position of the Decoder.',
+            variants =
+            {
+                arguments =
+                {
+                    type = 'number',
+                    name = 'offset',
+                    description = 'The position to seek to, in seconds.'
+                }
+            }
+        }
     },
 }
