@@ -18100,6 +18100,21 @@
 									]
 								}
 							]
+						},
+						{
+							"description": "Gets the pixel format of the ImageData.",
+							"name": "getFormat",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "The pixel format the ImageData was created with.",
+											"name": "format",
+											"type": "PixelFormat"
+										}
+									]
+								}
+							]
 						}
 					],
 					"name": "ImageData",
@@ -26049,6 +26064,24 @@
 					"description": "Contacts are objects created to manage collisions in worlds.",
 					"functions": [
 						{
+							"description": "Gets the child indices of the shapes of the two colliding fixtures. For ChainShapes, an index of 1 is the first edge in the chain.\nUsed together with Fixture:rayCast or ChainShape:getChildEdge.",
+							"name": "getChildren",
+							"variants": {
+								"returns": [
+									{
+										"description": "The child index of the first fixture's shape.",
+										"name": "indexA",
+										"type": "number"
+									},
+									{
+										"description": "The child index of the second fixture's shape.",
+										"name": "indexB",
+										"type": "number"
+									}
+								]
+							}
+						},
+						{
 							"description": "Gets the two Fixtures that hold the shapes that are in contact.",
 							"name": "getFixtures",
 							"variants": [
@@ -27751,6 +27784,21 @@
 							]
 						},
 						{
+							"description": "Gets the reference angle.",
+							"name": "getReferenceAngle",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "The reference angle in radians.",
+											"name": "angle",
+											"type": "number"
+										}
+									]
+								}
+							]
+						},
+						{
 							"description": "Gets the upper limit.",
 							"name": "getUpperLimit",
 							"variants": [
@@ -28195,6 +28243,21 @@
 										{
 											"description": "The current motor force, in Nm.",
 											"name": "f",
+											"type": "number"
+										}
+									]
+								}
+							]
+						},
+						{
+							"description": "Gets the reference angle.",
+							"name": "getReferenceAngle",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "The reference angle in radians.",
+											"name": "angle",
 											"type": "number"
 										}
 									]
@@ -28702,6 +28765,21 @@
 							]
 						},
 						{
+							"description": "Gets the reference angle.",
+							"name": "getReferenceAngle",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "The reference angle in radians.",
+											"name": "angle",
+											"type": "number"
+										}
+									]
+								}
+							]
+						},
+						{
 							"description": "Sets a new damping ratio.",
 							"name": "setDampingRatio",
 							"variants": [
@@ -28871,6 +28949,21 @@
 											"description": "The frequency in hertz.",
 											"name": "freq",
 											"type": "number"
+										}
+									]
+								}
+							]
+						},
+						{
+							"description": "Checks if the joint motor is running.",
+							"name": "isMotorEnabled",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "The status of the joint motor.",
+											"name": "on",
+											"type": "boolean"
 										}
 									]
 								}
@@ -29558,13 +29651,17 @@
 						{
 							"description": "Decodes the audio and returns a SoundData object containing the decoded audio data.",
 							"name": "decode",
-							"variants": {
-								"returns": {
-									"description": "Decoded audio data.",
-									"name": "soundData",
-									"type": "SoundData"
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "Decoded audio data.",
+											"name": "soundData",
+											"type": "SoundData"
+										}
+									]
 								}
-							}
+							]
 						},
 						{
 							"description": "Returns the number of bits per sample.",
@@ -29620,6 +29717,21 @@
 										{
 											"description": "Number of samples per second.",
 											"name": "rate",
+											"type": "number"
+										}
+									]
+								}
+							]
+						},
+						{
+							"description": "Sets the currently playing position of the Decoder.",
+							"name": "seek",
+							"variants": [
+								{
+									"arguments": [
+										{
+											"description": "The position to seek to, in seconds.",
+											"name": "offset",
 											"type": "number"
 										}
 									]
