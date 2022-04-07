@@ -144,6 +144,21 @@ return {
             },
         },
         {
+            name = 'isMotorEnabled',
+            description = 'Checks if the joint motor is running.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'on',
+                            description = 'The status of the joint motor.'
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'setMaxMotorTorque',
             description = 'Sets a new maximum motor torque.',
             variants = {

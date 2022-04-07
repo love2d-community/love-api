@@ -279,5 +279,20 @@ return {
                 },
             },
         },
+        {
+            name = 'getFormat',
+            description = 'Gets the pixel format of the ImageData.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'PixelFormat',
+                            name = 'format',
+                            description = 'The pixel format the ImageData was created with.'
+                        },
+                    },
+                },
+            },
+        },
     },
 }

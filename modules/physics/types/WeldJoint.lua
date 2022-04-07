@@ -42,6 +42,21 @@ return {
             },
         },
         {
+            name = 'getReferenceAngle',
+            description = 'Gets the reference angle.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'angle',
+                            description = 'The reference angle in radians.'
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'setDampingRatio',
             description = 'Sets a new damping ratio.',
             variants = {

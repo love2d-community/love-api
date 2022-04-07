@@ -164,6 +164,21 @@ return {
             },
         },
         {
+            name = 'getReferenceAngle',
+            description = 'Gets the reference angle.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'angle',
+                            description = 'The reference angle in radians.'
+                        },
+                    },
+                },
+            },
+        },
+        {
             name = 'getUpperLimit',
             description = 'Gets the upper limit.',
             variants = {
