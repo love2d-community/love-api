@@ -30712,7 +30712,89 @@
 						"newVideoStream"
 					],
 					"description": "An object which decodes, streams, and controls Videos.",
-					"functions": [],
+					"functions": [
+						{
+							"description": "Gets the filename of the VideoStream.",
+							"name": "getFilename",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "The filename of the VideoStream",
+											"name": "filename",
+											"type": "string"
+										}
+									]
+								}
+							]
+						},
+						{
+							"description": "Gets whether the VideoStream is playing.",
+							"name": "isPlaying",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "Whether the VideoStream is playing.",
+											"name": "playing",
+											"type": "boolean"
+										}
+									]
+								}
+							]
+						},
+						{
+							"description": "Pauses the VideoStream.",
+							"name": "pause",
+							"variants": [
+								[]
+							]
+						},
+						{
+							"description": "Plays the VideoStream.",
+							"name": "play",
+							"variants": [
+								[]
+							]
+						},
+						{
+							"description": "Rewinds the VideoStream. Synonym to VideoStream:seek(0).",
+							"name": "rewind",
+							"variants": [
+								[]
+							]
+						},
+						{
+							"description": "Sets the current playback position of the VideoStream.",
+							"name": "seek",
+							"variants": [
+								{
+									"arguments": [
+										{
+											"description": "The time in seconds since the beginning of the VideoStream.",
+											"name": "offset",
+											"type": "number"
+										}
+									]
+								}
+							]
+						},
+						{
+							"description": "Gets the current playback position of the VideoStream.",
+							"name": "tell",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "The number of seconds sionce the beginning of the VideoStream.",
+											"name": "seconds",
+											"type": "number"
+										}
+									]
+								}
+							]
+						}
+					],
 					"name": "VideoStream",
 					"supertypes": [
 						"Object"
