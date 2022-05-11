@@ -11,16 +11,18 @@ return {
             name = 'getChildren',
             description = 'Gets the child indices of the shapes of the two colliding fixtures. For ChainShapes, an index of 1 is the first edge in the chain.\nUsed together with Fixture:rayCast or ChainShape:getChildEdge.',
             variants = {
-                returns = {
-                    {
-                        type = 'number',
-                        name = 'indexA',
-                        description = 'The child index of the first fixture\'s shape.'
-                    },
-                    {
-                        type = 'number',
-                        name = 'indexB',
-                        description = 'The child index of the second fixture\'s shape.'
+                {
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'indexA',
+                            description = 'The child index of the first fixture\'s shape.'
+                        },
+                        {
+                            type = 'number',
+                            name = 'indexB',
+                            description = 'The child index of the second fixture\'s shape.'
+                        }
                     }
                 }
             }
