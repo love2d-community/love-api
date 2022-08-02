@@ -751,11 +751,13 @@ return {
                             type = 'table',
                             name = 'rgba2',
                             description = 'Second color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.',
+                            default = 'nil',
                         },
                         {
                             type = 'table',
                             name = 'rgba8',
                             description = 'Eighth color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.',
+                            default = 'nil',
                         },
                     },
                 },
