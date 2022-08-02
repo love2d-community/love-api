@@ -4183,8 +4183,13 @@ return {
                     },
                 },
                 {
-                },
-                {
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'rgba',
+                            description = 'A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 1 if it is left out.',
+                        },
+                    },
                 },
             },
         },
