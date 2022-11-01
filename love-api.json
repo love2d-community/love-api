@@ -11182,8 +11182,15 @@
 								}
 							]
 						},
-						[],
-						[]
+						{
+							"arguments": [
+								{
+									"description": "A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 1 if it is left out.",
+									"name": "rgba",
+									"type": "table"
+								}
+							]
+						}
 					]
 				},
 				{
@@ -13997,49 +14004,79 @@
 											"type": "number"
 										},
 										{
+											"default": "1",
 											"description": "First color, alpha component (0-1).",
 											"name": "a1",
 											"type": "number"
 										},
 										{
+											"default": "nil",
 											"description": "Second color, red component (0-1).",
 											"name": "r2",
 											"type": "number"
 										},
 										{
+											"default": "nil",
 											"description": "Second color, green component (0-1).",
 											"name": "g2",
 											"type": "number"
 										},
 										{
+											"default": "nil",
 											"description": "Second color, blue component (0-1).",
 											"name": "b2",
 											"type": "number"
 										},
 										{
+											"default": "1",
 											"description": "Second color, alpha component (0-1).",
 											"name": "a2",
 											"type": "number"
 										},
 										{
+											"default": "nil",
 											"description": "Eighth color, red component (0-1).",
 											"name": "r8",
 											"type": "number"
 										},
 										{
+											"default": "nil",
 											"description": "Eighth color, green component (0-1).",
 											"name": "g8",
 											"type": "number"
 										},
 										{
+											"default": "nil",
 											"description": "Eighth color, blue component (0-1).",
 											"name": "b8",
 											"type": "number"
 										},
 										{
+											"default": "1",
 											"description": "Eighth color, alpha component (0-1).",
 											"name": "a8",
 											"type": "number"
+										}
+									]
+								},
+								{
+									"arguments": [
+										{
+											"description": "First color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.",
+											"name": "rgba1",
+											"type": "table"
+										},
+										{
+											"default": "nil",
+											"description": "Second color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.",
+											"name": "rgba2",
+											"type": "table"
+										},
+										{
+											"default": "nil",
+											"description": "Eighth color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.",
+											"name": "rgba8",
+											"type": "table"
 										}
 									]
 								}
@@ -14369,11 +14406,13 @@
 											"type": "number"
 										},
 										{
+											"default": "nil",
 											"description": "The second size.",
 											"name": "size2",
 											"type": "number"
 										},
 										{
+											"default": "nil",
 											"description": "The eighth size.",
 											"name": "size8",
 											"type": "number"
@@ -29366,11 +29405,13 @@
 											"type": "function"
 										},
 										{
+											"default": "nil",
 											"description": "Gets called before a collision gets resolved.",
 											"name": "preSolve",
 											"type": "function"
 										},
 										{
+											"default": "nil",
 											"description": "Gets called after the collision has been resolved.",
 											"name": "postSolve",
 											"type": "function"
