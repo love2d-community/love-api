@@ -2165,7 +2165,7 @@ return {
                         },
                         {
                             type = 'table',
-                            name = 'flags',
+                            name = 'settings',
                             description = 'A table containing the following fields:',
                             table = {
                                 {
@@ -2206,7 +2206,7 @@ return {
                         },
                         {
                             type = 'table',
-                            name = 'flags',
+                            name = 'settings',
                             description = 'A table containing the following fields:',
                             table = {
                                 {
@@ -2247,7 +2247,7 @@ return {
                         },
                         {
                             type = 'table',
-                            name = 'flags',
+                            name = 'settings',
                             description = 'A table containing the following fields:',
                             table = {
                                 {
@@ -2288,7 +2288,7 @@ return {
                         },
                         {
                             type = 'table',
-                            name = 'flags',
+                            name = 'settings',
                             description = 'A table containing the following fields:',
                             table = {
                                 {
