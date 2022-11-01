@@ -321,11 +321,13 @@ return {
                             type = 'function',
                             name = 'preSolve',
                             description = 'Gets called before a collision gets resolved.',
+                            default = 'nil',
                         },
                         {
                             type = 'function',
                             name = 'postSolve',
                             description = 'Gets called after the collision has been resolved.',
+                            default = 'nil',
                         },
                     },
                 },
