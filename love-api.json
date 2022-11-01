@@ -9168,7 +9168,7 @@
 								},
 								{
 									"description": "A table containing the following fields:",
-									"name": "flags",
+									"name": "settings",
 									"table": [
 										{
 											"default": "1",
@@ -9209,7 +9209,7 @@
 								},
 								{
 									"description": "A table containing the following fields:",
-									"name": "flags",
+									"name": "settings",
 									"table": [
 										{
 											"default": "1",
@@ -9250,7 +9250,7 @@
 								},
 								{
 									"description": "A table containing the following fields:",
-									"name": "flags",
+									"name": "settings",
 									"table": [
 										{
 											"default": "1",
@@ -9291,7 +9291,7 @@
 								},
 								{
 									"description": "A table containing the following fields:",
-									"name": "flags",
+									"name": "settings",
 									"table": [
 										{
 											"default": "1",
