@@ -472,6 +472,13 @@ return {
                             description = 'The error message.',
                         },
                     },
+                    returns = {
+                        {
+                            type = 'function',
+                            name = 'mainLoop',
+                            description = 'Function which handles one frame, including events and rendering, when called. If this is nil then LÖVE exits immediately.',
+                        },
+                    },
                 },
             },
         },
