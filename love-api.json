@@ -356,6 +356,13 @@
 							"name": "msg",
 							"type": "string"
 						}
+					],
+					"returns": [
+						{
+							"description": "Function which handles one frame, including events and rendering, when called. If this is nil then LÖVE exits immediately.",
+							"name": "mainLoop",
+							"type": "function"
+						}
 					]
 				}
 			]
