@@ -65,8 +65,68 @@ return {
                         },
                         {
                             type = 'number',
-                            name = '...',
-                            description = 'Additional matrix elements.',
+                            name = 'e1_3',
+                            description = 'The third column of the first row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e1_4',
+                            description = 'The fourth column of the first row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e2_1',
+                            description = 'The first column of the second row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e2_2',
+                            description = 'The second column of the second row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e2_3',
+                            description = 'The third column of the second row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e2_4',
+                            description = 'The fourth column of the second row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e3_1',
+                            description = 'The first column of the third row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e3_2',
+                            description = 'The second column of the third row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e3_3',
+                            description = 'The third column of the third row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e3_4',
+                            description = 'The fourth column of the third row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e4_1',
+                            description = 'The first column of the fourth row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e4_2',
+                            description = 'The second column of the fourth row of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e4_3',
+                            description = 'The third column of the fourth row of the matrix.',
                         },
                         {
                             type = 'number',
@@ -318,8 +378,68 @@ return {
                         },
                         {
                             type = 'number',
-                            name = '...',
-                            description = 'Additional matrix elements.',
+                            name = 'e1_3',
+                            description = 'The third column/row of the first row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e1_4',
+                            description = 'The fourth column/row of the first row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e2_1',
+                            description = 'The first column/row of the second row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e2_2',
+                            description = 'The second column/row of the second row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e2_3',
+                            description = 'The third column/row of the second row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e2_4',
+                            description = 'The fourth column/row of the second row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e3_1',
+                            description = 'The first column/row of the third row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e3_2',
+                            description = 'The second column/row of the third row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e3_3',
+                            description = 'The third column/row of the third row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e3_4',
+                            description = 'The fourth column/row of the third row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e4_1',
+                            description = 'The first column/row of the fourth row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e4_2',
+                            description = 'The second column/row of the fourth row/column of the matrix.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'e4_3',
+                            description = 'The third column/row of the fourth row/column of the matrix.',
                         },
                         {
                             type = 'number',
