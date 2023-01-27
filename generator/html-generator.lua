@@ -1,4 +1,3 @@
--- Script by @hahawoo aka Santos
 love = require('api.love_api')
 
 local loveLogo = ([[data:image/png;base64,
