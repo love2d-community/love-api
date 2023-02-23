@@ -258,44 +258,31 @@ return {
             description = 'Casts a ray and calls a function for each fixtures it intersects. ',
             variants = {
                 {
-                    description = 'There is a bug in LÖVE 0.8.0 where the normal vector passed to the callback function gets scaled by love.physics.getMeter.',
                     arguments = {
                         {
-                            type = 'Fixture',
-                            name = 'fixture',
-                            description = 'The fixture intersecting the ray.',
+                            type = 'number',
+                            name = 'x1',
+                            description = 'The x position of the starting point of the ray.',
                         },
                         {
                             type = 'number',
-                            name = 'x',
-                            description = 'The x position of the intersection point.',
+                            name = 'y1',
+                            description = 'The x position of the starting point of the ray.',
                         },
                         {
                             type = 'number',
-                            name = 'y',
-                            description = 'The y position of the intersection point.',
+                            name = 'x2',
+                            description = 'The x position of the end point of the ray.',
                         },
                         {
                             type = 'number',
-                            name = 'xn',
+                            name = 'y2',
                             description = 'The x value of the surface normal vector of the shape edge.',
                         },
                         {
-                            type = 'number',
-                            name = 'yn',
-                            description = 'The y value of the surface normal vector of the shape edge.',
-                        },
-                        {
-                            type = 'number',
-                            name = 'fraction',
-                            description = 'The position of the intersection on the ray as a number from 0 to 1 (or even higher if the ray length was changed with the return value).',
-                        },
-                    },
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'control',
-                            description = 'The ray can be controlled with the return value. A positive value sets a new ray length where 1 is the default value. A value of 0 terminates the ray. If the callback function returns -1, the intersection gets ignored as if it didn\'t happen.',
+                            type = 'function',
+                            name = 'callback',
+                            description = 'A function called for each fixture intersected by the ray. The function gets six arguments and should return a number as a control value. The intersection points fed into the function will be in an arbitrary order. If you wish to find the closest point of intersection, you\'ll need to do that yourself within the function. The easiest way to do that is by using the fraction value.',
                         },
                     },
                 },
