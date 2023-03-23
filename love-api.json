@@ -29534,44 +29534,32 @@
 								{
 									"arguments": [
 										{
-											"description": "The fixture intersecting the ray.",
-											"name": "fixture",
-											"type": "Fixture"
-										},
-										{
-											"description": "The x position of the intersection point.",
-											"name": "x",
+											"description": "The x position of the starting point of the ray.",
+											"name": "x1",
 											"type": "number"
 										},
 										{
-											"description": "The y position of the intersection point.",
-											"name": "y",
+											"description": "The x position of the starting point of the ray.",
+											"name": "y1",
+											"type": "number"
+										},
+										{
+											"description": "The x position of the end point of the ray.",
+											"name": "x2",
 											"type": "number"
 										},
 										{
 											"description": "The x value of the surface normal vector of the shape edge.",
-											"name": "xn",
+											"name": "y2",
 											"type": "number"
 										},
 										{
-											"description": "The y value of the surface normal vector of the shape edge.",
-											"name": "yn",
-											"type": "number"
-										},
-										{
-											"description": "The position of the intersection on the ray as a number from 0 to 1 (or even higher if the ray length was changed with the return value).",
-											"name": "fraction",
-											"type": "number"
+											"description": "A function called for each fixture intersected by the ray. The function gets six arguments and should return a number as a control value. The intersection points fed into the function will be in an arbitrary order. If you wish to find the closest point of intersection, you'll need to do that yourself within the function. The easiest way to do that is by using the fraction value.",
+											"name": "callback",
+											"type": "function"
 										}
 									],
-									"description": "There is a bug in LÖVE 0.8.0 where the normal vector passed to the callback function gets scaled by love.physics.getMeter.",
-									"returns": [
-										{
-											"description": "The ray can be controlled with the return value. A positive value sets a new ray length where 1 is the default value. A value of 0 terminates the ray. If the callback function returns -1, the intersection gets ignored as if it didn't happen.",
-											"name": "control",
-											"type": "number"
-										}
-									]
+									"description": "There is a bug in LÖVE 0.8.0 where the normal vector passed to the callback function gets scaled by love.physics.getMeter."
 								}
 							]
 						},
