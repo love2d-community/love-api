@@ -258,7 +258,7 @@ return {
             description = 'Casts a ray and calls a function for each fixtures it intersects. ',
             variants = {
                 {
-					description = 'There is a bug in LÖVE 0.8.0 where the normal vector passed to the callback function gets scaled by love.physics.getMeter.',
+                    description = 'There is a bug in LÖVE 0.8.0 where the normal vector passed to the callback function gets scaled by love.physics.getMeter.',
                     arguments = {
                         {
                             type = 'number',
