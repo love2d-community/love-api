@@ -27,6 +27,7 @@ Contributions are more than welcome!
 - [Emmy-love-api](https://github.com/EmmyLua/Emmy-love-api) - A script to generate LÖVE API autocomplete files for EmmyLua
 - [love2d-tl](https://github.com/MikuAuahDark/love2d-tl) - Type definitions for [Teal](https://github.com/teal-language/tl)
 - [Quick Reference](http://love2d-community.github.io/love-api/) - Online quick reference of the LÖVE API
+- [Lua language server](https://github.com/LuaLS/lua-language-server) - Provides various language features for Lua to make development easier and faster.
 
 ## Table structure
 
@@ -144,7 +145,7 @@ It makes the following changes:
 
 * The objects/functions/callbacks in the "love module" are now in a module like the other modules, named "love".
 * Table fields which were optional before now contain empty tables (these fields: functions, types, enums, returns, arguments, constructors, supertypes)
-* Types now have a table of **subtypes**. 
+* Types now have a table of **subtypes**.
 * **what** field is a string saying what the table is, e.g.  'function', 'method', 'argument' etc.
 * **id** field is a unique string for each table with a **what** field.
 * There are now fields pointing to where a table comes from, e.g. an argument table has the fields **module**, **function_** and **variant**.
@@ -223,13 +224,13 @@ return {
 
     byfullname = {}, -- Indexed by 'fullname' key
     byid = {}, -- Indexed by 'id' key
-    
+
     everything = {}, -- Every table with a 'what' key
-    
+
     allfullnames = {}, -- modules, functions, methods, callbacks, types, enums
     allfunctions = {}, -- functions, methods, callbacks
     noncallbackfunctions = {}, -- functions, methods
-    
+
     functions = {},
     methods = {},
     callbacks = {},
