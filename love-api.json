@@ -9746,6 +9746,42 @@
 									"type": "Quad"
 								}
 							]
+						},
+						{
+							"arguments": [
+								{
+									"description": "The top-left position in the Image along the x-axis.",
+									"name": "x",
+									"type": "number"
+								},
+								{
+									"description": "The top-left position in the Image along the y-axis.",
+									"name": "y",
+									"type": "number"
+								},
+								{
+									"description": "The width of the Quad in the Image. (Must be greater than 0.)",
+									"name": "width",
+									"type": "number"
+								},
+								{
+									"description": "The height of the Quad in the Image. (Must be greater than 0.)",
+									"name": "height",
+									"type": "number"
+								},
+								{
+									"description": "The texture whose width and height will be used as the reference width and height.",
+									"name": "texture",
+									"type": "Texture"
+								}
+							],
+							"returns": [
+								{
+									"description": "The new Quad.",
+									"name": "quad",
+									"type": "Quad"
+								}
+							]
 						}
 					]
 				},
