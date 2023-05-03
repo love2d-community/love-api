@@ -2737,6 +2737,42 @@ return {
                         },
                     },
                 },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The top-left position in the Image along the x-axis.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The top-left position in the Image along the y-axis.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'width',
+                            description = 'The width of the Quad in the Image. (Must be greater than 0.)',
+                        },
+                        {
+                            type = 'number',
+                            name = 'height',
+                            description = 'The height of the Quad in the Image. (Must be greater than 0.)',
+                        },
+                        {
+                            type = 'Texture',
+                            name = 'texture',
+                            description = 'The texture whose width and height will be used as the reference width and height.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Quad',
+                            name = 'quad',
+                            description = 'The new Quad.',
+                        }
+                    },
+                },
             },
         },
         {
