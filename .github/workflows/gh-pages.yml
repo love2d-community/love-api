@@ -1,11 +1,48 @@
-name: gh-pages
+name: Deploy
 on:
   push:
     branches:
     - master
 
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        lua: ["5.1.5", "5.2.4", "5.3.5", "luajit"]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup Lua (not LuaJIT)
+      uses: leafo/gh-actions-lua@v10
+      if: ${{ matrix.lua != "luajit" }}
+      with:
+        luaVersion: ${{ matrix.lua }}
+    # leafo/gh-actions-lua does not use latest LuaJIT, so do it ourself.
+    - name: Checkout Latest LuaJIT
+      if: ${{ matrix.lua == "luajit" }}
+      uses: actions/checkout@v3
+      with:
+        repository: LuaJIT/LuaJIT
+        path: .lua-build
+    - name: Compile LuaJIT
+      if: ${{ matrix.lua == "luajit" }}
+      working-directory: .lua-build
+      run: make -j$(nproc) install PREFIX=$GITHUB_WORKSPACE/.lua
+    - name: Symlink LuaJIT
+      if: ${{ matrix.lua == "luajit" }}
+      working-directory: .lua
+      run: ln -s bin/luajit-2.1.0-beta3 bin/lua
+    - name: Setup LuaRocks
+      uses: leafo/gh-actions-luarocks@v4
+    - name: Install Busted
+      run: luarocks install busted
+    - name: Run Tests
+      run: busted specs
   gh-pages:
+    name: Commit to gh-pages Branch
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - name: Get LuaJIT
@@ -26,7 +63,7 @@ jobs:
     - name: Generate JSON
       run: cd generator && luajit json-generator.lua
     - name: Add and Commit
-      uses: EndBug/add-and-commit@v7
+      uses: EndBug/add-and-commit@v9
       with:
         add: index.html love-api.json
         default_author: github_actions
