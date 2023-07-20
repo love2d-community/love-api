@@ -32,8 +32,8 @@ jobs:
       run: make -j$(nproc) install PREFIX=$GITHUB_WORKSPACE/.lua
     - name: Symlink LuaJIT
       if: ${{ matrix.lua == 'luajit' }}
-      working-directory: .lua
-      run: ln -s bin/luajit-2.1.0-beta3 bin/lua && ln -s bin/luajit-2.1.0-beta3 bin/luajit
+      working-directory: .lua/bin
+      run: ln -s luajit-2.1.0-beta3 lua && ln -s luajit-2.1.0-beta3 luajit
     - name: List All Files in .lua
       run: find .lua -name '*'
     - name: Test Lua Interpreter
