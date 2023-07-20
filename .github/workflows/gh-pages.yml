@@ -16,22 +16,22 @@ jobs:
       uses: actions/checkout@v3
     - name: Setup Lua (not LuaJIT)
       uses: leafo/gh-actions-lua@v10
-      if: ${{ matrix.lua != "luajit" }}
+      if: ${{ matrix.lua != 'luajit' }}
       with:
         luaVersion: ${{ matrix.lua }}
     # leafo/gh-actions-lua does not use latest LuaJIT, so do it ourself.
     - name: Checkout Latest LuaJIT
-      if: ${{ matrix.lua == "luajit" }}
+      if: ${{ matrix.lua == 'luajit' }}
       uses: actions/checkout@v3
       with:
         repository: LuaJIT/LuaJIT
         path: .lua-build
     - name: Compile LuaJIT
-      if: ${{ matrix.lua == "luajit" }}
+      if: ${{ matrix.lua == 'luajit' }}
       working-directory: .lua-build
       run: make -j$(nproc) install PREFIX=$GITHUB_WORKSPACE/.lua
     - name: Symlink LuaJIT
-      if: ${{ matrix.lua == "luajit" }}
+      if: ${{ matrix.lua == 'luajit' }}
       working-directory: .lua
       run: ln -s bin/luajit-2.1.0-beta3 bin/lua
     - name: Setup LuaRocks
