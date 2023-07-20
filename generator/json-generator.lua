@@ -1,5 +1,3 @@
--- Script by @MikuAuahDark
-
 local JSON = require("JSON")
 local api = require("api.love_api")
 
