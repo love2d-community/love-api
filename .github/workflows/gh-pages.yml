@@ -33,9 +33,11 @@ jobs:
     - name: Symlink LuaJIT
       if: ${{ matrix.lua == 'luajit' }}
       working-directory: .lua
-      run: ln -s bin/luajit-2.1.0-beta3 bin/lua
+      run: ln -s bin/luajit-2.1.0-beta3 bin/lua && ln -s bin/luajit-2.1.0-beta3 bin/luajit
     - name: List All Files in .lua
       run: find .lua -name '*'
+    - name: Test Lua Interpreter
+      run: .lua/bin/lua -v
     - name: Setup LuaRocks
       uses: leafo/gh-actions-luarocks@v4
     - name: Install Busted
