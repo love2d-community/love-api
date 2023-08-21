@@ -94,12 +94,12 @@ return {
                     },
                     returns = {
                         {
-                            type = 'string',
+                            type = 'number',
                             name = 'width',
                             description = 'The width of the desktop.',
                         },
                         {
-                            type = 'string',
+                            type = 'number',
                             name = 'height',
                             description = 'The height of the desktop.',
                         },
