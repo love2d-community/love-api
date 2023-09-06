@@ -31212,12 +31212,12 @@
 								{
 									"description": "The width of the desktop.",
 									"name": "width",
-									"type": "string"
+									"type": "number"
 								},
 								{
 									"description": "The height of the desktop.",
 									"name": "height",
-									"type": "string"
+									"type": "number"
 								}
 							]
 						}
