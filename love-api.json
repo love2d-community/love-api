@@ -26839,13 +26839,8 @@
 								{
 									"returns": [
 										{
-											"description": "The first category.",
-											"name": "category1",
-											"type": "number"
-										},
-										{
-											"description": "The second category.",
-											"name": "category2",
+											"description": "The categories.",
+											"name": "...",
 											"type": "number"
 										}
 									]
@@ -27112,13 +27107,8 @@
 								{
 									"arguments": [
 										{
-											"description": "The first category.",
-											"name": "category1",
-											"type": "number"
-										},
-										{
-											"description": "The second category.",
-											"name": "category2",
+											"description": "The categories.",
+											"name": "...",
 											"type": "number"
 										}
 									]
