@@ -79,13 +79,8 @@ return {
                     returns = {
                         {
                             type = 'number',
-                            name = 'category1',
-                            description = 'The first category.',
-                        },
-                        {
-                            type = 'number',
-                            name = 'category2',
-                            description = 'The second category.',
+                            name = '...',
+                            description = 'The categories.',
                         },
                     },
                 },
@@ -352,13 +347,8 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'category1',
-                            description = 'The first category.',
-                        },
-                        {
-                            type = 'number',
-                            name = 'category2',
-                            description = 'The second category.',
+                            name = '...',
+                            description = 'The categories.',
                         },
                     },
                 },
