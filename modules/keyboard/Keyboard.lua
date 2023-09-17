@@ -228,7 +228,7 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.KeyConstant'),
-        require(path .. 'enums.Scancode'),
+        (require(path .. 'enums.KeyConstant')),
+        (require(path .. 'enums.Scancode')),
     },
 }

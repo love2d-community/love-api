@@ -149,6 +149,6 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.PowerState'),
+        (require(path .. 'enums.PowerState')),
     },
 }

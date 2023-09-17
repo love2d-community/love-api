@@ -172,6 +172,6 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.Event'),
+        (require(path .. 'enums.Event')),
     },
 }

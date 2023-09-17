@@ -4,8 +4,8 @@ return {
     name = 'audio',
     description = 'Provides an interface to create noise with the user\'s speakers.',
     types = {
-        require(path .. 'types.RecordingDevice'),
-        require(path .. 'types.Source'),
+        (require(path .. 'types.RecordingDevice')),
+        (require(path .. 'types.Source')),
     },
     functions = {
         {
@@ -738,11 +738,11 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.DistanceModel'),
-        require(path .. 'enums.EffectType'),
-        require(path .. 'enums.EffectWaveform'),
-        require(path .. 'enums.FilterType'),
-        require(path .. 'enums.SourceType'),
-        require(path .. 'enums.TimeUnit'),
+        (require(path .. 'enums.DistanceModel')),
+        (require(path .. 'enums.EffectType')),
+        (require(path .. 'enums.EffectWaveform')),
+        (require(path .. 'enums.FilterType')),
+        (require(path .. 'enums.SourceType')),
+        (require(path .. 'enums.TimeUnit')),
     },
 }

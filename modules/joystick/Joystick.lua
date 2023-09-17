@@ -4,7 +4,7 @@ return {
     name = 'joystick',
     description = 'Provides an interface to the user\'s joystick.',
     types = {
-        require(path .. 'types.Joystick'),
+        (require(path .. 'types.Joystick')),
     },
     functions = {
         {
@@ -201,9 +201,9 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.GamepadAxis'),
-        require(path .. 'enums.GamepadButton'),
-        require(path .. 'enums.JoystickHat'),
-        require(path .. 'enums.JoystickInputType'),
+        (require(path .. 'enums.GamepadAxis')),
+        (require(path .. 'enums.GamepadButton')),
+        (require(path .. 'enums.JoystickHat')),
+        (require(path .. 'enums.JoystickInputType')),
     },
 }

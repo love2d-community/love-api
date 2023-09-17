@@ -4,8 +4,8 @@ return {
     name = 'font',
     description = 'Allows you to work with fonts.',
 	types = {
-        require(path .. '.types.GlyphData'),
-		require(path .. '.types.Rasterizer'),
+        (require(path .. '.types.GlyphData')),
+		(require(path .. '.types.Rasterizer')),
     },
     functions = {
         {
@@ -430,6 +430,6 @@ return {
         },
     },
 	enums = {
-        require(path .. '.enums.HintingMode'),
+        (require(path .. '.enums.HintingMode')),
 	}
 }

@@ -4,9 +4,9 @@ return {
     name = 'math',
     description = 'Provides system-independent mathematical functions.',
     types = {
-        require(path .. 'types.BezierCurve'),
-        require(path .. 'types.RandomGenerator'),
-        require(path .. 'types.Transform'),
+        (require(path .. 'types.BezierCurve')),
+        (require(path .. 'types.RandomGenerator')),
+        (require(path .. 'types.Transform')),
     },
     functions = {
         {
@@ -1009,6 +1009,6 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.MatrixLayout'),
+        (require(path .. 'enums.MatrixLayout')),
     },
 }

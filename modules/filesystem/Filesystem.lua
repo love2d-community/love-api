@@ -4,9 +4,9 @@ return {
     name = 'filesystem',
     description = 'Provides an interface to the user\'s filesystem.',
     types = {
-        require(path .. 'types.DroppedFile'),
-        require(path .. 'types.File'),
-        require(path .. 'types.FileData'),
+        (require(path .. 'types.DroppedFile')),
+        (require(path .. 'types.File')),
+        (require(path .. 'types.FileData')),
     },
     functions = {
         {
@@ -1032,9 +1032,9 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.BufferMode'),
-        require(path .. 'enums.FileDecoder'),
-        require(path .. 'enums.FileMode'),
-        require(path .. 'enums.FileType'),
+        (require(path .. 'enums.BufferMode')),
+        (require(path .. 'enums.FileDecoder')),
+        (require(path .. 'enums.FileMode')),
+        (require(path .. 'enums.FileType')),
     },
 }

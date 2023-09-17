@@ -4,8 +4,8 @@ return {
     name = 'image',
     description = 'Provides an interface to decode encoded image data.',
     types = {
-        require(path .. 'types.CompressedImageData'),
-        require(path .. 'types.ImageData'),
+        (require(path .. 'types.CompressedImageData')),
+        (require(path .. 'types.ImageData')),
     },
     functions = {
         {
@@ -204,8 +204,8 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.CompressedImageFormat'),
-        require(path .. 'enums.ImageFormat'),
-        require(path .. 'enums.PixelFormat'),
+        (require(path .. 'enums.CompressedImageFormat')),
+        (require(path .. 'enums.ImageFormat')),
+        (require(path .. 'enums.PixelFormat')),
     },
 }

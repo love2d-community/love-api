@@ -4,7 +4,7 @@ return {
     name = 'mouse',
     description = 'Provides an interface to the user\'s mouse.',
     types = {
-        require(path .. 'types.Cursor'),
+        (require(path .. 'types.Cursor')),
     },
     functions = {
         {
@@ -387,6 +387,6 @@ return {
         },
     },
     enums = {
-        require(path .. 'enums.CursorType'),
+        (require(path .. 'enums.CursorType')),
     },
 }
