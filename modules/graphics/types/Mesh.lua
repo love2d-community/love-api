@@ -735,6 +735,12 @@ return {
                             description = 'The index of the first vertex to replace.',
                             default = '1',
                         },
+                        {
+                            type = 'number',
+                            name = 'count',
+                            description = 'Amount of vertices to replace.',
+                            default = 'all',
+                        }
                     },
                 },
                 {
