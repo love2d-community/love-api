@@ -13284,6 +13284,12 @@
 											"description": "The index of the first vertex to replace.",
 											"name": "startvertex",
 											"type": "number"
+										},
+										{
+											"default": "all",
+											"description": "Amount of vertices to replace.",
+											"name": "count",
+											"type": "number"
 										}
 									],
 									"description": "The values in each vertex table are in the same order as the vertex attributes in the Mesh's vertex format. A standard Mesh that wasn't created with a custom vertex format will use two position numbers, two texture coordinate numbers, and four color components per vertex: x, y, u, v, r, g, b, a.\n\nIf no value is supplied for a specific vertex attribute component, it will be set to a default value of 0 if its data type is 'float', or 255 if its data type is 'byte'."
