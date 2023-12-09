@@ -2928,6 +2928,54 @@ return {
                         },
                     },
                 },
+                {
+                    arguments = {
+                        {
+                            type = 'Font',
+                            name = 'font',
+                            description = 'The font to use for the text.',
+                        },
+                        {
+                            type = 'table',
+                            name = 'coloredtext',
+                            description = 'A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.',
+                            table = {
+                                {
+                                    type = 'table',
+                                    name = 'color1',
+                                    description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.'
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'string1',
+                                    description = 'A string of text which has a color specified by the previous color.',
+                                },
+                                {
+                                    type = 'table',
+                                    name = 'color2',
+                                    description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.',
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'string2',
+                                    description = 'A string of text which has a color specified by the previous color.',
+                                },
+                                {
+                                    type = 'Variant',
+                                    name = '...',
+                                    description = 'Additional colors and strings.',
+                                },
+                            },
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'Text',
+                            name = 'text',
+                            description = 'The new drawable Text object.',
+                        },
+                    },
+                },
             },
         },
         {
