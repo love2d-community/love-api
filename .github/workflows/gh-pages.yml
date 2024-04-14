@@ -1,8 +1,5 @@
 name: Deploy
-on:
-  push:
-    branches:
-    - master
+on: [push, pull_request]
 
 jobs:
   test:
@@ -13,25 +10,25 @@ jobs:
         lua: ["5.1.5", "5.2.4", "5.3.5", "luajit"]
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Setup Lua (not LuaJIT)
       uses: leafo/gh-actions-lua@v10
-      if: ${{ matrix.lua != 'luajit' }}
+      if: matrix.lua != 'luajit'
       with:
         luaVersion: ${{ matrix.lua }}
     # leafo/gh-actions-lua does not use latest LuaJIT, so do it ourself.
     - name: Checkout Latest LuaJIT
-      if: ${{ matrix.lua == 'luajit' }}
-      uses: actions/checkout@v3
+      if: matrix.lua == 'luajit'
+      uses: actions/checkout@v4
       with:
         repository: LuaJIT/LuaJIT
         path: .lua-build
     - name: Compile LuaJIT
-      if: ${{ matrix.lua == 'luajit' }}
+      if: matrix.lua == 'luajit'
       working-directory: .lua-build
       run: make -j$(nproc) install PREFIX=$GITHUB_WORKSPACE/.lua
     - name: Symlink LuaJIT
-      if: ${{ matrix.lua == 'luajit' }}
+      if: matrix.lua == 'luajit'
       working-directory: .lua/bin
       run: ln -s luajit lua
     - name: List All Files in .lua
@@ -47,6 +44,7 @@ jobs:
   gh-pages:
     name: Commit to gh-pages Branch
     needs: test
+    if: github.event_name == 'push' && github.ref_name == 'master'
     runs-on: ubuntu-latest
     steps:
     - name: Get LuaJIT
@@ -71,6 +69,5 @@ jobs:
       with:
         add: index.html love-api.json
         default_author: github_actions
-        branch: gh-pages
         message: 'Build ${{ github.sha }}'
         push: true
