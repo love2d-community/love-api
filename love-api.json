@@ -11513,6 +11513,7 @@
 									"type": "FilterMode"
 								},
 								{
+									"default": "min",
 									"description": "Filter mode used when scaling the image up.",
 									"name": "mag",
 									"type": "FilterMode"
@@ -16879,6 +16880,7 @@
 											"type": "FilterMode"
 										},
 										{
+											"default": "min",
 											"description": "Filter mode to use when magnifying the texture (rendering it at a larger size on-screen than its size in pixels).",
 											"name": "mag",
 											"type": "FilterMode"
