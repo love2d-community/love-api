@@ -329,6 +329,7 @@ return {
                             type = 'FilterMode',
                             name = 'mag',
                             description = 'Filter mode to use when magnifying the texture (rendering it at a larger size on-screen than its size in pixels).',
+                            default = 'min',
                         },
                         {
                             type = 'number',

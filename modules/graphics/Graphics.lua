@@ -4510,6 +4510,7 @@ return {
                             type = 'FilterMode',
                             name = 'mag',
                             description = 'Filter mode used when scaling the image up.',
+                            default = 'min',
                         },
                         {
                             type = 'number',
