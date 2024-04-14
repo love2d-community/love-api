@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        lua: ["5.1.5", "5.2.4", "5.3.5", "luajit"]
+        lua: ["5.1.5", "5.2.4", "5.3.5", "5.4.6", "luajit"]
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -50,12 +50,12 @@ jobs:
     - name: Get LuaJIT
       run: sudo apt-get install -y luajit curl
     - name: Checkout gh-pages
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: gh-pages
         fetch-depth: 0
     - name: Checkout Inside
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: generator/api
     - name: Generate Page
