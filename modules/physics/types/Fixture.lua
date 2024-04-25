@@ -164,13 +164,8 @@ return {
                     returns = {
                         {
                             type = 'number',
-                            name = 'mask1',
-                            description = 'The first category selected by the mask.',
-                        },
-                        {
-                            type = 'number',
-                            name = 'mask2',
-                            description = 'The second category selected by the mask.',
+                            name = '...',
+                            description = 'The masks.',
                         },
                     },
                 },
@@ -432,13 +427,8 @@ return {
                     arguments = {
                         {
                             type = 'number',
-                            name = 'mask1',
-                            description = 'The first category.',
-                        },
-                        {
-                            type = 'number',
-                            name = 'mask2',
-                            description = 'The second category.',
+                            name = '...',
+                            description = 'The masks.',
                         },
                     },
                 },
