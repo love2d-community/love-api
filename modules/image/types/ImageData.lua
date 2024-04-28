@@ -277,6 +277,25 @@ return {
                         },
                     },
                 },
+                {
+                    arguments = {
+                        {
+                            type = 'number',
+                            name = 'x',
+                            description = 'The position of the pixel on the x-axis.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'y',
+                            description = 'The position of the pixel on the y-axis.',
+                        },
+                        {
+                            type = 'table',
+                            name = 'color',
+                            description = 'A numerical indexed table with the red, green, blue and alpha values as numbers.',
+                        },
+                    },
+                },
             },
         },
         {
