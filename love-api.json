@@ -26980,13 +26980,8 @@
 								{
 									"returns": [
 										{
-											"description": "The first category selected by the mask.",
-											"name": "mask1",
-											"type": "number"
-										},
-										{
-											"description": "The second category selected by the mask.",
-											"name": "mask2",
+											"description": "The masks.",
+											"name": "...",
 											"type": "number"
 										}
 									]
@@ -27248,13 +27243,8 @@
 								{
 									"arguments": [
 										{
-											"description": "The first category.",
-											"name": "mask1",
-											"type": "number"
-										},
-										{
-											"description": "The second category.",
-											"name": "mask2",
+											"description": "The masks.",
+											"name": "...",
 											"type": "number"
 										}
 									]
