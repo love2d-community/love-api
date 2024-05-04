@@ -12566,6 +12566,7 @@
 											"type": "ImageData"
 										},
 										{
+											"default": "1",
 											"description": "Which cubemap face, array index, or volume layer to replace, if applicable.",
 											"name": "slice",
 											"type": "number"
@@ -12589,6 +12590,7 @@
 											"type": "number"
 										},
 										{
+											"default": "false",
 											"description": "Whether to generate new mipmaps after replacing the Image's pixels. True by default if the Image was created with automatically generated mipmaps, false by default otherwise.",
 											"name": "reloadmipmaps",
 											"type": "boolean"
@@ -18234,6 +18236,25 @@
 											"description": "The alpha component (0-1).",
 											"name": "a",
 											"type": "number"
+										}
+									]
+								},
+								{
+									"arguments": [
+										{
+											"description": "The position of the pixel on the x-axis.",
+											"name": "x",
+											"type": "number"
+										},
+										{
+											"description": "The position of the pixel on the y-axis.",
+											"name": "y",
+											"type": "number"
+										},
+										{
+											"description": "A numerical indexed table with the red, green, blue and alpha values as numbers.",
+											"name": "color",
+											"type": "table"
 										}
 									]
 								}
