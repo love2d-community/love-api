@@ -60,6 +60,7 @@ return {
                             type = 'number',
                             name = 'slice',
                             description = 'Which cubemap face, array index, or volume layer to replace, if applicable.',
+                            default = '1',
                         },
                         {
                             type = 'number',
@@ -83,6 +84,7 @@ return {
                             type = 'boolean',
                             name = 'reloadmipmaps',
                             description = 'Whether to generate new mipmaps after replacing the Image\'s pixels. True by default if the Image was created with automatically generated mipmaps, false by default otherwise.',
+                            default = 'false',
                         },
                     },
                 },
