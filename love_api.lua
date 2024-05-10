@@ -1,7 +1,7 @@
 local path = (...):match('(.-)[^%./]+$')
 
 return {
-    version = '11.4',
+    version = '11.5',
     functions = {
         {
             name = 'getVersion',
@@ -141,7 +141,7 @@ return {
                                     type = 'string',
                                     name = 'version',
                                     description = 't.version should be a string, representing the version of LÖVE for which your game was made. It should be formatted as "X.Y.Z" where X is the major release number, Y the minor, and Z the patch level. It allows LÖVE to display a warning if it isn\'t compatible. Its default is the version of LÖVE running.',
-                                    default = '"11.3"',
+                                    default = '"11.5"',
                                 },
                                 {
                                     type = 'boolean',

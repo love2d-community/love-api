@@ -2,7 +2,7 @@
 
 [![Deploy](https://github.com/love2d-community/love-api/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/love2d-community/love-api/actions/workflows/gh-pages.yml)
 [![pages-build-deployment](https://github.com/love2d-community/love-api/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/love2d-community/love-api/actions/workflows/pages/pages-build-deployment)
-[![LÖVE](https://img.shields.io/badge/L%C3%96VE-11.4-EA316E.svg)](http://love2d.org/)
+[![LÖVE](https://img.shields.io/badge/L%C3%96VE-11.5-EA316E.svg)](http://love2d.org/)
 
 The complete API documentation of [LÖVE](https://love2d.org/) contained in a Lua table.
 
@@ -34,7 +34,7 @@ Contributions are more than welcome!
 
 ```lua
 return {
-    version = '11.4',
+    version = '11.5',
     functions = { -- Functions not in modules, currently only love.getVersion
         -- See function structure below
     },
