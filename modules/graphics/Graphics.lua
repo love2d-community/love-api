@@ -2428,7 +2428,6 @@ return {
                             name = 'vertices',
                             description = 'The table filled with vertex information tables for each vertex as follows:',
                             table = {
-                                array = true,
                                 {
                                     type = 'number',
                                     name = '1',
@@ -2476,6 +2475,7 @@ return {
                                     default = '1',
                                 },
                             },
+                            tablearray = '',
                         },
                         {
                             type = 'MeshDrawMode',
