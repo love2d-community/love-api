@@ -348,6 +348,7 @@ return {
                             type = 'table',
                             name = 'map',
                             description = 'A table containing the list of vertex indices used when drawing.',
+                            arraytype = 'number',
                         },
                     },
                 },

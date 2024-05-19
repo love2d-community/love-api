@@ -206,6 +206,19 @@ return {
                             type = 'table',
                             name = 'modes',
                             description = 'A table of width/height pairs. (Note that this may not be in order.)',
+                            table = {
+                                array = true,
+                                {
+                                    type = 'number',
+                                    name = 'width',
+                                    description = 'Window fullscreen width.',
+                                },
+                                {
+                                    type = 'number',
+                                    name = 'height',
+                                    description = 'Window fullscreen height.',
+                                },
+                            }
                         },
                     },
                 },

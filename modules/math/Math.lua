@@ -374,6 +374,7 @@ return {
                             type = 'table',
                             name = 'vertices',
                             description = 'The vertices of the polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.',
+                            arraytype = 'number',
                         },
                     },
                     returns = {
@@ -408,13 +409,8 @@ return {
                         },
                         {
                             type = 'number',
-                            name = 'x3',
-                            description = 'The position of the third vertex of the polygon on the x-axis.',
-                        },
-                        {
-                            type = 'number',
-                            name = 'y3',
-                            description = 'The position of the third vertex of the polygon on the y-axis.',
+                            name = '...',
+                            description = 'Additional position of the vertex of the polygon on the x-axis and y-axis.',
                         },
                     },
                     returns = {
@@ -474,6 +470,7 @@ return {
                             type = 'table',
                             name = 'color',
                             description = 'An array with the red, green, and blue channels of the linear RGB color to convert.',
+                            arraytype = 'number',
                         },
                     },
                     returns = {
@@ -522,6 +519,7 @@ return {
                             type = 'table',
                             name = 'vertices',
                             description = 'The vertices of the control polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.',
+                            arraytype = 'number',
                         },
                     },
                     returns = {
@@ -556,13 +554,8 @@ return {
                         },
                         {
                             type = 'number',
-                            name = 'x3',
-                            description = 'The position of the third vertex of the control polygon on the x-axis.',
-                        },
-                        {
-                            type = 'number',
-                            name = 'y3',
-                            description = 'The position of the third vertex of the control polygon on the y-axis.',
+                            name = '...',
+                            description = 'Additional position of the vertex of the control polygon on the x-axis and y-axis.',
                         },
                     },
                     returns = {

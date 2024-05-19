@@ -51,18 +51,8 @@ return {
                     arguments = {
                         {
                             type = 'Variant',
-                            name = 'arg1',
-                            description = 'A string, number, boolean, LÖVE object, or simple table.',
-                        },
-                        {
-                            type = 'Variant',
-                            name = 'arg2',
-                            description = 'A string, number, boolean, LÖVE object, or simple table.',
-                        },
-                        {
-                            type = 'Variant',
                             name = '...',
-                            description = 'You can continue passing values to the thread.',
+                            description = 'A string, number, boolean, LÖVE object, or simple table.',
                         },
                     },
                 },

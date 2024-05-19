@@ -164,6 +164,7 @@ return {
                             type = 'table',
                             name = 'files',
                             description = 'A sequence with the names of all files and subdirectories as strings.',
+                            arraytype = 'string',
                         },
                     },
                 },

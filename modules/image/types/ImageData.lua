@@ -293,6 +293,7 @@ return {
                             type = 'table',
                             name = 'color',
                             description = 'A numerical indexed table with the red, green, blue and alpha values as numbers.',
+                            arraytype = 'number',
                         },
                     },
                 },

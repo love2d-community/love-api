@@ -275,11 +275,13 @@ return {
                             type = 'table',
                             name = 'color',
                             description = 'A table with red, green, blue, and optional alpha color components in the range of 1 to send to the extern as a vector.',
+                            arraytype = 'number',
                         },
                         {
                             type = 'table',
                             name = '...',
                             description = 'Additional colors to send in case the extern is an array. All colors need to be of the same size (e.g. only vec3\'s).',
+                            arraytype = 'number',
                         },
                     },
                 },

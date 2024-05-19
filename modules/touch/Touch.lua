@@ -67,6 +67,7 @@ return {
                             type = 'table',
                             name = 'touches',
                             description = 'A list of active touch-press id values, which can be used with love.touch.getPosition.',
+                            arraytype = 'light userdata',
                         },
                     },
                 },
