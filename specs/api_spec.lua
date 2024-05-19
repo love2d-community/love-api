@@ -25,7 +25,6 @@ describe( 'LÖVE-API Integrity test', function()
 
         local valid_keys = {
             'api',
-            'array',
             'arraytype',
             'arguments',
             'callbacks',
@@ -45,6 +44,7 @@ describe( 'LÖVE-API Integrity test', function()
             'supertypes',
             'subtypes',
             'table',
+            'tablearray',
             'tabletype',
             'type',
             'types',
