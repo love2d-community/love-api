@@ -477,6 +477,15 @@ return {
                             type = 'function',
                             name = 'mainLoop',
                             description = 'Function which handles one frame, including events and rendering, when called. If this is nil then LÖVE exits immediately.',
+                            signature = {
+                                returns = {
+                                    {
+                                        type = 'any',
+                                        name = 'retval',
+                                        description = 'Exit code or error message or nil to continue.'
+                                    },
+                                },
+                            },
                         },
                     },
                 },
@@ -958,6 +967,15 @@ return {
                             type = 'function',
                             name = 'mainLoop',
                             description = 'Function which handlers one frame, including events and rendering when called.',
+                            signature = {
+                                returns = {
+                                    {
+                                        type = 'any',
+                                        name = 'retval',
+                                        description = 'Exit code or error message or nil to continue.'
+                                    },
+                                },
+                            },
                         },
                     },
                 },

@@ -164,6 +164,62 @@ return {
                             type = 'function',
                             name = 'pixelFunction',
                             description = 'Function to apply to every pixel.',
+                            signature = {
+                                arguments = {
+                                    {
+                                        type = 'number',
+                                        name = 'x',
+                                        description = 'The x coordinate of the current pixel.',
+                                    },
+                                    {
+                                        type = 'number',
+                                        name = 'y',
+                                        description = 'The y coordinate of the current pixel.',
+                                    },
+                                    {
+                                        type = 'number',
+                                        name = 'r',
+                                        description = 'The red color of the current pixel.',
+                                    },
+                                    {
+                                        type = 'number',
+                                        name = 'g',
+                                        description = 'The green color of the current pixel.',
+                                    },
+                                    {
+                                        type = 'number',
+                                        name = 'b',
+                                        description = 'The blue color of the current pixel.',
+                                    },
+                                    {
+                                        type = 'number',
+                                        name = 'a',
+                                        description = 'The alpha of the current pixel.',
+                                    },
+                                },
+                                returns = {
+                                    {
+                                        type = 'number',
+                                        name = 'r',
+                                        description = 'New red color for the current pixel.',
+                                    },
+                                    {
+                                        type = 'number',
+                                        name = 'g',
+                                        description = 'New green color for the current pixel.',
+                                    },
+                                    {
+                                        type = 'number',
+                                        name = 'b',
+                                        description = 'New blue color for the current pixel.',
+                                    },
+                                    {
+                                        type = 'number',
+                                        name = 'a',
+                                        description = 'New alpha for the current pixel.',
+                                    },
+                                }
+                            },
                         },
                         {
                             type = 'number',

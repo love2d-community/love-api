@@ -118,6 +118,20 @@ return {
                             type = 'function',
                             name = 'func',
                             description = 'A function performing drawing operations.',
+                            signature = {
+                                arguments = {
+                                    {
+                                        type = 'any',
+                                        name = '...',
+                                        description = 'Additional arguments passed.'
+                                    },
+                                },
+                            },
+                        },
+                        {
+                            type = 'any',
+                            name = '...',
+                            description = 'Additional arguments to call the function with.',
                         },
                     },
                 },

@@ -150,6 +150,15 @@ return {
                             type = 'function',
                             name = 'iterator',
                             description = 'The iterator (can be used in for loops).',
+                            signature = {
+                                returns = {
+                                    {
+                                        type = 'string',
+                                        name = 'line',
+                                        description = 'Single line in the file.'
+                                    },
+                                },
+                            },
                         },
                     },
                 },

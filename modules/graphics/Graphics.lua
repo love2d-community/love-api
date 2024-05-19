@@ -147,6 +147,15 @@ return {
                             type = 'function',
                             name = 'callback',
                             description = 'Function which gets called once the screenshot has been captured. An ImageData is passed into the function as its only argument.',
+                            signature = {
+                                arguments = {
+                                    {
+                                        type = 'ImageData',
+                                        name = 'imageData',
+                                        description = 'The resulting screenshot.',
+                                    },
+                                },
+                            },
                         },
                     },
                 },
