@@ -16,21 +16,6 @@ return {
     },
     functions = {
         {
-            name = 'getFlags',
-            description = 'Gets the flags used when the image was created.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'table',
-                            name = 'flags',
-                            description = 'A table with ImageFlag keys.',
-                        },
-                    },
-                },
-            },
-        },
-        {
             name = 'isCompressed',
             description = 'Gets whether the Image was created from CompressedData.\n\nCompressed images take up less space in VRAM, and drawing a compressed image will generally be more efficient than drawing one created from raw pixel data.',
             variants = {
@@ -40,6 +25,21 @@ return {
                             type = 'boolean',
                             name = 'compressed',
                             description = 'Whether the Image is stored as a compressed texture on the GPU.',
+                        },
+                    },
+                },
+            },
+        },
+        {
+            name = 'isFormatLinear',
+            description = 'Gets whether the Image was created with the linear (non-gamma corrected) flag set to true.\n\nThis method always returns false when gamma-correct rendering is not enabled.',
+            variants = {
+                {
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'linear',
+                            description = 'Whether the Image\'s internal pixel format is linear (not gamma corrected), when gamma-correct rendering is enabled.',
                         },
                     },
                 },

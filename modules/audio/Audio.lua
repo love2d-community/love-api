@@ -183,21 +183,6 @@ return {
             },
         },
         {
-            name = 'getSourceCount',
-            description = 'Gets the current number of simultaneously playing sources.',
-            variants = {
-                {
-                    returns = {
-                        {
-                            type = 'number',
-                            name = 'numSources',
-                            description = 'The current number of simultaneously playing sources.',
-                        },
-                    },
-                },
-            },
-        },
-        {
             name = 'getVelocity',
             description = 'Returns the velocity of the listener.',
             variants = {

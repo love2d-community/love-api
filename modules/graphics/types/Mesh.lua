@@ -59,53 +59,6 @@ return {
             },
         },
         {
-            name = 'attachAttribute',
-            description = 'Attaches a vertex attribute from a different Mesh onto this Mesh, for use when drawing. This can be used to share vertex attribute data between several different Meshes.',
-            variants = {
-                {
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'name',
-                            description = 'The name of the vertex attribute to attach.',
-                        },
-                        {
-                            type = 'Mesh',
-                            name = 'mesh',
-                            description = 'The Mesh to get the vertex attribute from.',
-                        },
-                    },
-                },
-                {
-                    description = 'If a Mesh wasn\'t created with a custom vertex format, it will have 3 vertex attributes named VertexPosition, VertexTexCoord, and VertexColor.\n\nCustom named attributes can be accessed in a vertex shader by declaring them as attribute vec4 MyCustomAttributeName; at the top-level of the vertex shader code. The name must match what was specified in the Mesh\'s vertex format and in the name argument of Mesh:attachAttribute.',
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'name',
-                            description = 'The name of the vertex attribute to attach.',
-                        },
-                        {
-                            type = 'Mesh',
-                            name = 'mesh',
-                            description = 'The Mesh to get the vertex attribute from.',
-                        },
-                        {
-                            type = 'VertexAttributeStep',
-                            name = 'step',
-                            description = 'Whether the attribute will be per-vertex or per-instance when the mesh is drawn.',
-                            default = '\'pervertex\'',
-                        },
-                        {
-                            type = 'string',
-                            name = 'attachname',
-                            description = 'The name of the attribute to use in shader code. Defaults to the name of the attribute in the given mesh. Can be used to use a different name for this attribute when rendering.',
-                            default = 'name',
-                        },
-                    },
-                },
-            },
-        },
-        {
             name = 'detachAttribute',
             description = 'Removes a previously attached vertex attribute from this Mesh.',
             variants = {
@@ -124,6 +77,14 @@ return {
                             description = 'Whether the attribute was successfully detached.',
                         },
                     },
+                },
+            },
+        },
+        {
+            name = 'flush',
+            description = 'Immediately sends all modified vertex data in the Mesh to the graphics card.\n\nNormally it isn\'t necessary to call this method as love.graphics.draw(mesh, ...) will do it automatically if needed, but explicitly using **Mesh:flush** gives more control over when the work happens.\n\nIf this method is used, it generally shouldn\'t be called more than once (at most) between love.graphics.draw(mesh, ...) calls.',
+            variants = {
+                {
                 },
             },
         },
