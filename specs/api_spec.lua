@@ -12,7 +12,7 @@ describe( 'LÖVE-API Integrity test', function()
                 for i, v in pairs( val ) do
                     recursive( i, v )
                 end
-            elseif type( val ) ~= 'string' and index ~= 'array' then
+            elseif type( val ) ~= 'string' then
                 print( index, val )
                 assert.is_True( type( val ) == 'string' )
             end
