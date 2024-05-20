@@ -1519,21 +1519,6 @@
 					]
 				},
 				{
-					"description": "Gets the current number of simultaneously playing sources.",
-					"name": "getSourceCount",
-					"variants": [
-						{
-							"returns": [
-								{
-									"description": "The current number of simultaneously playing sources.",
-									"name": "numSources",
-									"type": "number"
-								}
-							]
-						}
-					]
-				},
-				{
 					"description": "Returns the velocity of the listener.",
 					"name": "getVelocity",
 					"variants": [
@@ -12525,21 +12510,6 @@
 					"description": "Drawable image type.",
 					"functions": [
 						{
-							"description": "Gets the flags used when the image was created.",
-							"name": "getFlags",
-							"variants": [
-								{
-									"returns": [
-										{
-											"description": "A table with ImageFlag keys.",
-											"name": "flags",
-											"type": "table"
-										}
-									]
-								}
-							]
-						},
-						{
 							"description": "Gets whether the Image was created from CompressedData.\n\nCompressed images take up less space in VRAM, and drawing a compressed image will generally be more efficient than drawing one created from raw pixel data.",
 							"name": "isCompressed",
 							"variants": [
@@ -12548,6 +12518,21 @@
 										{
 											"description": "Whether the Image is stored as a compressed texture on the GPU.",
 											"name": "compressed",
+											"type": "boolean"
+										}
+									]
+								}
+							]
+						},
+						{
+							"description": "Gets whether the Image was created with the linear (non-gamma corrected) flag set to true.\n\nThis method always returns false when gamma-correct rendering is not enabled.",
+							"name": "isFormatLinear",
+							"variants": [
+								{
+									"returns": [
+										{
+											"description": "Whether the Image's internal pixel format is linear (not gamma corrected), when gamma-correct rendering is enabled.",
+											"name": "linear",
 											"type": "boolean"
 										}
 									]
@@ -12661,53 +12646,6 @@
 							]
 						},
 						{
-							"description": "Attaches a vertex attribute from a different Mesh onto this Mesh, for use when drawing. This can be used to share vertex attribute data between several different Meshes.",
-							"name": "attachAttribute",
-							"variants": [
-								{
-									"arguments": [
-										{
-											"description": "The name of the vertex attribute to attach.",
-											"name": "name",
-											"type": "string"
-										},
-										{
-											"description": "The Mesh to get the vertex attribute from.",
-											"name": "mesh",
-											"type": "Mesh"
-										}
-									]
-								},
-								{
-									"arguments": [
-										{
-											"description": "The name of the vertex attribute to attach.",
-											"name": "name",
-											"type": "string"
-										},
-										{
-											"description": "The Mesh to get the vertex attribute from.",
-											"name": "mesh",
-											"type": "Mesh"
-										},
-										{
-											"default": "'pervertex'",
-											"description": "Whether the attribute will be per-vertex or per-instance when the mesh is drawn.",
-											"name": "step",
-											"type": "VertexAttributeStep"
-										},
-										{
-											"default": "name",
-											"description": "The name of the attribute to use in shader code. Defaults to the name of the attribute in the given mesh. Can be used to use a different name for this attribute when rendering.",
-											"name": "attachname",
-											"type": "string"
-										}
-									],
-									"description": "If a Mesh wasn't created with a custom vertex format, it will have 3 vertex attributes named VertexPosition, VertexTexCoord, and VertexColor.\n\nCustom named attributes can be accessed in a vertex shader by declaring them as attribute vec4 MyCustomAttributeName; at the top-level of the vertex shader code. The name must match what was specified in the Mesh's vertex format and in the name argument of Mesh:attachAttribute."
-								}
-							]
-						},
-						{
 							"description": "Removes a previously attached vertex attribute from this Mesh.",
 							"name": "detachAttribute",
 							"variants": [
@@ -12727,6 +12665,13 @@
 										}
 									]
 								}
+							]
+						},
+						{
+							"description": "Immediately sends all modified vertex data in the Mesh to the graphics card.\n\nNormally it isn't necessary to call this method as love.graphics.draw(mesh, ...) will do it automatically if needed, but explicitly using **Mesh:flush** gives more control over when the work happens.\n\nIf this method is used, it generally shouldn't be called more than once (at most) between love.graphics.draw(mesh, ...) calls.",
+							"name": "flush",
+							"variants": [
+								[]
 							]
 						},
 						{
@@ -20829,132 +20774,6 @@
 									"description": "Alpha color component in 0..255 range or nil if alpha is not specified.",
 									"name": "ab",
 									"type": "number"
-								}
-							]
-						}
-					]
-				},
-				{
-					"description": "Compresses a string or data using a specific compression algorithm.",
-					"name": "compress",
-					"variants": [
-						{
-							"arguments": [
-								{
-									"description": "The raw (un-compressed) string to compress.",
-									"name": "rawstring",
-									"type": "string"
-								},
-								{
-									"default": "'lz4'",
-									"description": "The format to use when compressing the string.",
-									"name": "format",
-									"type": "CompressedDataFormat"
-								},
-								{
-									"default": "-1",
-									"description": "The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.",
-									"name": "level",
-									"type": "number"
-								}
-							],
-							"returns": [
-								{
-									"description": "A new Data object containing the compressed version of the string.",
-									"name": "compressedData",
-									"type": "CompressedData"
-								}
-							]
-						},
-						{
-							"arguments": [
-								{
-									"description": "A Data object containing the raw (un-compressed) data to compress.",
-									"name": "data",
-									"type": "Data"
-								},
-								{
-									"default": "'lz4'",
-									"description": "The format to use when compressing the data.",
-									"name": "format",
-									"type": "CompressedDataFormat"
-								},
-								{
-									"default": "-1",
-									"description": "The level of compression to use, between 0 and 9. -1 indicates the default level. The meaning of this argument depends on the compression format being used.",
-									"name": "level",
-									"type": "number"
-								}
-							],
-							"returns": [
-								{
-									"description": "A new Data object containing the compressed version of the raw data.",
-									"name": "compressedData",
-									"type": "CompressedData"
-								}
-							]
-						}
-					]
-				},
-				{
-					"description": "Decompresses a CompressedData or previously compressed string or Data object.",
-					"name": "decompress",
-					"variants": [
-						{
-							"arguments": [
-								{
-									"description": "The compressed data to decompress.",
-									"name": "compressedData",
-									"type": "CompressedData"
-								}
-							],
-							"returns": [
-								{
-									"description": "A string containing the raw decompressed data.",
-									"name": "rawstring",
-									"type": "string"
-								}
-							]
-						},
-						{
-							"arguments": [
-								{
-									"description": "A string containing data previously compressed with love.math.compress.",
-									"name": "compressedstring",
-									"type": "string"
-								},
-								{
-									"description": "The format that was used to compress the given string.",
-									"name": "format",
-									"type": "CompressedDataFormat"
-								}
-							],
-							"returns": [
-								{
-									"description": "A string containing the raw decompressed data.",
-									"name": "rawstring",
-									"type": "string"
-								}
-							]
-						},
-						{
-							"arguments": [
-								{
-									"description": "A Data object containing data previously compressed with love.math.compress.",
-									"name": "data",
-									"type": "Data"
-								},
-								{
-									"description": "The format that was used to compress the given data.",
-									"name": "format",
-									"type": "CompressedDataFormat"
-								}
-							],
-							"returns": [
-								{
-									"description": "A string containing the raw decompressed data.",
-									"name": "rawstring",
-									"type": "string"
 								}
 							]
 						}
@@ -30768,16 +30587,6 @@
 									"arguments": [
 										{
 											"description": "A string, number, boolean, LÖVE object, or simple table.",
-											"name": "arg1",
-											"type": "Variant"
-										},
-										{
-											"description": "A string, number, boolean, LÖVE object, or simple table.",
-											"name": "arg2",
-											"type": "Variant"
-										},
-										{
-											"description": "You can continue passing values to the thread.",
 											"name": "...",
 											"type": "Variant"
 										}
