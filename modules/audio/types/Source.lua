@@ -37,6 +37,7 @@ return {
                             type = 'table',
                             name = 'effects',
                             description = 'A list of the source\'s active effect names.',
+                            arraytype = 'string',
                         },
                     },
                 },

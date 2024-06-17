@@ -466,6 +466,7 @@ return {
                             type = 'table',
                             name = 'matrix',
                             description = 'A flat table containing the 16 matrix elements.',
+                            arraytype = 'number',
                         },
                     },
                     returns = {

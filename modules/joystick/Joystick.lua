@@ -54,6 +54,7 @@ return {
                             type = 'table',
                             name = 'joysticks',
                             description = 'The list of currently connected Joysticks.',
+                            arraytype = 'Joystick',
                         },
                     },
                 },

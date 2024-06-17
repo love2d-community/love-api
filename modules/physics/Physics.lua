@@ -185,6 +185,7 @@ return {
                             type = 'table',
                             name = 'points',
                             description = 'A list of points to construct the ChainShape, in the form of {x1, y1, x2, y2, ...}.',
+                            arraytype = 'number',
                         },
                     },
                     returns = {
@@ -651,6 +652,7 @@ return {
                             type = 'table',
                             name = 'vertices',
                             description = 'A list of vertices to construct the polygon, in the form of {x1, y1, x2, y2, x3, y3, ...}.',
+                            arraytype = 'number',
                         },
                     },
                     returns = {

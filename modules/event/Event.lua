@@ -24,6 +24,20 @@ return {
                             type = 'function',
                             name = 'i',
                             description = 'Iterator function usable in a for loop.',
+                            signature = {
+                                returns = {
+                                    {
+                                        type = 'string',
+                                        name = 'name',
+                                        description = 'Event name.',
+                                    },
+                                    {
+                                        type = 'any',
+                                        name = '...',
+                                        description = 'Event values.',
+                                    },
+                                },
+                            },
                         },
                     },
                 },

@@ -112,11 +112,27 @@ return {
                             type = 'function',
                             name = 'func',
                             description = 'The function to call, the form of function(channel, arg1, arg2, ...) end. The Channel is passed as the first argument to the function when it is called.',
-                        },
-                        {
-                            type = 'any',
-                            name = 'arg1',
-                            description = 'Additional arguments that the given function will receive when it is called.',
+                            signature = {
+                                arguments = {
+                                    {
+                                        type = 'Channel',
+                                        name = 'channel',
+                                        description = 'The channel.',
+                                    },
+                                    {
+                                        type = 'any',
+                                        name = '...',
+                                        description = 'Additional arguments passed.',
+                                    },
+                                },
+                                returns = {
+                                    {
+                                        type = 'any',
+                                        name = '...',
+                                        description = 'Return values to return after the call (if any).'
+                                    }
+                                }
+                            },
                         },
                         {
                             type = 'any',
