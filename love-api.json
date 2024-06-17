@@ -361,6 +361,15 @@
 						{
 							"description": "Function which handles one frame, including events and rendering, when called. If this is nil then LÖVE exits immediately.",
 							"name": "mainLoop",
+							"signature": {
+								"returns": [
+									{
+										"description": "Exit code or error message or nil to continue.",
+										"name": "retval",
+										"type": "any"
+									}
+								]
+							},
 							"type": "function"
 						}
 					]
@@ -841,6 +850,15 @@
 						{
 							"description": "Function which handlers one frame, including events and rendering when called.",
 							"name": "mainLoop",
+							"signature": {
+								"returns": [
+									{
+										"description": "Exit code or error message or nil to continue.",
+										"name": "retval",
+										"type": "any"
+									}
+								]
+							},
 							"type": "function"
 						}
 					]
@@ -1351,6 +1369,7 @@
 						{
 							"returns": [
 								{
+									"arraytype": "string",
 									"description": "The list of the names of the currently enabled effects.",
 									"name": "effects",
 									"type": "table"
@@ -1510,6 +1529,7 @@
 							"description": "Audio recording for Android is supported since 11.3. However, it's not supported when APK from Play Store is used.",
 							"returns": [
 								{
+									"arraytype": "RecordingDevice",
 									"description": "The list of connected recording devices.",
 									"name": "devices",
 									"type": "table"
@@ -1727,6 +1747,7 @@
 							"description": "Pauses all currently active Sources and returns them.",
 							"returns": [
 								{
+									"arraytype": "Source",
 									"description": "A table containing a list of Sources that were paused by this call.",
 									"name": "Sources",
 									"type": "table"
@@ -1751,6 +1772,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "Source",
 									"description": "A table containing a list of Sources to pause.",
 									"name": "sources",
 									"type": "table"
@@ -1776,6 +1798,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "Source",
 									"description": "Table containing a list of Sources to play.",
 									"name": "sources",
 									"type": "table"
@@ -2048,6 +2071,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "Source",
 									"description": "A table containing a list of Sources to stop.",
 									"name": "sources",
 									"type": "table"
@@ -2260,6 +2284,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "string",
 											"description": "A list of the source's active effect names.",
 											"name": "effects",
 											"type": "table"
@@ -3995,6 +4020,20 @@
 								{
 									"description": "Iterator function usable in a for loop.",
 									"name": "i",
+									"signature": {
+										"returns": [
+											{
+												"description": "Event name.",
+												"name": "name",
+												"type": "string"
+											},
+											{
+												"description": "Event values.",
+												"name": "...",
+												"type": "any"
+											}
+										]
+									},
 									"type": "function"
 								}
 							]
@@ -4378,6 +4417,7 @@
 							],
 							"returns": [
 								{
+									"arraytype": "string",
 									"description": "A sequence with the names of all files and subdirectories as strings.",
 									"name": "files",
 									"type": "table"
@@ -4710,6 +4750,15 @@
 								{
 									"description": "A function that iterates over all the lines in the file",
 									"name": "iterator",
+									"signature": {
+										"returns": [
+											{
+												"description": "Single line in the file.",
+												"name": "line",
+												"type": "string"
+											}
+										]
+									},
 									"type": "function"
 								}
 							]
@@ -5404,6 +5453,15 @@
 										{
 											"description": "The iterator (can be used in for loops).",
 											"name": "iterator",
+											"signature": {
+												"returns": [
+													{
+														"description": "Single line in the file.",
+														"name": "line",
+														"type": "string"
+													}
+												]
+											},
 											"type": "function"
 										}
 									]
@@ -7141,6 +7199,15 @@
 								{
 									"description": "Function which gets called once the screenshot has been captured. An ImageData is passed into the function as its only argument.",
 									"name": "callback",
+									"signature": {
+										"arguments": [
+											{
+												"description": "The resulting screenshot.",
+												"name": "imageData",
+												"type": "ImageData"
+											}
+										]
+									},
 									"type": "function"
 								}
 							],
@@ -7265,11 +7332,13 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "A table in the form of {r, g, b, a} containing the color to clear the first active Canvas to.",
 									"name": "color",
 									"type": "table"
 								},
 								{
+									"arraytype": "number",
 									"description": "Additional tables for each active Canvas.",
 									"name": "...",
 									"type": "table"
@@ -7334,6 +7403,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "boolean",
 									"description": "An array containing boolean values indicating whether to discard the texture of each active Canvas, when multiple simultaneous Canvases are active.",
 									"name": "discardcolors",
 									"type": "table"
@@ -7953,6 +8023,10 @@
 								{
 									"description": "A table containing CanvasFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.",
 									"name": "formats",
+									"tabletype": [
+										"PixelFormat",
+										"boolean"
+									],
 									"type": "table"
 								}
 							]
@@ -7969,6 +8043,10 @@
 								{
 									"description": "A table containing CanvasFormats as keys, and a boolean indicating whether the format is supported as values (taking into account the readable parameter). Not all systems support all formats.",
 									"name": "formats",
+									"tabletype": [
+										"PixelFormat",
+										"boolean"
+									],
 									"type": "table"
 								}
 							]
@@ -8170,6 +8248,10 @@
 								{
 									"description": "A table containing PixelFormats as keys, and a boolean indicating whether the format is supported as values. Not all systems support all formats.",
 									"name": "formats",
+									"tabletype": [
+										"PixelFormat",
+										"boolean"
+									],
 									"type": "table"
 								}
 							]
@@ -8537,6 +8619,10 @@
 								{
 									"description": "A table containing GraphicsFeature keys, and boolean values indicating whether each feature is supported.",
 									"name": "features",
+									"tabletype": [
+										"GraphicsFeature",
+										"boolean"
+									],
 									"type": "table"
 								}
 							]
@@ -8552,6 +8638,10 @@
 								{
 									"description": "A table containing GraphicsLimit keys, and number values.",
 									"name": "limits",
+									"tabletype": [
+										"GraphicsLimit",
+										"number"
+									],
 									"type": "table"
 								}
 							]
@@ -8567,6 +8657,10 @@
 								{
 									"description": "A table containing TextureTypes as keys, and a boolean indicating whether the type is supported as values. Not all systems support all types.",
 									"name": "texturetypes",
+									"tabletype": [
+										"TextureType",
+										"boolean"
+									],
 									"type": "table"
 								}
 							]
@@ -8732,6 +8826,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "A table of point positions, as described above.",
 									"name": "points",
 									"type": "table"
@@ -9449,6 +9544,7 @@
 											"type": "number"
 										}
 									],
+									"tablearray": "",
 									"type": "table"
 								},
 								{
@@ -10166,25 +10262,9 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "A table containing multiple point positions, in the form of {x, y, ...}.",
 									"name": "points",
-									"table": [
-										{
-											"description": "The position of the first point on the x-axis.",
-											"name": "x",
-											"type": "number"
-										},
-										{
-											"description": "The position of the first point on the y-axis.",
-											"name": "y",
-											"type": "number"
-										},
-										{
-											"description": "The x and y coordinates of additional points.",
-											"name": "...",
-											"type": "number"
-										}
-									],
 									"type": "table"
 								}
 							]
@@ -10239,6 +10319,7 @@
 									"type": "DrawMode"
 								},
 								{
+									"arraytype": "number",
 									"description": "The vertices of the polygon as a table.",
 									"name": "vertices",
 									"type": "table"
@@ -11261,6 +11342,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 1 if it is left out.",
 									"name": "rgba",
 									"type": "table"
@@ -11444,6 +11526,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "A numerical indexed table with the red, green, blue and alpha values as numbers. The alpha is optional and defaults to 1 if it is left out.",
 									"name": "rgba",
 									"type": "table"
@@ -12120,7 +12203,21 @@
 										{
 											"description": "A function performing drawing operations.",
 											"name": "func",
+											"signature": {
+												"arguments": [
+													{
+														"description": "Additional arguments passed.",
+														"name": "...",
+														"type": "any"
+													}
+												]
+											},
 											"type": "function"
+										},
+										{
+											"description": "Additional arguments to call the function with.",
+											"name": "...",
+											"type": "any"
 										}
 									]
 								}
@@ -12360,6 +12457,7 @@
 											"type": "number"
 										},
 										{
+											"arraytype": "string",
 											"description": "A sequence containing each line of text that was wrapped.",
 											"name": "wrappedtext",
 											"type": "table"
@@ -12892,6 +12990,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "number",
 											"description": "A table containing the list of vertex indices used when drawing.",
 											"name": "map",
 											"type": "table"
@@ -13720,6 +13819,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "Quad",
 											"description": "A table containing the Quads used.",
 											"name": "quads",
 											"type": "table"
@@ -14055,51 +14155,8 @@
 											"type": "number"
 										},
 										{
-											"default": "nil",
-											"description": "Second color, red component (0-1).",
-											"name": "r2",
-											"type": "number"
-										},
-										{
-											"default": "nil",
-											"description": "Second color, green component (0-1).",
-											"name": "g2",
-											"type": "number"
-										},
-										{
-											"default": "nil",
-											"description": "Second color, blue component (0-1).",
-											"name": "b2",
-											"type": "number"
-										},
-										{
-											"default": "1",
-											"description": "Second color, alpha component (0-1).",
-											"name": "a2",
-											"type": "number"
-										},
-										{
-											"default": "nil",
-											"description": "Eighth color, red component (0-1).",
-											"name": "r8",
-											"type": "number"
-										},
-										{
-											"default": "nil",
-											"description": "Eighth color, green component (0-1).",
-											"name": "g8",
-											"type": "number"
-										},
-										{
-											"default": "nil",
-											"description": "Eighth color, blue component (0-1).",
-											"name": "b8",
-											"type": "number"
-										},
-										{
-											"default": "1",
-											"description": "Eighth color, alpha component (0-1).",
-											"name": "a8",
+											"description": "Additional colors.",
+											"name": "...",
 											"type": "number"
 										}
 									]
@@ -14107,20 +14164,15 @@
 								{
 									"arguments": [
 										{
+											"arraytype": "number",
 											"description": "First color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.",
 											"name": "rgba1",
 											"type": "table"
 										},
 										{
-											"default": "nil",
-											"description": "Second color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.",
-											"name": "rgba2",
-											"type": "table"
-										},
-										{
-											"default": "nil",
-											"description": "Eighth color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.",
-											"name": "rgba8",
+											"arraytype": "number",
+											"description": "Additional color, a numerical indexed table with the red, green, blue and alpha values as numbers (0-1). The alpha is optional and defaults to 1 if it is left out.",
+											"name": "...",
 											"type": "table"
 										}
 									]
@@ -14350,8 +14402,8 @@
 											"type": "Quad"
 										},
 										{
-											"description": "The second Quad to use.",
-											"name": "quad2",
+											"description": "Additional Quads to use.",
+											"name": "...",
 											"type": "Quad"
 										}
 									]
@@ -14359,6 +14411,7 @@
 								{
 									"arguments": [
 										{
+											"arraytype": "Quad",
 											"description": "A table containing the Quads to use.",
 											"name": "quads",
 											"type": "table"
@@ -14980,11 +15033,13 @@
 											"type": "string"
 										},
 										{
+											"arraytype": "number",
 											"description": "A table with red, green, blue, and optional alpha color components in the range of 1 to send to the extern as a vector.",
 											"name": "color",
 											"type": "table"
 										},
 										{
+											"arraytype": "number",
 											"description": "Additional colors to send in case the extern is an array. All colors need to be of the same size (e.g. only vec3's).",
 											"name": "...",
 											"type": "table"
@@ -18070,6 +18125,62 @@
 										{
 											"description": "Function to apply to every pixel.",
 											"name": "pixelFunction",
+											"signature": {
+												"arguments": [
+													{
+														"description": "The x coordinate of the current pixel.",
+														"name": "x",
+														"type": "number"
+													},
+													{
+														"description": "The y coordinate of the current pixel.",
+														"name": "y",
+														"type": "number"
+													},
+													{
+														"description": "The red color of the current pixel.",
+														"name": "r",
+														"type": "number"
+													},
+													{
+														"description": "The green color of the current pixel.",
+														"name": "g",
+														"type": "number"
+													},
+													{
+														"description": "The blue color of the current pixel.",
+														"name": "b",
+														"type": "number"
+													},
+													{
+														"description": "The alpha of the current pixel.",
+														"name": "a",
+														"type": "number"
+													}
+												],
+												"returns": [
+													{
+														"description": "New red color for the current pixel.",
+														"name": "r",
+														"type": "number"
+													},
+													{
+														"description": "New green color for the current pixel.",
+														"name": "g",
+														"type": "number"
+													},
+													{
+														"description": "New blue color for the current pixel.",
+														"name": "b",
+														"type": "number"
+													},
+													{
+														"description": "New alpha for the current pixel.",
+														"name": "a",
+														"type": "number"
+													}
+												]
+											},
 											"type": "function"
 										},
 										{
@@ -18197,6 +18308,7 @@
 											"type": "number"
 										},
 										{
+											"arraytype": "number",
 											"description": "A numerical indexed table with the red, green, blue and alpha values as numbers.",
 											"name": "color",
 											"type": "table"
@@ -18434,6 +18546,7 @@
 						{
 							"returns": [
 								{
+									"arraytype": "Joystick",
 									"description": "The list of currently connected Joysticks.",
 									"name": "joysticks",
 									"type": "table"
@@ -20907,6 +21020,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "The vertices of the polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.",
 									"name": "vertices",
 									"type": "table"
@@ -20943,13 +21057,8 @@
 									"type": "number"
 								},
 								{
-									"description": "The position of the third vertex of the polygon on the x-axis.",
-									"name": "x3",
-									"type": "number"
-								},
-								{
-									"description": "The position of the third vertex of the polygon on the y-axis.",
-									"name": "y3",
+									"description": "Additional position of the vertex of the polygon on the x-axis and y-axis.",
+									"name": "...",
 									"type": "number"
 								}
 							],
@@ -21007,6 +21116,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "An array with the red, green, and blue channels of the linear RGB color to convert.",
 									"name": "color",
 									"type": "table"
@@ -21055,6 +21165,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "The vertices of the control polygon as a table in the form of {x1, y1, x2, y2, x3, y3, ...}.",
 									"name": "vertices",
 									"type": "table"
@@ -21091,13 +21202,8 @@
 									"type": "number"
 								},
 								{
-									"description": "The position of the third vertex of the control polygon on the x-axis.",
-									"name": "x3",
-									"type": "number"
-								},
-								{
-									"description": "The position of the third vertex of the control polygon on the y-axis.",
-									"name": "y3",
+									"description": "Additional position of the vertex of the control polygon on the x-axis and y-axis.",
+									"name": "...",
 									"type": "number"
 								}
 							],
@@ -21734,6 +21840,7 @@
 									],
 									"returns": [
 										{
+											"arraytype": "number",
 											"description": "List of x,y-coordinate pairs of points on the curve.",
 											"name": "coordinates",
 											"type": "table"
@@ -21767,6 +21874,7 @@
 									],
 									"returns": [
 										{
+											"arraytype": "number",
 											"description": "List of x,y-coordinate pairs of points on the specified part of the curve.",
 											"name": "coordinates",
 											"type": "table"
@@ -22518,6 +22626,7 @@
 											"type": "MatrixLayout"
 										},
 										{
+											"arraytype": "number",
 											"description": "A flat table containing the 16 matrix elements.",
 											"name": "matrix",
 											"type": "table"
@@ -23434,6 +23543,7 @@
 									"type": "boolean"
 								},
 								{
+									"arraytype": "number",
 									"description": "A list of points to construct the ChainShape, in the form of {x1, y1, x2, y2, ...}.",
 									"name": "points",
 									"type": "table"
@@ -23900,6 +24010,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "number",
 									"description": "A list of vertices to construct the polygon, in the form of {x1, y1, x2, y2, x3, y3, ...}.",
 									"name": "vertices",
 									"type": "table"
@@ -24874,6 +24985,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "Contact",
 											"description": "A list with all contacts associated with the Body.",
 											"name": "contacts",
 											"type": "table"
@@ -24889,6 +25001,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "Fixture",
 											"description": "A sequence with all fixtures.",
 											"name": "fixtures",
 											"type": "table"
@@ -24934,6 +25047,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "Joint",
 											"description": "A sequence with the Joints attached to the Body.",
 											"name": "joints",
 											"type": "table"
@@ -29211,6 +29325,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "Body",
 											"description": "A sequence with all bodies.",
 											"name": "bodies",
 											"type": "table"
@@ -29301,6 +29416,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "Contact",
 											"description": "A sequence with all Contacts.",
 											"name": "contacts",
 											"type": "table"
@@ -29351,6 +29467,7 @@
 								{
 									"returns": [
 										{
+											"arraytype": "Joint",
 											"description": "A sequence with all joints.",
 											"name": "joints",
 											"type": "table"
@@ -30428,12 +30545,28 @@
 										{
 											"description": "The function to call, the form of function(channel, arg1, arg2, ...) end. The Channel is passed as the first argument to the function when it is called.",
 											"name": "func",
+											"signature": {
+												"arguments": [
+													{
+														"description": "The channel.",
+														"name": "channel",
+														"type": "Channel"
+													},
+													{
+														"description": "Additional arguments passed.",
+														"name": "...",
+														"type": "any"
+													}
+												],
+												"returns": [
+													{
+														"description": "Return values to return after the call (if any).",
+														"name": "...",
+														"type": "any"
+													}
+												]
+											},
 											"type": "function"
-										},
-										{
-											"description": "Additional arguments that the given function will receive when it is called.",
-											"name": "arg1",
-											"type": "any"
 										},
 										{
 											"description": "Additional arguments that the given function will receive when it is called.",
@@ -30770,6 +30903,7 @@
 							"description": "The id values are the same as those used as arguments to love.touchpressed, love.touchmoved, and love.touchreleased.\n\nThe id value of a specific touch-press is only guaranteed to be unique for the duration of that touch-press. As soon as love.touchreleased is called using that id, it may be reused for a new touch-press via love.touchpressed.",
 							"returns": [
 								{
+									"arraytype": "light userdata",
 									"description": "A list of active touch-press id values, which can be used with love.touch.getPosition.",
 									"name": "touches",
 									"type": "table"
@@ -31187,6 +31321,19 @@
 								{
 									"description": "A table of width/height pairs. (Note that this may not be in order.)",
 									"name": "modes",
+									"table": [
+										{
+											"description": "Window fullscreen width.",
+											"name": "width",
+											"type": "number"
+										},
+										{
+											"description": "Window fullscreen height.",
+											"name": "height",
+											"type": "number"
+										}
+									],
+									"tablearray": "",
 									"type": "table"
 								}
 							]
