@@ -63,6 +63,8 @@ jobs:
     - name: Move Index
       run: mv -f generator/index.html index.html
     - name: Generate JSON
+      env:
+        SHA: ${{ github.sha }}
       run: cd generator && luajit json-generator.lua
     - name: Add and Commit
       uses: EndBug/add-and-commit@v9
