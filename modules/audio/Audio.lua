@@ -130,13 +130,33 @@ return {
                     returns = {
                         {
                             type = 'number',
-                            name = 'fx, fy, fz',
-                            description = 'Forward vector of the listener orientation.',
+                            name = 'fx',
+                            description = 'Forward x of the listener orientation.',
                         },
                         {
                             type = 'number',
-                            name = 'ux, uy, uz',
-                            description = 'Up vector of the listener orientation.',
+                            name = 'fy',
+                            description = 'Forward y of the listener orientation.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'fz',
+                            description = 'Forward z of the listener orientation.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'ux',
+                            description = 'Up x of the listener orientation.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'uy',
+                            description = 'Up y of the listener orientation.',
+                        },
+                        {
+                            type = 'number',
+                            name = 'uz',
+                            description = 'Up z of the listener orientation.',
                         },
                     },
                 },
