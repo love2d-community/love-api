@@ -14766,12 +14766,14 @@
 											"type": "number"
 										},
 										{
-											"description": "The reference width, the width of the Image. (Must be greater than 0.)",
+											"default": "nil",
+											"description": "Optional new reference width, the width of the Texture. Must be greater than 0 if set.",
 											"name": "sw",
 											"type": "number"
 										},
 										{
-											"description": "The reference height, the height of the Image. (Must be greater than 0.)",
+											"default": "nil",
+											"description": "Optional new reference height, the height of the Texture. Must be greater than 0 if set.",
 											"name": "sh",
 											"type": "number"
 										}
