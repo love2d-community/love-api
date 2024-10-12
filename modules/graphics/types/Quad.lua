@@ -89,12 +89,16 @@ return {
                         {
                             type = 'number',
                             name = 'sw',
-                            description = 'The reference width, the width of the Image. (Must be greater than 0.)',
+                            description =
+                            'Optional new reference width, the width of the Texture. Must be greater than 0 if set.',
+                            default = 'nil'
                         },
                         {
                             type = 'number',
                             name = 'sh',
-                            description = 'The reference height, the height of the Image. (Must be greater than 0.)',
+                            description =
+                            'Optional new reference height, the height of the Texture. Must be greater than 0 if set.',
+                            default = 'nil'
                         },
                     },
                 },
