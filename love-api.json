@@ -1483,13 +1483,33 @@
 						{
 							"returns": [
 								{
-									"description": "Forward vector of the listener orientation.",
-									"name": "fx, fy, fz",
+									"description": "Forward x of the listener orientation.",
+									"name": "fx",
 									"type": "number"
 								},
 								{
-									"description": "Up vector of the listener orientation.",
-									"name": "ux, uy, uz",
+									"description": "Forward y of the listener orientation.",
+									"name": "fy",
+									"type": "number"
+								},
+								{
+									"description": "Forward z of the listener orientation.",
+									"name": "fz",
+									"type": "number"
+								},
+								{
+									"description": "Up x of the listener orientation.",
+									"name": "ux",
+									"type": "number"
+								},
+								{
+									"description": "Up y of the listener orientation.",
+									"name": "uy",
+									"type": "number"
+								},
+								{
+									"description": "Up z of the listener orientation.",
+									"name": "uz",
 									"type": "number"
 								}
 							]
