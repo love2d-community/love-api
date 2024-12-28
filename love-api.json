@@ -8862,6 +8862,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "table or string or File or FileData or ImageData or CompressedImageData",
 									"description": "A table containing filepaths to images (or File, FileData, ImageData, or CompressedImageData objects), in an array. Each sub-image must have the same dimensions. A table of tables can also be given, where each sub-table contains all mipmap levels for the slice index of that sub-table.",
 									"name": "slices",
 									"type": "table"
@@ -8951,6 +8952,7 @@
 									"type": "number"
 								},
 								{
+									"default": "nil",
 									"description": "A table containing the given fields:",
 									"name": "settings",
 									"table": [
@@ -9020,6 +9022,7 @@
 									"type": "number"
 								},
 								{
+									"default": "nil",
 									"description": "A table containing the given fields:",
 									"name": "settings",
 									"table": [
@@ -9036,6 +9039,7 @@
 											"type": "PixelFormat"
 										},
 										{
+											"default": "nil",
 											"description": "Whether the Canvas is readable (drawable and accessible in a Shader). True by default for regular formats, false by default for depth/stencil formats.",
 											"name": "readable",
 											"type": "boolean"
@@ -9274,6 +9278,7 @@
 									"type": "string"
 								},
 								{
+									"default": "nil",
 									"description": "A table containing the following fields:",
 									"name": "settings",
 									"table": [
@@ -9315,6 +9320,7 @@
 									"type": "FileData"
 								},
 								{
+									"default": "nil",
 									"description": "A table containing the following fields:",
 									"name": "settings",
 									"table": [
@@ -9356,6 +9362,7 @@
 									"type": "ImageData"
 								},
 								{
+									"default": "nil",
 									"description": "A table containing the following fields:",
 									"name": "settings",
 									"table": [
@@ -9397,6 +9404,7 @@
 									"type": "CompressedImageData"
 								},
 								{
+									"default": "nil",
 									"description": "A table containing the following fields:",
 									"name": "settings",
 									"table": [
@@ -10133,6 +10141,7 @@
 									"type": "string"
 								},
 								{
+									"default": "nil",
 									"description": "A table containing the following fields:",
 									"name": "settings",
 									"table": [
@@ -10213,6 +10222,7 @@
 						{
 							"arguments": [
 								{
+									"arraytype": "table or string or File or FileData or ImageData or CompressedImageData",
 									"description": "A table containing filepaths to images (or File, FileData, ImageData, or CompressedImageData objects), in an array. A table of tables can also be given, where each sub-table represents a single mipmap level and contains all layers for that mipmap.",
 									"name": "layers",
 									"type": "table"
