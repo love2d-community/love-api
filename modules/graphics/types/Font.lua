@@ -229,6 +229,60 @@ return {
                         },
                     },
                 },
+                {
+                    arguments = {
+                        {
+                            type = 'table',
+                            name = 'coloredtext',
+                            description = 'A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.',
+                            table = {
+                                {
+                                    type = 'table',
+                                    name = 'color1',
+                                    description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.',
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'string1',
+                                    description = 'A string of text which has a color specified by the previous color.',
+                                },
+                                {
+                                    type = 'table',
+                                    name = 'color2',
+                                    description = 'A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.',
+                                },
+                                {
+                                    type = 'string',
+                                    name = 'string2',
+                                    description = 'A string of text which has a color specified by the previous color.',
+                                },
+                                {
+                                    type = 'tables and strings',
+                                    name = '...',
+                                    description = 'Additional colors and strings.',
+                                },
+                            },
+                        },
+                        {
+                            type = 'number',
+                            name = 'wraplimit',
+                            description = 'The maximum width in pixels of each line that \'\'text\'\' is allowed before wrapping.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'number',
+                            name = 'width',
+                            description = 'The maximum width of the wrapped text.',
+                        },
+                        {
+                            type = 'table',
+                            name = 'wrappedtext',
+                            description = 'A sequence containing each line of text that was wrapped.',
+                            arraytype = 'string',
+                        },
+                    },
+                },
             },
         },
         {
