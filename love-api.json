@@ -12493,6 +12493,60 @@
 											"type": "table"
 										}
 									]
+								},
+								{
+									"arguments": [
+										{
+											"description": "A table containing colors and strings to add to the object, in the form of {color1, string1, color2, string2, ...}.",
+											"name": "coloredtext",
+											"table": [
+												{
+													"description": "A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.",
+													"name": "color1",
+													"type": "table"
+												},
+												{
+													"description": "A string of text which has a color specified by the previous color.",
+													"name": "string1",
+													"type": "string"
+												},
+												{
+													"description": "A table containing red, green, blue, and optional alpha components to use as a color for the next string in the table, in the form of {red, green, blue, alpha}.",
+													"name": "color2",
+													"type": "table"
+												},
+												{
+													"description": "A string of text which has a color specified by the previous color.",
+													"name": "string2",
+													"type": "string"
+												},
+												{
+													"description": "Additional colors and strings.",
+													"name": "...",
+													"type": "tables and strings"
+												}
+											],
+											"type": "table"
+										},
+										{
+											"description": "The maximum width in pixels of each line that ''text'' is allowed before wrapping.",
+											"name": "wraplimit",
+											"type": "number"
+										}
+									],
+									"returns": [
+										{
+											"description": "The maximum width of the wrapped text.",
+											"name": "width",
+											"type": "number"
+										},
+										{
+											"arraytype": "string",
+											"description": "A sequence containing each line of text that was wrapped.",
+											"name": "wrappedtext",
+											"type": "table"
+										}
+									]
 								}
 							]
 						},
