@@ -154,11 +154,6 @@ return {
                         },
                         {
                             type = 'string or number',
-                            name = 'glyph2',
-                            description = 'Glyph',
-                        },
-                        {
-                            type = 'string or number',
                             name = '...',
                             description = 'Additional glyphs',
                         },
