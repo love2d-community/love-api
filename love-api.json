@@ -6523,11 +6523,6 @@
 											"type": "string or number"
 										},
 										{
-											"description": "Glyph",
-											"name": "glyph2",
-											"type": "string or number"
-										},
-										{
 											"description": "Additional glyphs",
 											"name": "...",
 											"type": "string or number"
