@@ -689,10 +689,10 @@ return {
                                     default = '\'desktop\'',
                                 },
                                 {
-                                    type = 'boolean',
+                                    type = 'number',
                                     name = 'vsync',
-                                    description = 'True if LÖVE should wait for vsync, false otherwise.',
-                                    default = 'true',
+                                    description = 'Enables or disables vertical synchronisation (\'vsync\'): 1 to enable vsync, 0 to disable it, and -1 to use adaptive vsync (where supported). Prior to 11.0 this was a boolean flag, rather than a number.',
+                                    default = '1',
                                 },
                                 {
                                     type = 'number',
