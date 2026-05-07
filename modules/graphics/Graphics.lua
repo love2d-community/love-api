@@ -2365,6 +2365,12 @@ return {
                             name = 'glyphs',
                             description = 'A string of the characters in the image in order from left to right.',
                         },
+                        {
+                            type = 'number',
+                            name = 'extraspacing',
+                            description = 'Additional spacing (positive or negative) to apply to each glyph in the Font.',
+                            default = '0',
+                        },
                     },
                     returns = {
                         {
@@ -2386,32 +2392,11 @@ return {
                             name = 'glyphs',
                             description = 'A string of the characters in the image in order from left to right.',
                         },
-                    },
-                    returns = {
-                        {
-                            type = 'Font',
-                            name = 'font',
-                            description = 'A Font object which can be used to draw text on screen.',
-                        },
-                    },
-                },
-                {
-                    description = 'Instead of using this function, consider using a BMFont generator such as bmfont, littera, or bmGlyph with love.graphics.newFont. Because slime said it was better.',
-                    arguments = {
-                        {
-                            type = 'string',
-                            name = 'filename',
-                            description = 'The filepath to the image file.',
-                        },
-                        {
-                            type = 'string',
-                            name = 'glyphs',
-                            description = 'A string of the characters in the image in order from left to right.',
-                        },
                         {
                             type = 'number',
                             name = 'extraspacing',
                             description = 'Additional spacing (positive or negative) to apply to each glyph in the Font.',
+                            default = '0',
                         },
                     },
                     returns = {
