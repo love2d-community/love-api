@@ -139,9 +139,10 @@ return {
                 {
                     arguments = {
                         {
-                            type = 'table<number,KeyConstant>',
+                            type = 'table',
                             name = 'keys',
                             description = 'A table containing keys to check.',
+                            arraytype = 'KeyConstant',
                         },
                     },
                     returns = {
