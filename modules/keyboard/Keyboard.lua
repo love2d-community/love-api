@@ -136,6 +136,22 @@ return {
                         },
                     },
                 },
+                {
+                    arguments = {
+                        {
+                            type = 'table<number,KeyConstant>',
+                            name = 'keys',
+                            description = 'A table containing keys to check.',
+                        },
+                    },
+                    returns = {
+                        {
+                            type = 'boolean',
+                            name = 'anyDown',
+                            description = 'True if any of the keys in the table are down, false if not.',
+                        },
+                    },
+                },
             },
         },
         {
