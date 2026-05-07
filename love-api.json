@@ -9450,6 +9450,12 @@
 									"description": "A string of the characters in the image in order from left to right.",
 									"name": "glyphs",
 									"type": "string"
+								},
+								{
+									"default": "0",
+									"description": "Additional spacing (positive or negative) to apply to each glyph in the Font.",
+									"name": "extraspacing",
+									"type": "number"
 								}
 							],
 							"returns": [
@@ -9471,35 +9477,14 @@
 									"description": "A string of the characters in the image in order from left to right.",
 									"name": "glyphs",
 									"type": "string"
-								}
-							],
-							"returns": [
-								{
-									"description": "A Font object which can be used to draw text on screen.",
-									"name": "font",
-									"type": "Font"
-								}
-							]
-						},
-						{
-							"arguments": [
-								{
-									"description": "The filepath to the image file.",
-									"name": "filename",
-									"type": "string"
 								},
 								{
-									"description": "A string of the characters in the image in order from left to right.",
-									"name": "glyphs",
-									"type": "string"
-								},
-								{
+									"default": "0",
 									"description": "Additional spacing (positive or negative) to apply to each glyph in the Font.",
 									"name": "extraspacing",
 									"type": "number"
 								}
 							],
-							"description": "Instead of using this function, consider using a BMFont generator such as bmfont, littera, or bmGlyph with love.graphics.newFont. Because slime said it was better.",
 							"returns": [
 								{
 									"description": "A Font object which can be used to draw text on screen.",
@@ -20747,6 +20732,23 @@
 							"returns": [
 								{
 									"description": "True if any supplied key is down, false if not.",
+									"name": "anyDown",
+									"type": "boolean"
+								}
+							]
+						},
+						{
+							"arguments": [
+								{
+									"arraytype": "KeyConstant",
+									"description": "A table containing keys to check.",
+									"name": "keys",
+									"type": "table"
+								}
+							],
+							"returns": [
+								{
+									"description": "True if any of the keys in the table are down, false if not.",
 									"name": "anyDown",
 									"type": "boolean"
 								}
